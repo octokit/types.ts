@@ -50,7 +50,7 @@
         "semantic-release-plugin-update-version-in-files",
         {
           "files": [
-            "src/version.ts"
+            "src/VERSION.ts"
           ]
         }
       ]
