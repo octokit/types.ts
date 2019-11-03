@@ -11,7 +11,7 @@
     "lint": "prettier --check '{src,test}/**/*' README.md package.json !src/generated/*",
     "lint:fix": "prettier --write '{src,test}/**/*' README.md package.json !src/generated/*",
     "pretest": "npm run -s lint",
-    "test": "./node_modules/.bin/tsc --noEmit src/index.ts",
+    "test": "./node_modules/.bin/tsc --noEmit --declaration src/index.ts",
     "update-endpoints": "npm-run-all update-endpoints:*",
     "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
     "update-endpoints:typescript": "node scripts/update-endpoints/typescript"
