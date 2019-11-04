@@ -57,6 +57,6 @@
     ]
   },
   "dependencies": {
-    "@types/node": "*"
+    "@types/node": ">= 8"
   }
 }
