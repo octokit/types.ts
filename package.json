@@ -57,6 +57,6 @@
     ]
   },
   "dependencies": {
-    "@types/node": "^12.11.1"
+    "@types/node": ">= 8"
   }
 }
