@@ -6,6 +6,9 @@
   },
   "description": "Shared TypeScript definitions for Octokit projects",
   "main": "src/index.ts",
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "docs": "typedoc --module commonjs --readme none --out docs src/",
     "lint": "prettier --check '{src,test}/**/*' README.md package.json !src/generated/*",
