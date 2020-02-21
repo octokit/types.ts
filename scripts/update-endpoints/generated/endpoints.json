@@ -2148,26 +2148,6 @@
         "name": "account_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ]
   },
@@ -2275,26 +2255,6 @@
         "name": "account_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ]
   },
@@ -2647,10 +2607,10 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The integer ID of the last Organization that you've seen.",
+        "description": "The integer ID of the last organization that you've seen.",
         "enum": null,
         "name": "since",
-        "type": "string",
+        "type": "integer",
         "required": false
       },
       {
@@ -2815,7 +2775,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Toggles whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud. Can be one of:  \n\\* `true` - all organization members can create internal repositories.  \n\\* `false` - only organization owners can create internal repositories.  \nDefault: `true`. For more information, see \"[Restricting repository creation in your organization](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)\" in the GitHub Help documentation.",
+        "description": "Toggles whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. Can be one of:  \n\\* `true` - all organization members can create internal repositories.  \n\\* `false` - only organization owners can create internal repositories.  \nDefault: `true`. For more information, see \"[Restricting repository creation in your organization](https://help.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)\" in the GitHub Help documentation.",
         "enum": null,
         "name": "members_can_create_internal_repositories",
         "type": "boolean",
@@ -4094,6 +4054,35 @@
   {
     "name": "Download an organization migration archive",
     "scope": "migrations",
+    "id": "downloadArchiveForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/migrations/{migration_id}/archive",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "org parameter",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "migration_id parameter",
+        "enum": null,
+        "name": "migration_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Download an organization migration archive",
+    "scope": "migrations",
     "id": "getArchiveForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}/archive",
@@ -4579,7 +4568,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Specifies the types of repositories you want returned. Can be one of `all`, `public`, `private`, `forks`, `sources`, `member`, `internal`. Default: `all`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud, `type` can also be `internal`.",
+        "description": "Specifies the types of repositories you want returned. Can be one of `all`, `public`, `private`, `forks`, `sources`, `member`, `internal`. Default: `all`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`.",
         "enum": [
           "all",
           "public",
@@ -4696,7 +4685,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
         "enum": ["public", "private", "visibility", "internal"],
         "name": "visibility",
         "type": "string",
@@ -7040,26 +7029,6 @@
         "name": "project_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ]
   },
@@ -7492,7 +7461,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. The `visibility` parameter overrides the `private` parameter when you use both along with the `nebula-preview` preview header.",
         "enum": ["public", "private", "visibility", "internal"],
         "name": "visibility",
         "type": "string",
@@ -7626,6 +7595,1279 @@
         "name": "repo",
         "type": "string",
         "required": true
+      }
+    ]
+  },
+  {
+    "name": "List artifacts for a repository",
+    "scope": "actions",
+    "id": "listArtifactsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/artifacts",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Get an artifact",
+    "scope": "actions",
+    "id": "getArtifact",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "artifact_id parameter",
+        "enum": null,
+        "name": "artifact_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Delete an artifact",
+    "scope": "actions",
+    "id": "deleteArtifact",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "artifact_id parameter",
+        "enum": null,
+        "name": "artifact_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Download an artifact",
+    "scope": "actions",
+    "id": "downloadArtifact",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "artifact_id parameter",
+        "enum": null,
+        "name": "artifact_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "archive_format parameter",
+        "enum": null,
+        "name": "archive_format",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Get a workflow job",
+    "scope": "actions",
+    "id": "getWorkflowJob",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "job_id parameter",
+        "enum": null,
+        "name": "job_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List workflow job logs",
+    "scope": "actions",
+    "id": "listWorkflowJobLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "job_id parameter",
+        "enum": null,
+        "name": "job_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List self-hosted runners for a repository",
+    "scope": "actions",
+    "id": "listSelfHostedRunnersForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runners",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List downloads for the self-hosted runner application",
+    "scope": "actions",
+    "id": "listDownloadsForSelfHostedRunnerApplication",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runners/downloads",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Create a registration token",
+    "scope": "actions",
+    "id": "createRegistrationToken",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Create a remove token",
+    "scope": "actions",
+    "id": "createRemoveToken",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Get a self-hosted runner",
+    "scope": "actions",
+    "id": "getSelfHostedRunner",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "runner_id parameter",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Remove a self-hosted runner",
+    "scope": "actions",
+    "id": "removeSelfHostedRunner",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "runner_id parameter",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List repository workflow runs",
+    "scope": "actions",
+    "id": "listRepoWorkflowRuns",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.",
+        "enum": null,
+        "name": "actor",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with a branch. Use the name of the branch of the `push`.",
+        "enum": null,
+        "name": "branch",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see \"[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)\" in the GitHub Help documentation.",
+        "enum": null,
+        "name": "event",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in \"[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run).\"",
+        "enum": ["completed", "status", "conclusion"],
+        "name": "status",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Get a workflow run",
+    "scope": "actions",
+    "id": "getWorkflowRun",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List workflow run artifacts",
+    "scope": "actions",
+    "id": "listWorkflowRunArtifacts",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Cancel a workflow run",
+    "scope": "actions",
+    "id": "cancelWorkflowRun",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List jobs for a workflow run",
+    "scope": "actions",
+    "id": "listJobsForWorkflowRun",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List workflow run logs",
+    "scope": "actions",
+    "id": "listWorkflowRunLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Re-run a workflow",
+    "scope": "actions",
+    "id": "reRunWorkflow",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List secrets for a repository",
+    "scope": "actions",
+    "id": "listSecretsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Get your public key",
+    "scope": "actions",
+    "id": "getPublicKey",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Get a secret",
+    "scope": "actions",
+    "id": "getSecret",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "name parameter",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Create or update a secret for a repository",
+    "scope": "actions",
+    "id": "createOrUpdateSecretForRepo",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "name parameter",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.",
+        "enum": null,
+        "name": "encrypted_value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "ID of the key you used to encrypt the secret.",
+        "enum": null,
+        "name": "key_id",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Delete a secret from a repository",
+    "scope": "actions",
+    "id": "deleteSecretFromRepo",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "name parameter",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List repository workflows",
+    "scope": "actions",
+    "id": "listRepoWorkflows",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/workflows",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Get a workflow",
+    "scope": "actions",
+    "id": "getWorkflow",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "workflow_id parameter",
+        "enum": null,
+        "name": "workflow_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "List workflow runs",
+    "scope": "actions",
+    "id": "listWorkflowRuns",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "workflow_id parameter",
+        "enum": null,
+        "name": "workflow_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.",
+        "enum": null,
+        "name": "actor",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with a branch. Use the name of the branch of the `push`.",
+        "enum": null,
+        "name": "branch",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see \"[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)\" in the GitHub Help documentation.",
+        "enum": null,
+        "name": "event",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in \"[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run).\"",
+        "enum": ["completed", "status", "conclusion"],
+        "name": "status",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
       }
     ]
   },
@@ -9826,7 +11068,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`. When the conclusion is `action_required`, additional details should be provided on the site specified by `details_url`.  \n**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`.",
+        "description": "**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`. When the conclusion is `action_required`, additional details should be provided on the site specified by `details_url`.  \n**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. Only GitHub can change a check run conclusion to `stale`.",
         "enum": [
           "success",
           "failure",
@@ -10162,7 +11404,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`.  \n**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`.",
+        "description": "**Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. Can be one of `success`, `failure`, `neutral`, `cancelled`, `timed_out`, or `action_required`.  \n**Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. Only GitHub can change a check run conclusion to `stale`.",
         "enum": [
           "success",
           "failure",
@@ -12996,6 +14238,45 @@
     ]
   },
   {
+    "name": "Delete a deployment",
+    "scope": "repos",
+    "id": "deleteDeployment",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/deployments/{deployment_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "deployment_id parameter",
+        "enum": null,
+        "name": "deployment_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "name": "List deployment statuses",
     "scope": "repos",
     "id": "listDeploymentStatuses",
@@ -15731,6 +17012,26 @@
         "name": "since",
         "type": "string",
         "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
       }
     ]
   },
@@ -15770,26 +17071,6 @@
         "name": "comment_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ]
   },
@@ -21603,6 +22884,95 @@
     ]
   },
   {
+    "name": "Upload a release asset",
+    "scope": "repos",
+    "id": "uploadReleaseAsset",
+    "method": "POST",
+    "url": "{origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "release_id parameter",
+        "enum": null,
+        "name": "release_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "name parameter",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "label parameter",
+        "enum": null,
+        "name": "label",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The raw file data",
+        "enum": null,
+        "name": "data",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": null,
+        "deprecated": null,
+        "description": "The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the \"Create a release\" endpoint",
+        "enum": null,
+        "name": "origin",
+        "type": "string",
+        "required": null
+      },
+      {
+        "alias": "data",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "file",
+        "type": null,
+        "required": null
+      }
+    ]
+  },
+  {
     "name": "List Stargazers",
     "scope": "activity",
     "id": "listStargazersForRepo",
@@ -22598,10 +23968,10 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The integer ID of the last Repository that you've seen.",
+        "description": "The integer ID of the last repository that you've seen.",
         "enum": null,
         "name": "since",
-        "type": "string",
+        "type": "integer",
         "required": false
       },
       {
@@ -25254,6 +26624,35 @@
     ]
   },
   {
+    "name": "Remove team member (Legacy)",
+    "scope": "teams",
+    "id": "removeMember",
+    "method": "DELETE",
+    "url": "/teams/{team_id}/members/{username}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "team_id parameter",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "username parameter",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "name": "Get team membership (Legacy)",
     "scope": "teams",
     "id": "getMembershipLegacy",
@@ -25393,6 +26792,35 @@
     "name": "Remove team membership (Legacy)",
     "scope": "teams",
     "id": "removeMembershipLegacy",
+    "method": "DELETE",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "team_id parameter",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "username parameter",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Remove team membership (Legacy)",
+    "scope": "teams",
+    "id": "removeMembership",
     "method": "DELETE",
     "url": "/teams/{team_id}/memberships/{username}",
     "parameters": [
@@ -27532,7 +28960,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
         "enum": ["public", "private", "visibility", "internal"],
         "name": "visibility",
         "type": "string",

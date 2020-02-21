@@ -8,7 +8,7 @@ const prettier = require("prettier");
 const { stringToJsdocComment } = require("string-to-jsdoc-comment");
 const sortKeys = require("sort-keys");
 
-const ENDPOINTS = require("./generated/Endpoints.json");
+const ENDPOINTS = require("./generated/endpoints.json");
 const ENDPOINTS_PATH = resolve(
   process.cwd(),
   "src",
