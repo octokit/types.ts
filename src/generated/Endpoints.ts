@@ -138,8 +138,8 @@ export interface Endpoints {
     ProjectsDeleteCardRequestOptions
   ];
   "DELETE /reactions/:reaction_id": [
-    ReactionsDeleteEndpoint,
-    ReactionsDeleteRequestOptions
+    ReactionsDeleteEndpoint | ReactionsDeleteEndpoint,
+    ReactionsDeleteRequestOptions | ReactionsDeleteRequestOptions
   ];
   "DELETE /repos/:owner/:repo": [
     ReposDeleteEndpoint,
@@ -6202,6 +6202,18 @@ type ProjectsCreateColumnRequestOptions = {
 type RateLimitGetEndpoint = {};
 type RateLimitGetRequestOptions = {
   method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ReactionsDeleteEndpoint = {
+  /**
+   * reaction_id parameter
+   */
+  reaction_id: number;
+};
+type ReactionsDeleteRequestOptions = {
+  method: "DELETE";
   url: Url;
   headers: RequestHeaders;
   request: RequestRequestOptions;

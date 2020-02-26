@@ -7362,6 +7362,25 @@
     ]
   },
   {
+    "name": "Delete a reaction",
+    "scope": "reactions",
+    "id": "delete",
+    "method": "DELETE",
+    "url": "/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "name": "Get",
     "scope": "repos",
     "id": "get",
