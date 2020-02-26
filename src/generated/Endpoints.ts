@@ -6306,18 +6306,6 @@ type ReactionsDeleteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-type ReactionsDeleteEndpoint = {
-  /**
-   * reaction_id parameter
-   */
-  reaction_id: number;
-};
-type ReactionsDeleteRequestOptions = {
-  method: "DELETE";
-  url: Url;
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
 type ReposGetEndpoint = {
   /**
    * owner parameter
