@@ -5804,6 +5804,65 @@
     ]
   },
   {
+    "name": "Delete team discussion comment reaction",
+    "scope": "reactions",
+    "id": "deleteForTeamDiscussionComment",
+    "method": "DELETE",
+    "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "org parameter",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "team_slug parameter",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "discussion_number parameter",
+        "enum": null,
+        "name": "discussion_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "comment_number parameter",
+        "enum": null,
+        "name": "comment_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "name": "List reactions for a team discussion",
     "scope": "reactions",
     "id": "listForTeamDiscussionInOrg",
@@ -5935,6 +5994,55 @@
         ],
         "name": "content",
         "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Delete team discussion reaction",
+    "scope": "reactions",
+    "id": "deleteForTeamDiscussion",
+    "method": "DELETE",
+    "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "org parameter",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "team_slug parameter",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "discussion_number parameter",
+        "enum": null,
+        "name": "discussion_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
         "required": true
       }
     ]
@@ -7343,7 +7451,26 @@
     "parameters": []
   },
   {
-    "name": "Delete a reaction",
+    "name": "Delete a reaction (Legacy)",
+    "scope": "reactions",
+    "id": "deleteLegacy",
+    "method": "DELETE",
+    "url": "/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Delete a reaction (Legacy)",
     "scope": "reactions",
     "id": "delete",
     "method": "DELETE",
@@ -12170,8 +12297,8 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The permission to grant the collaborator. **Only valid on organization-owned repositories.** Can be one of:  \n\\* `pull` - can pull, but not push to or administer this repository.  \n\\* `push` - can pull and push, but not administer this repository.  \n\\* `admin` - can pull, push and administer this repository.",
-        "enum": ["pull", "push", "admin"],
+        "description": "The permission to grant the collaborator. **Only valid on organization-owned repositories.** Can be one of:  \n\\* `pull` - can pull, but not push to or administer this repository.  \n\\* `push` - can pull and push, but not administer this repository.  \n\\* `admin` - can pull, push and administer this repository.  \n\\* `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.  \n\\* `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.",
+        "enum": ["pull", "push", "admin", "maintain", "triage"],
         "name": "permission",
         "type": "string",
         "required": false
@@ -12564,6 +12691,55 @@
         ],
         "name": "content",
         "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Delete a commit comment reaction",
+    "scope": "reactions",
+    "id": "deleteForCommitComment",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "comment_id parameter",
+        "enum": null,
+        "name": "comment_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
         "required": true
       }
     ]
@@ -17318,6 +17494,55 @@
     ]
   },
   {
+    "name": "Delete an issue comment reaction",
+    "scope": "reactions",
+    "id": "deleteForIssueComment",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "comment_id parameter",
+        "enum": null,
+        "name": "comment_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "name": "List events for a repository",
     "scope": "issues",
     "id": "listEventsForRepo",
@@ -18454,6 +18679,55 @@
         "name": "number",
         "type": null,
         "required": null
+      }
+    ]
+  },
+  {
+    "name": "Delete an issue reaction",
+    "scope": "reactions",
+    "id": "deleteForIssue",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "issue_number parameter",
+        "enum": null,
+        "name": "issue_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
+        "required": true
       }
     ]
   },
@@ -20562,6 +20836,55 @@
         ],
         "name": "content",
         "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Delete a pull request comment reaction",
+    "scope": "reactions",
+    "id": "deleteForPullRequestComment",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "comment_id parameter",
+        "enum": null,
+        "name": "comment_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "reaction_id parameter",
+        "enum": null,
+        "name": "reaction_id",
+        "type": "integer",
         "required": true
       }
     ]
