@@ -991,6 +991,14 @@
   {
     "name": "List all codes of conduct",
     "scope": "codesOfConduct",
+    "id": "getAllCodesOfConduct",
+    "method": "GET",
+    "url": "/codes_of_conduct",
+    "parameters": []
+  },
+  {
+    "name": "List all codes of conduct",
+    "scope": "codesOfConduct",
     "id": "listConductCodes",
     "method": "GET",
     "url": "/codes_of_conduct",
@@ -1100,7 +1108,7 @@
     "parameters": []
   },
   {
-    "name": "List the authenticated user's gists or if called anonymously, this will return all public gists",
+    "name": "List gists for the authenticated user",
     "scope": "gists",
     "id": "list",
     "method": "GET",
@@ -1188,7 +1196,7 @@
     ]
   },
   {
-    "name": "List all public gists",
+    "name": "List public gists",
     "scope": "gists",
     "id": "listPublic",
     "method": "GET",
@@ -1266,7 +1274,7 @@
     ]
   },
   {
-    "name": "Get a single gist",
+    "name": "Get a gist",
     "scope": "gists",
     "id": "get",
     "method": "GET",
@@ -1285,7 +1293,7 @@
     ]
   },
   {
-    "name": "Edit a gist",
+    "name": "Update a gist",
     "scope": "gists",
     "id": "update",
     "method": "PATCH",
@@ -1775,7 +1783,7 @@
     "parameters": []
   },
   {
-    "name": "List all issues assigned to the authenticated user across all visible repositories including owned repositories, member repositories, and organization repositories",
+    "name": "List issues assigned to the authenticated user",
     "scope": "issues",
     "id": "list",
     "method": "GET",
@@ -2133,7 +2141,46 @@
     ]
   },
   {
-    "name": "Check if a GitHub account is associated with any Marketplace listing",
+    "name": "Check if an account subscribes to a plan",
+    "scope": "apps",
+    "id": "checkAccountSubscribesToPlan",
+    "method": "GET",
+    "url": "/marketplace_listing/accounts/{account_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "account_id parameter",
+        "enum": null,
+        "name": "account_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Check if an account subscribes to a plan",
     "scope": "apps",
     "id": "checkAccountIsAssociatedWithAny",
     "method": "GET",
@@ -2148,11 +2195,31 @@
         "name": "account_id",
         "type": "integer",
         "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
       }
     ]
   },
   {
-    "name": "List all plans for your Marketplace listing",
+    "name": "List plans",
     "scope": "apps",
     "id": "listPlans",
     "method": "GET",
@@ -2181,7 +2248,66 @@
     ]
   },
   {
-    "name": "List all GitHub accounts (user or organization) on a specific plan",
+    "name": "List accounts for a plan",
+    "scope": "apps",
+    "id": "listAccountsForPlan",
+    "method": "GET",
+    "url": "/marketplace_listing/plans/{plan_id}/accounts",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "plan_id parameter",
+        "enum": null,
+        "name": "plan_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.",
+        "enum": ["created", "updated"],
+        "name": "sort",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.",
+        "enum": ["asc", "desc"],
+        "name": "direction",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List accounts for a plan",
     "scope": "apps",
     "id": "listAccountsUserOrOrgOnPlan",
     "method": "GET",
@@ -2240,9 +2366,9 @@
     ]
   },
   {
-    "name": "Check if a GitHub account is associated with any Marketplace listing (stubbed)",
+    "name": "Check if an account subscribes to a plan (stubbed)",
     "scope": "apps",
-    "id": "checkAccountIsAssociatedWithAnyStubbed",
+    "id": "checkAccountSubscribesToPlanStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/accounts/{account_id}",
     "parameters": [
@@ -2259,7 +2385,7 @@
     ]
   },
   {
-    "name": "List all plans for your Marketplace listing (stubbed)",
+    "name": "List plans (stubbed)",
     "scope": "apps",
     "id": "listPlansStubbed",
     "method": "GET",
@@ -2288,7 +2414,66 @@
     ]
   },
   {
-    "name": "List all GitHub accounts (user or organization) on a specific plan (stubbed)",
+    "name": "List accounts for a plan (stubbed)",
+    "scope": "apps",
+    "id": "listAccountsForPlanStubbed",
+    "method": "GET",
+    "url": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "plan_id parameter",
+        "enum": null,
+        "name": "plan_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.",
+        "enum": ["created", "updated"],
+        "name": "sort",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "To return the oldest accounts first, set to `asc`. Can be one of `asc` or `desc`. Ignored without the `sort` parameter.",
+        "enum": ["asc", "desc"],
+        "name": "direction",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List accounts for a plan (stubbed)",
     "scope": "apps",
     "id": "listAccountsUserOrOrgOnPlanStubbed",
     "method": "GET",
@@ -3622,7 +3807,7 @@
     ]
   },
   {
-    "name": "List all issues for a given organization assigned to the authenticated user",
+    "name": "List organization issues assigned to the authenticated user",
     "scope": "issues",
     "id": "listForOrg",
     "method": "GET",
@@ -4625,7 +4810,7 @@
     ]
   },
   {
-    "name": "Creates a new repository in the specified organization",
+    "name": "Create an organization repository",
     "scope": "repos",
     "id": "createInOrg",
     "method": "POST",
@@ -7074,7 +7259,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The issue or pull request id you want to associate with this card. You can use the [List issues for a repository](https://developer.github.com/v3/issues/#list-issues-for-a-repository) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.  \n**Note:** Depending on whether you use the issue id or pull request id, you will need to specify `Issue` or `PullRequest` as the `content_type`.",
+        "description": "The issue or pull request id you want to associate with this card. You can use the [List repository issues](https://developer.github.com/v3/issues/#list-repository-issues) and [List pull requests](https://developer.github.com/v3/pulls/#list-pull-requests) endpoints to find this id.  \n**Note:** Depending on whether you use the issue id or pull request id, you will need to specify `Issue` or `PullRequest` as the `content_type`.",
         "enum": null,
         "name": "content_id",
         "type": "integer",
@@ -7489,7 +7674,7 @@
     ]
   },
   {
-    "name": "Get",
+    "name": "Get a repository",
     "scope": "repos",
     "id": "get",
     "method": "GET",
@@ -7518,7 +7703,7 @@
     ]
   },
   {
-    "name": "Edit",
+    "name": "Update a repository",
     "scope": "repos",
     "id": "update",
     "method": "PATCH",
@@ -16905,7 +17090,7 @@
     ]
   },
   {
-    "name": "List issues for a repository",
+    "name": "List repository issues",
     "scope": "issues",
     "id": "listForRepo",
     "method": "GET",
@@ -17612,7 +17797,7 @@
     ]
   },
   {
-    "name": "Get a single issue",
+    "name": "Get an issue",
     "scope": "issues",
     "id": "get",
     "method": "GET",
@@ -17661,7 +17846,7 @@
     ]
   },
   {
-    "name": "Edit an issue",
+    "name": "Update an issue",
     "scope": "issues",
     "id": "update",
     "method": "PATCH",
@@ -18235,6 +18420,65 @@
   {
     "name": "Replace all labels for an issue",
     "scope": "issues",
+    "id": "replaceAllLabels",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "issue_number parameter",
+        "enum": null,
+        "name": "issue_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.",
+        "enum": null,
+        "name": "labels",
+        "type": "string[]",
+        "required": false
+      },
+      {
+        "alias": "issue_number",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "number",
+        "type": null,
+        "required": null
+      }
+    ]
+  },
+  {
+    "name": "Replace all labels for an issue",
+    "scope": "issues",
     "id": "replaceLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
@@ -18278,6 +18522,55 @@
         "name": "labels",
         "type": "string[]",
         "required": false
+      },
+      {
+        "alias": "issue_number",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "number",
+        "type": null,
+        "required": null
+      }
+    ]
+  },
+  {
+    "name": "Remove all labels from an issue",
+    "scope": "issues",
+    "id": "removeAllLabels",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "issue_number parameter",
+        "enum": null,
+        "name": "issue_number",
+        "type": "integer",
+        "required": true
       },
       {
         "alias": "issue_number",
@@ -23618,7 +23911,7 @@
     ]
   },
   {
-    "name": "Get a Repository Subscription",
+    "name": "Get a repository subscription",
     "scope": "activity",
     "id": "getRepoSubscription",
     "method": "GET",
@@ -23647,7 +23940,7 @@
     ]
   },
   {
-    "name": "Set a Repository Subscription",
+    "name": "Set a repository subscription",
     "scope": "activity",
     "id": "setRepoSubscription",
     "method": "PUT",
@@ -23696,7 +23989,7 @@
     ]
   },
   {
-    "name": "Delete a Repository Subscription",
+    "name": "Delete a repository subscription",
     "scope": "activity",
     "id": "deleteRepoSubscription",
     "method": "DELETE",
@@ -23823,7 +24116,36 @@
     ]
   },
   {
-    "name": "List all topics for a repository",
+    "name": "Get all repository topics",
+    "scope": "repos",
+    "id": "getAllTopics",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/topics",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Get all repository topics",
     "scope": "repos",
     "id": "listTopics",
     "method": "GET",
@@ -23852,7 +24174,46 @@
     ]
   },
   {
-    "name": "Replace all topics for a repository",
+    "name": "Replace all repository topics",
+    "scope": "repos",
+    "id": "replaceAllTopics",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/topics",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.",
+        "enum": null,
+        "name": "names",
+        "type": "string[]",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Replace all repository topics",
     "scope": "repos",
     "id": "replaceTopics",
     "method": "PUT",
@@ -24212,7 +24573,7 @@
     ]
   },
   {
-    "name": "Create repository using a repository template",
+    "name": "Create a repository using a template",
     "scope": "repos",
     "id": "createUsingTemplate",
     "method": "POST",
@@ -24281,7 +24642,7 @@
     ]
   },
   {
-    "name": "List all public repositories",
+    "name": "List public repositories",
     "scope": "repos",
     "id": "listPublic",
     "method": "GET",
@@ -28256,7 +28617,7 @@
     ]
   },
   {
-    "name": "List the authenticated user's followers",
+    "name": "List followers of the authenticated user",
     "scope": "users",
     "id": "listFollowersForAuthenticatedUser",
     "method": "GET",
@@ -28285,7 +28646,36 @@
     ]
   },
   {
-    "name": "List who the authenticated user is following",
+    "name": "List users followed by the authenticated user",
+    "scope": "users",
+    "id": "listFollowedByAuthenticated",
+    "method": "GET",
+    "url": "/user/following",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List users followed by the authenticated user",
     "scope": "users",
     "id": "listFollowingForAuthenticatedUser",
     "method": "GET",
@@ -28583,7 +28973,7 @@
     ]
   },
   {
-    "name": "List all issues across owned and member repositories assigned to the authenticated user",
+    "name": "List user account issues assigned to the authenticated user",
     "scope": "issues",
     "id": "listForAuthenticatedUser",
     "method": "GET",
@@ -28768,9 +29158,9 @@
     ]
   },
   {
-    "name": "Get a user's Marketplace purchases",
+    "name": "List subscriptions for the authenticated user",
     "scope": "apps",
-    "id": "listMarketplacePurchasesForAuthenticatedUser",
+    "id": "listSubscriptionsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/marketplace_purchases",
     "parameters": [
@@ -28797,9 +29187,9 @@
     ]
   },
   {
-    "name": "Get a user's Marketplace purchases (stubbed)",
+    "name": "List subscriptions for the authenticated user (stubbed)",
     "scope": "apps",
-    "id": "listMarketplacePurchasesForAuthenticatedUserStubbed",
+    "id": "listSubscriptionsForAuthenticatedUserStubbed",
     "method": "GET",
     "url": "/user/marketplace_purchases/stubbed",
     "parameters": [
@@ -29154,7 +29544,86 @@
     ]
   },
   {
-    "name": "List your repositories",
+    "name": "List repositories for the authenticated user",
+    "scope": "repos",
+    "id": "listForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/repos",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Can be one of `all`, `public`, or `private`.",
+        "enum": ["all", "public", "private"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Comma-separated list of values. Can include:  \n\\* `owner`: Repositories that are owned by the authenticated user.  \n\\* `collaborator`: Repositories that the user has been added to as a collaborator.  \n\\* `organization_member`: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.",
+        "enum": null,
+        "name": "affiliation",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Can be one of `all`, `owner`, `public`, `private`, `member`. Default: `all`  \n  \nWill cause a `422` error if used in the same request as **visibility** or **affiliation**. Will cause a `422` error if used in the same request as **visibility** or **affiliation**.",
+        "enum": ["all", "owner", "public", "private", "member"],
+        "name": "type",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Can be one of `created`, `updated`, `pushed`, `full_name`.",
+        "enum": ["created", "updated", "pushed", "full_name"],
+        "name": "sort",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Can be one of `asc` or `desc`. Default: `asc` when using `full_name`, otherwise `desc`",
+        "enum": ["asc", "desc"],
+        "name": "direction",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List repositories for the authenticated user",
     "scope": "repos",
     "id": "list",
     "method": "GET",
@@ -29233,7 +29702,7 @@
     ]
   },
   {
-    "name": "Creates a new repository for the authenticated user",
+    "name": "Create a repository for the authenticated user",
     "scope": "repos",
     "id": "createForAuthenticatedUser",
     "method": "POST",
@@ -29283,7 +29752,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-repository-visibility#about-internal-repositories)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
+        "description": "Can be `public` or `private`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `visibility` can also be `internal`. For more information, see \"[Creating an internal repository](https://help.github.com/github/creating-cloning-and-archiving-repositories/creating-an-internal-repository)\" in the GitHub Help documentation.  \nThe `visibility` parameter overrides the `private` parameter when you use both parameters with the `nebula-preview` preview header.",
         "enum": ["public", "private", "visibility", "internal"],
         "name": "visibility",
         "type": "string",
@@ -29479,7 +29948,7 @@
     ]
   },
   {
-    "name": "List repositories being starred by the authenticated user",
+    "name": "List repositories starred by the authenticated user",
     "scope": "activity",
     "id": "listReposStarredByAuthenticatedUser",
     "method": "GET",
@@ -29615,7 +30084,7 @@
     ]
   },
   {
-    "name": "List repositories being watched by the authenticated user",
+    "name": "List repositories watched by the authenticated user",
     "scope": "activity",
     "id": "listWatchedReposForAuthenticatedUser",
     "method": "GET",
@@ -29984,7 +30453,7 @@
     ]
   },
   {
-    "name": "List a user's followers",
+    "name": "List followers of a user",
     "scope": "users",
     "id": "listFollowersForUser",
     "method": "GET",
@@ -30023,7 +30492,7 @@
     ]
   },
   {
-    "name": "List who a user is following",
+    "name": "List users followed by another user",
     "scope": "users",
     "id": "listFollowingForUser",
     "method": "GET",
@@ -30091,7 +30560,56 @@
     ]
   },
   {
-    "name": "List public gists for the specified user",
+    "name": "List gists for a user",
+    "scope": "gists",
+    "id": "listForUser",
+    "method": "GET",
+    "url": "/users/{username}/gists",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "username parameter",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.",
+        "enum": null,
+        "name": "since",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List gists for a user",
     "scope": "gists",
     "id": "listPublicForUser",
     "method": "GET",
@@ -30461,7 +30979,7 @@
     ]
   },
   {
-    "name": "List user repositories",
+    "name": "List repositories for a user",
     "scope": "repos",
     "id": "listForUser",
     "method": "GET",
@@ -30530,7 +31048,7 @@
     ]
   },
   {
-    "name": "List repositories being starred by a user",
+    "name": "List repositories starred by a user",
     "scope": "activity",
     "id": "listReposStarredByUser",
     "method": "GET",
@@ -30589,7 +31107,7 @@
     ]
   },
   {
-    "name": "List repositories being watched by a user",
+    "name": "List repositories watched by a user",
     "scope": "activity",
     "id": "listReposWatchedByUser",
     "method": "GET",
