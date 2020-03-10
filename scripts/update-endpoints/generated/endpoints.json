@@ -2141,9 +2141,9 @@
     ]
   },
   {
-    "name": "Check if an account subscribes to a plan",
+    "name": "Get a subscription plan for an account",
     "scope": "apps",
-    "id": "checkAccountSubscribesToPlan",
+    "id": "getSubscriptionPlanForAccount",
     "method": "GET",
     "url": "/marketplace_listing/accounts/{account_id}",
     "parameters": [
@@ -2156,31 +2156,11 @@
         "name": "account_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ]
   },
   {
-    "name": "Check if an account subscribes to a plan",
+    "name": "Get a subscription plan for an account",
     "scope": "apps",
     "id": "checkAccountIsAssociatedWithAny",
     "method": "GET",
@@ -2195,26 +2175,25 @@
         "name": "account_id",
         "type": "integer",
         "required": true
-      },
+      }
+    ]
+  },
+  {
+    "name": "Get a subscription plan for an account",
+    "scope": "apps",
+    "id": "checkAccountSubscribesToPlan",
+    "method": "GET",
+    "url": "/marketplace_listing/accounts/{account_id}",
+    "parameters": [
       {
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Results per page (max 100)",
+        "description": "account_id parameter",
         "enum": null,
-        "name": "per_page",
+        "name": "account_id",
         "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -2366,7 +2345,26 @@
     ]
   },
   {
-    "name": "Check if an account subscribes to a plan (stubbed)",
+    "name": "Get a subscription plan for an account (stubbed)",
+    "scope": "apps",
+    "id": "getSubscriptionPlanForAccountStubbed",
+    "method": "GET",
+    "url": "/marketplace_listing/stubbed/accounts/{account_id}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "account_id parameter",
+        "enum": null,
+        "name": "account_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Get a subscription plan for an account (stubbed)",
     "scope": "apps",
     "id": "checkAccountSubscribesToPlanStubbed",
     "method": "GET",
@@ -8665,6 +8663,16 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
+        "description": "Filters jobs by their `completed_at` timestamp. Can be one of:  \n\\* `latest`: Returns jobs from the most recent execution of the workflow run.  \n\\* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.",
+        "enum": ["latest", "all"],
+        "name": "filter",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
         "description": "Results per page (max 100)",
         "enum": null,
         "name": "per_page",
@@ -11340,7 +11348,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The URL of the integrator's site that has the full details of the check.",
+        "description": "The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.",
         "enum": null,
         "name": "details_url",
         "type": "string",

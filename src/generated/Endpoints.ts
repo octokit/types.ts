@@ -535,11 +535,13 @@ export interface Endpoints {
   "GET /licenses/:license": [LicensesGetEndpoint, LicensesGetRequestOptions];
   "GET /marketplace_listing/accounts/:account_id": [
 
-      | AppsCheckAccountSubscribesToPlanEndpoint
-      | AppsCheckAccountIsAssociatedWithAnyEndpoint,
+      | AppsGetSubscriptionPlanForAccountEndpoint
+      | AppsCheckAccountIsAssociatedWithAnyEndpoint
+      | AppsCheckAccountSubscribesToPlanEndpoint,
 
-      | AppsCheckAccountSubscribesToPlanRequestOptions
+      | AppsGetSubscriptionPlanForAccountRequestOptions
       | AppsCheckAccountIsAssociatedWithAnyRequestOptions
+      | AppsCheckAccountSubscribesToPlanRequestOptions
   ];
   "GET /marketplace_listing/plans": [
     AppsListPlansEndpoint,
@@ -552,8 +554,12 @@ export interface Endpoints {
       | AppsListAccountsUserOrOrgOnPlanRequestOptions
   ];
   "GET /marketplace_listing/stubbed/accounts/:account_id": [
-    AppsCheckAccountSubscribesToPlanStubbedEndpoint,
-    AppsCheckAccountSubscribesToPlanStubbedRequestOptions
+
+      | AppsGetSubscriptionPlanForAccountStubbedEndpoint
+      | AppsCheckAccountSubscribesToPlanStubbedEndpoint,
+
+      | AppsGetSubscriptionPlanForAccountStubbedRequestOptions
+      | AppsCheckAccountSubscribesToPlanStubbedRequestOptions
   ];
   "GET /marketplace_listing/stubbed/plans": [
     AppsListPlansStubbedEndpoint,
@@ -3571,21 +3577,13 @@ type MarkdownRenderRawRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-type AppsCheckAccountSubscribesToPlanEndpoint = {
+type AppsGetSubscriptionPlanForAccountEndpoint = {
   /**
    * account_id parameter
    */
   account_id: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
 };
-type AppsCheckAccountSubscribesToPlanRequestOptions = {
+type AppsGetSubscriptionPlanForAccountRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
@@ -3596,16 +3594,20 @@ type AppsCheckAccountIsAssociatedWithAnyEndpoint = {
    * account_id parameter
    */
   account_id: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
 };
 type AppsCheckAccountIsAssociatedWithAnyRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type AppsCheckAccountSubscribesToPlanEndpoint = {
+  /**
+   * account_id parameter
+   */
+  account_id: number;
+};
+type AppsCheckAccountSubscribesToPlanRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
@@ -3678,6 +3680,18 @@ type AppsListAccountsUserOrOrgOnPlanEndpoint = {
   page?: number;
 };
 type AppsListAccountsUserOrOrgOnPlanRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type AppsGetSubscriptionPlanForAccountStubbedEndpoint = {
+  /**
+   * account_id parameter
+   */
+  account_id: number;
+};
+type AppsGetSubscriptionPlanForAccountStubbedRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
@@ -6897,6 +6911,12 @@ type ActionsListJobsForWorkflowRunEndpoint = {
    */
   run_id: number;
   /**
+   * Filters jobs by their `completed_at` timestamp. Can be one of:
+   * \* `latest`: Returns jobs from the most recent execution of the workflow run.
+   * \* `all`: Returns all jobs for a workflow run, including from old executions of the workflow run.
+   */
+  filter?: "latest" | "all";
+  /**
    * Results per page (max 100)
    */
   per_page?: number;
@@ -8157,7 +8177,7 @@ type ChecksCreateEndpoint = {
    */
   head_sha: string;
   /**
-   * The URL of the integrator's site that has the full details of the check.
+   * The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.
    */
   details_url?: string;
   /**
