@@ -2179,25 +2179,6 @@
     ]
   },
   {
-    "name": "Get a subscription plan for an account",
-    "scope": "apps",
-    "id": "checkAccountSubscribesToPlan",
-    "method": "GET",
-    "url": "/marketplace_listing/accounts/{account_id}",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "account_id parameter",
-        "enum": null,
-        "name": "account_id",
-        "type": "integer",
-        "required": true
-      }
-    ]
-  },
-  {
     "name": "List plans",
     "scope": "apps",
     "id": "listPlans",
@@ -2366,7 +2347,7 @@
   {
     "name": "Get a subscription plan for an account (stubbed)",
     "scope": "apps",
-    "id": "checkAccountSubscribesToPlanStubbed",
+    "id": "checkAccountIsAssociatedWithAnyStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/accounts/{account_id}",
     "parameters": [
@@ -29195,9 +29176,67 @@
     ]
   },
   {
+    "name": "List subscriptions for the authenticated user",
+    "scope": "apps",
+    "id": "listMarketplacePurchasesForAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/marketplace_purchases",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
     "name": "List subscriptions for the authenticated user (stubbed)",
     "scope": "apps",
     "id": "listSubscriptionsForAuthenticatedUserStubbed",
+    "method": "GET",
+    "url": "/user/marketplace_purchases/stubbed",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List subscriptions for the authenticated user (stubbed)",
+    "scope": "apps",
+    "id": "listMarketplacePurchasesForAuthenticatedUserStubbed",
     "method": "GET",
     "url": "/user/marketplace_purchases/stubbed",
     "parameters": [
