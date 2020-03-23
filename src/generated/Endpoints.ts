@@ -13,24 +13,28 @@ export interface Endpoints {
     AppsDeleteAuthorizationRequestOptions
   ];
   "DELETE /applications/:client_id/grants/:access_token": [
-
+    (
       | AppsRevokeGrantForApplicationEndpoint
-      | OauthAuthorizationsRevokeGrantForApplicationEndpoint,
-
+      | OauthAuthorizationsRevokeGrantForApplicationEndpoint
+    ),
+    (
       | AppsRevokeGrantForApplicationRequestOptions
       | OauthAuthorizationsRevokeGrantForApplicationRequestOptions
+    )
   ];
   "DELETE /applications/:client_id/token": [
     AppsDeleteTokenEndpoint,
     AppsDeleteTokenRequestOptions
   ];
   "DELETE /applications/:client_id/tokens/:access_token": [
-
+    (
       | AppsRevokeAuthorizationForApplicationEndpoint
-      | OauthAuthorizationsRevokeAuthorizationForApplicationEndpoint,
-
+      | OauthAuthorizationsRevokeAuthorizationForApplicationEndpoint
+    ),
+    (
       | AppsRevokeAuthorizationForApplicationRequestOptions
       | OauthAuthorizationsRevokeAuthorizationForApplicationRequestOptions
+    )
   ];
   "DELETE /applications/grants/:grant_id": [
     OauthAuthorizationsDeleteGrantEndpoint,
@@ -339,17 +343,20 @@ export interface Endpoints {
   ];
   "DELETE /teams/:team_id/discussions/:discussion_number": [
     TeamsDeleteDiscussionLegacyEndpoint | TeamsDeleteDiscussionEndpoint,
-
+    (
       | TeamsDeleteDiscussionLegacyRequestOptions
       | TeamsDeleteDiscussionRequestOptions
+    )
   ];
   "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
-
+    (
       | TeamsDeleteDiscussionCommentLegacyEndpoint
-      | TeamsDeleteDiscussionCommentEndpoint,
-
+      | TeamsDeleteDiscussionCommentEndpoint
+    ),
+    (
       | TeamsDeleteDiscussionCommentLegacyRequestOptions
       | TeamsDeleteDiscussionCommentRequestOptions
+    )
   ];
   "DELETE /teams/:team_id/members/:username": [
     TeamsRemoveMemberLegacyEndpoint | TeamsRemoveMemberEndpoint,
@@ -357,9 +364,10 @@ export interface Endpoints {
   ];
   "DELETE /teams/:team_id/memberships/:username": [
     TeamsRemoveMembershipLegacyEndpoint | TeamsRemoveMembershipEndpoint,
-
+    (
       | TeamsRemoveMembershipLegacyRequestOptions
       | TeamsRemoveMembershipRequestOptions
+    )
   ];
   "DELETE /teams/:team_id/projects/:project_id": [
     TeamsRemoveProjectLegacyEndpoint | TeamsRemoveProjectEndpoint,
@@ -426,12 +434,14 @@ export interface Endpoints {
     AppsGetInstallationRequestOptions
   ];
   "GET /applications/:client_id/tokens/:access_token": [
-
+    (
       | AppsCheckAuthorizationEndpoint
-      | OauthAuthorizationsCheckAuthorizationEndpoint,
-
+      | OauthAuthorizationsCheckAuthorizationEndpoint
+    ),
+    (
       | AppsCheckAuthorizationRequestOptions
       | OauthAuthorizationsCheckAuthorizationRequestOptions
+    )
   ];
   "GET /applications/grants": [
     OauthAuthorizationsListGrantsEndpoint,
@@ -451,12 +461,14 @@ export interface Endpoints {
     OauthAuthorizationsGetAuthorizationRequestOptions
   ];
   "GET /codes_of_conduct": [
-
+    (
       | CodesOfConductGetAllCodesOfConductEndpoint
-      | CodesOfConductListConductCodesEndpoint,
-
+      | CodesOfConductListConductCodesEndpoint
+    ),
+    (
       | CodesOfConductGetAllCodesOfConductRequestOptions
       | CodesOfConductListConductCodesRequestOptions
+    )
   ];
   "GET /codes_of_conduct/:key": [
     CodesOfConductGetConductCodeEndpoint,
@@ -534,12 +546,14 @@ export interface Endpoints {
   ];
   "GET /licenses/:license": [LicensesGetEndpoint, LicensesGetRequestOptions];
   "GET /marketplace_listing/accounts/:account_id": [
-
+    (
       | AppsGetSubscriptionPlanForAccountEndpoint
-      | AppsCheckAccountIsAssociatedWithAnyEndpoint,
-
+      | AppsCheckAccountIsAssociatedWithAnyEndpoint
+    ),
+    (
       | AppsGetSubscriptionPlanForAccountRequestOptions
       | AppsCheckAccountIsAssociatedWithAnyRequestOptions
+    )
   ];
   "GET /marketplace_listing/plans": [
     AppsListPlansEndpoint,
@@ -547,29 +561,34 @@ export interface Endpoints {
   ];
   "GET /marketplace_listing/plans/:plan_id/accounts": [
     AppsListAccountsForPlanEndpoint | AppsListAccountsUserOrOrgOnPlanEndpoint,
-
+    (
       | AppsListAccountsForPlanRequestOptions
       | AppsListAccountsUserOrOrgOnPlanRequestOptions
+    )
   ];
   "GET /marketplace_listing/stubbed/accounts/:account_id": [
-
+    (
       | AppsGetSubscriptionPlanForAccountStubbedEndpoint
-      | AppsCheckAccountIsAssociatedWithAnyStubbedEndpoint,
-
+      | AppsCheckAccountIsAssociatedWithAnyStubbedEndpoint
+    ),
+    (
       | AppsGetSubscriptionPlanForAccountStubbedRequestOptions
       | AppsCheckAccountIsAssociatedWithAnyStubbedRequestOptions
+    )
   ];
   "GET /marketplace_listing/stubbed/plans": [
     AppsListPlansStubbedEndpoint,
     AppsListPlansStubbedRequestOptions
   ];
   "GET /marketplace_listing/stubbed/plans/:plan_id/accounts": [
-
+    (
       | AppsListAccountsForPlanStubbedEndpoint
-      | AppsListAccountsUserOrOrgOnPlanStubbedEndpoint,
-
+      | AppsListAccountsUserOrOrgOnPlanStubbedEndpoint
+    ),
+    (
       | AppsListAccountsForPlanStubbedRequestOptions
       | AppsListAccountsUserOrOrgOnPlanStubbedRequestOptions
+    )
   ];
   "GET /meta": [MetaGetEndpoint, MetaGetRequestOptions];
   "GET /networks/:owner/:repo/events": [
@@ -656,12 +675,14 @@ export interface Endpoints {
     MigrationsGetStatusForOrgRequestOptions
   ];
   "GET /orgs/:org/migrations/:migration_id/archive": [
-
+    (
       | MigrationsDownloadArchiveForOrgEndpoint
-      | MigrationsGetArchiveForOrgEndpoint,
-
+      | MigrationsGetArchiveForOrgEndpoint
+    ),
+    (
       | MigrationsDownloadArchiveForOrgRequestOptions
       | MigrationsGetArchiveForOrgRequestOptions
+    )
   ];
   "GET /orgs/:org/migrations/:migration_id/repositories": [
     MigrationsListReposForOrgEndpoint,
@@ -908,32 +929,38 @@ export interface Endpoints {
     ReposGetProtectedBranchRestrictionsRequestOptions
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
-
+    (
       | ReposGetAppsWithAccessToProtectedBranchEndpoint
-      | ReposListAppsWithAccessToProtectedBranchEndpoint,
-
+      | ReposListAppsWithAccessToProtectedBranchEndpoint
+    ),
+    (
       | ReposGetAppsWithAccessToProtectedBranchRequestOptions
       | ReposListAppsWithAccessToProtectedBranchRequestOptions
+    )
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
-
+    (
       | ReposGetTeamsWithAccessToProtectedBranchEndpoint
       | ReposListProtectedBranchTeamRestrictionsEndpoint
-      | ReposListTeamsWithAccessToProtectedBranchEndpoint,
-
+      | ReposListTeamsWithAccessToProtectedBranchEndpoint
+    ),
+    (
       | ReposGetTeamsWithAccessToProtectedBranchRequestOptions
       | ReposListProtectedBranchTeamRestrictionsRequestOptions
       | ReposListTeamsWithAccessToProtectedBranchRequestOptions
+    )
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
-
+    (
       | ReposGetUsersWithAccessToProtectedBranchEndpoint
       | ReposListProtectedBranchUserRestrictionsEndpoint
-      | ReposListUsersWithAccessToProtectedBranchEndpoint,
-
+      | ReposListUsersWithAccessToProtectedBranchEndpoint
+    ),
+    (
       | ReposGetUsersWithAccessToProtectedBranchRequestOptions
       | ReposListProtectedBranchUserRestrictionsRequestOptions
       | ReposListUsersWithAccessToProtectedBranchRequestOptions
+    )
   ];
   "GET /repos/:owner/:repo/check-runs/:check_run_id": [
     ChecksGetEndpoint,
@@ -1109,9 +1136,10 @@ export interface Endpoints {
   ];
   "GET /repos/:owner/:repo/installation": [
     AppsGetRepoInstallationEndpoint | AppsFindRepoInstallationEndpoint,
-
+    (
       | AppsGetRepoInstallationRequestOptions
       | AppsFindRepoInstallationRequestOptions
+    )
   ];
   "GET /repos/:owner/:repo/interaction-limits": [
     InteractionsGetRestrictionsForRepoEndpoint,
@@ -1395,51 +1423,61 @@ export interface Endpoints {
   ];
   "GET /teams/:team_id/discussions": [
     TeamsListDiscussionsLegacyEndpoint | TeamsListDiscussionsEndpoint,
-
+    (
       | TeamsListDiscussionsLegacyRequestOptions
       | TeamsListDiscussionsRequestOptions
+    )
   ];
   "GET /teams/:team_id/discussions/:discussion_number": [
     TeamsGetDiscussionLegacyEndpoint | TeamsGetDiscussionEndpoint,
     TeamsGetDiscussionLegacyRequestOptions | TeamsGetDiscussionRequestOptions
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments": [
-
+    (
       | TeamsListDiscussionCommentsLegacyEndpoint
-      | TeamsListDiscussionCommentsEndpoint,
-
+      | TeamsListDiscussionCommentsEndpoint
+    ),
+    (
       | TeamsListDiscussionCommentsLegacyRequestOptions
       | TeamsListDiscussionCommentsRequestOptions
+    )
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsGetDiscussionCommentLegacyEndpoint | TeamsGetDiscussionCommentEndpoint,
-
+    (
       | TeamsGetDiscussionCommentLegacyRequestOptions
       | TeamsGetDiscussionCommentRequestOptions
+    )
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
-
+    (
       | ReactionsListForTeamDiscussionCommentLegacyEndpoint
-      | ReactionsListForTeamDiscussionCommentEndpoint,
-
+      | ReactionsListForTeamDiscussionCommentEndpoint
+    ),
+    (
       | ReactionsListForTeamDiscussionCommentLegacyRequestOptions
       | ReactionsListForTeamDiscussionCommentRequestOptions
+    )
   ];
   "GET /teams/:team_id/discussions/:discussion_number/reactions": [
-
+    (
       | ReactionsListForTeamDiscussionLegacyEndpoint
-      | ReactionsListForTeamDiscussionEndpoint,
-
+      | ReactionsListForTeamDiscussionEndpoint
+    ),
+    (
       | ReactionsListForTeamDiscussionLegacyRequestOptions
       | ReactionsListForTeamDiscussionRequestOptions
+    )
   ];
   "GET /teams/:team_id/invitations": [
-
+    (
       | TeamsListPendingInvitationsLegacyEndpoint
-      | TeamsListPendingInvitationsEndpoint,
-
+      | TeamsListPendingInvitationsEndpoint
+    ),
+    (
       | TeamsListPendingInvitationsLegacyRequestOptions
       | TeamsListPendingInvitationsRequestOptions
+    )
   ];
   "GET /teams/:team_id/members": [
     TeamsListMembersLegacyEndpoint | TeamsListMembersEndpoint,
@@ -1467,15 +1505,17 @@ export interface Endpoints {
   ];
   "GET /teams/:team_id/repos/:owner/:repo": [
     TeamsCheckManagesRepoLegacyEndpoint | TeamsCheckManagesRepoEndpoint,
-
+    (
       | TeamsCheckManagesRepoLegacyRequestOptions
       | TeamsCheckManagesRepoRequestOptions
+    )
   ];
   "GET /teams/:team_id/team-sync/group-mappings": [
     TeamsListIdPGroupsForLegacyEndpoint | TeamsListIdPGroupsForEndpoint,
-
+    (
       | TeamsListIdPGroupsForLegacyRequestOptions
       | TeamsListIdPGroupsForRequestOptions
+    )
   ];
   "GET /teams/:team_id/teams": [
     TeamsListChildLegacyEndpoint | TeamsListChildEndpoint,
@@ -1503,12 +1543,14 @@ export interface Endpoints {
     UsersListFollowersForAuthenticatedUserRequestOptions
   ];
   "GET /user/following": [
-
+    (
       | UsersListFollowedByAuthenticatedEndpoint
-      | UsersListFollowingForAuthenticatedUserEndpoint,
-
+      | UsersListFollowingForAuthenticatedUserEndpoint
+    ),
+    (
       | UsersListFollowedByAuthenticatedRequestOptions
       | UsersListFollowingForAuthenticatedUserRequestOptions
+    )
   ];
   "GET /user/following/:username": [
     UsersCheckFollowingEndpoint,
@@ -1543,20 +1585,24 @@ export interface Endpoints {
     UsersGetPublicKeyRequestOptions
   ];
   "GET /user/marketplace_purchases": [
-
+    (
       | AppsListSubscriptionsForAuthenticatedUserEndpoint
-      | AppsListMarketplacePurchasesForAuthenticatedUserEndpoint,
-
+      | AppsListMarketplacePurchasesForAuthenticatedUserEndpoint
+    ),
+    (
       | AppsListSubscriptionsForAuthenticatedUserRequestOptions
       | AppsListMarketplacePurchasesForAuthenticatedUserRequestOptions
+    )
   ];
   "GET /user/marketplace_purchases/stubbed": [
-
+    (
       | AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint
-      | AppsListMarketplacePurchasesForAuthenticatedUserStubbedEndpoint,
-
+      | AppsListMarketplacePurchasesForAuthenticatedUserStubbedEndpoint
+    ),
+    (
       | AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions
       | AppsListMarketplacePurchasesForAuthenticatedUserStubbedRequestOptions
+    )
   ];
   "GET /user/memberships/orgs": [
     OrgsListMembershipsEndpoint,
@@ -1657,9 +1703,10 @@ export interface Endpoints {
   ];
   "GET /users/:username/installation": [
     AppsGetUserInstallationEndpoint | AppsFindUserInstallationEndpoint,
-
+    (
       | AppsGetUserInstallationRequestOptions
       | AppsFindUserInstallationRequestOptions
+    )
   ];
   "GET /users/:username/keys": [
     UsersListPublicKeysForUserEndpoint,
@@ -1830,25 +1877,30 @@ export interface Endpoints {
   ];
   "PATCH /teams/:team_id/discussions/:discussion_number": [
     TeamsUpdateDiscussionLegacyEndpoint | TeamsUpdateDiscussionEndpoint,
-
+    (
       | TeamsUpdateDiscussionLegacyRequestOptions
       | TeamsUpdateDiscussionRequestOptions
+    )
   ];
   "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
-
+    (
       | TeamsUpdateDiscussionCommentLegacyEndpoint
-      | TeamsUpdateDiscussionCommentEndpoint,
-
+      | TeamsUpdateDiscussionCommentEndpoint
+    ),
+    (
       | TeamsUpdateDiscussionCommentLegacyRequestOptions
       | TeamsUpdateDiscussionCommentRequestOptions
+    )
   ];
   "PATCH /teams/:team_id/team-sync/group-mappings": [
-
+    (
       | TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint
-      | TeamsCreateOrUpdateIdPGroupConnectionsEndpoint,
-
+      | TeamsCreateOrUpdateIdPGroupConnectionsEndpoint
+    ),
+    (
       | TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions
       | TeamsCreateOrUpdateIdPGroupConnectionsRequestOptions
+    )
   ];
   "PATCH /user": [
     UsersUpdateAuthenticatedEndpoint,
@@ -1879,12 +1931,14 @@ export interface Endpoints {
     AppsCheckTokenRequestOptions
   ];
   "POST /applications/:client_id/tokens/:access_token": [
-
+    (
       | AppsResetAuthorizationEndpoint
-      | OauthAuthorizationsResetAuthorizationEndpoint,
-
+      | OauthAuthorizationsResetAuthorizationEndpoint
+    ),
+    (
       | AppsResetAuthorizationRequestOptions
       | OauthAuthorizationsResetAuthorizationRequestOptions
+    )
   ];
   "POST /authorizations": [
     OauthAuthorizationsCreateAuthorizationEndpoint,
@@ -2168,39 +2222,47 @@ export interface Endpoints {
   ];
   "POST /scim/v2/organizations/:org/Users": [
     ScimProvisionAndInviteUsersEndpoint | ScimProvisionInviteUsersEndpoint,
-
+    (
       | ScimProvisionAndInviteUsersRequestOptions
       | ScimProvisionInviteUsersRequestOptions
+    )
   ];
   "POST /teams/:team_id/discussions": [
     TeamsCreateDiscussionLegacyEndpoint | TeamsCreateDiscussionEndpoint,
-
+    (
       | TeamsCreateDiscussionLegacyRequestOptions
       | TeamsCreateDiscussionRequestOptions
+    )
   ];
   "POST /teams/:team_id/discussions/:discussion_number/comments": [
-
+    (
       | TeamsCreateDiscussionCommentLegacyEndpoint
-      | TeamsCreateDiscussionCommentEndpoint,
-
+      | TeamsCreateDiscussionCommentEndpoint
+    ),
+    (
       | TeamsCreateDiscussionCommentLegacyRequestOptions
       | TeamsCreateDiscussionCommentRequestOptions
+    )
   ];
   "POST /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
-
+    (
       | ReactionsCreateForTeamDiscussionCommentLegacyEndpoint
-      | ReactionsCreateForTeamDiscussionCommentEndpoint,
-
+      | ReactionsCreateForTeamDiscussionCommentEndpoint
+    ),
+    (
       | ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions
       | ReactionsCreateForTeamDiscussionCommentRequestOptions
+    )
   ];
   "POST /teams/:team_id/discussions/:discussion_number/reactions": [
-
+    (
       | ReactionsCreateForTeamDiscussionLegacyEndpoint
-      | ReactionsCreateForTeamDiscussionEndpoint,
-
+      | ReactionsCreateForTeamDiscussionEndpoint
+    ),
+    (
       | ReactionsCreateForTeamDiscussionLegacyRequestOptions
       | ReactionsCreateForTeamDiscussionRequestOptions
+    )
   ];
   "POST /user/emails": [UsersAddEmailsEndpoint, UsersAddEmailsRequestOptions];
   "POST /user/gpg_keys": [
@@ -2232,12 +2294,14 @@ export interface Endpoints {
     OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions
   ];
   "PUT /authorizations/clients/:client_id/:fingerprint": [
-
+    (
       | OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint
-      | OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintEndpoint,
-
+      | OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintEndpoint
+    ),
+    (
       | OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions
       | OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintRequestOptions
+    )
   ];
   "PUT /gists/:gist_id/star": [GistsStarEndpoint, GistsStarRequestOptions];
   "PUT /notifications": [
@@ -2317,14 +2381,16 @@ export interface Endpoints {
     ReposAddCollaboratorRequestOptions
   ];
   "PUT /repos/:owner/:repo/contents/:path": [
-
+    (
       | ReposCreateOrUpdateFileEndpoint
       | ReposCreateFileEndpoint
-      | ReposUpdateFileEndpoint,
-
+      | ReposUpdateFileEndpoint
+    ),
+    (
       | ReposCreateOrUpdateFileRequestOptions
       | ReposCreateFileRequestOptions
       | ReposUpdateFileRequestOptions
+    )
   ];
   "PUT /repos/:owner/:repo/import": [
     MigrationsStartImportEndpoint,
@@ -2379,36 +2445,42 @@ export interface Endpoints {
     ReposEnableVulnerabilityAlertsRequestOptions
   ];
   "PUT /scim/v2/organizations/:org/Users/:scim_user_id": [
-
+    (
       | ScimReplaceProvisionedUserInformationEndpoint
-      | ScimUpdateProvisionedOrgMembershipEndpoint,
-
+      | ScimUpdateProvisionedOrgMembershipEndpoint
+    ),
+    (
       | ScimReplaceProvisionedUserInformationRequestOptions
       | ScimUpdateProvisionedOrgMembershipRequestOptions
+    )
   ];
   "PUT /teams/:team_id/members/:username": [
     TeamsAddMemberLegacyEndpoint | TeamsAddMemberEndpoint,
     TeamsAddMemberLegacyRequestOptions | TeamsAddMemberRequestOptions
   ];
   "PUT /teams/:team_id/memberships/:username": [
-
+    (
       | TeamsAddOrUpdateMembershipLegacyEndpoint
-      | TeamsAddOrUpdateMembershipEndpoint,
-
+      | TeamsAddOrUpdateMembershipEndpoint
+    ),
+    (
       | TeamsAddOrUpdateMembershipLegacyRequestOptions
       | TeamsAddOrUpdateMembershipRequestOptions
+    )
   ];
   "PUT /teams/:team_id/projects/:project_id": [
     TeamsAddOrUpdateProjectLegacyEndpoint | TeamsAddOrUpdateProjectEndpoint,
-
+    (
       | TeamsAddOrUpdateProjectLegacyRequestOptions
       | TeamsAddOrUpdateProjectRequestOptions
+    )
   ];
   "PUT /teams/:team_id/repos/:owner/:repo": [
     TeamsAddOrUpdateRepoLegacyEndpoint | TeamsAddOrUpdateRepoEndpoint,
-
+    (
       | TeamsAddOrUpdateRepoLegacyRequestOptions
       | TeamsAddOrUpdateRepoRequestOptions
+    )
   ];
   "PUT /user/blocks/:username": [UsersBlockEndpoint, UsersBlockRequestOptions];
   "PUT /user/following/:username": [
