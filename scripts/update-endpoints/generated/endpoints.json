@@ -11951,7 +11951,7 @@
     ]
   },
   {
-    "name": "Get a single check run",
+    "name": "Get a check run",
     "scope": "checks",
     "id": "get",
     "method": "GET",
@@ -11990,7 +11990,7 @@
     ]
   },
   {
-    "name": "List annotations for a check run",
+    "name": "List check run annotations",
     "scope": "checks",
     "id": "listAnnotations",
     "method": "GET",
@@ -12088,7 +12088,7 @@
     ]
   },
   {
-    "name": "Set preferences for check suites on a repository",
+    "name": "Update repository preferences for check suites",
     "scope": "checks",
     "id": "setSuitesPreferences",
     "method": "PATCH",
@@ -12147,7 +12147,7 @@
     ]
   },
   {
-    "name": "Get a single check suite",
+    "name": "Get a check suite",
     "scope": "checks",
     "id": "getSuite",
     "method": "GET",
@@ -12275,7 +12275,7 @@
     ]
   },
   {
-    "name": "Rerequest check suite",
+    "name": "Rerequest a check suite",
     "scope": "checks",
     "id": "rerequestSuite",
     "method": "POST",
@@ -13314,7 +13314,7 @@
     ]
   },
   {
-    "name": "List check runs for a specific ref",
+    "name": "List check runs for a Git reference",
     "scope": "checks",
     "id": "listForRef",
     "method": "GET",
@@ -13403,7 +13403,7 @@
     ]
   },
   {
-    "name": "List check suites for a specific ref",
+    "name": "List check suites for a Git reference",
     "scope": "checks",
     "id": "listSuitesForRef",
     "method": "GET",
