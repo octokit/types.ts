@@ -1100,7 +1100,15 @@
     ]
   },
   {
-    "name": "List feeds",
+    "name": "Get feeds",
+    "scope": "activity",
+    "id": "getFeeds",
+    "method": "GET",
+    "url": "/feeds",
+    "parameters": []
+  },
+  {
+    "name": "Get feeds",
     "scope": "activity",
     "id": "listFeeds",
     "method": "GET",
@@ -2568,7 +2576,76 @@
     ]
   },
   {
-    "name": "List your notifications",
+    "name": "List notifications for the authenticated user",
+    "scope": "activity",
+    "id": "listNotificationsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/notifications",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "If `true`, show notifications marked as read.",
+        "enum": null,
+        "name": "all",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "If `true`, only shows notifications in which the user is directly participating or mentioned.",
+        "enum": null,
+        "name": "participating",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "enum": null,
+        "name": "since",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "enum": null,
+        "name": "before",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List notifications for the authenticated user",
     "scope": "activity",
     "id": "listNotifications",
     "method": "GET",
@@ -2637,7 +2714,26 @@
     ]
   },
   {
-    "name": "Mark as read",
+    "name": "Mark notifications as read",
+    "scope": "activity",
+    "id": "markNotificationsAsRead",
+    "method": "PUT",
+    "url": "/notifications",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "enum": null,
+        "name": "last_read_at",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Mark notifications as read",
     "scope": "activity",
     "id": "markAsRead",
     "method": "PUT",
@@ -2647,7 +2743,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
         "enum": null,
         "name": "last_read_at",
         "type": "string",
@@ -2656,7 +2752,26 @@
     ]
   },
   {
-    "name": "View a single thread",
+    "name": "Mark notifications as read",
+    "scope": "activity",
+    "id": "getThreadSubscription",
+    "method": "PUT",
+    "url": "/notifications",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "enum": null,
+        "name": "last_read_at",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Get a thread",
     "scope": "activity",
     "id": "getThread",
     "method": "GET",
@@ -2694,9 +2809,9 @@
     ]
   },
   {
-    "name": "Get a thread subscription",
+    "name": "Get a thread subscription for the authenticated user",
     "scope": "activity",
-    "id": "getThreadSubscription",
+    "id": "getThreadSubscriptionForAuthenticatedUser",
     "method": "GET",
     "url": "/notifications/threads/{thread_id}/subscription",
     "parameters": [
@@ -3132,7 +3247,46 @@
     ]
   },
   {
-    "name": "List public events for an organization",
+    "name": "List public organization events",
+    "scope": "activity",
+    "id": "listPublicOrgEvents",
+    "method": "GET",
+    "url": "/orgs/{org}/events",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "org parameter",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List public organization events",
     "scope": "activity",
     "id": "listPublicEventsForOrg",
     "method": "GET",
@@ -20026,7 +20180,96 @@
     ]
   },
   {
-    "name": "List your notifications in a repository",
+    "name": "List repository notifications for the authenticated user",
+    "scope": "activity",
+    "id": "listRepoNotificationsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/notifications",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "If `true`, show notifications marked as read.",
+        "enum": null,
+        "name": "all",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "If `true`, only shows notifications in which the user is directly participating or mentioned.",
+        "enum": null,
+        "name": "participating",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "enum": null,
+        "name": "since",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "enum": null,
+        "name": "before",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List repository notifications for the authenticated user",
     "scope": "activity",
     "id": "listNotificationsForRepo",
     "method": "GET",
@@ -20115,7 +20358,46 @@
     ]
   },
   {
-    "name": "Mark notifications as read in a repository",
+    "name": "Mark repository notifications as read",
+    "scope": "activity",
+    "id": "markRepoNotificationsAsRead",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/notifications",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "enum": null,
+        "name": "last_read_at",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "Mark repository notifications as read",
     "scope": "activity",
     "id": "markNotificationsAsReadForRepo",
     "method": "PUT",
@@ -20145,7 +20427,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
+        "description": "Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.",
         "enum": null,
         "name": "last_read_at",
         "type": "string",
@@ -23578,7 +23860,7 @@
     ]
   },
   {
-    "name": "List Stargazers",
+    "name": "List stargazers",
     "scope": "activity",
     "id": "listStargazersForRepo",
     "method": "GET",
@@ -30044,7 +30326,36 @@
     ]
   },
   {
-    "name": "Check if you are starring a repository",
+    "name": "Check if a repository is starred by the authenticated user",
+    "scope": "activity",
+    "id": "checkRepoIsStarredByAuthenticatedUser",
+    "method": "GET",
+    "url": "/user/starred/{owner}/{repo}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Check if a repository is starred by the authenticated user",
     "scope": "activity",
     "id": "checkStarringRepo",
     "method": "GET",
@@ -30073,7 +30384,36 @@
     ]
   },
   {
-    "name": "Star a repository",
+    "name": "Star a repository for the authenticated user",
+    "scope": "activity",
+    "id": "starRepoForAuthenticatedUser",
+    "method": "PUT",
+    "url": "/user/starred/{owner}/{repo}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Star a repository for the authenticated user",
     "scope": "activity",
     "id": "starRepo",
     "method": "PUT",
@@ -30102,7 +30442,36 @@
     ]
   },
   {
-    "name": "Unstar a repository",
+    "name": "Unstar a repository for the authenticated user",
+    "scope": "activity",
+    "id": "unstarRepoForAuthenticatedUser",
+    "method": "DELETE",
+    "url": "/user/starred/{owner}/{repo}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Unstar a repository for the authenticated user",
     "scope": "activity",
     "id": "unstarRepo",
     "method": "DELETE",
@@ -30373,7 +30742,46 @@
     ]
   },
   {
-    "name": "List events performed by a user",
+    "name": "List events for the authenticated user",
+    "scope": "activity",
+    "id": "listEventsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/users/{username}/events",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "username parameter",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List events for the authenticated user",
     "scope": "activity",
     "id": "listEventsForUser",
     "method": "GET",
@@ -30412,7 +30820,56 @@
     ]
   },
   {
-    "name": "List events for an organization",
+    "name": "List organization events for the authenticated user",
+    "scope": "activity",
+    "id": "listOrgEventsForAuthenticatedUser",
+    "method": "GET",
+    "url": "/users/{username}/events/orgs/{org}",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "username parameter",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "org parameter",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "List organization events for the authenticated user",
     "scope": "activity",
     "id": "listEventsForOrg",
     "method": "GET",
@@ -30461,7 +30918,7 @@
     ]
   },
   {
-    "name": "List public events performed by a user",
+    "name": "List public events for a user",
     "scope": "activity",
     "id": "listPublicEventsForUser",
     "method": "GET",
@@ -30948,7 +31405,7 @@
     ]
   },
   {
-    "name": "List events that a user has received",
+    "name": "List events received by the authenticated user",
     "scope": "activity",
     "id": "listReceivedEventsForUser",
     "method": "GET",
@@ -30987,7 +31444,7 @@
     ]
   },
   {
-    "name": "List public events that a user has received",
+    "name": "List public events received by a user",
     "scope": "activity",
     "id": "listReceivedPublicEventsForUser",
     "method": "GET",
