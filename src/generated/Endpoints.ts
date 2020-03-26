@@ -414,8 +414,11 @@ export interface Endpoints {
     ReposDeclineInvitationRequestOptions
   ];
   "DELETE /user/starred/:owner/:repo": [
-    ActivityUnstarRepoEndpoint,
-    ActivityUnstarRepoRequestOptions
+    ActivityUnstarRepoForAuthenticatedUserEndpoint | ActivityUnstarRepoEndpoint,
+    (
+      | ActivityUnstarRepoForAuthenticatedUserRequestOptions
+      | ActivityUnstarRepoRequestOptions
+    )
   ];
   "DELETE /user/subscriptions/:owner/:repo": [
     ActivityStopWatchingRepoLegacyEndpoint,
@@ -479,7 +482,10 @@ export interface Endpoints {
     ActivityListPublicEventsEndpoint,
     ActivityListPublicEventsRequestOptions
   ];
-  "GET /feeds": [ActivityListFeedsEndpoint, ActivityListFeedsRequestOptions];
+  "GET /feeds": [
+    ActivityGetFeedsEndpoint | ActivityListFeedsEndpoint,
+    ActivityGetFeedsRequestOptions | ActivityListFeedsRequestOptions
+  ];
   "GET /gists": [GistsListEndpoint, GistsListRequestOptions];
   "GET /gists/:gist_id": [GistsGetEndpoint, GistsGetRequestOptions];
   "GET /gists/:gist_id/:sha": [
@@ -596,16 +602,22 @@ export interface Endpoints {
     ActivityListPublicEventsForRepoNetworkRequestOptions
   ];
   "GET /notifications": [
-    ActivityListNotificationsEndpoint,
-    ActivityListNotificationsRequestOptions
+    (
+      | ActivityListNotificationsForAuthenticatedUserEndpoint
+      | ActivityListNotificationsEndpoint
+    ),
+    (
+      | ActivityListNotificationsForAuthenticatedUserRequestOptions
+      | ActivityListNotificationsRequestOptions
+    )
   ];
   "GET /notifications/threads/:thread_id": [
     ActivityGetThreadEndpoint,
     ActivityGetThreadRequestOptions
   ];
   "GET /notifications/threads/:thread_id/subscription": [
-    ActivityGetThreadSubscriptionEndpoint,
-    ActivityGetThreadSubscriptionRequestOptions
+    ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint,
+    ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions
   ];
   "GET /organizations": [OrgsListEndpoint, OrgsListRequestOptions];
   "GET /orgs/:org": [OrgsGetEndpoint, OrgsGetRequestOptions];
@@ -622,8 +634,14 @@ export interface Endpoints {
     OrgsListCredentialAuthorizationsRequestOptions
   ];
   "GET /orgs/:org/events": [
-    ActivityListPublicEventsForOrgEndpoint,
-    ActivityListPublicEventsForOrgRequestOptions
+    (
+      | ActivityListPublicOrgEventsEndpoint
+      | ActivityListPublicEventsForOrgEndpoint
+    ),
+    (
+      | ActivityListPublicOrgEventsRequestOptions
+      | ActivityListPublicEventsForOrgRequestOptions
+    )
   ];
   "GET /orgs/:org/hooks": [OrgsListHooksEndpoint, OrgsListHooksRequestOptions];
   "GET /orgs/:org/hooks/:hook_id": [
@@ -1234,8 +1252,14 @@ export interface Endpoints {
     IssuesListLabelsForMilestoneRequestOptions
   ];
   "GET /repos/:owner/:repo/notifications": [
-    ActivityListNotificationsForRepoEndpoint,
-    ActivityListNotificationsForRepoRequestOptions
+    (
+      | ActivityListRepoNotificationsForAuthenticatedUserEndpoint
+      | ActivityListNotificationsForRepoEndpoint
+    ),
+    (
+      | ActivityListRepoNotificationsForAuthenticatedUserRequestOptions
+      | ActivityListNotificationsForRepoRequestOptions
+    )
   ];
   "GET /repos/:owner/:repo/pages": [
     ReposGetPagesEndpoint,
@@ -1645,8 +1669,14 @@ export interface Endpoints {
     ActivityListReposStarredByAuthenticatedUserRequestOptions
   ];
   "GET /user/starred/:owner/:repo": [
-    ActivityCheckStarringRepoEndpoint,
-    ActivityCheckStarringRepoRequestOptions
+    (
+      | ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint
+      | ActivityCheckStarringRepoEndpoint
+    ),
+    (
+      | ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions
+      | ActivityCheckStarringRepoRequestOptions
+    )
   ];
   "GET /user/subscriptions": [
     ActivityListWatchedReposForAuthenticatedUserEndpoint,
@@ -1666,12 +1696,24 @@ export interface Endpoints {
     UsersGetByUsernameRequestOptions
   ];
   "GET /users/:username/events": [
-    ActivityListEventsForUserEndpoint,
-    ActivityListEventsForUserRequestOptions
+    (
+      | ActivityListEventsForAuthenticatedUserEndpoint
+      | ActivityListEventsForUserEndpoint
+    ),
+    (
+      | ActivityListEventsForAuthenticatedUserRequestOptions
+      | ActivityListEventsForUserRequestOptions
+    )
   ];
   "GET /users/:username/events/orgs/:org": [
-    ActivityListEventsForOrgEndpoint,
-    ActivityListEventsForOrgRequestOptions
+    (
+      | ActivityListOrgEventsForAuthenticatedUserEndpoint
+      | ActivityListEventsForOrgEndpoint
+    ),
+    (
+      | ActivityListOrgEventsForAuthenticatedUserRequestOptions
+      | ActivityListEventsForOrgRequestOptions
+    )
   ];
   "GET /users/:username/events/public": [
     ActivityListPublicEventsForUserEndpoint,
@@ -2305,8 +2347,16 @@ export interface Endpoints {
   ];
   "PUT /gists/:gist_id/star": [GistsStarEndpoint, GistsStarRequestOptions];
   "PUT /notifications": [
-    ActivityMarkAsReadEndpoint,
-    ActivityMarkAsReadRequestOptions
+    (
+      | ActivityMarkNotificationsAsReadEndpoint
+      | ActivityMarkAsReadEndpoint
+      | ActivityGetThreadSubscriptionEndpoint
+    ),
+    (
+      | ActivityMarkNotificationsAsReadRequestOptions
+      | ActivityMarkAsReadRequestOptions
+      | ActivityGetThreadSubscriptionRequestOptions
+    )
   ];
   "PUT /notifications/threads/:thread_id/subscription": [
     ActivitySetThreadSubscriptionEndpoint,
@@ -2409,8 +2459,14 @@ export interface Endpoints {
     IssuesLockRequestOptions
   ];
   "PUT /repos/:owner/:repo/notifications": [
-    ActivityMarkNotificationsAsReadForRepoEndpoint,
-    ActivityMarkNotificationsAsReadForRepoRequestOptions
+    (
+      | ActivityMarkRepoNotificationsAsReadEndpoint
+      | ActivityMarkNotificationsAsReadForRepoEndpoint
+    ),
+    (
+      | ActivityMarkRepoNotificationsAsReadRequestOptions
+      | ActivityMarkNotificationsAsReadForRepoRequestOptions
+    )
   ];
   "PUT /repos/:owner/:repo/pages": [
     ReposUpdateInformationAboutPagesSiteEndpoint,
@@ -2492,8 +2548,11 @@ export interface Endpoints {
     AppsAddRepoToInstallationRequestOptions
   ];
   "PUT /user/starred/:owner/:repo": [
-    ActivityStarRepoEndpoint,
-    ActivityStarRepoRequestOptions
+    ActivityStarRepoForAuthenticatedUserEndpoint | ActivityStarRepoEndpoint,
+    (
+      | ActivityStarRepoForAuthenticatedUserRequestOptions
+      | ActivityStarRepoRequestOptions
+    )
   ];
   "PUT /user/subscriptions/:owner/:repo": [
     ActivityWatchRepoLegacyEndpoint,
@@ -3092,6 +3151,13 @@ type ActivityListPublicEventsEndpoint = {
   page?: number;
 };
 type ActivityListPublicEventsRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ActivityGetFeedsEndpoint = {};
+type ActivityGetFeedsRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
@@ -3878,6 +3944,38 @@ type ActivityListPublicEventsForRepoNetworkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListNotificationsForAuthenticatedUserEndpoint = {
+  /**
+   * If `true`, show notifications marked as read.
+   */
+  all?: boolean;
+  /**
+   * If `true`, only shows notifications in which the user is directly participating or mentioned.
+   */
+  participating?: boolean;
+  /**
+   * Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  since?: string;
+  /**
+   * Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  before?: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+type ActivityListNotificationsForAuthenticatedUserRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityListNotificationsEndpoint = {
   /**
    * If `true`, show notifications marked as read.
@@ -3910,13 +4008,37 @@ type ActivityListNotificationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityMarkNotificationsAsReadEndpoint = {
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+};
+type ActivityMarkNotificationsAsReadRequestOptions = {
+  method: "PUT";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityMarkAsReadEndpoint = {
   /**
-   * Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
    */
   last_read_at?: string;
 };
 type ActivityMarkAsReadRequestOptions = {
+  method: "PUT";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ActivityGetThreadSubscriptionEndpoint = {
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+};
+type ActivityGetThreadSubscriptionRequestOptions = {
   method: "PUT";
   url: Url;
   headers: RequestHeaders;
@@ -3946,13 +4068,13 @@ type ActivityMarkThreadAsReadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-type ActivityGetThreadSubscriptionEndpoint = {
+type ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint = {
   /**
    * thread_id parameter
    */
   thread_id: number;
 };
-type ActivityGetThreadSubscriptionRequestOptions = {
+type ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
@@ -4191,6 +4313,26 @@ type OrgsRemoveCredentialAuthorizationEndpoint = {
 };
 type OrgsRemoveCredentialAuthorizationRequestOptions = {
   method: "DELETE";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ActivityListPublicOrgEventsEndpoint = {
+  /**
+   * org parameter
+   */
+  org: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+type ActivityListPublicOrgEventsRequestOptions = {
+  method: "GET";
   url: Url;
   headers: RequestHeaders;
   request: RequestRequestOptions;
@@ -11966,6 +12108,46 @@ type IssuesListLabelsForMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListRepoNotificationsForAuthenticatedUserEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+  /**
+   * If `true`, show notifications marked as read.
+   */
+  all?: boolean;
+  /**
+   * If `true`, only shows notifications in which the user is directly participating or mentioned.
+   */
+  participating?: boolean;
+  /**
+   * Only show notifications updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  since?: string;
+  /**
+   * Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  before?: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityListNotificationsForRepoEndpoint = {
   /**
    * owner parameter
@@ -12006,6 +12188,26 @@ type ActivityListNotificationsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityMarkRepoNotificationsAsReadEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+  /**
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   */
+  last_read_at?: string;
+};
+type ActivityMarkRepoNotificationsAsReadRequestOptions = {
+  method: "PUT";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityMarkNotificationsAsReadForRepoEndpoint = {
   /**
    * owner parameter
@@ -12016,7 +12218,7 @@ type ActivityMarkNotificationsAsReadForRepoEndpoint = {
    */
   repo: string;
   /**
-   * Describes the last point that notifications were checked. Anything updated since this time will not be updated. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+   * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
    */
   last_read_at?: string;
 };
@@ -16920,6 +17122,22 @@ type ActivityListReposStarredByAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+};
+type ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityCheckStarringRepoEndpoint = {
   /**
    * owner parameter
@@ -16936,6 +17154,22 @@ type ActivityCheckStarringRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityStarRepoForAuthenticatedUserEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+};
+type ActivityStarRepoForAuthenticatedUserRequestOptions = {
+  method: "PUT";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityStarRepoEndpoint = {
   /**
    * owner parameter
@@ -16948,6 +17182,22 @@ type ActivityStarRepoEndpoint = {
 };
 type ActivityStarRepoRequestOptions = {
   method: "PUT";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ActivityUnstarRepoForAuthenticatedUserEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+};
+type ActivityUnstarRepoForAuthenticatedUserRequestOptions = {
+  method: "DELETE";
   url: Url;
   headers: RequestHeaders;
   request: RequestRequestOptions;
@@ -17100,6 +17350,26 @@ type UsersGetByUsernameRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListEventsForAuthenticatedUserEndpoint = {
+  /**
+   * username parameter
+   */
+  username: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+type ActivityListEventsForAuthenticatedUserRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 type ActivityListEventsForUserEndpoint = {
   /**
    * username parameter
@@ -17115,6 +17385,30 @@ type ActivityListEventsForUserEndpoint = {
   page?: number;
 };
 type ActivityListEventsForUserRequestOptions = {
+  method: "GET";
+  url: Url;
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type ActivityListOrgEventsForAuthenticatedUserEndpoint = {
+  /**
+   * username parameter
+   */
+  username: string;
+  /**
+   * org parameter
+   */
+  org: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+type ActivityListOrgEventsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: Url;
   headers: RequestHeaders;
