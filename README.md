@@ -11,7 +11,10 @@
 Get response types from endpoint methods
 
 ```ts
-import { GetResponseType, GetResponseDataType } from "@octokit/types";
+import {
+  GetResponseTypeFromEndpointMethod,
+  GetResponseDataTypeFromEndpointMethod,
+} from "@octokit/types";
 import { Octokit } from "@octokit/rest";
 
 const octokit = new Octokit();
