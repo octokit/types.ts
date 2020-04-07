@@ -8,6 +8,21 @@
 
 ## Usage
 
+Get response types from endpoint methods
+
+```ts
+import { GetResponseType, GetResponseDataType } from "@octokit/types";
+import { Octokit } from "@octokit/rest";
+
+const octokit = new Octokit();
+type CreateLabelResponseType = GetResponseType<
+  typeof octokit.issues.createLabel
+>;
+type CreateLabelResponseDataType = GetResponseDataType<
+  typeof octokit.issues.createLabel
+>;
+```
+
 See https://octokit.github.io/types.ts for all exported types
 
 ## Contributing
