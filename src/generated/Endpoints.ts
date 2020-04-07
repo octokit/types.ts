@@ -6159,10 +6159,12 @@ type TeamsAddOrUpdateRepoInOrgEndpoint = {
    * \* `pull` - team members can pull, but not push to or administer this repository.
    * \* `push` - team members can pull and push, but not administer this repository.
    * \* `admin` - team members can pull, push and administer this repository.
+   * \* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.
+   * \* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.
    *
    * If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
    */
-  permission?: "pull" | "push" | "admin";
+  permission?: "pull" | "push" | "admin" | "maintain" | "triage";
 };
 type TeamsAddOrUpdateRepoInOrgRequestOptions = {
   method: "PUT";
@@ -10772,9 +10774,9 @@ type ReposUpdateInvitationEndpoint = {
    */
   invitation_id: number;
   /**
-   * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, and `admin`.
+   * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
    */
-  permissions?: "read" | "write" | "admin";
+  permissions?: "read" | "write" | "maintain" | "triage" | "admin";
 };
 type ReposUpdateInvitationRequestOptions = {
   method: "PATCH";
