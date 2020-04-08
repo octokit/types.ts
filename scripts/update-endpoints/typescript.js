@@ -23,10 +23,10 @@ const ENDPOINTS_TEMPLATE_PATH = resolve(
   "endpoints.ts.template"
 );
 
-Handlebars.registerHelper("union", function(endpoints, key) {
-  return endpoints.map(endpoint => endpoint[key]).join(" | ");
+Handlebars.registerHelper("union", function (endpoints, key) {
+  return endpoints.map((endpoint) => endpoint[key]).join(" | ");
 });
-Handlebars.registerHelper("name", function(parameter) {
+Handlebars.registerHelper("name", function (parameter) {
   let name = parameter.key;
 
   if (/[.\[]/.test(name)) {
@@ -40,7 +40,7 @@ Handlebars.registerHelper("name", function(parameter) {
   return `${name}?`;
 });
 
-Handlebars.registerHelper("type", function(parameter) {
+Handlebars.registerHelper("type", function (parameter) {
   const type = typeMap[parameter.type] || parameter.type;
 
   if (parameter.allowNull) {
@@ -57,7 +57,7 @@ const endpointsByRoute = {};
 
 const typeMap = {
   integer: "number",
-  "integer[]": "number[]"
+  "integer[]": "number[]",
 };
 
 for (const endpoint of ENDPOINTS) {
@@ -74,7 +74,7 @@ for (const endpoint of ENDPOINTS) {
     optionsTypeName:
       pascalCase(`${endpoint.scope} ${endpoint.id}`) + "Endpoint",
     requestOptionsTypeName:
-      pascalCase(`${endpoint.scope} ${endpoint.id}`) + "RequestOptions"
+      pascalCase(`${endpoint.scope} ${endpoint.id}`) + "RequestOptions",
   });
 }
 
@@ -95,7 +95,7 @@ for (const endpoint of ENDPOINTS) {
       parameters: parameters
         .map(parameterize)
         // handle "object" & "object[]" types
-        .map(parameter => {
+        .map((parameter) => {
           if (parameter.deprecated) {
             return;
           }
@@ -130,27 +130,24 @@ for (const endpoint of ENDPOINTS) {
           );
           set(childParams, `${childParamsName}.${childKey}`, parameter);
         })
-        .filter(Boolean)
+        .filter(Boolean),
     },
     out: {
       name: requestOptionsTypeName,
-      method
-    }
+      method,
+    },
   });
 }
 
 const result = template({
   endpointsByRoute: sortKeys(endpointsByRoute, { deep: true }),
   options,
-  childParams: Object.keys(childParams).map(key => {
-    if (key === "GistsCreateParamsFiles") {
-      debugger;
-    }
+  childParams: Object.keys(childParams).map((key) => {
     return {
       paramTypeName: key,
-      params: Object.values(childParams[key])
+      params: Object.values(childParams[key]),
     };
-  })
+  }),
 });
 
 writeFileSync(
@@ -174,6 +171,6 @@ function parameterize(parameter) {
     alias: parameter.alias,
     deprecated: parameter.deprecated,
     allowNull: parameter.allowNull,
-    jsdoc: stringToJsdocComment(parameter.description)
+    jsdoc: stringToJsdocComment(parameter.description),
   };
 }
