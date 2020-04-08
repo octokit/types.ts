@@ -18,7 +18,7 @@ type {{in.name}} = {
 }
 type {{out.name}} = {
   method: "{{out.method}}",
-  url: Url,
+  url: "{{out.url}}",
   headers: RequestHeaders,
   request: RequestRequestOptions
 }

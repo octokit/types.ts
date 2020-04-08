@@ -83,6 +83,7 @@ const childParams = {};
 
 for (const endpoint of ENDPOINTS) {
   const { method, parameters } = endpoint;
+  const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
 
   const optionsTypeName =
     pascalCase(`${endpoint.scope} ${endpoint.id}`) + "Endpoint";
@@ -135,6 +136,7 @@ for (const endpoint of ENDPOINTS) {
     out: {
       name: requestOptionsTypeName,
       method,
+      url,
     },
   });
 }
