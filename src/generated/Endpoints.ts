@@ -8,2273 +8,2967 @@ type AnyResponse = OctokitResponse<any>;
 export interface Endpoints {
   "DELETE /app/installations/:installation_id": [
     AppsDeleteInstallationEndpoint,
-    AppsDeleteInstallationRequestOptions
+    AppsDeleteInstallationRequestOptions,
+    any
   ];
   "DELETE /applications/:client_id/grant": [
     AppsDeleteAuthorizationEndpoint,
-    AppsDeleteAuthorizationRequestOptions
+    AppsDeleteAuthorizationRequestOptions,
+    any
   ];
   "DELETE /applications/:client_id/grants/:access_token": [
     AppsRevokeGrantForApplicationEndpoint,
-    AppsRevokeGrantForApplicationRequestOptions
+    AppsRevokeGrantForApplicationRequestOptions,
+    any
   ];
   "DELETE /applications/:client_id/token": [
     AppsDeleteTokenEndpoint,
-    AppsDeleteTokenRequestOptions
+    AppsDeleteTokenRequestOptions,
+    any
   ];
   "DELETE /applications/:client_id/tokens/:access_token": [
     AppsRevokeAuthorizationForApplicationEndpoint,
-    AppsRevokeAuthorizationForApplicationRequestOptions
+    AppsRevokeAuthorizationForApplicationRequestOptions,
+    any
   ];
   "DELETE /applications/grants/:grant_id": [
     OauthAuthorizationsDeleteGrantEndpoint,
-    OauthAuthorizationsDeleteGrantRequestOptions
+    OauthAuthorizationsDeleteGrantRequestOptions,
+    any
   ];
   "DELETE /authorizations/:authorization_id": [
     OauthAuthorizationsDeleteAuthorizationEndpoint,
-    OauthAuthorizationsDeleteAuthorizationRequestOptions
+    OauthAuthorizationsDeleteAuthorizationRequestOptions,
+    any
   ];
-  "DELETE /gists/:gist_id": [GistsDeleteEndpoint, GistsDeleteRequestOptions];
+  "DELETE /gists/:gist_id": [
+    GistsDeleteEndpoint,
+    GistsDeleteRequestOptions,
+    any
+  ];
   "DELETE /gists/:gist_id/comments/:comment_id": [
     GistsDeleteCommentEndpoint,
-    GistsDeleteCommentRequestOptions
+    GistsDeleteCommentRequestOptions,
+    any
   ];
   "DELETE /gists/:gist_id/star": [
     GistsUnstarEndpoint,
-    GistsUnstarRequestOptions
+    GistsUnstarRequestOptions,
+    any
   ];
   "DELETE /installation/token": [
     AppsRevokeInstallationTokenEndpoint,
-    AppsRevokeInstallationTokenRequestOptions
+    AppsRevokeInstallationTokenRequestOptions,
+    any
   ];
   "DELETE /notifications/threads/:thread_id/subscription": [
     ActivityDeleteThreadSubscriptionEndpoint,
-    ActivityDeleteThreadSubscriptionRequestOptions
+    ActivityDeleteThreadSubscriptionRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/blocks/:username": [
     OrgsUnblockUserEndpoint,
-    OrgsUnblockUserRequestOptions
+    OrgsUnblockUserRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/credential-authorizations/:credential_id": [
     OrgsRemoveCredentialAuthorizationEndpoint,
-    OrgsRemoveCredentialAuthorizationRequestOptions
+    OrgsRemoveCredentialAuthorizationRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/hooks/:hook_id": [
     OrgsDeleteHookEndpoint,
-    OrgsDeleteHookRequestOptions
+    OrgsDeleteHookRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/interaction-limits": [
     InteractionsRemoveRestrictionsForOrgEndpoint,
-    InteractionsRemoveRestrictionsForOrgRequestOptions
+    InteractionsRemoveRestrictionsForOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/members/:username": [
     OrgsRemoveMemberEndpoint,
-    OrgsRemoveMemberRequestOptions
+    OrgsRemoveMemberRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/memberships/:username": [
     OrgsRemoveMembershipEndpoint,
-    OrgsRemoveMembershipRequestOptions
+    OrgsRemoveMembershipRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/migrations/:migration_id/archive": [
     MigrationsDeleteArchiveForOrgEndpoint,
-    MigrationsDeleteArchiveForOrgRequestOptions
+    MigrationsDeleteArchiveForOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock": [
     MigrationsUnlockRepoForOrgEndpoint,
-    MigrationsUnlockRepoForOrgRequestOptions
+    MigrationsUnlockRepoForOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/outside_collaborators/:username": [
     OrgsRemoveOutsideCollaboratorEndpoint,
-    OrgsRemoveOutsideCollaboratorRequestOptions
+    OrgsRemoveOutsideCollaboratorRequestOptions,
+    OrgsRemoveOutsideCollaboratorResponseData
   ];
   "DELETE /orgs/:org/public_members/:username": [
     OrgsConcealMembershipEndpoint,
-    OrgsConcealMembershipRequestOptions
+    OrgsConcealMembershipRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug": [
     TeamsDeleteInOrgEndpoint,
-    TeamsDeleteInOrgRequestOptions
+    TeamsDeleteInOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsDeleteDiscussionInOrgEndpoint,
-    TeamsDeleteDiscussionInOrgRequestOptions
+    TeamsDeleteDiscussionInOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsDeleteDiscussionCommentInOrgEndpoint,
-    TeamsDeleteDiscussionCommentInOrgRequestOptions
+    TeamsDeleteDiscussionCommentInOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id": [
     ReactionsDeleteForTeamDiscussionCommentEndpoint,
-    ReactionsDeleteForTeamDiscussionCommentRequestOptions
+    ReactionsDeleteForTeamDiscussionCommentRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id": [
     ReactionsDeleteForTeamDiscussionEndpoint,
-    ReactionsDeleteForTeamDiscussionRequestOptions
+    ReactionsDeleteForTeamDiscussionRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsRemoveMembershipInOrgEndpoint,
-    TeamsRemoveMembershipInOrgRequestOptions
+    TeamsRemoveMembershipInOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsRemoveProjectInOrgEndpoint,
-    TeamsRemoveProjectInOrgRequestOptions
+    TeamsRemoveProjectInOrgRequestOptions,
+    any
   ];
   "DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsRemoveRepoInOrgEndpoint,
-    TeamsRemoveRepoInOrgRequestOptions
+    TeamsRemoveRepoInOrgRequestOptions,
+    any
   ];
   "DELETE /projects/:project_id": [
     ProjectsDeleteEndpoint,
-    ProjectsDeleteRequestOptions
+    ProjectsDeleteRequestOptions,
+    any
   ];
   "DELETE /projects/:project_id/collaborators/:username": [
     ProjectsRemoveCollaboratorEndpoint,
-    ProjectsRemoveCollaboratorRequestOptions
+    ProjectsRemoveCollaboratorRequestOptions,
+    any
   ];
   "DELETE /projects/columns/:column_id": [
     ProjectsDeleteColumnEndpoint,
-    ProjectsDeleteColumnRequestOptions
+    ProjectsDeleteColumnRequestOptions,
+    any
   ];
   "DELETE /projects/columns/cards/:card_id": [
     ProjectsDeleteCardEndpoint,
-    ProjectsDeleteCardRequestOptions
+    ProjectsDeleteCardRequestOptions,
+    any
   ];
   "DELETE /reactions/:reaction_id": [
     ReactionsDeleteLegacyEndpoint,
-    ReactionsDeleteLegacyRequestOptions
+    ReactionsDeleteLegacyRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo": [
     ReposDeleteEndpoint,
-    ReposDeleteRequestOptions
+    ReposDeleteRequestOptions,
+    ReposDeleteResponseData
   ];
   "DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id": [
     ActionsDeleteArtifactEndpoint,
-    ActionsDeleteArtifactRequestOptions
+    ActionsDeleteArtifactRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/actions/runners/:runner_id": [
     ActionsRemoveSelfHostedRunnerEndpoint,
-    ActionsRemoveSelfHostedRunnerRequestOptions
+    ActionsRemoveSelfHostedRunnerRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/actions/secrets/:name": [
     ActionsDeleteSecretFromRepoEndpoint,
-    ActionsDeleteSecretFromRepoRequestOptions
+    ActionsDeleteSecretFromRepoRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/automated-security-fixes": [
     ReposDisableAutomatedSecurityFixesEndpoint,
-    ReposDisableAutomatedSecurityFixesRequestOptions
+    ReposDisableAutomatedSecurityFixesRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection": [
     ReposRemoveBranchProtectionEndpoint,
-    ReposRemoveBranchProtectionRequestOptions
+    ReposRemoveBranchProtectionRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposRemoveProtectedBranchAdminEnforcementEndpoint,
-    ReposRemoveProtectedBranchAdminEnforcementRequestOptions
+    ReposRemoveProtectedBranchAdminEnforcementRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint,
-    ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions
+    ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposRemoveProtectedBranchRequiredSignaturesEndpoint,
-    ReposRemoveProtectedBranchRequiredSignaturesRequestOptions
+    ReposRemoveProtectedBranchRequiredSignaturesRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposRemoveProtectedBranchRequiredStatusChecksEndpoint,
-    ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions
+    ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint,
-    ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions
+    ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions": [
     ReposRemoveProtectedBranchRestrictionsEndpoint,
-    ReposRemoveProtectedBranchRestrictionsRequestOptions
+    ReposRemoveProtectedBranchRestrictionsRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposRemoveProtectedBranchAppRestrictionsEndpoint,
-    ReposRemoveProtectedBranchAppRestrictionsRequestOptions
+    ReposRemoveProtectedBranchAppRestrictionsRequestOptions,
+    ReposRemoveProtectedBranchAppRestrictionsResponseData
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposRemoveProtectedBranchTeamRestrictionsEndpoint,
-    ReposRemoveProtectedBranchTeamRestrictionsRequestOptions
+    ReposRemoveProtectedBranchTeamRestrictionsRequestOptions,
+    ReposRemoveProtectedBranchTeamRestrictionsResponseData
   ];
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposRemoveProtectedBranchUserRestrictionsEndpoint,
-    ReposRemoveProtectedBranchUserRestrictionsRequestOptions
+    ReposRemoveProtectedBranchUserRestrictionsRequestOptions,
+    ReposRemoveProtectedBranchUserRestrictionsResponseData
   ];
   "DELETE /repos/:owner/:repo/collaborators/:username": [
     ReposRemoveCollaboratorEndpoint,
-    ReposRemoveCollaboratorRequestOptions
+    ReposRemoveCollaboratorRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/comments/:comment_id": [
     ReposDeleteCommitCommentEndpoint,
-    ReposDeleteCommitCommentRequestOptions
+    ReposDeleteCommitCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForCommitCommentEndpoint,
-    ReactionsDeleteForCommitCommentRequestOptions
+    ReactionsDeleteForCommitCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/contents/:path": [
     ReposDeleteFileEndpoint,
-    ReposDeleteFileRequestOptions
+    ReposDeleteFileRequestOptions,
+    ReposDeleteFileResponseData
   ];
   "DELETE /repos/:owner/:repo/deployments/:deployment_id": [
     ReposDeleteDeploymentEndpoint,
-    ReposDeleteDeploymentRequestOptions
+    ReposDeleteDeploymentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/downloads/:download_id": [
     ReposDeleteDownloadEndpoint,
-    ReposDeleteDownloadRequestOptions
+    ReposDeleteDownloadRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/git/refs/:ref": [
     GitDeleteRefEndpoint,
-    GitDeleteRefRequestOptions
+    GitDeleteRefRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/hooks/:hook_id": [
     ReposDeleteHookEndpoint,
-    ReposDeleteHookRequestOptions
+    ReposDeleteHookRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/import": [
     MigrationsCancelImportEndpoint,
-    MigrationsCancelImportRequestOptions
+    MigrationsCancelImportRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/interaction-limits": [
     InteractionsRemoveRestrictionsForRepoEndpoint,
-    InteractionsRemoveRestrictionsForRepoRequestOptions
+    InteractionsRemoveRestrictionsForRepoRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/invitations/:invitation_id": [
     ReposDeleteInvitationEndpoint,
-    ReposDeleteInvitationRequestOptions
+    ReposDeleteInvitationRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/issues/:issue_number/assignees": [
     IssuesRemoveAssigneesEndpoint,
-    IssuesRemoveAssigneesRequestOptions
+    IssuesRemoveAssigneesRequestOptions,
+    IssuesRemoveAssigneesResponseData
   ];
   "DELETE /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesRemoveAllLabelsEndpoint,
-    IssuesRemoveAllLabelsRequestOptions
+    IssuesRemoveAllLabelsRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name": [
     IssuesRemoveLabelEndpoint,
-    IssuesRemoveLabelRequestOptions
+    IssuesRemoveLabelRequestOptions,
+    IssuesRemoveLabelResponseData
   ];
   "DELETE /repos/:owner/:repo/issues/:issue_number/lock": [
     IssuesUnlockEndpoint,
-    IssuesUnlockRequestOptions
+    IssuesUnlockRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id": [
     ReactionsDeleteForIssueEndpoint,
-    ReactionsDeleteForIssueRequestOptions
+    ReactionsDeleteForIssueRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesDeleteCommentEndpoint,
-    IssuesDeleteCommentRequestOptions
+    IssuesDeleteCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForIssueCommentEndpoint,
-    ReactionsDeleteForIssueCommentRequestOptions
+    ReactionsDeleteForIssueCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/keys/:key_id": [
     ReposRemoveDeployKeyEndpoint,
-    ReposRemoveDeployKeyRequestOptions
+    ReposRemoveDeployKeyRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/labels/:name": [
     IssuesDeleteLabelEndpoint,
-    IssuesDeleteLabelRequestOptions
+    IssuesDeleteLabelRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesDeleteMilestoneEndpoint,
-    IssuesDeleteMilestoneRequestOptions
+    IssuesDeleteMilestoneRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/pages": [
     ReposDisablePagesSiteEndpoint,
-    ReposDisablePagesSiteRequestOptions
+    ReposDisablePagesSiteRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsDeleteReviewRequestEndpoint,
-    PullsDeleteReviewRequestRequestOptions
+    PullsDeleteReviewRequestRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsDeletePendingReviewEndpoint,
-    PullsDeletePendingReviewRequestOptions
+    PullsDeletePendingReviewRequestOptions,
+    PullsDeletePendingReviewResponseData
   ];
   "DELETE /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsDeleteCommentEndpoint,
-    PullsDeleteCommentRequestOptions
+    PullsDeleteCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForPullRequestCommentEndpoint,
-    ReactionsDeleteForPullRequestCommentRequestOptions
+    ReactionsDeleteForPullRequestCommentRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/releases/:release_id": [
     ReposDeleteReleaseEndpoint,
-    ReposDeleteReleaseRequestOptions
+    ReposDeleteReleaseRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposDeleteReleaseAssetEndpoint,
-    ReposDeleteReleaseAssetRequestOptions
+    ReposDeleteReleaseAssetRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/subscription": [
     ActivityDeleteRepoSubscriptionEndpoint,
-    ActivityDeleteRepoSubscriptionRequestOptions
+    ActivityDeleteRepoSubscriptionRequestOptions,
+    any
   ];
   "DELETE /repos/:owner/:repo/vulnerability-alerts": [
     ReposDisableVulnerabilityAlertsEndpoint,
-    ReposDisableVulnerabilityAlertsRequestOptions
+    ReposDisableVulnerabilityAlertsRequestOptions,
+    any
   ];
   "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimRemoveUserFromOrgEndpoint,
-    ScimRemoveUserFromOrgRequestOptions
+    ScimRemoveUserFromOrgRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id": [
     TeamsDeleteLegacyEndpoint,
-    TeamsDeleteLegacyRequestOptions
+    TeamsDeleteLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/discussions/:discussion_number": [
     TeamsDeleteDiscussionLegacyEndpoint,
-    TeamsDeleteDiscussionLegacyRequestOptions
+    TeamsDeleteDiscussionLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsDeleteDiscussionCommentLegacyEndpoint,
-    TeamsDeleteDiscussionCommentLegacyRequestOptions
+    TeamsDeleteDiscussionCommentLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/members/:username": [
     TeamsRemoveMemberLegacyEndpoint,
-    TeamsRemoveMemberLegacyRequestOptions
+    TeamsRemoveMemberLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/memberships/:username": [
     TeamsRemoveMembershipLegacyEndpoint,
-    TeamsRemoveMembershipLegacyRequestOptions
+    TeamsRemoveMembershipLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/projects/:project_id": [
     TeamsRemoveProjectLegacyEndpoint,
-    TeamsRemoveProjectLegacyRequestOptions
+    TeamsRemoveProjectLegacyRequestOptions,
+    any
   ];
   "DELETE /teams/:team_id/repos/:owner/:repo": [
     TeamsRemoveRepoLegacyEndpoint,
-    TeamsRemoveRepoLegacyRequestOptions
+    TeamsRemoveRepoLegacyRequestOptions,
+    any
   ];
   "DELETE /user/blocks/:username": [
     UsersUnblockEndpoint,
-    UsersUnblockRequestOptions
+    UsersUnblockRequestOptions,
+    any
   ];
   "DELETE /user/emails": [
     UsersDeleteEmailsEndpoint,
-    UsersDeleteEmailsRequestOptions
+    UsersDeleteEmailsRequestOptions,
+    any
   ];
   "DELETE /user/following/:username": [
     UsersUnfollowEndpoint,
-    UsersUnfollowRequestOptions
+    UsersUnfollowRequestOptions,
+    any
   ];
   "DELETE /user/gpg_keys/:gpg_key_id": [
     UsersDeleteGpgKeyEndpoint,
-    UsersDeleteGpgKeyRequestOptions
+    UsersDeleteGpgKeyRequestOptions,
+    any
   ];
   "DELETE /user/installations/:installation_id/repositories/:repository_id": [
     AppsRemoveRepoFromInstallationEndpoint,
-    AppsRemoveRepoFromInstallationRequestOptions
+    AppsRemoveRepoFromInstallationRequestOptions,
+    any
   ];
   "DELETE /user/keys/:key_id": [
     UsersDeletePublicKeyEndpoint,
-    UsersDeletePublicKeyRequestOptions
+    UsersDeletePublicKeyRequestOptions,
+    any
   ];
   "DELETE /user/migrations/:migration_id/archive": [
     MigrationsDeleteArchiveForAuthenticatedUserEndpoint,
-    MigrationsDeleteArchiveForAuthenticatedUserRequestOptions
+    MigrationsDeleteArchiveForAuthenticatedUserRequestOptions,
+    any
   ];
   "DELETE /user/migrations/:migration_id/repos/:repo_name/lock": [
     MigrationsUnlockRepoForAuthenticatedUserEndpoint,
-    MigrationsUnlockRepoForAuthenticatedUserRequestOptions
+    MigrationsUnlockRepoForAuthenticatedUserRequestOptions,
+    any
   ];
   "DELETE /user/repository_invitations/:invitation_id": [
     ReposDeclineInvitationEndpoint,
-    ReposDeclineInvitationRequestOptions
+    ReposDeclineInvitationRequestOptions,
+    any
   ];
   "DELETE /user/starred/:owner/:repo": [
     ActivityUnstarRepoForAuthenticatedUserEndpoint,
-    ActivityUnstarRepoForAuthenticatedUserRequestOptions
+    ActivityUnstarRepoForAuthenticatedUserRequestOptions,
+    any
   ];
   "DELETE /user/subscriptions/:owner/:repo": [
     ActivityStopWatchingRepoLegacyEndpoint,
-    ActivityStopWatchingRepoLegacyRequestOptions
+    ActivityStopWatchingRepoLegacyRequestOptions,
+    any
   ];
   "GET /app": [
     AppsGetAuthenticatedEndpoint,
-    AppsGetAuthenticatedRequestOptions
+    AppsGetAuthenticatedRequestOptions,
+    AppsGetAuthenticatedResponseData
   ];
   "GET /app/installations": [
     AppsListInstallationsEndpoint,
-    AppsListInstallationsRequestOptions
+    AppsListInstallationsRequestOptions,
+    AppsListInstallationsResponseData
   ];
   "GET /app/installations/:installation_id": [
     AppsGetInstallationEndpoint,
-    AppsGetInstallationRequestOptions
+    AppsGetInstallationRequestOptions,
+    AppsGetInstallationResponseData
   ];
   "GET /applications/:client_id/tokens/:access_token": [
     AppsCheckAuthorizationEndpoint,
-    AppsCheckAuthorizationRequestOptions
+    AppsCheckAuthorizationRequestOptions,
+    AppsCheckAuthorizationResponseData
   ];
   "GET /applications/grants": [
     OauthAuthorizationsListGrantsEndpoint,
-    OauthAuthorizationsListGrantsRequestOptions
+    OauthAuthorizationsListGrantsRequestOptions,
+    OauthAuthorizationsListGrantsResponseData
   ];
   "GET /applications/grants/:grant_id": [
     OauthAuthorizationsGetGrantEndpoint,
-    OauthAuthorizationsGetGrantRequestOptions
+    OauthAuthorizationsGetGrantRequestOptions,
+    OauthAuthorizationsGetGrantResponseData
   ];
-  "GET /apps/:app_slug": [AppsGetBySlugEndpoint, AppsGetBySlugRequestOptions];
+  "GET /apps/:app_slug": [
+    AppsGetBySlugEndpoint,
+    AppsGetBySlugRequestOptions,
+    AppsGetBySlugResponseData
+  ];
   "GET /authorizations": [
     OauthAuthorizationsListAuthorizationsEndpoint,
-    OauthAuthorizationsListAuthorizationsRequestOptions
+    OauthAuthorizationsListAuthorizationsRequestOptions,
+    OauthAuthorizationsListAuthorizationsResponseData
   ];
   "GET /authorizations/:authorization_id": [
     OauthAuthorizationsGetAuthorizationEndpoint,
-    OauthAuthorizationsGetAuthorizationRequestOptions
+    OauthAuthorizationsGetAuthorizationRequestOptions,
+    OauthAuthorizationsGetAuthorizationResponseData
   ];
   "GET /codes_of_conduct": [
     CodesOfConductGetAllCodesOfConductEndpoint,
-    CodesOfConductGetAllCodesOfConductRequestOptions
+    CodesOfConductGetAllCodesOfConductRequestOptions,
+    CodesOfConductGetAllCodesOfConductResponseData
   ];
   "GET /codes_of_conduct/:key": [
     CodesOfConductGetConductCodeEndpoint,
-    CodesOfConductGetConductCodeRequestOptions
+    CodesOfConductGetConductCodeRequestOptions,
+    CodesOfConductGetConductCodeResponseData
   ];
-  "GET /emojis": [EmojisGetEndpoint, EmojisGetRequestOptions];
+  "GET /emojis": [EmojisGetEndpoint, EmojisGetRequestOptions, any];
   "GET /events": [
     ActivityListPublicEventsEndpoint,
-    ActivityListPublicEventsRequestOptions
+    ActivityListPublicEventsRequestOptions,
+    any
   ];
-  "GET /feeds": [ActivityGetFeedsEndpoint, ActivityGetFeedsRequestOptions];
-  "GET /gists": [GistsListEndpoint, GistsListRequestOptions];
-  "GET /gists/:gist_id": [GistsGetEndpoint, GistsGetRequestOptions];
+  "GET /feeds": [
+    ActivityGetFeedsEndpoint,
+    ActivityGetFeedsRequestOptions,
+    ActivityGetFeedsResponseData
+  ];
+  "GET /gists": [
+    GistsListEndpoint,
+    GistsListRequestOptions,
+    GistsListResponseData
+  ];
+  "GET /gists/:gist_id": [
+    GistsGetEndpoint,
+    GistsGetRequestOptions,
+    GistsGetResponseData
+  ];
   "GET /gists/:gist_id/:sha": [
     GistsGetRevisionEndpoint,
-    GistsGetRevisionRequestOptions
+    GistsGetRevisionRequestOptions,
+    GistsGetRevisionResponseData
   ];
   "GET /gists/:gist_id/comments": [
     GistsListCommentsEndpoint,
-    GistsListCommentsRequestOptions
+    GistsListCommentsRequestOptions,
+    GistsListCommentsResponseData
   ];
   "GET /gists/:gist_id/comments/:comment_id": [
     GistsGetCommentEndpoint,
-    GistsGetCommentRequestOptions
+    GistsGetCommentRequestOptions,
+    GistsGetCommentResponseData
   ];
   "GET /gists/:gist_id/commits": [
     GistsListCommitsEndpoint,
-    GistsListCommitsRequestOptions
+    GistsListCommitsRequestOptions,
+    GistsListCommitsResponseData
   ];
   "GET /gists/:gist_id/forks": [
     GistsListForksEndpoint,
-    GistsListForksRequestOptions
+    GistsListForksRequestOptions,
+    GistsListForksResponseData
   ];
   "GET /gists/:gist_id/star": [
     GistsCheckIsStarredEndpoint,
-    GistsCheckIsStarredRequestOptions
+    GistsCheckIsStarredRequestOptions,
+    any
   ];
-  "GET /gists/public": [GistsListPublicEndpoint, GistsListPublicRequestOptions];
+  "GET /gists/public": [
+    GistsListPublicEndpoint,
+    GistsListPublicRequestOptions,
+    GistsListPublicResponseData
+  ];
   "GET /gists/starred": [
     GistsListStarredEndpoint,
-    GistsListStarredRequestOptions
+    GistsListStarredRequestOptions,
+    GistsListStarredResponseData
   ];
   "GET /gitignore/templates": [
     GitignoreListTemplatesEndpoint,
-    GitignoreListTemplatesRequestOptions
+    GitignoreListTemplatesRequestOptions,
+    GitignoreListTemplatesResponseData
   ];
   "GET /gitignore/templates/:name": [
     GitignoreGetTemplateEndpoint,
-    GitignoreGetTemplateRequestOptions
+    GitignoreGetTemplateRequestOptions,
+    GitignoreGetTemplateResponseData
   ];
   "GET /installation/repositories": [
     AppsListReposEndpoint,
-    AppsListReposRequestOptions
+    AppsListReposRequestOptions,
+    AppsListReposResponseData
   ];
-  "GET /issues": [IssuesListEndpoint, IssuesListRequestOptions];
+  "GET /issues": [
+    IssuesListEndpoint,
+    IssuesListRequestOptions,
+    IssuesListResponseData
+  ];
   "GET /legacy/issues/search/:owner/:repository/:state/:keyword": [
     SearchIssuesLegacyEndpoint,
-    SearchIssuesLegacyRequestOptions
+    SearchIssuesLegacyRequestOptions,
+    SearchIssuesLegacyResponseData
   ];
   "GET /legacy/repos/search/:keyword": [
     SearchReposLegacyEndpoint,
-    SearchReposLegacyRequestOptions
+    SearchReposLegacyRequestOptions,
+    SearchReposLegacyResponseData
   ];
   "GET /legacy/user/email/:email": [
     SearchEmailLegacyEndpoint,
-    SearchEmailLegacyRequestOptions
+    SearchEmailLegacyRequestOptions,
+    SearchEmailLegacyResponseData
   ];
   "GET /legacy/user/search/:keyword": [
     SearchUsersLegacyEndpoint,
-    SearchUsersLegacyRequestOptions
+    SearchUsersLegacyRequestOptions,
+    SearchUsersLegacyResponseData
   ];
   "GET /licenses": [
     LicensesListCommonlyUsedEndpoint,
-    LicensesListCommonlyUsedRequestOptions
+    LicensesListCommonlyUsedRequestOptions,
+    LicensesListCommonlyUsedResponseData
   ];
-  "GET /licenses/:license": [LicensesGetEndpoint, LicensesGetRequestOptions];
+  "GET /licenses/:license": [
+    LicensesGetEndpoint,
+    LicensesGetRequestOptions,
+    LicensesGetResponseData
+  ];
   "GET /marketplace_listing/accounts/:account_id": [
     AppsGetSubscriptionPlanForAccountEndpoint,
-    AppsGetSubscriptionPlanForAccountRequestOptions
+    AppsGetSubscriptionPlanForAccountRequestOptions,
+    AppsGetSubscriptionPlanForAccountResponseData
   ];
   "GET /marketplace_listing/plans": [
     AppsListPlansEndpoint,
-    AppsListPlansRequestOptions
+    AppsListPlansRequestOptions,
+    AppsListPlansResponseData
   ];
   "GET /marketplace_listing/plans/:plan_id/accounts": [
     AppsListAccountsForPlanEndpoint,
-    AppsListAccountsForPlanRequestOptions
+    AppsListAccountsForPlanRequestOptions,
+    AppsListAccountsForPlanResponseData
   ];
   "GET /marketplace_listing/stubbed/accounts/:account_id": [
     AppsGetSubscriptionPlanForAccountStubbedEndpoint,
-    AppsGetSubscriptionPlanForAccountStubbedRequestOptions
+    AppsGetSubscriptionPlanForAccountStubbedRequestOptions,
+    AppsGetSubscriptionPlanForAccountStubbedResponseData
   ];
   "GET /marketplace_listing/stubbed/plans": [
     AppsListPlansStubbedEndpoint,
-    AppsListPlansStubbedRequestOptions
+    AppsListPlansStubbedRequestOptions,
+    AppsListPlansStubbedResponseData
   ];
   "GET /marketplace_listing/stubbed/plans/:plan_id/accounts": [
     AppsListAccountsForPlanStubbedEndpoint,
-    AppsListAccountsForPlanStubbedRequestOptions
+    AppsListAccountsForPlanStubbedRequestOptions,
+    AppsListAccountsForPlanStubbedResponseData
   ];
-  "GET /meta": [MetaGetEndpoint, MetaGetRequestOptions];
+  "GET /meta": [MetaGetEndpoint, MetaGetRequestOptions, MetaGetResponseData];
   "GET /networks/:owner/:repo/events": [
     ActivityListPublicEventsForRepoNetworkEndpoint,
-    ActivityListPublicEventsForRepoNetworkRequestOptions
+    ActivityListPublicEventsForRepoNetworkRequestOptions,
+    any
   ];
   "GET /notifications": [
     ActivityListNotificationsForAuthenticatedUserEndpoint,
-    ActivityListNotificationsForAuthenticatedUserRequestOptions
+    ActivityListNotificationsForAuthenticatedUserRequestOptions,
+    ActivityListNotificationsForAuthenticatedUserResponseData
   ];
   "GET /notifications/threads/:thread_id": [
     ActivityGetThreadEndpoint,
-    ActivityGetThreadRequestOptions
+    ActivityGetThreadRequestOptions,
+    ActivityGetThreadResponseData
   ];
   "GET /notifications/threads/:thread_id/subscription": [
     ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint,
-    ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions
+    ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions,
+    ActivityGetThreadSubscriptionForAuthenticatedUserResponseData
   ];
-  "GET /organizations": [OrgsListEndpoint, OrgsListRequestOptions];
-  "GET /orgs/:org": [OrgsGetEndpoint, OrgsGetRequestOptions];
+  "GET /organizations": [
+    OrgsListEndpoint,
+    OrgsListRequestOptions,
+    OrgsListResponseData
+  ];
+  "GET /orgs/:org": [
+    OrgsGetEndpoint,
+    OrgsGetRequestOptions,
+    OrgsGetResponseData
+  ];
   "GET /orgs/:org/blocks": [
     OrgsListBlockedUsersEndpoint,
-    OrgsListBlockedUsersRequestOptions
+    OrgsListBlockedUsersRequestOptions,
+    OrgsListBlockedUsersResponseData
   ];
   "GET /orgs/:org/blocks/:username": [
     OrgsCheckBlockedUserEndpoint,
-    OrgsCheckBlockedUserRequestOptions
+    OrgsCheckBlockedUserRequestOptions,
+    any
   ];
   "GET /orgs/:org/credential-authorizations": [
     OrgsListCredentialAuthorizationsEndpoint,
-    OrgsListCredentialAuthorizationsRequestOptions
+    OrgsListCredentialAuthorizationsRequestOptions,
+    OrgsListCredentialAuthorizationsResponseData
   ];
   "GET /orgs/:org/events": [
     ActivityListPublicOrgEventsEndpoint,
-    ActivityListPublicOrgEventsRequestOptions
+    ActivityListPublicOrgEventsRequestOptions,
+    any
   ];
-  "GET /orgs/:org/hooks": [OrgsListHooksEndpoint, OrgsListHooksRequestOptions];
+  "GET /orgs/:org/hooks": [
+    OrgsListHooksEndpoint,
+    OrgsListHooksRequestOptions,
+    OrgsListHooksResponseData
+  ];
   "GET /orgs/:org/hooks/:hook_id": [
     OrgsGetHookEndpoint,
-    OrgsGetHookRequestOptions
+    OrgsGetHookRequestOptions,
+    OrgsGetHookResponseData
   ];
   "GET /orgs/:org/installation": [
     AppsGetOrgInstallationEndpoint,
-    AppsGetOrgInstallationRequestOptions
+    AppsGetOrgInstallationRequestOptions,
+    AppsGetOrgInstallationResponseData
   ];
   "GET /orgs/:org/installations": [
     OrgsListInstallationsEndpoint,
-    OrgsListInstallationsRequestOptions
+    OrgsListInstallationsRequestOptions,
+    OrgsListInstallationsResponseData
   ];
   "GET /orgs/:org/interaction-limits": [
     InteractionsGetRestrictionsForOrgEndpoint,
-    InteractionsGetRestrictionsForOrgRequestOptions
+    InteractionsGetRestrictionsForOrgRequestOptions,
+    InteractionsGetRestrictionsForOrgResponseData
   ];
   "GET /orgs/:org/invitations": [
     OrgsListPendingInvitationsEndpoint,
-    OrgsListPendingInvitationsRequestOptions
+    OrgsListPendingInvitationsRequestOptions,
+    OrgsListPendingInvitationsResponseData
   ];
   "GET /orgs/:org/invitations/:invitation_id/teams": [
     OrgsListInvitationTeamsEndpoint,
-    OrgsListInvitationTeamsRequestOptions
+    OrgsListInvitationTeamsRequestOptions,
+    OrgsListInvitationTeamsResponseData
   ];
   "GET /orgs/:org/issues": [
     IssuesListForOrgEndpoint,
-    IssuesListForOrgRequestOptions
+    IssuesListForOrgRequestOptions,
+    IssuesListForOrgResponseData
   ];
   "GET /orgs/:org/members": [
     OrgsListMembersEndpoint,
-    OrgsListMembersRequestOptions
+    OrgsListMembersRequestOptions,
+    OrgsListMembersResponseData
   ];
   "GET /orgs/:org/members/:username": [
     OrgsCheckMembershipEndpoint,
-    OrgsCheckMembershipRequestOptions
+    OrgsCheckMembershipRequestOptions,
+    any
   ];
   "GET /orgs/:org/memberships/:username": [
     OrgsGetMembershipEndpoint,
-    OrgsGetMembershipRequestOptions
+    OrgsGetMembershipRequestOptions,
+    OrgsGetMembershipResponseData
   ];
   "GET /orgs/:org/migrations": [
     MigrationsListForOrgEndpoint,
-    MigrationsListForOrgRequestOptions
+    MigrationsListForOrgRequestOptions,
+    MigrationsListForOrgResponseData
   ];
   "GET /orgs/:org/migrations/:migration_id": [
     MigrationsGetStatusForOrgEndpoint,
-    MigrationsGetStatusForOrgRequestOptions
+    MigrationsGetStatusForOrgRequestOptions,
+    MigrationsGetStatusForOrgResponseData
   ];
   "GET /orgs/:org/migrations/:migration_id/archive": [
     MigrationsDownloadArchiveForOrgEndpoint,
-    MigrationsDownloadArchiveForOrgRequestOptions
+    MigrationsDownloadArchiveForOrgRequestOptions,
+    any
   ];
   "GET /orgs/:org/migrations/:migration_id/repositories": [
     MigrationsListReposForOrgEndpoint,
-    MigrationsListReposForOrgRequestOptions
+    MigrationsListReposForOrgRequestOptions,
+    MigrationsListReposForOrgResponseData
   ];
   "GET /orgs/:org/outside_collaborators": [
     OrgsListOutsideCollaboratorsEndpoint,
-    OrgsListOutsideCollaboratorsRequestOptions
+    OrgsListOutsideCollaboratorsRequestOptions,
+    OrgsListOutsideCollaboratorsResponseData
   ];
   "GET /orgs/:org/projects": [
     ProjectsListForOrgEndpoint,
-    ProjectsListForOrgRequestOptions
+    ProjectsListForOrgRequestOptions,
+    ProjectsListForOrgResponseData
   ];
   "GET /orgs/:org/public_members": [
     OrgsListPublicMembersEndpoint,
-    OrgsListPublicMembersRequestOptions
+    OrgsListPublicMembersRequestOptions,
+    OrgsListPublicMembersResponseData
   ];
   "GET /orgs/:org/public_members/:username": [
     OrgsCheckPublicMembershipEndpoint,
-    OrgsCheckPublicMembershipRequestOptions
+    OrgsCheckPublicMembershipRequestOptions,
+    any
   ];
   "GET /orgs/:org/repos": [
     ReposListForOrgEndpoint,
-    ReposListForOrgRequestOptions
+    ReposListForOrgRequestOptions,
+    ReposListForOrgResponseData
   ];
   "GET /orgs/:org/team-sync/groups": [
     TeamsListIdPGroupsForOrgEndpoint,
-    TeamsListIdPGroupsForOrgRequestOptions
+    TeamsListIdPGroupsForOrgRequestOptions,
+    TeamsListIdPGroupsForOrgResponseData
   ];
-  "GET /orgs/:org/teams": [TeamsListEndpoint, TeamsListRequestOptions];
+  "GET /orgs/:org/teams": [
+    TeamsListEndpoint,
+    TeamsListRequestOptions,
+    TeamsListResponseData
+  ];
   "GET /orgs/:org/teams/:team_slug": [
     TeamsGetByNameEndpoint,
-    TeamsGetByNameRequestOptions
+    TeamsGetByNameRequestOptions,
+    TeamsGetByNameResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions": [
     TeamsListDiscussionsInOrgEndpoint,
-    TeamsListDiscussionsInOrgRequestOptions
+    TeamsListDiscussionsInOrgRequestOptions,
+    TeamsListDiscussionsInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsGetDiscussionInOrgEndpoint,
-    TeamsGetDiscussionInOrgRequestOptions
+    TeamsGetDiscussionInOrgRequestOptions,
+    TeamsGetDiscussionInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": [
     TeamsListDiscussionCommentsInOrgEndpoint,
-    TeamsListDiscussionCommentsInOrgRequestOptions
+    TeamsListDiscussionCommentsInOrgRequestOptions,
+    TeamsListDiscussionCommentsInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsGetDiscussionCommentInOrgEndpoint,
-    TeamsGetDiscussionCommentInOrgRequestOptions
+    TeamsGetDiscussionCommentInOrgRequestOptions,
+    TeamsGetDiscussionCommentInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsListForTeamDiscussionCommentInOrgEndpoint,
-    ReactionsListForTeamDiscussionCommentInOrgRequestOptions
+    ReactionsListForTeamDiscussionCommentInOrgRequestOptions,
+    ReactionsListForTeamDiscussionCommentInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": [
     ReactionsListForTeamDiscussionInOrgEndpoint,
-    ReactionsListForTeamDiscussionInOrgRequestOptions
+    ReactionsListForTeamDiscussionInOrgRequestOptions,
+    ReactionsListForTeamDiscussionInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/invitations": [
     TeamsListPendingInvitationsInOrgEndpoint,
-    TeamsListPendingInvitationsInOrgRequestOptions
+    TeamsListPendingInvitationsInOrgRequestOptions,
+    TeamsListPendingInvitationsInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/members": [
     TeamsListMembersInOrgEndpoint,
-    TeamsListMembersInOrgRequestOptions
+    TeamsListMembersInOrgRequestOptions,
+    TeamsListMembersInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsGetMembershipInOrgEndpoint,
-    TeamsGetMembershipInOrgRequestOptions
+    TeamsGetMembershipInOrgRequestOptions,
+    TeamsGetMembershipInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/projects": [
     TeamsListProjectsInOrgEndpoint,
-    TeamsListProjectsInOrgRequestOptions
+    TeamsListProjectsInOrgRequestOptions,
+    TeamsListProjectsInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsReviewProjectInOrgEndpoint,
-    TeamsReviewProjectInOrgRequestOptions
+    TeamsReviewProjectInOrgRequestOptions,
+    TeamsReviewProjectInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/repos": [
     TeamsListReposInOrgEndpoint,
-    TeamsListReposInOrgRequestOptions
+    TeamsListReposInOrgRequestOptions,
+    TeamsListReposInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsCheckManagesRepoInOrgEndpoint,
-    TeamsCheckManagesRepoInOrgRequestOptions
+    TeamsCheckManagesRepoInOrgRequestOptions,
+    TeamsCheckManagesRepoInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/team-sync/group-mappings": [
     TeamsListIdPGroupsInOrgEndpoint,
-    TeamsListIdPGroupsInOrgRequestOptions
+    TeamsListIdPGroupsInOrgRequestOptions,
+    TeamsListIdPGroupsInOrgResponseData
   ];
   "GET /orgs/:org/teams/:team_slug/teams": [
     TeamsListChildInOrgEndpoint,
-    TeamsListChildInOrgRequestOptions
+    TeamsListChildInOrgRequestOptions,
+    TeamsListChildInOrgResponseData
   ];
-  "GET /projects/:project_id": [ProjectsGetEndpoint, ProjectsGetRequestOptions];
+  "GET /projects/:project_id": [
+    ProjectsGetEndpoint,
+    ProjectsGetRequestOptions,
+    ProjectsGetResponseData
+  ];
   "GET /projects/:project_id/collaborators": [
     ProjectsListCollaboratorsEndpoint,
-    ProjectsListCollaboratorsRequestOptions
+    ProjectsListCollaboratorsRequestOptions,
+    ProjectsListCollaboratorsResponseData
   ];
   "GET /projects/:project_id/collaborators/:username/permission": [
     ProjectsReviewUserPermissionLevelEndpoint,
-    ProjectsReviewUserPermissionLevelRequestOptions
+    ProjectsReviewUserPermissionLevelRequestOptions,
+    ProjectsReviewUserPermissionLevelResponseData
   ];
   "GET /projects/:project_id/columns": [
     ProjectsListColumnsEndpoint,
-    ProjectsListColumnsRequestOptions
+    ProjectsListColumnsRequestOptions,
+    ProjectsListColumnsResponseData
   ];
   "GET /projects/columns/:column_id": [
     ProjectsGetColumnEndpoint,
-    ProjectsGetColumnRequestOptions
+    ProjectsGetColumnRequestOptions,
+    ProjectsGetColumnResponseData
   ];
   "GET /projects/columns/:column_id/cards": [
     ProjectsListCardsEndpoint,
-    ProjectsListCardsRequestOptions
+    ProjectsListCardsRequestOptions,
+    ProjectsListCardsResponseData
   ];
   "GET /projects/columns/cards/:card_id": [
     ProjectsGetCardEndpoint,
-    ProjectsGetCardRequestOptions
+    ProjectsGetCardRequestOptions,
+    ProjectsGetCardResponseData
   ];
-  "GET /rate_limit": [RateLimitGetEndpoint, RateLimitGetRequestOptions];
-  "GET /repos/:owner/:repo": [ReposGetEndpoint, ReposGetRequestOptions];
+  "GET /rate_limit": [
+    RateLimitGetEndpoint,
+    RateLimitGetRequestOptions,
+    RateLimitGetResponseData
+  ];
+  "GET /repos/:owner/:repo": [
+    ReposGetEndpoint,
+    ReposGetRequestOptions,
+    ReposGetResponseData
+  ];
   "GET /repos/:owner/:repo/:archive_format/:ref": [
     ReposGetArchiveLinkEndpoint,
-    ReposGetArchiveLinkRequestOptions
+    ReposGetArchiveLinkRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/actions/artifacts": [
     ActionsListArtifactsForRepoEndpoint,
-    ActionsListArtifactsForRepoRequestOptions
+    ActionsListArtifactsForRepoRequestOptions,
+    ActionsListArtifactsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/actions/artifacts/:artifact_id": [
     ActionsGetArtifactEndpoint,
-    ActionsGetArtifactRequestOptions
+    ActionsGetArtifactRequestOptions,
+    ActionsGetArtifactResponseData
   ];
   "GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format": [
     ActionsDownloadArtifactEndpoint,
-    ActionsDownloadArtifactRequestOptions
+    ActionsDownloadArtifactRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/actions/jobs/:job_id": [
     ActionsGetWorkflowJobEndpoint,
-    ActionsGetWorkflowJobRequestOptions
+    ActionsGetWorkflowJobRequestOptions,
+    ActionsGetWorkflowJobResponseData
   ];
   "GET /repos/:owner/:repo/actions/jobs/:job_id/logs": [
     ActionsListWorkflowJobLogsEndpoint,
-    ActionsListWorkflowJobLogsRequestOptions
+    ActionsListWorkflowJobLogsRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/actions/runners": [
     ActionsListSelfHostedRunnersForRepoEndpoint,
-    ActionsListSelfHostedRunnersForRepoRequestOptions
+    ActionsListSelfHostedRunnersForRepoRequestOptions,
+    ActionsListSelfHostedRunnersForRepoResponseData
   ];
   "GET /repos/:owner/:repo/actions/runners/:runner_id": [
     ActionsGetSelfHostedRunnerEndpoint,
-    ActionsGetSelfHostedRunnerRequestOptions
+    ActionsGetSelfHostedRunnerRequestOptions,
+    ActionsGetSelfHostedRunnerResponseData
   ];
   "GET /repos/:owner/:repo/actions/runners/downloads": [
     ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint,
-    ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions
+    ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions,
+    ActionsListDownloadsForSelfHostedRunnerApplicationResponseData
   ];
   "GET /repos/:owner/:repo/actions/runs": [
     ActionsListRepoWorkflowRunsEndpoint,
-    ActionsListRepoWorkflowRunsRequestOptions
+    ActionsListRepoWorkflowRunsRequestOptions,
+    ActionsListRepoWorkflowRunsResponseData
   ];
   "GET /repos/:owner/:repo/actions/runs/:run_id": [
     ActionsGetWorkflowRunEndpoint,
-    ActionsGetWorkflowRunRequestOptions
+    ActionsGetWorkflowRunRequestOptions,
+    ActionsGetWorkflowRunResponseData
   ];
   "GET /repos/:owner/:repo/actions/runs/:run_id/artifacts": [
     ActionsListWorkflowRunArtifactsEndpoint,
-    ActionsListWorkflowRunArtifactsRequestOptions
+    ActionsListWorkflowRunArtifactsRequestOptions,
+    ActionsListWorkflowRunArtifactsResponseData
   ];
   "GET /repos/:owner/:repo/actions/runs/:run_id/jobs": [
     ActionsListJobsForWorkflowRunEndpoint,
-    ActionsListJobsForWorkflowRunRequestOptions
+    ActionsListJobsForWorkflowRunRequestOptions,
+    ActionsListJobsForWorkflowRunResponseData
   ];
   "GET /repos/:owner/:repo/actions/runs/:run_id/logs": [
     ActionsListWorkflowRunLogsEndpoint,
-    ActionsListWorkflowRunLogsRequestOptions
+    ActionsListWorkflowRunLogsRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/actions/secrets": [
     ActionsListSecretsForRepoEndpoint,
-    ActionsListSecretsForRepoRequestOptions
+    ActionsListSecretsForRepoRequestOptions,
+    ActionsListSecretsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/actions/secrets/:name": [
     ActionsGetSecretEndpoint,
-    ActionsGetSecretRequestOptions
+    ActionsGetSecretRequestOptions,
+    ActionsGetSecretResponseData
   ];
   "GET /repos/:owner/:repo/actions/secrets/public-key": [
     ActionsGetPublicKeyEndpoint,
-    ActionsGetPublicKeyRequestOptions
+    ActionsGetPublicKeyRequestOptions,
+    ActionsGetPublicKeyResponseData
   ];
   "GET /repos/:owner/:repo/actions/workflows": [
     ActionsListRepoWorkflowsEndpoint,
-    ActionsListRepoWorkflowsRequestOptions
+    ActionsListRepoWorkflowsRequestOptions,
+    ActionsListRepoWorkflowsResponseData
   ];
   "GET /repos/:owner/:repo/actions/workflows/:workflow_id": [
     ActionsGetWorkflowEndpoint,
-    ActionsGetWorkflowRequestOptions
+    ActionsGetWorkflowRequestOptions,
+    ActionsGetWorkflowResponseData
   ];
   "GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs": [
     ActionsListWorkflowRunsEndpoint,
-    ActionsListWorkflowRunsRequestOptions
+    ActionsListWorkflowRunsRequestOptions,
+    ActionsListWorkflowRunsResponseData
   ];
   "GET /repos/:owner/:repo/assignees": [
     IssuesListAssigneesEndpoint,
-    IssuesListAssigneesRequestOptions
+    IssuesListAssigneesRequestOptions,
+    IssuesListAssigneesResponseData
   ];
   "GET /repos/:owner/:repo/assignees/:assignee": [
     IssuesCheckAssigneeEndpoint,
-    IssuesCheckAssigneeRequestOptions
+    IssuesCheckAssigneeRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/branches": [
     ReposListBranchesEndpoint,
-    ReposListBranchesRequestOptions
+    ReposListBranchesRequestOptions,
+    ReposListBranchesResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch": [
     ReposGetBranchEndpoint,
-    ReposGetBranchRequestOptions
+    ReposGetBranchRequestOptions,
+    ReposGetBranchResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection": [
     ReposGetBranchProtectionEndpoint,
-    ReposGetBranchProtectionRequestOptions
+    ReposGetBranchProtectionRequestOptions,
+    ReposGetBranchProtectionResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposGetProtectedBranchAdminEnforcementEndpoint,
-    ReposGetProtectedBranchAdminEnforcementRequestOptions
+    ReposGetProtectedBranchAdminEnforcementRequestOptions,
+    ReposGetProtectedBranchAdminEnforcementResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint,
-    ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions
+    ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    ReposGetProtectedBranchPullRequestReviewEnforcementResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposGetProtectedBranchRequiredSignaturesEndpoint,
-    ReposGetProtectedBranchRequiredSignaturesRequestOptions
+    ReposGetProtectedBranchRequiredSignaturesRequestOptions,
+    ReposGetProtectedBranchRequiredSignaturesResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposGetProtectedBranchRequiredStatusChecksEndpoint,
-    ReposGetProtectedBranchRequiredStatusChecksRequestOptions
+    ReposGetProtectedBranchRequiredStatusChecksRequestOptions,
+    ReposGetProtectedBranchRequiredStatusChecksResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposListProtectedBranchRequiredStatusChecksContextsEndpoint,
-    ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions
+    ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    ReposListProtectedBranchRequiredStatusChecksContextsResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions": [
     ReposGetProtectedBranchRestrictionsEndpoint,
-    ReposGetProtectedBranchRestrictionsRequestOptions
+    ReposGetProtectedBranchRestrictionsRequestOptions,
+    ReposGetProtectedBranchRestrictionsResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposGetAppsWithAccessToProtectedBranchEndpoint,
-    ReposGetAppsWithAccessToProtectedBranchRequestOptions
+    ReposGetAppsWithAccessToProtectedBranchRequestOptions,
+    ReposGetAppsWithAccessToProtectedBranchResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposGetTeamsWithAccessToProtectedBranchEndpoint,
-    ReposGetTeamsWithAccessToProtectedBranchRequestOptions
+    ReposGetTeamsWithAccessToProtectedBranchRequestOptions,
+    ReposGetTeamsWithAccessToProtectedBranchResponseData
   ];
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposGetUsersWithAccessToProtectedBranchEndpoint,
-    ReposGetUsersWithAccessToProtectedBranchRequestOptions
+    ReposGetUsersWithAccessToProtectedBranchRequestOptions,
+    ReposGetUsersWithAccessToProtectedBranchResponseData
   ];
   "GET /repos/:owner/:repo/check-runs/:check_run_id": [
     ChecksGetEndpoint,
-    ChecksGetRequestOptions
+    ChecksGetRequestOptions,
+    ChecksGetResponseData
   ];
   "GET /repos/:owner/:repo/check-runs/:check_run_id/annotations": [
     ChecksListAnnotationsEndpoint,
-    ChecksListAnnotationsRequestOptions
+    ChecksListAnnotationsRequestOptions,
+    ChecksListAnnotationsResponseData
   ];
   "GET /repos/:owner/:repo/check-suites/:check_suite_id": [
     ChecksGetSuiteEndpoint,
-    ChecksGetSuiteRequestOptions
+    ChecksGetSuiteRequestOptions,
+    ChecksGetSuiteResponseData
   ];
   "GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs": [
     ChecksListForSuiteEndpoint,
-    ChecksListForSuiteRequestOptions
+    ChecksListForSuiteRequestOptions,
+    ChecksListForSuiteResponseData
   ];
   "GET /repos/:owner/:repo/collaborators": [
     ReposListCollaboratorsEndpoint,
-    ReposListCollaboratorsRequestOptions
+    ReposListCollaboratorsRequestOptions,
+    ReposListCollaboratorsResponseData
   ];
   "GET /repos/:owner/:repo/collaborators/:username": [
     ReposCheckCollaboratorEndpoint,
-    ReposCheckCollaboratorRequestOptions
+    ReposCheckCollaboratorRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/collaborators/:username/permission": [
     ReposGetCollaboratorPermissionLevelEndpoint,
-    ReposGetCollaboratorPermissionLevelRequestOptions
+    ReposGetCollaboratorPermissionLevelRequestOptions,
+    ReposGetCollaboratorPermissionLevelResponseData
   ];
   "GET /repos/:owner/:repo/comments": [
     ReposListCommitCommentsEndpoint,
-    ReposListCommitCommentsRequestOptions
+    ReposListCommitCommentsRequestOptions,
+    ReposListCommitCommentsResponseData
   ];
   "GET /repos/:owner/:repo/comments/:comment_id": [
     ReposGetCommitCommentEndpoint,
-    ReposGetCommitCommentRequestOptions
+    ReposGetCommitCommentRequestOptions,
+    ReposGetCommitCommentResponseData
   ];
   "GET /repos/:owner/:repo/comments/:comment_id/reactions": [
     ReactionsListForCommitCommentEndpoint,
-    ReactionsListForCommitCommentRequestOptions
+    ReactionsListForCommitCommentRequestOptions,
+    ReactionsListForCommitCommentResponseData
   ];
   "GET /repos/:owner/:repo/commits": [
     ReposListCommitsEndpoint,
-    ReposListCommitsRequestOptions
+    ReposListCommitsRequestOptions,
+    ReposListCommitsResponseData
   ];
   "GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head": [
     ReposListBranchesForHeadCommitEndpoint,
-    ReposListBranchesForHeadCommitRequestOptions
+    ReposListBranchesForHeadCommitRequestOptions,
+    ReposListBranchesForHeadCommitResponseData
   ];
   "GET /repos/:owner/:repo/commits/:commit_sha/comments": [
     ReposListCommentsForCommitEndpoint,
-    ReposListCommentsForCommitRequestOptions
+    ReposListCommentsForCommitRequestOptions,
+    ReposListCommentsForCommitResponseData
   ];
   "GET /repos/:owner/:repo/commits/:commit_sha/pulls": [
     ReposListPullRequestsAssociatedWithCommitEndpoint,
-    ReposListPullRequestsAssociatedWithCommitRequestOptions
+    ReposListPullRequestsAssociatedWithCommitRequestOptions,
+    ReposListPullRequestsAssociatedWithCommitResponseData
   ];
   "GET /repos/:owner/:repo/commits/:ref": [
     ReposGetCommitEndpoint,
-    ReposGetCommitRequestOptions
+    ReposGetCommitRequestOptions,
+    ReposGetCommitResponseData
   ];
   "GET /repos/:owner/:repo/commits/:ref/check-runs": [
     ChecksListForRefEndpoint,
-    ChecksListForRefRequestOptions
+    ChecksListForRefRequestOptions,
+    ChecksListForRefResponseData
   ];
   "GET /repos/:owner/:repo/commits/:ref/check-suites": [
     ChecksListSuitesForRefEndpoint,
-    ChecksListSuitesForRefRequestOptions
+    ChecksListSuitesForRefRequestOptions,
+    ChecksListSuitesForRefResponseData
   ];
   "GET /repos/:owner/:repo/commits/:ref/status": [
     ReposGetCombinedStatusForRefEndpoint,
-    ReposGetCombinedStatusForRefRequestOptions
+    ReposGetCombinedStatusForRefRequestOptions,
+    ReposGetCombinedStatusForRefResponseData
   ];
   "GET /repos/:owner/:repo/commits/:ref/statuses": [
     ReposListStatusesForRefEndpoint,
-    ReposListStatusesForRefRequestOptions
+    ReposListStatusesForRefRequestOptions,
+    ReposListStatusesForRefResponseData
   ];
   "GET /repos/:owner/:repo/community/code_of_conduct": [
     CodesOfConductGetForRepoEndpoint,
-    CodesOfConductGetForRepoRequestOptions
+    CodesOfConductGetForRepoRequestOptions,
+    CodesOfConductGetForRepoResponseData
   ];
   "GET /repos/:owner/:repo/community/profile": [
     ReposRetrieveCommunityProfileMetricsEndpoint,
-    ReposRetrieveCommunityProfileMetricsRequestOptions
+    ReposRetrieveCommunityProfileMetricsRequestOptions,
+    ReposRetrieveCommunityProfileMetricsResponseData
   ];
   "GET /repos/:owner/:repo/compare/:base...:head": [
     ReposCompareCommitsEndpoint,
-    ReposCompareCommitsRequestOptions
+    ReposCompareCommitsRequestOptions,
+    ReposCompareCommitsResponseData
   ];
   "GET /repos/:owner/:repo/contents/:path": [
     ReposGetContentsEndpoint,
-    ReposGetContentsRequestOptions
+    ReposGetContentsRequestOptions,
+    ReposGetContentsResponseData
   ];
   "GET /repos/:owner/:repo/contributors": [
     ReposListContributorsEndpoint,
-    ReposListContributorsRequestOptions
+    ReposListContributorsRequestOptions,
+    ReposListContributorsResponseData
   ];
   "GET /repos/:owner/:repo/deployments": [
     ReposListDeploymentsEndpoint,
-    ReposListDeploymentsRequestOptions
+    ReposListDeploymentsRequestOptions,
+    ReposListDeploymentsResponseData
   ];
   "GET /repos/:owner/:repo/deployments/:deployment_id": [
     ReposGetDeploymentEndpoint,
-    ReposGetDeploymentRequestOptions
+    ReposGetDeploymentRequestOptions,
+    ReposGetDeploymentResponseData
   ];
   "GET /repos/:owner/:repo/deployments/:deployment_id/statuses": [
     ReposListDeploymentStatusesEndpoint,
-    ReposListDeploymentStatusesRequestOptions
+    ReposListDeploymentStatusesRequestOptions,
+    ReposListDeploymentStatusesResponseData
   ];
   "GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id": [
     ReposGetDeploymentStatusEndpoint,
-    ReposGetDeploymentStatusRequestOptions
+    ReposGetDeploymentStatusRequestOptions,
+    ReposGetDeploymentStatusResponseData
   ];
   "GET /repos/:owner/:repo/downloads": [
     ReposListDownloadsEndpoint,
-    ReposListDownloadsRequestOptions
+    ReposListDownloadsRequestOptions,
+    ReposListDownloadsResponseData
   ];
   "GET /repos/:owner/:repo/downloads/:download_id": [
     ReposGetDownloadEndpoint,
-    ReposGetDownloadRequestOptions
+    ReposGetDownloadRequestOptions,
+    ReposGetDownloadResponseData
   ];
   "GET /repos/:owner/:repo/events": [
     ActivityListRepoEventsEndpoint,
-    ActivityListRepoEventsRequestOptions
+    ActivityListRepoEventsRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/forks": [
     ReposListForksEndpoint,
-    ReposListForksRequestOptions
+    ReposListForksRequestOptions,
+    ReposListForksResponseData
   ];
   "GET /repos/:owner/:repo/git/blobs/:file_sha": [
     GitGetBlobEndpoint,
-    GitGetBlobRequestOptions
+    GitGetBlobRequestOptions,
+    GitGetBlobResponseData
   ];
   "GET /repos/:owner/:repo/git/commits/:commit_sha": [
     GitGetCommitEndpoint,
-    GitGetCommitRequestOptions
+    GitGetCommitRequestOptions,
+    GitGetCommitResponseData
   ];
   "GET /repos/:owner/:repo/git/matching-refs/:ref": [
     GitListMatchingRefsEndpoint,
-    GitListMatchingRefsRequestOptions
+    GitListMatchingRefsRequestOptions,
+    GitListMatchingRefsResponseData
   ];
   "GET /repos/:owner/:repo/git/ref/:ref": [
     GitGetRefEndpoint,
-    GitGetRefRequestOptions
+    GitGetRefRequestOptions,
+    GitGetRefResponseData
   ];
   "GET /repos/:owner/:repo/git/tags/:tag_sha": [
     GitGetTagEndpoint,
-    GitGetTagRequestOptions
+    GitGetTagRequestOptions,
+    GitGetTagResponseData
   ];
   "GET /repos/:owner/:repo/git/trees/:tree_sha": [
     GitGetTreeEndpoint,
-    GitGetTreeRequestOptions
+    GitGetTreeRequestOptions,
+    GitGetTreeResponseData
   ];
   "GET /repos/:owner/:repo/hooks": [
     ReposListHooksEndpoint,
-    ReposListHooksRequestOptions
+    ReposListHooksRequestOptions,
+    ReposListHooksResponseData
   ];
   "GET /repos/:owner/:repo/hooks/:hook_id": [
     ReposGetHookEndpoint,
-    ReposGetHookRequestOptions
+    ReposGetHookRequestOptions,
+    ReposGetHookResponseData
   ];
   "GET /repos/:owner/:repo/import": [
     MigrationsGetImportProgressEndpoint,
-    MigrationsGetImportProgressRequestOptions
+    MigrationsGetImportProgressRequestOptions,
+    MigrationsGetImportProgressResponseData
   ];
   "GET /repos/:owner/:repo/import/authors": [
     MigrationsGetCommitAuthorsEndpoint,
-    MigrationsGetCommitAuthorsRequestOptions
+    MigrationsGetCommitAuthorsRequestOptions,
+    MigrationsGetCommitAuthorsResponseData
   ];
   "GET /repos/:owner/:repo/import/large_files": [
     MigrationsGetLargeFilesEndpoint,
-    MigrationsGetLargeFilesRequestOptions
+    MigrationsGetLargeFilesRequestOptions,
+    MigrationsGetLargeFilesResponseData
   ];
   "GET /repos/:owner/:repo/installation": [
     AppsGetRepoInstallationEndpoint,
-    AppsGetRepoInstallationRequestOptions
+    AppsGetRepoInstallationRequestOptions,
+    AppsGetRepoInstallationResponseData
   ];
   "GET /repos/:owner/:repo/interaction-limits": [
     InteractionsGetRestrictionsForRepoEndpoint,
-    InteractionsGetRestrictionsForRepoRequestOptions
+    InteractionsGetRestrictionsForRepoRequestOptions,
+    InteractionsGetRestrictionsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/invitations": [
     ReposListInvitationsEndpoint,
-    ReposListInvitationsRequestOptions
+    ReposListInvitationsRequestOptions,
+    ReposListInvitationsResponseData
   ];
   "GET /repos/:owner/:repo/issues": [
     IssuesListForRepoEndpoint,
-    IssuesListForRepoRequestOptions
+    IssuesListForRepoRequestOptions,
+    IssuesListForRepoResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number": [
     IssuesGetEndpoint,
-    IssuesGetRequestOptions
+    IssuesGetRequestOptions,
+    IssuesGetResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number/comments": [
     IssuesListCommentsEndpoint,
-    IssuesListCommentsRequestOptions
+    IssuesListCommentsRequestOptions,
+    IssuesListCommentsResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number/events": [
     IssuesListEventsEndpoint,
-    IssuesListEventsRequestOptions
+    IssuesListEventsRequestOptions,
+    IssuesListEventsResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesListLabelsOnIssueEndpoint,
-    IssuesListLabelsOnIssueRequestOptions
+    IssuesListLabelsOnIssueRequestOptions,
+    IssuesListLabelsOnIssueResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number/reactions": [
     ReactionsListForIssueEndpoint,
-    ReactionsListForIssueRequestOptions
+    ReactionsListForIssueRequestOptions,
+    ReactionsListForIssueResponseData
   ];
   "GET /repos/:owner/:repo/issues/:issue_number/timeline": [
     IssuesListEventsForTimelineEndpoint,
-    IssuesListEventsForTimelineRequestOptions
+    IssuesListEventsForTimelineRequestOptions,
+    IssuesListEventsForTimelineResponseData
   ];
   "GET /repos/:owner/:repo/issues/comments": [
     IssuesListCommentsForRepoEndpoint,
-    IssuesListCommentsForRepoRequestOptions
+    IssuesListCommentsForRepoRequestOptions,
+    IssuesListCommentsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesGetCommentEndpoint,
-    IssuesGetCommentRequestOptions
+    IssuesGetCommentRequestOptions,
+    IssuesGetCommentResponseData
   ];
   "GET /repos/:owner/:repo/issues/comments/:comment_id/reactions": [
     ReactionsListForIssueCommentEndpoint,
-    ReactionsListForIssueCommentRequestOptions
+    ReactionsListForIssueCommentRequestOptions,
+    ReactionsListForIssueCommentResponseData
   ];
   "GET /repos/:owner/:repo/issues/events": [
     IssuesListEventsForRepoEndpoint,
-    IssuesListEventsForRepoRequestOptions
+    IssuesListEventsForRepoRequestOptions,
+    IssuesListEventsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/issues/events/:event_id": [
     IssuesGetEventEndpoint,
-    IssuesGetEventRequestOptions
+    IssuesGetEventRequestOptions,
+    IssuesGetEventResponseData
   ];
   "GET /repos/:owner/:repo/keys": [
     ReposListDeployKeysEndpoint,
-    ReposListDeployKeysRequestOptions
+    ReposListDeployKeysRequestOptions,
+    ReposListDeployKeysResponseData
   ];
   "GET /repos/:owner/:repo/keys/:key_id": [
     ReposGetDeployKeyEndpoint,
-    ReposGetDeployKeyRequestOptions
+    ReposGetDeployKeyRequestOptions,
+    ReposGetDeployKeyResponseData
   ];
   "GET /repos/:owner/:repo/labels": [
     IssuesListLabelsForRepoEndpoint,
-    IssuesListLabelsForRepoRequestOptions
+    IssuesListLabelsForRepoRequestOptions,
+    IssuesListLabelsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/labels/:name": [
     IssuesGetLabelEndpoint,
-    IssuesGetLabelRequestOptions
+    IssuesGetLabelRequestOptions,
+    IssuesGetLabelResponseData
   ];
   "GET /repos/:owner/:repo/languages": [
     ReposListLanguagesEndpoint,
-    ReposListLanguagesRequestOptions
+    ReposListLanguagesRequestOptions,
+    ReposListLanguagesResponseData
   ];
   "GET /repos/:owner/:repo/license": [
     LicensesGetForRepoEndpoint,
-    LicensesGetForRepoRequestOptions
+    LicensesGetForRepoRequestOptions,
+    LicensesGetForRepoResponseData
   ];
   "GET /repos/:owner/:repo/milestones": [
     IssuesListMilestonesForRepoEndpoint,
-    IssuesListMilestonesForRepoRequestOptions
+    IssuesListMilestonesForRepoRequestOptions,
+    IssuesListMilestonesForRepoResponseData
   ];
   "GET /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesGetMilestoneEndpoint,
-    IssuesGetMilestoneRequestOptions
+    IssuesGetMilestoneRequestOptions,
+    IssuesGetMilestoneResponseData
   ];
   "GET /repos/:owner/:repo/milestones/:milestone_number/labels": [
     IssuesListLabelsForMilestoneEndpoint,
-    IssuesListLabelsForMilestoneRequestOptions
+    IssuesListLabelsForMilestoneRequestOptions,
+    IssuesListLabelsForMilestoneResponseData
   ];
   "GET /repos/:owner/:repo/notifications": [
     ActivityListRepoNotificationsForAuthenticatedUserEndpoint,
-    ActivityListRepoNotificationsForAuthenticatedUserRequestOptions
+    ActivityListRepoNotificationsForAuthenticatedUserRequestOptions,
+    ActivityListRepoNotificationsForAuthenticatedUserResponseData
   ];
   "GET /repos/:owner/:repo/pages": [
     ReposGetPagesEndpoint,
-    ReposGetPagesRequestOptions
+    ReposGetPagesRequestOptions,
+    ReposGetPagesResponseData
   ];
   "GET /repos/:owner/:repo/pages/builds": [
     ReposListPagesBuildsEndpoint,
-    ReposListPagesBuildsRequestOptions
+    ReposListPagesBuildsRequestOptions,
+    ReposListPagesBuildsResponseData
   ];
   "GET /repos/:owner/:repo/pages/builds/:build_id": [
     ReposGetPagesBuildEndpoint,
-    ReposGetPagesBuildRequestOptions
+    ReposGetPagesBuildRequestOptions,
+    ReposGetPagesBuildResponseData
   ];
   "GET /repos/:owner/:repo/pages/builds/latest": [
     ReposGetLatestPagesBuildEndpoint,
-    ReposGetLatestPagesBuildRequestOptions
+    ReposGetLatestPagesBuildRequestOptions,
+    ReposGetLatestPagesBuildResponseData
   ];
   "GET /repos/:owner/:repo/projects": [
     ProjectsListForRepoEndpoint,
-    ProjectsListForRepoRequestOptions
+    ProjectsListForRepoRequestOptions,
+    ProjectsListForRepoResponseData
   ];
-  "GET /repos/:owner/:repo/pulls": [PullsListEndpoint, PullsListRequestOptions];
+  "GET /repos/:owner/:repo/pulls": [
+    PullsListEndpoint,
+    PullsListRequestOptions,
+    PullsListResponseData
+  ];
   "GET /repos/:owner/:repo/pulls/:pull_number": [
     PullsGetEndpoint,
-    PullsGetRequestOptions
+    PullsGetRequestOptions,
+    PullsGetResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/comments": [
     PullsListCommentsEndpoint,
-    PullsListCommentsRequestOptions
+    PullsListCommentsRequestOptions,
+    PullsListCommentsResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/commits": [
     PullsListCommitsEndpoint,
-    PullsListCommitsRequestOptions
+    PullsListCommitsRequestOptions,
+    PullsListCommitsResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/files": [
     PullsListFilesEndpoint,
-    PullsListFilesRequestOptions
+    PullsListFilesRequestOptions,
+    PullsListFilesResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/merge": [
     PullsCheckIfMergedEndpoint,
-    PullsCheckIfMergedRequestOptions
+    PullsCheckIfMergedRequestOptions,
+    any
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsListReviewRequestsEndpoint,
-    PullsListReviewRequestsRequestOptions
+    PullsListReviewRequestsRequestOptions,
+    PullsListReviewRequestsResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews": [
     PullsListReviewsEndpoint,
-    PullsListReviewsRequestOptions
+    PullsListReviewsRequestOptions,
+    PullsListReviewsResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsGetReviewEndpoint,
-    PullsGetReviewRequestOptions
+    PullsGetReviewRequestOptions,
+    PullsGetReviewResponseData
   ];
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments": [
     PullsGetCommentsForReviewEndpoint,
-    PullsGetCommentsForReviewRequestOptions
+    PullsGetCommentsForReviewRequestOptions,
+    PullsGetCommentsForReviewResponseData
   ];
   "GET /repos/:owner/:repo/pulls/comments": [
     PullsListCommentsForRepoEndpoint,
-    PullsListCommentsForRepoRequestOptions
+    PullsListCommentsForRepoRequestOptions,
+    PullsListCommentsForRepoResponseData
   ];
   "GET /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsGetCommentEndpoint,
-    PullsGetCommentRequestOptions
+    PullsGetCommentRequestOptions,
+    PullsGetCommentResponseData
   ];
   "GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions": [
     ReactionsListForPullRequestReviewCommentEndpoint,
-    ReactionsListForPullRequestReviewCommentRequestOptions
+    ReactionsListForPullRequestReviewCommentRequestOptions,
+    ReactionsListForPullRequestReviewCommentResponseData
   ];
   "GET /repos/:owner/:repo/readme": [
     ReposGetReadmeEndpoint,
-    ReposGetReadmeRequestOptions
+    ReposGetReadmeRequestOptions,
+    ReposGetReadmeResponseData
   ];
   "GET /repos/:owner/:repo/releases": [
     ReposListReleasesEndpoint,
-    ReposListReleasesRequestOptions
+    ReposListReleasesRequestOptions,
+    ReposListReleasesResponseData
   ];
   "GET /repos/:owner/:repo/releases/:release_id": [
     ReposGetReleaseEndpoint,
-    ReposGetReleaseRequestOptions
+    ReposGetReleaseRequestOptions,
+    ReposGetReleaseResponseData
   ];
   "GET /repos/:owner/:repo/releases/:release_id/assets": [
     ReposListAssetsForReleaseEndpoint,
-    ReposListAssetsForReleaseRequestOptions
+    ReposListAssetsForReleaseRequestOptions,
+    ReposListAssetsForReleaseResponseData
   ];
   "GET /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposGetReleaseAssetEndpoint,
-    ReposGetReleaseAssetRequestOptions
+    ReposGetReleaseAssetRequestOptions,
+    ReposGetReleaseAssetResponseData
   ];
   "GET /repos/:owner/:repo/releases/latest": [
     ReposGetLatestReleaseEndpoint,
-    ReposGetLatestReleaseRequestOptions
+    ReposGetLatestReleaseRequestOptions,
+    ReposGetLatestReleaseResponseData
   ];
   "GET /repos/:owner/:repo/releases/tags/:tag": [
     ReposGetReleaseByTagEndpoint,
-    ReposGetReleaseByTagRequestOptions
+    ReposGetReleaseByTagRequestOptions,
+    ReposGetReleaseByTagResponseData
   ];
   "GET /repos/:owner/:repo/stargazers": [
     ActivityListStargazersForRepoEndpoint,
-    ActivityListStargazersForRepoRequestOptions
+    ActivityListStargazersForRepoRequestOptions,
+    ActivityListStargazersForRepoResponseData
   ];
   "GET /repos/:owner/:repo/stats/code_frequency": [
     ReposGetCodeFrequencyStatsEndpoint,
-    ReposGetCodeFrequencyStatsRequestOptions
+    ReposGetCodeFrequencyStatsRequestOptions,
+    ReposGetCodeFrequencyStatsResponseData
   ];
   "GET /repos/:owner/:repo/stats/commit_activity": [
     ReposGetCommitActivityStatsEndpoint,
-    ReposGetCommitActivityStatsRequestOptions
+    ReposGetCommitActivityStatsRequestOptions,
+    ReposGetCommitActivityStatsResponseData
   ];
   "GET /repos/:owner/:repo/stats/contributors": [
     ReposGetContributorsStatsEndpoint,
-    ReposGetContributorsStatsRequestOptions
+    ReposGetContributorsStatsRequestOptions,
+    ReposGetContributorsStatsResponseData
   ];
   "GET /repos/:owner/:repo/stats/participation": [
     ReposGetParticipationStatsEndpoint,
-    ReposGetParticipationStatsRequestOptions
+    ReposGetParticipationStatsRequestOptions,
+    ReposGetParticipationStatsResponseData
   ];
   "GET /repos/:owner/:repo/stats/punch_card": [
     ReposGetPunchCardStatsEndpoint,
-    ReposGetPunchCardStatsRequestOptions
+    ReposGetPunchCardStatsRequestOptions,
+    ReposGetPunchCardStatsResponseData
   ];
   "GET /repos/:owner/:repo/subscribers": [
     ActivityListWatchersForRepoEndpoint,
-    ActivityListWatchersForRepoRequestOptions
+    ActivityListWatchersForRepoRequestOptions,
+    ActivityListWatchersForRepoResponseData
   ];
   "GET /repos/:owner/:repo/subscription": [
     ActivityGetRepoSubscriptionEndpoint,
-    ActivityGetRepoSubscriptionRequestOptions
+    ActivityGetRepoSubscriptionRequestOptions,
+    ActivityGetRepoSubscriptionResponseData
   ];
   "GET /repos/:owner/:repo/tags": [
     ReposListTagsEndpoint,
-    ReposListTagsRequestOptions
+    ReposListTagsRequestOptions,
+    ReposListTagsResponseData
   ];
   "GET /repos/:owner/:repo/teams": [
     ReposListTeamsEndpoint,
-    ReposListTeamsRequestOptions
+    ReposListTeamsRequestOptions,
+    ReposListTeamsResponseData
   ];
   "GET /repos/:owner/:repo/topics": [
     ReposGetAllTopicsEndpoint,
-    ReposGetAllTopicsRequestOptions
+    ReposGetAllTopicsRequestOptions,
+    ReposGetAllTopicsResponseData
   ];
   "GET /repos/:owner/:repo/traffic/clones": [
     ReposGetClonesEndpoint,
-    ReposGetClonesRequestOptions
+    ReposGetClonesRequestOptions,
+    ReposGetClonesResponseData
   ];
   "GET /repos/:owner/:repo/traffic/popular/paths": [
     ReposGetTopPathsEndpoint,
-    ReposGetTopPathsRequestOptions
+    ReposGetTopPathsRequestOptions,
+    ReposGetTopPathsResponseData
   ];
   "GET /repos/:owner/:repo/traffic/popular/referrers": [
     ReposGetTopReferrersEndpoint,
-    ReposGetTopReferrersRequestOptions
+    ReposGetTopReferrersRequestOptions,
+    ReposGetTopReferrersResponseData
   ];
   "GET /repos/:owner/:repo/traffic/views": [
     ReposGetViewsEndpoint,
-    ReposGetViewsRequestOptions
+    ReposGetViewsRequestOptions,
+    ReposGetViewsResponseData
   ];
   "GET /repos/:owner/:repo/vulnerability-alerts": [
     ReposCheckVulnerabilityAlertsEndpoint,
-    ReposCheckVulnerabilityAlertsRequestOptions
+    ReposCheckVulnerabilityAlertsRequestOptions,
+    any
   ];
-  "GET /repositories": [ReposListPublicEndpoint, ReposListPublicRequestOptions];
+  "GET /repositories": [
+    ReposListPublicEndpoint,
+    ReposListPublicRequestOptions,
+    ReposListPublicResponseData
+  ];
   "GET /scim/v2/organizations/:org/Users": [
     ScimListProvisionedIdentitiesEndpoint,
-    ScimListProvisionedIdentitiesRequestOptions
+    ScimListProvisionedIdentitiesRequestOptions,
+    ScimListProvisionedIdentitiesResponseData
   ];
   "GET /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimGetProvisioningDetailsForUserEndpoint,
-    ScimGetProvisioningDetailsForUserRequestOptions
+    ScimGetProvisioningDetailsForUserRequestOptions,
+    ScimGetProvisioningDetailsForUserResponseData
   ];
-  "GET /search/code": [SearchCodeEndpoint, SearchCodeRequestOptions];
-  "GET /search/commits": [SearchCommitsEndpoint, SearchCommitsRequestOptions];
+  "GET /search/code": [
+    SearchCodeEndpoint,
+    SearchCodeRequestOptions,
+    SearchCodeResponseData
+  ];
+  "GET /search/commits": [
+    SearchCommitsEndpoint,
+    SearchCommitsRequestOptions,
+    SearchCommitsResponseData
+  ];
   "GET /search/issues": [
     SearchIssuesAndPullRequestsEndpoint,
-    SearchIssuesAndPullRequestsRequestOptions
+    SearchIssuesAndPullRequestsRequestOptions,
+    SearchIssuesAndPullRequestsResponseData
   ];
-  "GET /search/labels": [SearchLabelsEndpoint, SearchLabelsRequestOptions];
-  "GET /search/repositories": [SearchReposEndpoint, SearchReposRequestOptions];
-  "GET /search/topics": [SearchTopicsEndpoint, SearchTopicsRequestOptions];
-  "GET /search/users": [SearchUsersEndpoint, SearchUsersRequestOptions];
-  "GET /teams/:team_id": [TeamsGetLegacyEndpoint, TeamsGetLegacyRequestOptions];
+  "GET /search/labels": [
+    SearchLabelsEndpoint,
+    SearchLabelsRequestOptions,
+    SearchLabelsResponseData
+  ];
+  "GET /search/repositories": [
+    SearchReposEndpoint,
+    SearchReposRequestOptions,
+    SearchReposResponseData
+  ];
+  "GET /search/topics": [
+    SearchTopicsEndpoint,
+    SearchTopicsRequestOptions,
+    SearchTopicsResponseData
+  ];
+  "GET /search/users": [
+    SearchUsersEndpoint,
+    SearchUsersRequestOptions,
+    SearchUsersResponseData
+  ];
+  "GET /teams/:team_id": [
+    TeamsGetLegacyEndpoint,
+    TeamsGetLegacyRequestOptions,
+    TeamsGetLegacyResponseData
+  ];
   "GET /teams/:team_id/discussions": [
     TeamsListDiscussionsLegacyEndpoint,
-    TeamsListDiscussionsLegacyRequestOptions
+    TeamsListDiscussionsLegacyRequestOptions,
+    TeamsListDiscussionsLegacyResponseData
   ];
   "GET /teams/:team_id/discussions/:discussion_number": [
     TeamsGetDiscussionLegacyEndpoint,
-    TeamsGetDiscussionLegacyRequestOptions
+    TeamsGetDiscussionLegacyRequestOptions,
+    TeamsGetDiscussionLegacyResponseData
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments": [
     TeamsListDiscussionCommentsLegacyEndpoint,
-    TeamsListDiscussionCommentsLegacyRequestOptions
+    TeamsListDiscussionCommentsLegacyRequestOptions,
+    TeamsListDiscussionCommentsLegacyResponseData
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsGetDiscussionCommentLegacyEndpoint,
-    TeamsGetDiscussionCommentLegacyRequestOptions
+    TeamsGetDiscussionCommentLegacyRequestOptions,
+    TeamsGetDiscussionCommentLegacyResponseData
   ];
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsListForTeamDiscussionCommentLegacyEndpoint,
-    ReactionsListForTeamDiscussionCommentLegacyRequestOptions
+    ReactionsListForTeamDiscussionCommentLegacyRequestOptions,
+    ReactionsListForTeamDiscussionCommentLegacyResponseData
   ];
   "GET /teams/:team_id/discussions/:discussion_number/reactions": [
     ReactionsListForTeamDiscussionLegacyEndpoint,
-    ReactionsListForTeamDiscussionLegacyRequestOptions
+    ReactionsListForTeamDiscussionLegacyRequestOptions,
+    ReactionsListForTeamDiscussionLegacyResponseData
   ];
   "GET /teams/:team_id/invitations": [
     TeamsListPendingInvitationsLegacyEndpoint,
-    TeamsListPendingInvitationsLegacyRequestOptions
+    TeamsListPendingInvitationsLegacyRequestOptions,
+    TeamsListPendingInvitationsLegacyResponseData
   ];
   "GET /teams/:team_id/members": [
     TeamsListMembersLegacyEndpoint,
-    TeamsListMembersLegacyRequestOptions
+    TeamsListMembersLegacyRequestOptions,
+    TeamsListMembersLegacyResponseData
   ];
   "GET /teams/:team_id/members/:username": [
     TeamsGetMemberLegacyEndpoint,
-    TeamsGetMemberLegacyRequestOptions
+    TeamsGetMemberLegacyRequestOptions,
+    any
   ];
   "GET /teams/:team_id/memberships/:username": [
     TeamsGetMembershipLegacyEndpoint,
-    TeamsGetMembershipLegacyRequestOptions
+    TeamsGetMembershipLegacyRequestOptions,
+    TeamsGetMembershipLegacyResponseData
   ];
   "GET /teams/:team_id/projects": [
     TeamsListProjectsLegacyEndpoint,
-    TeamsListProjectsLegacyRequestOptions
+    TeamsListProjectsLegacyRequestOptions,
+    TeamsListProjectsLegacyResponseData
   ];
   "GET /teams/:team_id/projects/:project_id": [
     TeamsReviewProjectLegacyEndpoint,
-    TeamsReviewProjectLegacyRequestOptions
+    TeamsReviewProjectLegacyRequestOptions,
+    TeamsReviewProjectLegacyResponseData
   ];
   "GET /teams/:team_id/repos": [
     TeamsListReposLegacyEndpoint,
-    TeamsListReposLegacyRequestOptions
+    TeamsListReposLegacyRequestOptions,
+    TeamsListReposLegacyResponseData
   ];
   "GET /teams/:team_id/repos/:owner/:repo": [
     TeamsCheckManagesRepoLegacyEndpoint,
-    TeamsCheckManagesRepoLegacyRequestOptions
+    TeamsCheckManagesRepoLegacyRequestOptions,
+    TeamsCheckManagesRepoLegacyResponseData
   ];
   "GET /teams/:team_id/team-sync/group-mappings": [
     TeamsListIdPGroupsForLegacyEndpoint,
-    TeamsListIdPGroupsForLegacyRequestOptions
+    TeamsListIdPGroupsForLegacyRequestOptions,
+    TeamsListIdPGroupsForLegacyResponseData
   ];
   "GET /teams/:team_id/teams": [
     TeamsListChildLegacyEndpoint,
-    TeamsListChildLegacyRequestOptions
+    TeamsListChildLegacyRequestOptions,
+    TeamsListChildLegacyResponseData
   ];
   "GET /user": [
     UsersGetAuthenticatedEndpoint,
-    UsersGetAuthenticatedRequestOptions
+    UsersGetAuthenticatedRequestOptions,
+    UsersGetAuthenticatedResponseData
   ];
   "GET /user/:migration_id/repositories": [
     MigrationsListReposForUserEndpoint,
-    MigrationsListReposForUserRequestOptions
+    MigrationsListReposForUserRequestOptions,
+    MigrationsListReposForUserResponseData
   ];
   "GET /user/blocks": [
     UsersListBlockedEndpoint,
-    UsersListBlockedRequestOptions
+    UsersListBlockedRequestOptions,
+    UsersListBlockedResponseData
   ];
   "GET /user/blocks/:username": [
     UsersCheckBlockedEndpoint,
-    UsersCheckBlockedRequestOptions
+    UsersCheckBlockedRequestOptions,
+    any
   ];
-  "GET /user/emails": [UsersListEmailsEndpoint, UsersListEmailsRequestOptions];
+  "GET /user/emails": [
+    UsersListEmailsEndpoint,
+    UsersListEmailsRequestOptions,
+    UsersListEmailsResponseData
+  ];
   "GET /user/followers": [
     UsersListFollowersForAuthenticatedUserEndpoint,
-    UsersListFollowersForAuthenticatedUserRequestOptions
+    UsersListFollowersForAuthenticatedUserRequestOptions,
+    UsersListFollowersForAuthenticatedUserResponseData
   ];
   "GET /user/following": [
     UsersListFollowedByAuthenticatedEndpoint,
-    UsersListFollowedByAuthenticatedRequestOptions
+    UsersListFollowedByAuthenticatedRequestOptions,
+    UsersListFollowedByAuthenticatedResponseData
   ];
   "GET /user/following/:username": [
     UsersCheckFollowingEndpoint,
-    UsersCheckFollowingRequestOptions
+    UsersCheckFollowingRequestOptions,
+    any
   ];
   "GET /user/gpg_keys": [
     UsersListGpgKeysEndpoint,
-    UsersListGpgKeysRequestOptions
+    UsersListGpgKeysRequestOptions,
+    UsersListGpgKeysResponseData
   ];
   "GET /user/gpg_keys/:gpg_key_id": [
     UsersGetGpgKeyEndpoint,
-    UsersGetGpgKeyRequestOptions
+    UsersGetGpgKeyRequestOptions,
+    UsersGetGpgKeyResponseData
   ];
   "GET /user/installations": [
     AppsListInstallationsForAuthenticatedUserEndpoint,
-    AppsListInstallationsForAuthenticatedUserRequestOptions
+    AppsListInstallationsForAuthenticatedUserRequestOptions,
+    AppsListInstallationsForAuthenticatedUserResponseData
   ];
   "GET /user/installations/:installation_id/repositories": [
     AppsListInstallationReposForAuthenticatedUserEndpoint,
-    AppsListInstallationReposForAuthenticatedUserRequestOptions
+    AppsListInstallationReposForAuthenticatedUserRequestOptions,
+    AppsListInstallationReposForAuthenticatedUserResponseData
   ];
   "GET /user/issues": [
     IssuesListForAuthenticatedUserEndpoint,
-    IssuesListForAuthenticatedUserRequestOptions
+    IssuesListForAuthenticatedUserRequestOptions,
+    IssuesListForAuthenticatedUserResponseData
   ];
   "GET /user/keys": [
     UsersListPublicKeysEndpoint,
-    UsersListPublicKeysRequestOptions
+    UsersListPublicKeysRequestOptions,
+    UsersListPublicKeysResponseData
   ];
   "GET /user/keys/:key_id": [
     UsersGetPublicKeyEndpoint,
-    UsersGetPublicKeyRequestOptions
+    UsersGetPublicKeyRequestOptions,
+    UsersGetPublicKeyResponseData
   ];
   "GET /user/marketplace_purchases": [
     AppsListSubscriptionsForAuthenticatedUserEndpoint,
-    AppsListSubscriptionsForAuthenticatedUserRequestOptions
+    AppsListSubscriptionsForAuthenticatedUserRequestOptions,
+    AppsListSubscriptionsForAuthenticatedUserResponseData
   ];
   "GET /user/marketplace_purchases/stubbed": [
     AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint,
-    AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions
+    AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions,
+    AppsListSubscriptionsForAuthenticatedUserStubbedResponseData
   ];
   "GET /user/memberships/orgs": [
     OrgsListMembershipsEndpoint,
-    OrgsListMembershipsRequestOptions
+    OrgsListMembershipsRequestOptions,
+    OrgsListMembershipsResponseData
   ];
   "GET /user/memberships/orgs/:org": [
     OrgsGetMembershipForAuthenticatedUserEndpoint,
-    OrgsGetMembershipForAuthenticatedUserRequestOptions
+    OrgsGetMembershipForAuthenticatedUserRequestOptions,
+    OrgsGetMembershipForAuthenticatedUserResponseData
   ];
   "GET /user/migrations": [
     MigrationsListForAuthenticatedUserEndpoint,
-    MigrationsListForAuthenticatedUserRequestOptions
+    MigrationsListForAuthenticatedUserRequestOptions,
+    MigrationsListForAuthenticatedUserResponseData
   ];
   "GET /user/migrations/:migration_id": [
     MigrationsGetStatusForAuthenticatedUserEndpoint,
-    MigrationsGetStatusForAuthenticatedUserRequestOptions
+    MigrationsGetStatusForAuthenticatedUserRequestOptions,
+    MigrationsGetStatusForAuthenticatedUserResponseData
   ];
   "GET /user/migrations/:migration_id/archive": [
     MigrationsGetArchiveForAuthenticatedUserEndpoint,
-    MigrationsGetArchiveForAuthenticatedUserRequestOptions
+    MigrationsGetArchiveForAuthenticatedUserRequestOptions,
+    any
   ];
   "GET /user/orgs": [
     OrgsListForAuthenticatedUserEndpoint,
-    OrgsListForAuthenticatedUserRequestOptions
+    OrgsListForAuthenticatedUserRequestOptions,
+    OrgsListForAuthenticatedUserResponseData
   ];
   "GET /user/public_emails": [
     UsersListPublicEmailsEndpoint,
-    UsersListPublicEmailsRequestOptions
+    UsersListPublicEmailsRequestOptions,
+    UsersListPublicEmailsResponseData
   ];
   "GET /user/repos": [
     ReposListForAuthenticatedUserEndpoint,
-    ReposListForAuthenticatedUserRequestOptions
+    ReposListForAuthenticatedUserRequestOptions,
+    any
   ];
   "GET /user/repository_invitations": [
     ReposListInvitationsForAuthenticatedUserEndpoint,
-    ReposListInvitationsForAuthenticatedUserRequestOptions
+    ReposListInvitationsForAuthenticatedUserRequestOptions,
+    ReposListInvitationsForAuthenticatedUserResponseData
   ];
   "GET /user/starred": [
     ActivityListReposStarredByAuthenticatedUserEndpoint,
-    ActivityListReposStarredByAuthenticatedUserRequestOptions
+    ActivityListReposStarredByAuthenticatedUserRequestOptions,
+    ActivityListReposStarredByAuthenticatedUserResponseData
   ];
   "GET /user/starred/:owner/:repo": [
     ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint,
-    ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions
+    ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions,
+    any
   ];
   "GET /user/subscriptions": [
     ActivityListWatchedReposForAuthenticatedUserEndpoint,
-    ActivityListWatchedReposForAuthenticatedUserRequestOptions
+    ActivityListWatchedReposForAuthenticatedUserRequestOptions,
+    ActivityListWatchedReposForAuthenticatedUserResponseData
   ];
   "GET /user/subscriptions/:owner/:repo": [
     ActivityCheckWatchingRepoLegacyEndpoint,
-    ActivityCheckWatchingRepoLegacyRequestOptions
+    ActivityCheckWatchingRepoLegacyRequestOptions,
+    any
   ];
   "GET /user/teams": [
     TeamsListForAuthenticatedUserEndpoint,
-    TeamsListForAuthenticatedUserRequestOptions
+    TeamsListForAuthenticatedUserRequestOptions,
+    TeamsListForAuthenticatedUserResponseData
   ];
-  "GET /users": [UsersListEndpoint, UsersListRequestOptions];
+  "GET /users": [
+    UsersListEndpoint,
+    UsersListRequestOptions,
+    UsersListResponseData
+  ];
   "GET /users/:username": [
     UsersGetByUsernameEndpoint,
-    UsersGetByUsernameRequestOptions
+    UsersGetByUsernameRequestOptions,
+    UsersGetByUsernameResponseData
   ];
   "GET /users/:username/events": [
     ActivityListEventsForAuthenticatedUserEndpoint,
-    ActivityListEventsForAuthenticatedUserRequestOptions
+    ActivityListEventsForAuthenticatedUserRequestOptions,
+    any
   ];
   "GET /users/:username/events/orgs/:org": [
     ActivityListOrgEventsForAuthenticatedUserEndpoint,
-    ActivityListOrgEventsForAuthenticatedUserRequestOptions
+    ActivityListOrgEventsForAuthenticatedUserRequestOptions,
+    any
   ];
   "GET /users/:username/events/public": [
     ActivityListPublicEventsForUserEndpoint,
-    ActivityListPublicEventsForUserRequestOptions
+    ActivityListPublicEventsForUserRequestOptions,
+    any
   ];
   "GET /users/:username/followers": [
     UsersListFollowersForUserEndpoint,
-    UsersListFollowersForUserRequestOptions
+    UsersListFollowersForUserRequestOptions,
+    UsersListFollowersForUserResponseData
   ];
   "GET /users/:username/following": [
     UsersListFollowingForUserEndpoint,
-    UsersListFollowingForUserRequestOptions
+    UsersListFollowingForUserRequestOptions,
+    UsersListFollowingForUserResponseData
   ];
   "GET /users/:username/following/:target_user": [
     UsersCheckFollowingForUserEndpoint,
-    UsersCheckFollowingForUserRequestOptions
+    UsersCheckFollowingForUserRequestOptions,
+    any
   ];
   "GET /users/:username/gists": [
     GistsListForUserEndpoint,
-    GistsListForUserRequestOptions
+    GistsListForUserRequestOptions,
+    GistsListForUserResponseData
   ];
   "GET /users/:username/gpg_keys": [
     UsersListGpgKeysForUserEndpoint,
-    UsersListGpgKeysForUserRequestOptions
+    UsersListGpgKeysForUserRequestOptions,
+    UsersListGpgKeysForUserResponseData
   ];
   "GET /users/:username/hovercard": [
     UsersGetContextForUserEndpoint,
-    UsersGetContextForUserRequestOptions
+    UsersGetContextForUserRequestOptions,
+    UsersGetContextForUserResponseData
   ];
   "GET /users/:username/installation": [
     AppsGetUserInstallationEndpoint,
-    AppsGetUserInstallationRequestOptions
+    AppsGetUserInstallationRequestOptions,
+    AppsGetUserInstallationResponseData
   ];
   "GET /users/:username/keys": [
     UsersListPublicKeysForUserEndpoint,
-    UsersListPublicKeysForUserRequestOptions
+    UsersListPublicKeysForUserRequestOptions,
+    UsersListPublicKeysForUserResponseData
   ];
   "GET /users/:username/orgs": [
     OrgsListForUserEndpoint,
-    OrgsListForUserRequestOptions
+    OrgsListForUserRequestOptions,
+    OrgsListForUserResponseData
   ];
   "GET /users/:username/projects": [
     ProjectsListForUserEndpoint,
-    ProjectsListForUserRequestOptions
+    ProjectsListForUserRequestOptions,
+    ProjectsListForUserResponseData
   ];
   "GET /users/:username/received_events": [
     ActivityListReceivedEventsForUserEndpoint,
-    ActivityListReceivedEventsForUserRequestOptions
+    ActivityListReceivedEventsForUserRequestOptions,
+    any
   ];
   "GET /users/:username/received_events/public": [
     ActivityListReceivedPublicEventsForUserEndpoint,
-    ActivityListReceivedPublicEventsForUserRequestOptions
+    ActivityListReceivedPublicEventsForUserRequestOptions,
+    any
   ];
   "GET /users/:username/repos": [
     ReposListForUserEndpoint,
-    ReposListForUserRequestOptions
+    ReposListForUserRequestOptions,
+    any
   ];
   "GET /users/:username/starred": [
     ActivityListReposStarredByUserEndpoint,
-    ActivityListReposStarredByUserRequestOptions
+    ActivityListReposStarredByUserRequestOptions,
+    ActivityListReposStarredByUserResponseData
   ];
   "GET /users/:username/subscriptions": [
     ActivityListReposWatchedByUserEndpoint,
-    ActivityListReposWatchedByUserRequestOptions
+    ActivityListReposWatchedByUserRequestOptions,
+    ActivityListReposWatchedByUserResponseData
   ];
   "PATCH /applications/:client_id/token": [
     AppsResetTokenEndpoint,
-    AppsResetTokenRequestOptions
+    AppsResetTokenRequestOptions,
+    AppsResetTokenResponseData
   ];
   "PATCH /authorizations/:authorization_id": [
     OauthAuthorizationsUpdateAuthorizationEndpoint,
-    OauthAuthorizationsUpdateAuthorizationRequestOptions
+    OauthAuthorizationsUpdateAuthorizationRequestOptions,
+    OauthAuthorizationsUpdateAuthorizationResponseData
   ];
-  "PATCH /gists/:gist_id": [GistsUpdateEndpoint, GistsUpdateRequestOptions];
+  "PATCH /gists/:gist_id": [
+    GistsUpdateEndpoint,
+    GistsUpdateRequestOptions,
+    GistsUpdateResponseData
+  ];
   "PATCH /gists/:gist_id/comments/:comment_id": [
     GistsUpdateCommentEndpoint,
-    GistsUpdateCommentRequestOptions
+    GistsUpdateCommentRequestOptions,
+    GistsUpdateCommentResponseData
   ];
   "PATCH /notifications/threads/:thread_id": [
     ActivityMarkThreadAsReadEndpoint,
-    ActivityMarkThreadAsReadRequestOptions
+    ActivityMarkThreadAsReadRequestOptions,
+    any
   ];
-  "PATCH /orgs/:org": [OrgsUpdateEndpoint, OrgsUpdateRequestOptions];
+  "PATCH /orgs/:org": [
+    OrgsUpdateEndpoint,
+    OrgsUpdateRequestOptions,
+    OrgsUpdateResponseData
+  ];
   "PATCH /orgs/:org/hooks/:hook_id": [
     OrgsUpdateHookEndpoint,
-    OrgsUpdateHookRequestOptions
+    OrgsUpdateHookRequestOptions,
+    OrgsUpdateHookResponseData
   ];
   "PATCH /orgs/:org/teams/:team_slug": [
     TeamsUpdateInOrgEndpoint,
-    TeamsUpdateInOrgRequestOptions
+    TeamsUpdateInOrgRequestOptions,
+    TeamsUpdateInOrgResponseData
   ];
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsUpdateDiscussionInOrgEndpoint,
-    TeamsUpdateDiscussionInOrgRequestOptions
+    TeamsUpdateDiscussionInOrgRequestOptions,
+    TeamsUpdateDiscussionInOrgResponseData
   ];
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsUpdateDiscussionCommentInOrgEndpoint,
-    TeamsUpdateDiscussionCommentInOrgRequestOptions
+    TeamsUpdateDiscussionCommentInOrgRequestOptions,
+    TeamsUpdateDiscussionCommentInOrgResponseData
   ];
   "PATCH /orgs/:org/teams/:team_slug/team-sync/group-mappings": [
     TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint,
-    TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions
+    TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions,
+    TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData
   ];
   "PATCH /projects/:project_id": [
     ProjectsUpdateEndpoint,
-    ProjectsUpdateRequestOptions
+    ProjectsUpdateRequestOptions,
+    ProjectsUpdateResponseData
   ];
   "PATCH /projects/columns/:column_id": [
     ProjectsUpdateColumnEndpoint,
-    ProjectsUpdateColumnRequestOptions
+    ProjectsUpdateColumnRequestOptions,
+    ProjectsUpdateColumnResponseData
   ];
   "PATCH /projects/columns/cards/:card_id": [
     ProjectsUpdateCardEndpoint,
-    ProjectsUpdateCardRequestOptions
+    ProjectsUpdateCardRequestOptions,
+    ProjectsUpdateCardResponseData
   ];
-  "PATCH /repos/:owner/:repo": [ReposUpdateEndpoint, ReposUpdateRequestOptions];
+  "PATCH /repos/:owner/:repo": [
+    ReposUpdateEndpoint,
+    ReposUpdateRequestOptions,
+    ReposUpdateResponseData
+  ];
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint,
-    ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData
   ];
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposUpdateProtectedBranchRequiredStatusChecksEndpoint,
-    ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions
+    ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions,
+    ReposUpdateProtectedBranchRequiredStatusChecksResponseData
   ];
   "PATCH /repos/:owner/:repo/check-runs/:check_run_id": [
     ChecksUpdateEndpoint,
-    ChecksUpdateRequestOptions
+    ChecksUpdateRequestOptions,
+    ChecksUpdateResponseData
   ];
   "PATCH /repos/:owner/:repo/check-suites/preferences": [
     ChecksSetSuitesPreferencesEndpoint,
-    ChecksSetSuitesPreferencesRequestOptions
+    ChecksSetSuitesPreferencesRequestOptions,
+    ChecksSetSuitesPreferencesResponseData
   ];
   "PATCH /repos/:owner/:repo/comments/:comment_id": [
     ReposUpdateCommitCommentEndpoint,
-    ReposUpdateCommitCommentRequestOptions
+    ReposUpdateCommitCommentRequestOptions,
+    ReposUpdateCommitCommentResponseData
   ];
   "PATCH /repos/:owner/:repo/git/refs/:ref": [
     GitUpdateRefEndpoint,
-    GitUpdateRefRequestOptions
+    GitUpdateRefRequestOptions,
+    GitUpdateRefResponseData
   ];
   "PATCH /repos/:owner/:repo/hooks/:hook_id": [
     ReposUpdateHookEndpoint,
-    ReposUpdateHookRequestOptions
+    ReposUpdateHookRequestOptions,
+    ReposUpdateHookResponseData
   ];
   "PATCH /repos/:owner/:repo/import": [
     MigrationsUpdateImportEndpoint,
-    MigrationsUpdateImportRequestOptions
+    MigrationsUpdateImportRequestOptions,
+    MigrationsUpdateImportResponseData
   ];
   "PATCH /repos/:owner/:repo/import/authors/:author_id": [
     MigrationsMapCommitAuthorEndpoint,
-    MigrationsMapCommitAuthorRequestOptions
+    MigrationsMapCommitAuthorRequestOptions,
+    MigrationsMapCommitAuthorResponseData
   ];
   "PATCH /repos/:owner/:repo/import/lfs": [
     MigrationsSetLfsPreferenceEndpoint,
-    MigrationsSetLfsPreferenceRequestOptions
+    MigrationsSetLfsPreferenceRequestOptions,
+    MigrationsSetLfsPreferenceResponseData
   ];
   "PATCH /repos/:owner/:repo/invitations/:invitation_id": [
     ReposUpdateInvitationEndpoint,
-    ReposUpdateInvitationRequestOptions
+    ReposUpdateInvitationRequestOptions,
+    ReposUpdateInvitationResponseData
   ];
   "PATCH /repos/:owner/:repo/issues/:issue_number": [
     IssuesUpdateEndpoint,
-    IssuesUpdateRequestOptions
+    IssuesUpdateRequestOptions,
+    IssuesUpdateResponseData
   ];
   "PATCH /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesUpdateCommentEndpoint,
-    IssuesUpdateCommentRequestOptions
+    IssuesUpdateCommentRequestOptions,
+    IssuesUpdateCommentResponseData
   ];
   "PATCH /repos/:owner/:repo/labels/:name": [
     IssuesUpdateLabelEndpoint,
-    IssuesUpdateLabelRequestOptions
+    IssuesUpdateLabelRequestOptions,
+    IssuesUpdateLabelResponseData
   ];
   "PATCH /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesUpdateMilestoneEndpoint,
-    IssuesUpdateMilestoneRequestOptions
+    IssuesUpdateMilestoneRequestOptions,
+    IssuesUpdateMilestoneResponseData
   ];
   "PATCH /repos/:owner/:repo/pulls/:pull_number": [
     PullsUpdateEndpoint,
-    PullsUpdateRequestOptions
+    PullsUpdateRequestOptions,
+    PullsUpdateResponseData
   ];
   "PATCH /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsUpdateCommentEndpoint,
-    PullsUpdateCommentRequestOptions
+    PullsUpdateCommentRequestOptions,
+    PullsUpdateCommentResponseData
   ];
   "PATCH /repos/:owner/:repo/releases/:release_id": [
     ReposUpdateReleaseEndpoint,
-    ReposUpdateReleaseRequestOptions
+    ReposUpdateReleaseRequestOptions,
+    ReposUpdateReleaseResponseData
   ];
   "PATCH /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposUpdateReleaseAssetEndpoint,
-    ReposUpdateReleaseAssetRequestOptions
+    ReposUpdateReleaseAssetRequestOptions,
+    ReposUpdateReleaseAssetResponseData
   ];
   "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimUpdateUserAttributeEndpoint,
-    ScimUpdateUserAttributeRequestOptions
+    ScimUpdateUserAttributeRequestOptions,
+    ScimUpdateUserAttributeResponseData
   ];
   "PATCH /teams/:team_id": [
     TeamsUpdateLegacyEndpoint,
-    TeamsUpdateLegacyRequestOptions
+    TeamsUpdateLegacyRequestOptions,
+    TeamsUpdateLegacyResponseData
   ];
   "PATCH /teams/:team_id/discussions/:discussion_number": [
     TeamsUpdateDiscussionLegacyEndpoint,
-    TeamsUpdateDiscussionLegacyRequestOptions
+    TeamsUpdateDiscussionLegacyRequestOptions,
+    TeamsUpdateDiscussionLegacyResponseData
   ];
   "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsUpdateDiscussionCommentLegacyEndpoint,
-    TeamsUpdateDiscussionCommentLegacyRequestOptions
+    TeamsUpdateDiscussionCommentLegacyRequestOptions,
+    TeamsUpdateDiscussionCommentLegacyResponseData
   ];
   "PATCH /teams/:team_id/team-sync/group-mappings": [
     TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint,
-    TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions
+    TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions,
+    TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData
   ];
   "PATCH /user": [
     UsersUpdateAuthenticatedEndpoint,
-    UsersUpdateAuthenticatedRequestOptions
+    UsersUpdateAuthenticatedRequestOptions,
+    UsersUpdateAuthenticatedResponseData
   ];
   "PATCH /user/email/visibility": [
     UsersTogglePrimaryEmailVisibilityEndpoint,
-    UsersTogglePrimaryEmailVisibilityRequestOptions
+    UsersTogglePrimaryEmailVisibilityRequestOptions,
+    UsersTogglePrimaryEmailVisibilityResponseData
   ];
   "PATCH /user/memberships/orgs/:org": [
     OrgsUpdateMembershipEndpoint,
-    OrgsUpdateMembershipRequestOptions
+    OrgsUpdateMembershipRequestOptions,
+    OrgsUpdateMembershipResponseData
   ];
   "PATCH /user/repository_invitations/:invitation_id": [
     ReposAcceptInvitationEndpoint,
-    ReposAcceptInvitationRequestOptions
+    ReposAcceptInvitationRequestOptions,
+    any
   ];
   "POST /app-manifests/:code/conversions": [
     AppsCreateFromManifestEndpoint,
-    AppsCreateFromManifestRequestOptions
+    AppsCreateFromManifestRequestOptions,
+    AppsCreateFromManifestResponseData
   ];
   "POST /app/installations/:installation_id/access_tokens": [
     AppsCreateInstallationTokenEndpoint,
-    AppsCreateInstallationTokenRequestOptions
+    AppsCreateInstallationTokenRequestOptions,
+    AppsCreateInstallationTokenResponseData
   ];
   "POST /applications/:client_id/token": [
     AppsCheckTokenEndpoint,
-    AppsCheckTokenRequestOptions
+    AppsCheckTokenRequestOptions,
+    AppsCheckTokenResponseData
   ];
   "POST /applications/:client_id/tokens/:access_token": [
     AppsResetAuthorizationEndpoint,
-    AppsResetAuthorizationRequestOptions
+    AppsResetAuthorizationRequestOptions,
+    AppsResetAuthorizationResponseData
   ];
   "POST /authorizations": [
     OauthAuthorizationsCreateAuthorizationEndpoint,
-    OauthAuthorizationsCreateAuthorizationRequestOptions
+    OauthAuthorizationsCreateAuthorizationRequestOptions,
+    OauthAuthorizationsCreateAuthorizationResponseData
   ];
   "POST /content_references/:content_reference_id/attachments": [
     AppsCreateContentAttachmentEndpoint,
-    AppsCreateContentAttachmentRequestOptions
+    AppsCreateContentAttachmentRequestOptions,
+    AppsCreateContentAttachmentResponseData
   ];
-  "POST /gists": [GistsCreateEndpoint, GistsCreateRequestOptions];
+  "POST /gists": [
+    GistsCreateEndpoint,
+    GistsCreateRequestOptions,
+    GistsCreateResponseData
+  ];
   "POST /gists/:gist_id/comments": [
     GistsCreateCommentEndpoint,
-    GistsCreateCommentRequestOptions
+    GistsCreateCommentRequestOptions,
+    GistsCreateCommentResponseData
   ];
-  "POST /gists/:gist_id/forks": [GistsForkEndpoint, GistsForkRequestOptions];
-  "POST /markdown": [MarkdownRenderEndpoint, MarkdownRenderRequestOptions];
+  "POST /gists/:gist_id/forks": [
+    GistsForkEndpoint,
+    GistsForkRequestOptions,
+    GistsForkResponseData
+  ];
+  "POST /markdown": [MarkdownRenderEndpoint, MarkdownRenderRequestOptions, any];
   "POST /markdown/raw": [
     MarkdownRenderRawEndpoint,
-    MarkdownRenderRawRequestOptions
+    MarkdownRenderRawRequestOptions,
+    any
   ];
   "POST /orgs/:org/hooks": [
     OrgsCreateHookEndpoint,
-    OrgsCreateHookRequestOptions
+    OrgsCreateHookRequestOptions,
+    OrgsCreateHookResponseData
   ];
   "POST /orgs/:org/hooks/:hook_id/pings": [
     OrgsPingHookEndpoint,
-    OrgsPingHookRequestOptions
+    OrgsPingHookRequestOptions,
+    any
   ];
   "POST /orgs/:org/invitations": [
     OrgsCreateInvitationEndpoint,
-    OrgsCreateInvitationRequestOptions
+    OrgsCreateInvitationRequestOptions,
+    OrgsCreateInvitationResponseData
   ];
   "POST /orgs/:org/migrations": [
     MigrationsStartForOrgEndpoint,
-    MigrationsStartForOrgRequestOptions
+    MigrationsStartForOrgRequestOptions,
+    MigrationsStartForOrgResponseData
   ];
   "POST /orgs/:org/projects": [
     ProjectsCreateForOrgEndpoint,
-    ProjectsCreateForOrgRequestOptions
+    ProjectsCreateForOrgRequestOptions,
+    ProjectsCreateForOrgResponseData
   ];
   "POST /orgs/:org/repos": [
     ReposCreateInOrgEndpoint,
-    ReposCreateInOrgRequestOptions
+    ReposCreateInOrgRequestOptions,
+    ReposCreateInOrgResponseData
   ];
-  "POST /orgs/:org/teams": [TeamsCreateEndpoint, TeamsCreateRequestOptions];
+  "POST /orgs/:org/teams": [
+    TeamsCreateEndpoint,
+    TeamsCreateRequestOptions,
+    TeamsCreateResponseData
+  ];
   "POST /orgs/:org/teams/:team_slug/discussions": [
     TeamsCreateDiscussionInOrgEndpoint,
-    TeamsCreateDiscussionInOrgRequestOptions
+    TeamsCreateDiscussionInOrgRequestOptions,
+    TeamsCreateDiscussionInOrgResponseData
   ];
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": [
     TeamsCreateDiscussionCommentInOrgEndpoint,
-    TeamsCreateDiscussionCommentInOrgRequestOptions
+    TeamsCreateDiscussionCommentInOrgRequestOptions,
+    TeamsCreateDiscussionCommentInOrgResponseData
   ];
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsCreateForTeamDiscussionCommentInOrgEndpoint,
-    ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions
+    ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions,
+    ReactionsCreateForTeamDiscussionCommentInOrgResponseData
   ];
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": [
     ReactionsCreateForTeamDiscussionInOrgEndpoint,
-    ReactionsCreateForTeamDiscussionInOrgRequestOptions
+    ReactionsCreateForTeamDiscussionInOrgRequestOptions,
+    ReactionsCreateForTeamDiscussionInOrgResponseData
   ];
   "POST /projects/:project_id/columns": [
     ProjectsCreateColumnEndpoint,
-    ProjectsCreateColumnRequestOptions
+    ProjectsCreateColumnRequestOptions,
+    ProjectsCreateColumnResponseData
   ];
   "POST /projects/columns/:column_id/cards": [
     ProjectsCreateCardEndpoint,
-    ProjectsCreateCardRequestOptions
+    ProjectsCreateCardRequestOptions,
+    ProjectsCreateCardResponseData
   ];
   "POST /projects/columns/:column_id/moves": [
     ProjectsMoveColumnEndpoint,
-    ProjectsMoveColumnRequestOptions
+    ProjectsMoveColumnRequestOptions,
+    any
   ];
   "POST /projects/columns/cards/:card_id/moves": [
     ProjectsMoveCardEndpoint,
-    ProjectsMoveCardRequestOptions
+    ProjectsMoveCardRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/actions/runners/registration-token": [
     ActionsCreateRegistrationTokenEndpoint,
-    ActionsCreateRegistrationTokenRequestOptions
+    ActionsCreateRegistrationTokenRequestOptions,
+    ActionsCreateRegistrationTokenResponseData
   ];
   "POST /repos/:owner/:repo/actions/runners/remove-token": [
     ActionsCreateRemoveTokenEndpoint,
-    ActionsCreateRemoveTokenRequestOptions
+    ActionsCreateRemoveTokenRequestOptions,
+    ActionsCreateRemoveTokenResponseData
   ];
   "POST /repos/:owner/:repo/actions/runs/:run_id/cancel": [
     ActionsCancelWorkflowRunEndpoint,
-    ActionsCancelWorkflowRunRequestOptions
+    ActionsCancelWorkflowRunRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/actions/runs/:run_id/rerun": [
     ActionsReRunWorkflowEndpoint,
-    ActionsReRunWorkflowRequestOptions
+    ActionsReRunWorkflowRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposAddProtectedBranchAdminEnforcementEndpoint,
-    ReposAddProtectedBranchAdminEnforcementRequestOptions
+    ReposAddProtectedBranchAdminEnforcementRequestOptions,
+    ReposAddProtectedBranchAdminEnforcementResponseData
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposAddProtectedBranchRequiredSignaturesEndpoint,
-    ReposAddProtectedBranchRequiredSignaturesRequestOptions
+    ReposAddProtectedBranchRequiredSignaturesRequestOptions,
+    ReposAddProtectedBranchRequiredSignaturesResponseData
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint,
-    ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions
+    ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    ReposAddProtectedBranchRequiredStatusChecksContextsResponseData
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposAddProtectedBranchAppRestrictionsEndpoint,
-    ReposAddProtectedBranchAppRestrictionsRequestOptions
+    ReposAddProtectedBranchAppRestrictionsRequestOptions,
+    ReposAddProtectedBranchAppRestrictionsResponseData
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposAddProtectedBranchTeamRestrictionsEndpoint,
-    ReposAddProtectedBranchTeamRestrictionsRequestOptions
+    ReposAddProtectedBranchTeamRestrictionsRequestOptions,
+    ReposAddProtectedBranchTeamRestrictionsResponseData
   ];
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposAddProtectedBranchUserRestrictionsEndpoint,
-    ReposAddProtectedBranchUserRestrictionsRequestOptions
+    ReposAddProtectedBranchUserRestrictionsRequestOptions,
+    ReposAddProtectedBranchUserRestrictionsResponseData
   ];
   "POST /repos/:owner/:repo/check-runs": [
     ChecksCreateEndpoint,
-    ChecksCreateRequestOptions
+    ChecksCreateRequestOptions,
+    ChecksCreateResponseData
   ];
   "POST /repos/:owner/:repo/check-suites": [
     ChecksCreateSuiteEndpoint,
-    ChecksCreateSuiteRequestOptions
+    ChecksCreateSuiteRequestOptions,
+    ChecksCreateSuiteResponseData
   ];
   "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": [
     ChecksRerequestSuiteEndpoint,
-    ChecksRerequestSuiteRequestOptions
+    ChecksRerequestSuiteRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/comments/:comment_id/reactions": [
     ReactionsCreateForCommitCommentEndpoint,
-    ReactionsCreateForCommitCommentRequestOptions
+    ReactionsCreateForCommitCommentRequestOptions,
+    ReactionsCreateForCommitCommentResponseData
   ];
   "POST /repos/:owner/:repo/commits/:commit_sha/comments": [
     ReposCreateCommitCommentEndpoint,
-    ReposCreateCommitCommentRequestOptions
+    ReposCreateCommitCommentRequestOptions,
+    ReposCreateCommitCommentResponseData
   ];
   "POST /repos/:owner/:repo/deployments": [
     ReposCreateDeploymentEndpoint,
-    ReposCreateDeploymentRequestOptions
+    ReposCreateDeploymentRequestOptions,
+    ReposCreateDeploymentResponseData
   ];
   "POST /repos/:owner/:repo/deployments/:deployment_id/statuses": [
     ReposCreateDeploymentStatusEndpoint,
-    ReposCreateDeploymentStatusRequestOptions
+    ReposCreateDeploymentStatusRequestOptions,
+    ReposCreateDeploymentStatusResponseData
   ];
   "POST /repos/:owner/:repo/dispatches": [
     ReposCreateDispatchEventEndpoint,
-    ReposCreateDispatchEventRequestOptions
+    ReposCreateDispatchEventRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/forks": [
     ReposCreateForkEndpoint,
-    ReposCreateForkRequestOptions
+    ReposCreateForkRequestOptions,
+    ReposCreateForkResponseData
   ];
   "POST /repos/:owner/:repo/git/blobs": [
     GitCreateBlobEndpoint,
-    GitCreateBlobRequestOptions
+    GitCreateBlobRequestOptions,
+    GitCreateBlobResponseData
   ];
   "POST /repos/:owner/:repo/git/commits": [
     GitCreateCommitEndpoint,
-    GitCreateCommitRequestOptions
+    GitCreateCommitRequestOptions,
+    GitCreateCommitResponseData
   ];
   "POST /repos/:owner/:repo/git/refs": [
     GitCreateRefEndpoint,
-    GitCreateRefRequestOptions
+    GitCreateRefRequestOptions,
+    GitCreateRefResponseData
   ];
   "POST /repos/:owner/:repo/git/tags": [
     GitCreateTagEndpoint,
-    GitCreateTagRequestOptions
+    GitCreateTagRequestOptions,
+    GitCreateTagResponseData
   ];
   "POST /repos/:owner/:repo/git/trees": [
     GitCreateTreeEndpoint,
-    GitCreateTreeRequestOptions
+    GitCreateTreeRequestOptions,
+    GitCreateTreeResponseData
   ];
   "POST /repos/:owner/:repo/hooks": [
     ReposCreateHookEndpoint,
-    ReposCreateHookRequestOptions
+    ReposCreateHookRequestOptions,
+    ReposCreateHookResponseData
   ];
   "POST /repos/:owner/:repo/hooks/:hook_id/pings": [
     ReposPingHookEndpoint,
-    ReposPingHookRequestOptions
+    ReposPingHookRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/hooks/:hook_id/tests": [
     ReposTestPushHookEndpoint,
-    ReposTestPushHookRequestOptions
+    ReposTestPushHookRequestOptions,
+    any
   ];
   "POST /repos/:owner/:repo/issues": [
     IssuesCreateEndpoint,
-    IssuesCreateRequestOptions
+    IssuesCreateRequestOptions,
+    IssuesCreateResponseData
   ];
   "POST /repos/:owner/:repo/issues/:issue_number/assignees": [
     IssuesAddAssigneesEndpoint,
-    IssuesAddAssigneesRequestOptions
+    IssuesAddAssigneesRequestOptions,
+    IssuesAddAssigneesResponseData
   ];
   "POST /repos/:owner/:repo/issues/:issue_number/comments": [
     IssuesCreateCommentEndpoint,
-    IssuesCreateCommentRequestOptions
+    IssuesCreateCommentRequestOptions,
+    IssuesCreateCommentResponseData
   ];
   "POST /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesAddLabelsEndpoint,
-    IssuesAddLabelsRequestOptions
+    IssuesAddLabelsRequestOptions,
+    IssuesAddLabelsResponseData
   ];
   "POST /repos/:owner/:repo/issues/:issue_number/reactions": [
     ReactionsCreateForIssueEndpoint,
-    ReactionsCreateForIssueRequestOptions
+    ReactionsCreateForIssueRequestOptions,
+    ReactionsCreateForIssueResponseData
   ];
   "POST /repos/:owner/:repo/issues/comments/:comment_id/reactions": [
     ReactionsCreateForIssueCommentEndpoint,
-    ReactionsCreateForIssueCommentRequestOptions
+    ReactionsCreateForIssueCommentRequestOptions,
+    ReactionsCreateForIssueCommentResponseData
   ];
   "POST /repos/:owner/:repo/keys": [
     ReposAddDeployKeyEndpoint,
-    ReposAddDeployKeyRequestOptions
+    ReposAddDeployKeyRequestOptions,
+    ReposAddDeployKeyResponseData
   ];
   "POST /repos/:owner/:repo/labels": [
     IssuesCreateLabelEndpoint,
-    IssuesCreateLabelRequestOptions
+    IssuesCreateLabelRequestOptions,
+    IssuesCreateLabelResponseData
   ];
   "POST /repos/:owner/:repo/merges": [
     ReposMergeEndpoint,
-    ReposMergeRequestOptions
+    ReposMergeRequestOptions,
+    ReposMergeResponseData
   ];
   "POST /repos/:owner/:repo/milestones": [
     IssuesCreateMilestoneEndpoint,
-    IssuesCreateMilestoneRequestOptions
+    IssuesCreateMilestoneRequestOptions,
+    IssuesCreateMilestoneResponseData
   ];
   "POST /repos/:owner/:repo/pages": [
     ReposEnablePagesSiteEndpoint,
-    ReposEnablePagesSiteRequestOptions
+    ReposEnablePagesSiteRequestOptions,
+    ReposEnablePagesSiteResponseData
   ];
   "POST /repos/:owner/:repo/pages/builds": [
     ReposRequestPageBuildEndpoint,
-    ReposRequestPageBuildRequestOptions
+    ReposRequestPageBuildRequestOptions,
+    ReposRequestPageBuildResponseData
   ];
   "POST /repos/:owner/:repo/projects": [
     ProjectsCreateForRepoEndpoint,
-    ProjectsCreateForRepoRequestOptions
+    ProjectsCreateForRepoRequestOptions,
+    ProjectsCreateForRepoResponseData
   ];
   "POST /repos/:owner/:repo/pulls": [
     PullsCreateEndpoint,
-    PullsCreateRequestOptions
+    PullsCreateRequestOptions,
+    PullsCreateResponseData
   ];
   "POST /repos/:owner/:repo/pulls/:pull_number/comments": [
     PullsCreateCommentEndpoint,
-    PullsCreateCommentRequestOptions
+    PullsCreateCommentRequestOptions,
+    PullsCreateCommentResponseData
   ];
   "POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies": [
     PullsCreateReviewCommentReplyEndpoint,
-    PullsCreateReviewCommentReplyRequestOptions
+    PullsCreateReviewCommentReplyRequestOptions,
+    PullsCreateReviewCommentReplyResponseData
   ];
   "POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsCreateReviewRequestEndpoint,
-    PullsCreateReviewRequestRequestOptions
+    PullsCreateReviewRequestRequestOptions,
+    PullsCreateReviewRequestResponseData
   ];
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews": [
     PullsCreateReviewEndpoint,
-    PullsCreateReviewRequestOptions
+    PullsCreateReviewRequestOptions,
+    PullsCreateReviewResponseData
   ];
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events": [
     PullsSubmitReviewEndpoint,
-    PullsSubmitReviewRequestOptions
+    PullsSubmitReviewRequestOptions,
+    PullsSubmitReviewResponseData
   ];
   "POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions": [
     ReactionsCreateForPullRequestReviewCommentEndpoint,
-    ReactionsCreateForPullRequestReviewCommentRequestOptions
+    ReactionsCreateForPullRequestReviewCommentRequestOptions,
+    ReactionsCreateForPullRequestReviewCommentResponseData
   ];
   "POST /repos/:owner/:repo/releases": [
     ReposCreateReleaseEndpoint,
-    ReposCreateReleaseRequestOptions
+    ReposCreateReleaseRequestOptions,
+    ReposCreateReleaseResponseData
   ];
   "POST /repos/:owner/:repo/statuses/:sha": [
     ReposCreateStatusEndpoint,
-    ReposCreateStatusRequestOptions
+    ReposCreateStatusRequestOptions,
+    ReposCreateStatusResponseData
   ];
   "POST /repos/:owner/:repo/transfer": [
     ReposTransferEndpoint,
-    ReposTransferRequestOptions
+    ReposTransferRequestOptions,
+    ReposTransferResponseData
   ];
   "POST /repos/:template_owner/:template_repo/generate": [
     ReposCreateUsingTemplateEndpoint,
-    ReposCreateUsingTemplateRequestOptions
+    ReposCreateUsingTemplateRequestOptions,
+    ReposCreateUsingTemplateResponseData
   ];
   "POST /scim/v2/organizations/:org/Users": [
     ScimProvisionAndInviteUsersEndpoint,
-    ScimProvisionAndInviteUsersRequestOptions
+    ScimProvisionAndInviteUsersRequestOptions,
+    ScimProvisionAndInviteUsersResponseData
   ];
   "POST /teams/:team_id/discussions": [
     TeamsCreateDiscussionLegacyEndpoint,
-    TeamsCreateDiscussionLegacyRequestOptions
+    TeamsCreateDiscussionLegacyRequestOptions,
+    TeamsCreateDiscussionLegacyResponseData
   ];
   "POST /teams/:team_id/discussions/:discussion_number/comments": [
     TeamsCreateDiscussionCommentLegacyEndpoint,
-    TeamsCreateDiscussionCommentLegacyRequestOptions
+    TeamsCreateDiscussionCommentLegacyRequestOptions,
+    TeamsCreateDiscussionCommentLegacyResponseData
   ];
   "POST /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsCreateForTeamDiscussionCommentLegacyEndpoint,
-    ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions
+    ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions,
+    ReactionsCreateForTeamDiscussionCommentLegacyResponseData
   ];
   "POST /teams/:team_id/discussions/:discussion_number/reactions": [
     ReactionsCreateForTeamDiscussionLegacyEndpoint,
-    ReactionsCreateForTeamDiscussionLegacyRequestOptions
+    ReactionsCreateForTeamDiscussionLegacyRequestOptions,
+    ReactionsCreateForTeamDiscussionLegacyResponseData
   ];
-  "POST /user/emails": [UsersAddEmailsEndpoint, UsersAddEmailsRequestOptions];
+  "POST /user/emails": [
+    UsersAddEmailsEndpoint,
+    UsersAddEmailsRequestOptions,
+    UsersAddEmailsResponseData
+  ];
   "POST /user/gpg_keys": [
     UsersCreateGpgKeyEndpoint,
-    UsersCreateGpgKeyRequestOptions
+    UsersCreateGpgKeyRequestOptions,
+    UsersCreateGpgKeyResponseData
   ];
   "POST /user/keys": [
     UsersCreatePublicKeyEndpoint,
-    UsersCreatePublicKeyRequestOptions
+    UsersCreatePublicKeyRequestOptions,
+    UsersCreatePublicKeyResponseData
   ];
   "POST /user/migrations": [
     MigrationsStartForAuthenticatedUserEndpoint,
-    MigrationsStartForAuthenticatedUserRequestOptions
+    MigrationsStartForAuthenticatedUserRequestOptions,
+    MigrationsStartForAuthenticatedUserResponseData
   ];
   "POST /user/projects": [
     ProjectsCreateForAuthenticatedUserEndpoint,
-    ProjectsCreateForAuthenticatedUserRequestOptions
+    ProjectsCreateForAuthenticatedUserRequestOptions,
+    ProjectsCreateForAuthenticatedUserResponseData
   ];
   "POST /user/repos": [
     ReposCreateForAuthenticatedUserEndpoint,
-    ReposCreateForAuthenticatedUserRequestOptions
+    ReposCreateForAuthenticatedUserRequestOptions,
+    ReposCreateForAuthenticatedUserResponseData
   ];
   "POST :origin/repos/:owner/:repo/releases/:release_id/assets:?name,label": [
     ReposUploadReleaseAssetEndpoint,
-    ReposUploadReleaseAssetRequestOptions
+    ReposUploadReleaseAssetRequestOptions,
+    ReposUploadReleaseAssetResponseData
   ];
   "PUT /authorizations/clients/:client_id": [
     OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint,
-    OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions
+    OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions,
+    OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData
   ];
   "PUT /authorizations/clients/:client_id/:fingerprint": [
     OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint,
-    OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions
+    OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions,
+    OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData
   ];
-  "PUT /gists/:gist_id/star": [GistsStarEndpoint, GistsStarRequestOptions];
+  "PUT /gists/:gist_id/star": [GistsStarEndpoint, GistsStarRequestOptions, any];
   "PUT /notifications": [
     ActivityMarkNotificationsAsReadEndpoint,
-    ActivityMarkNotificationsAsReadRequestOptions
+    ActivityMarkNotificationsAsReadRequestOptions,
+    any
   ];
   "PUT /notifications/threads/:thread_id/subscription": [
     ActivitySetThreadSubscriptionEndpoint,
-    ActivitySetThreadSubscriptionRequestOptions
+    ActivitySetThreadSubscriptionRequestOptions,
+    ActivitySetThreadSubscriptionResponseData
   ];
   "PUT /orgs/:org/blocks/:username": [
     OrgsBlockUserEndpoint,
-    OrgsBlockUserRequestOptions
+    OrgsBlockUserRequestOptions,
+    any
   ];
   "PUT /orgs/:org/interaction-limits": [
     InteractionsAddOrUpdateRestrictionsForOrgEndpoint,
-    InteractionsAddOrUpdateRestrictionsForOrgRequestOptions
+    InteractionsAddOrUpdateRestrictionsForOrgRequestOptions,
+    InteractionsAddOrUpdateRestrictionsForOrgResponseData
   ];
   "PUT /orgs/:org/memberships/:username": [
     OrgsAddOrUpdateMembershipEndpoint,
-    OrgsAddOrUpdateMembershipRequestOptions
+    OrgsAddOrUpdateMembershipRequestOptions,
+    OrgsAddOrUpdateMembershipResponseData
   ];
   "PUT /orgs/:org/outside_collaborators/:username": [
     OrgsConvertMemberToOutsideCollaboratorEndpoint,
-    OrgsConvertMemberToOutsideCollaboratorRequestOptions
+    OrgsConvertMemberToOutsideCollaboratorRequestOptions,
+    OrgsConvertMemberToOutsideCollaboratorResponseData
   ];
   "PUT /orgs/:org/public_members/:username": [
     OrgsPublicizeMembershipEndpoint,
-    OrgsPublicizeMembershipRequestOptions
+    OrgsPublicizeMembershipRequestOptions,
+    any
   ];
   "PUT /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsAddOrUpdateMembershipInOrgEndpoint,
-    TeamsAddOrUpdateMembershipInOrgRequestOptions
+    TeamsAddOrUpdateMembershipInOrgRequestOptions,
+    TeamsAddOrUpdateMembershipInOrgResponseData
   ];
   "PUT /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsAddOrUpdateProjectInOrgEndpoint,
-    TeamsAddOrUpdateProjectInOrgRequestOptions
+    TeamsAddOrUpdateProjectInOrgRequestOptions,
+    TeamsAddOrUpdateProjectInOrgResponseData
   ];
   "PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsAddOrUpdateRepoInOrgEndpoint,
-    TeamsAddOrUpdateRepoInOrgRequestOptions
+    TeamsAddOrUpdateRepoInOrgRequestOptions,
+    any
   ];
   "PUT /projects/:project_id/collaborators/:username": [
     ProjectsAddCollaboratorEndpoint,
-    ProjectsAddCollaboratorRequestOptions
+    ProjectsAddCollaboratorRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/actions/secrets/:name": [
     ActionsCreateOrUpdateSecretForRepoEndpoint,
-    ActionsCreateOrUpdateSecretForRepoRequestOptions
+    ActionsCreateOrUpdateSecretForRepoRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/automated-security-fixes": [
     ReposEnableAutomatedSecurityFixesEndpoint,
-    ReposEnableAutomatedSecurityFixesRequestOptions
+    ReposEnableAutomatedSecurityFixesRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/branches/:branch/protection": [
     ReposUpdateBranchProtectionEndpoint,
-    ReposUpdateBranchProtectionRequestOptions
+    ReposUpdateBranchProtectionRequestOptions,
+    ReposUpdateBranchProtectionResponseData
   ];
   "PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint,
-    ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions
+    ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData
   ];
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposReplaceProtectedBranchAppRestrictionsEndpoint,
-    ReposReplaceProtectedBranchAppRestrictionsRequestOptions
+    ReposReplaceProtectedBranchAppRestrictionsRequestOptions,
+    ReposReplaceProtectedBranchAppRestrictionsResponseData
   ];
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposReplaceProtectedBranchTeamRestrictionsEndpoint,
-    ReposReplaceProtectedBranchTeamRestrictionsRequestOptions
+    ReposReplaceProtectedBranchTeamRestrictionsRequestOptions,
+    ReposReplaceProtectedBranchTeamRestrictionsResponseData
   ];
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposReplaceProtectedBranchUserRestrictionsEndpoint,
-    ReposReplaceProtectedBranchUserRestrictionsRequestOptions
+    ReposReplaceProtectedBranchUserRestrictionsRequestOptions,
+    ReposReplaceProtectedBranchUserRestrictionsResponseData
   ];
   "PUT /repos/:owner/:repo/collaborators/:username": [
     ReposAddCollaboratorEndpoint,
-    ReposAddCollaboratorRequestOptions
+    ReposAddCollaboratorRequestOptions,
+    ReposAddCollaboratorResponseData
   ];
   "PUT /repos/:owner/:repo/contents/:path": [
     ReposCreateOrUpdateFileEndpoint,
-    ReposCreateOrUpdateFileRequestOptions
+    ReposCreateOrUpdateFileRequestOptions,
+    ReposCreateOrUpdateFileResponseData
   ];
   "PUT /repos/:owner/:repo/import": [
     MigrationsStartImportEndpoint,
-    MigrationsStartImportRequestOptions
+    MigrationsStartImportRequestOptions,
+    MigrationsStartImportResponseData
   ];
   "PUT /repos/:owner/:repo/interaction-limits": [
     InteractionsAddOrUpdateRestrictionsForRepoEndpoint,
-    InteractionsAddOrUpdateRestrictionsForRepoRequestOptions
+    InteractionsAddOrUpdateRestrictionsForRepoRequestOptions,
+    InteractionsAddOrUpdateRestrictionsForRepoResponseData
   ];
   "PUT /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesReplaceAllLabelsEndpoint,
-    IssuesReplaceAllLabelsRequestOptions
+    IssuesReplaceAllLabelsRequestOptions,
+    IssuesReplaceAllLabelsResponseData
   ];
   "PUT /repos/:owner/:repo/issues/:issue_number/lock": [
     IssuesLockEndpoint,
-    IssuesLockRequestOptions
+    IssuesLockRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/notifications": [
     ActivityMarkRepoNotificationsAsReadEndpoint,
-    ActivityMarkRepoNotificationsAsReadRequestOptions
+    ActivityMarkRepoNotificationsAsReadRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/pages": [
     ReposUpdateInformationAboutPagesSiteEndpoint,
-    ReposUpdateInformationAboutPagesSiteRequestOptions
+    ReposUpdateInformationAboutPagesSiteRequestOptions,
+    any
   ];
   "PUT /repos/:owner/:repo/pulls/:pull_number/merge": [
     PullsMergeEndpoint,
-    PullsMergeRequestOptions
+    PullsMergeRequestOptions,
+    PullsMergeResponseData
   ];
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsUpdateReviewEndpoint,
-    PullsUpdateReviewRequestOptions
+    PullsUpdateReviewRequestOptions,
+    PullsUpdateReviewResponseData
   ];
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals": [
     PullsDismissReviewEndpoint,
-    PullsDismissReviewRequestOptions
+    PullsDismissReviewRequestOptions,
+    PullsDismissReviewResponseData
   ];
   "PUT /repos/:owner/:repo/pulls/:pull_number/update-branch": [
     PullsUpdateBranchEndpoint,
-    PullsUpdateBranchRequestOptions
+    PullsUpdateBranchRequestOptions,
+    PullsUpdateBranchResponseData
   ];
   "PUT /repos/:owner/:repo/subscription": [
     ActivitySetRepoSubscriptionEndpoint,
-    ActivitySetRepoSubscriptionRequestOptions
+    ActivitySetRepoSubscriptionRequestOptions,
+    ActivitySetRepoSubscriptionResponseData
   ];
   "PUT /repos/:owner/:repo/topics": [
     ReposReplaceAllTopicsEndpoint,
-    ReposReplaceAllTopicsRequestOptions
+    ReposReplaceAllTopicsRequestOptions,
+    ReposReplaceAllTopicsResponseData
   ];
   "PUT /repos/:owner/:repo/vulnerability-alerts": [
     ReposEnableVulnerabilityAlertsEndpoint,
-    ReposEnableVulnerabilityAlertsRequestOptions
+    ReposEnableVulnerabilityAlertsRequestOptions,
+    any
   ];
   "PUT /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimReplaceProvisionedUserInformationEndpoint,
-    ScimReplaceProvisionedUserInformationRequestOptions
+    ScimReplaceProvisionedUserInformationRequestOptions,
+    ScimReplaceProvisionedUserInformationResponseData
   ];
   "PUT /teams/:team_id/members/:username": [
     TeamsAddMemberLegacyEndpoint,
-    TeamsAddMemberLegacyRequestOptions
+    TeamsAddMemberLegacyRequestOptions,
+    TeamsAddMemberLegacyResponseData
   ];
   "PUT /teams/:team_id/memberships/:username": [
     TeamsAddOrUpdateMembershipLegacyEndpoint,
-    TeamsAddOrUpdateMembershipLegacyRequestOptions
+    TeamsAddOrUpdateMembershipLegacyRequestOptions,
+    TeamsAddOrUpdateMembershipLegacyResponseData
   ];
   "PUT /teams/:team_id/projects/:project_id": [
     TeamsAddOrUpdateProjectLegacyEndpoint,
-    TeamsAddOrUpdateProjectLegacyRequestOptions
+    TeamsAddOrUpdateProjectLegacyRequestOptions,
+    TeamsAddOrUpdateProjectLegacyResponseData
   ];
   "PUT /teams/:team_id/repos/:owner/:repo": [
     TeamsAddOrUpdateRepoLegacyEndpoint,
-    TeamsAddOrUpdateRepoLegacyRequestOptions
+    TeamsAddOrUpdateRepoLegacyRequestOptions,
+    any
   ];
-  "PUT /user/blocks/:username": [UsersBlockEndpoint, UsersBlockRequestOptions];
+  "PUT /user/blocks/:username": [
+    UsersBlockEndpoint,
+    UsersBlockRequestOptions,
+    any
+  ];
   "PUT /user/following/:username": [
     UsersFollowEndpoint,
-    UsersFollowRequestOptions
+    UsersFollowRequestOptions,
+    any
   ];
   "PUT /user/installations/:installation_id/repositories/:repository_id": [
     AppsAddRepoToInstallationEndpoint,
-    AppsAddRepoToInstallationRequestOptions
+    AppsAddRepoToInstallationRequestOptions,
+    any
   ];
   "PUT /user/starred/:owner/:repo": [
     ActivityStarRepoForAuthenticatedUserEndpoint,
-    ActivityStarRepoForAuthenticatedUserRequestOptions
+    ActivityStarRepoForAuthenticatedUserRequestOptions,
+    any
   ];
   "PUT /user/subscriptions/:owner/:repo": [
     ActivityWatchRepoLegacyEndpoint,
-    ActivityWatchRepoLegacyRequestOptions
+    ActivityWatchRepoLegacyRequestOptions,
+    any
   ];
 }
 
@@ -2285,6 +2979,42 @@ type AppsGetAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetAuthenticatedResponseDataPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type AppsGetAuthenticatedResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type AppsGetAuthenticatedResponseData = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: AppsGetAuthenticatedResponseDataOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: AppsGetAuthenticatedResponseDataPermissions;
+  events: Array<string>;
+  installations_count: number;
+};
+
 type AppsCreateFromManifestEndpoint = {
   /**
    * code parameter
@@ -2297,6 +3027,42 @@ type AppsCreateFromManifestRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsCreateFromManifestResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsCreateFromManifestResponseData = {
+  id: number;
+  node_id: string;
+  owner: AppsCreateFromManifestResponseDataOwner;
+  name: string;
+  description: null;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  client_id: string;
+  client_secret: string;
+  webhook_secret: string;
+  pem: string;
+};
+
 type AppsListInstallationsEndpoint = {
   /**
    * Results per page (max 100)
@@ -2313,6 +3079,44 @@ type AppsListInstallationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListInstallationsResponseDataItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type AppsListInstallationsResponseDataItemAccount = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type AppsListInstallationsResponseDataItem = {
+  id: number;
+  account: AppsListInstallationsResponseDataItemAccount;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsListInstallationsResponseDataItemPermissions;
+  events: Array<string>;
+  single_file_name: string;
+  repository_selection: string;
+};
+type AppsListInstallationsResponseData = Array<
+  AppsListInstallationsResponseDataItem
+>;
+
 type AppsGetInstallationEndpoint = {
   /**
    * installation_id parameter
@@ -2325,6 +3129,41 @@ type AppsGetInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetInstallationResponseDataPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type AppsGetInstallationResponseDataAccount = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type AppsGetInstallationResponseData = {
+  id: number;
+  account: AppsGetInstallationResponseDataAccount;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsGetInstallationResponseDataPermissions;
+  events: Array<string>;
+  single_file_name: string;
+  repository_selection: string;
+};
+
 type AppsDeleteInstallationEndpoint = {
   /**
    * installation_id parameter
@@ -2337,6 +3176,7 @@ type AppsDeleteInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsCreateInstallationTokenEndpoint = {
   /**
    * installation_id parameter
@@ -2357,6 +3197,124 @@ type AppsCreateInstallationTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsCreateInstallationTokenResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type AppsCreateInstallationTokenResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsCreateInstallationTokenResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: AppsCreateInstallationTokenResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: AppsCreateInstallationTokenResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type AppsCreateInstallationTokenResponseDataPermissions = {
+  issues: string;
+  contents: string;
+};
+type AppsCreateInstallationTokenResponseData = {
+  token: string;
+  expires_at: string;
+  permissions: AppsCreateInstallationTokenResponseDataPermissions;
+  repositories: Array<AppsCreateInstallationTokenResponseDataRepositoriesItem>;
+};
+
 type OauthAuthorizationsListGrantsEndpoint = {
   /**
    * Results per page (max 100)
@@ -2373,6 +3331,23 @@ type OauthAuthorizationsListGrantsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsListGrantsResponseDataItemApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsListGrantsResponseDataItem = {
+  id: number;
+  url: string;
+  app: OauthAuthorizationsListGrantsResponseDataItemApp;
+  created_at: string;
+  updated_at: string;
+  scopes: Array<string>;
+};
+type OauthAuthorizationsListGrantsResponseData = Array<
+  OauthAuthorizationsListGrantsResponseDataItem
+>;
+
 type OauthAuthorizationsGetGrantEndpoint = {
   /**
    * grant_id parameter
@@ -2385,6 +3360,20 @@ type OauthAuthorizationsGetGrantRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsGetGrantResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsGetGrantResponseData = {
+  id: number;
+  url: string;
+  app: OauthAuthorizationsGetGrantResponseDataApp;
+  created_at: string;
+  updated_at: string;
+  scopes: Array<string>;
+};
+
 type OauthAuthorizationsDeleteGrantEndpoint = {
   /**
    * grant_id parameter
@@ -2397,6 +3386,7 @@ type OauthAuthorizationsDeleteGrantRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsDeleteAuthorizationEndpoint = {
   /**
    * client_id parameter
@@ -2413,6 +3403,7 @@ type AppsDeleteAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsRevokeGrantForApplicationEndpoint = {
   /**
    * client_id parameter
@@ -2429,6 +3420,7 @@ type AppsRevokeGrantForApplicationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsCheckTokenEndpoint = {
   /**
    * client_id parameter
@@ -2445,6 +3437,47 @@ type AppsCheckTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsCheckTokenResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsCheckTokenResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type AppsCheckTokenResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: AppsCheckTokenResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+  user: AppsCheckTokenResponseDataUser;
+};
+
 type AppsResetTokenEndpoint = {
   /**
    * client_id parameter
@@ -2461,6 +3494,47 @@ type AppsResetTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsResetTokenResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsResetTokenResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type AppsResetTokenResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: AppsResetTokenResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+  user: AppsResetTokenResponseDataUser;
+};
+
 type AppsDeleteTokenEndpoint = {
   /**
    * client_id parameter
@@ -2477,6 +3551,7 @@ type AppsDeleteTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsCheckAuthorizationEndpoint = {
   /**
    * client_id parameter
@@ -2493,6 +3568,47 @@ type AppsCheckAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsCheckAuthorizationResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsCheckAuthorizationResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type AppsCheckAuthorizationResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: AppsCheckAuthorizationResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+  user: AppsCheckAuthorizationResponseDataUser;
+};
+
 type AppsResetAuthorizationEndpoint = {
   /**
    * client_id parameter
@@ -2509,6 +3625,47 @@ type AppsResetAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsResetAuthorizationResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsResetAuthorizationResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type AppsResetAuthorizationResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: AppsResetAuthorizationResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+  user: AppsResetAuthorizationResponseDataUser;
+};
+
 type AppsRevokeAuthorizationForApplicationEndpoint = {
   /**
    * client_id parameter
@@ -2525,6 +3682,7 @@ type AppsRevokeAuthorizationForApplicationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsGetBySlugEndpoint = {
   /**
    * app_slug parameter
@@ -2537,6 +3695,41 @@ type AppsGetBySlugRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetBySlugResponseDataPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type AppsGetBySlugResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type AppsGetBySlugResponseData = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: AppsGetBySlugResponseDataOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: AppsGetBySlugResponseDataPermissions;
+  events: Array<string>;
+};
+
 type OauthAuthorizationsListAuthorizationsEndpoint = {
   /**
    * Results per page (max 100)
@@ -2553,6 +3746,29 @@ type OauthAuthorizationsListAuthorizationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsListAuthorizationsResponseDataItemApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsListAuthorizationsResponseDataItem = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsListAuthorizationsResponseDataItemApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+type OauthAuthorizationsListAuthorizationsResponseData = Array<
+  OauthAuthorizationsListAuthorizationsResponseDataItem
+>;
+
 type OauthAuthorizationsCreateAuthorizationEndpoint = {
   /**
    * A list of scopes that this authorization is in.
@@ -2585,6 +3801,26 @@ type OauthAuthorizationsCreateAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsCreateAuthorizationResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsCreateAuthorizationResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsCreateAuthorizationResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+
 type OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint = {
   /**
    * client_id parameter
@@ -2617,6 +3853,26 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsGetOrCreateAuthorizationForAppResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsGetOrCreateAuthorizationForAppResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+
 type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint = {
   /**
    * client_id parameter
@@ -2649,6 +3905,26 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptio
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+
 type OauthAuthorizationsGetAuthorizationEndpoint = {
   /**
    * authorization_id parameter
@@ -2661,6 +3937,26 @@ type OauthAuthorizationsGetAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsGetAuthorizationResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsGetAuthorizationResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsGetAuthorizationResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+
 type OauthAuthorizationsUpdateAuthorizationEndpoint = {
   /**
    * authorization_id parameter
@@ -2697,6 +3993,26 @@ type OauthAuthorizationsUpdateAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OauthAuthorizationsUpdateAuthorizationResponseDataApp = {
+  url: string;
+  name: string;
+  client_id: string;
+};
+type OauthAuthorizationsUpdateAuthorizationResponseData = {
+  id: number;
+  url: string;
+  scopes: Array<string>;
+  token: string;
+  token_last_eight: string;
+  hashed_token: string;
+  app: OauthAuthorizationsUpdateAuthorizationResponseDataApp;
+  note: string;
+  note_url: string;
+  updated_at: string;
+  created_at: string;
+  fingerprint: string;
+};
+
 type OauthAuthorizationsDeleteAuthorizationEndpoint = {
   /**
    * authorization_id parameter
@@ -2709,6 +4025,7 @@ type OauthAuthorizationsDeleteAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type CodesOfConductGetAllCodesOfConductEndpoint = {};
 type CodesOfConductGetAllCodesOfConductRequestOptions = {
   method: "GET";
@@ -2716,6 +4033,15 @@ type CodesOfConductGetAllCodesOfConductRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type CodesOfConductGetAllCodesOfConductResponseDataItem = {
+  key: string;
+  name: string;
+  url: string;
+};
+type CodesOfConductGetAllCodesOfConductResponseData = Array<
+  CodesOfConductGetAllCodesOfConductResponseDataItem
+>;
+
 type CodesOfConductGetConductCodeEndpoint = {
   /**
    * key parameter
@@ -2728,6 +4054,13 @@ type CodesOfConductGetConductCodeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type CodesOfConductGetConductCodeResponseData = {
+  key: string;
+  name: string;
+  url: string;
+  body: string;
+};
+
 type AppsCreateContentAttachmentEndpoint = {
   /**
    * content_reference_id parameter
@@ -2748,6 +4081,12 @@ type AppsCreateContentAttachmentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsCreateContentAttachmentResponseData = {
+  id: number;
+  title: string;
+  body: string;
+};
+
 type EmojisGetEndpoint = {};
 type EmojisGetRequestOptions = {
   method: "GET";
@@ -2755,6 +4094,7 @@ type EmojisGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListPublicEventsEndpoint = {
   /**
    * Results per page (max 100)
@@ -2771,6 +4111,7 @@ type ActivityListPublicEventsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityGetFeedsEndpoint = {};
 type ActivityGetFeedsRequestOptions = {
   method: "GET";
@@ -2778,6 +4119,56 @@ type ActivityGetFeedsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityGetFeedsResponseDataLinksSecurityAdvisories = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksCurrentUserOrganizationsItem = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksCurrentUserOrganization = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksCurrentUserActor = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksCurrentUser = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksCurrentUserPublic = {
+  href: string;
+  type: string;
+};
+type ActivityGetFeedsResponseDataLinksUser = { href: string; type: string };
+type ActivityGetFeedsResponseDataLinksTimeline = { href: string; type: string };
+type ActivityGetFeedsResponseDataLinks = {
+  timeline: ActivityGetFeedsResponseDataLinksTimeline;
+  user: ActivityGetFeedsResponseDataLinksUser;
+  current_user_public: ActivityGetFeedsResponseDataLinksCurrentUserPublic;
+  current_user: ActivityGetFeedsResponseDataLinksCurrentUser;
+  current_user_actor: ActivityGetFeedsResponseDataLinksCurrentUserActor;
+  current_user_organization: ActivityGetFeedsResponseDataLinksCurrentUserOrganization;
+  current_user_organizations: Array<
+    ActivityGetFeedsResponseDataLinksCurrentUserOrganizationsItem
+  >;
+  security_advisories: ActivityGetFeedsResponseDataLinksSecurityAdvisories;
+};
+type ActivityGetFeedsResponseData = {
+  timeline_url: string;
+  user_url: string;
+  current_user_public_url: string;
+  current_user_url: string;
+  current_user_actor_url: string;
+  current_user_organization_url: string;
+  current_user_organization_urls: Array<string>;
+  security_advisories_url: string;
+  _links: ActivityGetFeedsResponseDataLinks;
+};
+
 type GistsListEndpoint = {
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
@@ -2798,6 +4189,58 @@ type GistsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListResponseDataItemFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+};
+type GistsListResponseDataItemFiles = {
+  "hello_world.rb": GistsListResponseDataItemFilesHelloWorldRb;
+};
+type GistsListResponseDataItem = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsListResponseDataItemFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsListResponseDataItemOwner;
+  truncated: boolean;
+};
+type GistsListResponseData = Array<GistsListResponseDataItem>;
+
 type GistsCreateEndpoint = {
   /**
    * The filenames and content of each file in the gist. The keys in the `files` object represent the filename and have the type `string`.
@@ -2818,6 +4261,150 @@ type GistsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsCreateResponseDataHistoryItemChangeStatus = {
+  deletions: number;
+  additions: number;
+  total: number;
+};
+type GistsCreateResponseDataHistoryItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsCreateResponseDataHistoryItem = {
+  url: string;
+  version: string;
+  user: GistsCreateResponseDataHistoryItemUser;
+  change_status: GistsCreateResponseDataHistoryItemChangeStatus;
+  committed_at: string;
+};
+type GistsCreateResponseDataForksItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsCreateResponseDataForksItem = {
+  user: GistsCreateResponseDataForksItemUser;
+  url: string;
+  id: string;
+  created_at: string;
+  updated_at: string;
+};
+type GistsCreateResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsCreateResponseDataFilesHelloWorldPythonTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsCreateResponseDataFilesHelloWorldRubyTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsCreateResponseDataFilesHelloWorldPy = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsCreateResponseDataFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsCreateResponseDataFiles = {
+  "hello_world.rb": GistsCreateResponseDataFilesHelloWorldRb;
+  "hello_world.py": GistsCreateResponseDataFilesHelloWorldPy;
+  "hello_world_ruby.txt": GistsCreateResponseDataFilesHelloWorldRubyTxt;
+  "hello_world_python.txt": GistsCreateResponseDataFilesHelloWorldPythonTxt;
+};
+type GistsCreateResponseData = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsCreateResponseDataFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsCreateResponseDataOwner;
+  truncated: boolean;
+  forks: Array<GistsCreateResponseDataForksItem>;
+  history: Array<GistsCreateResponseDataHistoryItem>;
+};
+
 type GistsListPublicEndpoint = {
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
@@ -2838,6 +4425,58 @@ type GistsListPublicRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListPublicResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListPublicResponseDataItemFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+};
+type GistsListPublicResponseDataItemFiles = {
+  "hello_world.rb": GistsListPublicResponseDataItemFilesHelloWorldRb;
+};
+type GistsListPublicResponseDataItem = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsListPublicResponseDataItemFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsListPublicResponseDataItemOwner;
+  truncated: boolean;
+};
+type GistsListPublicResponseData = Array<GistsListPublicResponseDataItem>;
+
 type GistsListStarredEndpoint = {
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
@@ -2858,6 +4497,58 @@ type GistsListStarredRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListStarredResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListStarredResponseDataItemFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+};
+type GistsListStarredResponseDataItemFiles = {
+  "hello_world.rb": GistsListStarredResponseDataItemFilesHelloWorldRb;
+};
+type GistsListStarredResponseDataItem = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsListStarredResponseDataItemFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsListStarredResponseDataItemOwner;
+  truncated: boolean;
+};
+type GistsListStarredResponseData = Array<GistsListStarredResponseDataItem>;
+
 type GistsGetEndpoint = {
   /**
    * gist_id parameter
@@ -2870,6 +4561,150 @@ type GistsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsGetResponseDataHistoryItemChangeStatus = {
+  deletions: number;
+  additions: number;
+  total: number;
+};
+type GistsGetResponseDataHistoryItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetResponseDataHistoryItem = {
+  url: string;
+  version: string;
+  user: GistsGetResponseDataHistoryItemUser;
+  change_status: GistsGetResponseDataHistoryItemChangeStatus;
+  committed_at: string;
+};
+type GistsGetResponseDataForksItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetResponseDataForksItem = {
+  user: GistsGetResponseDataForksItemUser;
+  url: string;
+  id: string;
+  created_at: string;
+  updated_at: string;
+};
+type GistsGetResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetResponseDataFilesHelloWorldPythonTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetResponseDataFilesHelloWorldRubyTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetResponseDataFilesHelloWorldPy = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetResponseDataFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetResponseDataFiles = {
+  "hello_world.rb": GistsGetResponseDataFilesHelloWorldRb;
+  "hello_world.py": GistsGetResponseDataFilesHelloWorldPy;
+  "hello_world_ruby.txt": GistsGetResponseDataFilesHelloWorldRubyTxt;
+  "hello_world_python.txt": GistsGetResponseDataFilesHelloWorldPythonTxt;
+};
+type GistsGetResponseData = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsGetResponseDataFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsGetResponseDataOwner;
+  truncated: boolean;
+  forks: Array<GistsGetResponseDataForksItem>;
+  history: Array<GistsGetResponseDataHistoryItem>;
+};
+
 type GistsUpdateEndpoint = {
   /**
    * gist_id parameter
@@ -2890,6 +4725,150 @@ type GistsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsUpdateResponseDataHistoryItemChangeStatus = {
+  deletions: number;
+  additions: number;
+  total: number;
+};
+type GistsUpdateResponseDataHistoryItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsUpdateResponseDataHistoryItem = {
+  url: string;
+  version: string;
+  user: GistsUpdateResponseDataHistoryItemUser;
+  change_status: GistsUpdateResponseDataHistoryItemChangeStatus;
+  committed_at: string;
+};
+type GistsUpdateResponseDataForksItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsUpdateResponseDataForksItem = {
+  user: GistsUpdateResponseDataForksItemUser;
+  url: string;
+  id: string;
+  created_at: string;
+  updated_at: string;
+};
+type GistsUpdateResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsUpdateResponseDataFilesNewFileTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsUpdateResponseDataFilesHelloWorldMd = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsUpdateResponseDataFilesHelloWorldPy = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsUpdateResponseDataFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsUpdateResponseDataFiles = {
+  "hello_world.rb": GistsUpdateResponseDataFilesHelloWorldRb;
+  "hello_world.py": GistsUpdateResponseDataFilesHelloWorldPy;
+  "hello_world.md": GistsUpdateResponseDataFilesHelloWorldMd;
+  "new_file.txt": GistsUpdateResponseDataFilesNewFileTxt;
+};
+type GistsUpdateResponseData = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsUpdateResponseDataFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsUpdateResponseDataOwner;
+  truncated: boolean;
+  forks: Array<GistsUpdateResponseDataForksItem>;
+  history: Array<GistsUpdateResponseDataHistoryItem>;
+};
+
 type GistsDeleteEndpoint = {
   /**
    * gist_id parameter
@@ -2902,6 +4881,7 @@ type GistsDeleteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsListCommentsEndpoint = {
   /**
    * gist_id parameter
@@ -2922,6 +4902,37 @@ type GistsListCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListCommentsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListCommentsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  body: string;
+  user: GistsListCommentsResponseDataItemUser;
+  created_at: string;
+  updated_at: string;
+};
+type GistsListCommentsResponseData = Array<GistsListCommentsResponseDataItem>;
+
 type GistsCreateCommentEndpoint = {
   /**
    * gist_id parameter
@@ -2938,6 +4949,36 @@ type GistsCreateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsCreateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsCreateCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  body: string;
+  user: GistsCreateCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type GistsGetCommentEndpoint = {
   /**
    * gist_id parameter
@@ -2954,6 +4995,36 @@ type GistsGetCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsGetCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  body: string;
+  user: GistsGetCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type GistsUpdateCommentEndpoint = {
   /**
    * gist_id parameter
@@ -2974,6 +5045,36 @@ type GistsUpdateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsUpdateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsUpdateCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  body: string;
+  user: GistsUpdateCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type GistsDeleteCommentEndpoint = {
   /**
    * gist_id parameter
@@ -2990,6 +5091,7 @@ type GistsDeleteCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsListCommitsEndpoint = {
   /**
    * gist_id parameter
@@ -3010,6 +5112,40 @@ type GistsListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListCommitsResponseDataItemChangeStatus = {
+  deletions: number;
+  additions: number;
+  total: number;
+};
+type GistsListCommitsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListCommitsResponseDataItem = {
+  url: string;
+  version: string;
+  user: GistsListCommitsResponseDataItemUser;
+  change_status: GistsListCommitsResponseDataItemChangeStatus;
+  committed_at: string;
+};
+type GistsListCommitsResponseData = Array<GistsListCommitsResponseDataItem>;
+
 type GistsForkEndpoint = {
   /**
    * gist_id parameter
@@ -3022,6 +5158,57 @@ type GistsForkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsForkResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsForkResponseDataFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+};
+type GistsForkResponseDataFiles = {
+  "hello_world.rb": GistsForkResponseDataFilesHelloWorldRb;
+};
+type GistsForkResponseData = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsForkResponseDataFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsForkResponseDataOwner;
+  truncated: boolean;
+};
+
 type GistsListForksEndpoint = {
   /**
    * gist_id parameter
@@ -3042,6 +5229,35 @@ type GistsListForksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListForksResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListForksResponseDataItem = {
+  user: GistsListForksResponseDataItemUser;
+  url: string;
+  id: string;
+  created_at: string;
+  updated_at: string;
+};
+type GistsListForksResponseData = Array<GistsListForksResponseDataItem>;
+
 type GistsStarEndpoint = {
   /**
    * gist_id parameter
@@ -3054,6 +5270,7 @@ type GistsStarRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsUnstarEndpoint = {
   /**
    * gist_id parameter
@@ -3066,6 +5283,7 @@ type GistsUnstarRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsCheckIsStarredEndpoint = {
   /**
    * gist_id parameter
@@ -3078,6 +5296,7 @@ type GistsCheckIsStarredRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsGetRevisionEndpoint = {
   /**
    * gist_id parameter
@@ -3094,6 +5313,150 @@ type GistsGetRevisionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsGetRevisionResponseDataHistoryItemChangeStatus = {
+  deletions: number;
+  additions: number;
+  total: number;
+};
+type GistsGetRevisionResponseDataHistoryItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetRevisionResponseDataHistoryItem = {
+  url: string;
+  version: string;
+  user: GistsGetRevisionResponseDataHistoryItemUser;
+  change_status: GistsGetRevisionResponseDataHistoryItemChangeStatus;
+  committed_at: string;
+};
+type GistsGetRevisionResponseDataForksItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetRevisionResponseDataForksItem = {
+  user: GistsGetRevisionResponseDataForksItemUser;
+  url: string;
+  id: string;
+  created_at: string;
+  updated_at: string;
+};
+type GistsGetRevisionResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsGetRevisionResponseDataFilesHelloWorldPythonTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetRevisionResponseDataFilesHelloWorldRubyTxt = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetRevisionResponseDataFilesHelloWorldPy = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetRevisionResponseDataFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+  truncated: boolean;
+  content: string;
+};
+type GistsGetRevisionResponseDataFiles = {
+  "hello_world.rb": GistsGetRevisionResponseDataFilesHelloWorldRb;
+  "hello_world.py": GistsGetRevisionResponseDataFilesHelloWorldPy;
+  "hello_world_ruby.txt": GistsGetRevisionResponseDataFilesHelloWorldRubyTxt;
+  "hello_world_python.txt": GistsGetRevisionResponseDataFilesHelloWorldPythonTxt;
+};
+type GistsGetRevisionResponseData = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsGetRevisionResponseDataFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsGetRevisionResponseDataOwner;
+  truncated: boolean;
+  forks: Array<GistsGetRevisionResponseDataForksItem>;
+  history: Array<GistsGetRevisionResponseDataHistoryItem>;
+};
+
 type GitignoreListTemplatesEndpoint = {};
 type GitignoreListTemplatesRequestOptions = {
   method: "GET";
@@ -3101,6 +5464,8 @@ type GitignoreListTemplatesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitignoreListTemplatesResponseData = Array<string>;
+
 type GitignoreGetTemplateEndpoint = {
   /**
    * name parameter
@@ -3113,6 +5478,8 @@ type GitignoreGetTemplateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitignoreGetTemplateResponseData = { name: string; source: string };
+
 type AppsListReposEndpoint = {
   /**
    * Results per page (max 100)
@@ -3129,6 +5496,112 @@ type AppsListReposRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListReposResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsListReposResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: AppsListReposResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type AppsListReposResponseData = {
+  total_count: number;
+  repositories: Array<AppsListReposResponseDataRepositoriesItem>;
+};
+
 type AppsRevokeInstallationTokenEndpoint = {};
 type AppsRevokeInstallationTokenRequestOptions = {
   method: "DELETE";
@@ -3136,6 +5609,7 @@ type AppsRevokeInstallationTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListEndpoint = {
   /**
    * Indicates which sorts of issues to return. Can be one of:
@@ -3181,6 +5655,255 @@ type IssuesListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListResponseDataItemRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type IssuesListResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: IssuesListResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: IssuesListResponseDataItemRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type IssuesListResponseDataItemPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesListResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesListResponseDataItemUser;
+  labels: Array<IssuesListResponseDataItemLabelsItem>;
+  assignee: IssuesListResponseDataItemAssignee;
+  assignees: Array<IssuesListResponseDataItemAssigneesItem>;
+  milestone: IssuesListResponseDataItemMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesListResponseDataItemPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  repository: IssuesListResponseDataItemRepository;
+};
+type IssuesListResponseData = Array<IssuesListResponseDataItem>;
+
 type SearchIssuesLegacyEndpoint = {
   /**
    * owner parameter
@@ -3205,6 +5928,25 @@ type SearchIssuesLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchIssuesLegacyResponseDataIssuesItem = {
+  gravatar_id: string;
+  position: number;
+  number: number;
+  votes: number;
+  created_at: string;
+  comments: number;
+  body: string;
+  title: string;
+  updated_at: string;
+  html_url: string;
+  user: string;
+  labels: Array<string>;
+  state: string;
+};
+type SearchIssuesLegacyResponseData = {
+  issues: Array<SearchIssuesLegacyResponseDataIssuesItem>;
+};
+
 type SearchReposLegacyEndpoint = {
   /**
    * The search term.
@@ -3233,6 +5975,35 @@ type SearchReposLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchReposLegacyResponseDataRepositoriesItem = {
+  type: string;
+  created: string;
+  watchers: number;
+  has_downloads: boolean;
+  username: string;
+  homepage: string;
+  url: string;
+  fork: boolean;
+  has_issues: boolean;
+  has_wiki: boolean;
+  forks: number;
+  size: number;
+  private: boolean;
+  followers: number;
+  name: string;
+  owner: string;
+  open_issues: number;
+  pushed_at: string;
+  score: number;
+  pushed: string;
+  description: string;
+  language: string;
+  created_at: string;
+};
+type SearchReposLegacyResponseData = {
+  repositories: Array<SearchReposLegacyResponseDataRepositoriesItem>;
+};
+
 type SearchEmailLegacyEndpoint = {
   /**
    * The email address.
@@ -3245,6 +6016,27 @@ type SearchEmailLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchEmailLegacyResponseDataUser = {
+  public_repo_count: number;
+  public_gist_count: number;
+  followers_count: number;
+  following_count: number;
+  created: string;
+  created_at: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  id: number;
+  login: string;
+  type: string;
+  gravatar_id: string;
+};
+type SearchEmailLegacyResponseData = {
+  user: SearchEmailLegacyResponseDataUser;
+};
+
 type SearchUsersLegacyEndpoint = {
   /**
    * The search term.
@@ -3269,6 +6061,28 @@ type SearchUsersLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchUsersLegacyResponseDataUsersItem = {
+  gravatar_id: string;
+  name: string;
+  created_at: string;
+  location: string;
+  public_repo_count: number;
+  followers: number;
+  language: string;
+  fullname: string;
+  username: string;
+  id: string;
+  repos: number;
+  type: string;
+  followers_count: number;
+  login: string;
+  score: number;
+  created: string;
+};
+type SearchUsersLegacyResponseData = {
+  users: Array<SearchUsersLegacyResponseDataUsersItem>;
+};
+
 type LicensesListCommonlyUsedEndpoint = {};
 type LicensesListCommonlyUsedRequestOptions = {
   method: "GET";
@@ -3276,6 +6090,17 @@ type LicensesListCommonlyUsedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type LicensesListCommonlyUsedResponseDataItem = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id?: string;
+};
+type LicensesListCommonlyUsedResponseData = Array<
+  LicensesListCommonlyUsedResponseDataItem
+>;
+
 type LicensesGetEndpoint = {
   /**
    * license parameter
@@ -3288,6 +6113,22 @@ type LicensesGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type LicensesGetResponseData = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+  html_url: string;
+  description: string;
+  implementation: string;
+  permissions: Array<string>;
+  conditions: Array<string>;
+  limitations: Array<string>;
+  body: string;
+  featured: boolean;
+};
+
 type MarkdownRenderEndpoint = {
   /**
    * The Markdown text to render in HTML. Markdown content must be 400 KB or less.
@@ -3310,6 +6151,7 @@ type MarkdownRenderRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MarkdownRenderRawEndpoint = {
   /**
    * data parameter
@@ -3322,6 +6164,7 @@ type MarkdownRenderRawRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsGetSubscriptionPlanForAccountEndpoint = {
   /**
    * account_id parameter
@@ -3334,6 +6177,62 @@ type AppsGetSubscriptionPlanForAccountRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetSubscriptionPlanForAccountResponseDataMarketplacePurchasePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsGetSubscriptionPlanForAccountResponseDataMarketplacePurchase = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  plan: AppsGetSubscriptionPlanForAccountResponseDataMarketplacePurchasePlan;
+};
+type AppsGetSubscriptionPlanForAccountResponseDataMarketplacePendingChangePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  state: string;
+  unit_name: null;
+  bullets: Array<string>;
+};
+type AppsGetSubscriptionPlanForAccountResponseDataMarketplacePendingChange = {
+  effective_date: string;
+  unit_count: null;
+  id: number;
+  plan: AppsGetSubscriptionPlanForAccountResponseDataMarketplacePendingChangePlan;
+};
+type AppsGetSubscriptionPlanForAccountResponseData = {
+  url: string;
+  type: string;
+  id: number;
+  login: string;
+  email: null;
+  organization_billing_email: string;
+  marketplace_pending_change: AppsGetSubscriptionPlanForAccountResponseDataMarketplacePendingChange;
+  marketplace_purchase: AppsGetSubscriptionPlanForAccountResponseDataMarketplacePurchase;
+};
+
 type AppsListPlansEndpoint = {
   /**
    * Results per page (max 100)
@@ -3350,6 +6249,23 @@ type AppsListPlansRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListPlansResponseDataItem = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListPlansResponseData = Array<AppsListPlansResponseDataItem>;
+
 type AppsListAccountsForPlanEndpoint = {
   /**
    * plan_id parameter
@@ -3378,6 +6294,65 @@ type AppsListAccountsForPlanRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListAccountsForPlanResponseDataItemMarketplacePurchasePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListAccountsForPlanResponseDataItemMarketplacePurchase = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  plan: AppsListAccountsForPlanResponseDataItemMarketplacePurchasePlan;
+};
+type AppsListAccountsForPlanResponseDataItemMarketplacePendingChangePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  state: string;
+  unit_name: null;
+  bullets: Array<string>;
+};
+type AppsListAccountsForPlanResponseDataItemMarketplacePendingChange = {
+  effective_date: string;
+  unit_count: null;
+  id: number;
+  plan: AppsListAccountsForPlanResponseDataItemMarketplacePendingChangePlan;
+};
+type AppsListAccountsForPlanResponseDataItem = {
+  url: string;
+  type: string;
+  id: number;
+  login: string;
+  email: null;
+  organization_billing_email: string;
+  marketplace_pending_change: AppsListAccountsForPlanResponseDataItemMarketplacePendingChange;
+  marketplace_purchase: AppsListAccountsForPlanResponseDataItemMarketplacePurchase;
+};
+type AppsListAccountsForPlanResponseData = Array<
+  AppsListAccountsForPlanResponseDataItem
+>;
+
 type AppsGetSubscriptionPlanForAccountStubbedEndpoint = {
   /**
    * account_id parameter
@@ -3390,6 +6365,62 @@ type AppsGetSubscriptionPlanForAccountStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePurchasePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePurchase = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  plan: AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePurchasePlan;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePendingChangePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  state: string;
+  unit_name: null;
+  bullets: Array<string>;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePendingChange = {
+  effective_date: string;
+  unit_count: null;
+  id: number;
+  plan: AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePendingChangePlan;
+};
+type AppsGetSubscriptionPlanForAccountStubbedResponseData = {
+  url: string;
+  type: string;
+  id: number;
+  login: string;
+  email: null;
+  organization_billing_email: string;
+  marketplace_pending_change: AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePendingChange;
+  marketplace_purchase: AppsGetSubscriptionPlanForAccountStubbedResponseDataMarketplacePurchase;
+};
+
 type AppsListPlansStubbedEndpoint = {
   /**
    * Results per page (max 100)
@@ -3406,6 +6437,25 @@ type AppsListPlansStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListPlansStubbedResponseDataItem = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListPlansStubbedResponseData = Array<
+  AppsListPlansStubbedResponseDataItem
+>;
+
 type AppsListAccountsForPlanStubbedEndpoint = {
   /**
    * plan_id parameter
@@ -3434,6 +6484,65 @@ type AppsListAccountsForPlanStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListAccountsForPlanStubbedResponseDataItemMarketplacePurchasePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListAccountsForPlanStubbedResponseDataItemMarketplacePurchase = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  plan: AppsListAccountsForPlanStubbedResponseDataItemMarketplacePurchasePlan;
+};
+type AppsListAccountsForPlanStubbedResponseDataItemMarketplacePendingChangePlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  state: string;
+  unit_name: null;
+  bullets: Array<string>;
+};
+type AppsListAccountsForPlanStubbedResponseDataItemMarketplacePendingChange = {
+  effective_date: string;
+  unit_count: null;
+  id: number;
+  plan: AppsListAccountsForPlanStubbedResponseDataItemMarketplacePendingChangePlan;
+};
+type AppsListAccountsForPlanStubbedResponseDataItem = {
+  url: string;
+  type: string;
+  id: number;
+  login: string;
+  email: null;
+  organization_billing_email: string;
+  marketplace_pending_change: AppsListAccountsForPlanStubbedResponseDataItemMarketplacePendingChange;
+  marketplace_purchase: AppsListAccountsForPlanStubbedResponseDataItemMarketplacePurchase;
+};
+type AppsListAccountsForPlanStubbedResponseData = Array<
+  AppsListAccountsForPlanStubbedResponseDataItem
+>;
+
 type MetaGetEndpoint = {};
 type MetaGetRequestOptions = {
   method: "GET";
@@ -3441,6 +6550,23 @@ type MetaGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MetaGetResponseDataSshKeyFingerprints = {
+  MD5_RSA: string;
+  MD5_DSA: string;
+  SHA256_RSA: string;
+  SHA256_DSA: string;
+};
+type MetaGetResponseData = {
+  verifiable_password_authentication: boolean;
+  ssh_key_fingerprints: MetaGetResponseDataSshKeyFingerprints;
+  hooks: Array<string>;
+  web: Array<string>;
+  api: Array<string>;
+  git: Array<string>;
+  pages: Array<string>;
+  importer: Array<string>;
+};
+
 type ActivityListPublicEventsForRepoNetworkEndpoint = {
   /**
    * owner parameter
@@ -3465,6 +6591,7 @@ type ActivityListPublicEventsForRepoNetworkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListNotificationsForAuthenticatedUserEndpoint = {
   /**
    * If `true`, show notifications marked as read.
@@ -3497,6 +6624,95 @@ type ActivityListNotificationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListNotificationsForAuthenticatedUserResponseDataItemSubject = {
+  title: string;
+  url: string;
+  latest_comment_url: string;
+  type: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListNotificationsForAuthenticatedUserResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseDataItem = {
+  id: string;
+  repository: ActivityListNotificationsForAuthenticatedUserResponseDataItemRepository;
+  subject: ActivityListNotificationsForAuthenticatedUserResponseDataItemSubject;
+  reason: string;
+  unread: boolean;
+  updated_at: string;
+  last_read_at: string;
+  url: string;
+};
+type ActivityListNotificationsForAuthenticatedUserResponseData = Array<
+  ActivityListNotificationsForAuthenticatedUserResponseDataItem
+>;
+
 type ActivityMarkNotificationsAsReadEndpoint = {
   /**
    * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
@@ -3509,6 +6725,7 @@ type ActivityMarkNotificationsAsReadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityGetThreadEndpoint = {
   /**
    * thread_id parameter
@@ -3521,6 +6738,92 @@ type ActivityGetThreadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityGetThreadResponseDataSubject = {
+  title: string;
+  url: string;
+  latest_comment_url: string;
+  type: string;
+};
+type ActivityGetThreadResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityGetThreadResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityGetThreadResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActivityGetThreadResponseData = {
+  id: string;
+  repository: ActivityGetThreadResponseDataRepository;
+  subject: ActivityGetThreadResponseDataSubject;
+  reason: string;
+  unread: boolean;
+  updated_at: string;
+  last_read_at: string;
+  url: string;
+};
+
 type ActivityMarkThreadAsReadEndpoint = {
   /**
    * thread_id parameter
@@ -3533,6 +6836,7 @@ type ActivityMarkThreadAsReadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint = {
   /**
    * thread_id parameter
@@ -3545,6 +6849,15 @@ type ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityGetThreadSubscriptionForAuthenticatedUserResponseData = {
+  subscribed: boolean;
+  ignored: boolean;
+  reason: null;
+  created_at: string;
+  url: string;
+  thread_url: string;
+};
+
 type ActivitySetThreadSubscriptionEndpoint = {
   /**
    * thread_id parameter
@@ -3561,6 +6874,15 @@ type ActivitySetThreadSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivitySetThreadSubscriptionResponseData = {
+  subscribed: boolean;
+  ignored: boolean;
+  reason: null;
+  created_at: string;
+  url: string;
+  thread_url: string;
+};
+
 type ActivityDeleteThreadSubscriptionEndpoint = {
   /**
    * thread_id parameter
@@ -3573,6 +6895,7 @@ type ActivityDeleteThreadSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsListEndpoint = {
   /**
    * The integer ID of the last organization that you've seen.
@@ -3593,6 +6916,22 @@ type OrgsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsListResponseData = Array<OrgsListResponseDataItem>;
+
 type OrgsGetEndpoint = {
   /**
    * org parameter
@@ -3605,6 +6944,57 @@ type OrgsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsGetResponseDataPlan = {
+  name: string;
+  space: number;
+  private_repos: number;
+  filled_seats?: number;
+  seats?: number;
+};
+type OrgsGetResponseData = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+  total_private_repos?: number;
+  owned_private_repos?: number;
+  private_gists?: number;
+  disk_usage?: number;
+  collaborators?: number;
+  billing_email?: string;
+  plan: OrgsGetResponseDataPlan;
+  default_repository_permission?: string;
+  members_can_create_repositories?: boolean;
+  two_factor_requirement_enabled?: boolean;
+  members_allowed_repository_creation_type?: string;
+  members_can_create_public_repositories?: boolean;
+  members_can_create_private_repositories?: boolean;
+  members_can_create_internal_repositories?: boolean;
+};
+
 type OrgsUpdateEndpoint = {
   /**
    * org parameter
@@ -3694,6 +7084,55 @@ type OrgsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsUpdateResponseDataPlan = {
+  name: string;
+  space: number;
+  private_repos: number;
+};
+type OrgsUpdateResponseData = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+  total_private_repos: number;
+  owned_private_repos: number;
+  private_gists: number;
+  disk_usage: number;
+  collaborators: number;
+  billing_email: string;
+  plan: OrgsUpdateResponseDataPlan;
+  default_repository_permission: string;
+  members_can_create_repositories: boolean;
+  two_factor_requirement_enabled: boolean;
+  members_allowed_repository_creation_type: string;
+  members_can_create_public_repositories: boolean;
+  members_can_create_private_repositories: boolean;
+  members_can_create_internal_repositories: boolean;
+};
+
 type OrgsListBlockedUsersEndpoint = {
   /**
    * org parameter
@@ -3706,6 +7145,30 @@ type OrgsListBlockedUsersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListBlockedUsersResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListBlockedUsersResponseData = Array<
+  OrgsListBlockedUsersResponseDataItem
+>;
+
 type OrgsCheckBlockedUserEndpoint = {
   /**
    * org parameter
@@ -3722,6 +7185,7 @@ type OrgsCheckBlockedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsBlockUserEndpoint = {
   /**
    * org parameter
@@ -3738,6 +7202,7 @@ type OrgsBlockUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsUnblockUserEndpoint = {
   /**
    * org parameter
@@ -3754,6 +7219,7 @@ type OrgsUnblockUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsListCredentialAuthorizationsEndpoint = {
   /**
    * org parameter
@@ -3766,6 +7232,18 @@ type OrgsListCredentialAuthorizationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListCredentialAuthorizationsResponseDataItem = {
+  login: string;
+  credential_id: string;
+  credential_type: string;
+  token_last_eight: string;
+  credential_authorized_at: string;
+  scopes: Array<string>;
+};
+type OrgsListCredentialAuthorizationsResponseData = Array<
+  OrgsListCredentialAuthorizationsResponseDataItem
+>;
+
 type OrgsRemoveCredentialAuthorizationEndpoint = {
   /**
    * org parameter
@@ -3782,6 +7260,7 @@ type OrgsRemoveCredentialAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListPublicOrgEventsEndpoint = {
   /**
    * org parameter
@@ -3802,6 +7281,7 @@ type ActivityListPublicOrgEventsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsListHooksEndpoint = {
   /**
    * org parameter
@@ -3822,6 +7302,23 @@ type OrgsListHooksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListHooksResponseDataItemConfig = {
+  url: string;
+  content_type: string;
+};
+type OrgsListHooksResponseDataItem = {
+  id: number;
+  url: string;
+  ping_url: string;
+  name: string;
+  events: Array<string>;
+  active: boolean;
+  config: OrgsListHooksResponseDataItemConfig;
+  updated_at: string;
+  created_at: string;
+};
+type OrgsListHooksResponseData = Array<OrgsListHooksResponseDataItem>;
+
 type OrgsCreateHookEndpoint = {
   /**
    * org parameter
@@ -3850,6 +7347,19 @@ type OrgsCreateHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsCreateHookResponseDataConfig = { url: string; content_type: string };
+type OrgsCreateHookResponseData = {
+  id: number;
+  url: string;
+  ping_url: string;
+  name: string;
+  events: Array<string>;
+  active: boolean;
+  config: OrgsCreateHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+};
+
 type OrgsGetHookEndpoint = {
   /**
    * org parameter
@@ -3866,6 +7376,19 @@ type OrgsGetHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsGetHookResponseDataConfig = { url: string; content_type: string };
+type OrgsGetHookResponseData = {
+  id: number;
+  url: string;
+  ping_url: string;
+  name: string;
+  events: Array<string>;
+  active: boolean;
+  config: OrgsGetHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+};
+
 type OrgsUpdateHookEndpoint = {
   /**
    * org parameter
@@ -3894,6 +7417,19 @@ type OrgsUpdateHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsUpdateHookResponseDataConfig = { url: string; content_type: string };
+type OrgsUpdateHookResponseData = {
+  id: number;
+  url: string;
+  ping_url: string;
+  name: string;
+  events: Array<string>;
+  active: boolean;
+  config: OrgsUpdateHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+};
+
 type OrgsDeleteHookEndpoint = {
   /**
    * org parameter
@@ -3910,6 +7446,7 @@ type OrgsDeleteHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsPingHookEndpoint = {
   /**
    * org parameter
@@ -3926,6 +7463,7 @@ type OrgsPingHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsGetOrgInstallationEndpoint = {
   /**
    * org parameter
@@ -3938,6 +7476,47 @@ type AppsGetOrgInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetOrgInstallationResponseDataPermissions = {
+  checks: string;
+  metadata: string;
+  contents: string;
+};
+type AppsGetOrgInstallationResponseDataAccount = {
+  login: string;
+  id: number;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsGetOrgInstallationResponseData = {
+  id: number;
+  account: AppsGetOrgInstallationResponseDataAccount;
+  repository_selection: string;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsGetOrgInstallationResponseDataPermissions;
+  events: Array<string>;
+  created_at: string;
+  updated_at: string;
+  single_file_name: null;
+};
+
 type OrgsListInstallationsEndpoint = {
   /**
    * org parameter
@@ -3958,6 +7537,53 @@ type OrgsListInstallationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListInstallationsResponseDataInstallationsItemPermissions = {
+  deployments: string;
+  metadata: string;
+  pull_requests: string;
+  statuses: string;
+};
+type OrgsListInstallationsResponseDataInstallationsItemAccount = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListInstallationsResponseDataInstallationsItem = {
+  id: number;
+  account: OrgsListInstallationsResponseDataInstallationsItemAccount;
+  repository_selection: string;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: OrgsListInstallationsResponseDataInstallationsItemPermissions;
+  events: Array<string>;
+  created_at: string;
+  updated_at: string;
+  single_file_name: null;
+};
+type OrgsListInstallationsResponseData = {
+  total_count: number;
+  installations: Array<OrgsListInstallationsResponseDataInstallationsItem>;
+};
+
 type InteractionsGetRestrictionsForOrgEndpoint = {
   /**
    * org parameter
@@ -3970,6 +7596,12 @@ type InteractionsGetRestrictionsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type InteractionsGetRestrictionsForOrgResponseData = {
+  limit: string;
+  origin: string;
+  expires_at: string;
+};
+
 type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
   /**
    * org parameter
@@ -3986,6 +7618,12 @@ type InteractionsAddOrUpdateRestrictionsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type InteractionsAddOrUpdateRestrictionsForOrgResponseData = {
+  limit: string;
+  origin: string;
+  expires_at: string;
+};
+
 type InteractionsRemoveRestrictionsForOrgEndpoint = {
   /**
    * org parameter
@@ -3998,6 +7636,7 @@ type InteractionsRemoveRestrictionsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsListPendingInvitationsEndpoint = {
   /**
    * org parameter
@@ -4018,6 +7657,40 @@ type OrgsListPendingInvitationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListPendingInvitationsResponseDataItemInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListPendingInvitationsResponseDataItem = {
+  id: number;
+  login: string;
+  email: string;
+  role: string;
+  created_at: string;
+  inviter: OrgsListPendingInvitationsResponseDataItemInviter;
+  team_count: number;
+  invitation_team_url: string;
+};
+type OrgsListPendingInvitationsResponseData = Array<
+  OrgsListPendingInvitationsResponseDataItem
+>;
+
 type OrgsCreateInvitationEndpoint = {
   /**
    * org parameter
@@ -4049,6 +7722,37 @@ type OrgsCreateInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsCreateInvitationResponseDataInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsCreateInvitationResponseData = {
+  id: number;
+  login: string;
+  email: string;
+  role: string;
+  created_at: string;
+  inviter: OrgsCreateInvitationResponseDataInviter;
+  team_count: number;
+  invitation_team_url: string;
+};
+
 type OrgsListInvitationTeamsEndpoint = {
   /**
    * org parameter
@@ -4073,6 +7777,24 @@ type OrgsListInvitationTeamsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListInvitationTeamsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type OrgsListInvitationTeamsResponseData = Array<
+  OrgsListInvitationTeamsResponseDataItem
+>;
+
 type IssuesListForOrgEndpoint = {
   /**
    * org parameter
@@ -4122,6 +7844,255 @@ type IssuesListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListForOrgResponseDataItemRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type IssuesListForOrgResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForOrgResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: IssuesListForOrgResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: IssuesListForOrgResponseDataItemRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type IssuesListForOrgResponseDataItemPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesListForOrgResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForOrgResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListForOrgResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListForOrgResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForOrgResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForOrgResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListForOrgResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesListForOrgResponseDataItemUser;
+  labels: Array<IssuesListForOrgResponseDataItemLabelsItem>;
+  assignee: IssuesListForOrgResponseDataItemAssignee;
+  assignees: Array<IssuesListForOrgResponseDataItemAssigneesItem>;
+  milestone: IssuesListForOrgResponseDataItemMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesListForOrgResponseDataItemPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  repository: IssuesListForOrgResponseDataItemRepository;
+};
+type IssuesListForOrgResponseData = Array<IssuesListForOrgResponseDataItem>;
+
 type OrgsListMembersEndpoint = {
   /**
    * org parameter
@@ -4155,6 +8126,28 @@ type OrgsListMembersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListMembersResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListMembersResponseData = Array<OrgsListMembersResponseDataItem>;
+
 type OrgsCheckMembershipEndpoint = {
   /**
    * org parameter
@@ -4171,6 +8164,7 @@ type OrgsCheckMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsRemoveMemberEndpoint = {
   /**
    * org parameter
@@ -4187,6 +8181,7 @@ type OrgsRemoveMemberRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsGetMembershipEndpoint = {
   /**
    * org parameter
@@ -4203,6 +8198,49 @@ type OrgsGetMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsGetMembershipResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsGetMembershipResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsGetMembershipResponseData = {
+  url: string;
+  state: string;
+  role: string;
+  organization_url: string;
+  organization: OrgsGetMembershipResponseDataOrganization;
+  user: OrgsGetMembershipResponseDataUser;
+};
+
 type OrgsAddOrUpdateMembershipEndpoint = {
   /**
    * org parameter
@@ -4225,6 +8263,49 @@ type OrgsAddOrUpdateMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsAddOrUpdateMembershipResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsAddOrUpdateMembershipResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsAddOrUpdateMembershipResponseData = {
+  url: string;
+  state: string;
+  role: string;
+  organization_url: string;
+  organization: OrgsAddOrUpdateMembershipResponseDataOrganization;
+  user: OrgsAddOrUpdateMembershipResponseDataUser;
+};
+
 type OrgsRemoveMembershipEndpoint = {
   /**
    * org parameter
@@ -4241,6 +8322,7 @@ type OrgsRemoveMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsStartForOrgEndpoint = {
   /**
    * org parameter
@@ -4265,6 +8347,140 @@ type MigrationsStartForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsStartForOrgResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsStartForOrgResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsStartForOrgResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsStartForOrgResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsStartForOrgResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsStartForOrgResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type MigrationsStartForOrgResponseData = {
+  id: number;
+  owner: MigrationsStartForOrgResponseDataOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<MigrationsStartForOrgResponseDataRepositoriesItem>;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type MigrationsListForOrgEndpoint = {
   /**
    * org parameter
@@ -4285,6 +8501,143 @@ type MigrationsListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsListForOrgResponseDataItemRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsListForOrgResponseDataItemRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsListForOrgResponseDataItemRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsListForOrgResponseDataItemRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsListForOrgResponseDataItemRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsListForOrgResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type MigrationsListForOrgResponseDataItem = {
+  id: number;
+  owner: MigrationsListForOrgResponseDataItemOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<MigrationsListForOrgResponseDataItemRepositoriesItem>;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+type MigrationsListForOrgResponseData = Array<
+  MigrationsListForOrgResponseDataItem
+>;
+
 type MigrationsGetStatusForOrgEndpoint = {
   /**
    * org parameter
@@ -4301,6 +8654,140 @@ type MigrationsGetStatusForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsGetStatusForOrgResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsGetStatusForOrgResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsGetStatusForOrgResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsGetStatusForOrgResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsGetStatusForOrgResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsGetStatusForOrgResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type MigrationsGetStatusForOrgResponseData = {
+  id: number;
+  owner: MigrationsGetStatusForOrgResponseDataOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<MigrationsGetStatusForOrgResponseDataRepositoriesItem>;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type MigrationsDownloadArchiveForOrgEndpoint = {
   /**
    * org parameter
@@ -4317,6 +8804,7 @@ type MigrationsDownloadArchiveForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsDeleteArchiveForOrgEndpoint = {
   /**
    * org parameter
@@ -4333,6 +8821,7 @@ type MigrationsDeleteArchiveForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsUnlockRepoForOrgEndpoint = {
   /**
    * org parameter
@@ -4353,6 +8842,7 @@ type MigrationsUnlockRepoForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsListReposForOrgEndpoint = {
   /**
    * org parameter
@@ -4377,6 +8867,122 @@ type MigrationsListReposForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsListReposForOrgResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type MigrationsListReposForOrgResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsListReposForOrgResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsListReposForOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsListReposForOrgResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsListReposForOrgResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: MigrationsListReposForOrgResponseDataItemLicense;
+};
+type MigrationsListReposForOrgResponseData = Array<
+  MigrationsListReposForOrgResponseDataItem
+>;
+
 type OrgsListOutsideCollaboratorsEndpoint = {
   /**
    * org parameter
@@ -4403,6 +9009,30 @@ type OrgsListOutsideCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListOutsideCollaboratorsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListOutsideCollaboratorsResponseData = Array<
+  OrgsListOutsideCollaboratorsResponseDataItem
+>;
+
 type OrgsRemoveOutsideCollaboratorEndpoint = {
   /**
    * org parameter
@@ -4419,6 +9049,11 @@ type OrgsRemoveOutsideCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsRemoveOutsideCollaboratorResponseData = {
+  message: string;
+  documentation_url: string;
+};
+
 type OrgsConvertMemberToOutsideCollaboratorEndpoint = {
   /**
    * org parameter
@@ -4435,6 +9070,11 @@ type OrgsConvertMemberToOutsideCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsConvertMemberToOutsideCollaboratorResponseData = {
+  message: string;
+  documentation_url: string;
+};
+
 type ProjectsListForOrgEndpoint = {
   /**
    * org parameter
@@ -4459,6 +9099,43 @@ type ProjectsListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListForOrgResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsListForOrgResponseDataItem = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsListForOrgResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+};
+type ProjectsListForOrgResponseData = Array<ProjectsListForOrgResponseDataItem>;
+
 type ProjectsCreateForOrgEndpoint = {
   /**
    * org parameter
@@ -4479,6 +9156,42 @@ type ProjectsCreateForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsCreateForOrgResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsCreateForOrgResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsCreateForOrgResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+};
+
 type OrgsListPublicMembersEndpoint = {
   /**
    * org parameter
@@ -4499,6 +9212,30 @@ type OrgsListPublicMembersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListPublicMembersResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListPublicMembersResponseData = Array<
+  OrgsListPublicMembersResponseDataItem
+>;
+
 type OrgsCheckPublicMembershipEndpoint = {
   /**
    * org parameter
@@ -4515,6 +9252,7 @@ type OrgsCheckPublicMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsPublicizeMembershipEndpoint = {
   /**
    * org parameter
@@ -4531,6 +9269,7 @@ type OrgsPublicizeMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsConcealMembershipEndpoint = {
   /**
    * org parameter
@@ -4547,6 +9286,7 @@ type OrgsConcealMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListForOrgEndpoint = {
   /**
    * org parameter
@@ -4586,6 +9326,120 @@ type ReposListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListForOrgResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type ReposListForOrgResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposListForOrgResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListForOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListForOrgResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposListForOrgResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: ReposListForOrgResponseDataItemLicense;
+};
+type ReposListForOrgResponseData = Array<ReposListForOrgResponseDataItem>;
+
 type ReposCreateInOrgEndpoint = {
   /**
    * org parameter
@@ -4667,6 +9521,114 @@ type ReposCreateInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateInOrgResponseDataPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposCreateInOrgResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateInOrgResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposCreateInOrgResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposCreateInOrgResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+
 type TeamsListIdPGroupsForOrgEndpoint = {
   /**
    * org parameter
@@ -4687,6 +9649,15 @@ type TeamsListIdPGroupsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListIdPGroupsForOrgResponseDataGroupsItem = {
+  group_id: string;
+  group_name: string;
+  group_description: string;
+};
+type TeamsListIdPGroupsForOrgResponseData = {
+  groups: Array<TeamsListIdPGroupsForOrgResponseDataGroupsItem>;
+};
+
 type TeamsListEndpoint = {
   /**
    * org parameter
@@ -4707,6 +9678,22 @@ type TeamsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type TeamsListResponseData = Array<TeamsListResponseDataItem>;
+
 type TeamsCreateEndpoint = {
   /**
    * org parameter
@@ -4757,6 +9744,55 @@ type TeamsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsCreateResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsCreateResponseDataOrganization;
+};
+
 type TeamsGetByNameEndpoint = {
   /**
    * org parameter
@@ -4773,6 +9809,55 @@ type TeamsGetByNameRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetByNameResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsGetByNameResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsGetByNameResponseDataOrganization;
+};
+
 type TeamsUpdateInOrgEndpoint = {
   /**
    * org parameter
@@ -4817,6 +9902,55 @@ type TeamsUpdateInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateInOrgResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsUpdateInOrgResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsUpdateInOrgResponseDataOrganization;
+};
+
 type TeamsDeleteInOrgEndpoint = {
   /**
    * org parameter
@@ -4833,6 +9967,7 @@ type TeamsDeleteInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListDiscussionsInOrgEndpoint = {
   /**
    * org parameter
@@ -4861,6 +9996,60 @@ type TeamsListDiscussionsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListDiscussionsInOrgResponseDataItemReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsListDiscussionsInOrgResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListDiscussionsInOrgResponseDataItem = {
+  author: TeamsListDiscussionsInOrgResponseDataItemAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsListDiscussionsInOrgResponseDataItemReactions;
+};
+type TeamsListDiscussionsInOrgResponseData = Array<
+  TeamsListDiscussionsInOrgResponseDataItem
+>;
+
 type TeamsCreateDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -4889,6 +10078,57 @@ type TeamsCreateDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateDiscussionInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsCreateDiscussionInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCreateDiscussionInOrgResponseData = {
+  author: TeamsCreateDiscussionInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsCreateDiscussionInOrgResponseDataReactions;
+};
+
 type TeamsGetDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -4909,6 +10149,57 @@ type TeamsGetDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetDiscussionInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsGetDiscussionInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsGetDiscussionInOrgResponseData = {
+  author: TeamsGetDiscussionInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsGetDiscussionInOrgResponseDataReactions;
+};
+
 type TeamsUpdateDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -4937,6 +10228,57 @@ type TeamsUpdateDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateDiscussionInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsUpdateDiscussionInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsUpdateDiscussionInOrgResponseData = {
+  author: TeamsUpdateDiscussionInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsUpdateDiscussionInOrgResponseDataReactions;
+};
+
 type TeamsDeleteDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -4957,6 +10299,7 @@ type TeamsDeleteDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListDiscussionCommentsInOrgEndpoint = {
   /**
    * org parameter
@@ -4989,6 +10332,55 @@ type TeamsListDiscussionCommentsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListDiscussionCommentsInOrgResponseDataItemReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsListDiscussionCommentsInOrgResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListDiscussionCommentsInOrgResponseDataItem = {
+  author: TeamsListDiscussionCommentsInOrgResponseDataItemAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsListDiscussionCommentsInOrgResponseDataItemReactions;
+};
+type TeamsListDiscussionCommentsInOrgResponseData = Array<
+  TeamsListDiscussionCommentsInOrgResponseDataItem
+>;
+
 type TeamsCreateDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5013,6 +10405,52 @@ type TeamsCreateDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateDiscussionCommentInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsCreateDiscussionCommentInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCreateDiscussionCommentInOrgResponseData = {
+  author: TeamsCreateDiscussionCommentInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsCreateDiscussionCommentInOrgResponseDataReactions;
+};
+
 type TeamsGetDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5037,6 +10475,52 @@ type TeamsGetDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetDiscussionCommentInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsGetDiscussionCommentInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsGetDiscussionCommentInOrgResponseData = {
+  author: TeamsGetDiscussionCommentInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsGetDiscussionCommentInOrgResponseDataReactions;
+};
+
 type TeamsUpdateDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5065,6 +10549,52 @@ type TeamsUpdateDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateDiscussionCommentInOrgResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsUpdateDiscussionCommentInOrgResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsUpdateDiscussionCommentInOrgResponseData = {
+  author: TeamsUpdateDiscussionCommentInOrgResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: string;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsUpdateDiscussionCommentInOrgResponseDataReactions;
+};
+
 type TeamsDeleteDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5089,6 +10619,7 @@ type TeamsDeleteDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForTeamDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5133,6 +10664,37 @@ type ReactionsListForTeamDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForTeamDiscussionCommentInOrgResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForTeamDiscussionCommentInOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForTeamDiscussionCommentInOrgResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForTeamDiscussionCommentInOrgResponseData = Array<
+  ReactionsListForTeamDiscussionCommentInOrgResponseDataItem
+>;
+
 type ReactionsCreateForTeamDiscussionCommentInOrgEndpoint = {
   /**
    * org parameter
@@ -5169,6 +10731,34 @@ type ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForTeamDiscussionCommentInOrgResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForTeamDiscussionCommentInOrgResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForTeamDiscussionCommentInOrgResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForTeamDiscussionCommentEndpoint = {
   /**
    * org parameter
@@ -5197,6 +10787,7 @@ type ReactionsDeleteForTeamDiscussionCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForTeamDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -5237,6 +10828,37 @@ type ReactionsListForTeamDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForTeamDiscussionInOrgResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForTeamDiscussionInOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForTeamDiscussionInOrgResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForTeamDiscussionInOrgResponseData = Array<
+  ReactionsListForTeamDiscussionInOrgResponseDataItem
+>;
+
 type ReactionsCreateForTeamDiscussionInOrgEndpoint = {
   /**
    * org parameter
@@ -5269,6 +10891,34 @@ type ReactionsCreateForTeamDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForTeamDiscussionInOrgResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForTeamDiscussionInOrgResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForTeamDiscussionInOrgResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForTeamDiscussionEndpoint = {
   /**
    * org parameter
@@ -5293,6 +10943,7 @@ type ReactionsDeleteForTeamDiscussionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListPendingInvitationsInOrgEndpoint = {
   /**
    * org parameter
@@ -5317,6 +10968,40 @@ type TeamsListPendingInvitationsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListPendingInvitationsInOrgResponseDataItemInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListPendingInvitationsInOrgResponseDataItem = {
+  id: number;
+  login: string;
+  email: string;
+  role: string;
+  created_at: string;
+  inviter: TeamsListPendingInvitationsInOrgResponseDataItemInviter;
+  team_count: number;
+  invitation_team_url: string;
+};
+type TeamsListPendingInvitationsInOrgResponseData = Array<
+  TeamsListPendingInvitationsInOrgResponseDataItem
+>;
+
 type TeamsListMembersInOrgEndpoint = {
   /**
    * org parameter
@@ -5348,6 +11033,30 @@ type TeamsListMembersInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListMembersInOrgResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListMembersInOrgResponseData = Array<
+  TeamsListMembersInOrgResponseDataItem
+>;
+
 type TeamsGetMembershipInOrgEndpoint = {
   /**
    * org parameter
@@ -5368,6 +11077,12 @@ type TeamsGetMembershipInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetMembershipInOrgResponseData = {
+  url: string;
+  role: string;
+  state: string;
+};
+
 type TeamsAddOrUpdateMembershipInOrgEndpoint = {
   /**
    * org parameter
@@ -5394,6 +11109,12 @@ type TeamsAddOrUpdateMembershipInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsAddOrUpdateMembershipInOrgResponseData = {
+  url: string;
+  role: string;
+  state: string;
+};
+
 type TeamsRemoveMembershipInOrgEndpoint = {
   /**
    * org parameter
@@ -5414,6 +11135,7 @@ type TeamsRemoveMembershipInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListProjectsInOrgEndpoint = {
   /**
    * org parameter
@@ -5438,6 +11160,53 @@ type TeamsListProjectsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListProjectsInOrgResponseDataItemPermissions = {
+  read: boolean;
+  write: boolean;
+  admin: boolean;
+};
+type TeamsListProjectsInOrgResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListProjectsInOrgResponseDataItem = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: TeamsListProjectsInOrgResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+  organization_permission: string;
+  private: boolean;
+  permissions: TeamsListProjectsInOrgResponseDataItemPermissions;
+};
+type TeamsListProjectsInOrgResponseData = Array<
+  TeamsListProjectsInOrgResponseDataItem
+>;
+
 type TeamsReviewProjectInOrgEndpoint = {
   /**
    * org parameter
@@ -5458,6 +11227,50 @@ type TeamsReviewProjectInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsReviewProjectInOrgResponseDataPermissions = {
+  read: boolean;
+  write: boolean;
+  admin: boolean;
+};
+type TeamsReviewProjectInOrgResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsReviewProjectInOrgResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: TeamsReviewProjectInOrgResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  organization_permission: string;
+  private: boolean;
+  permissions: TeamsReviewProjectInOrgResponseDataPermissions;
+};
+
 type TeamsAddOrUpdateProjectInOrgEndpoint = {
   /**
    * org parameter
@@ -5486,6 +11299,11 @@ type TeamsAddOrUpdateProjectInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsAddOrUpdateProjectInOrgResponseData = {
+  message: string;
+  documentation_url: string;
+};
+
 type TeamsRemoveProjectInOrgEndpoint = {
   /**
    * org parameter
@@ -5506,6 +11324,7 @@ type TeamsRemoveProjectInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListReposInOrgEndpoint = {
   /**
    * org parameter
@@ -5530,6 +11349,122 @@ type TeamsListReposInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListReposInOrgResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type TeamsListReposInOrgResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsListReposInOrgResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListReposInOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsListReposInOrgResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsListReposInOrgResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: TeamsListReposInOrgResponseDataItemLicense;
+};
+type TeamsListReposInOrgResponseData = Array<
+  TeamsListReposInOrgResponseDataItem
+>;
+
 type TeamsCheckManagesRepoInOrgEndpoint = {
   /**
    * org parameter
@@ -5554,6 +11489,254 @@ type TeamsCheckManagesRepoInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCheckManagesRepoInOrgResponseDataPermissions = {
+  pull: boolean;
+  triage: boolean;
+  push: boolean;
+  maintain: boolean;
+  admin: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseDataSourcePermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseDataSourceOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseDataSource = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsCheckManagesRepoInOrgResponseDataSourceOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsCheckManagesRepoInOrgResponseDataSourcePermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type TeamsCheckManagesRepoInOrgResponseDataParentPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseDataParentOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseDataParent = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsCheckManagesRepoInOrgResponseDataParentOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsCheckManagesRepoInOrgResponseDataParentPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type TeamsCheckManagesRepoInOrgResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoInOrgResponseData = {
+  organization: TeamsCheckManagesRepoInOrgResponseDataOrganization;
+  parent: TeamsCheckManagesRepoInOrgResponseDataParent;
+  source: TeamsCheckManagesRepoInOrgResponseDataSource;
+  permissions: TeamsCheckManagesRepoInOrgResponseDataPermissions;
+};
+
 type TeamsAddOrUpdateRepoInOrgEndpoint = {
   /**
    * org parameter
@@ -5589,6 +11772,7 @@ type TeamsAddOrUpdateRepoInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsRemoveRepoInOrgEndpoint = {
   /**
    * org parameter
@@ -5613,6 +11797,7 @@ type TeamsRemoveRepoInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListIdPGroupsInOrgEndpoint = {
   /**
    * org parameter
@@ -5629,6 +11814,15 @@ type TeamsListIdPGroupsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListIdPGroupsInOrgResponseDataGroupsItem = {
+  group_id: string;
+  group_name: string;
+  group_description: string;
+};
+type TeamsListIdPGroupsInOrgResponseData = {
+  groups: Array<TeamsListIdPGroupsInOrgResponseDataGroupsItem>;
+};
+
 type TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint = {
   /**
    * org parameter
@@ -5649,6 +11843,15 @@ type TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseDataGroups = {
+  group_id: string;
+  group_name: string;
+  group_description: string;
+};
+type TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData = {
+  groups: TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseDataGroups;
+};
+
 type TeamsListChildInOrgEndpoint = {
   /**
    * org parameter
@@ -5673,6 +11876,36 @@ type TeamsListChildInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListChildInOrgResponseDataItemParent = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+};
+type TeamsListChildInOrgResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: TeamsListChildInOrgResponseDataItemParent;
+};
+type TeamsListChildInOrgResponseData = Array<
+  TeamsListChildInOrgResponseDataItem
+>;
+
 type ProjectsGetCardEndpoint = {
   /**
    * card_id parameter
@@ -5685,6 +11918,40 @@ type ProjectsGetCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsGetCardResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsGetCardResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  note: string;
+  creator: ProjectsGetCardResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  archived: boolean;
+  column_url: string;
+  content_url: string;
+  project_url: string;
+};
+
 type ProjectsUpdateCardEndpoint = {
   /**
    * card_id parameter
@@ -5705,6 +11972,40 @@ type ProjectsUpdateCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsUpdateCardResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsUpdateCardResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  note: string;
+  creator: ProjectsUpdateCardResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  archived: boolean;
+  column_url: string;
+  content_url: string;
+  project_url: string;
+};
+
 type ProjectsDeleteCardEndpoint = {
   /**
    * card_id parameter
@@ -5717,6 +12018,7 @@ type ProjectsDeleteCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsMoveCardEndpoint = {
   /**
    * card_id parameter
@@ -5737,6 +12039,7 @@ type ProjectsMoveCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsGetColumnEndpoint = {
   /**
    * column_id parameter
@@ -5749,6 +12052,17 @@ type ProjectsGetColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsGetColumnResponseData = {
+  url: string;
+  project_url: string;
+  cards_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type ProjectsUpdateColumnEndpoint = {
   /**
    * column_id parameter
@@ -5765,6 +12079,17 @@ type ProjectsUpdateColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsUpdateColumnResponseData = {
+  url: string;
+  project_url: string;
+  cards_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type ProjectsDeleteColumnEndpoint = {
   /**
    * column_id parameter
@@ -5777,6 +12102,7 @@ type ProjectsDeleteColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsListCardsEndpoint = {
   /**
    * column_id parameter
@@ -5801,6 +12127,41 @@ type ProjectsListCardsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListCardsResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsListCardsResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  note: string;
+  creator: ProjectsListCardsResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+  archived: boolean;
+  column_url: string;
+  content_url: string;
+  project_url: string;
+};
+type ProjectsListCardsResponseData = Array<ProjectsListCardsResponseDataItem>;
+
 type ProjectsCreateCardEndpoint = {
   /**
    * column_id parameter
@@ -5826,6 +12187,40 @@ type ProjectsCreateCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsCreateCardResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsCreateCardResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  note: string;
+  creator: ProjectsCreateCardResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  archived: boolean;
+  column_url: string;
+  content_url: string;
+  project_url: string;
+};
+
 type ProjectsMoveColumnEndpoint = {
   /**
    * column_id parameter
@@ -5842,6 +12237,7 @@ type ProjectsMoveColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsGetEndpoint = {
   /**
    * project_id parameter
@@ -5854,6 +12250,42 @@ type ProjectsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsGetResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsGetResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsGetResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+};
+
 type ProjectsUpdateEndpoint = {
   /**
    * project_id parameter
@@ -5898,6 +12330,42 @@ type ProjectsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsUpdateResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsUpdateResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsUpdateResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+};
+
 type ProjectsDeleteEndpoint = {
   /**
    * project_id parameter
@@ -5910,6 +12378,7 @@ type ProjectsDeleteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsListCollaboratorsEndpoint = {
   /**
    * project_id parameter
@@ -5937,6 +12406,30 @@ type ProjectsListCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListCollaboratorsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsListCollaboratorsResponseData = Array<
+  ProjectsListCollaboratorsResponseDataItem
+>;
+
 type ProjectsAddCollaboratorEndpoint = {
   /**
    * project_id parameter
@@ -5960,6 +12453,7 @@ type ProjectsAddCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsRemoveCollaboratorEndpoint = {
   /**
    * project_id parameter
@@ -5976,6 +12470,7 @@ type ProjectsRemoveCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ProjectsReviewUserPermissionLevelEndpoint = {
   /**
    * project_id parameter
@@ -5992,6 +12487,31 @@ type ProjectsReviewUserPermissionLevelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsReviewUserPermissionLevelResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsReviewUserPermissionLevelResponseData = {
+  permission: string;
+  user: ProjectsReviewUserPermissionLevelResponseDataUser;
+};
+
 type ProjectsListColumnsEndpoint = {
   /**
    * project_id parameter
@@ -6012,6 +12532,20 @@ type ProjectsListColumnsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListColumnsResponseDataItem = {
+  url: string;
+  project_url: string;
+  cards_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+type ProjectsListColumnsResponseData = Array<
+  ProjectsListColumnsResponseDataItem
+>;
+
 type ProjectsCreateColumnEndpoint = {
   /**
    * project_id parameter
@@ -6028,6 +12562,17 @@ type ProjectsCreateColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsCreateColumnResponseData = {
+  url: string;
+  project_url: string;
+  cards_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type RateLimitGetEndpoint = {};
 type RateLimitGetRequestOptions = {
   method: "GET";
@@ -6035,6 +12580,42 @@ type RateLimitGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type RateLimitGetResponseDataRate = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+type RateLimitGetResponseDataResourcesIntegrationManifest = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+type RateLimitGetResponseDataResourcesGraphql = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+type RateLimitGetResponseDataResourcesSearch = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+type RateLimitGetResponseDataResourcesCore = {
+  limit: number;
+  remaining: number;
+  reset: number;
+};
+type RateLimitGetResponseDataResources = {
+  core: RateLimitGetResponseDataResourcesCore;
+  search: RateLimitGetResponseDataResourcesSearch;
+  graphql: RateLimitGetResponseDataResourcesGraphql;
+  integration_manifest: RateLimitGetResponseDataResourcesIntegrationManifest;
+};
+type RateLimitGetResponseData = {
+  resources: RateLimitGetResponseDataResources;
+  rate: RateLimitGetResponseDataRate;
+};
+
 type ReactionsDeleteLegacyEndpoint = {
   /**
    * reaction_id parameter
@@ -6047,6 +12628,7 @@ type ReactionsDeleteLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetEndpoint = {
   /**
    * owner parameter
@@ -6063,6 +12645,370 @@ type ReposGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetResponseDataCodeOfConduct = {
+  key: string;
+  name: string;
+  url: string;
+};
+type ReposGetResponseDataSourcePermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposGetResponseDataSourceOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetResponseDataSource = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposGetResponseDataSourceOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposGetResponseDataSourcePermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposGetResponseDataParentPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposGetResponseDataParentOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetResponseDataParent = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposGetResponseDataParentOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposGetResponseDataParentPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposGetResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetResponseDataLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type ReposGetResponseDataPermissions = {
+  pull: boolean;
+  triage: boolean;
+  push: boolean;
+  maintain: boolean;
+  admin: boolean;
+};
+type ReposGetResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposGetResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string | null;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string | null;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string | null;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template?: boolean;
+  topics?: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived?: boolean;
+  disabled?: boolean;
+  visibility?: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions?: ReposGetResponseDataPermissions;
+  allow_rebase_merge?: boolean;
+  template_repository?: null;
+  temp_clone_token?: string;
+  allow_squash_merge?: boolean;
+  allow_merge_commit?: boolean;
+  subscribers_count: number;
+  network_count: number;
+  license?: ReposGetResponseDataLicense;
+  organization?: ReposGetResponseDataOrganization;
+  parent?: ReposGetResponseDataParent;
+  source?: ReposGetResponseDataSource;
+  forks?: number;
+  open_issues?: number;
+  watchers?: number;
+  code_of_conduct?: ReposGetResponseDataCodeOfConduct;
+};
+
 type ReposUpdateEndpoint = {
   /**
    * owner parameter
@@ -6140,6 +13086,353 @@ type ReposUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateResponseDataSourcePermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposUpdateResponseDataSourceOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateResponseDataSource = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposUpdateResponseDataSourceOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposUpdateResponseDataSourcePermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposUpdateResponseDataParentPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposUpdateResponseDataParentOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateResponseDataParent = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposUpdateResponseDataParentOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposUpdateResponseDataParentPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposUpdateResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateResponseDataPermissions = {
+  pull: boolean;
+  triage: boolean;
+  push: boolean;
+  maintain: boolean;
+  admin: boolean;
+};
+type ReposUpdateResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposUpdateResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposUpdateResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+  organization: ReposUpdateResponseDataOrganization;
+  parent: ReposUpdateResponseDataParent;
+  source: ReposUpdateResponseDataSource;
+};
+
 type ReposDeleteEndpoint = {
   /**
    * owner parameter
@@ -6156,6 +13449,8 @@ type ReposDeleteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposDeleteResponseData = { message: string; documentation_url: string };
+
 type ActionsListArtifactsForRepoEndpoint = {
   /**
    * owner parameter
@@ -6180,6 +13475,22 @@ type ActionsListArtifactsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListArtifactsForRepoResponseDataArtifactsItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  size_in_bytes: number;
+  url: string;
+  archive_download_url: string;
+  expired: boolean;
+  created_at: string;
+  expires_at: string;
+};
+type ActionsListArtifactsForRepoResponseData = {
+  total_count: number;
+  artifacts: Array<ActionsListArtifactsForRepoResponseDataArtifactsItem>;
+};
+
 type ActionsGetArtifactEndpoint = {
   /**
    * owner parameter
@@ -6200,6 +13511,18 @@ type ActionsGetArtifactRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetArtifactResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  size_in_bytes: number;
+  url: string;
+  archive_download_url: string;
+  expired: boolean;
+  created_at: string;
+  expires_at: string;
+};
+
 type ActionsDeleteArtifactEndpoint = {
   /**
    * owner parameter
@@ -6220,6 +13543,7 @@ type ActionsDeleteArtifactRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsDownloadArtifactEndpoint = {
   /**
    * owner parameter
@@ -6244,6 +13568,7 @@ type ActionsDownloadArtifactRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsGetWorkflowJobEndpoint = {
   /**
    * owner parameter
@@ -6264,6 +13589,31 @@ type ActionsGetWorkflowJobRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetWorkflowJobResponseDataStepsItem = {
+  name: string;
+  status: string;
+  conclusion: string;
+  number: number;
+  started_at: string;
+  completed_at: string;
+};
+type ActionsGetWorkflowJobResponseData = {
+  id: number;
+  run_id: number;
+  run_url: string;
+  node_id: string;
+  head_sha: string;
+  url: string;
+  html_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  name: string;
+  steps: Array<ActionsGetWorkflowJobResponseDataStepsItem>;
+  check_run_url: string;
+};
+
 type ActionsListWorkflowJobLogsEndpoint = {
   /**
    * owner parameter
@@ -6292,6 +13642,7 @@ type ActionsListWorkflowJobLogsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsListSelfHostedRunnersForRepoEndpoint = {
   /**
    * owner parameter
@@ -6316,6 +13667,17 @@ type ActionsListSelfHostedRunnersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListSelfHostedRunnersForRepoResponseDataRunnersItem = {
+  id: number;
+  name: string;
+  os: string;
+  status: string;
+};
+type ActionsListSelfHostedRunnersForRepoResponseData = {
+  total_count: number;
+  runners: Array<ActionsListSelfHostedRunnersForRepoResponseDataRunnersItem>;
+};
+
 type ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint = {
   /**
    * owner parameter
@@ -6332,6 +13694,16 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListDownloadsForSelfHostedRunnerApplicationResponseDataItem = {
+  os: string;
+  architecture: string;
+  download_url: string;
+  filename: string;
+};
+type ActionsListDownloadsForSelfHostedRunnerApplicationResponseData = Array<
+  ActionsListDownloadsForSelfHostedRunnerApplicationResponseDataItem
+>;
+
 type ActionsCreateRegistrationTokenEndpoint = {
   /**
    * owner parameter
@@ -6348,6 +13720,11 @@ type ActionsCreateRegistrationTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsCreateRegistrationTokenResponseData = {
+  token: string;
+  expires_at: string;
+};
+
 type ActionsCreateRemoveTokenEndpoint = {
   /**
    * owner parameter
@@ -6364,6 +13741,11 @@ type ActionsCreateRemoveTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsCreateRemoveTokenResponseData = {
+  token: string;
+  expires_at: string;
+};
+
 type ActionsGetSelfHostedRunnerEndpoint = {
   /**
    * owner parameter
@@ -6384,6 +13766,13 @@ type ActionsGetSelfHostedRunnerRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetSelfHostedRunnerResponseData = {
+  id: number;
+  name: string;
+  os: string;
+  status: string;
+};
+
 type ActionsRemoveSelfHostedRunnerEndpoint = {
   /**
    * owner parameter
@@ -6404,6 +13793,7 @@ type ActionsRemoveSelfHostedRunnerRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsListRepoWorkflowRunsEndpoint = {
   /**
    * owner parameter
@@ -6444,6 +13834,189 @@ type ActionsListRepoWorkflowRunsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  private: boolean;
+  owner: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadRepositoryOwner;
+  html_url: string;
+  description: null;
+  fork: boolean;
+  url: string;
+  forks_url: string;
+  keys_url: string;
+  collaborators_url: string;
+  teams_url: string;
+  hooks_url: string;
+  issue_events_url: string;
+  events_url: string;
+  assignees_url: string;
+  branches_url: string;
+  tags_url: string;
+  blobs_url: string;
+  git_tags_url: string;
+  git_refs_url: string;
+  trees_url: string;
+  statuses_url: string;
+  languages_url: string;
+  stargazers_url: string;
+  contributors_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  commits_url: string;
+  git_commits_url: string;
+  comments_url: string;
+  issue_comment_url: string;
+  contents_url: string;
+  compare_url: string;
+  merges_url: string;
+  archive_url: string;
+  downloads_url: string;
+  issues_url: string;
+  pulls_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  labels_url: string;
+  releases_url: string;
+  deployments_url: string;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommitCommitter = {
+  name: string;
+  email: string;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommitAuthor = {
+  name: string;
+  email: string;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommit = {
+  id: string;
+  tree_id: string;
+  message: string;
+  timestamp: string;
+  author: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommitAuthor;
+  committer: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommitCommitter;
+};
+type ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItem = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  run_number: number;
+  event: string;
+  status: string;
+  conclusion: null;
+  url: string;
+  html_url: string;
+  pull_requests: Array<any>;
+  created_at: string;
+  updated_at: string;
+  jobs_url: string;
+  logs_url: string;
+  check_suite_url: string;
+  artifacts_url: string;
+  cancel_url: string;
+  rerun_url: string;
+  workflow_url: string;
+  head_commit: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadCommit;
+  repository: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemRepository;
+  head_repository: ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItemHeadRepository;
+};
+type ActionsListRepoWorkflowRunsResponseData = {
+  total_count: number;
+  workflow_runs: Array<ActionsListRepoWorkflowRunsResponseDataWorkflowRunsItem>;
+};
+
 type ActionsGetWorkflowRunEndpoint = {
   /**
    * owner parameter
@@ -6464,6 +14037,185 @@ type ActionsGetWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetWorkflowRunResponseDataHeadRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsGetWorkflowRunResponseDataHeadRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  private: boolean;
+  owner: ActionsGetWorkflowRunResponseDataHeadRepositoryOwner;
+  html_url: string;
+  description: null;
+  fork: boolean;
+  url: string;
+  forks_url: string;
+  keys_url: string;
+  collaborators_url: string;
+  teams_url: string;
+  hooks_url: string;
+  issue_events_url: string;
+  events_url: string;
+  assignees_url: string;
+  branches_url: string;
+  tags_url: string;
+  blobs_url: string;
+  git_tags_url: string;
+  git_refs_url: string;
+  trees_url: string;
+  statuses_url: string;
+  languages_url: string;
+  stargazers_url: string;
+  contributors_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  commits_url: string;
+  git_commits_url: string;
+  comments_url: string;
+  issue_comment_url: string;
+  contents_url: string;
+  compare_url: string;
+  merges_url: string;
+  archive_url: string;
+  downloads_url: string;
+  issues_url: string;
+  pulls_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  labels_url: string;
+  releases_url: string;
+  deployments_url: string;
+};
+type ActionsGetWorkflowRunResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsGetWorkflowRunResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActionsGetWorkflowRunResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActionsGetWorkflowRunResponseDataHeadCommitCommitter = {
+  name: string;
+  email: string;
+};
+type ActionsGetWorkflowRunResponseDataHeadCommitAuthor = {
+  name: string;
+  email: string;
+};
+type ActionsGetWorkflowRunResponseDataHeadCommit = {
+  id: string;
+  tree_id: string;
+  message: string;
+  timestamp: string;
+  author: ActionsGetWorkflowRunResponseDataHeadCommitAuthor;
+  committer: ActionsGetWorkflowRunResponseDataHeadCommitCommitter;
+};
+type ActionsGetWorkflowRunResponseData = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  run_number: number;
+  event: string;
+  status: string;
+  conclusion: null;
+  url: string;
+  html_url: string;
+  pull_requests: Array<any>;
+  created_at: string;
+  updated_at: string;
+  jobs_url: string;
+  logs_url: string;
+  check_suite_url: string;
+  artifacts_url: string;
+  cancel_url: string;
+  rerun_url: string;
+  workflow_url: string;
+  head_commit: ActionsGetWorkflowRunResponseDataHeadCommit;
+  repository: ActionsGetWorkflowRunResponseDataRepository;
+  head_repository: ActionsGetWorkflowRunResponseDataHeadRepository;
+};
+
 type ActionsListWorkflowRunArtifactsEndpoint = {
   /**
    * owner parameter
@@ -6492,6 +14244,22 @@ type ActionsListWorkflowRunArtifactsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListWorkflowRunArtifactsResponseDataArtifactsItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  size_in_bytes: number;
+  url: string;
+  archive_download_url: string;
+  expired: boolean;
+  created_at: string;
+  expires_at: string;
+};
+type ActionsListWorkflowRunArtifactsResponseData = {
+  total_count: number;
+  artifacts: Array<ActionsListWorkflowRunArtifactsResponseDataArtifactsItem>;
+};
+
 type ActionsCancelWorkflowRunEndpoint = {
   /**
    * owner parameter
@@ -6512,6 +14280,7 @@ type ActionsCancelWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsListJobsForWorkflowRunEndpoint = {
   /**
    * owner parameter
@@ -6546,6 +14315,35 @@ type ActionsListJobsForWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListJobsForWorkflowRunResponseDataJobsItemStepsItem = {
+  name: string;
+  status: string;
+  conclusion: string;
+  number: number;
+  started_at: string;
+  completed_at: string;
+};
+type ActionsListJobsForWorkflowRunResponseDataJobsItem = {
+  id: number;
+  run_id: number;
+  run_url: string;
+  node_id: string;
+  head_sha: string;
+  url: string;
+  html_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  name: string;
+  steps: Array<ActionsListJobsForWorkflowRunResponseDataJobsItemStepsItem>;
+  check_run_url: string;
+};
+type ActionsListJobsForWorkflowRunResponseData = {
+  total_count: number;
+  jobs: Array<ActionsListJobsForWorkflowRunResponseDataJobsItem>;
+};
+
 type ActionsListWorkflowRunLogsEndpoint = {
   /**
    * owner parameter
@@ -6574,6 +14372,7 @@ type ActionsListWorkflowRunLogsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsReRunWorkflowEndpoint = {
   /**
    * owner parameter
@@ -6594,6 +14393,7 @@ type ActionsReRunWorkflowRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsListSecretsForRepoEndpoint = {
   /**
    * owner parameter
@@ -6618,6 +14418,16 @@ type ActionsListSecretsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListSecretsForRepoResponseDataSecretsItem = {
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+type ActionsListSecretsForRepoResponseData = {
+  total_count: number;
+  secrets: Array<ActionsListSecretsForRepoResponseDataSecretsItem>;
+};
+
 type ActionsGetPublicKeyEndpoint = {
   /**
    * owner parameter
@@ -6634,6 +14444,8 @@ type ActionsGetPublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetPublicKeyResponseData = { key_id: string; key: string };
+
 type ActionsGetSecretEndpoint = {
   /**
    * owner parameter
@@ -6654,6 +14466,12 @@ type ActionsGetSecretRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetSecretResponseData = {
+  name: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type ActionsCreateOrUpdateSecretForRepoEndpoint = {
   /**
    * owner parameter
@@ -6682,6 +14500,7 @@ type ActionsCreateOrUpdateSecretForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsDeleteSecretFromRepoEndpoint = {
   /**
    * owner parameter
@@ -6702,6 +14521,7 @@ type ActionsDeleteSecretFromRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActionsListRepoWorkflowsEndpoint = {
   /**
    * owner parameter
@@ -6726,6 +14546,23 @@ type ActionsListRepoWorkflowsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListRepoWorkflowsResponseDataWorkflowsItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  path: string;
+  state: string;
+  created_at: string;
+  updated_at: string;
+  url: string;
+  html_url: string;
+  badge_url: string;
+};
+type ActionsListRepoWorkflowsResponseData = {
+  total_count: number;
+  workflows: Array<ActionsListRepoWorkflowsResponseDataWorkflowsItem>;
+};
+
 type ActionsGetWorkflowEndpoint = {
   /**
    * owner parameter
@@ -6746,6 +14583,19 @@ type ActionsGetWorkflowRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsGetWorkflowResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  path: string;
+  state: string;
+  created_at: string;
+  updated_at: string;
+  url: string;
+  html_url: string;
+  badge_url: string;
+};
+
 type ActionsListWorkflowRunsEndpoint = {
   /**
    * owner parameter
@@ -6790,6 +14640,189 @@ type ActionsListWorkflowRunsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  private: boolean;
+  owner: ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadRepositoryOwner;
+  html_url: string;
+  description: null;
+  fork: boolean;
+  url: string;
+  forks_url: string;
+  keys_url: string;
+  collaborators_url: string;
+  teams_url: string;
+  hooks_url: string;
+  issue_events_url: string;
+  events_url: string;
+  assignees_url: string;
+  branches_url: string;
+  tags_url: string;
+  blobs_url: string;
+  git_tags_url: string;
+  git_refs_url: string;
+  trees_url: string;
+  statuses_url: string;
+  languages_url: string;
+  stargazers_url: string;
+  contributors_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  commits_url: string;
+  git_commits_url: string;
+  comments_url: string;
+  issue_comment_url: string;
+  contents_url: string;
+  compare_url: string;
+  merges_url: string;
+  archive_url: string;
+  downloads_url: string;
+  issues_url: string;
+  pulls_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  labels_url: string;
+  releases_url: string;
+  deployments_url: string;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActionsListWorkflowRunsResponseDataWorkflowRunsItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommitCommitter = {
+  name: string;
+  email: string;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommitAuthor = {
+  name: string;
+  email: string;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommit = {
+  id: string;
+  tree_id: string;
+  message: string;
+  timestamp: string;
+  author: ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommitAuthor;
+  committer: ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommitCommitter;
+};
+type ActionsListWorkflowRunsResponseDataWorkflowRunsItem = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  run_number: number;
+  event: string;
+  status: string;
+  conclusion: null;
+  url: string;
+  html_url: string;
+  pull_requests: Array<any>;
+  created_at: string;
+  updated_at: string;
+  jobs_url: string;
+  logs_url: string;
+  check_suite_url: string;
+  artifacts_url: string;
+  cancel_url: string;
+  rerun_url: string;
+  workflow_url: string;
+  head_commit: ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadCommit;
+  repository: ActionsListWorkflowRunsResponseDataWorkflowRunsItemRepository;
+  head_repository: ActionsListWorkflowRunsResponseDataWorkflowRunsItemHeadRepository;
+};
+type ActionsListWorkflowRunsResponseData = {
+  total_count: number;
+  workflow_runs: Array<ActionsListWorkflowRunsResponseDataWorkflowRunsItem>;
+};
+
 type IssuesListAssigneesEndpoint = {
   /**
    * owner parameter
@@ -6814,6 +14847,30 @@ type IssuesListAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListAssigneesResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListAssigneesResponseData = Array<
+  IssuesListAssigneesResponseDataItem
+>;
+
 type IssuesCheckAssigneeEndpoint = {
   /**
    * owner parameter
@@ -6834,6 +14891,7 @@ type IssuesCheckAssigneeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposEnableAutomatedSecurityFixesEndpoint = {
   /**
    * owner parameter
@@ -6850,6 +14908,7 @@ type ReposEnableAutomatedSecurityFixesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposDisableAutomatedSecurityFixesEndpoint = {
   /**
    * owner parameter
@@ -6866,6 +14925,7 @@ type ReposDisableAutomatedSecurityFixesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListBranchesEndpoint = {
   /**
    * owner parameter
@@ -6894,6 +14954,24 @@ type ReposListBranchesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListBranchesResponseDataItemProtectionRequiredStatusChecks = {
+  enforcement_level: string;
+  contexts: Array<string>;
+};
+type ReposListBranchesResponseDataItemProtection = {
+  enabled: boolean;
+  required_status_checks: ReposListBranchesResponseDataItemProtectionRequiredStatusChecks;
+};
+type ReposListBranchesResponseDataItemCommit = { sha: string; url: string };
+type ReposListBranchesResponseDataItem = {
+  name: string;
+  commit: ReposListBranchesResponseDataItemCommit;
+  protected: boolean;
+  protection: ReposListBranchesResponseDataItemProtection;
+  protection_url: string;
+};
+type ReposListBranchesResponseData = Array<ReposListBranchesResponseDataItem>;
+
 type ReposGetBranchEndpoint = {
   /**
    * owner parameter
@@ -6914,6 +14992,73 @@ type ReposGetBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetBranchResponseDataProtectionRequiredStatusChecks = {
+  enforcement_level: string;
+  contexts: Array<string>;
+};
+type ReposGetBranchResponseDataProtection = {
+  enabled: boolean;
+  required_status_checks: ReposGetBranchResponseDataProtectionRequiredStatusChecks;
+};
+type ReposGetBranchResponseDataLinks = { html: string; self: string };
+type ReposGetBranchResponseDataCommitCommitter = {
+  gravatar_id: string;
+  avatar_url: string;
+  url: string;
+  id: number;
+  login: string;
+};
+type ReposGetBranchResponseDataCommitParentsItem = { sha: string; url: string };
+type ReposGetBranchResponseDataCommitAuthor = {
+  gravatar_id: string;
+  avatar_url: string;
+  url: string;
+  id: number;
+  login: string;
+};
+type ReposGetBranchResponseDataCommitCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposGetBranchResponseDataCommitCommitCommitter = {
+  name: string;
+  date: string;
+  email: string;
+};
+type ReposGetBranchResponseDataCommitCommitTree = { sha: string; url: string };
+type ReposGetBranchResponseDataCommitCommitAuthor = {
+  name: string;
+  date: string;
+  email: string;
+};
+type ReposGetBranchResponseDataCommitCommit = {
+  author: ReposGetBranchResponseDataCommitCommitAuthor;
+  url: string;
+  message: string;
+  tree: ReposGetBranchResponseDataCommitCommitTree;
+  committer: ReposGetBranchResponseDataCommitCommitCommitter;
+  verification: ReposGetBranchResponseDataCommitCommitVerification;
+};
+type ReposGetBranchResponseDataCommit = {
+  sha: string;
+  node_id: string;
+  commit: ReposGetBranchResponseDataCommitCommit;
+  author: ReposGetBranchResponseDataCommitAuthor;
+  parents: Array<ReposGetBranchResponseDataCommitParentsItem>;
+  url: string;
+  committer: ReposGetBranchResponseDataCommitCommitter;
+};
+type ReposGetBranchResponseData = {
+  name: string;
+  commit: ReposGetBranchResponseDataCommit;
+  _links: ReposGetBranchResponseDataLinks;
+  protected: boolean;
+  protection: ReposGetBranchResponseDataProtection;
+  protection_url: string;
+};
+
 type ReposGetBranchProtectionEndpoint = {
   /**
    * owner parameter
@@ -6934,6 +15079,163 @@ type ReposGetBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetBranchProtectionResponseDataAllowDeletions = { enabled: boolean };
+type ReposGetBranchProtectionResponseDataAllowForcePushes = {
+  enabled: boolean;
+};
+type ReposGetBranchProtectionResponseDataRequiredLinearHistory = {
+  enabled: boolean;
+};
+type ReposGetBranchProtectionResponseDataRestrictionsAppsItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposGetBranchProtectionResponseDataRestrictionsAppsItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposGetBranchProtectionResponseDataRestrictionsAppsItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposGetBranchProtectionResponseDataRestrictionsAppsItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposGetBranchProtectionResponseDataRestrictionsAppsItemPermissions;
+  events: Array<string>;
+};
+type ReposGetBranchProtectionResponseDataRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposGetBranchProtectionResponseDataRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetBranchProtectionResponseDataRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  apps_url: string;
+  users: Array<ReposGetBranchProtectionResponseDataRestrictionsUsersItem>;
+  teams: Array<ReposGetBranchProtectionResponseDataRestrictionsTeamsItem>;
+  apps: Array<ReposGetBranchProtectionResponseDataRestrictionsAppsItem>;
+};
+type ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  users: Array<
+    ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsUsersItem
+  >;
+  teams: Array<
+    ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsTeamsItem
+  >;
+};
+type ReposGetBranchProtectionResponseDataRequiredPullRequestReviews = {
+  url: string;
+  dismissal_restrictions: ReposGetBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictions;
+  dismiss_stale_reviews: boolean;
+  require_code_owner_reviews: boolean;
+  required_approving_review_count: number;
+};
+type ReposGetBranchProtectionResponseDataEnforceAdmins = {
+  url: string;
+  enabled: boolean;
+};
+type ReposGetBranchProtectionResponseDataRequiredStatusChecks = {
+  url: string;
+  strict: boolean;
+  contexts: Array<string>;
+  contexts_url: string;
+};
+type ReposGetBranchProtectionResponseData = {
+  url: string;
+  required_status_checks: ReposGetBranchProtectionResponseDataRequiredStatusChecks;
+  enforce_admins: ReposGetBranchProtectionResponseDataEnforceAdmins;
+  required_pull_request_reviews: ReposGetBranchProtectionResponseDataRequiredPullRequestReviews;
+  restrictions: ReposGetBranchProtectionResponseDataRestrictions;
+  required_linear_history: ReposGetBranchProtectionResponseDataRequiredLinearHistory;
+  allow_force_pushes: ReposGetBranchProtectionResponseDataAllowForcePushes;
+  allow_deletions: ReposGetBranchProtectionResponseDataAllowDeletions;
+};
+
 type ReposUpdateBranchProtectionEndpoint = {
   /**
    * owner parameter
@@ -6982,6 +15284,165 @@ type ReposUpdateBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateBranchProtectionResponseDataAllowDeletions = {
+  enabled: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataAllowForcePushes = {
+  enabled: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredLinearHistory = {
+  enabled: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictionsAppsItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictionsAppsItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictionsAppsItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposUpdateBranchProtectionResponseDataRestrictionsAppsItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposUpdateBranchProtectionResponseDataRestrictionsAppsItemPermissions;
+  events: Array<string>;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  apps_url: string;
+  users: Array<ReposUpdateBranchProtectionResponseDataRestrictionsUsersItem>;
+  teams: Array<ReposUpdateBranchProtectionResponseDataRestrictionsTeamsItem>;
+  apps: Array<ReposUpdateBranchProtectionResponseDataRestrictionsAppsItem>;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  users: Array<
+    ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsUsersItem
+  >;
+  teams: Array<
+    ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictionsTeamsItem
+  >;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviews = {
+  url: string;
+  dismissal_restrictions: ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviewsDismissalRestrictions;
+  dismiss_stale_reviews: boolean;
+  require_code_owner_reviews: boolean;
+  required_approving_review_count: number;
+};
+type ReposUpdateBranchProtectionResponseDataEnforceAdmins = {
+  url: string;
+  enabled: boolean;
+};
+type ReposUpdateBranchProtectionResponseDataRequiredStatusChecks = {
+  url: string;
+  strict: boolean;
+  contexts: Array<string>;
+  contexts_url: string;
+};
+type ReposUpdateBranchProtectionResponseData = {
+  url: string;
+  required_status_checks: ReposUpdateBranchProtectionResponseDataRequiredStatusChecks;
+  enforce_admins: ReposUpdateBranchProtectionResponseDataEnforceAdmins;
+  required_pull_request_reviews: ReposUpdateBranchProtectionResponseDataRequiredPullRequestReviews;
+  restrictions: ReposUpdateBranchProtectionResponseDataRestrictions;
+  required_linear_history: ReposUpdateBranchProtectionResponseDataRequiredLinearHistory;
+  allow_force_pushes: ReposUpdateBranchProtectionResponseDataAllowForcePushes;
+  allow_deletions: ReposUpdateBranchProtectionResponseDataAllowDeletions;
+};
+
 type ReposRemoveBranchProtectionEndpoint = {
   /**
    * owner parameter
@@ -7002,6 +15463,7 @@ type ReposRemoveBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetProtectedBranchAdminEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7022,6 +15484,11 @@ type ReposGetProtectedBranchAdminEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetProtectedBranchAdminEnforcementResponseData = {
+  url: string;
+  enabled: boolean;
+};
+
 type ReposAddProtectedBranchAdminEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7042,6 +15509,11 @@ type ReposAddProtectedBranchAdminEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchAdminEnforcementResponseData = {
+  url: string;
+  enabled: boolean;
+};
+
 type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7062,6 +15534,7 @@ type ReposRemoveProtectedBranchAdminEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7082,6 +15555,59 @@ type ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  users: Array<
+    ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsUsersItem
+  >;
+  teams: Array<
+    ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsTeamsItem
+  >;
+};
+type ReposGetProtectedBranchPullRequestReviewEnforcementResponseData = {
+  url: string;
+  dismissal_restrictions: ReposGetProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictions;
+  dismiss_stale_reviews: boolean;
+  require_code_owner_reviews: boolean;
+  required_approving_review_count: number;
+};
+
 type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7118,6 +15644,59 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictions = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  users: Array<
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsUsersItem
+  >;
+  teams: Array<
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictionsTeamsItem
+  >;
+};
+type ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData = {
+  url: string;
+  dismissal_restrictions: ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseDataDismissalRestrictions;
+  dismiss_stale_reviews: boolean;
+  require_code_owner_reviews: boolean;
+  required_approving_review_count: number;
+};
+
 type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
   /**
    * owner parameter
@@ -7138,6 +15717,7 @@ type ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
   /**
    * owner parameter
@@ -7158,6 +15738,11 @@ type ReposGetProtectedBranchRequiredSignaturesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetProtectedBranchRequiredSignaturesResponseData = {
+  url: string;
+  enabled: boolean;
+};
+
 type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
   /**
    * owner parameter
@@ -7178,6 +15763,11 @@ type ReposAddProtectedBranchRequiredSignaturesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchRequiredSignaturesResponseData = {
+  url: string;
+  enabled: boolean;
+};
+
 type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
   /**
    * owner parameter
@@ -7198,6 +15788,7 @@ type ReposRemoveProtectedBranchRequiredSignaturesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
   /**
    * owner parameter
@@ -7218,6 +15809,13 @@ type ReposGetProtectedBranchRequiredStatusChecksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetProtectedBranchRequiredStatusChecksResponseData = {
+  url: string;
+  strict: boolean;
+  contexts: Array<string>;
+  contexts_url: string;
+};
+
 type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
   /**
    * owner parameter
@@ -7246,6 +15844,13 @@ type ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateProtectedBranchRequiredStatusChecksResponseData = {
+  url: string;
+  strict: boolean;
+  contexts: Array<string>;
+  contexts_url: string;
+};
+
 type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
   /**
    * owner parameter
@@ -7266,6 +15871,7 @@ type ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
   /**
    * owner parameter
@@ -7286,6 +15892,10 @@ type ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListProtectedBranchRequiredStatusChecksContextsResponseData = Array<
+  string
+>;
+
 type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
   /**
    * owner parameter
@@ -7310,6 +15920,10 @@ type ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData = Array<
+  string
+>;
+
 type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
   /**
    * owner parameter
@@ -7334,6 +15948,10 @@ type ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchRequiredStatusChecksContextsResponseData = Array<
+  string
+>;
+
 type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
   /**
    * owner parameter
@@ -7358,6 +15976,10 @@ type ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData = Array<
+  string
+>;
+
 type ReposGetProtectedBranchRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7378,6 +16000,84 @@ type ReposGetProtectedBranchRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetProtectedBranchRestrictionsResponseDataAppsItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposGetProtectedBranchRestrictionsResponseDataAppsItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposGetProtectedBranchRestrictionsResponseDataAppsItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposGetProtectedBranchRestrictionsResponseDataAppsItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposGetProtectedBranchRestrictionsResponseDataAppsItemPermissions;
+  events: Array<string>;
+};
+type ReposGetProtectedBranchRestrictionsResponseDataTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposGetProtectedBranchRestrictionsResponseDataUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetProtectedBranchRestrictionsResponseData = {
+  url: string;
+  users_url: string;
+  teams_url: string;
+  apps_url: string;
+  users: Array<ReposGetProtectedBranchRestrictionsResponseDataUsersItem>;
+  teams: Array<ReposGetProtectedBranchRestrictionsResponseDataTeamsItem>;
+  apps: Array<ReposGetProtectedBranchRestrictionsResponseDataAppsItem>;
+};
+
 type ReposRemoveProtectedBranchRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7398,6 +16098,7 @@ type ReposRemoveProtectedBranchRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetAppsWithAccessToProtectedBranchEndpoint = {
   /**
    * owner parameter
@@ -7418,6 +16119,44 @@ type ReposGetAppsWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetAppsWithAccessToProtectedBranchResponseDataItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposGetAppsWithAccessToProtectedBranchResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposGetAppsWithAccessToProtectedBranchResponseDataItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposGetAppsWithAccessToProtectedBranchResponseDataItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposGetAppsWithAccessToProtectedBranchResponseDataItemPermissions;
+  events: Array<string>;
+};
+type ReposGetAppsWithAccessToProtectedBranchResponseData = Array<
+  ReposGetAppsWithAccessToProtectedBranchResponseDataItem
+>;
+
 type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7442,6 +16181,44 @@ type ReposReplaceProtectedBranchAppRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposReplaceProtectedBranchAppRestrictionsResponseDataItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposReplaceProtectedBranchAppRestrictionsResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposReplaceProtectedBranchAppRestrictionsResponseDataItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposReplaceProtectedBranchAppRestrictionsResponseDataItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposReplaceProtectedBranchAppRestrictionsResponseDataItemPermissions;
+  events: Array<string>;
+};
+type ReposReplaceProtectedBranchAppRestrictionsResponseData = Array<
+  ReposReplaceProtectedBranchAppRestrictionsResponseDataItem
+>;
+
 type ReposAddProtectedBranchAppRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7466,6 +16243,44 @@ type ReposAddProtectedBranchAppRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchAppRestrictionsResponseDataItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposAddProtectedBranchAppRestrictionsResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposAddProtectedBranchAppRestrictionsResponseDataItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposAddProtectedBranchAppRestrictionsResponseDataItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposAddProtectedBranchAppRestrictionsResponseDataItemPermissions;
+  events: Array<string>;
+};
+type ReposAddProtectedBranchAppRestrictionsResponseData = Array<
+  ReposAddProtectedBranchAppRestrictionsResponseDataItem
+>;
+
 type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7490,6 +16305,44 @@ type ReposRemoveProtectedBranchAppRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRemoveProtectedBranchAppRestrictionsResponseDataItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ReposRemoveProtectedBranchAppRestrictionsResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ReposRemoveProtectedBranchAppRestrictionsResponseDataItem = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ReposRemoveProtectedBranchAppRestrictionsResponseDataItemOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposRemoveProtectedBranchAppRestrictionsResponseDataItemPermissions;
+  events: Array<string>;
+};
+type ReposRemoveProtectedBranchAppRestrictionsResponseData = Array<
+  ReposRemoveProtectedBranchAppRestrictionsResponseDataItem
+>;
+
 type ReposGetTeamsWithAccessToProtectedBranchEndpoint = {
   /**
    * owner parameter
@@ -7510,6 +16363,24 @@ type ReposGetTeamsWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetTeamsWithAccessToProtectedBranchResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposGetTeamsWithAccessToProtectedBranchResponseData = Array<
+  ReposGetTeamsWithAccessToProtectedBranchResponseDataItem
+>;
+
 type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7534,6 +16405,24 @@ type ReposReplaceProtectedBranchTeamRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposReplaceProtectedBranchTeamRestrictionsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposReplaceProtectedBranchTeamRestrictionsResponseData = Array<
+  ReposReplaceProtectedBranchTeamRestrictionsResponseDataItem
+>;
+
 type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7558,6 +16447,24 @@ type ReposAddProtectedBranchTeamRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchTeamRestrictionsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposAddProtectedBranchTeamRestrictionsResponseData = Array<
+  ReposAddProtectedBranchTeamRestrictionsResponseDataItem
+>;
+
 type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7582,6 +16489,24 @@ type ReposRemoveProtectedBranchTeamRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRemoveProtectedBranchTeamRestrictionsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposRemoveProtectedBranchTeamRestrictionsResponseData = Array<
+  ReposRemoveProtectedBranchTeamRestrictionsResponseDataItem
+>;
+
 type ReposGetUsersWithAccessToProtectedBranchEndpoint = {
   /**
    * owner parameter
@@ -7602,6 +16527,30 @@ type ReposGetUsersWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetUsersWithAccessToProtectedBranchResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetUsersWithAccessToProtectedBranchResponseData = Array<
+  ReposGetUsersWithAccessToProtectedBranchResponseDataItem
+>;
+
 type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7626,6 +16575,30 @@ type ReposReplaceProtectedBranchUserRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposReplaceProtectedBranchUserRestrictionsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposReplaceProtectedBranchUserRestrictionsResponseData = Array<
+  ReposReplaceProtectedBranchUserRestrictionsResponseDataItem
+>;
+
 type ReposAddProtectedBranchUserRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7650,6 +16623,30 @@ type ReposAddProtectedBranchUserRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddProtectedBranchUserRestrictionsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposAddProtectedBranchUserRestrictionsResponseData = Array<
+  ReposAddProtectedBranchUserRestrictionsResponseDataItem
+>;
+
 type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
   /**
    * owner parameter
@@ -7674,6 +16671,30 @@ type ReposRemoveProtectedBranchUserRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRemoveProtectedBranchUserRestrictionsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposRemoveProtectedBranchUserRestrictionsResponseData = Array<
+  ReposRemoveProtectedBranchUserRestrictionsResponseDataItem
+>;
+
 type ChecksCreateEndpoint = {
   /**
    * owner parameter
@@ -7737,6 +16758,94 @@ type ChecksCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksCreateResponseDataPullRequestsItemBaseRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksCreateResponseDataPullRequestsItemBase = {
+  ref: string;
+  sha: string;
+  repo: ChecksCreateResponseDataPullRequestsItemBaseRepo;
+};
+type ChecksCreateResponseDataPullRequestsItemHeadRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksCreateResponseDataPullRequestsItemHead = {
+  ref: string;
+  sha: string;
+  repo: ChecksCreateResponseDataPullRequestsItemHeadRepo;
+};
+type ChecksCreateResponseDataPullRequestsItem = {
+  url: string;
+  id: number;
+  number: number;
+  head: ChecksCreateResponseDataPullRequestsItemHead;
+  base: ChecksCreateResponseDataPullRequestsItemBase;
+};
+type ChecksCreateResponseDataAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksCreateResponseDataAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksCreateResponseDataApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksCreateResponseDataAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksCreateResponseDataAppPermissions;
+  events: Array<string>;
+};
+type ChecksCreateResponseDataCheckSuite = { id: number };
+type ChecksCreateResponseDataOutput = {
+  title: string;
+  summary: string;
+  text: string;
+  annotations_count?: number;
+  annotations_url?: string;
+};
+type ChecksCreateResponseData = {
+  id: number;
+  head_sha: string;
+  node_id: string;
+  external_id: string;
+  url: string;
+  html_url: string;
+  details_url: string;
+  status: string;
+  conclusion: null | string;
+  started_at: string;
+  completed_at: null | string;
+  output: ChecksCreateResponseDataOutput;
+  name: string;
+  check_suite: ChecksCreateResponseDataCheckSuite;
+  app: ChecksCreateResponseDataApp;
+  pull_requests: Array<ChecksCreateResponseDataPullRequestsItem>;
+};
+
 type ChecksUpdateEndpoint = {
   /**
    * owner parameter
@@ -7800,6 +16909,94 @@ type ChecksUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksUpdateResponseDataPullRequestsItemBaseRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksUpdateResponseDataPullRequestsItemBase = {
+  ref: string;
+  sha: string;
+  repo: ChecksUpdateResponseDataPullRequestsItemBaseRepo;
+};
+type ChecksUpdateResponseDataPullRequestsItemHeadRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksUpdateResponseDataPullRequestsItemHead = {
+  ref: string;
+  sha: string;
+  repo: ChecksUpdateResponseDataPullRequestsItemHeadRepo;
+};
+type ChecksUpdateResponseDataPullRequestsItem = {
+  url: string;
+  id: number;
+  number: number;
+  head: ChecksUpdateResponseDataPullRequestsItemHead;
+  base: ChecksUpdateResponseDataPullRequestsItemBase;
+};
+type ChecksUpdateResponseDataAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksUpdateResponseDataAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksUpdateResponseDataApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksUpdateResponseDataAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksUpdateResponseDataAppPermissions;
+  events: Array<string>;
+};
+type ChecksUpdateResponseDataCheckSuite = { id: number };
+type ChecksUpdateResponseDataOutput = {
+  title: string;
+  summary: string;
+  text: string;
+  annotations_count: number;
+  annotations_url: string;
+};
+type ChecksUpdateResponseData = {
+  id: number;
+  head_sha: string;
+  node_id: string;
+  external_id: string;
+  url: string;
+  html_url: string;
+  details_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  output: ChecksUpdateResponseDataOutput;
+  name: string;
+  check_suite: ChecksUpdateResponseDataCheckSuite;
+  app: ChecksUpdateResponseDataApp;
+  pull_requests: Array<ChecksUpdateResponseDataPullRequestsItem>;
+};
+
 type ChecksGetEndpoint = {
   /**
    * owner parameter
@@ -7820,6 +17017,94 @@ type ChecksGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksGetResponseDataPullRequestsItemBaseRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksGetResponseDataPullRequestsItemBase = {
+  ref: string;
+  sha: string;
+  repo: ChecksGetResponseDataPullRequestsItemBaseRepo;
+};
+type ChecksGetResponseDataPullRequestsItemHeadRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksGetResponseDataPullRequestsItemHead = {
+  ref: string;
+  sha: string;
+  repo: ChecksGetResponseDataPullRequestsItemHeadRepo;
+};
+type ChecksGetResponseDataPullRequestsItem = {
+  url: string;
+  id: number;
+  number: number;
+  head: ChecksGetResponseDataPullRequestsItemHead;
+  base: ChecksGetResponseDataPullRequestsItemBase;
+};
+type ChecksGetResponseDataAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksGetResponseDataAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksGetResponseDataApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksGetResponseDataAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksGetResponseDataAppPermissions;
+  events: Array<string>;
+};
+type ChecksGetResponseDataCheckSuite = { id: number };
+type ChecksGetResponseDataOutput = {
+  title: string;
+  summary: string;
+  text: string;
+  annotations_count: number;
+  annotations_url: string;
+};
+type ChecksGetResponseData = {
+  id: number;
+  head_sha: string;
+  node_id: string;
+  external_id: string;
+  url: string;
+  html_url: string;
+  details_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  output: ChecksGetResponseDataOutput;
+  name: string;
+  check_suite: ChecksGetResponseDataCheckSuite;
+  app: ChecksGetResponseDataApp;
+  pull_requests: Array<ChecksGetResponseDataPullRequestsItem>;
+};
+
 type ChecksListAnnotationsEndpoint = {
   /**
    * owner parameter
@@ -7848,6 +17133,21 @@ type ChecksListAnnotationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksListAnnotationsResponseDataItem = {
+  path: string;
+  start_line: number;
+  end_line: number;
+  start_column: number;
+  end_column: number;
+  annotation_level: string;
+  title: string;
+  message: string;
+  raw_details: string;
+};
+type ChecksListAnnotationsResponseData = Array<
+  ChecksListAnnotationsResponseDataItem
+>;
+
 type ChecksCreateSuiteEndpoint = {
   /**
    * owner parameter
@@ -7868,6 +17168,162 @@ type ChecksCreateSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksCreateSuiteResponseDataRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ChecksCreateSuiteResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ChecksCreateSuiteResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ChecksCreateSuiteResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksCreateSuiteResponseDataRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ChecksCreateSuiteResponseDataAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksCreateSuiteResponseDataAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksCreateSuiteResponseDataApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksCreateSuiteResponseDataAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksCreateSuiteResponseDataAppPermissions;
+  events: Array<string>;
+};
+type ChecksCreateSuiteResponseData = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  status: string;
+  conclusion: string;
+  url: string;
+  before: string;
+  after: string;
+  pull_requests: Array<any>;
+  app: ChecksCreateSuiteResponseDataApp;
+  repository: ChecksCreateSuiteResponseDataRepository;
+};
+
 type ChecksSetSuitesPreferencesEndpoint = {
   /**
    * owner parameter
@@ -7888,6 +17344,127 @@ type ChecksSetSuitesPreferencesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksSetSuitesPreferencesResponseDataRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ChecksSetSuitesPreferencesResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ChecksSetSuitesPreferencesResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ChecksSetSuitesPreferencesResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksSetSuitesPreferencesResponseDataRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ChecksSetSuitesPreferencesResponseDataPreferencesAutoTriggerChecksItem = {
+  app_id: number;
+  setting: boolean;
+};
+type ChecksSetSuitesPreferencesResponseDataPreferences = {
+  auto_trigger_checks: Array<
+    ChecksSetSuitesPreferencesResponseDataPreferencesAutoTriggerChecksItem
+  >;
+};
+type ChecksSetSuitesPreferencesResponseData = {
+  preferences: ChecksSetSuitesPreferencesResponseDataPreferences;
+  repository: ChecksSetSuitesPreferencesResponseDataRepository;
+};
+
 type ChecksGetSuiteEndpoint = {
   /**
    * owner parameter
@@ -7908,6 +17485,162 @@ type ChecksGetSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksGetSuiteResponseDataRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ChecksGetSuiteResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ChecksGetSuiteResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ChecksGetSuiteResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksGetSuiteResponseDataRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ChecksGetSuiteResponseDataAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksGetSuiteResponseDataAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksGetSuiteResponseDataApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksGetSuiteResponseDataAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksGetSuiteResponseDataAppPermissions;
+  events: Array<string>;
+};
+type ChecksGetSuiteResponseData = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  status: string;
+  conclusion: string;
+  url: string;
+  before: string;
+  after: string;
+  pull_requests: Array<any>;
+  app: ChecksGetSuiteResponseDataApp;
+  repository: ChecksGetSuiteResponseDataRepository;
+};
+
 type ChecksListForSuiteEndpoint = {
   /**
    * owner parameter
@@ -7948,6 +17681,100 @@ type ChecksListForSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemBaseRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemBase = {
+  ref: string;
+  sha: string;
+  repo: ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemBaseRepo;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemHeadRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemHead = {
+  ref: string;
+  sha: string;
+  repo: ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemHeadRepo;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItem = {
+  url: string;
+  id: number;
+  number: number;
+  head: ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemHead;
+  base: ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItemBase;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksListForSuiteResponseDataCheckRunsItemAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksListForSuiteResponseDataCheckRunsItemAppPermissions;
+  events: Array<string>;
+};
+type ChecksListForSuiteResponseDataCheckRunsItemCheckSuite = { id: number };
+type ChecksListForSuiteResponseDataCheckRunsItemOutput = {
+  title: string;
+  summary: string;
+  text: string;
+  annotations_count: number;
+  annotations_url: string;
+};
+type ChecksListForSuiteResponseDataCheckRunsItem = {
+  id: number;
+  head_sha: string;
+  node_id: string;
+  external_id: string;
+  url: string;
+  html_url: string;
+  details_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  output: ChecksListForSuiteResponseDataCheckRunsItemOutput;
+  name: string;
+  check_suite: ChecksListForSuiteResponseDataCheckRunsItemCheckSuite;
+  app: ChecksListForSuiteResponseDataCheckRunsItemApp;
+  pull_requests: Array<
+    ChecksListForSuiteResponseDataCheckRunsItemPullRequestsItem
+  >;
+};
+type ChecksListForSuiteResponseData = {
+  total_count: number;
+  check_runs: Array<ChecksListForSuiteResponseDataCheckRunsItem>;
+};
+
 type ChecksRerequestSuiteEndpoint = {
   /**
    * owner parameter
@@ -7968,6 +17795,7 @@ type ChecksRerequestSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListCollaboratorsEndpoint = {
   /**
    * owner parameter
@@ -7999,6 +17827,36 @@ type ReposListCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListCollaboratorsResponseDataItemPermissions = {
+  pull: boolean;
+  push: boolean;
+  admin: boolean;
+};
+type ReposListCollaboratorsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  permissions: ReposListCollaboratorsResponseDataItemPermissions;
+};
+type ReposListCollaboratorsResponseData = Array<
+  ReposListCollaboratorsResponseDataItem
+>;
+
 type ReposCheckCollaboratorEndpoint = {
   /**
    * owner parameter
@@ -8019,6 +17877,7 @@ type ReposCheckCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposAddCollaboratorEndpoint = {
   /**
    * owner parameter
@@ -8048,6 +17907,126 @@ type ReposAddCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddCollaboratorResponseDataInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposAddCollaboratorResponseDataInvitee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposAddCollaboratorResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposAddCollaboratorResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposAddCollaboratorResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposAddCollaboratorResponseData = {
+  id: number;
+  repository: ReposAddCollaboratorResponseDataRepository;
+  invitee: ReposAddCollaboratorResponseDataInvitee;
+  inviter: ReposAddCollaboratorResponseDataInviter;
+  permissions: string;
+  created_at: string;
+  url: string;
+  html_url: string;
+};
+
 type ReposRemoveCollaboratorEndpoint = {
   /**
    * owner parameter
@@ -8068,6 +18047,7 @@ type ReposRemoveCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetCollaboratorPermissionLevelEndpoint = {
   /**
    * owner parameter
@@ -8088,6 +18068,31 @@ type ReposGetCollaboratorPermissionLevelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCollaboratorPermissionLevelResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetCollaboratorPermissionLevelResponseData = {
+  permission: string;
+  user: ReposGetCollaboratorPermissionLevelResponseDataUser;
+};
+
 type ReposListCommitCommentsEndpoint = {
   /**
    * owner parameter
@@ -8112,6 +18117,44 @@ type ReposListCommitCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListCommitCommentsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListCommitCommentsResponseDataItem = {
+  html_url: string;
+  url: string;
+  id: number;
+  node_id: string;
+  body: string;
+  path: string;
+  position: number;
+  line: number;
+  commit_id: string;
+  user: ReposListCommitCommentsResponseDataItemUser;
+  created_at: string;
+  updated_at: string;
+};
+type ReposListCommitCommentsResponseData = Array<
+  ReposListCommitCommentsResponseDataItem
+>;
+
 type ReposGetCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8132,6 +18175,41 @@ type ReposGetCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCommitCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetCommitCommentResponseData = {
+  html_url: string;
+  url: string;
+  id: number;
+  node_id: string;
+  body: string;
+  path: string;
+  position: number;
+  line: number;
+  commit_id: string;
+  user: ReposGetCommitCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type ReposUpdateCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8156,6 +18234,41 @@ type ReposUpdateCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateCommitCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateCommitCommentResponseData = {
+  html_url: string;
+  url: string;
+  id: number;
+  node_id: string;
+  body: string;
+  path: string;
+  position: number;
+  line: number;
+  commit_id: string;
+  user: ReposUpdateCommitCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type ReposDeleteCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8176,6 +18289,7 @@ type ReposDeleteCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8216,6 +18330,37 @@ type ReactionsListForCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForCommitCommentResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForCommitCommentResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForCommitCommentResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForCommitCommentResponseData = Array<
+  ReactionsListForCommitCommentResponseDataItem
+>;
+
 type ReactionsCreateForCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8248,6 +18393,34 @@ type ReactionsCreateForCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForCommitCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForCommitCommentResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForCommitCommentResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8272,6 +18445,7 @@ type ReactionsDeleteForCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListCommitsEndpoint = {
   /**
    * owner parameter
@@ -8316,6 +18490,86 @@ type ReposListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListCommitsResponseDataItemParentsItem = { url: string; sha: string };
+type ReposListCommitsResponseDataItemCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListCommitsResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListCommitsResponseDataItemCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposListCommitsResponseDataItemCommitTree = { url: string; sha: string };
+type ReposListCommitsResponseDataItemCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposListCommitsResponseDataItemCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposListCommitsResponseDataItemCommit = {
+  url: string;
+  author: ReposListCommitsResponseDataItemCommitAuthor;
+  committer: ReposListCommitsResponseDataItemCommitCommitter;
+  message: string;
+  tree: ReposListCommitsResponseDataItemCommitTree;
+  comment_count: number;
+  verification: ReposListCommitsResponseDataItemCommitVerification;
+};
+type ReposListCommitsResponseDataItem = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: ReposListCommitsResponseDataItemCommit;
+  author: ReposListCommitsResponseDataItemAuthor;
+  committer: ReposListCommitsResponseDataItemCommitter;
+  parents: Array<ReposListCommitsResponseDataItemParentsItem>;
+};
+type ReposListCommitsResponseData = Array<ReposListCommitsResponseDataItem>;
+
 type ReposListBranchesForHeadCommitEndpoint = {
   /**
    * owner parameter
@@ -8336,6 +18590,19 @@ type ReposListBranchesForHeadCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListBranchesForHeadCommitResponseDataItemCommit = {
+  sha: string;
+  url: string;
+};
+type ReposListBranchesForHeadCommitResponseDataItem = {
+  name: string;
+  commit: ReposListBranchesForHeadCommitResponseDataItemCommit;
+  protected: string;
+};
+type ReposListBranchesForHeadCommitResponseData = Array<
+  ReposListBranchesForHeadCommitResponseDataItem
+>;
+
 type ReposListCommentsForCommitEndpoint = {
   /**
    * owner parameter
@@ -8364,6 +18631,44 @@ type ReposListCommentsForCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListCommentsForCommitResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListCommentsForCommitResponseDataItem = {
+  html_url: string;
+  url: string;
+  id: number;
+  node_id: string;
+  body: string;
+  path: string;
+  position: number;
+  line: number;
+  commit_id: string;
+  user: ReposListCommentsForCommitResponseDataItemUser;
+  created_at: string;
+  updated_at: string;
+};
+type ReposListCommentsForCommitResponseData = Array<
+  ReposListCommentsForCommitResponseDataItem
+>;
+
 type ReposCreateCommitCommentEndpoint = {
   /**
    * owner parameter
@@ -8400,6 +18705,41 @@ type ReposCreateCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateCommitCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateCommitCommentResponseData = {
+  html_url: string;
+  url: string;
+  id: number;
+  node_id: string;
+  body: string;
+  path: string;
+  position: number;
+  line: number;
+  commit_id: string;
+  user: ReposCreateCommitCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type ReposListPullRequestsAssociatedWithCommitEndpoint = {
   /**
    * owner parameter
@@ -8428,6 +18768,498 @@ type ReposListPullRequestsAssociatedWithCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksStatuses = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksCommits = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksReviewComment = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksReviewComments = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksComments = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksIssue = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksHtml = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksSelf = {
+  href: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLinks = {
+  self: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksSelf;
+  html: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksHtml;
+  issue: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksIssue;
+  comments: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksComments;
+  review_comments: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksReviewComments;
+  review_comment: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksReviewComment;
+  commits: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksCommits;
+  statuses: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinksStatuses;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseUser;
+  repo: ReposListPullRequestsAssociatedWithCommitResponseDataItemBaseRepo;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadUser;
+  repo: ReposListPullRequestsAssociatedWithCommitResponseDataItemHeadRepo;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: ReposListPullRequestsAssociatedWithCommitResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: ReposListPullRequestsAssociatedWithCommitResponseDataItemUser;
+  body: string;
+  labels: Array<
+    ReposListPullRequestsAssociatedWithCommitResponseDataItemLabelsItem
+  >;
+  milestone: ReposListPullRequestsAssociatedWithCommitResponseDataItemMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: ReposListPullRequestsAssociatedWithCommitResponseDataItemAssignee;
+  assignees: Array<
+    ReposListPullRequestsAssociatedWithCommitResponseDataItemAssigneesItem
+  >;
+  requested_reviewers: Array<
+    ReposListPullRequestsAssociatedWithCommitResponseDataItemRequestedReviewersItem
+  >;
+  requested_teams: Array<
+    ReposListPullRequestsAssociatedWithCommitResponseDataItemRequestedTeamsItem
+  >;
+  head: ReposListPullRequestsAssociatedWithCommitResponseDataItemHead;
+  base: ReposListPullRequestsAssociatedWithCommitResponseDataItemBase;
+  _links: ReposListPullRequestsAssociatedWithCommitResponseDataItemLinks;
+  author_association: string;
+  draft: boolean;
+};
+type ReposListPullRequestsAssociatedWithCommitResponseData = Array<
+  ReposListPullRequestsAssociatedWithCommitResponseDataItem
+>;
+
 type ReposGetCommitEndpoint = {
   /**
    * owner parameter
@@ -8448,6 +19280,102 @@ type ReposGetCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCommitResponseDataFilesItem = {
+  filename: string;
+  additions: number;
+  deletions: number;
+  changes: number;
+  status: string;
+  raw_url: string;
+  blob_url: string;
+  patch: string;
+};
+type ReposGetCommitResponseDataStats = {
+  additions: number;
+  deletions: number;
+  total: number;
+};
+type ReposGetCommitResponseDataParentsItem = { url: string; sha: string };
+type ReposGetCommitResponseDataCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetCommitResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetCommitResponseDataCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposGetCommitResponseDataCommitTree = { url: string; sha: string };
+type ReposGetCommitResponseDataCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposGetCommitResponseDataCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposGetCommitResponseDataCommit = {
+  url: string;
+  author: ReposGetCommitResponseDataCommitAuthor;
+  committer: ReposGetCommitResponseDataCommitCommitter;
+  message: string;
+  tree: ReposGetCommitResponseDataCommitTree;
+  comment_count: number;
+  verification: ReposGetCommitResponseDataCommitVerification;
+};
+type ReposGetCommitResponseData = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: ReposGetCommitResponseDataCommit;
+  author: ReposGetCommitResponseDataAuthor;
+  committer: ReposGetCommitResponseDataCommitter;
+  parents: Array<ReposGetCommitResponseDataParentsItem>;
+  stats: ReposGetCommitResponseDataStats;
+  files: Array<ReposGetCommitResponseDataFilesItem>;
+};
+
 type ChecksListForRefEndpoint = {
   /**
    * owner parameter
@@ -8488,6 +19416,100 @@ type ChecksListForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksListForRefResponseDataCheckRunsItemPullRequestsItemBaseRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksListForRefResponseDataCheckRunsItemPullRequestsItemBase = {
+  ref: string;
+  sha: string;
+  repo: ChecksListForRefResponseDataCheckRunsItemPullRequestsItemBaseRepo;
+};
+type ChecksListForRefResponseDataCheckRunsItemPullRequestsItemHeadRepo = {
+  id: number;
+  url: string;
+  name: string;
+};
+type ChecksListForRefResponseDataCheckRunsItemPullRequestsItemHead = {
+  ref: string;
+  sha: string;
+  repo: ChecksListForRefResponseDataCheckRunsItemPullRequestsItemHeadRepo;
+};
+type ChecksListForRefResponseDataCheckRunsItemPullRequestsItem = {
+  url: string;
+  id: number;
+  number: number;
+  head: ChecksListForRefResponseDataCheckRunsItemPullRequestsItemHead;
+  base: ChecksListForRefResponseDataCheckRunsItemPullRequestsItemBase;
+};
+type ChecksListForRefResponseDataCheckRunsItemAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksListForRefResponseDataCheckRunsItemAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksListForRefResponseDataCheckRunsItemApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksListForRefResponseDataCheckRunsItemAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksListForRefResponseDataCheckRunsItemAppPermissions;
+  events: Array<string>;
+};
+type ChecksListForRefResponseDataCheckRunsItemCheckSuite = { id: number };
+type ChecksListForRefResponseDataCheckRunsItemOutput = {
+  title: string;
+  summary: string;
+  text: string;
+  annotations_count: number;
+  annotations_url: string;
+};
+type ChecksListForRefResponseDataCheckRunsItem = {
+  id: number;
+  head_sha: string;
+  node_id: string;
+  external_id: string;
+  url: string;
+  html_url: string;
+  details_url: string;
+  status: string;
+  conclusion: string;
+  started_at: string;
+  completed_at: string;
+  output: ChecksListForRefResponseDataCheckRunsItemOutput;
+  name: string;
+  check_suite: ChecksListForRefResponseDataCheckRunsItemCheckSuite;
+  app: ChecksListForRefResponseDataCheckRunsItemApp;
+  pull_requests: Array<
+    ChecksListForRefResponseDataCheckRunsItemPullRequestsItem
+  >;
+};
+type ChecksListForRefResponseData = {
+  total_count: number;
+  check_runs: Array<ChecksListForRefResponseDataCheckRunsItem>;
+};
+
 type ChecksListSuitesForRefEndpoint = {
   /**
    * owner parameter
@@ -8524,6 +19546,166 @@ type ChecksListSuitesForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ChecksListSuitesForRefResponseDataCheckSuitesItemRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ChecksListSuitesForRefResponseDataCheckSuitesItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksListSuitesForRefResponseDataCheckSuitesItemRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItemAppPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItemAppOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItemApp = {
+  id: number;
+  slug: string;
+  node_id: string;
+  owner: ChecksListSuitesForRefResponseDataCheckSuitesItemAppOwner;
+  name: string;
+  description: string;
+  external_url: string;
+  html_url: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ChecksListSuitesForRefResponseDataCheckSuitesItemAppPermissions;
+  events: Array<string>;
+};
+type ChecksListSuitesForRefResponseDataCheckSuitesItem = {
+  id: number;
+  node_id: string;
+  head_branch: string;
+  head_sha: string;
+  status: string;
+  conclusion: string;
+  url: string;
+  before: string;
+  after: string;
+  pull_requests: Array<any>;
+  app: ChecksListSuitesForRefResponseDataCheckSuitesItemApp;
+  repository: ChecksListSuitesForRefResponseDataCheckSuitesItemRepository;
+};
+type ChecksListSuitesForRefResponseData = {
+  total_count: number;
+  check_suites: Array<ChecksListSuitesForRefResponseDataCheckSuitesItem>;
+};
+
 type ReposGetCombinedStatusForRefEndpoint = {
   /**
    * owner parameter
@@ -8544,6 +19726,97 @@ type ReposGetCombinedStatusForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCombinedStatusForRefResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetCombinedStatusForRefResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposGetCombinedStatusForRefResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposGetCombinedStatusForRefResponseDataStatusesItem = {
+  url: string;
+  avatar_url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  description: string;
+  target_url: string;
+  context: string;
+  created_at: string;
+  updated_at: string;
+};
+type ReposGetCombinedStatusForRefResponseData = {
+  state: string;
+  statuses: Array<ReposGetCombinedStatusForRefResponseDataStatusesItem>;
+  sha: string;
+  total_count: number;
+  repository: ReposGetCombinedStatusForRefResponseDataRepository;
+  commit_url: string;
+  url: string;
+};
+
 type ReposListStatusesForRefEndpoint = {
   /**
    * owner parameter
@@ -8572,6 +19845,43 @@ type ReposListStatusesForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListStatusesForRefResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListStatusesForRefResponseDataItem = {
+  url: string;
+  avatar_url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  description: string;
+  target_url: string;
+  context: string;
+  created_at: string;
+  updated_at: string;
+  creator: ReposListStatusesForRefResponseDataItemCreator;
+};
+type ReposListStatusesForRefResponseData = Array<
+  ReposListStatusesForRefResponseDataItem
+>;
+
 type CodesOfConductGetForRepoEndpoint = {
   /**
    * owner parameter
@@ -8588,6 +19898,13 @@ type CodesOfConductGetForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type CodesOfConductGetForRepoResponseData = {
+  key: string;
+  name: string;
+  url: string;
+  body: string;
+};
+
 type ReposRetrieveCommunityProfileMetricsEndpoint = {
   /**
    * owner parameter
@@ -8604,6 +19921,51 @@ type ReposRetrieveCommunityProfileMetricsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesReadme = {
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesLicense = {
+  name: string;
+  key: string;
+  spdx_id: string;
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesPullRequestTemplate = {
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesIssueTemplate = {
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesContributing = {
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFilesCodeOfConduct = {
+  name: string;
+  key: string;
+  url: string;
+  html_url: string;
+};
+type ReposRetrieveCommunityProfileMetricsResponseDataFiles = {
+  code_of_conduct: ReposRetrieveCommunityProfileMetricsResponseDataFilesCodeOfConduct;
+  contributing: ReposRetrieveCommunityProfileMetricsResponseDataFilesContributing;
+  issue_template: ReposRetrieveCommunityProfileMetricsResponseDataFilesIssueTemplate;
+  pull_request_template: ReposRetrieveCommunityProfileMetricsResponseDataFilesPullRequestTemplate;
+  license: ReposRetrieveCommunityProfileMetricsResponseDataFilesLicense;
+  readme: ReposRetrieveCommunityProfileMetricsResponseDataFilesReadme;
+};
+type ReposRetrieveCommunityProfileMetricsResponseData = {
+  health_percentage: number;
+  description: string;
+  documentation: boolean;
+  files: ReposRetrieveCommunityProfileMetricsResponseDataFiles;
+  updated_at: string;
+};
+
 type ReposCompareCommitsEndpoint = {
   /**
    * owner parameter
@@ -8628,6 +19990,286 @@ type ReposCompareCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCompareCommitsResponseDataFilesItem = {
+  sha: string;
+  filename: string;
+  status: string;
+  additions: number;
+  deletions: number;
+  changes: number;
+  blob_url: string;
+  raw_url: string;
+  contents_url: string;
+  patch: string;
+};
+type ReposCompareCommitsResponseDataCommitsItemParentsItem = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataCommitsItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommitTree = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataCommitsItemCommit = {
+  url: string;
+  author: ReposCompareCommitsResponseDataCommitsItemCommitAuthor;
+  committer: ReposCompareCommitsResponseDataCommitsItemCommitCommitter;
+  message: string;
+  tree: ReposCompareCommitsResponseDataCommitsItemCommitTree;
+  comment_count: number;
+  verification: ReposCompareCommitsResponseDataCommitsItemCommitVerification;
+};
+type ReposCompareCommitsResponseDataCommitsItem = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: ReposCompareCommitsResponseDataCommitsItemCommit;
+  author: ReposCompareCommitsResponseDataCommitsItemAuthor;
+  committer: ReposCompareCommitsResponseDataCommitsItemCommitter;
+  parents: Array<ReposCompareCommitsResponseDataCommitsItemParentsItem>;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitParentsItem = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommitTree = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommitCommit = {
+  url: string;
+  author: ReposCompareCommitsResponseDataMergeBaseCommitCommitAuthor;
+  committer: ReposCompareCommitsResponseDataMergeBaseCommitCommitCommitter;
+  message: string;
+  tree: ReposCompareCommitsResponseDataMergeBaseCommitCommitTree;
+  comment_count: number;
+  verification: ReposCompareCommitsResponseDataMergeBaseCommitCommitVerification;
+};
+type ReposCompareCommitsResponseDataMergeBaseCommit = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: ReposCompareCommitsResponseDataMergeBaseCommitCommit;
+  author: ReposCompareCommitsResponseDataMergeBaseCommitAuthor;
+  committer: ReposCompareCommitsResponseDataMergeBaseCommitCommitter;
+  parents: Array<ReposCompareCommitsResponseDataMergeBaseCommitParentsItem>;
+};
+type ReposCompareCommitsResponseDataBaseCommitParentsItem = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataBaseCommitAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommitTree = {
+  url: string;
+  sha: string;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type ReposCompareCommitsResponseDataBaseCommitCommit = {
+  url: string;
+  author: ReposCompareCommitsResponseDataBaseCommitCommitAuthor;
+  committer: ReposCompareCommitsResponseDataBaseCommitCommitCommitter;
+  message: string;
+  tree: ReposCompareCommitsResponseDataBaseCommitCommitTree;
+  comment_count: number;
+  verification: ReposCompareCommitsResponseDataBaseCommitCommitVerification;
+};
+type ReposCompareCommitsResponseDataBaseCommit = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: ReposCompareCommitsResponseDataBaseCommitCommit;
+  author: ReposCompareCommitsResponseDataBaseCommitAuthor;
+  committer: ReposCompareCommitsResponseDataBaseCommitCommitter;
+  parents: Array<ReposCompareCommitsResponseDataBaseCommitParentsItem>;
+};
+type ReposCompareCommitsResponseData = {
+  url: string;
+  html_url: string;
+  permalink_url: string;
+  diff_url: string;
+  patch_url: string;
+  base_commit: ReposCompareCommitsResponseDataBaseCommit;
+  merge_base_commit: ReposCompareCommitsResponseDataMergeBaseCommit;
+  status: string;
+  ahead_by: number;
+  behind_by: number;
+  total_commits: number;
+  commits: Array<ReposCompareCommitsResponseDataCommitsItem>;
+  files: Array<ReposCompareCommitsResponseDataFilesItem>;
+};
+
 type ReposGetContentsEndpoint = {
   /**
    * owner parameter
@@ -8652,6 +20294,47 @@ type ReposGetContentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetContentsResponseDataItemLinks = {
+  self: string;
+  git: string;
+  html: string;
+};
+type ReposGetContentsResponseDataItem = {
+  type: string;
+  size: number;
+  name: string;
+  path: string;
+  sha: string;
+  url: string;
+  git_url: string;
+  html_url: string;
+  download_url: string | null;
+  _links: ReposGetContentsResponseDataItemLinks;
+};
+type ReposGetContentsResponseDataLinks = {
+  git: string;
+  self: string;
+  html: string;
+};
+type ReposGetContentsResponseData =
+  | {
+      type: string;
+      encoding?: string;
+      size: number;
+      name: string;
+      path: string;
+      content?: string;
+      sha: string;
+      url: string;
+      git_url: string;
+      html_url: string;
+      download_url: string | null;
+      _links: ReposGetContentsResponseDataLinks;
+      target?: string;
+      submodule_git_url?: string;
+    }
+  | Array<ReposGetContentsResponseDataItem>;
+
 type ReposCreateOrUpdateFileEndpoint = {
   /**
    * owner parameter
@@ -8696,6 +20379,65 @@ type ReposCreateOrUpdateFileRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateOrUpdateFileResponseDataCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposCreateOrUpdateFileResponseDataCommitParentsItem = {
+  url: string;
+  html_url: string;
+  sha: string;
+};
+type ReposCreateOrUpdateFileResponseDataCommitTree = {
+  url: string;
+  sha: string;
+};
+type ReposCreateOrUpdateFileResponseDataCommitCommitter = {
+  date: string;
+  name: string;
+  email: string;
+};
+type ReposCreateOrUpdateFileResponseDataCommitAuthor = {
+  date: string;
+  name: string;
+  email: string;
+};
+type ReposCreateOrUpdateFileResponseDataCommit = {
+  sha: string;
+  node_id: string;
+  url: string;
+  html_url: string;
+  author: ReposCreateOrUpdateFileResponseDataCommitAuthor;
+  committer: ReposCreateOrUpdateFileResponseDataCommitCommitter;
+  message: string;
+  tree: ReposCreateOrUpdateFileResponseDataCommitTree;
+  parents: Array<ReposCreateOrUpdateFileResponseDataCommitParentsItem>;
+  verification: ReposCreateOrUpdateFileResponseDataCommitVerification;
+};
+type ReposCreateOrUpdateFileResponseDataContentLinks = {
+  self: string;
+  git: string;
+  html: string;
+};
+type ReposCreateOrUpdateFileResponseDataContent = {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string;
+  type: string;
+  _links: ReposCreateOrUpdateFileResponseDataContentLinks;
+};
+type ReposCreateOrUpdateFileResponseData = {
+  content: ReposCreateOrUpdateFileResponseDataContent;
+  commit: ReposCreateOrUpdateFileResponseDataCommit;
+};
+
 type ReposDeleteFileEndpoint = {
   /**
    * owner parameter
@@ -8736,6 +20478,45 @@ type ReposDeleteFileRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposDeleteFileResponseDataCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposDeleteFileResponseDataCommitParentsItem = {
+  url: string;
+  html_url: string;
+  sha: string;
+};
+type ReposDeleteFileResponseDataCommitTree = { url: string; sha: string };
+type ReposDeleteFileResponseDataCommitCommitter = {
+  date: string;
+  name: string;
+  email: string;
+};
+type ReposDeleteFileResponseDataCommitAuthor = {
+  date: string;
+  name: string;
+  email: string;
+};
+type ReposDeleteFileResponseDataCommit = {
+  sha: string;
+  node_id: string;
+  url: string;
+  html_url: string;
+  author: ReposDeleteFileResponseDataCommitAuthor;
+  committer: ReposDeleteFileResponseDataCommitCommitter;
+  message: string;
+  tree: ReposDeleteFileResponseDataCommitTree;
+  parents: Array<ReposDeleteFileResponseDataCommitParentsItem>;
+  verification: ReposDeleteFileResponseDataCommitVerification;
+};
+type ReposDeleteFileResponseData = {
+  content: null;
+  commit: ReposDeleteFileResponseDataCommit;
+};
+
 type ReposListContributorsEndpoint = {
   /**
    * owner parameter
@@ -8764,6 +20545,31 @@ type ReposListContributorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListContributorsResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  contributions: number;
+};
+type ReposListContributorsResponseData = Array<
+  ReposListContributorsResponseDataItem
+>;
+
 type ReposListDeploymentsEndpoint = {
   /**
    * owner parameter
@@ -8804,6 +20610,50 @@ type ReposListDeploymentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListDeploymentsResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListDeploymentsResponseDataItemPayload = { deploy: string };
+type ReposListDeploymentsResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  sha: string;
+  ref: string;
+  task: string;
+  payload: ReposListDeploymentsResponseDataItemPayload;
+  original_environment: string;
+  environment: string;
+  description: string;
+  creator: ReposListDeploymentsResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+  statuses_url: string;
+  repository_url: string;
+  transient_environment: boolean;
+  production_environment: boolean;
+};
+type ReposListDeploymentsResponseData = Array<
+  ReposListDeploymentsResponseDataItem
+>;
+
 type ReposCreateDeploymentEndpoint = {
   /**
    * owner parameter
@@ -8858,6 +20708,47 @@ type ReposCreateDeploymentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateDeploymentResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateDeploymentResponseDataPayload = { deploy: string };
+type ReposCreateDeploymentResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  sha: string;
+  ref: string;
+  task: string;
+  payload: ReposCreateDeploymentResponseDataPayload;
+  original_environment: string;
+  environment: string;
+  description: string;
+  creator: ReposCreateDeploymentResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  statuses_url: string;
+  repository_url: string;
+  transient_environment: boolean;
+  production_environment: boolean;
+};
+
 type ReposGetDeploymentEndpoint = {
   /**
    * owner parameter
@@ -8878,6 +20769,47 @@ type ReposGetDeploymentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetDeploymentResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetDeploymentResponseDataPayload = { deploy: string };
+type ReposGetDeploymentResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  sha: string;
+  ref: string;
+  task: string;
+  payload: ReposGetDeploymentResponseDataPayload;
+  original_environment: string;
+  environment: string;
+  description: string;
+  creator: ReposGetDeploymentResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  statuses_url: string;
+  repository_url: string;
+  transient_environment: boolean;
+  production_environment: boolean;
+};
+
 type ReposDeleteDeploymentEndpoint = {
   /**
    * owner parameter
@@ -8898,6 +20830,7 @@ type ReposDeleteDeploymentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListDeploymentStatusesEndpoint = {
   /**
    * owner parameter
@@ -8926,6 +20859,46 @@ type ReposListDeploymentStatusesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListDeploymentStatusesResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListDeploymentStatusesResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  creator: ReposListDeploymentStatusesResponseDataItemCreator;
+  description: string;
+  environment: string;
+  target_url: string;
+  created_at: string;
+  updated_at: string;
+  deployment_url: string;
+  repository_url: string;
+  environment_url: string;
+  log_url: string;
+};
+type ReposListDeploymentStatusesResponseData = Array<
+  ReposListDeploymentStatusesResponseDataItem
+>;
+
 type ReposCreateDeploymentStatusEndpoint = {
   /**
    * owner parameter
@@ -8985,6 +20958,43 @@ type ReposCreateDeploymentStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateDeploymentStatusResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateDeploymentStatusResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  creator: ReposCreateDeploymentStatusResponseDataCreator;
+  description: string;
+  environment: string;
+  target_url: string;
+  created_at: string;
+  updated_at: string;
+  deployment_url: string;
+  repository_url: string;
+  environment_url: string;
+  log_url: string;
+};
+
 type ReposGetDeploymentStatusEndpoint = {
   /**
    * owner parameter
@@ -9009,6 +21019,43 @@ type ReposGetDeploymentStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetDeploymentStatusResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetDeploymentStatusResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  creator: ReposGetDeploymentStatusResponseDataCreator;
+  description: string;
+  environment: string;
+  target_url: string;
+  created_at: string;
+  updated_at: string;
+  deployment_url: string;
+  repository_url: string;
+  environment_url: string;
+  log_url: string;
+};
+
 type ReposCreateDispatchEventEndpoint = {
   /**
    * owner parameter
@@ -9033,6 +21080,7 @@ type ReposCreateDispatchEventRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListDownloadsEndpoint = {
   /**
    * owner parameter
@@ -9057,6 +21105,18 @@ type ReposListDownloadsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListDownloadsResponseDataItem = {
+  url: string;
+  html_url: string;
+  id: number;
+  name: string;
+  description: string;
+  size: number;
+  download_count: number;
+  content_type: string;
+};
+type ReposListDownloadsResponseData = Array<ReposListDownloadsResponseDataItem>;
+
 type ReposGetDownloadEndpoint = {
   /**
    * owner parameter
@@ -9077,6 +21137,17 @@ type ReposGetDownloadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetDownloadResponseData = {
+  url: string;
+  html_url: string;
+  id: number;
+  name: string;
+  description: string;
+  size: number;
+  download_count: number;
+  content_type: string;
+};
+
 type ReposDeleteDownloadEndpoint = {
   /**
    * owner parameter
@@ -9097,6 +21168,7 @@ type ReposDeleteDownloadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListRepoEventsEndpoint = {
   /**
    * owner parameter
@@ -9121,6 +21193,7 @@ type ActivityListRepoEventsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListForksEndpoint = {
   /**
    * owner parameter
@@ -9149,6 +21222,120 @@ type ReposListForksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListForksResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type ReposListForksResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposListForksResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListForksResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListForksResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposListForksResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: ReposListForksResponseDataItemLicense;
+};
+type ReposListForksResponseData = Array<ReposListForksResponseDataItem>;
+
 type ReposCreateForkEndpoint = {
   /**
    * owner parameter
@@ -9169,6 +21356,114 @@ type ReposCreateForkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateForkResponseDataPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposCreateForkResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateForkResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposCreateForkResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposCreateForkResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+
 type GitCreateBlobEndpoint = {
   /**
    * owner parameter
@@ -9193,6 +21488,8 @@ type GitCreateBlobRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitCreateBlobResponseData = { url: string; sha: string };
+
 type GitGetBlobEndpoint = {
   /**
    * owner parameter
@@ -9213,6 +21510,14 @@ type GitGetBlobRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitGetBlobResponseData = {
+  content: string;
+  encoding: string;
+  url: string;
+  sha: string;
+  size: number;
+};
+
 type GitCreateCommitEndpoint = {
   /**
    * owner parameter
@@ -9253,6 +21558,36 @@ type GitCreateCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitCreateCommitResponseDataVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type GitCreateCommitResponseDataParentsItem = { url: string; sha: string };
+type GitCreateCommitResponseDataTree = { url: string; sha: string };
+type GitCreateCommitResponseDataCommitter = {
+  date: string;
+  name: string;
+  email: string;
+};
+type GitCreateCommitResponseDataAuthor = {
+  date: string;
+  name: string;
+  email: string;
+};
+type GitCreateCommitResponseData = {
+  sha: string;
+  node_id: string;
+  url: string;
+  author: GitCreateCommitResponseDataAuthor;
+  committer: GitCreateCommitResponseDataCommitter;
+  message: string;
+  tree: GitCreateCommitResponseDataTree;
+  parents: Array<GitCreateCommitResponseDataParentsItem>;
+  verification: GitCreateCommitResponseDataVerification;
+};
+
 type GitGetCommitEndpoint = {
   /**
    * owner parameter
@@ -9273,6 +21608,35 @@ type GitGetCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitGetCommitResponseDataVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type GitGetCommitResponseDataParentsItem = { url: string; sha: string };
+type GitGetCommitResponseDataTree = { url: string; sha: string };
+type GitGetCommitResponseDataCommitter = {
+  date: string;
+  name: string;
+  email: string;
+};
+type GitGetCommitResponseDataAuthor = {
+  date: string;
+  name: string;
+  email: string;
+};
+type GitGetCommitResponseData = {
+  sha: string;
+  url: string;
+  author: GitGetCommitResponseDataAuthor;
+  committer: GitGetCommitResponseDataCommitter;
+  message: string;
+  tree: GitGetCommitResponseDataTree;
+  parents: Array<GitGetCommitResponseDataParentsItem>;
+  verification: GitGetCommitResponseDataVerification;
+};
+
 type GitListMatchingRefsEndpoint = {
   /**
    * owner parameter
@@ -9301,6 +21665,21 @@ type GitListMatchingRefsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitListMatchingRefsResponseDataItemObject = {
+  type: string;
+  sha: string;
+  url: string;
+};
+type GitListMatchingRefsResponseDataItem = {
+  ref: string;
+  node_id: string;
+  url: string;
+  object: GitListMatchingRefsResponseDataItemObject;
+};
+type GitListMatchingRefsResponseData = Array<
+  GitListMatchingRefsResponseDataItem
+>;
+
 type GitGetRefEndpoint = {
   /**
    * owner parameter
@@ -9321,6 +21700,14 @@ type GitGetRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitGetRefResponseDataObject = { type: string; sha: string; url: string };
+type GitGetRefResponseData = {
+  ref: string;
+  node_id: string;
+  url: string;
+  object: GitGetRefResponseDataObject;
+};
+
 type GitCreateRefEndpoint = {
   /**
    * owner parameter
@@ -9345,6 +21732,18 @@ type GitCreateRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitCreateRefResponseDataObject = {
+  type: string;
+  sha: string;
+  url: string;
+};
+type GitCreateRefResponseData = {
+  ref: string;
+  node_id: string;
+  url: string;
+  object: GitCreateRefResponseDataObject;
+};
+
 type GitUpdateRefEndpoint = {
   /**
    * owner parameter
@@ -9373,6 +21772,18 @@ type GitUpdateRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitUpdateRefResponseDataObject = {
+  type: string;
+  sha: string;
+  url: string;
+};
+type GitUpdateRefResponseData = {
+  ref: string;
+  node_id: string;
+  url: string;
+  object: GitUpdateRefResponseDataObject;
+};
+
 type GitDeleteRefEndpoint = {
   /**
    * owner parameter
@@ -9393,6 +21804,7 @@ type GitDeleteRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GitCreateTagEndpoint = {
   /**
    * owner parameter
@@ -9429,6 +21841,33 @@ type GitCreateTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitCreateTagResponseDataVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type GitCreateTagResponseDataObject = {
+  type: string;
+  sha: string;
+  url: string;
+};
+type GitCreateTagResponseDataTagger = {
+  name: string;
+  email: string;
+  date: string;
+};
+type GitCreateTagResponseData = {
+  node_id: string;
+  tag: string;
+  sha: string;
+  url: string;
+  message: string;
+  tagger: GitCreateTagResponseDataTagger;
+  object: GitCreateTagResponseDataObject;
+  verification: GitCreateTagResponseDataVerification;
+};
+
 type GitGetTagEndpoint = {
   /**
    * owner parameter
@@ -9449,6 +21888,29 @@ type GitGetTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitGetTagResponseDataVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type GitGetTagResponseDataObject = { type: string; sha: string; url: string };
+type GitGetTagResponseDataTagger = {
+  name: string;
+  email: string;
+  date: string;
+};
+type GitGetTagResponseData = {
+  node_id: string;
+  tag: string;
+  sha: string;
+  url: string;
+  message: string;
+  tagger: GitGetTagResponseDataTagger;
+  object: GitGetTagResponseDataObject;
+  verification: GitGetTagResponseDataVerification;
+};
+
 type GitCreateTreeEndpoint = {
   /**
    * owner parameter
@@ -9473,6 +21935,20 @@ type GitCreateTreeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitCreateTreeResponseDataTreeItem = {
+  path: string;
+  mode: string;
+  type: string;
+  size: number;
+  sha: string;
+  url: string;
+};
+type GitCreateTreeResponseData = {
+  sha: string;
+  url: string;
+  tree: Array<GitCreateTreeResponseDataTreeItem>;
+};
+
 type GitGetTreeEndpoint = {
   /**
    * owner parameter
@@ -9497,6 +21973,21 @@ type GitGetTreeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GitGetTreeResponseDataTreeItem = {
+  path: string;
+  mode: string;
+  type: string;
+  size?: number;
+  sha: string;
+  url: string;
+};
+type GitGetTreeResponseData = {
+  sha: string;
+  url: string;
+  tree: Array<GitGetTreeResponseDataTreeItem>;
+  truncated: boolean;
+};
+
 type ReposListHooksEndpoint = {
   /**
    * owner parameter
@@ -9521,6 +22012,32 @@ type ReposListHooksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListHooksResponseDataItemLastResponse = {
+  code: null;
+  status: string;
+  message: null;
+};
+type ReposListHooksResponseDataItemConfig = {
+  content_type: string;
+  insecure_ssl: string;
+  url: string;
+};
+type ReposListHooksResponseDataItem = {
+  type: string;
+  id: number;
+  name: string;
+  active: boolean;
+  events: Array<string>;
+  config: ReposListHooksResponseDataItemConfig;
+  updated_at: string;
+  created_at: string;
+  url: string;
+  test_url: string;
+  ping_url: string;
+  last_response: ReposListHooksResponseDataItemLastResponse;
+};
+type ReposListHooksResponseData = Array<ReposListHooksResponseDataItem>;
+
 type ReposCreateHookEndpoint = {
   /**
    * owner parameter
@@ -9553,6 +22070,31 @@ type ReposCreateHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateHookResponseDataLastResponse = {
+  code: null;
+  status: string;
+  message: null;
+};
+type ReposCreateHookResponseDataConfig = {
+  content_type: string;
+  insecure_ssl: string;
+  url: string;
+};
+type ReposCreateHookResponseData = {
+  type: string;
+  id: number;
+  name: string;
+  active: boolean;
+  events: Array<string>;
+  config: ReposCreateHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+  url: string;
+  test_url: string;
+  ping_url: string;
+  last_response: ReposCreateHookResponseDataLastResponse;
+};
+
 type ReposGetHookEndpoint = {
   /**
    * owner parameter
@@ -9573,6 +22115,31 @@ type ReposGetHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetHookResponseDataLastResponse = {
+  code: null;
+  status: string;
+  message: null;
+};
+type ReposGetHookResponseDataConfig = {
+  content_type: string;
+  insecure_ssl: string;
+  url: string;
+};
+type ReposGetHookResponseData = {
+  type: string;
+  id: number;
+  name: string;
+  active: boolean;
+  events: Array<string>;
+  config: ReposGetHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+  url: string;
+  test_url: string;
+  ping_url: string;
+  last_response: ReposGetHookResponseDataLastResponse;
+};
+
 type ReposUpdateHookEndpoint = {
   /**
    * owner parameter
@@ -9613,6 +22180,31 @@ type ReposUpdateHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateHookResponseDataLastResponse = {
+  code: null;
+  status: string;
+  message: null;
+};
+type ReposUpdateHookResponseDataConfig = {
+  content_type: string;
+  insecure_ssl: string;
+  url: string;
+};
+type ReposUpdateHookResponseData = {
+  type: string;
+  id: number;
+  name: string;
+  active: boolean;
+  events: Array<string>;
+  config: ReposUpdateHookResponseDataConfig;
+  updated_at: string;
+  created_at: string;
+  url: string;
+  test_url: string;
+  ping_url: string;
+  last_response: ReposUpdateHookResponseDataLastResponse;
+};
+
 type ReposDeleteHookEndpoint = {
   /**
    * owner parameter
@@ -9633,6 +22225,7 @@ type ReposDeleteHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposPingHookEndpoint = {
   /**
    * owner parameter
@@ -9653,6 +22246,7 @@ type ReposPingHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposTestPushHookEndpoint = {
   /**
    * owner parameter
@@ -9673,6 +22267,7 @@ type ReposTestPushHookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsStartImportEndpoint = {
   /**
    * owner parameter
@@ -9709,6 +22304,24 @@ type MigrationsStartImportRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsStartImportResponseData = {
+  vcs: string;
+  use_lfs: string;
+  vcs_url: string;
+  status: string;
+  status_text: string;
+  has_large_files: boolean;
+  large_files_size: number;
+  large_files_count: number;
+  authors_count: number;
+  percent: number;
+  commit_count: number;
+  url: string;
+  html_url: string;
+  authors_url: string;
+  repository_url: string;
+};
+
 type MigrationsGetImportProgressEndpoint = {
   /**
    * owner parameter
@@ -9725,6 +22338,22 @@ type MigrationsGetImportProgressRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsGetImportProgressResponseData = {
+  vcs: string;
+  use_lfs: string;
+  vcs_url: string;
+  status: string;
+  status_text: string;
+  has_large_files: boolean;
+  large_files_size: number;
+  large_files_count: number;
+  authors_count: number;
+  url: string;
+  html_url: string;
+  authors_url: string;
+  repository_url: string;
+};
+
 type MigrationsUpdateImportEndpoint = {
   /**
    * owner parameter
@@ -9749,6 +22378,25 @@ type MigrationsUpdateImportRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsUpdateImportResponseData = {
+  vcs: string;
+  use_lfs: string;
+  vcs_url: string;
+  status: string;
+  url: string;
+  html_url: string;
+  authors_url: string;
+  repository_url: string;
+  tfvc_project?: string;
+  status_text?: string;
+  has_large_files?: boolean;
+  large_files_size?: number;
+  large_files_count?: number;
+  authors_count?: number;
+  percent?: number;
+  commit_count?: number;
+};
+
 type MigrationsCancelImportEndpoint = {
   /**
    * owner parameter
@@ -9765,6 +22413,7 @@ type MigrationsCancelImportRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsGetCommitAuthorsEndpoint = {
   /**
    * owner parameter
@@ -9785,6 +22434,19 @@ type MigrationsGetCommitAuthorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsGetCommitAuthorsResponseDataItem = {
+  id: number;
+  remote_id: string;
+  remote_name: string;
+  email: string;
+  name: string;
+  url: string;
+  import_url: string;
+};
+type MigrationsGetCommitAuthorsResponseData = Array<
+  MigrationsGetCommitAuthorsResponseDataItem
+>;
+
 type MigrationsMapCommitAuthorEndpoint = {
   /**
    * owner parameter
@@ -9813,6 +22475,16 @@ type MigrationsMapCommitAuthorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsMapCommitAuthorResponseData = {
+  id: number;
+  remote_id: string;
+  remote_name: string;
+  email: string;
+  name: string;
+  url: string;
+  import_url: string;
+};
+
 type MigrationsGetLargeFilesEndpoint = {
   /**
    * owner parameter
@@ -9829,6 +22501,16 @@ type MigrationsGetLargeFilesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsGetLargeFilesResponseDataItem = {
+  ref_name: string;
+  path: string;
+  oid: string;
+  size: number;
+};
+type MigrationsGetLargeFilesResponseData = Array<
+  MigrationsGetLargeFilesResponseDataItem
+>;
+
 type MigrationsSetLfsPreferenceEndpoint = {
   /**
    * owner parameter
@@ -9849,6 +22531,22 @@ type MigrationsSetLfsPreferenceRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsSetLfsPreferenceResponseData = {
+  vcs: string;
+  use_lfs: string;
+  vcs_url: string;
+  status: string;
+  status_text: string;
+  has_large_files: boolean;
+  large_files_size: number;
+  large_files_count: number;
+  authors_count: number;
+  url: string;
+  html_url: string;
+  authors_url: string;
+  repository_url: string;
+};
+
 type AppsGetRepoInstallationEndpoint = {
   /**
    * owner parameter
@@ -9865,6 +22563,47 @@ type AppsGetRepoInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetRepoInstallationResponseDataPermissions = {
+  checks: string;
+  metadata: string;
+  contents: string;
+};
+type AppsGetRepoInstallationResponseDataAccount = {
+  login: string;
+  id: number;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsGetRepoInstallationResponseData = {
+  id: number;
+  account: AppsGetRepoInstallationResponseDataAccount;
+  repository_selection: string;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsGetRepoInstallationResponseDataPermissions;
+  events: Array<string>;
+  created_at: string;
+  updated_at: string;
+  single_file_name: null;
+};
+
 type InteractionsGetRestrictionsForRepoEndpoint = {
   /**
    * owner parameter
@@ -9881,6 +22620,12 @@ type InteractionsGetRestrictionsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type InteractionsGetRestrictionsForRepoResponseData = {
+  limit: string;
+  origin: string;
+  expires_at: string;
+};
+
 type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
   /**
    * owner parameter
@@ -9901,6 +22646,12 @@ type InteractionsAddOrUpdateRestrictionsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type InteractionsAddOrUpdateRestrictionsForRepoResponseData = {
+  limit: string;
+  origin: string;
+  expires_at: string;
+};
+
 type InteractionsRemoveRestrictionsForRepoEndpoint = {
   /**
    * owner parameter
@@ -9917,6 +22668,7 @@ type InteractionsRemoveRestrictionsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListInvitationsEndpoint = {
   /**
    * owner parameter
@@ -9941,6 +22693,129 @@ type ReposListInvitationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListInvitationsResponseDataItemInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsResponseDataItemInvitee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListInvitationsResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposListInvitationsResponseDataItem = {
+  id: number;
+  repository: ReposListInvitationsResponseDataItemRepository;
+  invitee: ReposListInvitationsResponseDataItemInvitee;
+  inviter: ReposListInvitationsResponseDataItemInviter;
+  permissions: string;
+  created_at: string;
+  url: string;
+  html_url: string;
+};
+type ReposListInvitationsResponseData = Array<
+  ReposListInvitationsResponseDataItem
+>;
+
 type ReposDeleteInvitationEndpoint = {
   /**
    * owner parameter
@@ -9961,6 +22836,7 @@ type ReposDeleteInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposUpdateInvitationEndpoint = {
   /**
    * owner parameter
@@ -9985,6 +22861,126 @@ type ReposUpdateInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateInvitationResponseDataInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateInvitationResponseDataInvitee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateInvitationResponseDataRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateInvitationResponseDataRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposUpdateInvitationResponseDataRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposUpdateInvitationResponseData = {
+  id: number;
+  repository: ReposUpdateInvitationResponseDataRepository;
+  invitee: ReposUpdateInvitationResponseDataInvitee;
+  inviter: ReposUpdateInvitationResponseDataInviter;
+  permissions: string;
+  created_at: string;
+  url: string;
+  html_url: string;
+};
+
 type IssuesListForRepoEndpoint = {
   /**
    * owner parameter
@@ -10045,6 +23041,147 @@ type IssuesListForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListForRepoResponseDataItemPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesListForRepoResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForRepoResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListForRepoResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListForRepoResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForRepoResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForRepoResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListForRepoResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForRepoResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesListForRepoResponseDataItemUser;
+  labels: Array<IssuesListForRepoResponseDataItemLabelsItem>;
+  assignee: IssuesListForRepoResponseDataItemAssignee;
+  assignees: Array<IssuesListForRepoResponseDataItemAssigneesItem>;
+  milestone: IssuesListForRepoResponseDataItemMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesListForRepoResponseDataItemPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+};
+type IssuesListForRepoResponseData = Array<IssuesListForRepoResponseDataItem>;
+
 type IssuesCreateEndpoint = {
   /**
    * owner parameter
@@ -10085,6 +23222,167 @@ type IssuesCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesCreateResponseDataClosedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateResponseDataPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesCreateResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesCreateResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesCreateResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesCreateResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesCreateResponseDataUser;
+  labels: Array<IssuesCreateResponseDataLabelsItem>;
+  assignee: IssuesCreateResponseDataAssignee;
+  assignees: Array<IssuesCreateResponseDataAssigneesItem>;
+  milestone: IssuesCreateResponseDataMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesCreateResponseDataPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  closed_by: IssuesCreateResponseDataClosedBy;
+};
+
 type IssuesListCommentsForRepoEndpoint = {
   /**
    * owner parameter
@@ -10121,6 +23419,40 @@ type IssuesListCommentsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListCommentsForRepoResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListCommentsForRepoResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  body: string;
+  user: IssuesListCommentsForRepoResponseDataItemUser;
+  created_at: string;
+  updated_at: string;
+};
+type IssuesListCommentsForRepoResponseData = Array<
+  IssuesListCommentsForRepoResponseDataItem
+>;
+
 type IssuesGetCommentEndpoint = {
   /**
    * owner parameter
@@ -10141,6 +23473,37 @@ type IssuesGetCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesGetCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  body: string;
+  user: IssuesGetCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type IssuesUpdateCommentEndpoint = {
   /**
    * owner parameter
@@ -10165,6 +23528,37 @@ type IssuesUpdateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesUpdateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  body: string;
+  user: IssuesUpdateCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type IssuesDeleteCommentEndpoint = {
   /**
    * owner parameter
@@ -10185,6 +23579,7 @@ type IssuesDeleteCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForIssueCommentEndpoint = {
   /**
    * owner parameter
@@ -10225,6 +23620,37 @@ type ReactionsListForIssueCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForIssueCommentResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForIssueCommentResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForIssueCommentResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForIssueCommentResponseData = Array<
+  ReactionsListForIssueCommentResponseDataItem
+>;
+
 type ReactionsCreateForIssueCommentEndpoint = {
   /**
    * owner parameter
@@ -10257,6 +23683,34 @@ type ReactionsCreateForIssueCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForIssueCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForIssueCommentResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForIssueCommentResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForIssueCommentEndpoint = {
   /**
    * owner parameter
@@ -10281,6 +23735,7 @@ type ReactionsDeleteForIssueCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListEventsForRepoEndpoint = {
   /**
    * owner parameter
@@ -10305,6 +23760,180 @@ type IssuesListEventsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListEventsForRepoResponseDataItemIssuePullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesListEventsForRepoResponseDataItemIssueMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForRepoResponseDataItemIssueMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListEventsForRepoResponseDataItemIssueMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListEventsForRepoResponseDataItemIssueAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForRepoResponseDataItemIssueAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForRepoResponseDataItemIssueLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListEventsForRepoResponseDataItemIssueUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForRepoResponseDataItemIssue = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesListEventsForRepoResponseDataItemIssueUser;
+  labels: Array<IssuesListEventsForRepoResponseDataItemIssueLabelsItem>;
+  assignee: IssuesListEventsForRepoResponseDataItemIssueAssignee;
+  assignees: Array<IssuesListEventsForRepoResponseDataItemIssueAssigneesItem>;
+  milestone: IssuesListEventsForRepoResponseDataItemIssueMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesListEventsForRepoResponseDataItemIssuePullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+};
+type IssuesListEventsForRepoResponseDataItemActor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForRepoResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  actor: IssuesListEventsForRepoResponseDataItemActor;
+  event: string;
+  commit_id: string;
+  commit_url: string;
+  created_at: string;
+  issue: IssuesListEventsForRepoResponseDataItemIssue;
+};
+type IssuesListEventsForRepoResponseData = Array<
+  IssuesListEventsForRepoResponseDataItem
+>;
+
 type IssuesGetEventEndpoint = {
   /**
    * owner parameter
@@ -10325,6 +23954,177 @@ type IssuesGetEventRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesGetEventResponseDataIssuePullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesGetEventResponseDataIssueMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetEventResponseDataIssueMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesGetEventResponseDataIssueMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesGetEventResponseDataIssueAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetEventResponseDataIssueAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetEventResponseDataIssueLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesGetEventResponseDataIssueUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetEventResponseDataIssue = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesGetEventResponseDataIssueUser;
+  labels: Array<IssuesGetEventResponseDataIssueLabelsItem>;
+  assignee: IssuesGetEventResponseDataIssueAssignee;
+  assignees: Array<IssuesGetEventResponseDataIssueAssigneesItem>;
+  milestone: IssuesGetEventResponseDataIssueMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesGetEventResponseDataIssuePullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+};
+type IssuesGetEventResponseDataActor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetEventResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  actor: IssuesGetEventResponseDataActor;
+  event: string;
+  commit_id: string;
+  commit_url: string;
+  created_at: string;
+  issue: IssuesGetEventResponseDataIssue;
+};
+
 type IssuesGetEndpoint = {
   /**
    * owner parameter
@@ -10345,6 +24145,167 @@ type IssuesGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesGetResponseDataClosedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetResponseDataPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesGetResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesGetResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesGetResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesGetResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesGetResponseDataUser;
+  labels: Array<IssuesGetResponseDataLabelsItem>;
+  assignee: IssuesGetResponseDataAssignee;
+  assignees: Array<IssuesGetResponseDataAssigneesItem>;
+  milestone: IssuesGetResponseDataMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesGetResponseDataPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  closed_by: IssuesGetResponseDataClosedBy;
+};
+
 type IssuesUpdateEndpoint = {
   /**
    * owner parameter
@@ -10393,6 +24354,167 @@ type IssuesUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesUpdateResponseDataClosedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateResponseDataPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesUpdateResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesUpdateResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesUpdateResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesUpdateResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesUpdateResponseDataUser;
+  labels: Array<IssuesUpdateResponseDataLabelsItem>;
+  assignee: IssuesUpdateResponseDataAssignee;
+  assignees: Array<IssuesUpdateResponseDataAssigneesItem>;
+  milestone: IssuesUpdateResponseDataMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesUpdateResponseDataPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  closed_by: IssuesUpdateResponseDataClosedBy;
+};
+
 type IssuesAddAssigneesEndpoint = {
   /**
    * owner parameter
@@ -10417,6 +24539,146 @@ type IssuesAddAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesAddAssigneesResponseDataPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesAddAssigneesResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesAddAssigneesResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesAddAssigneesResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesAddAssigneesResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesAddAssigneesResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesAddAssigneesResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesAddAssigneesResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesAddAssigneesResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesAddAssigneesResponseDataUser;
+  labels: Array<IssuesAddAssigneesResponseDataLabelsItem>;
+  assignee: IssuesAddAssigneesResponseDataAssignee;
+  assignees: Array<IssuesAddAssigneesResponseDataAssigneesItem>;
+  milestone: IssuesAddAssigneesResponseDataMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesAddAssigneesResponseDataPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+};
+
 type IssuesRemoveAssigneesEndpoint = {
   /**
    * owner parameter
@@ -10441,6 +24703,146 @@ type IssuesRemoveAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesRemoveAssigneesResponseDataPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesRemoveAssigneesResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesRemoveAssigneesResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesRemoveAssigneesResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesRemoveAssigneesResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesRemoveAssigneesResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesRemoveAssigneesResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesRemoveAssigneesResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesRemoveAssigneesResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesRemoveAssigneesResponseDataUser;
+  labels: Array<IssuesRemoveAssigneesResponseDataLabelsItem>;
+  assignee: IssuesRemoveAssigneesResponseDataAssignee;
+  assignees: Array<IssuesRemoveAssigneesResponseDataAssigneesItem>;
+  milestone: IssuesRemoveAssigneesResponseDataMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesRemoveAssigneesResponseDataPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+};
+
 type IssuesListCommentsEndpoint = {
   /**
    * owner parameter
@@ -10473,6 +24875,38 @@ type IssuesListCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListCommentsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListCommentsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  body: string;
+  user: IssuesListCommentsResponseDataItemUser;
+  created_at: string;
+  updated_at: string;
+};
+type IssuesListCommentsResponseData = Array<IssuesListCommentsResponseDataItem>;
+
 type IssuesCreateCommentEndpoint = {
   /**
    * owner parameter
@@ -10497,6 +24931,37 @@ type IssuesCreateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesCreateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateCommentResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  body: string;
+  user: IssuesCreateCommentResponseDataUser;
+  created_at: string;
+  updated_at: string;
+};
+
 type IssuesListEventsEndpoint = {
   /**
    * owner parameter
@@ -10525,6 +24990,38 @@ type IssuesListEventsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListEventsResponseDataItemActor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  actor: IssuesListEventsResponseDataItemActor;
+  event: string;
+  commit_id: string;
+  commit_url: string;
+  created_at: string;
+};
+type IssuesListEventsResponseData = Array<IssuesListEventsResponseDataItem>;
+
 type IssuesListLabelsOnIssueEndpoint = {
   /**
    * owner parameter
@@ -10553,6 +25050,19 @@ type IssuesListLabelsOnIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListLabelsOnIssueResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListLabelsOnIssueResponseData = Array<
+  IssuesListLabelsOnIssueResponseDataItem
+>;
+
 type IssuesAddLabelsEndpoint = {
   /**
    * owner parameter
@@ -10577,6 +25087,17 @@ type IssuesAddLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesAddLabelsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesAddLabelsResponseData = Array<IssuesAddLabelsResponseDataItem>;
+
 type IssuesReplaceAllLabelsEndpoint = {
   /**
    * owner parameter
@@ -10601,6 +25122,19 @@ type IssuesReplaceAllLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesReplaceAllLabelsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesReplaceAllLabelsResponseData = Array<
+  IssuesReplaceAllLabelsResponseDataItem
+>;
+
 type IssuesRemoveAllLabelsEndpoint = {
   /**
    * owner parameter
@@ -10621,6 +25155,7 @@ type IssuesRemoveAllLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesRemoveLabelEndpoint = {
   /**
    * owner parameter
@@ -10645,6 +25180,17 @@ type IssuesRemoveLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesRemoveLabelResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesRemoveLabelResponseData = Array<IssuesRemoveLabelResponseDataItem>;
+
 type IssuesLockEndpoint = {
   /**
    * owner parameter
@@ -10673,6 +25219,7 @@ type IssuesLockRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesUnlockEndpoint = {
   /**
    * owner parameter
@@ -10693,6 +25240,7 @@ type IssuesUnlockRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForIssueEndpoint = {
   /**
    * owner parameter
@@ -10733,6 +25281,37 @@ type ReactionsListForIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForIssueResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForIssueResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForIssueResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForIssueResponseData = Array<
+  ReactionsListForIssueResponseDataItem
+>;
+
 type ReactionsCreateForIssueEndpoint = {
   /**
    * owner parameter
@@ -10765,6 +25344,34 @@ type ReactionsCreateForIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForIssueResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForIssueResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForIssueResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForIssueEndpoint = {
   /**
    * owner parameter
@@ -10789,6 +25396,7 @@ type ReactionsDeleteForIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListEventsForTimelineEndpoint = {
   /**
    * owner parameter
@@ -10817,6 +25425,40 @@ type IssuesListEventsForTimelineRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListEventsForTimelineResponseDataItemActor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListEventsForTimelineResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  actor: IssuesListEventsForTimelineResponseDataItemActor;
+  event: string;
+  commit_id: string;
+  commit_url: string;
+  created_at: string;
+};
+type IssuesListEventsForTimelineResponseData = Array<
+  IssuesListEventsForTimelineResponseDataItem
+>;
+
 type ReposListDeployKeysEndpoint = {
   /**
    * owner parameter
@@ -10841,6 +25483,19 @@ type ReposListDeployKeysRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListDeployKeysResponseDataItem = {
+  id: number;
+  key: string;
+  url: string;
+  title: string;
+  verified: boolean;
+  created_at: string;
+  read_only: boolean;
+};
+type ReposListDeployKeysResponseData = Array<
+  ReposListDeployKeysResponseDataItem
+>;
+
 type ReposAddDeployKeyEndpoint = {
   /**
    * owner parameter
@@ -10871,6 +25526,16 @@ type ReposAddDeployKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposAddDeployKeyResponseData = {
+  id: number;
+  key: string;
+  url: string;
+  title: string;
+  verified: boolean;
+  created_at: string;
+  read_only: boolean;
+};
+
 type ReposGetDeployKeyEndpoint = {
   /**
    * owner parameter
@@ -10891,6 +25556,16 @@ type ReposGetDeployKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetDeployKeyResponseData = {
+  id: number;
+  key: string;
+  url: string;
+  title: string;
+  verified: boolean;
+  created_at: string;
+  read_only: boolean;
+};
+
 type ReposRemoveDeployKeyEndpoint = {
   /**
    * owner parameter
@@ -10911,6 +25586,7 @@ type ReposRemoveDeployKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListLabelsForRepoEndpoint = {
   /**
    * owner parameter
@@ -10935,6 +25611,19 @@ type IssuesListLabelsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListLabelsForRepoResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListLabelsForRepoResponseData = Array<
+  IssuesListLabelsForRepoResponseDataItem
+>;
+
 type IssuesCreateLabelEndpoint = {
   /**
    * owner parameter
@@ -10963,6 +25652,16 @@ type IssuesCreateLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesCreateLabelResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+
 type IssuesGetLabelEndpoint = {
   /**
    * owner parameter
@@ -10983,6 +25682,16 @@ type IssuesGetLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesGetLabelResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+
 type IssuesUpdateLabelEndpoint = {
   /**
    * owner parameter
@@ -11015,6 +25724,16 @@ type IssuesUpdateLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesUpdateLabelResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+
 type IssuesDeleteLabelEndpoint = {
   /**
    * owner parameter
@@ -11035,6 +25754,7 @@ type IssuesDeleteLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListLanguagesEndpoint = {
   /**
    * owner parameter
@@ -11051,6 +25771,8 @@ type ReposListLanguagesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListLanguagesResponseData = { C: number; Python: number };
+
 type LicensesGetForRepoEndpoint = {
   /**
    * owner parameter
@@ -11067,6 +25789,34 @@ type LicensesGetForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type LicensesGetForRepoResponseDataLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type LicensesGetForRepoResponseDataLinks = {
+  self: string;
+  git: string;
+  html: string;
+};
+type LicensesGetForRepoResponseData = {
+  name: string;
+  path: string;
+  sha: string;
+  size: number;
+  url: string;
+  html_url: string;
+  git_url: string;
+  download_url: string;
+  type: string;
+  content: string;
+  encoding: string;
+  _links: LicensesGetForRepoResponseDataLinks;
+  license: LicensesGetForRepoResponseDataLicense;
+};
+
 type ReposMergeEndpoint = {
   /**
    * owner parameter
@@ -11095,6 +25845,85 @@ type ReposMergeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposMergeResponseDataParentsItem = { sha: string; url: string };
+type ReposMergeResponseDataCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposMergeResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposMergeResponseDataCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type ReposMergeResponseDataCommitTree = { sha: string; url: string };
+type ReposMergeResponseDataCommitCommitter = {
+  name: string;
+  date: string;
+  email: string;
+};
+type ReposMergeResponseDataCommitAuthor = {
+  name: string;
+  date: string;
+  email: string;
+};
+type ReposMergeResponseDataCommit = {
+  author: ReposMergeResponseDataCommitAuthor;
+  committer: ReposMergeResponseDataCommitCommitter;
+  message: string;
+  tree: ReposMergeResponseDataCommitTree;
+  url: string;
+  comment_count: number;
+  verification: ReposMergeResponseDataCommitVerification;
+};
+type ReposMergeResponseData = {
+  sha: string;
+  node_id: string;
+  commit: ReposMergeResponseDataCommit;
+  url: string;
+  html_url: string;
+  comments_url: string;
+  author: ReposMergeResponseDataAuthor;
+  committer: ReposMergeResponseDataCommitter;
+  parents: Array<ReposMergeResponseDataParentsItem>;
+};
+
 type IssuesListMilestonesForRepoEndpoint = {
   /**
    * owner parameter
@@ -11131,6 +25960,48 @@ type IssuesListMilestonesForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListMilestonesForRepoResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListMilestonesForRepoResponseDataItem = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListMilestonesForRepoResponseDataItemCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListMilestonesForRepoResponseData = Array<
+  IssuesListMilestonesForRepoResponseDataItem
+>;
+
 type IssuesCreateMilestoneEndpoint = {
   /**
    * owner parameter
@@ -11163,6 +26034,45 @@ type IssuesCreateMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesCreateMilestoneResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesCreateMilestoneResponseData = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesCreateMilestoneResponseDataCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+
 type IssuesGetMilestoneEndpoint = {
   /**
    * owner parameter
@@ -11183,6 +26093,45 @@ type IssuesGetMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesGetMilestoneResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesGetMilestoneResponseData = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesGetMilestoneResponseDataCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+
 type IssuesUpdateMilestoneEndpoint = {
   /**
    * owner parameter
@@ -11219,6 +26168,45 @@ type IssuesUpdateMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesUpdateMilestoneResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesUpdateMilestoneResponseData = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesUpdateMilestoneResponseDataCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+
 type IssuesDeleteMilestoneEndpoint = {
   /**
    * owner parameter
@@ -11239,6 +26227,7 @@ type IssuesDeleteMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListLabelsForMilestoneEndpoint = {
   /**
    * owner parameter
@@ -11267,6 +26256,19 @@ type IssuesListLabelsForMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListLabelsForMilestoneResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListLabelsForMilestoneResponseData = Array<
+  IssuesListLabelsForMilestoneResponseDataItem
+>;
+
 type ActivityListRepoNotificationsForAuthenticatedUserEndpoint = {
   /**
    * owner parameter
@@ -11307,6 +26309,95 @@ type ActivityListRepoNotificationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemSubject = {
+  title: string;
+  url: string;
+  latest_comment_url: string;
+  type: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseDataItem = {
+  id: string;
+  repository: ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemRepository;
+  subject: ActivityListRepoNotificationsForAuthenticatedUserResponseDataItemSubject;
+  reason: string;
+  unread: boolean;
+  updated_at: string;
+  last_read_at: string;
+  url: string;
+};
+type ActivityListRepoNotificationsForAuthenticatedUserResponseData = Array<
+  ActivityListRepoNotificationsForAuthenticatedUserResponseDataItem
+>;
+
 type ActivityMarkRepoNotificationsAsReadEndpoint = {
   /**
    * owner parameter
@@ -11327,6 +26418,7 @@ type ActivityMarkRepoNotificationsAsReadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetPagesEndpoint = {
   /**
    * owner parameter
@@ -11343,6 +26435,16 @@ type ReposGetPagesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetPagesResponseDataSource = { branch: string; directory: string };
+type ReposGetPagesResponseData = {
+  url: string;
+  status: string;
+  cname: string;
+  custom_404: boolean;
+  html_url: string;
+  source: ReposGetPagesResponseDataSource;
+};
+
 type ReposEnablePagesSiteEndpoint = {
   /**
    * owner parameter
@@ -11363,6 +26465,19 @@ type ReposEnablePagesSiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposEnablePagesSiteResponseDataSource = {
+  branch: string;
+  directory: string;
+};
+type ReposEnablePagesSiteResponseData = {
+  url: string;
+  status: string;
+  cname: string;
+  custom_404: boolean;
+  html_url: string;
+  source: ReposEnablePagesSiteResponseDataSource;
+};
+
 type ReposDisablePagesSiteEndpoint = {
   /**
    * owner parameter
@@ -11379,6 +26494,7 @@ type ReposDisablePagesSiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposUpdateInformationAboutPagesSiteEndpoint = {
   /**
    * owner parameter
@@ -11403,6 +26519,7 @@ type ReposUpdateInformationAboutPagesSiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposRequestPageBuildEndpoint = {
   /**
    * owner parameter
@@ -11419,6 +26536,8 @@ type ReposRequestPageBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposRequestPageBuildResponseData = { url: string; status: string };
+
 type ReposListPagesBuildsEndpoint = {
   /**
    * owner parameter
@@ -11443,6 +26562,41 @@ type ReposListPagesBuildsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListPagesBuildsResponseDataItemPusher = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPagesBuildsResponseDataItemError = { message: null };
+type ReposListPagesBuildsResponseDataItem = {
+  url: string;
+  status: string;
+  error: ReposListPagesBuildsResponseDataItemError;
+  pusher: ReposListPagesBuildsResponseDataItemPusher;
+  commit: string;
+  duration: number;
+  created_at: string;
+  updated_at: string;
+};
+type ReposListPagesBuildsResponseData = Array<
+  ReposListPagesBuildsResponseDataItem
+>;
+
 type ReposGetLatestPagesBuildEndpoint = {
   /**
    * owner parameter
@@ -11459,6 +26613,38 @@ type ReposGetLatestPagesBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetLatestPagesBuildResponseDataPusher = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetLatestPagesBuildResponseDataError = { message: null };
+type ReposGetLatestPagesBuildResponseData = {
+  url: string;
+  status: string;
+  error: ReposGetLatestPagesBuildResponseDataError;
+  pusher: ReposGetLatestPagesBuildResponseDataPusher;
+  commit: string;
+  duration: number;
+  created_at: string;
+  updated_at: string;
+};
+
 type ReposGetPagesBuildEndpoint = {
   /**
    * owner parameter
@@ -11479,6 +26665,38 @@ type ReposGetPagesBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetPagesBuildResponseDataPusher = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetPagesBuildResponseDataError = { message: null };
+type ReposGetPagesBuildResponseData = {
+  url: string;
+  status: string;
+  error: ReposGetPagesBuildResponseDataError;
+  pusher: ReposGetPagesBuildResponseDataPusher;
+  commit: string;
+  duration: number;
+  created_at: string;
+  updated_at: string;
+};
+
 type ProjectsListForRepoEndpoint = {
   /**
    * owner parameter
@@ -11507,6 +26725,45 @@ type ProjectsListForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListForRepoResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsListForRepoResponseDataItem = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsListForRepoResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+};
+type ProjectsListForRepoResponseData = Array<
+  ProjectsListForRepoResponseDataItem
+>;
+
 type ProjectsCreateForRepoEndpoint = {
   /**
    * owner parameter
@@ -11531,6 +26788,42 @@ type ProjectsCreateForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsCreateForRepoResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsCreateForRepoResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsCreateForRepoResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+};
+
 type PullsListEndpoint = {
   /**
    * owner parameter
@@ -11575,6 +26868,472 @@ type PullsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListResponseDataItemLinksStatuses = { href: string };
+type PullsListResponseDataItemLinksCommits = { href: string };
+type PullsListResponseDataItemLinksReviewComment = { href: string };
+type PullsListResponseDataItemLinksReviewComments = { href: string };
+type PullsListResponseDataItemLinksComments = { href: string };
+type PullsListResponseDataItemLinksIssue = { href: string };
+type PullsListResponseDataItemLinksHtml = { href: string };
+type PullsListResponseDataItemLinksSelf = { href: string };
+type PullsListResponseDataItemLinks = {
+  self: PullsListResponseDataItemLinksSelf;
+  html: PullsListResponseDataItemLinksHtml;
+  issue: PullsListResponseDataItemLinksIssue;
+  comments: PullsListResponseDataItemLinksComments;
+  review_comments: PullsListResponseDataItemLinksReviewComments;
+  review_comment: PullsListResponseDataItemLinksReviewComment;
+  commits: PullsListResponseDataItemLinksCommits;
+  statuses: PullsListResponseDataItemLinksStatuses;
+};
+type PullsListResponseDataItemBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsListResponseDataItemBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsListResponseDataItemBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsListResponseDataItemBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsListResponseDataItemBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsListResponseDataItemBaseUser;
+  repo: PullsListResponseDataItemBaseRepo;
+};
+type PullsListResponseDataItemHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsListResponseDataItemHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsListResponseDataItemHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsListResponseDataItemHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsListResponseDataItemHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsListResponseDataItemHeadUser;
+  repo: PullsListResponseDataItemHeadRepo;
+};
+type PullsListResponseDataItemRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsListResponseDataItemRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: PullsListResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type PullsListResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type PullsListResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: PullsListResponseDataItemUser;
+  body: string;
+  labels: Array<PullsListResponseDataItemLabelsItem>;
+  milestone: PullsListResponseDataItemMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: PullsListResponseDataItemAssignee;
+  assignees: Array<PullsListResponseDataItemAssigneesItem>;
+  requested_reviewers: Array<PullsListResponseDataItemRequestedReviewersItem>;
+  requested_teams: Array<PullsListResponseDataItemRequestedTeamsItem>;
+  head: PullsListResponseDataItemHead;
+  base: PullsListResponseDataItemBase;
+  _links: PullsListResponseDataItemLinks;
+  author_association: string;
+  draft: boolean;
+};
+type PullsListResponseData = Array<PullsListResponseDataItem>;
+
 type PullsCreateEndpoint = {
   /**
    * owner parameter
@@ -11615,6 +27374,503 @@ type PullsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsCreateResponseDataMergedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataLinksStatuses = { href: string };
+type PullsCreateResponseDataLinksCommits = { href: string };
+type PullsCreateResponseDataLinksReviewComment = { href: string };
+type PullsCreateResponseDataLinksReviewComments = { href: string };
+type PullsCreateResponseDataLinksComments = { href: string };
+type PullsCreateResponseDataLinksIssue = { href: string };
+type PullsCreateResponseDataLinksHtml = { href: string };
+type PullsCreateResponseDataLinksSelf = { href: string };
+type PullsCreateResponseDataLinks = {
+  self: PullsCreateResponseDataLinksSelf;
+  html: PullsCreateResponseDataLinksHtml;
+  issue: PullsCreateResponseDataLinksIssue;
+  comments: PullsCreateResponseDataLinksComments;
+  review_comments: PullsCreateResponseDataLinksReviewComments;
+  review_comment: PullsCreateResponseDataLinksReviewComment;
+  commits: PullsCreateResponseDataLinksCommits;
+  statuses: PullsCreateResponseDataLinksStatuses;
+};
+type PullsCreateResponseDataBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsCreateResponseDataBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsCreateResponseDataBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsCreateResponseDataBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsCreateResponseDataBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsCreateResponseDataBaseUser;
+  repo: PullsCreateResponseDataBaseRepo;
+};
+type PullsCreateResponseDataHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsCreateResponseDataHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsCreateResponseDataHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsCreateResponseDataHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsCreateResponseDataHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsCreateResponseDataHeadUser;
+  repo: PullsCreateResponseDataHeadRepo;
+};
+type PullsCreateResponseDataRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsCreateResponseDataRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: PullsCreateResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type PullsCreateResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type PullsCreateResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: PullsCreateResponseDataUser;
+  body: string;
+  labels: Array<PullsCreateResponseDataLabelsItem>;
+  milestone: PullsCreateResponseDataMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: PullsCreateResponseDataAssignee;
+  assignees: Array<PullsCreateResponseDataAssigneesItem>;
+  requested_reviewers: Array<PullsCreateResponseDataRequestedReviewersItem>;
+  requested_teams: Array<PullsCreateResponseDataRequestedTeamsItem>;
+  head: PullsCreateResponseDataHead;
+  base: PullsCreateResponseDataBase;
+  _links: PullsCreateResponseDataLinks;
+  author_association: string;
+  draft: boolean;
+  merged: boolean;
+  mergeable: boolean;
+  rebaseable: boolean;
+  mergeable_state: string;
+  merged_by: PullsCreateResponseDataMergedBy;
+  comments: number;
+  review_comments: number;
+  maintainer_can_modify: boolean;
+  commits: number;
+  additions: number;
+  deletions: number;
+  changed_files: number;
+};
+
 type PullsListCommentsForRepoEndpoint = {
   /**
    * owner parameter
@@ -11651,6 +27907,67 @@ type PullsListCommentsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListCommentsForRepoResponseDataItemLinksPullRequest = {
+  href: string;
+};
+type PullsListCommentsForRepoResponseDataItemLinksHtml = { href: string };
+type PullsListCommentsForRepoResponseDataItemLinksSelf = { href: string };
+type PullsListCommentsForRepoResponseDataItemLinks = {
+  self: PullsListCommentsForRepoResponseDataItemLinksSelf;
+  html: PullsListCommentsForRepoResponseDataItemLinksHtml;
+  pull_request: PullsListCommentsForRepoResponseDataItemLinksPullRequest;
+};
+type PullsListCommentsForRepoResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListCommentsForRepoResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsListCommentsForRepoResponseDataItemUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsListCommentsForRepoResponseDataItemLinks;
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
+};
+type PullsListCommentsForRepoResponseData = Array<
+  PullsListCommentsForRepoResponseDataItem
+>;
+
 type PullsGetCommentEndpoint = {
   /**
    * owner parameter
@@ -11671,6 +27988,62 @@ type PullsGetCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsGetCommentResponseDataLinksPullRequest = { href: string };
+type PullsGetCommentResponseDataLinksHtml = { href: string };
+type PullsGetCommentResponseDataLinksSelf = { href: string };
+type PullsGetCommentResponseDataLinks = {
+  self: PullsGetCommentResponseDataLinksSelf;
+  html: PullsGetCommentResponseDataLinksHtml;
+  pull_request: PullsGetCommentResponseDataLinksPullRequest;
+};
+type PullsGetCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetCommentResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsGetCommentResponseDataUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsGetCommentResponseDataLinks;
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
+};
+
 type PullsUpdateCommentEndpoint = {
   /**
    * owner parameter
@@ -11695,6 +28068,62 @@ type PullsUpdateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsUpdateCommentResponseDataLinksPullRequest = { href: string };
+type PullsUpdateCommentResponseDataLinksHtml = { href: string };
+type PullsUpdateCommentResponseDataLinksSelf = { href: string };
+type PullsUpdateCommentResponseDataLinks = {
+  self: PullsUpdateCommentResponseDataLinksSelf;
+  html: PullsUpdateCommentResponseDataLinksHtml;
+  pull_request: PullsUpdateCommentResponseDataLinksPullRequest;
+};
+type PullsUpdateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateCommentResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsUpdateCommentResponseDataUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsUpdateCommentResponseDataLinks;
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
+};
+
 type PullsDeleteCommentEndpoint = {
   /**
    * owner parameter
@@ -11715,6 +28144,7 @@ type PullsDeleteCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForPullRequestReviewCommentEndpoint = {
   /**
    * owner parameter
@@ -11755,6 +28185,37 @@ type ReactionsListForPullRequestReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForPullRequestReviewCommentResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForPullRequestReviewCommentResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForPullRequestReviewCommentResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForPullRequestReviewCommentResponseData = Array<
+  ReactionsListForPullRequestReviewCommentResponseDataItem
+>;
+
 type ReactionsCreateForPullRequestReviewCommentEndpoint = {
   /**
    * owner parameter
@@ -11787,6 +28248,34 @@ type ReactionsCreateForPullRequestReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForPullRequestReviewCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForPullRequestReviewCommentResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForPullRequestReviewCommentResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsDeleteForPullRequestCommentEndpoint = {
   /**
    * owner parameter
@@ -11811,6 +28300,7 @@ type ReactionsDeleteForPullRequestCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type PullsGetEndpoint = {
   /**
    * owner parameter
@@ -11831,6 +28321,503 @@ type PullsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsGetResponseDataMergedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataLinksStatuses = { href: string };
+type PullsGetResponseDataLinksCommits = { href: string };
+type PullsGetResponseDataLinksReviewComment = { href: string };
+type PullsGetResponseDataLinksReviewComments = { href: string };
+type PullsGetResponseDataLinksComments = { href: string };
+type PullsGetResponseDataLinksIssue = { href: string };
+type PullsGetResponseDataLinksHtml = { href: string };
+type PullsGetResponseDataLinksSelf = { href: string };
+type PullsGetResponseDataLinks = {
+  self: PullsGetResponseDataLinksSelf;
+  html: PullsGetResponseDataLinksHtml;
+  issue: PullsGetResponseDataLinksIssue;
+  comments: PullsGetResponseDataLinksComments;
+  review_comments: PullsGetResponseDataLinksReviewComments;
+  review_comment: PullsGetResponseDataLinksReviewComment;
+  commits: PullsGetResponseDataLinksCommits;
+  statuses: PullsGetResponseDataLinksStatuses;
+};
+type PullsGetResponseDataBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsGetResponseDataBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsGetResponseDataBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsGetResponseDataBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsGetResponseDataBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsGetResponseDataBaseUser;
+  repo: PullsGetResponseDataBaseRepo;
+};
+type PullsGetResponseDataHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsGetResponseDataHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsGetResponseDataHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsGetResponseDataHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsGetResponseDataHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsGetResponseDataHeadUser;
+  repo: PullsGetResponseDataHeadRepo;
+};
+type PullsGetResponseDataRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsGetResponseDataRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: PullsGetResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type PullsGetResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type PullsGetResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: PullsGetResponseDataUser;
+  body: string;
+  labels: Array<PullsGetResponseDataLabelsItem>;
+  milestone: PullsGetResponseDataMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: PullsGetResponseDataAssignee;
+  assignees: Array<PullsGetResponseDataAssigneesItem>;
+  requested_reviewers: Array<PullsGetResponseDataRequestedReviewersItem>;
+  requested_teams: Array<PullsGetResponseDataRequestedTeamsItem>;
+  head: PullsGetResponseDataHead;
+  base: PullsGetResponseDataBase;
+  _links: PullsGetResponseDataLinks;
+  author_association: string;
+  draft: boolean;
+  merged: boolean;
+  mergeable: boolean;
+  rebaseable: boolean;
+  mergeable_state: string;
+  merged_by: PullsGetResponseDataMergedBy;
+  comments: number;
+  review_comments: number;
+  maintainer_can_modify: boolean;
+  commits: number;
+  additions: number;
+  deletions: number;
+  changed_files: number;
+};
+
 type PullsUpdateEndpoint = {
   /**
    * owner parameter
@@ -11871,6 +28858,503 @@ type PullsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsUpdateResponseDataMergedBy = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataLinksStatuses = { href: string };
+type PullsUpdateResponseDataLinksCommits = { href: string };
+type PullsUpdateResponseDataLinksReviewComment = { href: string };
+type PullsUpdateResponseDataLinksReviewComments = { href: string };
+type PullsUpdateResponseDataLinksComments = { href: string };
+type PullsUpdateResponseDataLinksIssue = { href: string };
+type PullsUpdateResponseDataLinksHtml = { href: string };
+type PullsUpdateResponseDataLinksSelf = { href: string };
+type PullsUpdateResponseDataLinks = {
+  self: PullsUpdateResponseDataLinksSelf;
+  html: PullsUpdateResponseDataLinksHtml;
+  issue: PullsUpdateResponseDataLinksIssue;
+  comments: PullsUpdateResponseDataLinksComments;
+  review_comments: PullsUpdateResponseDataLinksReviewComments;
+  review_comment: PullsUpdateResponseDataLinksReviewComment;
+  commits: PullsUpdateResponseDataLinksCommits;
+  statuses: PullsUpdateResponseDataLinksStatuses;
+};
+type PullsUpdateResponseDataBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsUpdateResponseDataBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsUpdateResponseDataBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsUpdateResponseDataBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsUpdateResponseDataBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsUpdateResponseDataBaseUser;
+  repo: PullsUpdateResponseDataBaseRepo;
+};
+type PullsUpdateResponseDataHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsUpdateResponseDataHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsUpdateResponseDataHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsUpdateResponseDataHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsUpdateResponseDataHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsUpdateResponseDataHeadUser;
+  repo: PullsUpdateResponseDataHeadRepo;
+};
+type PullsUpdateResponseDataRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsUpdateResponseDataRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: PullsUpdateResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type PullsUpdateResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type PullsUpdateResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: PullsUpdateResponseDataUser;
+  body: string;
+  labels: Array<PullsUpdateResponseDataLabelsItem>;
+  milestone: PullsUpdateResponseDataMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: PullsUpdateResponseDataAssignee;
+  assignees: Array<PullsUpdateResponseDataAssigneesItem>;
+  requested_reviewers: Array<PullsUpdateResponseDataRequestedReviewersItem>;
+  requested_teams: Array<PullsUpdateResponseDataRequestedTeamsItem>;
+  head: PullsUpdateResponseDataHead;
+  base: PullsUpdateResponseDataBase;
+  _links: PullsUpdateResponseDataLinks;
+  author_association: string;
+  draft: boolean;
+  merged: boolean;
+  mergeable: boolean;
+  rebaseable: boolean;
+  mergeable_state: string;
+  merged_by: PullsUpdateResponseDataMergedBy;
+  comments: number;
+  review_comments: number;
+  maintainer_can_modify: boolean;
+  commits: number;
+  additions: number;
+  deletions: number;
+  changed_files: number;
+};
+
 type PullsListCommentsEndpoint = {
   /**
    * owner parameter
@@ -11911,6 +29395,63 @@ type PullsListCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListCommentsResponseDataItemLinksPullRequest = { href: string };
+type PullsListCommentsResponseDataItemLinksHtml = { href: string };
+type PullsListCommentsResponseDataItemLinksSelf = { href: string };
+type PullsListCommentsResponseDataItemLinks = {
+  self: PullsListCommentsResponseDataItemLinksSelf;
+  html: PullsListCommentsResponseDataItemLinksHtml;
+  pull_request: PullsListCommentsResponseDataItemLinksPullRequest;
+};
+type PullsListCommentsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListCommentsResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsListCommentsResponseDataItemUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsListCommentsResponseDataItemLinks;
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
+};
+type PullsListCommentsResponseData = Array<PullsListCommentsResponseDataItem>;
+
 type PullsCreateCommentEndpoint = {
   /**
    * owner parameter
@@ -11963,6 +29504,62 @@ type PullsCreateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsCreateCommentResponseDataLinksPullRequest = { href: string };
+type PullsCreateCommentResponseDataLinksHtml = { href: string };
+type PullsCreateCommentResponseDataLinksSelf = { href: string };
+type PullsCreateCommentResponseDataLinks = {
+  self: PullsCreateCommentResponseDataLinksSelf;
+  html: PullsCreateCommentResponseDataLinksHtml;
+  pull_request: PullsCreateCommentResponseDataLinksPullRequest;
+};
+type PullsCreateCommentResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateCommentResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsCreateCommentResponseDataUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsCreateCommentResponseDataLinks;
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
+};
+
 type PullsCreateReviewCommentReplyEndpoint = {
   /**
    * owner parameter
@@ -11991,6 +29588,57 @@ type PullsCreateReviewCommentReplyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsCreateReviewCommentReplyResponseDataLinksPullRequest = {
+  href: string;
+};
+type PullsCreateReviewCommentReplyResponseDataLinksHtml = { href: string };
+type PullsCreateReviewCommentReplyResponseDataLinksSelf = { href: string };
+type PullsCreateReviewCommentReplyResponseDataLinks = {
+  self: PullsCreateReviewCommentReplyResponseDataLinksSelf;
+  html: PullsCreateReviewCommentReplyResponseDataLinksHtml;
+  pull_request: PullsCreateReviewCommentReplyResponseDataLinksPullRequest;
+};
+type PullsCreateReviewCommentReplyResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewCommentReplyResponseData = {
+  url: string;
+  pull_request_review_id: number;
+  id: number;
+  node_id: string;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  user: PullsCreateReviewCommentReplyResponseDataUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsCreateReviewCommentReplyResponseDataLinks;
+};
+
 type PullsListCommitsEndpoint = {
   /**
    * owner parameter
@@ -12019,6 +29667,86 @@ type PullsListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListCommitsResponseDataItemParentsItem = { url: string; sha: string };
+type PullsListCommitsResponseDataItemCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListCommitsResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListCommitsResponseDataItemCommitVerification = {
+  verified: boolean;
+  reason: string;
+  signature: null;
+  payload: null;
+};
+type PullsListCommitsResponseDataItemCommitTree = { url: string; sha: string };
+type PullsListCommitsResponseDataItemCommitCommitter = {
+  name: string;
+  email: string;
+  date: string;
+};
+type PullsListCommitsResponseDataItemCommitAuthor = {
+  name: string;
+  email: string;
+  date: string;
+};
+type PullsListCommitsResponseDataItemCommit = {
+  url: string;
+  author: PullsListCommitsResponseDataItemCommitAuthor;
+  committer: PullsListCommitsResponseDataItemCommitCommitter;
+  message: string;
+  tree: PullsListCommitsResponseDataItemCommitTree;
+  comment_count: number;
+  verification: PullsListCommitsResponseDataItemCommitVerification;
+};
+type PullsListCommitsResponseDataItem = {
+  url: string;
+  sha: string;
+  node_id: string;
+  html_url: string;
+  comments_url: string;
+  commit: PullsListCommitsResponseDataItemCommit;
+  author: PullsListCommitsResponseDataItemAuthor;
+  committer: PullsListCommitsResponseDataItemCommitter;
+  parents: Array<PullsListCommitsResponseDataItemParentsItem>;
+};
+type PullsListCommitsResponseData = Array<PullsListCommitsResponseDataItem>;
+
 type PullsListFilesEndpoint = {
   /**
    * owner parameter
@@ -12047,6 +29775,20 @@ type PullsListFilesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListFilesResponseDataItem = {
+  sha: string;
+  filename: string;
+  status: string;
+  additions: number;
+  deletions: number;
+  changes: number;
+  blob_url: string;
+  raw_url: string;
+  contents_url: string;
+  patch: string;
+};
+type PullsListFilesResponseData = Array<PullsListFilesResponseDataItem>;
+
 type PullsCheckIfMergedEndpoint = {
   /**
    * owner parameter
@@ -12067,6 +29809,7 @@ type PullsCheckIfMergedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type PullsMergeEndpoint = {
   /**
    * owner parameter
@@ -12103,6 +29846,8 @@ type PullsMergeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsMergeResponseData = { sha: string; merged: boolean; message: string };
+
 type PullsListReviewRequestsEndpoint = {
   /**
    * owner parameter
@@ -12131,6 +29876,45 @@ type PullsListReviewRequestsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListReviewRequestsResponseDataTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsListReviewRequestsResponseDataUsersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListReviewRequestsResponseData = {
+  users: Array<PullsListReviewRequestsResponseDataUsersItem>;
+  teams: Array<PullsListReviewRequestsResponseDataTeamsItem>;
+};
+
 type PullsCreateReviewRequestEndpoint = {
   /**
    * owner parameter
@@ -12159,6 +29943,475 @@ type PullsCreateReviewRequestRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsCreateReviewRequestResponseDataLinksStatuses = { href: string };
+type PullsCreateReviewRequestResponseDataLinksCommits = { href: string };
+type PullsCreateReviewRequestResponseDataLinksReviewComment = { href: string };
+type PullsCreateReviewRequestResponseDataLinksReviewComments = { href: string };
+type PullsCreateReviewRequestResponseDataLinksComments = { href: string };
+type PullsCreateReviewRequestResponseDataLinksIssue = { href: string };
+type PullsCreateReviewRequestResponseDataLinksHtml = { href: string };
+type PullsCreateReviewRequestResponseDataLinksSelf = { href: string };
+type PullsCreateReviewRequestResponseDataLinks = {
+  self: PullsCreateReviewRequestResponseDataLinksSelf;
+  html: PullsCreateReviewRequestResponseDataLinksHtml;
+  issue: PullsCreateReviewRequestResponseDataLinksIssue;
+  comments: PullsCreateReviewRequestResponseDataLinksComments;
+  review_comments: PullsCreateReviewRequestResponseDataLinksReviewComments;
+  review_comment: PullsCreateReviewRequestResponseDataLinksReviewComment;
+  commits: PullsCreateReviewRequestResponseDataLinksCommits;
+  statuses: PullsCreateReviewRequestResponseDataLinksStatuses;
+};
+type PullsCreateReviewRequestResponseDataBaseRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsCreateReviewRequestResponseDataBaseRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataBaseRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsCreateReviewRequestResponseDataBaseRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsCreateReviewRequestResponseDataBaseRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsCreateReviewRequestResponseDataBaseUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataBase = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsCreateReviewRequestResponseDataBaseUser;
+  repo: PullsCreateReviewRequestResponseDataBaseRepo;
+};
+type PullsCreateReviewRequestResponseDataHeadRepoPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type PullsCreateReviewRequestResponseDataHeadRepoOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataHeadRepo = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: PullsCreateReviewRequestResponseDataHeadRepoOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: PullsCreateReviewRequestResponseDataHeadRepoPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type PullsCreateReviewRequestResponseDataHeadUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataHead = {
+  label: string;
+  ref: string;
+  sha: string;
+  user: PullsCreateReviewRequestResponseDataHeadUser;
+  repo: PullsCreateReviewRequestResponseDataHeadRepo;
+};
+type PullsCreateReviewRequestResponseDataRequestedTeamsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type PullsCreateReviewRequestResponseDataRequestedReviewersItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseDataMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: PullsCreateReviewRequestResponseDataMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type PullsCreateReviewRequestResponseDataLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type PullsCreateReviewRequestResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewRequestResponseData = {
+  url: string;
+  id: number;
+  node_id: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+  issue_url: string;
+  commits_url: string;
+  review_comments_url: string;
+  review_comment_url: string;
+  comments_url: string;
+  statuses_url: string;
+  number: number;
+  state: string;
+  locked: boolean;
+  title: string;
+  user: PullsCreateReviewRequestResponseDataUser;
+  body: string;
+  labels: Array<PullsCreateReviewRequestResponseDataLabelsItem>;
+  milestone: PullsCreateReviewRequestResponseDataMilestone;
+  active_lock_reason: string;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  merged_at: string;
+  merge_commit_sha: string;
+  assignee: PullsCreateReviewRequestResponseDataAssignee;
+  assignees: Array<PullsCreateReviewRequestResponseDataAssigneesItem>;
+  requested_reviewers: Array<
+    PullsCreateReviewRequestResponseDataRequestedReviewersItem
+  >;
+  requested_teams: Array<
+    PullsCreateReviewRequestResponseDataRequestedTeamsItem
+  >;
+  head: PullsCreateReviewRequestResponseDataHead;
+  base: PullsCreateReviewRequestResponseDataBase;
+  _links: PullsCreateReviewRequestResponseDataLinks;
+  author_association: string;
+  draft: boolean;
+};
+
 type PullsDeleteReviewRequestEndpoint = {
   /**
    * owner parameter
@@ -12187,6 +30440,7 @@ type PullsDeleteReviewRequestRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type PullsListReviewsEndpoint = {
   /**
    * owner parameter
@@ -12215,6 +30469,46 @@ type PullsListReviewsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsListReviewsResponseDataItemLinksPullRequest = { href: string };
+type PullsListReviewsResponseDataItemLinksHtml = { href: string };
+type PullsListReviewsResponseDataItemLinks = {
+  html: PullsListReviewsResponseDataItemLinksHtml;
+  pull_request: PullsListReviewsResponseDataItemLinksPullRequest;
+};
+type PullsListReviewsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsListReviewsResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: PullsListReviewsResponseDataItemUser;
+  body: string;
+  submitted_at: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsListReviewsResponseDataItemLinks;
+};
+type PullsListReviewsResponseData = Array<PullsListReviewsResponseDataItem>;
+
 type PullsCreateReviewEndpoint = {
   /**
    * owner parameter
@@ -12251,6 +30545,44 @@ type PullsCreateReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsCreateReviewResponseDataLinksPullRequest = { href: string };
+type PullsCreateReviewResponseDataLinksHtml = { href: string };
+type PullsCreateReviewResponseDataLinks = {
+  html: PullsCreateReviewResponseDataLinksHtml;
+  pull_request: PullsCreateReviewResponseDataLinksPullRequest;
+};
+type PullsCreateReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsCreateReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsCreateReviewResponseDataUser;
+  body: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsCreateReviewResponseDataLinks;
+};
+
 type PullsGetReviewEndpoint = {
   /**
    * owner parameter
@@ -12275,6 +30607,45 @@ type PullsGetReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsGetReviewResponseDataLinksPullRequest = { href: string };
+type PullsGetReviewResponseDataLinksHtml = { href: string };
+type PullsGetReviewResponseDataLinks = {
+  html: PullsGetReviewResponseDataLinksHtml;
+  pull_request: PullsGetReviewResponseDataLinksPullRequest;
+};
+type PullsGetReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsGetReviewResponseDataUser;
+  body: string;
+  submitted_at: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsGetReviewResponseDataLinks;
+};
+
 type PullsDeletePendingReviewEndpoint = {
   /**
    * owner parameter
@@ -12299,6 +30670,44 @@ type PullsDeletePendingReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsDeletePendingReviewResponseDataLinksPullRequest = { href: string };
+type PullsDeletePendingReviewResponseDataLinksHtml = { href: string };
+type PullsDeletePendingReviewResponseDataLinks = {
+  html: PullsDeletePendingReviewResponseDataLinksHtml;
+  pull_request: PullsDeletePendingReviewResponseDataLinksPullRequest;
+};
+type PullsDeletePendingReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsDeletePendingReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsDeletePendingReviewResponseDataUser;
+  body: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsDeletePendingReviewResponseDataLinks;
+};
+
 type PullsUpdateReviewEndpoint = {
   /**
    * owner parameter
@@ -12327,6 +30736,44 @@ type PullsUpdateReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsUpdateReviewResponseDataLinksPullRequest = { href: string };
+type PullsUpdateReviewResponseDataLinksHtml = { href: string };
+type PullsUpdateReviewResponseDataLinks = {
+  html: PullsUpdateReviewResponseDataLinksHtml;
+  pull_request: PullsUpdateReviewResponseDataLinksPullRequest;
+};
+type PullsUpdateReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsUpdateReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsUpdateReviewResponseDataUser;
+  body: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsUpdateReviewResponseDataLinks;
+};
+
 type PullsGetCommentsForReviewEndpoint = {
   /**
    * owner parameter
@@ -12359,6 +30806,61 @@ type PullsGetCommentsForReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsGetCommentsForReviewResponseDataItemLinksPullRequest = {
+  href: string;
+};
+type PullsGetCommentsForReviewResponseDataItemLinksHtml = { href: string };
+type PullsGetCommentsForReviewResponseDataItemLinksSelf = { href: string };
+type PullsGetCommentsForReviewResponseDataItemLinks = {
+  self: PullsGetCommentsForReviewResponseDataItemLinksSelf;
+  html: PullsGetCommentsForReviewResponseDataItemLinksHtml;
+  pull_request: PullsGetCommentsForReviewResponseDataItemLinksPullRequest;
+};
+type PullsGetCommentsForReviewResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsGetCommentsForReviewResponseDataItem = {
+  url: string;
+  id: number;
+  node_id: string;
+  pull_request_review_id: number;
+  diff_hunk: string;
+  path: string;
+  position: number;
+  original_position: number;
+  commit_id: string;
+  original_commit_id: string;
+  in_reply_to_id: number;
+  user: PullsGetCommentsForReviewResponseDataItemUser;
+  body: string;
+  created_at: string;
+  updated_at: string;
+  html_url: string;
+  pull_request_url: string;
+  author_association: string;
+  _links: PullsGetCommentsForReviewResponseDataItemLinks;
+};
+type PullsGetCommentsForReviewResponseData = Array<
+  PullsGetCommentsForReviewResponseDataItem
+>;
+
 type PullsDismissReviewEndpoint = {
   /**
    * owner parameter
@@ -12387,6 +30889,44 @@ type PullsDismissReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsDismissReviewResponseDataLinksPullRequest = { href: string };
+type PullsDismissReviewResponseDataLinksHtml = { href: string };
+type PullsDismissReviewResponseDataLinks = {
+  html: PullsDismissReviewResponseDataLinksHtml;
+  pull_request: PullsDismissReviewResponseDataLinksPullRequest;
+};
+type PullsDismissReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsDismissReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsDismissReviewResponseDataUser;
+  body: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsDismissReviewResponseDataLinks;
+};
+
 type PullsSubmitReviewEndpoint = {
   /**
    * owner parameter
@@ -12419,6 +30959,45 @@ type PullsSubmitReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsSubmitReviewResponseDataLinksPullRequest = { href: string };
+type PullsSubmitReviewResponseDataLinksHtml = { href: string };
+type PullsSubmitReviewResponseDataLinks = {
+  html: PullsSubmitReviewResponseDataLinksHtml;
+  pull_request: PullsSubmitReviewResponseDataLinksPullRequest;
+};
+type PullsSubmitReviewResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type PullsSubmitReviewResponseData = {
+  id: number;
+  node_id: string;
+  user: PullsSubmitReviewResponseDataUser;
+  body: string;
+  submitted_at: string;
+  commit_id: string;
+  state: string;
+  html_url: string;
+  pull_request_url: string;
+  _links: PullsSubmitReviewResponseDataLinks;
+};
+
 type PullsUpdateBranchEndpoint = {
   /**
    * owner parameter
@@ -12443,6 +31022,8 @@ type PullsUpdateBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type PullsUpdateBranchResponseData = { message: string; url: string };
+
 type ReposGetReadmeEndpoint = {
   /**
    * owner parameter
@@ -12463,6 +31044,26 @@ type ReposGetReadmeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetReadmeResponseDataLinks = {
+  git: string;
+  self: string;
+  html: string;
+};
+type ReposGetReadmeResponseData = {
+  type: string;
+  encoding: string;
+  size: number;
+  name: string;
+  path: string;
+  content: string;
+  sha: string;
+  url: string;
+  git_url: string;
+  html_url: string;
+  download_url: string;
+  _links: ReposGetReadmeResponseDataLinks;
+};
+
 type ReposListReleasesEndpoint = {
   /**
    * owner parameter
@@ -12487,6 +31088,83 @@ type ReposListReleasesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListReleasesResponseDataItemAssetsItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListReleasesResponseDataItemAssetsItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposListReleasesResponseDataItemAssetsItemUploader;
+};
+type ReposListReleasesResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListReleasesResponseDataItem = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposListReleasesResponseDataItemAuthor;
+  assets: Array<ReposListReleasesResponseDataItemAssetsItem>;
+};
+type ReposListReleasesResponseData = Array<ReposListReleasesResponseDataItem>;
+
 type ReposCreateReleaseEndpoint = {
   /**
    * owner parameter
@@ -12527,6 +31205,47 @@ type ReposCreateReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateReleaseResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateReleaseResponseData = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposCreateReleaseResponseDataAuthor;
+  assets: Array<any>;
+};
+
 type ReposGetReleaseAssetEndpoint = {
   /**
    * owner parameter
@@ -12547,6 +31266,42 @@ type ReposGetReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetReleaseAssetResponseDataUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetReleaseAssetResponseData = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposGetReleaseAssetResponseDataUploader;
+};
+
 type ReposUpdateReleaseAssetEndpoint = {
   /**
    * owner parameter
@@ -12575,6 +31330,42 @@ type ReposUpdateReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateReleaseAssetResponseDataUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateReleaseAssetResponseData = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposUpdateReleaseAssetResponseDataUploader;
+};
+
 type ReposDeleteReleaseAssetEndpoint = {
   /**
    * owner parameter
@@ -12595,6 +31386,7 @@ type ReposDeleteReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetLatestReleaseEndpoint = {
   /**
    * owner parameter
@@ -12611,6 +31403,82 @@ type ReposGetLatestReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetLatestReleaseResponseDataAssetsItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetLatestReleaseResponseDataAssetsItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposGetLatestReleaseResponseDataAssetsItemUploader;
+};
+type ReposGetLatestReleaseResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetLatestReleaseResponseData = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposGetLatestReleaseResponseDataAuthor;
+  assets: Array<ReposGetLatestReleaseResponseDataAssetsItem>;
+};
+
 type ReposGetReleaseByTagEndpoint = {
   /**
    * owner parameter
@@ -12631,6 +31499,82 @@ type ReposGetReleaseByTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetReleaseByTagResponseDataAssetsItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetReleaseByTagResponseDataAssetsItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposGetReleaseByTagResponseDataAssetsItemUploader;
+};
+type ReposGetReleaseByTagResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetReleaseByTagResponseData = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposGetReleaseByTagResponseDataAuthor;
+  assets: Array<ReposGetReleaseByTagResponseDataAssetsItem>;
+};
+
 type ReposGetReleaseEndpoint = {
   /**
    * owner parameter
@@ -12651,6 +31595,82 @@ type ReposGetReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetReleaseResponseDataAssetsItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetReleaseResponseDataAssetsItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposGetReleaseResponseDataAssetsItemUploader;
+};
+type ReposGetReleaseResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetReleaseResponseData = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposGetReleaseResponseDataAuthor;
+  assets: Array<ReposGetReleaseResponseDataAssetsItem>;
+};
+
 type ReposUpdateReleaseEndpoint = {
   /**
    * owner parameter
@@ -12695,6 +31715,82 @@ type ReposUpdateReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUpdateReleaseResponseDataAssetsItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateReleaseResponseDataAssetsItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposUpdateReleaseResponseDataAssetsItemUploader;
+};
+type ReposUpdateReleaseResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUpdateReleaseResponseData = {
+  url: string;
+  html_url: string;
+  assets_url: string;
+  upload_url: string;
+  tarball_url: string;
+  zipball_url: string;
+  id: number;
+  node_id: string;
+  tag_name: string;
+  target_commitish: string;
+  name: string;
+  body: string;
+  draft: boolean;
+  prerelease: boolean;
+  created_at: string;
+  published_at: string;
+  author: ReposUpdateReleaseResponseDataAuthor;
+  assets: Array<ReposUpdateReleaseResponseDataAssetsItem>;
+};
+
 type ReposDeleteReleaseEndpoint = {
   /**
    * owner parameter
@@ -12715,6 +31811,7 @@ type ReposDeleteReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListAssetsForReleaseEndpoint = {
   /**
    * owner parameter
@@ -12743,6 +31840,45 @@ type ReposListAssetsForReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListAssetsForReleaseResponseDataItemUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListAssetsForReleaseResponseDataItem = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposListAssetsForReleaseResponseDataItemUploader;
+};
+type ReposListAssetsForReleaseResponseData = Array<
+  ReposListAssetsForReleaseResponseDataItem
+>;
+
 type ReposUploadReleaseAssetEndpoint = {
   /**
    * owner parameter
@@ -12779,6 +31915,42 @@ type ReposUploadReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposUploadReleaseAssetResponseDataUploader = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposUploadReleaseAssetResponseData = {
+  url: string;
+  browser_download_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  label: string;
+  state: string;
+  content_type: string;
+  size: number;
+  download_count: number;
+  created_at: string;
+  updated_at: string;
+  uploader: ReposUploadReleaseAssetResponseDataUploader;
+};
+
 type ActivityListStargazersForRepoEndpoint = {
   /**
    * owner parameter
@@ -12803,6 +31975,30 @@ type ActivityListStargazersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListStargazersForRepoResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListStargazersForRepoResponseData = Array<
+  ActivityListStargazersForRepoResponseDataItem
+>;
+
 type ReposGetCodeFrequencyStatsEndpoint = {
   /**
    * owner parameter
@@ -12819,6 +32015,8 @@ type ReposGetCodeFrequencyStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCodeFrequencyStatsResponseData = Array<Array<number>>;
+
 type ReposGetCommitActivityStatsEndpoint = {
   /**
    * owner parameter
@@ -12835,6 +32033,15 @@ type ReposGetCommitActivityStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetCommitActivityStatsResponseDataItem = {
+  days: Array<number>;
+  total: number;
+  week: number;
+};
+type ReposGetCommitActivityStatsResponseData = Array<
+  ReposGetCommitActivityStatsResponseDataItem
+>;
+
 type ReposGetContributorsStatsEndpoint = {
   /**
    * owner parameter
@@ -12851,6 +32058,41 @@ type ReposGetContributorsStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetContributorsStatsResponseDataItemWeeksItem = {
+  w: string;
+  a: number;
+  d: number;
+  c: number;
+};
+type ReposGetContributorsStatsResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposGetContributorsStatsResponseDataItem = {
+  author: ReposGetContributorsStatsResponseDataItemAuthor;
+  total: number;
+  weeks: Array<ReposGetContributorsStatsResponseDataItemWeeksItem>;
+};
+type ReposGetContributorsStatsResponseData = Array<
+  ReposGetContributorsStatsResponseDataItem
+>;
+
 type ReposGetParticipationStatsEndpoint = {
   /**
    * owner parameter
@@ -12867,6 +32109,11 @@ type ReposGetParticipationStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetParticipationStatsResponseData = {
+  all: Array<number>;
+  owner: Array<number>;
+};
+
 type ReposGetPunchCardStatsEndpoint = {
   /**
    * owner parameter
@@ -12883,6 +32130,8 @@ type ReposGetPunchCardStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetPunchCardStatsResponseData = Array<Array<number>>;
+
 type ReposCreateStatusEndpoint = {
   /**
    * owner parameter
@@ -12921,6 +32170,40 @@ type ReposCreateStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateStatusResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateStatusResponseData = {
+  url: string;
+  avatar_url: string;
+  id: number;
+  node_id: string;
+  state: string;
+  description: string;
+  target_url: string;
+  context: string;
+  created_at: string;
+  updated_at: string;
+  creator: ReposCreateStatusResponseDataCreator;
+};
+
 type ActivityListWatchersForRepoEndpoint = {
   /**
    * owner parameter
@@ -12945,6 +32228,30 @@ type ActivityListWatchersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListWatchersForRepoResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListWatchersForRepoResponseData = Array<
+  ActivityListWatchersForRepoResponseDataItem
+>;
+
 type ActivityGetRepoSubscriptionEndpoint = {
   /**
    * owner parameter
@@ -12961,6 +32268,15 @@ type ActivityGetRepoSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityGetRepoSubscriptionResponseData = {
+  subscribed: boolean;
+  ignored: boolean;
+  reason: null;
+  created_at: string;
+  url: string;
+  repository_url: string;
+};
+
 type ActivitySetRepoSubscriptionEndpoint = {
   /**
    * owner parameter
@@ -12985,6 +32301,15 @@ type ActivitySetRepoSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivitySetRepoSubscriptionResponseData = {
+  subscribed: boolean;
+  ignored: boolean;
+  reason: null;
+  created_at: string;
+  url: string;
+  repository_url: string;
+};
+
 type ActivityDeleteRepoSubscriptionEndpoint = {
   /**
    * owner parameter
@@ -13001,6 +32326,7 @@ type ActivityDeleteRepoSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListTagsEndpoint = {
   /**
    * owner parameter
@@ -13025,6 +32351,15 @@ type ReposListTagsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListTagsResponseDataItemCommit = { sha: string; url: string };
+type ReposListTagsResponseDataItem = {
+  name: string;
+  commit: ReposListTagsResponseDataItemCommit;
+  zipball_url: string;
+  tarball_url: string;
+};
+type ReposListTagsResponseData = Array<ReposListTagsResponseDataItem>;
+
 type ReposListTeamsEndpoint = {
   /**
    * owner parameter
@@ -13049,6 +32384,22 @@ type ReposListTeamsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListTeamsResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+};
+type ReposListTeamsResponseData = Array<ReposListTeamsResponseDataItem>;
+
 type ReposGetAllTopicsEndpoint = {
   /**
    * owner parameter
@@ -13065,6 +32416,8 @@ type ReposGetAllTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetAllTopicsResponseData = { names: Array<string> };
+
 type ReposReplaceAllTopicsEndpoint = {
   /**
    * owner parameter
@@ -13085,6 +32438,8 @@ type ReposReplaceAllTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposReplaceAllTopicsResponseData = { names: Array<string> };
+
 type ReposGetClonesEndpoint = {
   /**
    * owner parameter
@@ -13105,6 +32460,17 @@ type ReposGetClonesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetClonesResponseDataClonesItem = {
+  timestamp: string;
+  count: number;
+  uniques: number;
+};
+type ReposGetClonesResponseData = {
+  count: number;
+  uniques: number;
+  clones: Array<ReposGetClonesResponseDataClonesItem>;
+};
+
 type ReposGetTopPathsEndpoint = {
   /**
    * owner parameter
@@ -13121,6 +32487,14 @@ type ReposGetTopPathsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetTopPathsResponseDataItem = {
+  path: string;
+  title: string;
+  count: number;
+  uniques: number;
+};
+type ReposGetTopPathsResponseData = Array<ReposGetTopPathsResponseDataItem>;
+
 type ReposGetTopReferrersEndpoint = {
   /**
    * owner parameter
@@ -13137,6 +32511,15 @@ type ReposGetTopReferrersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetTopReferrersResponseDataItem = {
+  referrer: string;
+  count: number;
+  uniques: number;
+};
+type ReposGetTopReferrersResponseData = Array<
+  ReposGetTopReferrersResponseDataItem
+>;
+
 type ReposGetViewsEndpoint = {
   /**
    * owner parameter
@@ -13157,6 +32540,17 @@ type ReposGetViewsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposGetViewsResponseDataViewsItem = {
+  timestamp: string;
+  count: number;
+  uniques: number;
+};
+type ReposGetViewsResponseData = {
+  count: number;
+  uniques: number;
+  views: Array<ReposGetViewsResponseDataViewsItem>;
+};
+
 type ReposTransferEndpoint = {
   /**
    * owner parameter
@@ -13181,6 +32575,114 @@ type ReposTransferRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposTransferResponseDataPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposTransferResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposTransferResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposTransferResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposTransferResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+
 type ReposCheckVulnerabilityAlertsEndpoint = {
   /**
    * owner parameter
@@ -13197,6 +32699,7 @@ type ReposCheckVulnerabilityAlertsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposEnableVulnerabilityAlertsEndpoint = {
   /**
    * owner parameter
@@ -13213,6 +32716,7 @@ type ReposEnableVulnerabilityAlertsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposDisableVulnerabilityAlertsEndpoint = {
   /**
    * owner parameter
@@ -13229,6 +32733,7 @@ type ReposDisableVulnerabilityAlertsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposGetArchiveLinkEndpoint = {
   /**
    * owner parameter
@@ -13253,6 +32758,7 @@ type ReposGetArchiveLinkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposCreateUsingTemplateEndpoint = {
   /**
    * template_owner parameter
@@ -13285,6 +32791,221 @@ type ReposCreateUsingTemplateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateUsingTemplateResponseDataTemplateRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposCreateUsingTemplateResponseDataTemplateRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateUsingTemplateResponseDataTemplateRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposCreateUsingTemplateResponseDataTemplateRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposCreateUsingTemplateResponseDataTemplateRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ReposCreateUsingTemplateResponseDataPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposCreateUsingTemplateResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateUsingTemplateResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposCreateUsingTemplateResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposCreateUsingTemplateResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: ReposCreateUsingTemplateResponseDataTemplateRepository;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+
 type ReposListPublicEndpoint = {
   /**
    * The integer ID of the last repository that you've seen.
@@ -13305,6 +33026,77 @@ type ReposListPublicRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListPublicResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListPublicResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListPublicResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposListPublicResponseData = Array<ReposListPublicResponseDataItem>;
+
 type ScimListProvisionedIdentitiesEndpoint = {
   /**
    * org parameter
@@ -13329,6 +33121,41 @@ type ScimListProvisionedIdentitiesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ScimListProvisionedIdentitiesResponseDataResourcesItemMeta = {
+  resourceType: string;
+  created: string;
+  lastModified: string;
+  location: string;
+};
+type ScimListProvisionedIdentitiesResponseDataResourcesItemEmailsItem = {
+  value: string;
+  primary: boolean;
+  type: string;
+};
+type ScimListProvisionedIdentitiesResponseDataResourcesItemName = {
+  givenName: string;
+  familyName: string;
+};
+type ScimListProvisionedIdentitiesResponseDataResourcesItem = {
+  schemas: Array<string>;
+  id: string;
+  externalId: string;
+  userName: string;
+  name: ScimListProvisionedIdentitiesResponseDataResourcesItemName;
+  emails: Array<
+    ScimListProvisionedIdentitiesResponseDataResourcesItemEmailsItem
+  >;
+  active: boolean;
+  meta: ScimListProvisionedIdentitiesResponseDataResourcesItemMeta;
+};
+type ScimListProvisionedIdentitiesResponseData = {
+  schemas: Array<string>;
+  totalResults: number;
+  itemsPerPage: number;
+  startIndex: number;
+  Resources: Array<ScimListProvisionedIdentitiesResponseDataResourcesItem>;
+};
+
 type ScimProvisionAndInviteUsersEndpoint = {
   /**
    * org parameter
@@ -13341,6 +33168,32 @@ type ScimProvisionAndInviteUsersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ScimProvisionAndInviteUsersResponseDataMeta = {
+  resourceType: string;
+  created: string;
+  lastModified: string;
+  location: string;
+};
+type ScimProvisionAndInviteUsersResponseDataEmailsItem = {
+  value: string;
+  type: string;
+  primary: boolean;
+};
+type ScimProvisionAndInviteUsersResponseDataName = {
+  givenName: string;
+  familyName: string;
+};
+type ScimProvisionAndInviteUsersResponseData = {
+  schemas: Array<string>;
+  id: string;
+  externalId: string;
+  userName: string;
+  name: ScimProvisionAndInviteUsersResponseDataName;
+  emails: Array<ScimProvisionAndInviteUsersResponseDataEmailsItem>;
+  active: boolean;
+  meta: ScimProvisionAndInviteUsersResponseDataMeta;
+};
+
 type ScimGetProvisioningDetailsForUserEndpoint = {
   /**
    * org parameter
@@ -13357,6 +33210,32 @@ type ScimGetProvisioningDetailsForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ScimGetProvisioningDetailsForUserResponseDataMeta = {
+  resourceType: string;
+  created: string;
+  lastModified: string;
+  location: string;
+};
+type ScimGetProvisioningDetailsForUserResponseDataEmailsItem = {
+  value: string;
+  type: string;
+  primary: boolean;
+};
+type ScimGetProvisioningDetailsForUserResponseDataName = {
+  givenName: string;
+  familyName: string;
+};
+type ScimGetProvisioningDetailsForUserResponseData = {
+  schemas: Array<string>;
+  id: string;
+  externalId: string;
+  userName: string;
+  name: ScimGetProvisioningDetailsForUserResponseDataName;
+  emails: Array<ScimGetProvisioningDetailsForUserResponseDataEmailsItem>;
+  active: boolean;
+  meta: ScimGetProvisioningDetailsForUserResponseDataMeta;
+};
+
 type ScimReplaceProvisionedUserInformationEndpoint = {
   /**
    * org parameter
@@ -13373,6 +33252,32 @@ type ScimReplaceProvisionedUserInformationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ScimReplaceProvisionedUserInformationResponseDataMeta = {
+  resourceType: string;
+  created: string;
+  lastModified: string;
+  location: string;
+};
+type ScimReplaceProvisionedUserInformationResponseDataEmailsItem = {
+  value: string;
+  type: string;
+  primary: boolean;
+};
+type ScimReplaceProvisionedUserInformationResponseDataName = {
+  givenName: string;
+  familyName: string;
+};
+type ScimReplaceProvisionedUserInformationResponseData = {
+  schemas: Array<string>;
+  id: string;
+  externalId: string;
+  userName: string;
+  name: ScimReplaceProvisionedUserInformationResponseDataName;
+  emails: Array<ScimReplaceProvisionedUserInformationResponseDataEmailsItem>;
+  active: boolean;
+  meta: ScimReplaceProvisionedUserInformationResponseDataMeta;
+};
+
 type ScimUpdateUserAttributeEndpoint = {
   /**
    * org parameter
@@ -13389,6 +33294,32 @@ type ScimUpdateUserAttributeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ScimUpdateUserAttributeResponseDataMeta = {
+  resourceType: string;
+  created: string;
+  lastModified: string;
+  location: string;
+};
+type ScimUpdateUserAttributeResponseDataEmailsItem = {
+  value: string;
+  type: string;
+  primary?: boolean;
+};
+type ScimUpdateUserAttributeResponseDataName = {
+  givenName: string;
+  familyName: string;
+};
+type ScimUpdateUserAttributeResponseData = {
+  schemas: Array<string>;
+  id: string;
+  externalId: string;
+  userName: string;
+  name: ScimUpdateUserAttributeResponseDataName;
+  emails: Array<ScimUpdateUserAttributeResponseDataEmailsItem>;
+  active: boolean;
+  meta: ScimUpdateUserAttributeResponseDataMeta;
+};
+
 type ScimRemoveUserFromOrgEndpoint = {
   /**
    * org parameter
@@ -13405,6 +33336,7 @@ type ScimRemoveUserFromOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type SearchCodeEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query). See "[Searching code](https://help.github.com/articles/searching-code/)" for a detailed list of qualifiers.
@@ -13433,6 +33365,88 @@ type SearchCodeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchCodeResponseDataItemsItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type SearchCodeResponseDataItemsItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: SearchCodeResponseDataItemsItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  forks_url: string;
+  keys_url: string;
+  collaborators_url: string;
+  teams_url: string;
+  hooks_url: string;
+  issue_events_url: string;
+  events_url: string;
+  assignees_url: string;
+  branches_url: string;
+  tags_url: string;
+  blobs_url: string;
+  git_tags_url: string;
+  git_refs_url: string;
+  trees_url: string;
+  statuses_url: string;
+  languages_url: string;
+  stargazers_url: string;
+  contributors_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  commits_url: string;
+  git_commits_url: string;
+  comments_url: string;
+  issue_comment_url: string;
+  contents_url: string;
+  compare_url: string;
+  merges_url: string;
+  archive_url: string;
+  downloads_url: string;
+  issues_url: string;
+  pulls_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  labels_url: string;
+};
+type SearchCodeResponseDataItemsItem = {
+  name: string;
+  path: string;
+  sha: string;
+  url: string;
+  git_url: string;
+  html_url: string;
+  repository: SearchCodeResponseDataItemsItemRepository;
+  score: number;
+};
+type SearchCodeResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchCodeResponseDataItemsItem>;
+};
+
 type SearchCommitsEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query). See "[Searching commits](https://help.github.com/articles/searching-commits/)" for a detailed list of qualifiers.
@@ -13461,6 +33475,159 @@ type SearchCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchCommitsResponseDataItemsItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type SearchCommitsResponseDataItemsItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: SearchCommitsResponseDataItemsItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  forks_url: string;
+  keys_url: string;
+  collaborators_url: string;
+  teams_url: string;
+  hooks_url: string;
+  issue_events_url: string;
+  events_url: string;
+  assignees_url: string;
+  branches_url: string;
+  tags_url: string;
+  blobs_url: string;
+  git_tags_url: string;
+  git_refs_url: string;
+  trees_url: string;
+  statuses_url: string;
+  languages_url: string;
+  stargazers_url: string;
+  contributors_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  commits_url: string;
+  git_commits_url: string;
+  comments_url: string;
+  issue_comment_url: string;
+  contents_url: string;
+  compare_url: string;
+  merges_url: string;
+  archive_url: string;
+  downloads_url: string;
+  issues_url: string;
+  pulls_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  labels_url: string;
+  releases_url: string;
+  deployments_url: string;
+};
+type SearchCommitsResponseDataItemsItemParentsItem = {
+  url: string;
+  html_url: string;
+  sha: string;
+};
+type SearchCommitsResponseDataItemsItemCommitter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type SearchCommitsResponseDataItemsItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type SearchCommitsResponseDataItemsItemCommitTree = {
+  url: string;
+  sha: string;
+};
+type SearchCommitsResponseDataItemsItemCommitCommitter = {
+  date: string;
+  name: string;
+  email: string;
+};
+type SearchCommitsResponseDataItemsItemCommitAuthor = {
+  date: string;
+  name: string;
+  email: string;
+};
+type SearchCommitsResponseDataItemsItemCommit = {
+  url: string;
+  author: SearchCommitsResponseDataItemsItemCommitAuthor;
+  committer: SearchCommitsResponseDataItemsItemCommitCommitter;
+  message: string;
+  tree: SearchCommitsResponseDataItemsItemCommitTree;
+  comment_count: number;
+};
+type SearchCommitsResponseDataItemsItem = {
+  url: string;
+  sha: string;
+  html_url: string;
+  comments_url: string;
+  commit: SearchCommitsResponseDataItemsItemCommit;
+  author: SearchCommitsResponseDataItemsItemAuthor;
+  committer: SearchCommitsResponseDataItemsItemCommitter;
+  parents: Array<SearchCommitsResponseDataItemsItemParentsItem>;
+  repository: SearchCommitsResponseDataItemsItemRepository;
+  score: number;
+};
+type SearchCommitsResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchCommitsResponseDataItemsItem>;
+};
+
 type SearchIssuesAndPullRequestsEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query). See "[Searching issues and pull requests](https://help.github.com/articles/searching-issues-and-pull-requests/)" for a detailed list of qualifiers.
@@ -13500,6 +33667,67 @@ type SearchIssuesAndPullRequestsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchIssuesAndPullRequestsResponseDataItemsItemPullRequest = {
+  html_url: null;
+  diff_url: null;
+  patch_url: null;
+};
+type SearchIssuesAndPullRequestsResponseDataItemsItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  color: string;
+};
+type SearchIssuesAndPullRequestsResponseDataItemsItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+};
+type SearchIssuesAndPullRequestsResponseDataItemsItem = {
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  title: string;
+  user: SearchIssuesAndPullRequestsResponseDataItemsItemUser;
+  labels: Array<SearchIssuesAndPullRequestsResponseDataItemsItemLabelsItem>;
+  state: string;
+  assignee: null;
+  milestone: null;
+  comments: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: null;
+  pull_request: SearchIssuesAndPullRequestsResponseDataItemsItemPullRequest;
+  body: string;
+  score: number;
+};
+type SearchIssuesAndPullRequestsResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchIssuesAndPullRequestsResponseDataItemsItem>;
+};
+
 type SearchLabelsEndpoint = {
   /**
    * The id of the repository.
@@ -13524,6 +33752,22 @@ type SearchLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchLabelsResponseDataItemsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  color: string;
+  default: boolean;
+  description: string;
+  score: number;
+};
+type SearchLabelsResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchLabelsResponseDataItemsItem>;
+};
+
 type SearchReposEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query). See "[Searching for repositories](https://help.github.com/articles/searching-for-repositories/)" for a detailed list of qualifiers.
@@ -13552,6 +33796,47 @@ type SearchReposRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchReposResponseDataItemsItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  received_events_url: string;
+  type: string;
+};
+type SearchReposResponseDataItemsItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: SearchReposResponseDataItemsItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  created_at: string;
+  updated_at: string;
+  pushed_at: string;
+  homepage: string;
+  size: number;
+  stargazers_count: number;
+  watchers_count: number;
+  language: string;
+  forks_count: number;
+  open_issues_count: number;
+  master_branch: string;
+  default_branch: string;
+  score: number;
+};
+type SearchReposResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchReposResponseDataItemsItem>;
+};
+
 type SearchTopicsEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query).
@@ -13564,6 +33849,25 @@ type SearchTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchTopicsResponseDataItemsItem = {
+  name: string;
+  display_name: string;
+  short_description: string;
+  description: string;
+  created_by: string;
+  released: string;
+  created_at: string;
+  updated_at: string;
+  featured: boolean;
+  curated: boolean;
+  score: number;
+};
+type SearchTopicsResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchTopicsResponseDataItemsItem>;
+};
+
 type SearchUsersEndpoint = {
   /**
    * The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as GitHub.com. To learn more about the format of the query, see [Constructing a search query](https://developer.github.com/v3/search/#constructing-a-search-query). See "[Searching users](https://help.github.com/articles/searching-users/)" for a detailed list of qualifiers.
@@ -13592,6 +33896,28 @@ type SearchUsersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type SearchUsersResponseDataItemsItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  received_events_url: string;
+  type: string;
+  score: number;
+};
+type SearchUsersResponseData = {
+  total_count: number;
+  incomplete_results: boolean;
+  items: Array<SearchUsersResponseDataItemsItem>;
+};
+
 type TeamsGetLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13604,6 +33930,55 @@ type TeamsGetLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetLegacyResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsGetLegacyResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsGetLegacyResponseDataOrganization;
+};
+
 type TeamsUpdateLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13644,6 +34019,55 @@ type TeamsUpdateLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateLegacyResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsUpdateLegacyResponseData = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsUpdateLegacyResponseDataOrganization;
+};
+
 type TeamsDeleteLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13656,6 +34080,7 @@ type TeamsDeleteLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListDiscussionsLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13680,6 +34105,60 @@ type TeamsListDiscussionsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListDiscussionsLegacyResponseDataItemReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsListDiscussionsLegacyResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListDiscussionsLegacyResponseDataItem = {
+  author: TeamsListDiscussionsLegacyResponseDataItemAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsListDiscussionsLegacyResponseDataItemReactions;
+};
+type TeamsListDiscussionsLegacyResponseData = Array<
+  TeamsListDiscussionsLegacyResponseDataItem
+>;
+
 type TeamsCreateDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13704,6 +34183,57 @@ type TeamsCreateDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateDiscussionLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsCreateDiscussionLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCreateDiscussionLegacyResponseData = {
+  author: TeamsCreateDiscussionLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsCreateDiscussionLegacyResponseDataReactions;
+};
+
 type TeamsGetDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13720,6 +34250,57 @@ type TeamsGetDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetDiscussionLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsGetDiscussionLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsGetDiscussionLegacyResponseData = {
+  author: TeamsGetDiscussionLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: null;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsGetDiscussionLegacyResponseDataReactions;
+};
+
 type TeamsUpdateDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13744,6 +34325,57 @@ type TeamsUpdateDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateDiscussionLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsUpdateDiscussionLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsUpdateDiscussionLegacyResponseData = {
+  author: TeamsUpdateDiscussionLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  comments_count: number;
+  comments_url: string;
+  created_at: string;
+  last_edited_at: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  pinned: boolean;
+  private: boolean;
+  team_url: string;
+  title: string;
+  updated_at: string;
+  url: string;
+  reactions: TeamsUpdateDiscussionLegacyResponseDataReactions;
+};
+
 type TeamsDeleteDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13760,6 +34392,7 @@ type TeamsDeleteDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListDiscussionCommentsLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13788,6 +34421,55 @@ type TeamsListDiscussionCommentsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListDiscussionCommentsLegacyResponseDataItemReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsListDiscussionCommentsLegacyResponseDataItemAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListDiscussionCommentsLegacyResponseDataItem = {
+  author: TeamsListDiscussionCommentsLegacyResponseDataItemAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsListDiscussionCommentsLegacyResponseDataItemReactions;
+};
+type TeamsListDiscussionCommentsLegacyResponseData = Array<
+  TeamsListDiscussionCommentsLegacyResponseDataItem
+>;
+
 type TeamsCreateDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13808,6 +34490,52 @@ type TeamsCreateDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateDiscussionCommentLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsCreateDiscussionCommentLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCreateDiscussionCommentLegacyResponseData = {
+  author: TeamsCreateDiscussionCommentLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsCreateDiscussionCommentLegacyResponseDataReactions;
+};
+
 type TeamsGetDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13828,6 +34556,52 @@ type TeamsGetDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetDiscussionCommentLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsGetDiscussionCommentLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsGetDiscussionCommentLegacyResponseData = {
+  author: TeamsGetDiscussionCommentLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: null;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsGetDiscussionCommentLegacyResponseDataReactions;
+};
+
 type TeamsUpdateDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13852,6 +34626,52 @@ type TeamsUpdateDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsUpdateDiscussionCommentLegacyResponseDataReactions = {
+  url: string;
+  total_count: number;
+  "+1": number;
+  "-1": number;
+  laugh: number;
+  confused: number;
+  heart: number;
+  hooray: number;
+};
+type TeamsUpdateDiscussionCommentLegacyResponseDataAuthor = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsUpdateDiscussionCommentLegacyResponseData = {
+  author: TeamsUpdateDiscussionCommentLegacyResponseDataAuthor;
+  body: string;
+  body_html: string;
+  body_version: string;
+  created_at: string;
+  last_edited_at: string;
+  discussion_url: string;
+  html_url: string;
+  node_id: string;
+  number: number;
+  updated_at: string;
+  url: string;
+  reactions: TeamsUpdateDiscussionCommentLegacyResponseDataReactions;
+};
+
 type TeamsDeleteDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13872,6 +34692,7 @@ type TeamsDeleteDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReactionsListForTeamDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13912,6 +34733,37 @@ type ReactionsListForTeamDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForTeamDiscussionCommentLegacyResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForTeamDiscussionCommentLegacyResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForTeamDiscussionCommentLegacyResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForTeamDiscussionCommentLegacyResponseData = Array<
+  ReactionsListForTeamDiscussionCommentLegacyResponseDataItem
+>;
+
 type ReactionsCreateForTeamDiscussionCommentLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13944,6 +34796,34 @@ type ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForTeamDiscussionCommentLegacyResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForTeamDiscussionCommentLegacyResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForTeamDiscussionCommentLegacyResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type ReactionsListForTeamDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -13980,6 +34860,37 @@ type ReactionsListForTeamDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsListForTeamDiscussionLegacyResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsListForTeamDiscussionLegacyResponseDataItem = {
+  id: number;
+  node_id: string;
+  user: ReactionsListForTeamDiscussionLegacyResponseDataItemUser;
+  content: string;
+  created_at: string;
+};
+type ReactionsListForTeamDiscussionLegacyResponseData = Array<
+  ReactionsListForTeamDiscussionLegacyResponseDataItem
+>;
+
 type ReactionsCreateForTeamDiscussionLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14008,6 +34919,34 @@ type ReactionsCreateForTeamDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReactionsCreateForTeamDiscussionLegacyResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReactionsCreateForTeamDiscussionLegacyResponseData = {
+  id: number;
+  node_id: string;
+  user: ReactionsCreateForTeamDiscussionLegacyResponseDataUser;
+  content: string;
+  created_at: string;
+};
+
 type TeamsListPendingInvitationsLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14028,6 +34967,40 @@ type TeamsListPendingInvitationsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListPendingInvitationsLegacyResponseDataItemInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListPendingInvitationsLegacyResponseDataItem = {
+  id: number;
+  login: string;
+  email: string;
+  role: string;
+  created_at: string;
+  inviter: TeamsListPendingInvitationsLegacyResponseDataItemInviter;
+  team_count: number;
+  invitation_team_url: string;
+};
+type TeamsListPendingInvitationsLegacyResponseData = Array<
+  TeamsListPendingInvitationsLegacyResponseDataItem
+>;
+
 type TeamsListMembersLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14055,6 +35028,30 @@ type TeamsListMembersLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListMembersLegacyResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListMembersLegacyResponseData = Array<
+  TeamsListMembersLegacyResponseDataItem
+>;
+
 type TeamsGetMemberLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14071,6 +35068,7 @@ type TeamsGetMemberLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsAddMemberLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14087,6 +35085,16 @@ type TeamsAddMemberLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsAddMemberLegacyResponseDataErrorsItem = {
+  code: string;
+  field: string;
+  resource: string;
+};
+type TeamsAddMemberLegacyResponseData = {
+  message: string;
+  errors: Array<TeamsAddMemberLegacyResponseDataErrorsItem>;
+};
+
 type TeamsRemoveMemberLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14103,6 +35111,7 @@ type TeamsRemoveMemberLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsGetMembershipLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14119,6 +35128,12 @@ type TeamsGetMembershipLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsGetMembershipLegacyResponseData = {
+  url: string;
+  role: string;
+  state: string;
+};
+
 type TeamsAddOrUpdateMembershipLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14141,6 +35156,12 @@ type TeamsAddOrUpdateMembershipLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsAddOrUpdateMembershipLegacyResponseData = {
+  url: string;
+  role: string;
+  state: string;
+};
+
 type TeamsRemoveMembershipLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14157,6 +35178,7 @@ type TeamsRemoveMembershipLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListProjectsLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14177,6 +35199,53 @@ type TeamsListProjectsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListProjectsLegacyResponseDataItemPermissions = {
+  read: boolean;
+  write: boolean;
+  admin: boolean;
+};
+type TeamsListProjectsLegacyResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListProjectsLegacyResponseDataItem = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: TeamsListProjectsLegacyResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+  organization_permission: string;
+  private: boolean;
+  permissions: TeamsListProjectsLegacyResponseDataItemPermissions;
+};
+type TeamsListProjectsLegacyResponseData = Array<
+  TeamsListProjectsLegacyResponseDataItem
+>;
+
 type TeamsReviewProjectLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14193,6 +35262,50 @@ type TeamsReviewProjectLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsReviewProjectLegacyResponseDataPermissions = {
+  read: boolean;
+  write: boolean;
+  admin: boolean;
+};
+type TeamsReviewProjectLegacyResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsReviewProjectLegacyResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: TeamsReviewProjectLegacyResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+  organization_permission: string;
+  private: boolean;
+  permissions: TeamsReviewProjectLegacyResponseDataPermissions;
+};
+
 type TeamsAddOrUpdateProjectLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14217,6 +35330,11 @@ type TeamsAddOrUpdateProjectLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsAddOrUpdateProjectLegacyResponseData = {
+  message: string;
+  documentation_url: string;
+};
+
 type TeamsRemoveProjectLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14233,6 +35351,7 @@ type TeamsRemoveProjectLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListReposLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14253,6 +35372,122 @@ type TeamsListReposLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListReposLegacyResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type TeamsListReposLegacyResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsListReposLegacyResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsListReposLegacyResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsListReposLegacyResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsListReposLegacyResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: TeamsListReposLegacyResponseDataItemLicense;
+};
+type TeamsListReposLegacyResponseData = Array<
+  TeamsListReposLegacyResponseDataItem
+>;
+
 type TeamsCheckManagesRepoLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14273,6 +35508,254 @@ type TeamsCheckManagesRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCheckManagesRepoLegacyResponseDataPermissions = {
+  pull: boolean;
+  triage: boolean;
+  push: boolean;
+  maintain: boolean;
+  admin: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseDataSourcePermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseDataSourceOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseDataSource = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsCheckManagesRepoLegacyResponseDataSourceOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsCheckManagesRepoLegacyResponseDataSourcePermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type TeamsCheckManagesRepoLegacyResponseDataParentPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseDataParentOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseDataParent = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: TeamsCheckManagesRepoLegacyResponseDataParentOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: TeamsCheckManagesRepoLegacyResponseDataParentPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type TeamsCheckManagesRepoLegacyResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type TeamsCheckManagesRepoLegacyResponseData = {
+  organization: TeamsCheckManagesRepoLegacyResponseDataOrganization;
+  parent: TeamsCheckManagesRepoLegacyResponseDataParent;
+  source: TeamsCheckManagesRepoLegacyResponseDataSource;
+  permissions: TeamsCheckManagesRepoLegacyResponseDataPermissions;
+};
+
 type TeamsAddOrUpdateRepoLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14302,6 +35785,7 @@ type TeamsAddOrUpdateRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsRemoveRepoLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14322,6 +35806,7 @@ type TeamsRemoveRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListIdPGroupsForLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14334,6 +35819,15 @@ type TeamsListIdPGroupsForLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListIdPGroupsForLegacyResponseDataGroupsItem = {
+  group_id: string;
+  group_name: string;
+  group_description: string;
+};
+type TeamsListIdPGroupsForLegacyResponseData = {
+  groups: Array<TeamsListIdPGroupsForLegacyResponseDataGroupsItem>;
+};
+
 type TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14350,6 +35844,17 @@ type TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseDataGroupsItem = {
+  group_id: string;
+  group_name: string;
+  group_description: string;
+};
+type TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData = {
+  groups: Array<
+    TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseDataGroupsItem
+  >;
+};
+
 type TeamsListChildLegacyEndpoint = {
   /**
    * team_id parameter
@@ -14370,6 +35875,36 @@ type TeamsListChildLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListChildLegacyResponseDataItemParent = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+};
+type TeamsListChildLegacyResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: TeamsListChildLegacyResponseDataItemParent;
+};
+type TeamsListChildLegacyResponseData = Array<
+  TeamsListChildLegacyResponseDataItem
+>;
+
 type UsersGetAuthenticatedEndpoint = {};
 type UsersGetAuthenticatedRequestOptions = {
   method: "GET";
@@ -14377,6 +35912,53 @@ type UsersGetAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersGetAuthenticatedResponseDataPlan = {
+  name: string;
+  space: number;
+  private_repos: number;
+  collaborators: number;
+};
+type UsersGetAuthenticatedResponseData = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  hireable: boolean;
+  bio: string;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+  private_gists?: number;
+  total_private_repos?: number;
+  owned_private_repos?: number;
+  disk_usage?: number;
+  collaborators?: number;
+  two_factor_authentication?: boolean;
+  plan?: UsersGetAuthenticatedResponseDataPlan;
+};
+
 type UsersUpdateAuthenticatedEndpoint = {
   /**
    * The new name of the user.
@@ -14413,6 +35995,53 @@ type UsersUpdateAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersUpdateAuthenticatedResponseDataPlan = {
+  name: string;
+  space: number;
+  private_repos: number;
+  collaborators: number;
+};
+type UsersUpdateAuthenticatedResponseData = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  hireable: boolean;
+  bio: string;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+  private_gists: number;
+  total_private_repos: number;
+  owned_private_repos: number;
+  disk_usage: number;
+  collaborators: number;
+  two_factor_authentication: boolean;
+  plan: UsersUpdateAuthenticatedResponseDataPlan;
+};
+
 type UsersListBlockedEndpoint = {};
 type UsersListBlockedRequestOptions = {
   method: "GET";
@@ -14420,6 +36049,28 @@ type UsersListBlockedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListBlockedResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListBlockedResponseData = Array<UsersListBlockedResponseDataItem>;
+
 type UsersCheckBlockedEndpoint = {
   /**
    * username parameter
@@ -14432,6 +36083,7 @@ type UsersCheckBlockedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersBlockEndpoint = {
   /**
    * username parameter
@@ -14444,6 +36096,7 @@ type UsersBlockRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersUnblockEndpoint = {
   /**
    * username parameter
@@ -14456,6 +36109,7 @@ type UsersUnblockRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersTogglePrimaryEmailVisibilityEndpoint = {
   /**
    * Specify the _primary_ email address that needs a visibility change.
@@ -14472,6 +36126,16 @@ type UsersTogglePrimaryEmailVisibilityRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersTogglePrimaryEmailVisibilityResponseDataItem = {
+  email: string;
+  primary: boolean;
+  verified: boolean;
+  visibility: string;
+};
+type UsersTogglePrimaryEmailVisibilityResponseData = Array<
+  UsersTogglePrimaryEmailVisibilityResponseDataItem
+>;
+
 type UsersListEmailsEndpoint = {
   /**
    * Results per page (max 100)
@@ -14488,6 +36152,14 @@ type UsersListEmailsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListEmailsResponseDataItem = {
+  email: string;
+  verified: boolean;
+  primary: boolean;
+  visibility: string;
+};
+type UsersListEmailsResponseData = Array<UsersListEmailsResponseDataItem>;
+
 type UsersAddEmailsEndpoint = {
   /**
    * Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
@@ -14500,6 +36172,14 @@ type UsersAddEmailsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersAddEmailsResponseDataItem = {
+  email: string;
+  primary: boolean;
+  verified: boolean;
+  visibility: string | null;
+};
+type UsersAddEmailsResponseData = Array<UsersAddEmailsResponseDataItem>;
+
 type UsersDeleteEmailsEndpoint = {
   /**
    * Deletes one or more email addresses from your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
@@ -14512,6 +36192,7 @@ type UsersDeleteEmailsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersListFollowersForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -14528,6 +36209,30 @@ type UsersListFollowersForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListFollowersForAuthenticatedUserResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListFollowersForAuthenticatedUserResponseData = Array<
+  UsersListFollowersForAuthenticatedUserResponseDataItem
+>;
+
 type UsersListFollowedByAuthenticatedEndpoint = {
   /**
    * Results per page (max 100)
@@ -14544,6 +36249,30 @@ type UsersListFollowedByAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListFollowedByAuthenticatedResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListFollowedByAuthenticatedResponseData = Array<
+  UsersListFollowedByAuthenticatedResponseDataItem
+>;
+
 type UsersCheckFollowingEndpoint = {
   /**
    * username parameter
@@ -14556,6 +36285,7 @@ type UsersCheckFollowingRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersFollowEndpoint = {
   /**
    * username parameter
@@ -14568,6 +36298,7 @@ type UsersFollowRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersUnfollowEndpoint = {
   /**
    * username parameter
@@ -14580,6 +36311,7 @@ type UsersUnfollowRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersListGpgKeysEndpoint = {
   /**
    * Results per page (max 100)
@@ -14596,6 +36328,40 @@ type UsersListGpgKeysRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListGpgKeysResponseDataItemSubkeysItem = {
+  id: number;
+  primary_key_id: number;
+  key_id: string;
+  public_key: string;
+  emails: Array<any>;
+  subkeys: Array<any>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersListGpgKeysResponseDataItemEmailsItem = {
+  email: string;
+  verified: boolean;
+};
+type UsersListGpgKeysResponseDataItem = {
+  id: number;
+  primary_key_id: null;
+  key_id: string;
+  public_key: string;
+  emails: Array<UsersListGpgKeysResponseDataItemEmailsItem>;
+  subkeys: Array<UsersListGpgKeysResponseDataItemSubkeysItem>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersListGpgKeysResponseData = Array<UsersListGpgKeysResponseDataItem>;
+
 type UsersCreateGpgKeyEndpoint = {
   /**
    * Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key](https://help.github.com/articles/generating-a-new-gpg-key/)" for help creating a GPG key.
@@ -14608,6 +36374,39 @@ type UsersCreateGpgKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersCreateGpgKeyResponseDataSubkeysItem = {
+  id: number;
+  primary_key_id: number;
+  key_id: string;
+  public_key: string;
+  emails: Array<any>;
+  subkeys: Array<any>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersCreateGpgKeyResponseDataEmailsItem = {
+  email: string;
+  verified: boolean;
+};
+type UsersCreateGpgKeyResponseData = {
+  id: number;
+  primary_key_id: null;
+  key_id: string;
+  public_key: string;
+  emails: Array<UsersCreateGpgKeyResponseDataEmailsItem>;
+  subkeys: Array<UsersCreateGpgKeyResponseDataSubkeysItem>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+
 type UsersGetGpgKeyEndpoint = {
   /**
    * gpg_key_id parameter
@@ -14620,6 +36419,39 @@ type UsersGetGpgKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersGetGpgKeyResponseDataSubkeysItem = {
+  id: number;
+  primary_key_id: number;
+  key_id: string;
+  public_key: string;
+  emails: Array<any>;
+  subkeys: Array<any>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersGetGpgKeyResponseDataEmailsItem = {
+  email: string;
+  verified: boolean;
+};
+type UsersGetGpgKeyResponseData = {
+  id: number;
+  primary_key_id: null;
+  key_id: string;
+  public_key: string;
+  emails: Array<UsersGetGpgKeyResponseDataEmailsItem>;
+  subkeys: Array<UsersGetGpgKeyResponseDataSubkeysItem>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+
 type UsersDeleteGpgKeyEndpoint = {
   /**
    * gpg_key_id parameter
@@ -14632,6 +36464,7 @@ type UsersDeleteGpgKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsListInstallationsForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -14648,6 +36481,57 @@ type AppsListInstallationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItemPermissions = {
+  metadata: string;
+  contents: string;
+  issues: string;
+  single_file: string;
+};
+type AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItemAccount = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url?: string;
+  issues_url?: string;
+  members_url?: string;
+  public_members_url?: string;
+  avatar_url: string;
+  description?: string;
+  gravatar_id?: string;
+  html_url?: string;
+  followers_url?: string;
+  following_url?: string;
+  gists_url?: string;
+  starred_url?: string;
+  subscriptions_url?: string;
+  organizations_url?: string;
+  received_events_url?: string;
+  type?: string;
+  site_admin?: boolean;
+};
+type AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItem = {
+  id: number;
+  account: AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItemAccount;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItemPermissions;
+  events: Array<string>;
+  single_file_name: string;
+};
+type AppsListInstallationsForAuthenticatedUserResponseData = {
+  total_count: number;
+  installations: Array<
+    AppsListInstallationsForAuthenticatedUserResponseDataInstallationsItem
+  >;
+};
+
 type AppsListInstallationReposForAuthenticatedUserEndpoint = {
   /**
    * installation_id parameter
@@ -14668,6 +36552,120 @@ type AppsListInstallationReposForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type AppsListInstallationReposForAuthenticatedUserResponseData = {
+  total_count: number;
+  repositories: Array<
+    AppsListInstallationReposForAuthenticatedUserResponseDataRepositoriesItem
+  >;
+};
+
 type AppsAddRepoToInstallationEndpoint = {
   /**
    * installation_id parameter
@@ -14684,6 +36682,7 @@ type AppsAddRepoToInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsRemoveRepoFromInstallationEndpoint = {
   /**
    * installation_id parameter
@@ -14700,6 +36699,7 @@ type AppsRemoveRepoFromInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type IssuesListForAuthenticatedUserEndpoint = {
   /**
    * Indicates which sorts of issues to return. Can be one of:
@@ -14745,6 +36745,257 @@ type IssuesListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type IssuesListForAuthenticatedUserResponseDataItemRepositoryPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: IssuesListForAuthenticatedUserResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: IssuesListForAuthenticatedUserResponseDataItemRepositoryPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type IssuesListForAuthenticatedUserResponseDataItemPullRequest = {
+  url: string;
+  html_url: string;
+  diff_url: string;
+  patch_url: string;
+};
+type IssuesListForAuthenticatedUserResponseDataItemMilestoneCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemMilestone = {
+  url: string;
+  html_url: string;
+  labels_url: string;
+  id: number;
+  node_id: string;
+  number: number;
+  state: string;
+  title: string;
+  description: string;
+  creator: IssuesListForAuthenticatedUserResponseDataItemMilestoneCreator;
+  open_issues: number;
+  closed_issues: number;
+  created_at: string;
+  updated_at: string;
+  closed_at: string;
+  due_on: string;
+};
+type IssuesListForAuthenticatedUserResponseDataItemAssigneesItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemAssignee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemLabelsItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  name: string;
+  description: string;
+  color: string;
+  default: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type IssuesListForAuthenticatedUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  repository_url: string;
+  labels_url: string;
+  comments_url: string;
+  events_url: string;
+  html_url: string;
+  number: number;
+  state: string;
+  title: string;
+  body: string;
+  user: IssuesListForAuthenticatedUserResponseDataItemUser;
+  labels: Array<IssuesListForAuthenticatedUserResponseDataItemLabelsItem>;
+  assignee: IssuesListForAuthenticatedUserResponseDataItemAssignee;
+  assignees: Array<IssuesListForAuthenticatedUserResponseDataItemAssigneesItem>;
+  milestone: IssuesListForAuthenticatedUserResponseDataItemMilestone;
+  locked: boolean;
+  active_lock_reason: string;
+  comments: number;
+  pull_request: IssuesListForAuthenticatedUserResponseDataItemPullRequest;
+  closed_at: null;
+  created_at: string;
+  updated_at: string;
+  repository: IssuesListForAuthenticatedUserResponseDataItemRepository;
+};
+type IssuesListForAuthenticatedUserResponseData = Array<
+  IssuesListForAuthenticatedUserResponseDataItem
+>;
+
 type UsersListPublicKeysEndpoint = {
   /**
    * Results per page (max 100)
@@ -14761,6 +37012,11 @@ type UsersListPublicKeysRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListPublicKeysResponseDataItem = { key_id: string; key: string };
+type UsersListPublicKeysResponseData = Array<
+  UsersListPublicKeysResponseDataItem
+>;
+
 type UsersCreatePublicKeyEndpoint = {
   /**
    * A descriptive name for the new key. Use a name that will help you recognize this key in your GitHub account. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
@@ -14777,6 +37033,8 @@ type UsersCreatePublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersCreatePublicKeyResponseData = { key_id: string; key: string };
+
 type UsersGetPublicKeyEndpoint = {
   /**
    * key_id parameter
@@ -14789,6 +37047,8 @@ type UsersGetPublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersGetPublicKeyResponseData = { key_id: string; key: string };
+
 type UsersDeletePublicKeyEndpoint = {
   /**
    * key_id parameter
@@ -14801,6 +37061,7 @@ type UsersDeletePublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type AppsListSubscriptionsForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -14817,6 +37078,43 @@ type AppsListSubscriptionsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListSubscriptionsForAuthenticatedUserResponseDataItemPlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseDataItemAccount = {
+  login: string;
+  id: number;
+  url: string;
+  email: null;
+  organization_billing_email: string;
+  type: string;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseDataItem = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  account: AppsListSubscriptionsForAuthenticatedUserResponseDataItemAccount;
+  plan: AppsListSubscriptionsForAuthenticatedUserResponseDataItemPlan;
+};
+type AppsListSubscriptionsForAuthenticatedUserResponseData = Array<
+  AppsListSubscriptionsForAuthenticatedUserResponseDataItem
+>;
+
 type AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint = {
   /**
    * Results per page (max 100)
@@ -14833,6 +37131,43 @@ type AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItemPlan = {
+  url: string;
+  accounts_url: string;
+  id: number;
+  number: number;
+  name: string;
+  description: string;
+  monthly_price_in_cents: number;
+  yearly_price_in_cents: number;
+  price_model: string;
+  has_free_trial: boolean;
+  unit_name: null;
+  state: string;
+  bullets: Array<string>;
+};
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItemAccount = {
+  login: string;
+  id: number;
+  url: string;
+  email: null;
+  organization_billing_email: string;
+  type: string;
+};
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItem = {
+  billing_cycle: string;
+  next_billing_date: string;
+  unit_count: null;
+  on_free_trial: boolean;
+  free_trial_ends_on: string;
+  updated_at: string;
+  account: AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItemAccount;
+  plan: AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItemPlan;
+};
+type AppsListSubscriptionsForAuthenticatedUserStubbedResponseData = Array<
+  AppsListSubscriptionsForAuthenticatedUserStubbedResponseDataItem
+>;
+
 type OrgsListMembershipsEndpoint = {
   /**
    * Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.
@@ -14853,6 +37188,52 @@ type OrgsListMembershipsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListMembershipsResponseDataItemUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsListMembershipsResponseDataItemOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsListMembershipsResponseDataItem = {
+  url: string;
+  state: string;
+  role: string;
+  organization_url: string;
+  organization: OrgsListMembershipsResponseDataItemOrganization;
+  user: OrgsListMembershipsResponseDataItemUser;
+};
+type OrgsListMembershipsResponseData = Array<
+  OrgsListMembershipsResponseDataItem
+>;
+
 type OrgsGetMembershipForAuthenticatedUserEndpoint = {
   /**
    * org parameter
@@ -14865,6 +37246,49 @@ type OrgsGetMembershipForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsGetMembershipForAuthenticatedUserResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsGetMembershipForAuthenticatedUserResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsGetMembershipForAuthenticatedUserResponseData = {
+  url: string;
+  state: string;
+  role: string;
+  organization_url: string;
+  organization: OrgsGetMembershipForAuthenticatedUserResponseDataOrganization;
+  user: OrgsGetMembershipForAuthenticatedUserResponseDataUser;
+};
+
 type OrgsUpdateMembershipEndpoint = {
   /**
    * org parameter
@@ -14881,6 +37305,49 @@ type OrgsUpdateMembershipRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsUpdateMembershipResponseDataUser = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type OrgsUpdateMembershipResponseDataOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsUpdateMembershipResponseData = {
+  url: string;
+  state: string;
+  role: string;
+  organization_url: string;
+  organization: OrgsUpdateMembershipResponseDataOrganization;
+  user: OrgsUpdateMembershipResponseDataUser;
+};
+
 type MigrationsStartForAuthenticatedUserEndpoint = {
   /**
    * An array of repositories to include in the migration.
@@ -14901,6 +37368,148 @@ type MigrationsStartForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsStartForAuthenticatedUserResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsStartForAuthenticatedUserResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsStartForAuthenticatedUserResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsStartForAuthenticatedUserResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsStartForAuthenticatedUserResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsStartForAuthenticatedUserResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsStartForAuthenticatedUserResponseData = {
+  id: number;
+  owner: MigrationsStartForAuthenticatedUserResponseDataOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<
+    MigrationsStartForAuthenticatedUserResponseDataRepositoriesItem
+  >;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type MigrationsListForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -14917,6 +37526,151 @@ type MigrationsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsListForAuthenticatedUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsListForAuthenticatedUserResponseDataItem = {
+  id: number;
+  owner: MigrationsListForAuthenticatedUserResponseDataItemOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<
+    MigrationsListForAuthenticatedUserResponseDataItemRepositoriesItem
+  >;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+type MigrationsListForAuthenticatedUserResponseData = Array<
+  MigrationsListForAuthenticatedUserResponseDataItem
+>;
+
 type MigrationsGetStatusForAuthenticatedUserEndpoint = {
   /**
    * migration_id parameter
@@ -14929,6 +37683,148 @@ type MigrationsGetStatusForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type MigrationsGetStatusForAuthenticatedUserResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsGetStatusForAuthenticatedUserResponseData = {
+  id: number;
+  owner: MigrationsGetStatusForAuthenticatedUserResponseDataOwner;
+  guid: string;
+  state: string;
+  lock_repositories: boolean;
+  exclude_attachments: boolean;
+  repositories: Array<
+    MigrationsGetStatusForAuthenticatedUserResponseDataRepositoriesItem
+  >;
+  url: string;
+  created_at: string;
+  updated_at: string;
+};
+
 type MigrationsGetArchiveForAuthenticatedUserEndpoint = {
   /**
    * migration_id parameter
@@ -14941,6 +37837,7 @@ type MigrationsGetArchiveForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsDeleteArchiveForAuthenticatedUserEndpoint = {
   /**
    * migration_id parameter
@@ -14953,6 +37850,7 @@ type MigrationsDeleteArchiveForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type MigrationsUnlockRepoForAuthenticatedUserEndpoint = {
   /**
    * migration_id parameter
@@ -14969,6 +37867,7 @@ type MigrationsUnlockRepoForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type OrgsListForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -14985,6 +37884,24 @@ type OrgsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListForAuthenticatedUserResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsListForAuthenticatedUserResponseData = Array<
+  OrgsListForAuthenticatedUserResponseDataItem
+>;
+
 type ProjectsCreateForAuthenticatedUserEndpoint = {
   /**
    * The name of the project.
@@ -15001,6 +37918,42 @@ type ProjectsCreateForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsCreateForAuthenticatedUserResponseDataCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsCreateForAuthenticatedUserResponseData = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsCreateForAuthenticatedUserResponseDataCreator;
+  created_at: string;
+  updated_at: string;
+};
+
 type UsersListPublicEmailsEndpoint = {
   /**
    * Results per page (max 100)
@@ -15017,6 +37970,16 @@ type UsersListPublicEmailsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListPublicEmailsResponseDataItem = {
+  email: string;
+  verified: boolean;
+  primary: boolean;
+  visibility: string;
+};
+type UsersListPublicEmailsResponseData = Array<
+  UsersListPublicEmailsResponseDataItem
+>;
+
 type ReposListForAuthenticatedUserEndpoint = {
   /**
    * Can be one of `all`, `public`, or `private`.
@@ -15058,6 +38021,7 @@ type ReposListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposCreateForAuthenticatedUserEndpoint = {
   /**
    * The name of the repository.
@@ -15135,6 +38099,114 @@ type ReposCreateForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposCreateForAuthenticatedUserResponseDataPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ReposCreateForAuthenticatedUserResponseDataOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposCreateForAuthenticatedUserResponseData = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposCreateForAuthenticatedUserResponseDataOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ReposCreateForAuthenticatedUserResponseDataPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+
 type ReposListInvitationsForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -15151,6 +38223,129 @@ type ReposListInvitationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ReposListInvitationsForAuthenticatedUserResponseDataItemInviter = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsForAuthenticatedUserResponseDataItemInvitee = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsForAuthenticatedUserResponseDataItemRepositoryOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ReposListInvitationsForAuthenticatedUserResponseDataItemRepository = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ReposListInvitationsForAuthenticatedUserResponseDataItemRepositoryOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+};
+type ReposListInvitationsForAuthenticatedUserResponseDataItem = {
+  id: number;
+  repository: ReposListInvitationsForAuthenticatedUserResponseDataItemRepository;
+  invitee: ReposListInvitationsForAuthenticatedUserResponseDataItemInvitee;
+  inviter: ReposListInvitationsForAuthenticatedUserResponseDataItemInviter;
+  permissions: string;
+  created_at: string;
+  url: string;
+  html_url: string;
+};
+type ReposListInvitationsForAuthenticatedUserResponseData = Array<
+  ReposListInvitationsForAuthenticatedUserResponseDataItem
+>;
+
 type ReposAcceptInvitationEndpoint = {
   /**
    * invitation_id parameter
@@ -15163,6 +38358,7 @@ type ReposAcceptInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposDeclineInvitationEndpoint = {
   /**
    * invitation_id parameter
@@ -15175,6 +38371,7 @@ type ReposDeclineInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListReposStarredByAuthenticatedUserEndpoint = {
   /**
    * One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
@@ -15199,6 +38396,117 @@ type ActivityListReposStarredByAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListReposStarredByAuthenticatedUserResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ActivityListReposStarredByAuthenticatedUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListReposStarredByAuthenticatedUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListReposStarredByAuthenticatedUserResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ActivityListReposStarredByAuthenticatedUserResponseDataItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ActivityListReposStarredByAuthenticatedUserResponseData = Array<
+  ActivityListReposStarredByAuthenticatedUserResponseDataItem
+>;
+
 type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
   /**
    * owner parameter
@@ -15215,6 +38523,7 @@ type ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityStarRepoForAuthenticatedUserEndpoint = {
   /**
    * owner parameter
@@ -15231,6 +38540,7 @@ type ActivityStarRepoForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityUnstarRepoForAuthenticatedUserEndpoint = {
   /**
    * owner parameter
@@ -15247,6 +38557,7 @@ type ActivityUnstarRepoForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListWatchedReposForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -15263,6 +38574,122 @@ type ActivityListWatchedReposForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListWatchedReposForAuthenticatedUserResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type ActivityListWatchedReposForAuthenticatedUserResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ActivityListWatchedReposForAuthenticatedUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListWatchedReposForAuthenticatedUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListWatchedReposForAuthenticatedUserResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ActivityListWatchedReposForAuthenticatedUserResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: ActivityListWatchedReposForAuthenticatedUserResponseDataItemLicense;
+};
+type ActivityListWatchedReposForAuthenticatedUserResponseData = Array<
+  ActivityListWatchedReposForAuthenticatedUserResponseDataItem
+>;
+
 type ActivityCheckWatchingRepoLegacyEndpoint = {
   /**
    * owner parameter
@@ -15279,6 +38706,7 @@ type ActivityCheckWatchingRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityWatchRepoLegacyEndpoint = {
   /**
    * owner parameter
@@ -15295,6 +38723,7 @@ type ActivityWatchRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityStopWatchingRepoLegacyEndpoint = {
   /**
    * owner parameter
@@ -15311,6 +38740,7 @@ type ActivityStopWatchingRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type TeamsListForAuthenticatedUserEndpoint = {
   /**
    * Results per page (max 100)
@@ -15327,6 +38757,58 @@ type TeamsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type TeamsListForAuthenticatedUserResponseDataItemOrganization = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  is_verified: boolean;
+  has_organization_projects: boolean;
+  has_repository_projects: boolean;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  html_url: string;
+  created_at: string;
+  type: string;
+};
+type TeamsListForAuthenticatedUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  url: string;
+  html_url: string;
+  name: string;
+  slug: string;
+  description: string;
+  privacy: string;
+  permission: string;
+  members_url: string;
+  repositories_url: string;
+  parent: null;
+  members_count: number;
+  repos_count: number;
+  created_at: string;
+  updated_at: string;
+  organization: TeamsListForAuthenticatedUserResponseDataItemOrganization;
+};
+type TeamsListForAuthenticatedUserResponseData = Array<
+  TeamsListForAuthenticatedUserResponseDataItem
+>;
+
 type MigrationsListReposForUserEndpoint = {
   /**
    * migration_id parameter
@@ -15347,6 +38829,122 @@ type MigrationsListReposForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type MigrationsListReposForUserResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type MigrationsListReposForUserResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type MigrationsListReposForUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type MigrationsListReposForUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: MigrationsListReposForUserResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: MigrationsListReposForUserResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: MigrationsListReposForUserResponseDataItemLicense;
+};
+type MigrationsListReposForUserResponseData = Array<
+  MigrationsListReposForUserResponseDataItem
+>;
+
 type UsersListEndpoint = {
   /**
    * The integer ID of the last User that you've seen.
@@ -15367,6 +38965,28 @@ type UsersListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListResponseData = Array<UsersListResponseDataItem>;
+
 type UsersGetByUsernameEndpoint = {
   /**
    * username parameter
@@ -15379,6 +38999,47 @@ type UsersGetByUsernameRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersGetByUsernameResponseDataPlan = {
+  name: string;
+  space: number;
+  collaborators: number;
+  private_repos: number;
+};
+type UsersGetByUsernameResponseData = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+  name: string;
+  company: string;
+  blog: string;
+  location: string;
+  email: string;
+  hireable: boolean;
+  bio: string;
+  public_repos: number;
+  public_gists: number;
+  followers: number;
+  following: number;
+  created_at: string;
+  updated_at: string;
+  plan?: UsersGetByUsernameResponseDataPlan;
+};
+
 type ActivityListEventsForAuthenticatedUserEndpoint = {
   /**
    * username parameter
@@ -15399,6 +39060,7 @@ type ActivityListEventsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListOrgEventsForAuthenticatedUserEndpoint = {
   /**
    * username parameter
@@ -15423,6 +39085,7 @@ type ActivityListOrgEventsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListPublicEventsForUserEndpoint = {
   /**
    * username parameter
@@ -15443,6 +39106,7 @@ type ActivityListPublicEventsForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type UsersListFollowersForUserEndpoint = {
   /**
    * username parameter
@@ -15463,6 +39127,30 @@ type UsersListFollowersForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListFollowersForUserResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListFollowersForUserResponseData = Array<
+  UsersListFollowersForUserResponseDataItem
+>;
+
 type UsersListFollowingForUserEndpoint = {
   /**
    * username parameter
@@ -15483,6 +39171,30 @@ type UsersListFollowingForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListFollowingForUserResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type UsersListFollowingForUserResponseData = Array<
+  UsersListFollowingForUserResponseDataItem
+>;
+
 type UsersCheckFollowingForUserEndpoint = {
   /**
    * username parameter
@@ -15499,6 +39211,7 @@ type UsersCheckFollowingForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type GistsListForUserEndpoint = {
   /**
    * username parameter
@@ -15523,6 +39236,58 @@ type GistsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type GistsListForUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type GistsListForUserResponseDataItemFilesHelloWorldRb = {
+  filename: string;
+  type: string;
+  language: string;
+  raw_url: string;
+  size: number;
+};
+type GistsListForUserResponseDataItemFiles = {
+  "hello_world.rb": GistsListForUserResponseDataItemFilesHelloWorldRb;
+};
+type GistsListForUserResponseDataItem = {
+  url: string;
+  forks_url: string;
+  commits_url: string;
+  id: string;
+  node_id: string;
+  git_pull_url: string;
+  git_push_url: string;
+  html_url: string;
+  files: GistsListForUserResponseDataItemFiles;
+  public: boolean;
+  created_at: string;
+  updated_at: string;
+  description: string;
+  comments: number;
+  user: null;
+  comments_url: string;
+  owner: GistsListForUserResponseDataItemOwner;
+  truncated: boolean;
+};
+type GistsListForUserResponseData = Array<GistsListForUserResponseDataItem>;
+
 type UsersListGpgKeysForUserEndpoint = {
   /**
    * username parameter
@@ -15543,6 +39308,42 @@ type UsersListGpgKeysForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListGpgKeysForUserResponseDataItemSubkeysItem = {
+  id: number;
+  primary_key_id: number;
+  key_id: string;
+  public_key: string;
+  emails: Array<any>;
+  subkeys: Array<any>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersListGpgKeysForUserResponseDataItemEmailsItem = {
+  email: string;
+  verified: boolean;
+};
+type UsersListGpgKeysForUserResponseDataItem = {
+  id: number;
+  primary_key_id: null;
+  key_id: string;
+  public_key: string;
+  emails: Array<UsersListGpgKeysForUserResponseDataItemEmailsItem>;
+  subkeys: Array<UsersListGpgKeysForUserResponseDataItemSubkeysItem>;
+  can_sign: boolean;
+  can_encrypt_comms: boolean;
+  can_encrypt_storage: boolean;
+  can_certify: boolean;
+  created_at: string;
+  expires_at: null;
+};
+type UsersListGpgKeysForUserResponseData = Array<
+  UsersListGpgKeysForUserResponseDataItem
+>;
+
 type UsersGetContextForUserEndpoint = {
   /**
    * username parameter
@@ -15563,6 +39364,14 @@ type UsersGetContextForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersGetContextForUserResponseDataContextsItem = {
+  message: string;
+  octicon: string;
+};
+type UsersGetContextForUserResponseData = {
+  contexts: Array<UsersGetContextForUserResponseDataContextsItem>;
+};
+
 type AppsGetUserInstallationEndpoint = {
   /**
    * username parameter
@@ -15575,6 +39384,48 @@ type AppsGetUserInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type AppsGetUserInstallationResponseDataPermissions = {
+  checks: string;
+  metadata: string;
+  contents: string;
+};
+type AppsGetUserInstallationResponseDataAccount = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type AppsGetUserInstallationResponseData = {
+  id: number;
+  account: AppsGetUserInstallationResponseDataAccount;
+  repository_selection: string;
+  access_tokens_url: string;
+  repositories_url: string;
+  html_url: string;
+  app_id: number;
+  target_id: number;
+  target_type: string;
+  permissions: AppsGetUserInstallationResponseDataPermissions;
+  events: Array<string>;
+  created_at: string;
+  updated_at: string;
+  single_file_name: null;
+};
+
 type UsersListPublicKeysForUserEndpoint = {
   /**
    * username parameter
@@ -15595,6 +39446,11 @@ type UsersListPublicKeysForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type UsersListPublicKeysForUserResponseDataItem = { id: number; key: string };
+type UsersListPublicKeysForUserResponseData = Array<
+  UsersListPublicKeysForUserResponseDataItem
+>;
+
 type OrgsListForUserEndpoint = {
   /**
    * username parameter
@@ -15615,6 +39471,22 @@ type OrgsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type OrgsListForUserResponseDataItem = {
+  login: string;
+  id: number;
+  node_id: string;
+  url: string;
+  repos_url: string;
+  events_url: string;
+  hooks_url: string;
+  issues_url: string;
+  members_url: string;
+  public_members_url: string;
+  avatar_url: string;
+  description: string;
+};
+type OrgsListForUserResponseData = Array<OrgsListForUserResponseDataItem>;
+
 type ProjectsListForUserEndpoint = {
   /**
    * username parameter
@@ -15639,6 +39511,45 @@ type ProjectsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ProjectsListForUserResponseDataItemCreator = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ProjectsListForUserResponseDataItem = {
+  owner_url: string;
+  url: string;
+  html_url: string;
+  columns_url: string;
+  id: number;
+  node_id: string;
+  name: string;
+  body: string;
+  number: number;
+  state: string;
+  creator: ProjectsListForUserResponseDataItemCreator;
+  created_at: string;
+  updated_at: string;
+};
+type ProjectsListForUserResponseData = Array<
+  ProjectsListForUserResponseDataItem
+>;
+
 type ActivityListReceivedEventsForUserEndpoint = {
   /**
    * username parameter
@@ -15659,6 +39570,7 @@ type ActivityListReceivedEventsForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListReceivedPublicEventsForUserEndpoint = {
   /**
    * username parameter
@@ -15679,6 +39591,7 @@ type ActivityListReceivedPublicEventsForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ReposListForUserEndpoint = {
   /**
    * username parameter
@@ -15711,6 +39624,7 @@ type ReposListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 type ActivityListReposStarredByUserEndpoint = {
   /**
    * username parameter
@@ -15739,6 +39653,117 @@ type ActivityListReposStarredByUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListReposStarredByUserResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ActivityListReposStarredByUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListReposStarredByUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListReposStarredByUserResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ActivityListReposStarredByUserResponseDataItemPermissions;
+  allow_rebase_merge: boolean;
+  template_repository: null;
+  temp_clone_token: string;
+  allow_squash_merge: boolean;
+  allow_merge_commit: boolean;
+  subscribers_count: number;
+  network_count: number;
+};
+type ActivityListReposStarredByUserResponseData = Array<
+  ActivityListReposStarredByUserResponseDataItem
+>;
+
 type ActivityListReposWatchedByUserEndpoint = {
   /**
    * username parameter
@@ -15759,6 +39784,121 @@ type ActivityListReposWatchedByUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+type ActivityListReposWatchedByUserResponseDataItemLicense = {
+  key: string;
+  name: string;
+  spdx_id: string;
+  url: string;
+  node_id: string;
+};
+type ActivityListReposWatchedByUserResponseDataItemPermissions = {
+  admin: boolean;
+  push: boolean;
+  pull: boolean;
+};
+type ActivityListReposWatchedByUserResponseDataItemOwner = {
+  login: string;
+  id: number;
+  node_id: string;
+  avatar_url: string;
+  gravatar_id: string;
+  url: string;
+  html_url: string;
+  followers_url: string;
+  following_url: string;
+  gists_url: string;
+  starred_url: string;
+  subscriptions_url: string;
+  organizations_url: string;
+  repos_url: string;
+  events_url: string;
+  received_events_url: string;
+  type: string;
+  site_admin: boolean;
+};
+type ActivityListReposWatchedByUserResponseDataItem = {
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  owner: ActivityListReposWatchedByUserResponseDataItemOwner;
+  private: boolean;
+  html_url: string;
+  description: string;
+  fork: boolean;
+  url: string;
+  archive_url: string;
+  assignees_url: string;
+  blobs_url: string;
+  branches_url: string;
+  collaborators_url: string;
+  comments_url: string;
+  commits_url: string;
+  compare_url: string;
+  contents_url: string;
+  contributors_url: string;
+  deployments_url: string;
+  downloads_url: string;
+  events_url: string;
+  forks_url: string;
+  git_commits_url: string;
+  git_refs_url: string;
+  git_tags_url: string;
+  git_url: string;
+  issue_comment_url: string;
+  issue_events_url: string;
+  issues_url: string;
+  keys_url: string;
+  labels_url: string;
+  languages_url: string;
+  merges_url: string;
+  milestones_url: string;
+  notifications_url: string;
+  pulls_url: string;
+  releases_url: string;
+  ssh_url: string;
+  stargazers_url: string;
+  statuses_url: string;
+  subscribers_url: string;
+  subscription_url: string;
+  tags_url: string;
+  teams_url: string;
+  trees_url: string;
+  clone_url: string;
+  mirror_url: string;
+  hooks_url: string;
+  svn_url: string;
+  homepage: string;
+  language: null;
+  forks_count: number;
+  stargazers_count: number;
+  watchers_count: number;
+  size: number;
+  default_branch: string;
+  open_issues_count: number;
+  is_template: boolean;
+  topics: Array<string>;
+  has_issues: boolean;
+  has_projects: boolean;
+  has_wiki: boolean;
+  has_pages: boolean;
+  has_downloads: boolean;
+  archived: boolean;
+  disabled: boolean;
+  visibility: string;
+  pushed_at: string;
+  created_at: string;
+  updated_at: string;
+  permissions: ActivityListReposWatchedByUserResponseDataItemPermissions;
+  template_repository: null;
+  temp_clone_token: string;
+  subscribers_count: number;
+  network_count: number;
+  license: ActivityListReposWatchedByUserResponseDataItemLicense;
+};
+type ActivityListReposWatchedByUserResponseData = Array<
+  ActivityListReposWatchedByUserResponseDataItem
+>;
 
 export type AppsCreateInstallationTokenParamsPermissions = {};
 export type GistsCreateParamsFiles = {
