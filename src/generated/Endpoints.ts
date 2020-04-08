@@ -2563,7 +2563,7 @@ export interface Endpoints {
 type AppsGetAuthenticatedEndpoint = {};
 type AppsGetAuthenticatedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/app";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2575,7 +2575,7 @@ type AppsCreateFromManifestEndpoint = {
 };
 type AppsCreateFromManifestRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/app-manifests/:code/conversions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2591,7 +2591,7 @@ type AppsListInstallationsEndpoint = {
 };
 type AppsListInstallationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/app/installations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2603,7 +2603,7 @@ type AppsGetInstallationEndpoint = {
 };
 type AppsGetInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/app/installations/:installation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2615,7 +2615,7 @@ type AppsDeleteInstallationEndpoint = {
 };
 type AppsDeleteInstallationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/app/installations/:installation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2635,7 +2635,7 @@ type AppsCreateInstallationTokenEndpoint = {
 };
 type AppsCreateInstallationTokenRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/app/installations/:installation_id/access_tokens";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2651,7 +2651,7 @@ type OauthAuthorizationsListGrantsEndpoint = {
 };
 type OauthAuthorizationsListGrantsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/applications/grants";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2663,7 +2663,7 @@ type OauthAuthorizationsGetGrantEndpoint = {
 };
 type OauthAuthorizationsGetGrantRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/applications/grants/:grant_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2675,7 +2675,7 @@ type OauthAuthorizationsDeleteGrantEndpoint = {
 };
 type OauthAuthorizationsDeleteGrantRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/grants/:grant_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2691,7 +2691,7 @@ type AppsDeleteAuthorizationEndpoint = {
 };
 type AppsDeleteAuthorizationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/grant";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2707,7 +2707,7 @@ type AppsRevokeGrantForApplicationEndpoint = {
 };
 type AppsRevokeGrantForApplicationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/grants/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2723,7 +2723,7 @@ type OauthAuthorizationsRevokeGrantForApplicationEndpoint = {
 };
 type OauthAuthorizationsRevokeGrantForApplicationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/grants/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2739,7 +2739,7 @@ type AppsCheckTokenEndpoint = {
 };
 type AppsCheckTokenRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/applications/:client_id/token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2755,7 +2755,7 @@ type AppsResetTokenEndpoint = {
 };
 type AppsResetTokenRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/applications/:client_id/token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2771,7 +2771,7 @@ type AppsDeleteTokenEndpoint = {
 };
 type AppsDeleteTokenRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2787,7 +2787,7 @@ type AppsCheckAuthorizationEndpoint = {
 };
 type AppsCheckAuthorizationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2803,7 +2803,7 @@ type OauthAuthorizationsCheckAuthorizationEndpoint = {
 };
 type OauthAuthorizationsCheckAuthorizationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2819,7 +2819,7 @@ type AppsResetAuthorizationEndpoint = {
 };
 type AppsResetAuthorizationRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2835,7 +2835,7 @@ type OauthAuthorizationsResetAuthorizationEndpoint = {
 };
 type OauthAuthorizationsResetAuthorizationRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2851,7 +2851,7 @@ type AppsRevokeAuthorizationForApplicationEndpoint = {
 };
 type AppsRevokeAuthorizationForApplicationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2867,7 +2867,7 @@ type OauthAuthorizationsRevokeAuthorizationForApplicationEndpoint = {
 };
 type OauthAuthorizationsRevokeAuthorizationForApplicationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/applications/:client_id/tokens/:access_token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2879,7 +2879,7 @@ type AppsGetBySlugEndpoint = {
 };
 type AppsGetBySlugRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/apps/:app_slug";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2895,7 +2895,7 @@ type OauthAuthorizationsListAuthorizationsEndpoint = {
 };
 type OauthAuthorizationsListAuthorizationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/authorizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2927,7 +2927,7 @@ type OauthAuthorizationsCreateAuthorizationEndpoint = {
 };
 type OauthAuthorizationsCreateAuthorizationRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/authorizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2959,7 +2959,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint = {
 };
 type OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/authorizations/clients/:client_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -2991,7 +2991,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint = {
 };
 type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/authorizations/clients/:client_id/:fingerprint";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3023,7 +3023,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintEndpoint = {
 };
 type OauthAuthorizationsGetOrCreateAuthorizationForAppFingerprintRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/authorizations/clients/:client_id/:fingerprint";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3035,7 +3035,7 @@ type OauthAuthorizationsGetAuthorizationEndpoint = {
 };
 type OauthAuthorizationsGetAuthorizationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/authorizations/:authorization_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3071,7 +3071,7 @@ type OauthAuthorizationsUpdateAuthorizationEndpoint = {
 };
 type OauthAuthorizationsUpdateAuthorizationRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/authorizations/:authorization_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3083,21 +3083,21 @@ type OauthAuthorizationsDeleteAuthorizationEndpoint = {
 };
 type OauthAuthorizationsDeleteAuthorizationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/authorizations/:authorization_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type CodesOfConductGetAllCodesOfConductEndpoint = {};
 type CodesOfConductGetAllCodesOfConductRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/codes_of_conduct";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type CodesOfConductListConductCodesEndpoint = {};
 type CodesOfConductListConductCodesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/codes_of_conduct";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3109,7 +3109,7 @@ type CodesOfConductGetConductCodeEndpoint = {
 };
 type CodesOfConductGetConductCodeRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/codes_of_conduct/:key";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3129,14 +3129,14 @@ type AppsCreateContentAttachmentEndpoint = {
 };
 type AppsCreateContentAttachmentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/content_references/:content_reference_id/attachments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type EmojisGetEndpoint = {};
 type EmojisGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/emojis";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3152,21 +3152,21 @@ type ActivityListPublicEventsEndpoint = {
 };
 type ActivityListPublicEventsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type ActivityGetFeedsEndpoint = {};
 type ActivityGetFeedsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/feeds";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type ActivityListFeedsEndpoint = {};
 type ActivityListFeedsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/feeds";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3186,7 +3186,7 @@ type GistsListEndpoint = {
 };
 type GistsListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3206,7 +3206,7 @@ type GistsCreateEndpoint = {
 };
 type GistsCreateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/gists";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3226,7 +3226,7 @@ type GistsListPublicEndpoint = {
 };
 type GistsListPublicRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/public";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3246,7 +3246,7 @@ type GistsListStarredEndpoint = {
 };
 type GistsListStarredRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/starred";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3258,7 +3258,7 @@ type GistsGetEndpoint = {
 };
 type GistsGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3278,7 +3278,7 @@ type GistsUpdateEndpoint = {
 };
 type GistsUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/gists/:gist_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3290,7 +3290,7 @@ type GistsDeleteEndpoint = {
 };
 type GistsDeleteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/gists/:gist_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3310,7 +3310,7 @@ type GistsListCommentsEndpoint = {
 };
 type GistsListCommentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3326,7 +3326,7 @@ type GistsCreateCommentEndpoint = {
 };
 type GistsCreateCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/gists/:gist_id/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3342,7 +3342,7 @@ type GistsGetCommentEndpoint = {
 };
 type GistsGetCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3362,7 +3362,7 @@ type GistsUpdateCommentEndpoint = {
 };
 type GistsUpdateCommentRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/gists/:gist_id/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3378,7 +3378,7 @@ type GistsDeleteCommentEndpoint = {
 };
 type GistsDeleteCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/gists/:gist_id/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3398,7 +3398,7 @@ type GistsListCommitsEndpoint = {
 };
 type GistsListCommitsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/commits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3410,7 +3410,7 @@ type GistsForkEndpoint = {
 };
 type GistsForkRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/gists/:gist_id/forks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3430,7 +3430,7 @@ type GistsListForksEndpoint = {
 };
 type GistsListForksRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/forks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3442,7 +3442,7 @@ type GistsStarEndpoint = {
 };
 type GistsStarRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/gists/:gist_id/star";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3454,7 +3454,7 @@ type GistsUnstarEndpoint = {
 };
 type GistsUnstarRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/gists/:gist_id/star";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3466,7 +3466,7 @@ type GistsCheckIsStarredEndpoint = {
 };
 type GistsCheckIsStarredRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/star";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3482,14 +3482,14 @@ type GistsGetRevisionEndpoint = {
 };
 type GistsGetRevisionRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gists/:gist_id/:sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type GitignoreListTemplatesEndpoint = {};
 type GitignoreListTemplatesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gitignore/templates";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3501,7 +3501,7 @@ type GitignoreGetTemplateEndpoint = {
 };
 type GitignoreGetTemplateRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/gitignore/templates/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3517,14 +3517,14 @@ type AppsListReposEndpoint = {
 };
 type AppsListReposRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/installation/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type AppsRevokeInstallationTokenEndpoint = {};
 type AppsRevokeInstallationTokenRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/installation/token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3569,7 +3569,7 @@ type IssuesListEndpoint = {
 };
 type IssuesListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3593,7 +3593,7 @@ type SearchIssuesLegacyEndpoint = {
 };
 type SearchIssuesLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/legacy/issues/search/:owner/:repository/:state/:keyword";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3621,7 +3621,7 @@ type SearchReposLegacyEndpoint = {
 };
 type SearchReposLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/legacy/repos/search/:keyword";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3633,7 +3633,7 @@ type SearchEmailLegacyEndpoint = {
 };
 type SearchEmailLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/legacy/user/email/:email";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3657,21 +3657,21 @@ type SearchUsersLegacyEndpoint = {
 };
 type SearchUsersLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/legacy/user/search/:keyword";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type LicensesListCommonlyUsedEndpoint = {};
 type LicensesListCommonlyUsedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/licenses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type LicensesListEndpoint = {};
 type LicensesListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/licenses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3683,7 +3683,7 @@ type LicensesGetEndpoint = {
 };
 type LicensesGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/licenses/:license";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3705,7 +3705,7 @@ type MarkdownRenderEndpoint = {
 };
 type MarkdownRenderRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/markdown";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3717,7 +3717,7 @@ type MarkdownRenderRawEndpoint = {
 };
 type MarkdownRenderRawRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/markdown/raw";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3729,7 +3729,7 @@ type AppsGetSubscriptionPlanForAccountEndpoint = {
 };
 type AppsGetSubscriptionPlanForAccountRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/accounts/:account_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3741,7 +3741,7 @@ type AppsCheckAccountIsAssociatedWithAnyEndpoint = {
 };
 type AppsCheckAccountIsAssociatedWithAnyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/accounts/:account_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3757,7 +3757,7 @@ type AppsListPlansEndpoint = {
 };
 type AppsListPlansRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/plans";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3785,7 +3785,7 @@ type AppsListAccountsForPlanEndpoint = {
 };
 type AppsListAccountsForPlanRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/plans/:plan_id/accounts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3813,7 +3813,7 @@ type AppsListAccountsUserOrOrgOnPlanEndpoint = {
 };
 type AppsListAccountsUserOrOrgOnPlanRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/plans/:plan_id/accounts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3825,7 +3825,7 @@ type AppsGetSubscriptionPlanForAccountStubbedEndpoint = {
 };
 type AppsGetSubscriptionPlanForAccountStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/stubbed/accounts/:account_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3837,7 +3837,7 @@ type AppsCheckAccountIsAssociatedWithAnyStubbedEndpoint = {
 };
 type AppsCheckAccountIsAssociatedWithAnyStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/stubbed/accounts/:account_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3853,7 +3853,7 @@ type AppsListPlansStubbedEndpoint = {
 };
 type AppsListPlansStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/stubbed/plans";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3881,7 +3881,7 @@ type AppsListAccountsForPlanStubbedEndpoint = {
 };
 type AppsListAccountsForPlanStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/stubbed/plans/:plan_id/accounts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3909,14 +3909,14 @@ type AppsListAccountsUserOrOrgOnPlanStubbedEndpoint = {
 };
 type AppsListAccountsUserOrOrgOnPlanStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/marketplace_listing/stubbed/plans/:plan_id/accounts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type MetaGetEndpoint = {};
 type MetaGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/meta";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3940,7 +3940,7 @@ type ActivityListPublicEventsForRepoNetworkEndpoint = {
 };
 type ActivityListPublicEventsForRepoNetworkRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/networks/:owner/:repo/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -3972,7 +3972,7 @@ type ActivityListNotificationsForAuthenticatedUserEndpoint = {
 };
 type ActivityListNotificationsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4004,7 +4004,7 @@ type ActivityListNotificationsEndpoint = {
 };
 type ActivityListNotificationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4016,7 +4016,7 @@ type ActivityMarkNotificationsAsReadEndpoint = {
 };
 type ActivityMarkNotificationsAsReadRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4028,7 +4028,7 @@ type ActivityMarkAsReadEndpoint = {
 };
 type ActivityMarkAsReadRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4040,7 +4040,7 @@ type ActivityGetThreadSubscriptionEndpoint = {
 };
 type ActivityGetThreadSubscriptionRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4052,7 +4052,7 @@ type ActivityGetThreadEndpoint = {
 };
 type ActivityGetThreadRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/notifications/threads/:thread_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4064,7 +4064,7 @@ type ActivityMarkThreadAsReadEndpoint = {
 };
 type ActivityMarkThreadAsReadRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/notifications/threads/:thread_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4076,7 +4076,7 @@ type ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint = {
 };
 type ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/notifications/threads/:thread_id/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4092,7 +4092,7 @@ type ActivitySetThreadSubscriptionEndpoint = {
 };
 type ActivitySetThreadSubscriptionRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/notifications/threads/:thread_id/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4104,7 +4104,7 @@ type ActivityDeleteThreadSubscriptionEndpoint = {
 };
 type ActivityDeleteThreadSubscriptionRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/notifications/threads/:thread_id/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4124,7 +4124,7 @@ type OrgsListEndpoint = {
 };
 type OrgsListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/organizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4136,7 +4136,7 @@ type OrgsGetEndpoint = {
 };
 type OrgsGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4225,7 +4225,7 @@ type OrgsUpdateEndpoint = {
 };
 type OrgsUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4237,7 +4237,7 @@ type OrgsListBlockedUsersEndpoint = {
 };
 type OrgsListBlockedUsersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/blocks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4253,7 +4253,7 @@ type OrgsCheckBlockedUserEndpoint = {
 };
 type OrgsCheckBlockedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4269,7 +4269,7 @@ type OrgsBlockUserEndpoint = {
 };
 type OrgsBlockUserRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4285,7 +4285,7 @@ type OrgsUnblockUserEndpoint = {
 };
 type OrgsUnblockUserRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4297,7 +4297,7 @@ type OrgsListCredentialAuthorizationsEndpoint = {
 };
 type OrgsListCredentialAuthorizationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/credential-authorizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4313,7 +4313,7 @@ type OrgsRemoveCredentialAuthorizationEndpoint = {
 };
 type OrgsRemoveCredentialAuthorizationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/credential-authorizations/:credential_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4333,7 +4333,7 @@ type ActivityListPublicOrgEventsEndpoint = {
 };
 type ActivityListPublicOrgEventsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4353,7 +4353,7 @@ type ActivityListPublicEventsForOrgEndpoint = {
 };
 type ActivityListPublicEventsForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4373,7 +4373,7 @@ type OrgsListHooksEndpoint = {
 };
 type OrgsListHooksRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4401,7 +4401,7 @@ type OrgsCreateHookEndpoint = {
 };
 type OrgsCreateHookRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4417,7 +4417,7 @@ type OrgsGetHookEndpoint = {
 };
 type OrgsGetHookRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4445,7 +4445,7 @@ type OrgsUpdateHookEndpoint = {
 };
 type OrgsUpdateHookRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4461,7 +4461,7 @@ type OrgsDeleteHookEndpoint = {
 };
 type OrgsDeleteHookRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4477,7 +4477,7 @@ type OrgsPingHookEndpoint = {
 };
 type OrgsPingHookRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/hooks/:hook_id/pings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4489,7 +4489,7 @@ type AppsGetOrgInstallationEndpoint = {
 };
 type AppsGetOrgInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4501,7 +4501,7 @@ type AppsFindOrgInstallationEndpoint = {
 };
 type AppsFindOrgInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4521,7 +4521,7 @@ type OrgsListInstallationsEndpoint = {
 };
 type OrgsListInstallationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/installations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4533,7 +4533,7 @@ type InteractionsGetRestrictionsForOrgEndpoint = {
 };
 type InteractionsGetRestrictionsForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4549,7 +4549,7 @@ type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
 };
 type InteractionsAddOrUpdateRestrictionsForOrgRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4561,7 +4561,7 @@ type InteractionsRemoveRestrictionsForOrgEndpoint = {
 };
 type InteractionsRemoveRestrictionsForOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4581,7 +4581,7 @@ type OrgsListPendingInvitationsEndpoint = {
 };
 type OrgsListPendingInvitationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4612,7 +4612,7 @@ type OrgsCreateInvitationEndpoint = {
 };
 type OrgsCreateInvitationRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4636,7 +4636,7 @@ type OrgsListInvitationTeamsEndpoint = {
 };
 type OrgsListInvitationTeamsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/invitations/:invitation_id/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4685,7 +4685,7 @@ type IssuesListForOrgEndpoint = {
 };
 type IssuesListForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4718,7 +4718,7 @@ type OrgsListMembersEndpoint = {
 };
 type OrgsListMembersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/members";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4734,7 +4734,7 @@ type OrgsCheckMembershipEndpoint = {
 };
 type OrgsCheckMembershipRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4750,7 +4750,7 @@ type OrgsRemoveMemberEndpoint = {
 };
 type OrgsRemoveMemberRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4766,7 +4766,7 @@ type OrgsGetMembershipEndpoint = {
 };
 type OrgsGetMembershipRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4788,7 +4788,7 @@ type OrgsAddOrUpdateMembershipEndpoint = {
 };
 type OrgsAddOrUpdateMembershipRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4804,7 +4804,7 @@ type OrgsRemoveMembershipEndpoint = {
 };
 type OrgsRemoveMembershipRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4828,7 +4828,7 @@ type MigrationsStartForOrgEndpoint = {
 };
 type MigrationsStartForOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/migrations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4848,7 +4848,7 @@ type MigrationsListForOrgEndpoint = {
 };
 type MigrationsListForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/migrations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4864,7 +4864,7 @@ type MigrationsGetStatusForOrgEndpoint = {
 };
 type MigrationsGetStatusForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4880,7 +4880,7 @@ type MigrationsDownloadArchiveForOrgEndpoint = {
 };
 type MigrationsDownloadArchiveForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id/archive";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4896,7 +4896,7 @@ type MigrationsGetArchiveForOrgEndpoint = {
 };
 type MigrationsGetArchiveForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id/archive";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4912,7 +4912,7 @@ type MigrationsDeleteArchiveForOrgEndpoint = {
 };
 type MigrationsDeleteArchiveForOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id/archive";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4932,7 +4932,7 @@ type MigrationsUnlockRepoForOrgEndpoint = {
 };
 type MigrationsUnlockRepoForOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id/repos/:repo_name/lock";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4956,7 +4956,7 @@ type MigrationsListReposForOrgEndpoint = {
 };
 type MigrationsListReposForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/migrations/:migration_id/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4982,7 +4982,7 @@ type OrgsListOutsideCollaboratorsEndpoint = {
 };
 type OrgsListOutsideCollaboratorsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/outside_collaborators";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -4998,7 +4998,7 @@ type OrgsRemoveOutsideCollaboratorEndpoint = {
 };
 type OrgsRemoveOutsideCollaboratorRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/outside_collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5014,7 +5014,7 @@ type OrgsConvertMemberToOutsideCollaboratorEndpoint = {
 };
 type OrgsConvertMemberToOutsideCollaboratorRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/outside_collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5038,7 +5038,7 @@ type ProjectsListForOrgEndpoint = {
 };
 type ProjectsListForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5058,7 +5058,7 @@ type ProjectsCreateForOrgEndpoint = {
 };
 type ProjectsCreateForOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5078,7 +5078,7 @@ type OrgsListPublicMembersEndpoint = {
 };
 type OrgsListPublicMembersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/public_members";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5094,7 +5094,7 @@ type OrgsCheckPublicMembershipEndpoint = {
 };
 type OrgsCheckPublicMembershipRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5110,7 +5110,7 @@ type OrgsPublicizeMembershipEndpoint = {
 };
 type OrgsPublicizeMembershipRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5126,7 +5126,7 @@ type OrgsConcealMembershipEndpoint = {
 };
 type OrgsConcealMembershipRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5165,7 +5165,7 @@ type ReposListForOrgEndpoint = {
 };
 type ReposListForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5246,7 +5246,7 @@ type ReposCreateInOrgEndpoint = {
 };
 type ReposCreateInOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5266,7 +5266,7 @@ type TeamsListIdPGroupsForOrgEndpoint = {
 };
 type TeamsListIdPGroupsForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/team-sync/groups";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5286,7 +5286,7 @@ type TeamsListEndpoint = {
 };
 type TeamsListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5336,7 +5336,7 @@ type TeamsCreateEndpoint = {
 };
 type TeamsCreateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5352,7 +5352,7 @@ type TeamsGetByNameEndpoint = {
 };
 type TeamsGetByNameRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5396,7 +5396,7 @@ type TeamsUpdateInOrgEndpoint = {
 };
 type TeamsUpdateInOrgRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5412,7 +5412,7 @@ type TeamsDeleteInOrgEndpoint = {
 };
 type TeamsDeleteInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5440,7 +5440,7 @@ type TeamsListDiscussionsInOrgEndpoint = {
 };
 type TeamsListDiscussionsInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5468,7 +5468,7 @@ type TeamsCreateDiscussionInOrgEndpoint = {
 };
 type TeamsCreateDiscussionInOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5488,7 +5488,7 @@ type TeamsGetDiscussionInOrgEndpoint = {
 };
 type TeamsGetDiscussionInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5516,7 +5516,7 @@ type TeamsUpdateDiscussionInOrgEndpoint = {
 };
 type TeamsUpdateDiscussionInOrgRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5536,7 +5536,7 @@ type TeamsDeleteDiscussionInOrgEndpoint = {
 };
 type TeamsDeleteDiscussionInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5568,7 +5568,7 @@ type TeamsListDiscussionCommentsInOrgEndpoint = {
 };
 type TeamsListDiscussionCommentsInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5592,7 +5592,7 @@ type TeamsCreateDiscussionCommentInOrgEndpoint = {
 };
 type TeamsCreateDiscussionCommentInOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5616,7 +5616,7 @@ type TeamsGetDiscussionCommentInOrgEndpoint = {
 };
 type TeamsGetDiscussionCommentInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5644,7 +5644,7 @@ type TeamsUpdateDiscussionCommentInOrgEndpoint = {
 };
 type TeamsUpdateDiscussionCommentInOrgRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5668,7 +5668,7 @@ type TeamsDeleteDiscussionCommentInOrgEndpoint = {
 };
 type TeamsDeleteDiscussionCommentInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5712,7 +5712,7 @@ type ReactionsListForTeamDiscussionCommentInOrgEndpoint = {
 };
 type ReactionsListForTeamDiscussionCommentInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5748,7 +5748,7 @@ type ReactionsCreateForTeamDiscussionCommentInOrgEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5776,7 +5776,7 @@ type ReactionsDeleteForTeamDiscussionCommentEndpoint = {
 };
 type ReactionsDeleteForTeamDiscussionCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5816,7 +5816,7 @@ type ReactionsListForTeamDiscussionInOrgEndpoint = {
 };
 type ReactionsListForTeamDiscussionInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5848,7 +5848,7 @@ type ReactionsCreateForTeamDiscussionInOrgEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionInOrgRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5872,7 +5872,7 @@ type ReactionsDeleteForTeamDiscussionEndpoint = {
 };
 type ReactionsDeleteForTeamDiscussionRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5896,7 +5896,7 @@ type TeamsListPendingInvitationsInOrgEndpoint = {
 };
 type TeamsListPendingInvitationsInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5927,7 +5927,7 @@ type TeamsListMembersInOrgEndpoint = {
 };
 type TeamsListMembersInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/members";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5947,7 +5947,7 @@ type TeamsGetMembershipInOrgEndpoint = {
 };
 type TeamsGetMembershipInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5973,7 +5973,7 @@ type TeamsAddOrUpdateMembershipInOrgEndpoint = {
 };
 type TeamsAddOrUpdateMembershipInOrgRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5993,7 +5993,7 @@ type TeamsRemoveMembershipInOrgEndpoint = {
 };
 type TeamsRemoveMembershipInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6017,7 +6017,7 @@ type TeamsListProjectsInOrgEndpoint = {
 };
 type TeamsListProjectsInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6037,7 +6037,7 @@ type TeamsReviewProjectInOrgEndpoint = {
 };
 type TeamsReviewProjectInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6065,7 +6065,7 @@ type TeamsAddOrUpdateProjectInOrgEndpoint = {
 };
 type TeamsAddOrUpdateProjectInOrgRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6085,7 +6085,7 @@ type TeamsRemoveProjectInOrgEndpoint = {
 };
 type TeamsRemoveProjectInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6109,7 +6109,7 @@ type TeamsListReposInOrgEndpoint = {
 };
 type TeamsListReposInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6133,7 +6133,7 @@ type TeamsCheckManagesRepoInOrgEndpoint = {
 };
 type TeamsCheckManagesRepoInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6168,7 +6168,7 @@ type TeamsAddOrUpdateRepoInOrgEndpoint = {
 };
 type TeamsAddOrUpdateRepoInOrgRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6192,7 +6192,7 @@ type TeamsRemoveRepoInOrgEndpoint = {
 };
 type TeamsRemoveRepoInOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6208,7 +6208,7 @@ type TeamsListIdPGroupsInOrgEndpoint = {
 };
 type TeamsListIdPGroupsInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6228,7 +6228,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint = {
 };
 type TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6252,7 +6252,7 @@ type TeamsListChildInOrgEndpoint = {
 };
 type TeamsListChildInOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/orgs/:org/teams/:team_slug/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6264,7 +6264,7 @@ type ProjectsGetCardEndpoint = {
 };
 type ProjectsGetCardRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/columns/cards/:card_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6284,7 +6284,7 @@ type ProjectsUpdateCardEndpoint = {
 };
 type ProjectsUpdateCardRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/projects/columns/cards/:card_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6296,7 +6296,7 @@ type ProjectsDeleteCardEndpoint = {
 };
 type ProjectsDeleteCardRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/projects/columns/cards/:card_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6316,7 +6316,7 @@ type ProjectsMoveCardEndpoint = {
 };
 type ProjectsMoveCardRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/projects/columns/cards/:card_id/moves";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6328,7 +6328,7 @@ type ProjectsGetColumnEndpoint = {
 };
 type ProjectsGetColumnRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/columns/:column_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6344,7 +6344,7 @@ type ProjectsUpdateColumnEndpoint = {
 };
 type ProjectsUpdateColumnRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/projects/columns/:column_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6356,7 +6356,7 @@ type ProjectsDeleteColumnEndpoint = {
 };
 type ProjectsDeleteColumnRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/projects/columns/:column_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6380,7 +6380,7 @@ type ProjectsListCardsEndpoint = {
 };
 type ProjectsListCardsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/columns/:column_id/cards";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6405,7 +6405,7 @@ type ProjectsCreateCardEndpoint = {
 };
 type ProjectsCreateCardRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/projects/columns/:column_id/cards";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6421,7 +6421,7 @@ type ProjectsMoveColumnEndpoint = {
 };
 type ProjectsMoveColumnRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/projects/columns/:column_id/moves";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6433,7 +6433,7 @@ type ProjectsGetEndpoint = {
 };
 type ProjectsGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6477,7 +6477,7 @@ type ProjectsUpdateEndpoint = {
 };
 type ProjectsUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6489,7 +6489,7 @@ type ProjectsDeleteEndpoint = {
 };
 type ProjectsDeleteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6516,7 +6516,7 @@ type ProjectsListCollaboratorsEndpoint = {
 };
 type ProjectsListCollaboratorsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/:project_id/collaborators";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6539,7 +6539,7 @@ type ProjectsAddCollaboratorEndpoint = {
 };
 type ProjectsAddCollaboratorRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/projects/:project_id/collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6555,7 +6555,7 @@ type ProjectsRemoveCollaboratorEndpoint = {
 };
 type ProjectsRemoveCollaboratorRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/projects/:project_id/collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6571,7 +6571,7 @@ type ProjectsReviewUserPermissionLevelEndpoint = {
 };
 type ProjectsReviewUserPermissionLevelRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/:project_id/collaborators/:username/permission";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6591,7 +6591,7 @@ type ProjectsListColumnsEndpoint = {
 };
 type ProjectsListColumnsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/projects/:project_id/columns";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6607,14 +6607,14 @@ type ProjectsCreateColumnEndpoint = {
 };
 type ProjectsCreateColumnRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/projects/:project_id/columns";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type RateLimitGetEndpoint = {};
 type RateLimitGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/rate_limit";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6626,7 +6626,7 @@ type ReactionsDeleteLegacyEndpoint = {
 };
 type ReactionsDeleteLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6638,7 +6638,7 @@ type ReactionsDeleteEndpoint = {
 };
 type ReactionsDeleteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6654,7 +6654,7 @@ type ReposGetEndpoint = {
 };
 type ReposGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6731,7 +6731,7 @@ type ReposUpdateEndpoint = {
 };
 type ReposUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6747,7 +6747,7 @@ type ReposDeleteEndpoint = {
 };
 type ReposDeleteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6771,7 +6771,7 @@ type ActionsListArtifactsForRepoEndpoint = {
 };
 type ActionsListArtifactsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/artifacts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6791,7 +6791,7 @@ type ActionsGetArtifactEndpoint = {
 };
 type ActionsGetArtifactRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/artifacts/:artifact_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6811,7 +6811,7 @@ type ActionsDeleteArtifactEndpoint = {
 };
 type ActionsDeleteArtifactRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/artifacts/:artifact_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6835,7 +6835,7 @@ type ActionsDownloadArtifactEndpoint = {
 };
 type ActionsDownloadArtifactRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6855,7 +6855,7 @@ type ActionsGetWorkflowJobEndpoint = {
 };
 type ActionsGetWorkflowJobRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/jobs/:job_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6883,7 +6883,7 @@ type ActionsListWorkflowJobLogsEndpoint = {
 };
 type ActionsListWorkflowJobLogsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/jobs/:job_id/logs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6907,7 +6907,7 @@ type ActionsListSelfHostedRunnersForRepoEndpoint = {
 };
 type ActionsListSelfHostedRunnersForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6923,7 +6923,7 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint = {
 };
 type ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners/downloads";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6939,7 +6939,7 @@ type ActionsCreateRegistrationTokenEndpoint = {
 };
 type ActionsCreateRegistrationTokenRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners/registration-token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6955,7 +6955,7 @@ type ActionsCreateRemoveTokenEndpoint = {
 };
 type ActionsCreateRemoveTokenRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners/remove-token";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6975,7 +6975,7 @@ type ActionsGetSelfHostedRunnerEndpoint = {
 };
 type ActionsGetSelfHostedRunnerRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners/:runner_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6995,7 +6995,7 @@ type ActionsRemoveSelfHostedRunnerEndpoint = {
 };
 type ActionsRemoveSelfHostedRunnerRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runners/:runner_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7035,7 +7035,7 @@ type ActionsListRepoWorkflowRunsEndpoint = {
 };
 type ActionsListRepoWorkflowRunsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7055,7 +7055,7 @@ type ActionsGetWorkflowRunEndpoint = {
 };
 type ActionsGetWorkflowRunRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7083,7 +7083,7 @@ type ActionsListWorkflowRunArtifactsEndpoint = {
 };
 type ActionsListWorkflowRunArtifactsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id/artifacts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7103,7 +7103,7 @@ type ActionsCancelWorkflowRunEndpoint = {
 };
 type ActionsCancelWorkflowRunRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id/cancel";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7137,7 +7137,7 @@ type ActionsListJobsForWorkflowRunEndpoint = {
 };
 type ActionsListJobsForWorkflowRunRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id/jobs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7165,7 +7165,7 @@ type ActionsListWorkflowRunLogsEndpoint = {
 };
 type ActionsListWorkflowRunLogsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id/logs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7185,7 +7185,7 @@ type ActionsReRunWorkflowEndpoint = {
 };
 type ActionsReRunWorkflowRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/runs/:run_id/rerun";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7209,7 +7209,7 @@ type ActionsListSecretsForRepoEndpoint = {
 };
 type ActionsListSecretsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/secrets";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7225,7 +7225,7 @@ type ActionsGetPublicKeyEndpoint = {
 };
 type ActionsGetPublicKeyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/secrets/public-key";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7245,7 +7245,7 @@ type ActionsGetSecretEndpoint = {
 };
 type ActionsGetSecretRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/secrets/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7273,7 +7273,7 @@ type ActionsCreateOrUpdateSecretForRepoEndpoint = {
 };
 type ActionsCreateOrUpdateSecretForRepoRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/secrets/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7293,7 +7293,7 @@ type ActionsDeleteSecretFromRepoEndpoint = {
 };
 type ActionsDeleteSecretFromRepoRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/secrets/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7317,7 +7317,7 @@ type ActionsListRepoWorkflowsEndpoint = {
 };
 type ActionsListRepoWorkflowsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/workflows";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7337,7 +7337,7 @@ type ActionsGetWorkflowEndpoint = {
 };
 type ActionsGetWorkflowRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/workflows/:workflow_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7381,7 +7381,7 @@ type ActionsListWorkflowRunsEndpoint = {
 };
 type ActionsListWorkflowRunsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/actions/workflows/:workflow_id/runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7405,7 +7405,7 @@ type IssuesListAssigneesEndpoint = {
 };
 type IssuesListAssigneesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/assignees";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7425,7 +7425,7 @@ type IssuesCheckAssigneeEndpoint = {
 };
 type IssuesCheckAssigneeRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/assignees/:assignee";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7441,7 +7441,7 @@ type ReposEnableAutomatedSecurityFixesEndpoint = {
 };
 type ReposEnableAutomatedSecurityFixesRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/automated-security-fixes";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7457,7 +7457,7 @@ type ReposDisableAutomatedSecurityFixesEndpoint = {
 };
 type ReposDisableAutomatedSecurityFixesRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/automated-security-fixes";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7485,7 +7485,7 @@ type ReposListBranchesEndpoint = {
 };
 type ReposListBranchesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7505,7 +7505,7 @@ type ReposGetBranchEndpoint = {
 };
 type ReposGetBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7525,7 +7525,7 @@ type ReposGetBranchProtectionEndpoint = {
 };
 type ReposGetBranchProtectionRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7573,7 +7573,7 @@ type ReposUpdateBranchProtectionEndpoint = {
 };
 type ReposUpdateBranchProtectionRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7593,7 +7593,7 @@ type ReposRemoveBranchProtectionEndpoint = {
 };
 type ReposRemoveBranchProtectionRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7613,7 +7613,7 @@ type ReposGetProtectedBranchAdminEnforcementEndpoint = {
 };
 type ReposGetProtectedBranchAdminEnforcementRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7633,7 +7633,7 @@ type ReposAddProtectedBranchAdminEnforcementEndpoint = {
 };
 type ReposAddProtectedBranchAdminEnforcementRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7653,7 +7653,7 @@ type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
 };
 type ReposRemoveProtectedBranchAdminEnforcementRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7673,7 +7673,7 @@ type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
 };
 type ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7709,7 +7709,7 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
 };
 type ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7729,7 +7729,7 @@ type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
 };
 type ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7749,7 +7749,7 @@ type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
 };
 type ReposGetProtectedBranchRequiredSignaturesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7769,7 +7769,7 @@ type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
 };
 type ReposAddProtectedBranchRequiredSignaturesRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7789,7 +7789,7 @@ type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
 };
 type ReposRemoveProtectedBranchRequiredSignaturesRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7809,7 +7809,7 @@ type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
 };
 type ReposGetProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7837,7 +7837,7 @@ type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
 };
 type ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7857,7 +7857,7 @@ type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
 };
 type ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7877,7 +7877,7 @@ type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
 };
 type ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7901,7 +7901,7 @@ type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
 };
 type ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7925,7 +7925,7 @@ type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
 };
 type ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7949,7 +7949,7 @@ type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
 };
 type ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7969,7 +7969,7 @@ type ReposGetProtectedBranchRestrictionsEndpoint = {
 };
 type ReposGetProtectedBranchRestrictionsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -7989,7 +7989,7 @@ type ReposRemoveProtectedBranchRestrictionsEndpoint = {
 };
 type ReposRemoveProtectedBranchRestrictionsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8009,7 +8009,7 @@ type ReposGetAppsWithAccessToProtectedBranchEndpoint = {
 };
 type ReposGetAppsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8029,7 +8029,7 @@ type ReposListAppsWithAccessToProtectedBranchEndpoint = {
 };
 type ReposListAppsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8053,7 +8053,7 @@ type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
 };
 type ReposReplaceProtectedBranchAppRestrictionsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8077,7 +8077,7 @@ type ReposAddProtectedBranchAppRestrictionsEndpoint = {
 };
 type ReposAddProtectedBranchAppRestrictionsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8101,7 +8101,7 @@ type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
 };
 type ReposRemoveProtectedBranchAppRestrictionsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8121,7 +8121,7 @@ type ReposGetTeamsWithAccessToProtectedBranchEndpoint = {
 };
 type ReposGetTeamsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8141,7 +8141,7 @@ type ReposListProtectedBranchTeamRestrictionsEndpoint = {
 };
 type ReposListProtectedBranchTeamRestrictionsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8161,7 +8161,7 @@ type ReposListTeamsWithAccessToProtectedBranchEndpoint = {
 };
 type ReposListTeamsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8185,7 +8185,7 @@ type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
 };
 type ReposReplaceProtectedBranchTeamRestrictionsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8209,7 +8209,7 @@ type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
 };
 type ReposAddProtectedBranchTeamRestrictionsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8233,7 +8233,7 @@ type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
 };
 type ReposRemoveProtectedBranchTeamRestrictionsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8253,7 +8253,7 @@ type ReposGetUsersWithAccessToProtectedBranchEndpoint = {
 };
 type ReposGetUsersWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8273,7 +8273,7 @@ type ReposListProtectedBranchUserRestrictionsEndpoint = {
 };
 type ReposListProtectedBranchUserRestrictionsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8293,7 +8293,7 @@ type ReposListUsersWithAccessToProtectedBranchEndpoint = {
 };
 type ReposListUsersWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8317,7 +8317,7 @@ type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
 };
 type ReposReplaceProtectedBranchUserRestrictionsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8341,7 +8341,7 @@ type ReposAddProtectedBranchUserRestrictionsEndpoint = {
 };
 type ReposAddProtectedBranchUserRestrictionsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8365,7 +8365,7 @@ type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
 };
 type ReposRemoveProtectedBranchUserRestrictionsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8428,7 +8428,7 @@ type ChecksCreateEndpoint = {
 };
 type ChecksCreateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/check-runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8491,7 +8491,7 @@ type ChecksUpdateEndpoint = {
 };
 type ChecksUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/check-runs/:check_run_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8511,7 +8511,7 @@ type ChecksGetEndpoint = {
 };
 type ChecksGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/check-runs/:check_run_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8539,7 +8539,7 @@ type ChecksListAnnotationsEndpoint = {
 };
 type ChecksListAnnotationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/check-runs/:check_run_id/annotations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8559,7 +8559,7 @@ type ChecksCreateSuiteEndpoint = {
 };
 type ChecksCreateSuiteRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/check-suites";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8579,7 +8579,7 @@ type ChecksSetSuitesPreferencesEndpoint = {
 };
 type ChecksSetSuitesPreferencesRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/check-suites/preferences";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8599,7 +8599,7 @@ type ChecksGetSuiteEndpoint = {
 };
 type ChecksGetSuiteRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/check-suites/:check_suite_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8639,7 +8639,7 @@ type ChecksListForSuiteEndpoint = {
 };
 type ChecksListForSuiteRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/check-suites/:check_suite_id/check-runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8659,7 +8659,7 @@ type ChecksRerequestSuiteEndpoint = {
 };
 type ChecksRerequestSuiteRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/check-suites/:check_suite_id/rerequest";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8690,7 +8690,7 @@ type ReposListCollaboratorsEndpoint = {
 };
 type ReposListCollaboratorsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/collaborators";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8710,7 +8710,7 @@ type ReposCheckCollaboratorEndpoint = {
 };
 type ReposCheckCollaboratorRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8739,7 +8739,7 @@ type ReposAddCollaboratorEndpoint = {
 };
 type ReposAddCollaboratorRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8759,7 +8759,7 @@ type ReposRemoveCollaboratorEndpoint = {
 };
 type ReposRemoveCollaboratorRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/collaborators/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8779,7 +8779,7 @@ type ReposGetCollaboratorPermissionLevelEndpoint = {
 };
 type ReposGetCollaboratorPermissionLevelRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/collaborators/:username/permission";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8803,7 +8803,7 @@ type ReposListCommitCommentsEndpoint = {
 };
 type ReposListCommitCommentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8823,7 +8823,7 @@ type ReposGetCommitCommentEndpoint = {
 };
 type ReposGetCommitCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8847,7 +8847,7 @@ type ReposUpdateCommitCommentEndpoint = {
 };
 type ReposUpdateCommitCommentRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8867,7 +8867,7 @@ type ReposDeleteCommitCommentEndpoint = {
 };
 type ReposDeleteCommitCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8907,7 +8907,7 @@ type ReactionsListForCommitCommentEndpoint = {
 };
 type ReactionsListForCommitCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8939,7 +8939,7 @@ type ReactionsCreateForCommitCommentEndpoint = {
 };
 type ReactionsCreateForCommitCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -8963,7 +8963,7 @@ type ReactionsDeleteForCommitCommentEndpoint = {
 };
 type ReactionsDeleteForCommitCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9007,7 +9007,7 @@ type ReposListCommitsEndpoint = {
 };
 type ReposListCommitsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9027,7 +9027,7 @@ type ReposListBranchesForHeadCommitEndpoint = {
 };
 type ReposListBranchesForHeadCommitRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:commit_sha/branches-where-head";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9055,7 +9055,7 @@ type ReposListCommentsForCommitEndpoint = {
 };
 type ReposListCommentsForCommitRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:commit_sha/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9091,7 +9091,7 @@ type ReposCreateCommitCommentEndpoint = {
 };
 type ReposCreateCommitCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:commit_sha/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9119,7 +9119,7 @@ type ReposListPullRequestsAssociatedWithCommitEndpoint = {
 };
 type ReposListPullRequestsAssociatedWithCommitRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:commit_sha/pulls";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9139,7 +9139,7 @@ type ReposGetCommitEndpoint = {
 };
 type ReposGetCommitRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9179,7 +9179,7 @@ type ChecksListForRefEndpoint = {
 };
 type ChecksListForRefRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:ref/check-runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9215,7 +9215,7 @@ type ChecksListSuitesForRefEndpoint = {
 };
 type ChecksListSuitesForRefRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:ref/check-suites";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9235,7 +9235,7 @@ type ReposGetCombinedStatusForRefEndpoint = {
 };
 type ReposGetCombinedStatusForRefRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:ref/status";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9263,7 +9263,7 @@ type ReposListStatusesForRefEndpoint = {
 };
 type ReposListStatusesForRefRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/commits/:ref/statuses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9279,7 +9279,7 @@ type CodesOfConductGetForRepoEndpoint = {
 };
 type CodesOfConductGetForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/community/code_of_conduct";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9295,7 +9295,7 @@ type ReposRetrieveCommunityProfileMetricsEndpoint = {
 };
 type ReposRetrieveCommunityProfileMetricsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/community/profile";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9319,7 +9319,7 @@ type ReposCompareCommitsEndpoint = {
 };
 type ReposCompareCommitsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/compare/:base...:head";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9343,7 +9343,7 @@ type ReposGetContentsEndpoint = {
 };
 type ReposGetContentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9387,7 +9387,7 @@ type ReposCreateOrUpdateFileEndpoint = {
 };
 type ReposCreateOrUpdateFileRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9431,7 +9431,7 @@ type ReposCreateFileEndpoint = {
 };
 type ReposCreateFileRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9475,7 +9475,7 @@ type ReposUpdateFileEndpoint = {
 };
 type ReposUpdateFileRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9515,7 +9515,7 @@ type ReposDeleteFileEndpoint = {
 };
 type ReposDeleteFileRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9543,7 +9543,7 @@ type ReposListContributorsEndpoint = {
 };
 type ReposListContributorsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/contributors";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9583,7 +9583,7 @@ type ReposListDeploymentsEndpoint = {
 };
 type ReposListDeploymentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9637,7 +9637,7 @@ type ReposCreateDeploymentEndpoint = {
 };
 type ReposCreateDeploymentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9657,7 +9657,7 @@ type ReposGetDeploymentEndpoint = {
 };
 type ReposGetDeploymentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments/:deployment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9677,7 +9677,7 @@ type ReposDeleteDeploymentEndpoint = {
 };
 type ReposDeleteDeploymentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments/:deployment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9705,7 +9705,7 @@ type ReposListDeploymentStatusesEndpoint = {
 };
 type ReposListDeploymentStatusesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments/:deployment_id/statuses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9764,7 +9764,7 @@ type ReposCreateDeploymentStatusEndpoint = {
 };
 type ReposCreateDeploymentStatusRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments/:deployment_id/statuses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9788,7 +9788,7 @@ type ReposGetDeploymentStatusEndpoint = {
 };
 type ReposGetDeploymentStatusRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9812,7 +9812,7 @@ type ReposCreateDispatchEventEndpoint = {
 };
 type ReposCreateDispatchEventRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/dispatches";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9836,7 +9836,7 @@ type ReposListDownloadsEndpoint = {
 };
 type ReposListDownloadsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/downloads";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9856,7 +9856,7 @@ type ReposGetDownloadEndpoint = {
 };
 type ReposGetDownloadRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/downloads/:download_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9876,7 +9876,7 @@ type ReposDeleteDownloadEndpoint = {
 };
 type ReposDeleteDownloadRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/downloads/:download_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9900,7 +9900,7 @@ type ActivityListRepoEventsEndpoint = {
 };
 type ActivityListRepoEventsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9928,7 +9928,7 @@ type ReposListForksEndpoint = {
 };
 type ReposListForksRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/forks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9948,7 +9948,7 @@ type ReposCreateForkEndpoint = {
 };
 type ReposCreateForkRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/forks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9972,7 +9972,7 @@ type GitCreateBlobEndpoint = {
 };
 type GitCreateBlobRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/git/blobs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -9992,7 +9992,7 @@ type GitGetBlobEndpoint = {
 };
 type GitGetBlobRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/blobs/:file_sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10032,7 +10032,7 @@ type GitCreateCommitEndpoint = {
 };
 type GitCreateCommitRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/git/commits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10052,7 +10052,7 @@ type GitGetCommitEndpoint = {
 };
 type GitGetCommitRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/commits/:commit_sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10080,7 +10080,7 @@ type GitListMatchingRefsEndpoint = {
 };
 type GitListMatchingRefsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/matching-refs/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10100,7 +10100,7 @@ type GitGetRefEndpoint = {
 };
 type GitGetRefRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/ref/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10124,7 +10124,7 @@ type GitCreateRefEndpoint = {
 };
 type GitCreateRefRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/git/refs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10152,7 +10152,7 @@ type GitUpdateRefEndpoint = {
 };
 type GitUpdateRefRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/git/refs/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10172,7 +10172,7 @@ type GitDeleteRefEndpoint = {
 };
 type GitDeleteRefRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/git/refs/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10208,7 +10208,7 @@ type GitCreateTagEndpoint = {
 };
 type GitCreateTagRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/git/tags";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10228,7 +10228,7 @@ type GitGetTagEndpoint = {
 };
 type GitGetTagRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/tags/:tag_sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10252,7 +10252,7 @@ type GitCreateTreeEndpoint = {
 };
 type GitCreateTreeRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/git/trees";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10276,7 +10276,7 @@ type GitGetTreeEndpoint = {
 };
 type GitGetTreeRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/git/trees/:tree_sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10300,7 +10300,7 @@ type ReposListHooksEndpoint = {
 };
 type ReposListHooksRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10332,7 +10332,7 @@ type ReposCreateHookEndpoint = {
 };
 type ReposCreateHookRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10352,7 +10352,7 @@ type ReposGetHookEndpoint = {
 };
 type ReposGetHookRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10392,7 +10392,7 @@ type ReposUpdateHookEndpoint = {
 };
 type ReposUpdateHookRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10412,7 +10412,7 @@ type ReposDeleteHookEndpoint = {
 };
 type ReposDeleteHookRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10432,7 +10432,7 @@ type ReposPingHookEndpoint = {
 };
 type ReposPingHookRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks/:hook_id/pings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10452,7 +10452,7 @@ type ReposTestPushHookEndpoint = {
 };
 type ReposTestPushHookRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/hooks/:hook_id/tests";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10488,7 +10488,7 @@ type MigrationsStartImportEndpoint = {
 };
 type MigrationsStartImportRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/import";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10504,7 +10504,7 @@ type MigrationsGetImportProgressEndpoint = {
 };
 type MigrationsGetImportProgressRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/import";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10528,7 +10528,7 @@ type MigrationsUpdateImportEndpoint = {
 };
 type MigrationsUpdateImportRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/import";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10544,7 +10544,7 @@ type MigrationsCancelImportEndpoint = {
 };
 type MigrationsCancelImportRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/import";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10564,7 +10564,7 @@ type MigrationsGetCommitAuthorsEndpoint = {
 };
 type MigrationsGetCommitAuthorsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/import/authors";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10592,7 +10592,7 @@ type MigrationsMapCommitAuthorEndpoint = {
 };
 type MigrationsMapCommitAuthorRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/import/authors/:author_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10608,7 +10608,7 @@ type MigrationsGetLargeFilesEndpoint = {
 };
 type MigrationsGetLargeFilesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/import/large_files";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10628,7 +10628,7 @@ type MigrationsSetLfsPreferenceEndpoint = {
 };
 type MigrationsSetLfsPreferenceRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/import/lfs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10644,7 +10644,7 @@ type AppsGetRepoInstallationEndpoint = {
 };
 type AppsGetRepoInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10660,7 +10660,7 @@ type AppsFindRepoInstallationEndpoint = {
 };
 type AppsFindRepoInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10676,7 +10676,7 @@ type InteractionsGetRestrictionsForRepoEndpoint = {
 };
 type InteractionsGetRestrictionsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10696,7 +10696,7 @@ type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
 };
 type InteractionsAddOrUpdateRestrictionsForRepoRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10712,7 +10712,7 @@ type InteractionsRemoveRestrictionsForRepoEndpoint = {
 };
 type InteractionsRemoveRestrictionsForRepoRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10736,7 +10736,7 @@ type ReposListInvitationsEndpoint = {
 };
 type ReposListInvitationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10756,7 +10756,7 @@ type ReposDeleteInvitationEndpoint = {
 };
 type ReposDeleteInvitationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/invitations/:invitation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10780,7 +10780,7 @@ type ReposUpdateInvitationEndpoint = {
 };
 type ReposUpdateInvitationRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/invitations/:invitation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10840,7 +10840,7 @@ type IssuesListForRepoEndpoint = {
 };
 type IssuesListForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10880,7 +10880,7 @@ type IssuesCreateEndpoint = {
 };
 type IssuesCreateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10916,7 +10916,7 @@ type IssuesListCommentsForRepoEndpoint = {
 };
 type IssuesListCommentsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10936,7 +10936,7 @@ type IssuesGetCommentEndpoint = {
 };
 type IssuesGetCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10960,7 +10960,7 @@ type IssuesUpdateCommentEndpoint = {
 };
 type IssuesUpdateCommentRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -10980,7 +10980,7 @@ type IssuesDeleteCommentEndpoint = {
 };
 type IssuesDeleteCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11020,7 +11020,7 @@ type ReactionsListForIssueCommentEndpoint = {
 };
 type ReactionsListForIssueCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11052,7 +11052,7 @@ type ReactionsCreateForIssueCommentEndpoint = {
 };
 type ReactionsCreateForIssueCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11076,7 +11076,7 @@ type ReactionsDeleteForIssueCommentEndpoint = {
 };
 type ReactionsDeleteForIssueCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11100,7 +11100,7 @@ type IssuesListEventsForRepoEndpoint = {
 };
 type IssuesListEventsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11120,7 +11120,7 @@ type IssuesGetEventEndpoint = {
 };
 type IssuesGetEventRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/events/:event_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11140,7 +11140,7 @@ type IssuesGetEndpoint = {
 };
 type IssuesGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11188,7 +11188,7 @@ type IssuesUpdateEndpoint = {
 };
 type IssuesUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11212,7 +11212,7 @@ type IssuesAddAssigneesEndpoint = {
 };
 type IssuesAddAssigneesRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/assignees";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11236,7 +11236,7 @@ type IssuesRemoveAssigneesEndpoint = {
 };
 type IssuesRemoveAssigneesRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/assignees";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11268,7 +11268,7 @@ type IssuesListCommentsEndpoint = {
 };
 type IssuesListCommentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11292,7 +11292,7 @@ type IssuesCreateCommentEndpoint = {
 };
 type IssuesCreateCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11320,7 +11320,7 @@ type IssuesListEventsEndpoint = {
 };
 type IssuesListEventsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11348,7 +11348,7 @@ type IssuesListLabelsOnIssueEndpoint = {
 };
 type IssuesListLabelsOnIssueRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11372,7 +11372,7 @@ type IssuesAddLabelsEndpoint = {
 };
 type IssuesAddLabelsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11396,7 +11396,7 @@ type IssuesReplaceAllLabelsEndpoint = {
 };
 type IssuesReplaceAllLabelsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11420,7 +11420,7 @@ type IssuesReplaceLabelsEndpoint = {
 };
 type IssuesReplaceLabelsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11440,7 +11440,7 @@ type IssuesRemoveAllLabelsEndpoint = {
 };
 type IssuesRemoveAllLabelsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11460,7 +11460,7 @@ type IssuesRemoveLabelsEndpoint = {
 };
 type IssuesRemoveLabelsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11484,7 +11484,7 @@ type IssuesRemoveLabelEndpoint = {
 };
 type IssuesRemoveLabelRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/labels/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11512,7 +11512,7 @@ type IssuesLockEndpoint = {
 };
 type IssuesLockRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/lock";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11532,7 +11532,7 @@ type IssuesUnlockEndpoint = {
 };
 type IssuesUnlockRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/lock";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11572,7 +11572,7 @@ type ReactionsListForIssueEndpoint = {
 };
 type ReactionsListForIssueRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11604,7 +11604,7 @@ type ReactionsCreateForIssueEndpoint = {
 };
 type ReactionsCreateForIssueRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11628,7 +11628,7 @@ type ReactionsDeleteForIssueEndpoint = {
 };
 type ReactionsDeleteForIssueRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11656,7 +11656,7 @@ type IssuesListEventsForTimelineEndpoint = {
 };
 type IssuesListEventsForTimelineRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/issues/:issue_number/timeline";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11680,7 +11680,7 @@ type ReposListDeployKeysEndpoint = {
 };
 type ReposListDeployKeysRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11710,7 +11710,7 @@ type ReposAddDeployKeyEndpoint = {
 };
 type ReposAddDeployKeyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11730,7 +11730,7 @@ type ReposGetDeployKeyEndpoint = {
 };
 type ReposGetDeployKeyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/keys/:key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11750,7 +11750,7 @@ type ReposRemoveDeployKeyEndpoint = {
 };
 type ReposRemoveDeployKeyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/keys/:key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11774,7 +11774,7 @@ type IssuesListLabelsForRepoEndpoint = {
 };
 type IssuesListLabelsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11802,7 +11802,7 @@ type IssuesCreateLabelEndpoint = {
 };
 type IssuesCreateLabelRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11822,7 +11822,7 @@ type IssuesGetLabelEndpoint = {
 };
 type IssuesGetLabelRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/labels/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11854,7 +11854,7 @@ type IssuesUpdateLabelEndpoint = {
 };
 type IssuesUpdateLabelRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/labels/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11874,7 +11874,7 @@ type IssuesDeleteLabelEndpoint = {
 };
 type IssuesDeleteLabelRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/labels/:name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11890,7 +11890,7 @@ type ReposListLanguagesEndpoint = {
 };
 type ReposListLanguagesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/languages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11906,7 +11906,7 @@ type LicensesGetForRepoEndpoint = {
 };
 type LicensesGetForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/license";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11934,7 +11934,7 @@ type ReposMergeEndpoint = {
 };
 type ReposMergeRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/merges";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -11970,7 +11970,7 @@ type IssuesListMilestonesForRepoEndpoint = {
 };
 type IssuesListMilestonesForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12002,7 +12002,7 @@ type IssuesCreateMilestoneEndpoint = {
 };
 type IssuesCreateMilestoneRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12022,7 +12022,7 @@ type IssuesGetMilestoneEndpoint = {
 };
 type IssuesGetMilestoneRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones/:milestone_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12058,7 +12058,7 @@ type IssuesUpdateMilestoneEndpoint = {
 };
 type IssuesUpdateMilestoneRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones/:milestone_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12078,7 +12078,7 @@ type IssuesDeleteMilestoneEndpoint = {
 };
 type IssuesDeleteMilestoneRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones/:milestone_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12106,7 +12106,7 @@ type IssuesListLabelsForMilestoneEndpoint = {
 };
 type IssuesListLabelsForMilestoneRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/milestones/:milestone_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12146,7 +12146,7 @@ type ActivityListRepoNotificationsForAuthenticatedUserEndpoint = {
 };
 type ActivityListRepoNotificationsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12186,7 +12186,7 @@ type ActivityListNotificationsForRepoEndpoint = {
 };
 type ActivityListNotificationsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12206,7 +12206,7 @@ type ActivityMarkRepoNotificationsAsReadEndpoint = {
 };
 type ActivityMarkRepoNotificationsAsReadRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12226,7 +12226,7 @@ type ActivityMarkNotificationsAsReadForRepoEndpoint = {
 };
 type ActivityMarkNotificationsAsReadForRepoRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/notifications";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12242,7 +12242,7 @@ type ReposGetPagesEndpoint = {
 };
 type ReposGetPagesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12262,7 +12262,7 @@ type ReposEnablePagesSiteEndpoint = {
 };
 type ReposEnablePagesSiteRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12278,7 +12278,7 @@ type ReposDisablePagesSiteEndpoint = {
 };
 type ReposDisablePagesSiteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12302,7 +12302,7 @@ type ReposUpdateInformationAboutPagesSiteEndpoint = {
 };
 type ReposUpdateInformationAboutPagesSiteRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12318,7 +12318,7 @@ type ReposRequestPageBuildEndpoint = {
 };
 type ReposRequestPageBuildRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pages/builds";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12342,7 +12342,7 @@ type ReposListPagesBuildsEndpoint = {
 };
 type ReposListPagesBuildsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pages/builds";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12358,7 +12358,7 @@ type ReposGetLatestPagesBuildEndpoint = {
 };
 type ReposGetLatestPagesBuildRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pages/builds/latest";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12378,7 +12378,7 @@ type ReposGetPagesBuildEndpoint = {
 };
 type ReposGetPagesBuildRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pages/builds/:build_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12406,7 +12406,7 @@ type ProjectsListForRepoEndpoint = {
 };
 type ProjectsListForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12430,7 +12430,7 @@ type ProjectsCreateForRepoEndpoint = {
 };
 type ProjectsCreateForRepoRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12474,7 +12474,7 @@ type PullsListEndpoint = {
 };
 type PullsListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12514,7 +12514,7 @@ type PullsCreateEndpoint = {
 };
 type PullsCreateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12550,7 +12550,7 @@ type PullsListCommentsForRepoEndpoint = {
 };
 type PullsListCommentsForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12570,7 +12570,7 @@ type PullsGetCommentEndpoint = {
 };
 type PullsGetCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12594,7 +12594,7 @@ type PullsUpdateCommentEndpoint = {
 };
 type PullsUpdateCommentRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12614,7 +12614,7 @@ type PullsDeleteCommentEndpoint = {
 };
 type PullsDeleteCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12654,7 +12654,7 @@ type ReactionsListForPullRequestReviewCommentEndpoint = {
 };
 type ReactionsListForPullRequestReviewCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12686,7 +12686,7 @@ type ReactionsCreateForPullRequestReviewCommentEndpoint = {
 };
 type ReactionsCreateForPullRequestReviewCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12710,7 +12710,7 @@ type ReactionsDeleteForPullRequestCommentEndpoint = {
 };
 type ReactionsDeleteForPullRequestCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12730,7 +12730,7 @@ type PullsGetEndpoint = {
 };
 type PullsGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12770,7 +12770,7 @@ type PullsUpdateEndpoint = {
 };
 type PullsUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12810,7 +12810,7 @@ type PullsListCommentsEndpoint = {
 };
 type PullsListCommentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12862,7 +12862,7 @@ type PullsCreateCommentEndpoint = {
 };
 type PullsCreateCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12914,7 +12914,7 @@ type PullsCreateCommentReplyEndpoint = {
 };
 type PullsCreateCommentReplyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12942,7 +12942,7 @@ type PullsCreateReviewCommentReplyEndpoint = {
 };
 type PullsCreateReviewCommentReplyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12970,7 +12970,7 @@ type PullsListCommitsEndpoint = {
 };
 type PullsListCommitsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/commits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -12998,7 +12998,7 @@ type PullsListFilesEndpoint = {
 };
 type PullsListFilesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/files";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13018,7 +13018,7 @@ type PullsCheckIfMergedEndpoint = {
 };
 type PullsCheckIfMergedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/merge";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13054,7 +13054,7 @@ type PullsMergeEndpoint = {
 };
 type PullsMergeRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/merge";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13082,7 +13082,7 @@ type PullsListReviewRequestsEndpoint = {
 };
 type PullsListReviewRequestsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13110,7 +13110,7 @@ type PullsCreateReviewRequestEndpoint = {
 };
 type PullsCreateReviewRequestRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13138,7 +13138,7 @@ type PullsDeleteReviewRequestEndpoint = {
 };
 type PullsDeleteReviewRequestRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13166,7 +13166,7 @@ type PullsListReviewsEndpoint = {
 };
 type PullsListReviewsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13202,7 +13202,7 @@ type PullsCreateReviewEndpoint = {
 };
 type PullsCreateReviewRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13226,7 +13226,7 @@ type PullsGetReviewEndpoint = {
 };
 type PullsGetReviewRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13250,7 +13250,7 @@ type PullsDeletePendingReviewEndpoint = {
 };
 type PullsDeletePendingReviewRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13278,7 +13278,7 @@ type PullsUpdateReviewEndpoint = {
 };
 type PullsUpdateReviewRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13310,7 +13310,7 @@ type PullsGetCommentsForReviewEndpoint = {
 };
 type PullsGetCommentsForReviewRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13338,7 +13338,7 @@ type PullsDismissReviewEndpoint = {
 };
 type PullsDismissReviewRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13370,7 +13370,7 @@ type PullsSubmitReviewEndpoint = {
 };
 type PullsSubmitReviewRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13394,7 +13394,7 @@ type PullsUpdateBranchEndpoint = {
 };
 type PullsUpdateBranchRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/pulls/:pull_number/update-branch";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13414,7 +13414,7 @@ type ReposGetReadmeEndpoint = {
 };
 type ReposGetReadmeRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/readme";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13438,7 +13438,7 @@ type ReposListReleasesEndpoint = {
 };
 type ReposListReleasesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13478,7 +13478,7 @@ type ReposCreateReleaseEndpoint = {
 };
 type ReposCreateReleaseRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/releases";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13498,7 +13498,7 @@ type ReposGetReleaseAssetEndpoint = {
 };
 type ReposGetReleaseAssetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/assets/:asset_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13526,7 +13526,7 @@ type ReposUpdateReleaseAssetEndpoint = {
 };
 type ReposUpdateReleaseAssetRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/assets/:asset_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13546,7 +13546,7 @@ type ReposDeleteReleaseAssetEndpoint = {
 };
 type ReposDeleteReleaseAssetRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/assets/:asset_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13562,7 +13562,7 @@ type ReposGetLatestReleaseEndpoint = {
 };
 type ReposGetLatestReleaseRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/latest";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13582,7 +13582,7 @@ type ReposGetReleaseByTagEndpoint = {
 };
 type ReposGetReleaseByTagRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/tags/:tag";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13602,7 +13602,7 @@ type ReposGetReleaseEndpoint = {
 };
 type ReposGetReleaseRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/:release_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13646,7 +13646,7 @@ type ReposUpdateReleaseEndpoint = {
 };
 type ReposUpdateReleaseRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/:release_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13666,7 +13666,7 @@ type ReposDeleteReleaseEndpoint = {
 };
 type ReposDeleteReleaseRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/:release_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13694,7 +13694,7 @@ type ReposListAssetsForReleaseEndpoint = {
 };
 type ReposListAssetsForReleaseRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/releases/:release_id/assets";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13730,7 +13730,7 @@ type ReposUploadReleaseAssetEndpoint = {
 };
 type ReposUploadReleaseAssetRequestOptions = {
   method: "POST";
-  url: Url;
+  url: ":origin/repos/:owner/:repo/releases/:release_id/assets:?name,label";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13754,7 +13754,7 @@ type ActivityListStargazersForRepoEndpoint = {
 };
 type ActivityListStargazersForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stargazers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13770,7 +13770,7 @@ type ReposGetCodeFrequencyStatsEndpoint = {
 };
 type ReposGetCodeFrequencyStatsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stats/code_frequency";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13786,7 +13786,7 @@ type ReposGetCommitActivityStatsEndpoint = {
 };
 type ReposGetCommitActivityStatsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stats/commit_activity";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13802,7 +13802,7 @@ type ReposGetContributorsStatsEndpoint = {
 };
 type ReposGetContributorsStatsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stats/contributors";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13818,7 +13818,7 @@ type ReposGetParticipationStatsEndpoint = {
 };
 type ReposGetParticipationStatsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stats/participation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13834,7 +13834,7 @@ type ReposGetPunchCardStatsEndpoint = {
 };
 type ReposGetPunchCardStatsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/stats/punch_card";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13872,7 +13872,7 @@ type ReposCreateStatusEndpoint = {
 };
 type ReposCreateStatusRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/statuses/:sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13896,7 +13896,7 @@ type ActivityListWatchersForRepoEndpoint = {
 };
 type ActivityListWatchersForRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/subscribers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13912,7 +13912,7 @@ type ActivityGetRepoSubscriptionEndpoint = {
 };
 type ActivityGetRepoSubscriptionRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13936,7 +13936,7 @@ type ActivitySetRepoSubscriptionEndpoint = {
 };
 type ActivitySetRepoSubscriptionRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13952,7 +13952,7 @@ type ActivityDeleteRepoSubscriptionEndpoint = {
 };
 type ActivityDeleteRepoSubscriptionRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/subscription";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -13976,7 +13976,7 @@ type ReposListTagsEndpoint = {
 };
 type ReposListTagsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/tags";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14000,7 +14000,7 @@ type ReposListTeamsEndpoint = {
 };
 type ReposListTeamsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14016,7 +14016,7 @@ type ReposGetAllTopicsEndpoint = {
 };
 type ReposGetAllTopicsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/topics";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14032,7 +14032,7 @@ type ReposListTopicsEndpoint = {
 };
 type ReposListTopicsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/topics";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14052,7 +14052,7 @@ type ReposReplaceAllTopicsEndpoint = {
 };
 type ReposReplaceAllTopicsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/topics";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14072,7 +14072,7 @@ type ReposReplaceTopicsEndpoint = {
 };
 type ReposReplaceTopicsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/topics";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14092,7 +14092,7 @@ type ReposGetClonesEndpoint = {
 };
 type ReposGetClonesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/traffic/clones";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14108,7 +14108,7 @@ type ReposGetTopPathsEndpoint = {
 };
 type ReposGetTopPathsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/traffic/popular/paths";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14124,7 +14124,7 @@ type ReposGetTopReferrersEndpoint = {
 };
 type ReposGetTopReferrersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/traffic/popular/referrers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14144,7 +14144,7 @@ type ReposGetViewsEndpoint = {
 };
 type ReposGetViewsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/traffic/views";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14168,7 +14168,7 @@ type ReposTransferEndpoint = {
 };
 type ReposTransferRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:owner/:repo/transfer";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14184,7 +14184,7 @@ type ReposCheckVulnerabilityAlertsEndpoint = {
 };
 type ReposCheckVulnerabilityAlertsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/vulnerability-alerts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14200,7 +14200,7 @@ type ReposEnableVulnerabilityAlertsEndpoint = {
 };
 type ReposEnableVulnerabilityAlertsRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/repos/:owner/:repo/vulnerability-alerts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14216,7 +14216,7 @@ type ReposDisableVulnerabilityAlertsEndpoint = {
 };
 type ReposDisableVulnerabilityAlertsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/repos/:owner/:repo/vulnerability-alerts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14240,7 +14240,7 @@ type ReposGetArchiveLinkEndpoint = {
 };
 type ReposGetArchiveLinkRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repos/:owner/:repo/:archive_format/:ref";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14272,7 +14272,7 @@ type ReposCreateUsingTemplateEndpoint = {
 };
 type ReposCreateUsingTemplateRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/repos/:template_owner/:template_repo/generate";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14292,7 +14292,7 @@ type ReposListPublicEndpoint = {
 };
 type ReposListPublicRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14316,7 +14316,7 @@ type ScimListProvisionedIdentitiesEndpoint = {
 };
 type ScimListProvisionedIdentitiesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14328,7 +14328,7 @@ type ScimProvisionAndInviteUsersEndpoint = {
 };
 type ScimProvisionAndInviteUsersRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14340,7 +14340,7 @@ type ScimProvisionInviteUsersEndpoint = {
 };
 type ScimProvisionInviteUsersRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14356,7 +14356,7 @@ type ScimGetProvisioningDetailsForUserEndpoint = {
 };
 type ScimGetProvisioningDetailsForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14372,7 +14372,7 @@ type ScimReplaceProvisionedUserInformationEndpoint = {
 };
 type ScimReplaceProvisionedUserInformationRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14388,7 +14388,7 @@ type ScimUpdateProvisionedOrgMembershipEndpoint = {
 };
 type ScimUpdateProvisionedOrgMembershipRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14404,7 +14404,7 @@ type ScimUpdateUserAttributeEndpoint = {
 };
 type ScimUpdateUserAttributeRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14420,7 +14420,7 @@ type ScimRemoveUserFromOrgEndpoint = {
 };
 type ScimRemoveUserFromOrgRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14448,7 +14448,7 @@ type SearchCodeEndpoint = {
 };
 type SearchCodeRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/code";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14476,7 +14476,7 @@ type SearchCommitsEndpoint = {
 };
 type SearchCommitsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/commits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14515,7 +14515,7 @@ type SearchIssuesAndPullRequestsEndpoint = {
 };
 type SearchIssuesAndPullRequestsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14554,7 +14554,7 @@ type SearchIssuesEndpoint = {
 };
 type SearchIssuesRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14578,7 +14578,7 @@ type SearchLabelsEndpoint = {
 };
 type SearchLabelsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14606,7 +14606,7 @@ type SearchReposEndpoint = {
 };
 type SearchReposRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14618,7 +14618,7 @@ type SearchTopicsEndpoint = {
 };
 type SearchTopicsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/topics";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14646,7 +14646,7 @@ type SearchUsersEndpoint = {
 };
 type SearchUsersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/search/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14658,7 +14658,7 @@ type TeamsGetLegacyEndpoint = {
 };
 type TeamsGetLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14670,7 +14670,7 @@ type TeamsGetEndpoint = {
 };
 type TeamsGetRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14710,7 +14710,7 @@ type TeamsUpdateLegacyEndpoint = {
 };
 type TeamsUpdateLegacyRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14750,7 +14750,7 @@ type TeamsUpdateEndpoint = {
 };
 type TeamsUpdateRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14762,7 +14762,7 @@ type TeamsDeleteLegacyEndpoint = {
 };
 type TeamsDeleteLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14774,7 +14774,7 @@ type TeamsDeleteEndpoint = {
 };
 type TeamsDeleteRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14798,7 +14798,7 @@ type TeamsListDiscussionsLegacyEndpoint = {
 };
 type TeamsListDiscussionsLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14822,7 +14822,7 @@ type TeamsListDiscussionsEndpoint = {
 };
 type TeamsListDiscussionsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14846,7 +14846,7 @@ type TeamsCreateDiscussionLegacyEndpoint = {
 };
 type TeamsCreateDiscussionLegacyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14870,7 +14870,7 @@ type TeamsCreateDiscussionEndpoint = {
 };
 type TeamsCreateDiscussionRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14886,7 +14886,7 @@ type TeamsGetDiscussionLegacyEndpoint = {
 };
 type TeamsGetDiscussionLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14902,7 +14902,7 @@ type TeamsGetDiscussionEndpoint = {
 };
 type TeamsGetDiscussionRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14926,7 +14926,7 @@ type TeamsUpdateDiscussionLegacyEndpoint = {
 };
 type TeamsUpdateDiscussionLegacyRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14950,7 +14950,7 @@ type TeamsUpdateDiscussionEndpoint = {
 };
 type TeamsUpdateDiscussionRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14966,7 +14966,7 @@ type TeamsDeleteDiscussionLegacyEndpoint = {
 };
 type TeamsDeleteDiscussionLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -14982,7 +14982,7 @@ type TeamsDeleteDiscussionEndpoint = {
 };
 type TeamsDeleteDiscussionRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15010,7 +15010,7 @@ type TeamsListDiscussionCommentsLegacyEndpoint = {
 };
 type TeamsListDiscussionCommentsLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15038,7 +15038,7 @@ type TeamsListDiscussionCommentsEndpoint = {
 };
 type TeamsListDiscussionCommentsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15058,7 +15058,7 @@ type TeamsCreateDiscussionCommentLegacyEndpoint = {
 };
 type TeamsCreateDiscussionCommentLegacyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15078,7 +15078,7 @@ type TeamsCreateDiscussionCommentEndpoint = {
 };
 type TeamsCreateDiscussionCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15098,7 +15098,7 @@ type TeamsGetDiscussionCommentLegacyEndpoint = {
 };
 type TeamsGetDiscussionCommentLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15118,7 +15118,7 @@ type TeamsGetDiscussionCommentEndpoint = {
 };
 type TeamsGetDiscussionCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15142,7 +15142,7 @@ type TeamsUpdateDiscussionCommentLegacyEndpoint = {
 };
 type TeamsUpdateDiscussionCommentLegacyRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15166,7 +15166,7 @@ type TeamsUpdateDiscussionCommentEndpoint = {
 };
 type TeamsUpdateDiscussionCommentRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15186,7 +15186,7 @@ type TeamsDeleteDiscussionCommentLegacyEndpoint = {
 };
 type TeamsDeleteDiscussionCommentLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15206,7 +15206,7 @@ type TeamsDeleteDiscussionCommentEndpoint = {
 };
 type TeamsDeleteDiscussionCommentRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15246,7 +15246,7 @@ type ReactionsListForTeamDiscussionCommentLegacyEndpoint = {
 };
 type ReactionsListForTeamDiscussionCommentLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15286,7 +15286,7 @@ type ReactionsListForTeamDiscussionCommentEndpoint = {
 };
 type ReactionsListForTeamDiscussionCommentRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15318,7 +15318,7 @@ type ReactionsCreateForTeamDiscussionCommentLegacyEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15350,7 +15350,7 @@ type ReactionsCreateForTeamDiscussionCommentEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionCommentRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15386,7 +15386,7 @@ type ReactionsListForTeamDiscussionLegacyEndpoint = {
 };
 type ReactionsListForTeamDiscussionLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15422,7 +15422,7 @@ type ReactionsListForTeamDiscussionEndpoint = {
 };
 type ReactionsListForTeamDiscussionRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15450,7 +15450,7 @@ type ReactionsCreateForTeamDiscussionLegacyEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionLegacyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15478,7 +15478,7 @@ type ReactionsCreateForTeamDiscussionEndpoint = {
 };
 type ReactionsCreateForTeamDiscussionRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/teams/:team_id/discussions/:discussion_number/reactions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15498,7 +15498,7 @@ type TeamsListPendingInvitationsLegacyEndpoint = {
 };
 type TeamsListPendingInvitationsLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15518,7 +15518,7 @@ type TeamsListPendingInvitationsEndpoint = {
 };
 type TeamsListPendingInvitationsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15545,7 +15545,7 @@ type TeamsListMembersLegacyEndpoint = {
 };
 type TeamsListMembersLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/members";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15572,7 +15572,7 @@ type TeamsListMembersEndpoint = {
 };
 type TeamsListMembersRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/members";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15588,7 +15588,7 @@ type TeamsGetMemberLegacyEndpoint = {
 };
 type TeamsGetMemberLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15604,7 +15604,7 @@ type TeamsGetMemberEndpoint = {
 };
 type TeamsGetMemberRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15620,7 +15620,7 @@ type TeamsAddMemberLegacyEndpoint = {
 };
 type TeamsAddMemberLegacyRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15636,7 +15636,7 @@ type TeamsAddMemberEndpoint = {
 };
 type TeamsAddMemberRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15652,7 +15652,7 @@ type TeamsRemoveMemberLegacyEndpoint = {
 };
 type TeamsRemoveMemberLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15668,7 +15668,7 @@ type TeamsRemoveMemberEndpoint = {
 };
 type TeamsRemoveMemberRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15684,7 +15684,7 @@ type TeamsGetMembershipLegacyEndpoint = {
 };
 type TeamsGetMembershipLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15700,7 +15700,7 @@ type TeamsGetMembershipEndpoint = {
 };
 type TeamsGetMembershipRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15722,7 +15722,7 @@ type TeamsAddOrUpdateMembershipLegacyEndpoint = {
 };
 type TeamsAddOrUpdateMembershipLegacyRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15744,7 +15744,7 @@ type TeamsAddOrUpdateMembershipEndpoint = {
 };
 type TeamsAddOrUpdateMembershipRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15760,7 +15760,7 @@ type TeamsRemoveMembershipLegacyEndpoint = {
 };
 type TeamsRemoveMembershipLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15776,7 +15776,7 @@ type TeamsRemoveMembershipEndpoint = {
 };
 type TeamsRemoveMembershipRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15796,7 +15796,7 @@ type TeamsListProjectsLegacyEndpoint = {
 };
 type TeamsListProjectsLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15816,7 +15816,7 @@ type TeamsListProjectsEndpoint = {
 };
 type TeamsListProjectsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15832,7 +15832,7 @@ type TeamsReviewProjectLegacyEndpoint = {
 };
 type TeamsReviewProjectLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15848,7 +15848,7 @@ type TeamsReviewProjectEndpoint = {
 };
 type TeamsReviewProjectRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15872,7 +15872,7 @@ type TeamsAddOrUpdateProjectLegacyEndpoint = {
 };
 type TeamsAddOrUpdateProjectLegacyRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15896,7 +15896,7 @@ type TeamsAddOrUpdateProjectEndpoint = {
 };
 type TeamsAddOrUpdateProjectRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15912,7 +15912,7 @@ type TeamsRemoveProjectLegacyEndpoint = {
 };
 type TeamsRemoveProjectLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15928,7 +15928,7 @@ type TeamsRemoveProjectEndpoint = {
 };
 type TeamsRemoveProjectRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15948,7 +15948,7 @@ type TeamsListReposLegacyEndpoint = {
 };
 type TeamsListReposLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15968,7 +15968,7 @@ type TeamsListReposEndpoint = {
 };
 type TeamsListReposRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15988,7 +15988,7 @@ type TeamsCheckManagesRepoLegacyEndpoint = {
 };
 type TeamsCheckManagesRepoLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16008,7 +16008,7 @@ type TeamsCheckManagesRepoEndpoint = {
 };
 type TeamsCheckManagesRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16037,7 +16037,7 @@ type TeamsAddOrUpdateRepoLegacyEndpoint = {
 };
 type TeamsAddOrUpdateRepoLegacyRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16066,7 +16066,7 @@ type TeamsAddOrUpdateRepoEndpoint = {
 };
 type TeamsAddOrUpdateRepoRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16086,7 +16086,7 @@ type TeamsRemoveRepoLegacyEndpoint = {
 };
 type TeamsRemoveRepoLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16106,7 +16106,7 @@ type TeamsRemoveRepoEndpoint = {
 };
 type TeamsRemoveRepoRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16118,7 +16118,7 @@ type TeamsListIdPGroupsForLegacyEndpoint = {
 };
 type TeamsListIdPGroupsForLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16130,7 +16130,7 @@ type TeamsListIdPGroupsForEndpoint = {
 };
 type TeamsListIdPGroupsForRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16146,7 +16146,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint = {
 };
 type TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16162,7 +16162,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsEndpoint = {
 };
 type TeamsCreateOrUpdateIdPGroupConnectionsRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/teams/:team_id/team-sync/group-mappings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16182,7 +16182,7 @@ type TeamsListChildLegacyEndpoint = {
 };
 type TeamsListChildLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16202,14 +16202,14 @@ type TeamsListChildEndpoint = {
 };
 type TeamsListChildRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/teams/:team_id/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type UsersGetAuthenticatedEndpoint = {};
 type UsersGetAuthenticatedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16245,14 +16245,14 @@ type UsersUpdateAuthenticatedEndpoint = {
 };
 type UsersUpdateAuthenticatedRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/user";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 type UsersListBlockedEndpoint = {};
 type UsersListBlockedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/blocks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16264,7 +16264,7 @@ type UsersCheckBlockedEndpoint = {
 };
 type UsersCheckBlockedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16276,7 +16276,7 @@ type UsersBlockEndpoint = {
 };
 type UsersBlockRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16288,7 +16288,7 @@ type UsersUnblockEndpoint = {
 };
 type UsersUnblockRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/blocks/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16304,7 +16304,7 @@ type UsersTogglePrimaryEmailVisibilityEndpoint = {
 };
 type UsersTogglePrimaryEmailVisibilityRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/user/email/visibility";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16320,7 +16320,7 @@ type UsersListEmailsEndpoint = {
 };
 type UsersListEmailsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16332,7 +16332,7 @@ type UsersAddEmailsEndpoint = {
 };
 type UsersAddEmailsRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16344,7 +16344,7 @@ type UsersDeleteEmailsEndpoint = {
 };
 type UsersDeleteEmailsRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16360,7 +16360,7 @@ type UsersListFollowersForAuthenticatedUserEndpoint = {
 };
 type UsersListFollowersForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/followers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16376,7 +16376,7 @@ type UsersListFollowedByAuthenticatedEndpoint = {
 };
 type UsersListFollowedByAuthenticatedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/following";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16392,7 +16392,7 @@ type UsersListFollowingForAuthenticatedUserEndpoint = {
 };
 type UsersListFollowingForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/following";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16404,7 +16404,7 @@ type UsersCheckFollowingEndpoint = {
 };
 type UsersCheckFollowingRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/following/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16416,7 +16416,7 @@ type UsersFollowEndpoint = {
 };
 type UsersFollowRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/following/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16428,7 +16428,7 @@ type UsersUnfollowEndpoint = {
 };
 type UsersUnfollowRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/following/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16444,7 +16444,7 @@ type UsersListGpgKeysEndpoint = {
 };
 type UsersListGpgKeysRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/gpg_keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16456,7 +16456,7 @@ type UsersCreateGpgKeyEndpoint = {
 };
 type UsersCreateGpgKeyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/gpg_keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16468,7 +16468,7 @@ type UsersGetGpgKeyEndpoint = {
 };
 type UsersGetGpgKeyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/gpg_keys/:gpg_key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16480,7 +16480,7 @@ type UsersDeleteGpgKeyEndpoint = {
 };
 type UsersDeleteGpgKeyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/gpg_keys/:gpg_key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16496,7 +16496,7 @@ type AppsListInstallationsForAuthenticatedUserEndpoint = {
 };
 type AppsListInstallationsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/installations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16516,7 +16516,7 @@ type AppsListInstallationReposForAuthenticatedUserEndpoint = {
 };
 type AppsListInstallationReposForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/installations/:installation_id/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16532,7 +16532,7 @@ type AppsAddRepoToInstallationEndpoint = {
 };
 type AppsAddRepoToInstallationRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/installations/:installation_id/repositories/:repository_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16548,7 +16548,7 @@ type AppsRemoveRepoFromInstallationEndpoint = {
 };
 type AppsRemoveRepoFromInstallationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/installations/:installation_id/repositories/:repository_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16593,7 +16593,7 @@ type IssuesListForAuthenticatedUserEndpoint = {
 };
 type IssuesListForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16609,7 +16609,7 @@ type UsersListPublicKeysEndpoint = {
 };
 type UsersListPublicKeysRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16625,7 +16625,7 @@ type UsersCreatePublicKeyEndpoint = {
 };
 type UsersCreatePublicKeyRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16637,7 +16637,7 @@ type UsersGetPublicKeyEndpoint = {
 };
 type UsersGetPublicKeyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/keys/:key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16649,7 +16649,7 @@ type UsersDeletePublicKeyEndpoint = {
 };
 type UsersDeletePublicKeyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/keys/:key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16665,7 +16665,7 @@ type AppsListSubscriptionsForAuthenticatedUserEndpoint = {
 };
 type AppsListSubscriptionsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/marketplace_purchases";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16681,7 +16681,7 @@ type AppsListMarketplacePurchasesForAuthenticatedUserEndpoint = {
 };
 type AppsListMarketplacePurchasesForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/marketplace_purchases";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16697,7 +16697,7 @@ type AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint = {
 };
 type AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/marketplace_purchases/stubbed";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16713,7 +16713,7 @@ type AppsListMarketplacePurchasesForAuthenticatedUserStubbedEndpoint = {
 };
 type AppsListMarketplacePurchasesForAuthenticatedUserStubbedRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/marketplace_purchases/stubbed";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16733,7 +16733,7 @@ type OrgsListMembershipsEndpoint = {
 };
 type OrgsListMembershipsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/memberships/orgs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16745,7 +16745,7 @@ type OrgsGetMembershipForAuthenticatedUserEndpoint = {
 };
 type OrgsGetMembershipForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/memberships/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16761,7 +16761,7 @@ type OrgsUpdateMembershipEndpoint = {
 };
 type OrgsUpdateMembershipRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/user/memberships/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16781,7 +16781,7 @@ type MigrationsStartForAuthenticatedUserEndpoint = {
 };
 type MigrationsStartForAuthenticatedUserRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/migrations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16797,7 +16797,7 @@ type MigrationsListForAuthenticatedUserEndpoint = {
 };
 type MigrationsListForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/migrations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16809,7 +16809,7 @@ type MigrationsGetStatusForAuthenticatedUserEndpoint = {
 };
 type MigrationsGetStatusForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/migrations/:migration_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16821,7 +16821,7 @@ type MigrationsGetArchiveForAuthenticatedUserEndpoint = {
 };
 type MigrationsGetArchiveForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/migrations/:migration_id/archive";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16833,7 +16833,7 @@ type MigrationsDeleteArchiveForAuthenticatedUserEndpoint = {
 };
 type MigrationsDeleteArchiveForAuthenticatedUserRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/migrations/:migration_id/archive";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16849,7 +16849,7 @@ type MigrationsUnlockRepoForAuthenticatedUserEndpoint = {
 };
 type MigrationsUnlockRepoForAuthenticatedUserRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/migrations/:migration_id/repos/:repo_name/lock";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16865,7 +16865,7 @@ type OrgsListForAuthenticatedUserEndpoint = {
 };
 type OrgsListForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/orgs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16881,7 +16881,7 @@ type ProjectsCreateForAuthenticatedUserEndpoint = {
 };
 type ProjectsCreateForAuthenticatedUserRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16897,7 +16897,7 @@ type UsersListPublicEmailsEndpoint = {
 };
 type UsersListPublicEmailsRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/public_emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16938,7 +16938,7 @@ type ReposListForAuthenticatedUserEndpoint = {
 };
 type ReposListForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -16979,7 +16979,7 @@ type ReposListEndpoint = {
 };
 type ReposListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17056,7 +17056,7 @@ type ReposCreateForAuthenticatedUserEndpoint = {
 };
 type ReposCreateForAuthenticatedUserRequestOptions = {
   method: "POST";
-  url: Url;
+  url: "/user/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17072,7 +17072,7 @@ type ReposListInvitationsForAuthenticatedUserEndpoint = {
 };
 type ReposListInvitationsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/repository_invitations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17084,7 +17084,7 @@ type ReposAcceptInvitationEndpoint = {
 };
 type ReposAcceptInvitationRequestOptions = {
   method: "PATCH";
-  url: Url;
+  url: "/user/repository_invitations/:invitation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17096,7 +17096,7 @@ type ReposDeclineInvitationEndpoint = {
 };
 type ReposDeclineInvitationRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/repository_invitations/:invitation_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17120,7 +17120,7 @@ type ActivityListReposStarredByAuthenticatedUserEndpoint = {
 };
 type ActivityListReposStarredByAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/starred";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17136,7 +17136,7 @@ type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
 };
 type ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17152,7 +17152,7 @@ type ActivityCheckStarringRepoEndpoint = {
 };
 type ActivityCheckStarringRepoRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17168,7 +17168,7 @@ type ActivityStarRepoForAuthenticatedUserEndpoint = {
 };
 type ActivityStarRepoForAuthenticatedUserRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17184,7 +17184,7 @@ type ActivityStarRepoEndpoint = {
 };
 type ActivityStarRepoRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17200,7 +17200,7 @@ type ActivityUnstarRepoForAuthenticatedUserEndpoint = {
 };
 type ActivityUnstarRepoForAuthenticatedUserRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17216,7 +17216,7 @@ type ActivityUnstarRepoEndpoint = {
 };
 type ActivityUnstarRepoRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/starred/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17232,7 +17232,7 @@ type ActivityListWatchedReposForAuthenticatedUserEndpoint = {
 };
 type ActivityListWatchedReposForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/subscriptions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17248,7 +17248,7 @@ type ActivityCheckWatchingRepoLegacyEndpoint = {
 };
 type ActivityCheckWatchingRepoLegacyRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/subscriptions/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17264,7 +17264,7 @@ type ActivityWatchRepoLegacyEndpoint = {
 };
 type ActivityWatchRepoLegacyRequestOptions = {
   method: "PUT";
-  url: Url;
+  url: "/user/subscriptions/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17280,7 +17280,7 @@ type ActivityStopWatchingRepoLegacyEndpoint = {
 };
 type ActivityStopWatchingRepoLegacyRequestOptions = {
   method: "DELETE";
-  url: Url;
+  url: "/user/subscriptions/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17296,7 +17296,7 @@ type TeamsListForAuthenticatedUserEndpoint = {
 };
 type TeamsListForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17316,7 +17316,7 @@ type MigrationsListReposForUserEndpoint = {
 };
 type MigrationsListReposForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/user/:migration_id/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17336,7 +17336,7 @@ type UsersListEndpoint = {
 };
 type UsersListRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17348,7 +17348,7 @@ type UsersGetByUsernameEndpoint = {
 };
 type UsersGetByUsernameRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17368,7 +17368,7 @@ type ActivityListEventsForAuthenticatedUserEndpoint = {
 };
 type ActivityListEventsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17388,7 +17388,7 @@ type ActivityListEventsForUserEndpoint = {
 };
 type ActivityListEventsForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17412,7 +17412,7 @@ type ActivityListOrgEventsForAuthenticatedUserEndpoint = {
 };
 type ActivityListOrgEventsForAuthenticatedUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/events/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17436,7 +17436,7 @@ type ActivityListEventsForOrgEndpoint = {
 };
 type ActivityListEventsForOrgRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/events/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17456,7 +17456,7 @@ type ActivityListPublicEventsForUserEndpoint = {
 };
 type ActivityListPublicEventsForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/events/public";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17476,7 +17476,7 @@ type UsersListFollowersForUserEndpoint = {
 };
 type UsersListFollowersForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/followers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17496,7 +17496,7 @@ type UsersListFollowingForUserEndpoint = {
 };
 type UsersListFollowingForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/following";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17512,7 +17512,7 @@ type UsersCheckFollowingForUserEndpoint = {
 };
 type UsersCheckFollowingForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/following/:target_user";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17536,7 +17536,7 @@ type GistsListForUserEndpoint = {
 };
 type GistsListForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/gists";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17560,7 +17560,7 @@ type GistsListPublicForUserEndpoint = {
 };
 type GistsListPublicForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/gists";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17580,7 +17580,7 @@ type UsersListGpgKeysForUserEndpoint = {
 };
 type UsersListGpgKeysForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/gpg_keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17600,7 +17600,7 @@ type UsersGetContextForUserEndpoint = {
 };
 type UsersGetContextForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/hovercard";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17612,7 +17612,7 @@ type AppsGetUserInstallationEndpoint = {
 };
 type AppsGetUserInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17624,7 +17624,7 @@ type AppsFindUserInstallationEndpoint = {
 };
 type AppsFindUserInstallationRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/installation";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17644,7 +17644,7 @@ type UsersListPublicKeysForUserEndpoint = {
 };
 type UsersListPublicKeysForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17664,7 +17664,7 @@ type OrgsListForUserEndpoint = {
 };
 type OrgsListForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/orgs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17688,7 +17688,7 @@ type ProjectsListForUserEndpoint = {
 };
 type ProjectsListForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/projects";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17708,7 +17708,7 @@ type ActivityListReceivedEventsForUserEndpoint = {
 };
 type ActivityListReceivedEventsForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/received_events";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17728,7 +17728,7 @@ type ActivityListReceivedPublicEventsForUserEndpoint = {
 };
 type ActivityListReceivedPublicEventsForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/received_events/public";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17760,7 +17760,7 @@ type ReposListForUserEndpoint = {
 };
 type ReposListForUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/repos";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17788,7 +17788,7 @@ type ActivityListReposStarredByUserEndpoint = {
 };
 type ActivityListReposStarredByUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/starred";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -17808,7 +17808,7 @@ type ActivityListReposWatchedByUserEndpoint = {
 };
 type ActivityListReposWatchedByUserRequestOptions = {
   method: "GET";
-  url: Url;
+  url: "/users/:username/subscriptions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
