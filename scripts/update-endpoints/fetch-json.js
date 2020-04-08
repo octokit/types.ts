@@ -26,6 +26,16 @@ const QUERY = `
         type
         required
       }
+      responses {
+        code
+        description
+        examples {
+          data
+        }
+      }
+      renamed {
+        note
+      }
     }
   }`;
 
