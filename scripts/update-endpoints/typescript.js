@@ -7,6 +7,7 @@ const { pascalCase } = require("pascal-case");
 const prettier = require("prettier");
 const { stringToJsdocComment } = require("string-to-jsdoc-comment");
 const sortKeys = require("sort-keys");
+const TypeWriter = require("@gimenete/type-writer");
 
 const ENDPOINTS = require("./generated/endpoints.json");
 const ENDPOINTS_PATH = resolve(
@@ -61,6 +62,8 @@ const typeMap = {
 };
 
 for (const endpoint of ENDPOINTS) {
+  if (endpoint.renamed) continue;
+
   const route = `${endpoint.method} ${endpoint.url.replace(
     /\{([^}]+)}/g,
     ":$1"
@@ -71,10 +74,11 @@ for (const endpoint of ENDPOINTS) {
   }
 
   endpointsByRoute[route].push({
-    optionsTypeName:
-      pascalCase(`${endpoint.scope} ${endpoint.id}`) + "Endpoint",
-    requestOptionsTypeName:
-      pascalCase(`${endpoint.scope} ${endpoint.id}`) + "RequestOptions",
+    optionsTypeName: pascalCase(`${endpoint.scope} ${endpoint.id} Endpoint`),
+    requestOptionsTypeName: pascalCase(
+      `${endpoint.scope} ${endpoint.id} RequestOptions`
+    ),
+    responseTypeName: endpointToResponseTypeName(endpoint),
   });
 }
 
@@ -82,16 +86,35 @@ const options = [];
 const childParams = {};
 
 for (const endpoint of ENDPOINTS) {
+  if (endpoint.renamed) continue;
+
+  const typeWriter = new TypeWriter();
   const { method, parameters } = endpoint;
   const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
 
-  const optionsTypeName =
-    pascalCase(`${endpoint.scope} ${endpoint.id}`) + "Endpoint";
-  const requestOptionsTypeName =
-    pascalCase(`${endpoint.scope} ${endpoint.id}`) + "RequestOptions";
+  const optionsTypeName = pascalCase(
+    `${endpoint.scope} ${endpoint.id} Endpoint`
+  );
+  const requestOptionsTypeName = pascalCase(
+    `${endpoint.scope} ${endpoint.id} RequestOptions`
+  );
+
+  const responses =
+    endpoint.responses.length && endpoint.responses[0].examples
+      ? endpoint.responses[0].examples.map((example) =>
+          JSON.parse(example.data)
+        )
+      : undefined;
+  if (responses) {
+    typeWriter.add(responses, {
+      rootTypeName: endpointToResponseTypeName(endpoint),
+    });
+
+    typeWriter.generate("typescript");
+  }
 
   options.push({
-    in: {
+    parameters: {
       name: optionsTypeName,
       parameters: parameters
         .map(parameterize)
@@ -133,13 +156,18 @@ for (const endpoint of ENDPOINTS) {
         })
         .filter(Boolean),
     },
-    out: {
+    request: {
       name: requestOptionsTypeName,
       method,
       url,
     },
+    response: responses ? typeWriter.generate("typescript") : "",
   });
+
+  process.stdout.write(".");
 }
+
+console.log("\ndone.");
 
 const result = template({
   endpointsByRoute: sortKeys(endpointsByRoute, { deep: true }),
@@ -175,4 +203,15 @@ function parameterize(parameter) {
     allowNull: parameter.allowNull,
     jsdoc: stringToJsdocComment(parameter.description),
   };
+}
+
+function endpointToResponseTypeName(endpoint) {
+  const hasResponses =
+    endpoint.responses.length && endpoint.responses[0].examples;
+
+  if (hasResponses) {
+    return pascalCase(`${endpoint.scope} ${endpoint.id} ResponseData`);
+  }
+
+  return "any";
 }

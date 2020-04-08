@@ -4,23 +4,24 @@ import { RequestRequestOptions } from "../RequestRequestOptions";
 
 export interface Endpoints {
   {{#each endpointsByRoute}}
-  "{{@key}}": [{{union this "optionsTypeName"}}, {{union this "requestOptionsTypeName"}}]
+  "{{@key}}": [{{union this "optionsTypeName"}}, {{union this "requestOptionsTypeName"}}, {{union this "responseTypeName"}}]
   {{/each}}
 }
 
 {{#each options}}
-type {{in.name}} = {
-{{#each in.parameters}}
+type {{parameters.name}} = {
+{{#each parameters.parameters}}
   {{&jsdoc}}
   {{{name this}}}: {{{type this}}}
 {{/each}}
 }
-type {{out.name}} = {
-  method: "{{out.method}}",
-  url: "{{out.url}}",
+type {{request.name}} = {
+  method: "{{request.method}}",
+  url: "{{request.url}}",
   headers: RequestHeaders,
   request: RequestRequestOptions
 }
+{{&response}}
 {{/each}}
 
 {{#childParams}}
