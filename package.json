@@ -11,8 +11,8 @@
   ],
   "scripts": {
     "docs": "typedoc --module commonjs --readme none --out docs src/",
-    "lint": "prettier --check '{src,test}/**/*' README.md package.json !src/generated/*",
-    "lint:fix": "prettier --write '{src,test}/**/*' README.md package.json !src/generated/*",
+    "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
+    "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "pretest": "npm run -s lint",
     "test": "./node_modules/.bin/tsc --noEmit --declaration src/index.ts",
     "update-endpoints": "npm-run-all update-endpoints:*",
