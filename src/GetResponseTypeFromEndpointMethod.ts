@@ -1,5 +1,5 @@
 type Unwrap<T> = T extends Promise<infer U> ? U : T;
-type AnyFunction = (...args) => any;
+type AnyFunction = (...args: any[]) => any;
 
 export type GetResponseTypeFromEndpointMethod<T extends AnyFunction> = Unwrap<
   ReturnType<T>
