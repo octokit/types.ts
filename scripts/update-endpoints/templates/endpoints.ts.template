@@ -2,6 +2,12 @@
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
 
+type RequiredPreview<T> = {
+  mediaType: {
+    previews: [T, ...string[]];
+  };
+};
+
 export interface Endpoints {
   {{#each endpointsByRoute}}
   /**
@@ -18,6 +24,8 @@ type {{parameters.name}} = {
   {{{name this}}}: {{{type this}}}
 {{/each}}
 }
+  {{#requiredPreview}} & RequiredPreview<"{{this}}"> {{/requiredPreview}}
+  {{#headers}} & {{{headersType this}}} {{/headers}}
 type {{request.name}} = {
   method: "{{request.method}}",
   url: "{{request.url}}",

@@ -27,6 +27,14 @@ const QUERY = `
         type
         required
       }
+      previews(required: true) {
+        name
+      }
+      headers {
+        name
+        value
+        required
+      }
       responses {
         code
         description

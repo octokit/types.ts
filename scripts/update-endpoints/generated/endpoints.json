@@ -7,6 +7,14 @@
     "url": "/app",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-github-app",
     "parameters": [],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -39,6 +47,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -81,6 +91,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -113,6 +131,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -142,6 +168,14 @@
         "enum": null,
         "name": "installation_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -187,6 +221,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -229,6 +271,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -261,6 +305,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -293,6 +339,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -325,6 +373,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -357,6 +407,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -389,6 +441,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"Revoke a grant for an application\" has been moved from \"OAuth Authorizations\" to \"Apps\""
@@ -423,6 +477,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -465,6 +521,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -507,6 +565,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -539,6 +599,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -581,6 +643,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -625,6 +689,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -667,6 +733,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -711,6 +779,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -743,6 +813,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"Revoke an authorization for an application\" has been moved from \"OAuth Authorizations\" to \"Apps\""
@@ -764,6 +836,14 @@
         "enum": null,
         "name": "app_slug",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -809,6 +889,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -891,6 +973,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -973,6 +1057,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1064,6 +1150,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1155,6 +1243,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1198,6 +1288,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1290,6 +1382,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1322,6 +1416,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -1333,6 +1429,14 @@
     "url": "/codes_of_conduct",
     "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
     "parameters": [],
+    "previews": [{ "name": "scarlet-witch" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -1354,6 +1458,14 @@
     "url": "/codes_of_conduct",
     "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
     "parameters": [],
+    "previews": [{ "name": "scarlet-witch" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.scarlet-witch-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -1385,6 +1497,14 @@
         "enum": null,
         "name": "key",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "scarlet-witch" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.scarlet-witch-preview+json",
         "required": true
       }
     ],
@@ -1440,6 +1560,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "corsair" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.corsair-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -1461,6 +1589,8 @@
     "url": "/emojis",
     "documentationUrl": "https://developer.github.com/v3/emojis/#emojis",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -1493,6 +1623,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -1504,6 +1636,8 @@
     "url": "/feeds",
     "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1525,6 +1659,8 @@
     "url": "/feeds",
     "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1579,6 +1715,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1641,6 +1779,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -1693,6 +1833,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1745,6 +1887,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1777,6 +1921,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1849,6 +1995,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1881,6 +2029,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -1923,6 +2073,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -1965,6 +2117,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -2007,6 +2161,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2059,6 +2215,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2101,6 +2259,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2143,6 +2303,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2175,6 +2337,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -2227,6 +2391,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2259,6 +2425,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2281,6 +2449,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2303,6 +2473,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2335,6 +2507,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2356,6 +2530,8 @@
     "url": "/gitignore/templates",
     "documentationUrl": "https://developer.github.com/v3/gitignore/#listing-available-templates",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2388,6 +2564,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2430,6 +2608,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -2451,6 +2637,8 @@
     "url": "/installation/token",
     "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-token",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2543,6 +2731,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2605,6 +2795,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2677,6 +2869,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2709,6 +2903,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2771,6 +2967,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2792,6 +2990,8 @@
     "url": "/licenses",
     "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2813,6 +3013,8 @@
     "url": "/licenses",
     "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2847,6 +3049,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2899,6 +3103,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -2919,6 +3125,14 @@
         "name": "data",
         "type": "string",
         "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [
+      {
+        "name": "content-type",
+        "value": "text/plain; charset=utf-8",
+        "required": false
       }
     ],
     "responses": [],
@@ -2943,6 +3157,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -2975,6 +3191,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3019,6 +3237,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3091,6 +3311,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3163,6 +3385,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3197,6 +3421,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3229,6 +3455,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3273,6 +3501,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3345,6 +3575,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3417,6 +3649,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3440,6 +3674,8 @@
     "url": "/meta",
     "documentationUrl": "https://developer.github.com/v3/meta/#meta",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3502,6 +3738,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -3574,6 +3812,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3656,6 +3896,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3690,6 +3932,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -3712,6 +3956,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/mark-as-read\" operation ID is now \"activity/mark-notifications-as-read\""
@@ -3736,6 +3982,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/get-thread-subscription\" operation ID is now \"activity/get-thread-subscription-for-authenticated-user\""
@@ -3760,6 +4008,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3792,6 +4042,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -3814,6 +4066,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3856,6 +4110,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3888,6 +4144,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -3930,6 +4188,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -3962,6 +4222,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4137,6 +4399,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4169,6 +4433,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4211,6 +4477,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4243,6 +4511,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4275,6 +4545,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4297,6 +4569,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4339,6 +4613,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4381,6 +4657,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4423,6 +4701,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/list-public-events-for-org\" operation ID is now \"activity/list-public-org-events\""
@@ -4467,6 +4747,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4579,6 +4861,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -4621,6 +4905,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4733,6 +5019,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -4775,6 +5063,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4807,6 +5097,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -4826,6 +5118,14 @@
         "enum": null,
         "name": "org",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -4858,6 +5158,14 @@
         "enum": null,
         "name": "org",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -4915,6 +5223,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -4944,6 +5260,14 @@
         "enum": null,
         "name": "org",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
         "required": true
       }
     ],
@@ -4989,6 +5313,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -5018,6 +5350,14 @@
         "enum": null,
         "name": "org",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
         "required": true
       }
     ],
@@ -5063,6 +5403,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5135,6 +5477,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -5197,6 +5541,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5309,6 +5655,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5381,6 +5729,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5423,6 +5773,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -5455,6 +5807,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -5487,6 +5841,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5545,6 +5901,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -5590,6 +5948,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -5642,6 +6002,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -5694,6 +6056,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -5733,6 +6103,14 @@
         "enum": null,
         "name": "migration_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -5778,6 +6156,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -5807,6 +6193,14 @@
         "enum": null,
         "name": "migration_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -5841,6 +6235,14 @@
         "enum": null,
         "name": "migration_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -5883,6 +6285,14 @@
         "enum": null,
         "name": "repo_name",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -5936,6 +6346,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -6000,6 +6418,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6042,6 +6462,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 422,
@@ -6084,6 +6506,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 403,
@@ -6149,6 +6573,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -6199,6 +6631,14 @@
         "name": "body",
         "type": "string",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -6253,6 +6693,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6295,6 +6737,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -6327,6 +6771,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -6359,6 +6805,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -6439,6 +6887,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6641,6 +7091,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -6693,6 +7145,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6745,6 +7199,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6847,6 +7303,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -6889,6 +7347,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6981,6 +7441,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -7023,6 +7485,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -7085,6 +7549,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7157,6 +7623,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -7209,6 +7677,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7281,6 +7751,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7333,6 +7805,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -7405,6 +7879,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7467,6 +7943,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -7529,6 +8007,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7601,6 +8081,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7663,6 +8145,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -7754,6 +8238,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -7835,6 +8327,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -7904,6 +8404,14 @@
         "enum": null,
         "name": "reaction_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -7988,6 +8496,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -8059,6 +8575,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -8121,6 +8645,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -8173,6 +8705,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8245,6 +8779,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8297,6 +8833,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8365,6 +8903,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8429,6 +8969,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -8481,6 +9023,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -8530,6 +9080,14 @@
         "enum": null,
         "name": "project_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -8595,6 +9153,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 403,
@@ -8647,6 +9213,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -8699,6 +9267,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8761,6 +9331,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8833,6 +9405,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -8885,6 +9459,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -8917,6 +9493,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -8999,6 +9577,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -9061,6 +9641,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -9090,6 +9672,14 @@
         "enum": null,
         "name": "card_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9145,6 +9735,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9174,6 +9772,14 @@
         "enum": null,
         "name": "card_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9219,6 +9825,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -9238,6 +9852,14 @@
         "enum": null,
         "name": "column_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9283,6 +9905,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9312,6 +9942,14 @@
         "enum": null,
         "name": "column_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9365,6 +10003,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -9429,6 +10075,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -9471,6 +10125,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -9490,6 +10152,14 @@
         "enum": null,
         "name": "project_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9575,6 +10245,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9604,6 +10282,14 @@
         "enum": null,
         "name": "project_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9659,6 +10345,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9711,6 +10405,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -9743,6 +10445,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -9772,6 +10482,14 @@
         "enum": null,
         "name": "username",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -9827,6 +10545,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9869,6 +10595,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -9890,6 +10624,8 @@
     "url": "/rate_limit",
     "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -9922,6 +10658,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -9941,6 +10685,14 @@
         "enum": null,
         "name": "reaction_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -9978,6 +10730,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10173,6 +10927,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10215,6 +10971,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 403,
@@ -10277,6 +11035,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10329,6 +11089,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10381,6 +11143,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -10433,6 +11197,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -10475,6 +11241,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 202,
@@ -10547,6 +11315,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -10599,6 +11369,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10641,6 +11413,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10683,6 +11457,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -10725,6 +11501,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -10777,6 +11555,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10829,6 +11609,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -10921,6 +11703,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -10973,6 +11757,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11045,6 +11831,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11097,6 +11885,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11169,6 +11959,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11241,6 +12033,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11283,6 +12077,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11335,6 +12131,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11377,6 +12175,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11429,6 +12229,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11501,6 +12303,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11543,6 +12347,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11595,6 +12401,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11647,6 +12455,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11759,6 +12569,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11821,6 +12633,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -11873,6 +12687,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -11905,6 +12721,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "london" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.london-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -11934,6 +12758,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "london" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.london-preview+json",
         "required": true
       }
     ],
@@ -11999,6 +12831,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12051,6 +12885,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12103,6 +12939,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12335,6 +13173,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12387,6 +13227,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -12429,6 +13271,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12481,6 +13325,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12533,6 +13379,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -12575,6 +13423,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12687,6 +13537,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12739,6 +13591,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -12778,6 +13632,14 @@
         "enum": null,
         "name": "branch",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "zzzax" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
         "required": true
       }
     ],
@@ -12833,6 +13695,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "zzzax" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -12885,6 +13755,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "zzzax" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.zzzax-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -12927,6 +13805,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -12999,6 +13879,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13051,6 +13933,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -13093,6 +13977,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13151,6 +14037,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13209,6 +14097,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13271,6 +14161,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13319,6 +14211,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13371,6 +14265,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -13413,6 +14309,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13465,6 +14363,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13529,6 +14429,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13591,6 +14493,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13653,6 +14557,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13705,6 +14611,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13757,6 +14665,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13811,6 +14721,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13875,6 +14787,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13937,6 +14851,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -13999,6 +14915,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14051,6 +14969,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14103,6 +15023,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14157,6 +15079,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14221,6 +15145,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14283,6 +15209,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14345,6 +15273,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -14691,6 +15621,14 @@
         "enum": null,
         "name": "actions[].identifier",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
         "required": true
       }
     ],
@@ -15046,6 +15984,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -15095,6 +16041,14 @@
         "enum": null,
         "name": "check_run_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
         "required": true
       }
     ],
@@ -15170,6 +16124,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -15219,6 +16181,14 @@
         "enum": null,
         "name": "head_sha",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
         "required": true
       }
     ],
@@ -15294,6 +16264,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -15343,6 +16321,14 @@
         "enum": null,
         "name": "check_suite_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
         "required": true
       }
     ],
@@ -15448,6 +16434,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -15497,6 +16491,14 @@
         "enum": null,
         "name": "check_suite_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
         "required": true
       }
     ],
@@ -15562,6 +16564,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -15614,6 +16618,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -15666,6 +16672,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -15718,6 +16726,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -15760,6 +16770,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -15822,6 +16834,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -15874,6 +16888,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -15936,6 +16952,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -15988,6 +17006,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -16069,6 +17089,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -16140,6 +17168,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -16199,6 +17235,14 @@
         "enum": null,
         "name": "reaction_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -16304,6 +17348,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -16353,6 +17399,14 @@
         "enum": null,
         "name": "commit_sha",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "groot" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.groot-preview+json",
         "required": true
       }
     ],
@@ -16438,6 +17492,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -16540,6 +17596,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -16610,6 +17668,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "groot" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.groot-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -16684,6 +17750,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -16786,6 +17854,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -16878,6 +17954,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "antiope" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.antiope-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -16930,6 +18014,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17002,6 +18088,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17041,6 +18129,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "scarlet-witch" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.scarlet-witch-preview+json",
         "required": true
       }
     ],
@@ -17086,6 +18182,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17148,6 +18246,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17210,6 +18310,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17371,6 +18473,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17532,6 +18636,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17695,6 +18801,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17848,6 +18956,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -17920,6 +19030,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18022,6 +19134,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18154,6 +19268,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -18230,6 +19346,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18282,6 +19400,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -18344,6 +19464,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18474,6 +19596,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -18536,6 +19660,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18598,6 +19724,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -18650,6 +19778,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18702,6 +19832,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18754,6 +19886,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -18806,6 +19940,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -18868,6 +20004,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -18920,6 +20058,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 202,
@@ -18982,6 +20122,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -19034,6 +20176,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19196,6 +20340,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -19248,6 +20394,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19320,6 +20468,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19372,6 +20522,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19434,6 +20586,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -19506,6 +20660,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19558,6 +20714,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -19670,6 +20828,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -19722,6 +20882,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19834,6 +20996,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -19896,6 +21060,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -19958,6 +21124,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20080,6 +21248,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -20132,6 +21302,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20274,6 +21446,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20326,6 +21500,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -20368,6 +21544,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -20410,6 +21588,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -20492,6 +21672,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -20534,6 +21716,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20596,6 +21780,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20644,6 +21830,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -20686,6 +21874,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20758,6 +21948,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20800,6 +21992,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20852,6 +22046,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20891,6 +22087,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -20936,6 +22140,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -20977,6 +22189,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
         "required": true
       }
     ],
@@ -21032,6 +22252,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -21071,6 +22299,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
         "required": true
       }
     ],
@@ -21126,6 +22362,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21178,6 +22416,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -21230,6 +22470,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21382,6 +22624,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21484,6 +22728,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -21576,6 +22822,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21628,6 +22876,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21690,6 +22940,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -21742,6 +22994,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -21823,6 +23077,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -21894,6 +23156,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -21956,6 +23226,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -22008,6 +23286,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22060,6 +23340,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22122,6 +23404,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22254,6 +23538,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22326,6 +23612,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -22398,6 +23686,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22490,6 +23780,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22562,6 +23854,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -22644,6 +23938,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22726,6 +24022,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22798,6 +24096,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22870,6 +24170,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -22942,6 +24244,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -23006,6 +24310,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -23058,6 +24364,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"issues/remove-labels\" operation ID is now \"issues/remove-all-labels\""
@@ -23122,6 +24430,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -23194,6 +24504,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -23246,6 +24558,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -23337,6 +24651,14 @@
         "required": null
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -23418,6 +24740,14 @@
         "required": null
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -23477,6 +24807,14 @@
         "enum": null,
         "name": "reaction_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -23552,6 +24890,14 @@
         "required": null
       }
     ],
+    "previews": [{ "name": "mockingbird" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mockingbird-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -23614,6 +24960,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -23686,6 +25034,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -23738,6 +25088,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -23790,6 +25142,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -23842,6 +25196,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -23914,6 +25270,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -23966,6 +25324,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24048,6 +25408,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24100,6 +25462,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -24132,6 +25496,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24170,6 +25536,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24242,6 +25610,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -24347,6 +25717,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24429,6 +25801,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -24491,6 +25865,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24593,6 +25969,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24655,6 +26033,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -24727,6 +26107,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24829,6 +26211,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24931,6 +26315,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -24985,6 +26371,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -25027,6 +26415,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/mark-notifications-as-read-for-repo\" operation ID is now \"activity/mark-repo-notifications-as-read\""
@@ -25061,6 +26451,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25133,6 +26525,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "switcheroo" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.switcheroo-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -25172,6 +26572,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "switcheroo" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.switcheroo-preview+json",
         "required": true
       }
     ],
@@ -25227,6 +26635,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -25259,6 +26669,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25321,6 +26733,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25363,6 +26777,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25415,6 +26831,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25487,6 +26905,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -25547,6 +26973,14 @@
         "name": "body",
         "type": "string",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -25661,6 +27095,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25763,6 +27199,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -25855,6 +27293,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25907,6 +27347,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -25969,6 +27411,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -26021,6 +27465,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -26102,6 +27548,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -26173,6 +27627,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -26235,6 +27697,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -26287,6 +27757,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -26399,6 +27871,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -26511,6 +27985,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -26663,6 +28139,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -26815,6 +28293,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -26889,6 +28369,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -26971,6 +28453,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27053,6 +28537,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27115,6 +28601,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -27207,6 +28695,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27307,6 +28797,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27389,6 +28881,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -27471,6 +28965,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -27543,6 +29039,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27675,6 +29173,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27747,6 +29247,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27819,6 +29321,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27901,6 +29405,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -27993,6 +29499,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28075,6 +29583,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28167,6 +29677,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28229,6 +29741,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "lydian" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.lydian-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 202,
@@ -28281,6 +29801,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28343,6 +29865,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28445,6 +29969,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -28497,6 +30023,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28569,6 +30097,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28621,6 +30151,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -28653,6 +30185,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28705,6 +30239,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28757,6 +30293,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28869,6 +30407,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -28921,6 +30461,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -28983,6 +30525,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29085,6 +30629,11 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [
+      { "name": "content-length", "value": null, "required": true },
+      { "name": "content-type", "value": null, "required": true }
+    ],
     "responses": [
       {
         "code": 201,
@@ -29147,6 +30696,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29198,6 +30749,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29236,6 +30789,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29278,6 +30833,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29320,6 +30877,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29362,6 +30921,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29450,6 +31011,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -29512,6 +31075,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29554,6 +31119,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29616,6 +31183,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29658,6 +31227,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -29710,6 +31281,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29772,6 +31345,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -29814,6 +31389,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -29851,6 +31434,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
         "required": true
       }
     ],
@@ -29906,6 +31497,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -29953,6 +31552,14 @@
         "enum": null,
         "name": "names",
         "type": "string[]",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "mercy" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.mercy-preview+json",
         "required": true
       }
     ],
@@ -30008,6 +31615,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30050,6 +31659,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30092,6 +31703,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30144,6 +31757,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30206,6 +31821,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 202,
@@ -30248,6 +31865,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "dorian" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.dorian-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -30280,6 +31905,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "dorian" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.dorian-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -30309,6 +31942,14 @@
         "enum": null,
         "name": "repo",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "dorian" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.dorian-preview+json",
         "required": true
       }
     ],
@@ -30364,6 +32005,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -30436,6 +32079,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "baptiste" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.baptiste-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -30488,6 +32139,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30550,6 +32203,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30585,6 +32240,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -30617,6 +32274,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -30671,6 +32330,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30723,6 +32384,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30775,6 +32438,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30829,6 +32494,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -30881,6 +32548,8 @@
         "required": null
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -30943,6 +32612,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31013,6 +32684,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "cloak" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.cloak-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -31099,6 +32778,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31183,6 +32864,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31247,6 +32930,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31319,6 +33004,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31351,6 +33038,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31423,6 +33112,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31455,6 +33146,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31487,6 +33180,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31571,6 +33266,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -31653,6 +33350,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -31687,6 +33386,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -31709,6 +33410,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Delete team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -31763,6 +33466,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31825,6 +33530,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -31889,6 +33596,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -31951,6 +33660,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -31995,6 +33706,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32037,6 +33750,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32101,6 +33816,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32163,6 +33880,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32207,6 +33926,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -32239,6 +33960,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Delete a discussion\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -32303,6 +34026,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32375,6 +34100,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32429,6 +34156,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -32481,6 +34210,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -32535,6 +34266,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32587,6 +34320,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32651,6 +34386,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32713,6 +34450,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -32767,6 +34506,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -32809,6 +34550,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Delete a comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -32890,6 +34633,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -32983,6 +34734,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -33056,6 +34815,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -33124,6 +34891,14 @@
         ],
         "name": "content",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -33210,6 +34985,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -33291,6 +35074,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -33351,6 +35142,14 @@
         ],
         "name": "content",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
         "required": true
       }
     ],
@@ -33415,6 +35214,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.squirrel-girl-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 201,
@@ -33469,6 +35276,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -33521,6 +35330,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -33585,6 +35396,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -33647,6 +35460,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -33691,6 +35506,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -33723,6 +35540,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"Get team member\" is now \"Get team member (Legacy)\""
@@ -33757,6 +35576,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 422,
@@ -33802,6 +35623,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 422,
@@ -33849,6 +35672,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -33881,6 +35706,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"Remove team member\" is now \"Remove team member (Legacy)\""
@@ -33915,6 +35742,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -33963,6 +35792,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34023,6 +35854,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34087,6 +35920,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34143,6 +35978,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -34175,6 +36012,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Remove team membership\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -34217,6 +36056,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -34271,6 +36118,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -34315,6 +36170,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -34354,6 +36217,14 @@
         "enum": null,
         "name": "project_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
         "required": true
       }
     ],
@@ -34411,6 +36282,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 403,
@@ -34463,6 +36342,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 403,
@@ -34507,6 +36394,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -34539,6 +36428,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Remove team project\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -34583,6 +36474,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34635,6 +36528,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34689,6 +36584,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34741,6 +36638,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34805,6 +36704,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -34857,6 +36758,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Add or update team repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -34901,6 +36804,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -34943,6 +36848,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "The path for \"Remove team repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
@@ -34967,6 +36874,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -34999,6 +36908,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35073,6 +36984,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35145,6 +37058,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35199,6 +37114,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35251,6 +37168,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35274,6 +37193,8 @@
     "url": "/user",
     "documentationUrl": "https://developer.github.com/v3/users/#get-the-authenticated-user",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35369,6 +37290,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35390,6 +37313,8 @@
     "url": "/user/blocks",
     "documentationUrl": "https://developer.github.com/v3/users/blocking/#list-blocked-users",
     "parameters": [],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35422,6 +37347,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35444,6 +37371,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35466,6 +37395,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35498,6 +37429,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35540,6 +37473,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35572,6 +37507,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -35604,6 +37541,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35636,6 +37575,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35678,6 +37619,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35720,6 +37663,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35754,6 +37699,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35776,6 +37723,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35798,6 +37747,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35830,6 +37781,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35862,6 +37815,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -35894,6 +37849,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -35926,6 +37883,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -35956,6 +37915,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -36010,6 +37977,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -36052,6 +38027,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -36081,6 +38064,14 @@
         "enum": null,
         "name": "repository_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -36176,6 +38167,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36218,6 +38211,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36260,6 +38255,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -36292,6 +38289,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36324,6 +38323,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -36356,6 +38357,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36398,6 +38401,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36442,6 +38447,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36484,6 +38491,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36538,6 +38547,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36570,6 +38581,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36612,6 +38625,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36664,6 +38679,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -36706,6 +38723,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -36735,6 +38760,14 @@
         "enum": null,
         "name": "migration_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -36770,6 +38803,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -36789,6 +38830,14 @@
         "enum": null,
         "name": "migration_id",
         "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
         "required": true
       }
     ],
@@ -36824,6 +38873,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
+      }
+    ],
     "responses": [],
     "renamed": null
   },
@@ -36856,6 +38913,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -36896,6 +38955,14 @@
         "name": "body",
         "type": "string",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -36940,6 +39007,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37032,6 +39101,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37114,6 +39185,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"repos/list\" operation ID is now \"repos/list-for-authenticated-user\""
@@ -37298,6 +39371,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -37340,6 +39415,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37372,6 +39449,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37394,6 +39473,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37446,6 +39527,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37497,6 +39580,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37529,6 +39614,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/check-starring-repo\" operation ID is now \"activity/check-repo-is-starred-by-authenticated-user\""
@@ -37563,6 +39650,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37595,6 +39684,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/star-repo\" operation ID is now \"activity/star-repo-for-authenticated-user\""
@@ -37629,6 +39720,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37661,6 +39754,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/unstar-repo\" operation ID is now \"activity/unstar-repo-for-authenticated-user\""
@@ -37695,6 +39790,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37737,6 +39834,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37769,6 +39868,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37801,6 +39902,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -37833,6 +39936,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37883,6 +39988,14 @@
         "name": "page",
         "type": "integer",
         "required": false
+      }
+    ],
+    "previews": [{ "name": "wyandotte" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.wyandotte-preview+json",
+        "required": true
       }
     ],
     "responses": [
@@ -37937,6 +40050,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -37969,6 +40084,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38024,6 +40141,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38066,6 +40185,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/list-events-for-user\" operation ID is now \"activity/list-events-for-authenticated-user\""
@@ -38120,6 +40241,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38172,6 +40295,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": {
       "note": "\"activity/list-events-for-org\" operation ID is now \"activity/list-org-events-for-authenticated-user\""
@@ -38216,6 +40341,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38258,6 +40385,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38310,6 +40439,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38352,6 +40483,8 @@
         "required": true
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38404,6 +40537,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38466,6 +40601,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38520,6 +40657,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38572,6 +40711,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38604,6 +40745,14 @@
         "required": true
       }
     ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -38633,6 +40782,14 @@
         "enum": null,
         "name": "username",
         "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
         "required": true
       }
     ],
@@ -38690,6 +40847,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38738,6 +40897,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -38800,6 +40961,14 @@
         "required": false
       }
     ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
     "responses": [
       {
         "code": 200,
@@ -38852,6 +41021,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38894,6 +41065,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -38966,6 +41139,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -39028,6 +41203,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -39089,6 +41266,8 @@
         "required": false
       }
     ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,

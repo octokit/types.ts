@@ -24,9 +24,6 @@ const ENDPOINTS_TEMPLATE_PATH = resolve(
   "endpoints.ts.template"
 );
 
-Handlebars.registerHelper("union", function (endpoints, key) {
-  return endpoints.map((endpoint) => endpoint[key]).join(" | ");
-});
 Handlebars.registerHelper("name", function (parameter) {
   let name = parameter.key;
 
@@ -50,6 +47,13 @@ Handlebars.registerHelper("type", function (parameter) {
 
   return type;
 });
+
+Handlebars.registerHelper("headersType", function (headers) {
+  const result = JSON.stringify(headers);
+
+  return `{ headers: ${result.replace(/\bnull\b/g, "string")}}`;
+});
+
 const template = Handlebars.compile(
   readFileSync(ENDPOINTS_TEMPLATE_PATH, "utf8")
 );
@@ -108,10 +112,52 @@ for (const endpoint of ENDPOINTS) {
     typeWriter.generate("typescript");
   }
 
+  const headers = endpoint.headers.reduce((result, header) => {
+    // accept header is set via mediatype
+    if (header.name === "accept") {
+      return result;
+    }
+
+    // content-length is set by fetch
+    if (header.name === "content-length") {
+      return result;
+    }
+
+    // // ignore headers with null values. THese can be required headers that must be set by the user,
+    // // such as `headers['content-type']` for `octokit.repos.uploadReleaseAsset()`
+    // if (header.value === null) {
+    //   return result;
+    // }
+
+    if (!result) {
+      result = {};
+    }
+
+    result[header.name] = header.value;
+    return result;
+  }, undefined);
+
+  const extraParameters = [];
+  // baseUrl must be set for "Upload a release asset"
+  if (optionsTypeName === "ReposUploadReleaseAssetEndpoint") {
+    extraParameters.push({
+      name: "baseUrl",
+      type: "string",
+      description:
+        "For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`",
+      required: true,
+    });
+  }
+
   options.push({
+    requiredPreview: endpoint.previews.length
+      ? endpoint.previews[0].name
+      : null,
+    headers: JSON.stringify(headers),
     parameters: {
       name: optionsTypeName,
       parameters: parameters
+        .concat(extraParameters)
         .map(parameterize)
         // handle "object" & "object[]" types
         .map((parameter) => {

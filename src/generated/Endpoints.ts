@@ -2,6 +2,12 @@
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
 
+type RequiredPreview<T> = {
+  mediaType: {
+    previews: [T, ...string[]];
+  };
+};
+
 export interface Endpoints {
   /**
    * @see https://developer.github.com/v3/apps/#delete-an-installation
@@ -4757,7 +4763,8 @@ export interface Endpoints {
   ];
 }
 
-type AppsGetAuthenticatedEndpoint = {};
+type AppsGetAuthenticatedEndpoint = {} & RequiredPreview<"machine-man">;
+
 type AppsGetAuthenticatedRequestOptions = {
   method: "GET";
   url: "/app";
@@ -4806,6 +4813,7 @@ type AppsCreateFromManifestEndpoint = {
    */
   code: string;
 };
+
 type AppsCreateFromManifestRequestOptions = {
   method: "POST";
   url: "/app-manifests/:code/conversions";
@@ -4857,7 +4865,8 @@ type AppsListInstallationsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsListInstallationsRequestOptions = {
   method: "GET";
   url: "/app/installations";
@@ -4907,7 +4916,8 @@ type AppsGetInstallationEndpoint = {
    * installation_id parameter
    */
   installation_id: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsGetInstallationRequestOptions = {
   method: "GET";
   url: "/app/installations/:installation_id";
@@ -4954,7 +4964,8 @@ type AppsDeleteInstallationEndpoint = {
    * installation_id parameter
    */
   installation_id: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsDeleteInstallationRequestOptions = {
   method: "DELETE";
   url: "/app/installations/:installation_id";
@@ -4975,7 +4986,8 @@ type AppsCreateInstallationTokenEndpoint = {
    * The permissions granted to the access token. The permissions object includes the permission names and their access type. For a complete list of permissions and allowable values, see "[GitHub App permissions](https://developer.github.com/apps/building-github-apps/creating-github-apps-using-url-parameters/#github-app-permissions)."
    */
   permissions?: AppsCreateInstallationTokenParamsPermissions;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsCreateInstallationTokenRequestOptions = {
   method: "POST";
   url: "/app/installations/:installation_id/access_tokens";
@@ -5110,6 +5122,7 @@ type OauthAuthorizationsListGrantsEndpoint = {
    */
   page?: number;
 };
+
 type OauthAuthorizationsListGrantsRequestOptions = {
   method: "GET";
   url: "/applications/grants";
@@ -5139,6 +5152,7 @@ type OauthAuthorizationsGetGrantEndpoint = {
    */
   grant_id: number;
 };
+
 type OauthAuthorizationsGetGrantRequestOptions = {
   method: "GET";
   url: "/applications/grants/:grant_id";
@@ -5165,6 +5179,7 @@ type OauthAuthorizationsDeleteGrantEndpoint = {
    */
   grant_id: number;
 };
+
 type OauthAuthorizationsDeleteGrantRequestOptions = {
   method: "DELETE";
   url: "/applications/grants/:grant_id";
@@ -5182,6 +5197,7 @@ type AppsDeleteAuthorizationEndpoint = {
    */
   access_token?: string;
 };
+
 type AppsDeleteAuthorizationRequestOptions = {
   method: "DELETE";
   url: "/applications/:client_id/grant";
@@ -5199,6 +5215,7 @@ type AppsRevokeGrantForApplicationEndpoint = {
    */
   access_token: string;
 };
+
 type AppsRevokeGrantForApplicationRequestOptions = {
   method: "DELETE";
   url: "/applications/:client_id/grants/:access_token";
@@ -5216,6 +5233,7 @@ type AppsCheckTokenEndpoint = {
    */
   access_token?: string;
 };
+
 type AppsCheckTokenRequestOptions = {
   method: "POST";
   url: "/applications/:client_id/token";
@@ -5273,6 +5291,7 @@ type AppsResetTokenEndpoint = {
    */
   access_token?: string;
 };
+
 type AppsResetTokenRequestOptions = {
   method: "PATCH";
   url: "/applications/:client_id/token";
@@ -5330,6 +5349,7 @@ type AppsDeleteTokenEndpoint = {
    */
   access_token?: string;
 };
+
 type AppsDeleteTokenRequestOptions = {
   method: "DELETE";
   url: "/applications/:client_id/token";
@@ -5347,6 +5367,7 @@ type AppsCheckAuthorizationEndpoint = {
    */
   access_token: string;
 };
+
 type AppsCheckAuthorizationRequestOptions = {
   method: "GET";
   url: "/applications/:client_id/tokens/:access_token";
@@ -5404,6 +5425,7 @@ type AppsResetAuthorizationEndpoint = {
    */
   access_token: string;
 };
+
 type AppsResetAuthorizationRequestOptions = {
   method: "POST";
   url: "/applications/:client_id/tokens/:access_token";
@@ -5461,6 +5483,7 @@ type AppsRevokeAuthorizationForApplicationEndpoint = {
    */
   access_token: string;
 };
+
 type AppsRevokeAuthorizationForApplicationRequestOptions = {
   method: "DELETE";
   url: "/applications/:client_id/tokens/:access_token";
@@ -5473,7 +5496,8 @@ type AppsGetBySlugEndpoint = {
    * app_slug parameter
    */
   app_slug: string;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsGetBySlugRequestOptions = {
   method: "GET";
   url: "/apps/:app_slug";
@@ -5525,6 +5549,7 @@ type OauthAuthorizationsListAuthorizationsEndpoint = {
    */
   page?: number;
 };
+
 type OauthAuthorizationsListAuthorizationsRequestOptions = {
   method: "GET";
   url: "/authorizations";
@@ -5580,6 +5605,7 @@ type OauthAuthorizationsCreateAuthorizationEndpoint = {
    */
   fingerprint?: string;
 };
+
 type OauthAuthorizationsCreateAuthorizationRequestOptions = {
   method: "POST";
   url: "/authorizations";
@@ -5632,6 +5658,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint = {
    */
   fingerprint?: string;
 };
+
 type OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions = {
   method: "PUT";
   url: "/authorizations/clients/:client_id";
@@ -5684,6 +5711,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint = {
    */
   note_url?: string;
 };
+
 type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions = {
   method: "PUT";
   url: "/authorizations/clients/:client_id/:fingerprint";
@@ -5716,6 +5744,7 @@ type OauthAuthorizationsGetAuthorizationEndpoint = {
    */
   authorization_id: number;
 };
+
 type OauthAuthorizationsGetAuthorizationRequestOptions = {
   method: "GET";
   url: "/authorizations/:authorization_id";
@@ -5772,6 +5801,7 @@ type OauthAuthorizationsUpdateAuthorizationEndpoint = {
    */
   fingerprint?: string;
 };
+
 type OauthAuthorizationsUpdateAuthorizationRequestOptions = {
   method: "PATCH";
   url: "/authorizations/:authorization_id";
@@ -5804,6 +5834,7 @@ type OauthAuthorizationsDeleteAuthorizationEndpoint = {
    */
   authorization_id: number;
 };
+
 type OauthAuthorizationsDeleteAuthorizationRequestOptions = {
   method: "DELETE";
   url: "/authorizations/:authorization_id";
@@ -5811,7 +5842,10 @@ type OauthAuthorizationsDeleteAuthorizationRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type CodesOfConductGetAllCodesOfConductEndpoint = {};
+type CodesOfConductGetAllCodesOfConductEndpoint = {} & RequiredPreview<
+  "scarlet-witch"
+>;
+
 type CodesOfConductGetAllCodesOfConductRequestOptions = {
   method: "GET";
   url: "/codes_of_conduct";
@@ -5832,7 +5866,8 @@ type CodesOfConductGetConductCodeEndpoint = {
    * key parameter
    */
   key: string;
-};
+} & RequiredPreview<"scarlet-witch">;
+
 type CodesOfConductGetConductCodeRequestOptions = {
   method: "GET";
   url: "/codes_of_conduct/:key";
@@ -5859,7 +5894,8 @@ type AppsCreateContentAttachmentEndpoint = {
    * The body text of the content attachment displayed in the body or comment of an issue or pull request. This parameter supports markdown.
    */
   body: string;
-};
+} & RequiredPreview<"corsair">;
+
 type AppsCreateContentAttachmentRequestOptions = {
   method: "POST";
   url: "/content_references/:content_reference_id/attachments";
@@ -5873,6 +5909,7 @@ type AppsCreateContentAttachmentResponseData = {
 };
 
 type EmojisGetEndpoint = {};
+
 type EmojisGetRequestOptions = {
   method: "GET";
   url: "/emojis";
@@ -5890,6 +5927,7 @@ type ActivityListPublicEventsEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListPublicEventsRequestOptions = {
   method: "GET";
   url: "/events";
@@ -5898,6 +5936,7 @@ type ActivityListPublicEventsRequestOptions = {
 };
 
 type ActivityGetFeedsEndpoint = {};
+
 type ActivityGetFeedsRequestOptions = {
   method: "GET";
   url: "/feeds";
@@ -5968,6 +6007,7 @@ type GistsListEndpoint = {
    */
   page?: number;
 };
+
 type GistsListRequestOptions = {
   method: "GET";
   url: "/gists";
@@ -6040,6 +6080,7 @@ type GistsCreateEndpoint = {
    */
   public?: boolean;
 };
+
 type GistsCreateRequestOptions = {
   method: "POST";
   url: "/gists";
@@ -6204,6 +6245,7 @@ type GistsListPublicEndpoint = {
    */
   page?: number;
 };
+
 type GistsListPublicRequestOptions = {
   method: "GET";
   url: "/gists/public";
@@ -6276,6 +6318,7 @@ type GistsListStarredEndpoint = {
    */
   page?: number;
 };
+
 type GistsListStarredRequestOptions = {
   method: "GET";
   url: "/gists/starred";
@@ -6340,6 +6383,7 @@ type GistsGetEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsGetRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id";
@@ -6504,6 +6548,7 @@ type GistsUpdateEndpoint = {
    */
   files?: GistsUpdateParamsFiles;
 };
+
 type GistsUpdateRequestOptions = {
   method: "PATCH";
   url: "/gists/:gist_id";
@@ -6660,6 +6705,7 @@ type GistsDeleteEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsDeleteRequestOptions = {
   method: "DELETE";
   url: "/gists/:gist_id";
@@ -6681,6 +6727,7 @@ type GistsListCommentsEndpoint = {
    */
   page?: number;
 };
+
 type GistsListCommentsRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/comments";
@@ -6728,6 +6775,7 @@ type GistsCreateCommentEndpoint = {
    */
   body: string;
 };
+
 type GistsCreateCommentRequestOptions = {
   method: "POST";
   url: "/gists/:gist_id/comments";
@@ -6774,6 +6822,7 @@ type GistsGetCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type GistsGetCommentRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/comments/:comment_id";
@@ -6824,6 +6873,7 @@ type GistsUpdateCommentEndpoint = {
    */
   body: string;
 };
+
 type GistsUpdateCommentRequestOptions = {
   method: "PATCH";
   url: "/gists/:gist_id/comments/:comment_id";
@@ -6870,6 +6920,7 @@ type GistsDeleteCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type GistsDeleteCommentRequestOptions = {
   method: "DELETE";
   url: "/gists/:gist_id/comments/:comment_id";
@@ -6891,6 +6942,7 @@ type GistsListCommitsEndpoint = {
    */
   page?: number;
 };
+
 type GistsListCommitsRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/commits";
@@ -6937,6 +6989,7 @@ type GistsForkEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsForkRequestOptions = {
   method: "POST";
   url: "/gists/:gist_id/forks";
@@ -7008,6 +7061,7 @@ type GistsListForksEndpoint = {
    */
   page?: number;
 };
+
 type GistsListForksRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/forks";
@@ -7049,6 +7103,7 @@ type GistsStarEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsStarRequestOptions = {
   method: "PUT";
   url: "/gists/:gist_id/star";
@@ -7062,6 +7117,7 @@ type GistsUnstarEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsUnstarRequestOptions = {
   method: "DELETE";
   url: "/gists/:gist_id/star";
@@ -7075,6 +7131,7 @@ type GistsCheckIsStarredEndpoint = {
    */
   gist_id: string;
 };
+
 type GistsCheckIsStarredRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/star";
@@ -7092,6 +7149,7 @@ type GistsGetRevisionEndpoint = {
    */
   sha: string;
 };
+
 type GistsGetRevisionRequestOptions = {
   method: "GET";
   url: "/gists/:gist_id/:sha";
@@ -7243,6 +7301,7 @@ type GistsGetRevisionResponseData = {
 };
 
 type GitignoreListTemplatesEndpoint = {};
+
 type GitignoreListTemplatesRequestOptions = {
   method: "GET";
   url: "/gitignore/templates";
@@ -7257,6 +7316,7 @@ type GitignoreGetTemplateEndpoint = {
    */
   name: string;
 };
+
 type GitignoreGetTemplateRequestOptions = {
   method: "GET";
   url: "/gitignore/templates/:name";
@@ -7274,7 +7334,8 @@ type AppsListReposEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsListReposRequestOptions = {
   method: "GET";
   url: "/installation/repositories";
@@ -7388,6 +7449,7 @@ type AppsListReposResponseData = {
 };
 
 type AppsRevokeInstallationTokenEndpoint = {};
+
 type AppsRevokeInstallationTokenRequestOptions = {
   method: "DELETE";
   url: "/installation/token";
@@ -7434,6 +7496,7 @@ type IssuesListEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListRequestOptions = {
   method: "GET";
   url: "/issues";
@@ -7707,6 +7770,7 @@ type SearchIssuesLegacyEndpoint = {
    */
   keyword: string;
 };
+
 type SearchIssuesLegacyRequestOptions = {
   method: "GET";
   url: "/legacy/issues/search/:owner/:repository/:state/:keyword";
@@ -7754,6 +7818,7 @@ type SearchReposLegacyEndpoint = {
    */
   order?: "asc" | "desc";
 };
+
 type SearchReposLegacyRequestOptions = {
   method: "GET";
   url: "/legacy/repos/search/:keyword";
@@ -7795,6 +7860,7 @@ type SearchEmailLegacyEndpoint = {
    */
   email: string;
 };
+
 type SearchEmailLegacyRequestOptions = {
   method: "GET";
   url: "/legacy/user/email/:email";
@@ -7840,6 +7906,7 @@ type SearchUsersLegacyEndpoint = {
    */
   order?: "asc" | "desc";
 };
+
 type SearchUsersLegacyRequestOptions = {
   method: "GET";
   url: "/legacy/user/search/:keyword";
@@ -7869,6 +7936,7 @@ type SearchUsersLegacyResponseData = {
 };
 
 type LicensesListCommonlyUsedEndpoint = {};
+
 type LicensesListCommonlyUsedRequestOptions = {
   method: "GET";
   url: "/licenses";
@@ -7892,6 +7960,7 @@ type LicensesGetEndpoint = {
    */
   license: string;
 };
+
 type LicensesGetRequestOptions = {
   method: "GET";
   url: "/licenses/:license";
@@ -7930,6 +7999,7 @@ type MarkdownRenderEndpoint = {
    */
   context?: string;
 };
+
 type MarkdownRenderRequestOptions = {
   method: "POST";
   url: "/markdown";
@@ -7942,7 +8012,7 @@ type MarkdownRenderRawEndpoint = {
    * data parameter
    */
   data: string;
-};
+} & { headers: '{"content-type":"text/plain; charset=utf-8"}' };
 type MarkdownRenderRawRequestOptions = {
   method: "POST";
   url: "/markdown/raw";
@@ -7956,6 +8026,7 @@ type AppsGetSubscriptionPlanForAccountEndpoint = {
    */
   account_id: number;
 };
+
 type AppsGetSubscriptionPlanForAccountRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/accounts/:account_id";
@@ -8028,6 +8099,7 @@ type AppsListPlansEndpoint = {
    */
   page?: number;
 };
+
 type AppsListPlansRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/plans";
@@ -8073,6 +8145,7 @@ type AppsListAccountsForPlanEndpoint = {
    */
   page?: number;
 };
+
 type AppsListAccountsForPlanRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/plans/:plan_id/accounts";
@@ -8144,6 +8217,7 @@ type AppsGetSubscriptionPlanForAccountStubbedEndpoint = {
    */
   account_id: number;
 };
+
 type AppsGetSubscriptionPlanForAccountStubbedRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/stubbed/accounts/:account_id";
@@ -8216,6 +8290,7 @@ type AppsListPlansStubbedEndpoint = {
    */
   page?: number;
 };
+
 type AppsListPlansStubbedRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/stubbed/plans";
@@ -8263,6 +8338,7 @@ type AppsListAccountsForPlanStubbedEndpoint = {
    */
   page?: number;
 };
+
 type AppsListAccountsForPlanStubbedRequestOptions = {
   method: "GET";
   url: "/marketplace_listing/stubbed/plans/:plan_id/accounts";
@@ -8329,6 +8405,7 @@ type AppsListAccountsForPlanStubbedResponseData = Array<
 >;
 
 type MetaGetEndpoint = {};
+
 type MetaGetRequestOptions = {
   method: "GET";
   url: "/meta";
@@ -8370,6 +8447,7 @@ type ActivityListPublicEventsForRepoNetworkEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListPublicEventsForRepoNetworkRequestOptions = {
   method: "GET";
   url: "/networks/:owner/:repo/events";
@@ -8403,6 +8481,7 @@ type ActivityListNotificationsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListNotificationsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/notifications";
@@ -8504,6 +8583,7 @@ type ActivityMarkNotificationsAsReadEndpoint = {
    */
   last_read_at?: string;
 };
+
 type ActivityMarkNotificationsAsReadRequestOptions = {
   method: "PUT";
   url: "/notifications";
@@ -8517,6 +8597,7 @@ type ActivityGetThreadEndpoint = {
    */
   thread_id: number;
 };
+
 type ActivityGetThreadRequestOptions = {
   method: "GET";
   url: "/notifications/threads/:thread_id";
@@ -8615,6 +8696,7 @@ type ActivityMarkThreadAsReadEndpoint = {
    */
   thread_id: number;
 };
+
 type ActivityMarkThreadAsReadRequestOptions = {
   method: "PATCH";
   url: "/notifications/threads/:thread_id";
@@ -8628,6 +8710,7 @@ type ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint = {
    */
   thread_id: number;
 };
+
 type ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/notifications/threads/:thread_id/subscription";
@@ -8653,6 +8736,7 @@ type ActivitySetThreadSubscriptionEndpoint = {
    */
   ignored?: boolean;
 };
+
 type ActivitySetThreadSubscriptionRequestOptions = {
   method: "PUT";
   url: "/notifications/threads/:thread_id/subscription";
@@ -8674,6 +8758,7 @@ type ActivityDeleteThreadSubscriptionEndpoint = {
    */
   thread_id: number;
 };
+
 type ActivityDeleteThreadSubscriptionRequestOptions = {
   method: "DELETE";
   url: "/notifications/threads/:thread_id/subscription";
@@ -8695,6 +8780,7 @@ type OrgsListEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListRequestOptions = {
   method: "GET";
   url: "/organizations";
@@ -8723,6 +8809,7 @@ type OrgsGetEndpoint = {
    */
   org: string;
 };
+
 type OrgsGetRequestOptions = {
   method: "GET";
   url: "/orgs/:org";
@@ -8863,6 +8950,7 @@ type OrgsUpdateEndpoint = {
    */
   members_allowed_repository_creation_type?: "all" | "private" | "none";
 };
+
 type OrgsUpdateRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org";
@@ -8924,6 +9012,7 @@ type OrgsListBlockedUsersEndpoint = {
    */
   org: string;
 };
+
 type OrgsListBlockedUsersRequestOptions = {
   method: "GET";
   url: "/orgs/:org/blocks";
@@ -8964,6 +9053,7 @@ type OrgsCheckBlockedUserEndpoint = {
    */
   username: string;
 };
+
 type OrgsCheckBlockedUserRequestOptions = {
   method: "GET";
   url: "/orgs/:org/blocks/:username";
@@ -8981,6 +9071,7 @@ type OrgsBlockUserEndpoint = {
    */
   username: string;
 };
+
 type OrgsBlockUserRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/blocks/:username";
@@ -8998,6 +9089,7 @@ type OrgsUnblockUserEndpoint = {
    */
   username: string;
 };
+
 type OrgsUnblockUserRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/blocks/:username";
@@ -9011,6 +9103,7 @@ type OrgsListCredentialAuthorizationsEndpoint = {
    */
   org: string;
 };
+
 type OrgsListCredentialAuthorizationsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/credential-authorizations";
@@ -9039,6 +9132,7 @@ type OrgsRemoveCredentialAuthorizationEndpoint = {
    */
   credential_id: number;
 };
+
 type OrgsRemoveCredentialAuthorizationRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/credential-authorizations/:credential_id";
@@ -9060,6 +9154,7 @@ type ActivityListPublicOrgEventsEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListPublicOrgEventsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/events";
@@ -9081,6 +9176,7 @@ type OrgsListHooksEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListHooksRequestOptions = {
   method: "GET";
   url: "/orgs/:org/hooks";
@@ -9126,6 +9222,7 @@ type OrgsCreateHookEndpoint = {
    */
   active?: boolean;
 };
+
 type OrgsCreateHookRequestOptions = {
   method: "POST";
   url: "/orgs/:org/hooks";
@@ -9155,6 +9252,7 @@ type OrgsGetHookEndpoint = {
    */
   hook_id: number;
 };
+
 type OrgsGetHookRequestOptions = {
   method: "GET";
   url: "/orgs/:org/hooks/:hook_id";
@@ -9196,6 +9294,7 @@ type OrgsUpdateHookEndpoint = {
    */
   active?: boolean;
 };
+
 type OrgsUpdateHookRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/hooks/:hook_id";
@@ -9225,6 +9324,7 @@ type OrgsDeleteHookEndpoint = {
    */
   hook_id: number;
 };
+
 type OrgsDeleteHookRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/hooks/:hook_id";
@@ -9242,6 +9342,7 @@ type OrgsPingHookEndpoint = {
    */
   hook_id: number;
 };
+
 type OrgsPingHookRequestOptions = {
   method: "POST";
   url: "/orgs/:org/hooks/:hook_id/pings";
@@ -9254,7 +9355,8 @@ type AppsGetOrgInstallationEndpoint = {
    * org parameter
    */
   org: string;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsGetOrgInstallationRequestOptions = {
   method: "GET";
   url: "/orgs/:org/installation";
@@ -9315,7 +9417,8 @@ type OrgsListInstallationsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type OrgsListInstallationsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/installations";
@@ -9374,7 +9477,8 @@ type InteractionsGetRestrictionsForOrgEndpoint = {
    * org parameter
    */
   org: string;
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsGetRestrictionsForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/interaction-limits";
@@ -9396,7 +9500,8 @@ type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
    */
   limit: "existing_users" | "contributors_only" | "collaborators_only";
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsAddOrUpdateRestrictionsForOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/interaction-limits";
@@ -9414,7 +9519,8 @@ type InteractionsRemoveRestrictionsForOrgEndpoint = {
    * org parameter
    */
   org: string;
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsRemoveRestrictionsForOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/interaction-limits";
@@ -9436,6 +9542,7 @@ type OrgsListPendingInvitationsEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListPendingInvitationsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/invitations";
@@ -9501,6 +9608,7 @@ type OrgsCreateInvitationEndpoint = {
    */
   team_ids?: number[];
 };
+
 type OrgsCreateInvitationRequestOptions = {
   method: "POST";
   url: "/orgs/:org/invitations";
@@ -9556,6 +9664,7 @@ type OrgsListInvitationTeamsEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListInvitationTeamsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/invitations/:invitation_id/teams";
@@ -9623,6 +9732,7 @@ type IssuesListForOrgEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/issues";
@@ -9905,6 +10015,7 @@ type OrgsListMembersEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListMembersRequestOptions = {
   method: "GET";
   url: "/orgs/:org/members";
@@ -9943,6 +10054,7 @@ type OrgsCheckMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsCheckMembershipRequestOptions = {
   method: "GET";
   url: "/orgs/:org/members/:username";
@@ -9960,6 +10072,7 @@ type OrgsRemoveMemberEndpoint = {
    */
   username: string;
 };
+
 type OrgsRemoveMemberRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/members/:username";
@@ -9977,6 +10090,7 @@ type OrgsGetMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsGetMembershipRequestOptions = {
   method: "GET";
   url: "/orgs/:org/memberships/:username";
@@ -10042,6 +10156,7 @@ type OrgsAddOrUpdateMembershipEndpoint = {
    */
   role?: "admin" | "member";
 };
+
 type OrgsAddOrUpdateMembershipRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/memberships/:username";
@@ -10101,6 +10216,7 @@ type OrgsRemoveMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsRemoveMembershipRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/memberships/:username";
@@ -10126,6 +10242,7 @@ type MigrationsStartForOrgEndpoint = {
    */
   exclude_attachments?: boolean;
 };
+
 type MigrationsStartForOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/migrations";
@@ -10279,7 +10396,8 @@ type MigrationsListForOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsListForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/migrations";
@@ -10432,7 +10550,8 @@ type MigrationsGetStatusForOrgEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsGetStatusForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/migrations/:migration_id";
@@ -10582,7 +10701,8 @@ type MigrationsDownloadArchiveForOrgEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsDownloadArchiveForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/migrations/:migration_id/archive";
@@ -10599,7 +10719,8 @@ type MigrationsDeleteArchiveForOrgEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsDeleteArchiveForOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/migrations/:migration_id/archive";
@@ -10620,7 +10741,8 @@ type MigrationsUnlockRepoForOrgEndpoint = {
    * repo_name parameter
    */
   repo_name: string;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsUnlockRepoForOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/migrations/:migration_id/repos/:repo_name/lock";
@@ -10645,7 +10767,8 @@ type MigrationsListReposForOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsListReposForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/migrations/:migration_id/repositories";
@@ -10788,6 +10911,7 @@ type OrgsListOutsideCollaboratorsEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListOutsideCollaboratorsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/outside_collaborators";
@@ -10828,6 +10952,7 @@ type OrgsRemoveOutsideCollaboratorEndpoint = {
    */
   username: string;
 };
+
 type OrgsRemoveOutsideCollaboratorRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/outside_collaborators/:username";
@@ -10849,6 +10974,7 @@ type OrgsConvertMemberToOutsideCollaboratorEndpoint = {
    */
   username: string;
 };
+
 type OrgsConvertMemberToOutsideCollaboratorRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/outside_collaborators/:username";
@@ -10877,7 +11003,8 @@ type ProjectsListForOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/projects";
@@ -10934,7 +11061,8 @@ type ProjectsCreateForOrgEndpoint = {
    * The description of the project.
    */
   body?: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsCreateForOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/projects";
@@ -10991,6 +11119,7 @@ type OrgsListPublicMembersEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListPublicMembersRequestOptions = {
   method: "GET";
   url: "/orgs/:org/public_members";
@@ -11031,6 +11160,7 @@ type OrgsCheckPublicMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsCheckPublicMembershipRequestOptions = {
   method: "GET";
   url: "/orgs/:org/public_members/:username";
@@ -11048,6 +11178,7 @@ type OrgsPublicizeMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsPublicizeMembershipRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/public_members/:username";
@@ -11065,6 +11196,7 @@ type OrgsConcealMembershipEndpoint = {
    */
   username: string;
 };
+
 type OrgsConcealMembershipRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/public_members/:username";
@@ -11105,6 +11237,7 @@ type ReposListForOrgEndpoint = {
    */
   page?: number;
 };
+
 type ReposListForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/repos";
@@ -11300,6 +11433,7 @@ type ReposCreateInOrgEndpoint = {
    */
   delete_branch_on_merge?: boolean;
 };
+
 type ReposCreateInOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/repos";
@@ -11428,6 +11562,7 @@ type TeamsListIdPGroupsForOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListIdPGroupsForOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/team-sync/groups";
@@ -11457,6 +11592,7 @@ type TeamsListEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams";
@@ -11523,6 +11659,7 @@ type TeamsCreateEndpoint = {
    */
   parent_team_id?: number;
 };
+
 type TeamsCreateRequestOptions = {
   method: "POST";
   url: "/orgs/:org/teams";
@@ -11588,6 +11725,7 @@ type TeamsGetByNameEndpoint = {
    */
   team_slug: string;
 };
+
 type TeamsGetByNameRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug";
@@ -11681,6 +11819,7 @@ type TeamsUpdateInOrgEndpoint = {
    */
   parent_team_id?: number;
 };
+
 type TeamsUpdateInOrgRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/teams/:team_slug";
@@ -11746,6 +11885,7 @@ type TeamsDeleteInOrgEndpoint = {
    */
   team_slug: string;
 };
+
 type TeamsDeleteInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug";
@@ -11775,6 +11915,7 @@ type TeamsListDiscussionsInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListDiscussionsInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions";
@@ -11857,6 +11998,7 @@ type TeamsCreateDiscussionInOrgEndpoint = {
    */
   private?: boolean;
 };
+
 type TeamsCreateDiscussionInOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/teams/:team_slug/discussions";
@@ -11928,6 +12070,7 @@ type TeamsGetDiscussionInOrgEndpoint = {
    */
   discussion_number: number;
 };
+
 type TeamsGetDiscussionInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
@@ -12007,6 +12150,7 @@ type TeamsUpdateDiscussionInOrgEndpoint = {
    */
   body?: string;
 };
+
 type TeamsUpdateDiscussionInOrgRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
@@ -12078,6 +12222,7 @@ type TeamsDeleteDiscussionInOrgEndpoint = {
    */
   discussion_number: number;
 };
+
 type TeamsDeleteDiscussionInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number";
@@ -12111,6 +12256,7 @@ type TeamsListDiscussionCommentsInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListDiscussionCommentsInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments";
@@ -12184,6 +12330,7 @@ type TeamsCreateDiscussionCommentInOrgEndpoint = {
    */
   body: string;
 };
+
 type TeamsCreateDiscussionCommentInOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments";
@@ -12254,6 +12401,7 @@ type TeamsGetDiscussionCommentInOrgEndpoint = {
    */
   comment_number: number;
 };
+
 type TeamsGetDiscussionCommentInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
@@ -12328,6 +12476,7 @@ type TeamsUpdateDiscussionCommentInOrgEndpoint = {
    */
   body: string;
 };
+
 type TeamsUpdateDiscussionCommentInOrgRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
@@ -12398,6 +12547,7 @@ type TeamsDeleteDiscussionCommentInOrgEndpoint = {
    */
   comment_number: number;
 };
+
 type TeamsDeleteDiscussionCommentInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number";
@@ -12442,7 +12592,8 @@ type ReactionsListForTeamDiscussionCommentInOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForTeamDiscussionCommentInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions";
@@ -12509,7 +12660,8 @@ type ReactionsCreateForTeamDiscussionCommentInOrgEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions";
@@ -12565,7 +12717,8 @@ type ReactionsDeleteForTeamDiscussionCommentEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForTeamDiscussionCommentRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id";
@@ -12606,7 +12759,8 @@ type ReactionsListForTeamDiscussionInOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForTeamDiscussionInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions";
@@ -12669,7 +12823,8 @@ type ReactionsCreateForTeamDiscussionInOrgEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForTeamDiscussionInOrgRequestOptions = {
   method: "POST";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions";
@@ -12721,7 +12876,8 @@ type ReactionsDeleteForTeamDiscussionEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForTeamDiscussionRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id";
@@ -12747,6 +12903,7 @@ type TeamsListPendingInvitationsInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListPendingInvitationsInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/invitations";
@@ -12812,6 +12969,7 @@ type TeamsListMembersInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListMembersInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/members";
@@ -12856,6 +13014,7 @@ type TeamsGetMembershipInOrgEndpoint = {
    */
   username: string;
 };
+
 type TeamsGetMembershipInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
@@ -12888,6 +13047,7 @@ type TeamsAddOrUpdateMembershipInOrgEndpoint = {
    */
   role?: "member" | "maintainer";
 };
+
 type TeamsAddOrUpdateMembershipInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
@@ -12914,6 +13074,7 @@ type TeamsRemoveMembershipInOrgEndpoint = {
    */
   username: string;
 };
+
 type TeamsRemoveMembershipInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
@@ -12938,7 +13099,8 @@ type TeamsListProjectsInOrgEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsListProjectsInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/projects";
@@ -13005,7 +13167,8 @@ type TeamsReviewProjectInOrgEndpoint = {
    * project_id parameter
    */
   project_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsReviewProjectInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/projects/:project_id";
@@ -13077,7 +13240,8 @@ type TeamsAddOrUpdateProjectInOrgEndpoint = {
    * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
    */
   permission?: "read" | "write" | "admin";
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsAddOrUpdateProjectInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/projects/:project_id";
@@ -13103,6 +13267,7 @@ type TeamsRemoveProjectInOrgEndpoint = {
    */
   project_id: number;
 };
+
 type TeamsRemoveProjectInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/projects/:project_id";
@@ -13128,6 +13293,7 @@ type TeamsListReposInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListReposInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/repos";
@@ -13268,6 +13434,7 @@ type TeamsCheckManagesRepoInOrgEndpoint = {
    */
   repo: string;
 };
+
 type TeamsCheckManagesRepoInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
@@ -13551,6 +13718,7 @@ type TeamsAddOrUpdateRepoInOrgEndpoint = {
    */
   permission?: "pull" | "push" | "admin" | "maintain" | "triage";
 };
+
 type TeamsAddOrUpdateRepoInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
@@ -13576,6 +13744,7 @@ type TeamsRemoveRepoInOrgEndpoint = {
    */
   repo: string;
 };
+
 type TeamsRemoveRepoInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
@@ -13593,6 +13762,7 @@ type TeamsListIdPGroupsInOrgEndpoint = {
    */
   team_slug: string;
 };
+
 type TeamsListIdPGroupsInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/team-sync/group-mappings";
@@ -13622,6 +13792,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint = {
    */
   groups: TeamsCreateOrUpdateIdPGroupConnectionsInOrgParamsGroups[];
 };
+
 type TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/teams/:team_slug/team-sync/group-mappings";
@@ -13655,6 +13826,7 @@ type TeamsListChildInOrgEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListChildInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/teams";
@@ -13696,7 +13868,8 @@ type ProjectsGetCardEndpoint = {
    * card_id parameter
    */
   card_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsGetCardRequestOptions = {
   method: "GET";
   url: "/projects/columns/cards/:card_id";
@@ -13750,7 +13923,8 @@ type ProjectsUpdateCardEndpoint = {
    * Use `true` to archive a project card. Specify `false` if you need to restore a previously archived project card.
    */
   archived?: boolean;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsUpdateCardRequestOptions = {
   method: "PATCH";
   url: "/projects/columns/cards/:card_id";
@@ -13796,7 +13970,8 @@ type ProjectsDeleteCardEndpoint = {
    * card_id parameter
    */
   card_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsDeleteCardRequestOptions = {
   method: "DELETE";
   url: "/projects/columns/cards/:card_id";
@@ -13817,7 +13992,8 @@ type ProjectsMoveCardEndpoint = {
    * The `id` value of a column in the same project.
    */
   column_id?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsMoveCardRequestOptions = {
   method: "POST";
   url: "/projects/columns/cards/:card_id/moves";
@@ -13830,7 +14006,8 @@ type ProjectsGetColumnEndpoint = {
    * column_id parameter
    */
   column_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsGetColumnRequestOptions = {
   method: "GET";
   url: "/projects/columns/:column_id";
@@ -13857,7 +14034,8 @@ type ProjectsUpdateColumnEndpoint = {
    * The new name of the column.
    */
   name: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsUpdateColumnRequestOptions = {
   method: "PATCH";
   url: "/projects/columns/:column_id";
@@ -13880,7 +14058,8 @@ type ProjectsDeleteColumnEndpoint = {
    * column_id parameter
    */
   column_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsDeleteColumnRequestOptions = {
   method: "DELETE";
   url: "/projects/columns/:column_id";
@@ -13905,7 +14084,8 @@ type ProjectsListCardsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListCardsRequestOptions = {
   method: "GET";
   url: "/projects/columns/:column_id/cards";
@@ -13965,7 +14145,8 @@ type ProjectsCreateCardEndpoint = {
    * **Required if you provide `content_id`**. The type of content you want to associate with this card. Use `Issue` when `content_id` is an issue id and use `PullRequest` when `content_id` is a pull request id.
    */
   content_type?: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsCreateCardRequestOptions = {
   method: "POST";
   url: "/projects/columns/:column_id/cards";
@@ -14015,7 +14196,8 @@ type ProjectsMoveColumnEndpoint = {
    * Can be one of `first`, `last`, or `after:<column_id>`, where `<column_id>` is the `id` value of a column in the same project.
    */
   position: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsMoveColumnRequestOptions = {
   method: "POST";
   url: "/projects/columns/:column_id/moves";
@@ -14028,7 +14210,8 @@ type ProjectsGetEndpoint = {
    * project_id parameter
    */
   project_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsGetRequestOptions = {
   method: "GET";
   url: "/projects/:project_id";
@@ -14108,7 +14291,8 @@ type ProjectsUpdateEndpoint = {
    * \* `true` - Only the user can view a project board created on a user account. Organization members with the appropriate `organization_permission` can see project boards in an organization account.
    */
   private?: boolean;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsUpdateRequestOptions = {
   method: "PATCH";
   url: "/projects/:project_id";
@@ -14156,7 +14340,8 @@ type ProjectsDeleteEndpoint = {
    * project_id parameter
    */
   project_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsDeleteRequestOptions = {
   method: "DELETE";
   url: "/projects/:project_id";
@@ -14184,7 +14369,8 @@ type ProjectsListCollaboratorsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListCollaboratorsRequestOptions = {
   method: "GET";
   url: "/projects/:project_id/collaborators";
@@ -14231,7 +14417,8 @@ type ProjectsAddCollaboratorEndpoint = {
    * \* `admin` - can read, write and administer this project.
    */
   permission?: "read" | "write" | "admin";
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsAddCollaboratorRequestOptions = {
   method: "PUT";
   url: "/projects/:project_id/collaborators/:username";
@@ -14248,7 +14435,8 @@ type ProjectsRemoveCollaboratorEndpoint = {
    * username parameter
    */
   username: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsRemoveCollaboratorRequestOptions = {
   method: "DELETE";
   url: "/projects/:project_id/collaborators/:username";
@@ -14265,7 +14453,8 @@ type ProjectsReviewUserPermissionLevelEndpoint = {
    * username parameter
    */
   username: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsReviewUserPermissionLevelRequestOptions = {
   method: "GET";
   url: "/projects/:project_id/collaborators/:username/permission";
@@ -14310,7 +14499,8 @@ type ProjectsListColumnsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListColumnsRequestOptions = {
   method: "GET";
   url: "/projects/:project_id/columns";
@@ -14340,7 +14530,8 @@ type ProjectsCreateColumnEndpoint = {
    * The name of the column.
    */
   name: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsCreateColumnRequestOptions = {
   method: "POST";
   url: "/projects/:project_id/columns";
@@ -14359,6 +14550,7 @@ type ProjectsCreateColumnResponseData = {
 };
 
 type RateLimitGetEndpoint = {};
+
 type RateLimitGetRequestOptions = {
   method: "GET";
   url: "/rate_limit";
@@ -14406,7 +14598,8 @@ type ReactionsDeleteLegacyEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteLegacyRequestOptions = {
   method: "DELETE";
   url: "/reactions/:reaction_id";
@@ -14424,6 +14617,7 @@ type ReposGetEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo";
@@ -14865,6 +15059,7 @@ type ReposUpdateEndpoint = {
    */
   archived?: boolean;
 };
+
 type ReposUpdateRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo";
@@ -15228,6 +15423,7 @@ type ReposDeleteEndpoint = {
    */
   repo: string;
 };
+
 type ReposDeleteRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo";
@@ -15254,6 +15450,7 @@ type ActionsListArtifactsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListArtifactsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/artifacts";
@@ -15290,6 +15487,7 @@ type ActionsGetArtifactEndpoint = {
    */
   artifact_id: number;
 };
+
 type ActionsGetArtifactRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/artifacts/:artifact_id";
@@ -15322,6 +15520,7 @@ type ActionsDeleteArtifactEndpoint = {
    */
   artifact_id: number;
 };
+
 type ActionsDeleteArtifactRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/actions/artifacts/:artifact_id";
@@ -15347,6 +15546,7 @@ type ActionsDownloadArtifactEndpoint = {
    */
   archive_format: string;
 };
+
 type ActionsDownloadArtifactRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format";
@@ -15368,6 +15568,7 @@ type ActionsGetWorkflowJobEndpoint = {
    */
   job_id: number;
 };
+
 type ActionsGetWorkflowJobRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/jobs/:job_id";
@@ -15421,6 +15622,7 @@ type ActionsListWorkflowJobLogsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListWorkflowJobLogsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/jobs/:job_id/logs";
@@ -15446,6 +15648,7 @@ type ActionsListSelfHostedRunnersForRepoEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListSelfHostedRunnersForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runners";
@@ -15473,6 +15676,7 @@ type ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint = {
    */
   repo: string;
 };
+
 type ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runners/downloads";
@@ -15499,6 +15703,7 @@ type ActionsCreateRegistrationTokenEndpoint = {
    */
   repo: string;
 };
+
 type ActionsCreateRegistrationTokenRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/actions/runners/registration-token";
@@ -15520,6 +15725,7 @@ type ActionsCreateRemoveTokenEndpoint = {
    */
   repo: string;
 };
+
 type ActionsCreateRemoveTokenRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/actions/runners/remove-token";
@@ -15545,6 +15751,7 @@ type ActionsGetSelfHostedRunnerEndpoint = {
    */
   runner_id: number;
 };
+
 type ActionsGetSelfHostedRunnerRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runners/:runner_id";
@@ -15572,6 +15779,7 @@ type ActionsRemoveSelfHostedRunnerEndpoint = {
    */
   runner_id: number;
 };
+
 type ActionsRemoveSelfHostedRunnerRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/actions/runners/:runner_id";
@@ -15613,6 +15821,7 @@ type ActionsListRepoWorkflowRunsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListRepoWorkflowRunsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs";
@@ -15816,6 +16025,7 @@ type ActionsGetWorkflowRunEndpoint = {
    */
   run_id: number;
 };
+
 type ActionsGetWorkflowRunRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs/:run_id";
@@ -16023,6 +16233,7 @@ type ActionsListWorkflowRunArtifactsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListWorkflowRunArtifactsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs/:run_id/artifacts";
@@ -16059,6 +16270,7 @@ type ActionsCancelWorkflowRunEndpoint = {
    */
   run_id: number;
 };
+
 type ActionsCancelWorkflowRunRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/actions/runs/:run_id/cancel";
@@ -16094,6 +16306,7 @@ type ActionsListJobsForWorkflowRunEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListJobsForWorkflowRunRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs/:run_id/jobs";
@@ -16151,6 +16364,7 @@ type ActionsListWorkflowRunLogsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListWorkflowRunLogsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs/:run_id/logs";
@@ -16172,6 +16386,7 @@ type ActionsReRunWorkflowEndpoint = {
    */
   run_id: number;
 };
+
 type ActionsReRunWorkflowRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/actions/runs/:run_id/rerun";
@@ -16197,6 +16412,7 @@ type ActionsListSecretsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListSecretsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/secrets";
@@ -16223,6 +16439,7 @@ type ActionsGetPublicKeyEndpoint = {
    */
   repo: string;
 };
+
 type ActionsGetPublicKeyRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/secrets/public-key";
@@ -16245,6 +16462,7 @@ type ActionsGetSecretEndpoint = {
    */
   name: string;
 };
+
 type ActionsGetSecretRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/secrets/:name";
@@ -16279,6 +16497,7 @@ type ActionsCreateOrUpdateSecretForRepoEndpoint = {
    */
   key_id?: string;
 };
+
 type ActionsCreateOrUpdateSecretForRepoRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/actions/secrets/:name";
@@ -16300,6 +16519,7 @@ type ActionsDeleteSecretFromRepoEndpoint = {
    */
   name: string;
 };
+
 type ActionsDeleteSecretFromRepoRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/actions/secrets/:name";
@@ -16325,6 +16545,7 @@ type ActionsListRepoWorkflowsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListRepoWorkflowsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/workflows";
@@ -16362,6 +16583,7 @@ type ActionsGetWorkflowEndpoint = {
    */
   workflow_id: number;
 };
+
 type ActionsGetWorkflowRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/workflows/:workflow_id";
@@ -16419,6 +16641,7 @@ type ActionsListWorkflowRunsEndpoint = {
    */
   page?: number;
 };
+
 type ActionsListWorkflowRunsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/workflows/:workflow_id/runs";
@@ -16626,6 +16849,7 @@ type IssuesListAssigneesEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListAssigneesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/assignees";
@@ -16670,6 +16894,7 @@ type IssuesCheckAssigneeEndpoint = {
    */
   assignee: string;
 };
+
 type IssuesCheckAssigneeRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/assignees/:assignee";
@@ -16686,7 +16911,8 @@ type ReposEnableAutomatedSecurityFixesEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"london">;
+
 type ReposEnableAutomatedSecurityFixesRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/automated-security-fixes";
@@ -16703,7 +16929,8 @@ type ReposDisableAutomatedSecurityFixesEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"london">;
+
 type ReposDisableAutomatedSecurityFixesRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/automated-security-fixes";
@@ -16733,6 +16960,7 @@ type ReposListBranchesEndpoint = {
    */
   page?: number;
 };
+
 type ReposListBranchesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches";
@@ -16771,6 +16999,7 @@ type ReposGetBranchEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetBranchRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch";
@@ -16858,6 +17087,7 @@ type ReposGetBranchProtectionEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetBranchProtectionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection";
@@ -17063,6 +17293,7 @@ type ReposUpdateBranchProtectionEndpoint = {
    */
   allow_deletions?: boolean;
 };
+
 type ReposUpdateBranchProtectionRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection";
@@ -17242,6 +17473,7 @@ type ReposRemoveBranchProtectionEndpoint = {
    */
   branch: string;
 };
+
 type ReposRemoveBranchProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection";
@@ -17263,6 +17495,7 @@ type ReposGetProtectedBranchAdminEnforcementEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetProtectedBranchAdminEnforcementRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
@@ -17288,6 +17521,7 @@ type ReposAddProtectedBranchAdminEnforcementEndpoint = {
    */
   branch: string;
 };
+
 type ReposAddProtectedBranchAdminEnforcementRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
@@ -17313,6 +17547,7 @@ type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
    */
   branch: string;
 };
+
 type ReposRemoveProtectedBranchAdminEnforcementRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
@@ -17334,6 +17569,7 @@ type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
@@ -17423,6 +17659,7 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
    */
   required_approving_review_count?: number;
 };
+
 type ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
@@ -17496,6 +17733,7 @@ type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
    */
   branch: string;
 };
+
 type ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
@@ -17516,7 +17754,8 @@ type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
    * branch parameter
    */
   branch: string;
-};
+} & RequiredPreview<"zzzax">;
+
 type ReposGetProtectedBranchRequiredSignaturesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
@@ -17541,7 +17780,8 @@ type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
    * branch parameter
    */
   branch: string;
-};
+} & RequiredPreview<"zzzax">;
+
 type ReposAddProtectedBranchRequiredSignaturesRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
@@ -17566,7 +17806,8 @@ type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
    * branch parameter
    */
   branch: string;
-};
+} & RequiredPreview<"zzzax">;
+
 type ReposRemoveProtectedBranchRequiredSignaturesRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
@@ -17588,6 +17829,7 @@ type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
@@ -17623,6 +17865,7 @@ type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
    */
   contexts?: string[];
 };
+
 type ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
@@ -17650,6 +17893,7 @@ type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
    */
   branch: string;
 };
+
 type ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
@@ -17671,6 +17915,7 @@ type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
    */
   branch: string;
 };
+
 type ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
@@ -17699,6 +17944,7 @@ type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
    */
   contexts: string[];
 };
+
 type ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
@@ -17727,6 +17973,7 @@ type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
    */
   contexts: string[];
 };
+
 type ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
@@ -17755,6 +18002,7 @@ type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
    */
   contexts: string[];
 };
+
 type ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
@@ -17779,6 +18027,7 @@ type ReposGetProtectedBranchRestrictionsEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetProtectedBranchRestrictionsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
@@ -17877,6 +18126,7 @@ type ReposRemoveProtectedBranchRestrictionsEndpoint = {
    */
   branch: string;
 };
+
 type ReposRemoveProtectedBranchRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
@@ -17898,6 +18148,7 @@ type ReposGetAppsWithAccessToProtectedBranchEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetAppsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
@@ -17960,6 +18211,7 @@ type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
    */
   apps: string[];
 };
+
 type ReposReplaceProtectedBranchAppRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
@@ -18022,6 +18274,7 @@ type ReposAddProtectedBranchAppRestrictionsEndpoint = {
    */
   apps: string[];
 };
+
 type ReposAddProtectedBranchAppRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
@@ -18084,6 +18337,7 @@ type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
    */
   apps: string[];
 };
+
 type ReposRemoveProtectedBranchAppRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
@@ -18142,6 +18396,7 @@ type ReposGetTeamsWithAccessToProtectedBranchEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetTeamsWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
@@ -18184,6 +18439,7 @@ type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
    */
   teams: string[];
 };
+
 type ReposReplaceProtectedBranchTeamRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
@@ -18226,6 +18482,7 @@ type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
    */
   teams: string[];
 };
+
 type ReposAddProtectedBranchTeamRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
@@ -18268,6 +18525,7 @@ type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
    */
   teams: string[];
 };
+
 type ReposRemoveProtectedBranchTeamRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
@@ -18306,6 +18564,7 @@ type ReposGetUsersWithAccessToProtectedBranchEndpoint = {
    */
   branch: string;
 };
+
 type ReposGetUsersWithAccessToProtectedBranchRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
@@ -18354,6 +18613,7 @@ type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
    */
   users: string[];
 };
+
 type ReposReplaceProtectedBranchUserRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
@@ -18402,6 +18662,7 @@ type ReposAddProtectedBranchUserRestrictionsEndpoint = {
    */
   users: string[];
 };
+
 type ReposAddProtectedBranchUserRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
@@ -18450,6 +18711,7 @@ type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
    */
   users: string[];
 };
+
 type ReposRemoveProtectedBranchUserRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
@@ -18536,7 +18798,8 @@ type ChecksCreateEndpoint = {
    * Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/v3/activity/events/types/#checkrunevent) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)." To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)."
    */
   actions?: ChecksCreateParamsActions[];
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksCreateRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/check-runs";
@@ -18687,7 +18950,8 @@ type ChecksUpdateEndpoint = {
    * Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)."
    */
   actions?: ChecksUpdateParamsActions[];
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksUpdateRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/check-runs/:check_run_id";
@@ -18795,7 +19059,8 @@ type ChecksGetEndpoint = {
    * check_run_id parameter
    */
   check_run_id: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksGetRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/check-runs/:check_run_id";
@@ -18911,7 +19176,8 @@ type ChecksListAnnotationsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksListAnnotationsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/check-runs/:check_run_id/annotations";
@@ -18946,7 +19212,8 @@ type ChecksCreateSuiteEndpoint = {
    * The sha of the head commit.
    */
   head_sha: string;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksCreateSuiteRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/check-suites";
@@ -19122,7 +19389,8 @@ type ChecksSetSuitesPreferencesEndpoint = {
    * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://developer.github.com/v3/checks/suites/#auto_trigger_checks-object) description for details.
    */
   auto_trigger_checks?: ChecksSetSuitesPreferencesParamsAutoTriggerChecks[];
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksSetSuitesPreferencesRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/check-suites/preferences";
@@ -19263,7 +19531,8 @@ type ChecksGetSuiteEndpoint = {
    * check_suite_id parameter
    */
   check_suite_id: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksGetSuiteRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/check-suites/:check_suite_id";
@@ -19459,7 +19728,8 @@ type ChecksListForSuiteEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksListForSuiteRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/check-suites/:check_suite_id/check-runs";
@@ -19573,7 +19843,8 @@ type ChecksRerequestSuiteEndpoint = {
    * check_suite_id parameter
    */
   check_suite_id: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksRerequestSuiteRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/check-suites/:check_suite_id/rerequest";
@@ -19606,6 +19877,7 @@ type ReposListCollaboratorsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListCollaboratorsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/collaborators";
@@ -19656,6 +19928,7 @@ type ReposCheckCollaboratorEndpoint = {
    */
   username: string;
 };
+
 type ReposCheckCollaboratorRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/collaborators/:username";
@@ -19686,6 +19959,7 @@ type ReposAddCollaboratorEndpoint = {
    */
   permission?: "pull" | "push" | "admin" | "maintain" | "triage";
 };
+
 type ReposAddCollaboratorRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/collaborators/:username";
@@ -19826,6 +20100,7 @@ type ReposRemoveCollaboratorEndpoint = {
    */
   username: string;
 };
+
 type ReposRemoveCollaboratorRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/collaborators/:username";
@@ -19847,6 +20122,7 @@ type ReposGetCollaboratorPermissionLevelEndpoint = {
    */
   username: string;
 };
+
 type ReposGetCollaboratorPermissionLevelRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/collaborators/:username/permission";
@@ -19896,6 +20172,7 @@ type ReposListCommitCommentsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListCommitCommentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/comments";
@@ -19954,6 +20231,7 @@ type ReposGetCommitCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type ReposGetCommitCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/comments/:comment_id";
@@ -20013,6 +20291,7 @@ type ReposUpdateCommitCommentEndpoint = {
    */
   body: string;
 };
+
 type ReposUpdateCommitCommentRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/comments/:comment_id";
@@ -20068,6 +20347,7 @@ type ReposDeleteCommitCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type ReposDeleteCommitCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/comments/:comment_id";
@@ -20108,7 +20388,8 @@ type ReactionsListForCommitCommentEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForCommitCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/comments/:comment_id/reactions";
@@ -20171,7 +20452,8 @@ type ReactionsCreateForCommitCommentEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForCommitCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/comments/:comment_id/reactions";
@@ -20223,7 +20505,8 @@ type ReactionsDeleteForCommitCommentEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForCommitCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id";
@@ -20269,6 +20552,7 @@ type ReposListCommitsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListCommitsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits";
@@ -20368,7 +20652,8 @@ type ReposListBranchesForHeadCommitEndpoint = {
    * commit_sha parameter
    */
   commit_sha: string;
-};
+} & RequiredPreview<"groot">;
+
 type ReposListBranchesForHeadCommitRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:commit_sha/branches-where-head";
@@ -20410,6 +20695,7 @@ type ReposListCommentsForCommitEndpoint = {
    */
   page?: number;
 };
+
 type ReposListCommentsForCommitRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:commit_sha/comments";
@@ -20484,6 +20770,7 @@ type ReposCreateCommitCommentEndpoint = {
    */
   line?: number;
 };
+
 type ReposCreateCommitCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/commits/:commit_sha/comments";
@@ -20546,7 +20833,8 @@ type ReposListPullRequestsAssociatedWithCommitEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"groot">;
+
 type ReposListPullRequestsAssociatedWithCommitRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:commit_sha/pulls";
@@ -21059,6 +21347,7 @@ type ReposGetCommitEndpoint = {
    */
   ref: string;
 };
+
 type ReposGetCommitRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref";
@@ -21194,7 +21483,8 @@ type ChecksListForRefEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksListForRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref/check-runs";
@@ -21324,7 +21614,8 @@ type ChecksListSuitesForRefEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"antiope">;
+
 type ChecksListSuitesForRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref/check-suites";
@@ -21505,6 +21796,7 @@ type ReposGetCombinedStatusForRefEndpoint = {
    */
   ref: string;
 };
+
 type ReposGetCombinedStatusForRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref/status";
@@ -21624,6 +21916,7 @@ type ReposListStatusesForRefEndpoint = {
    */
   page?: number;
 };
+
 type ReposListStatusesForRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref/statuses";
@@ -21676,7 +21969,8 @@ type CodesOfConductGetForRepoEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"scarlet-witch">;
+
 type CodesOfConductGetForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/community/code_of_conduct";
@@ -21700,6 +21994,7 @@ type ReposRetrieveCommunityProfileMetricsEndpoint = {
    */
   repo: string;
 };
+
 type ReposRetrieveCommunityProfileMetricsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/community/profile";
@@ -21769,6 +22064,7 @@ type ReposCompareCommitsEndpoint = {
    */
   head: string;
 };
+
 type ReposCompareCommitsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/compare/:base...:head";
@@ -22073,6 +22369,7 @@ type ReposGetContentsEndpoint = {
    */
   ref?: string;
 };
+
 type ReposGetContentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/contents/:path";
@@ -22158,6 +22455,7 @@ type ReposCreateOrUpdateFileEndpoint = {
    */
   author?: ReposCreateOrUpdateFileParamsAuthor;
 };
+
 type ReposCreateOrUpdateFileRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/contents/:path";
@@ -22257,6 +22555,7 @@ type ReposDeleteFileEndpoint = {
    */
   author?: ReposDeleteFileParamsAuthor;
 };
+
 type ReposDeleteFileRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/contents/:path";
@@ -22324,6 +22623,7 @@ type ReposListContributorsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListContributorsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/contributors";
@@ -22389,6 +22689,7 @@ type ReposListDeploymentsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListDeploymentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/deployments";
@@ -22487,6 +22788,7 @@ type ReposCreateDeploymentEndpoint = {
    */
   production_environment?: boolean;
 };
+
 type ReposCreateDeploymentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/deployments";
@@ -22548,6 +22850,7 @@ type ReposGetDeploymentEndpoint = {
    */
   deployment_id: number;
 };
+
 type ReposGetDeploymentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/deployments/:deployment_id";
@@ -22609,6 +22912,7 @@ type ReposDeleteDeploymentEndpoint = {
    */
   deployment_id: number;
 };
+
 type ReposDeleteDeploymentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/deployments/:deployment_id";
@@ -22638,6 +22942,7 @@ type ReposListDeploymentStatusesEndpoint = {
    */
   page?: number;
 };
+
 type ReposListDeploymentStatusesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/deployments/:deployment_id/statuses";
@@ -22737,6 +23042,7 @@ type ReposCreateDeploymentStatusEndpoint = {
    */
   auto_inactive?: boolean;
 };
+
 type ReposCreateDeploymentStatusRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/deployments/:deployment_id/statuses";
@@ -22798,6 +23104,7 @@ type ReposGetDeploymentStatusEndpoint = {
    */
   status_id: number;
 };
+
 type ReposGetDeploymentStatusRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id";
@@ -22859,6 +23166,7 @@ type ReposCreateDispatchEventEndpoint = {
    */
   client_payload?: ReposCreateDispatchEventParamsClientPayload;
 };
+
 type ReposCreateDispatchEventRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/dispatches";
@@ -22884,6 +23192,7 @@ type ReposListDownloadsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListDownloadsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/downloads";
@@ -22916,6 +23225,7 @@ type ReposGetDownloadEndpoint = {
    */
   download_id: number;
 };
+
 type ReposGetDownloadRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/downloads/:download_id";
@@ -22947,6 +23257,7 @@ type ReposDeleteDownloadEndpoint = {
    */
   download_id: number;
 };
+
 type ReposDeleteDownloadRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/downloads/:download_id";
@@ -22972,6 +23283,7 @@ type ActivityListRepoEventsEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListRepoEventsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/events";
@@ -23001,6 +23313,7 @@ type ReposListForksEndpoint = {
    */
   page?: number;
 };
+
 type ReposListForksRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/forks";
@@ -23135,6 +23448,7 @@ type ReposCreateForkEndpoint = {
    */
   organization?: string;
 };
+
 type ReposCreateForkRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/forks";
@@ -23267,6 +23581,7 @@ type GitCreateBlobEndpoint = {
    */
   encoding?: string;
 };
+
 type GitCreateBlobRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/git/blobs";
@@ -23289,6 +23604,7 @@ type GitGetBlobEndpoint = {
    */
   file_sha: string;
 };
+
 type GitGetBlobRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/blobs/:file_sha";
@@ -23337,6 +23653,7 @@ type GitCreateCommitEndpoint = {
    */
   signature?: string;
 };
+
 type GitCreateCommitRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/git/commits";
@@ -23387,6 +23704,7 @@ type GitGetCommitEndpoint = {
    */
   commit_sha: string;
 };
+
 type GitGetCommitRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/commits/:commit_sha";
@@ -23444,6 +23762,7 @@ type GitListMatchingRefsEndpoint = {
    */
   page?: number;
 };
+
 type GitListMatchingRefsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/matching-refs/:ref";
@@ -23479,6 +23798,7 @@ type GitGetRefEndpoint = {
    */
   ref: string;
 };
+
 type GitGetRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/ref/:ref";
@@ -23511,6 +23831,7 @@ type GitCreateRefEndpoint = {
    */
   sha: string;
 };
+
 type GitCreateRefRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/git/refs";
@@ -23551,6 +23872,7 @@ type GitUpdateRefEndpoint = {
    */
   force?: boolean;
 };
+
 type GitUpdateRefRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/git/refs/:ref";
@@ -23583,6 +23905,7 @@ type GitDeleteRefEndpoint = {
    */
   ref: string;
 };
+
 type GitDeleteRefRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/git/refs/:ref";
@@ -23620,6 +23943,7 @@ type GitCreateTagEndpoint = {
    */
   tagger?: GitCreateTagParamsTagger;
 };
+
 type GitCreateTagRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/git/tags";
@@ -23667,6 +23991,7 @@ type GitGetTagEndpoint = {
    */
   tag_sha: string;
 };
+
 type GitGetTagRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/tags/:tag_sha";
@@ -23714,6 +24039,7 @@ type GitCreateTreeEndpoint = {
    */
   base_tree?: string;
 };
+
 type GitCreateTreeRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/git/trees";
@@ -23752,6 +24078,7 @@ type GitGetTreeEndpoint = {
    */
   recursive?: "1";
 };
+
 type GitGetTreeRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/git/trees/:tree_sha";
@@ -23791,6 +24118,7 @@ type ReposListHooksEndpoint = {
    */
   page?: number;
 };
+
 type ReposListHooksRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/hooks";
@@ -23849,6 +24177,7 @@ type ReposCreateHookEndpoint = {
    */
   active?: boolean;
 };
+
 type ReposCreateHookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks";
@@ -23894,6 +24223,7 @@ type ReposGetHookEndpoint = {
    */
   hook_id: number;
 };
+
 type ReposGetHookRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/hooks/:hook_id";
@@ -23959,6 +24289,7 @@ type ReposUpdateHookEndpoint = {
    */
   active?: boolean;
 };
+
 type ReposUpdateHookRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/hooks/:hook_id";
@@ -24004,6 +24335,7 @@ type ReposDeleteHookEndpoint = {
    */
   hook_id: number;
 };
+
 type ReposDeleteHookRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/hooks/:hook_id";
@@ -24025,6 +24357,7 @@ type ReposPingHookEndpoint = {
    */
   hook_id: number;
 };
+
 type ReposPingHookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks/:hook_id/pings";
@@ -24046,6 +24379,7 @@ type ReposTestPushHookEndpoint = {
    */
   hook_id: number;
 };
+
 type ReposTestPushHookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks/:hook_id/tests";
@@ -24083,6 +24417,7 @@ type MigrationsStartImportEndpoint = {
    */
   tfvc_project?: string;
 };
+
 type MigrationsStartImportRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/import";
@@ -24117,6 +24452,7 @@ type MigrationsGetImportProgressEndpoint = {
    */
   repo: string;
 };
+
 type MigrationsGetImportProgressRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/import";
@@ -24157,6 +24493,7 @@ type MigrationsUpdateImportEndpoint = {
    */
   vcs_password?: string;
 };
+
 type MigrationsUpdateImportRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/import";
@@ -24192,6 +24529,7 @@ type MigrationsCancelImportEndpoint = {
    */
   repo: string;
 };
+
 type MigrationsCancelImportRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/import";
@@ -24213,6 +24551,7 @@ type MigrationsGetCommitAuthorsEndpoint = {
    */
   since?: string;
 };
+
 type MigrationsGetCommitAuthorsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/import/authors";
@@ -24254,6 +24593,7 @@ type MigrationsMapCommitAuthorEndpoint = {
    */
   name?: string;
 };
+
 type MigrationsMapCommitAuthorRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/import/authors/:author_id";
@@ -24280,6 +24620,7 @@ type MigrationsGetLargeFilesEndpoint = {
    */
   repo: string;
 };
+
 type MigrationsGetLargeFilesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/import/large_files";
@@ -24310,6 +24651,7 @@ type MigrationsSetLfsPreferenceEndpoint = {
    */
   use_lfs: "opt_in" | "opt_out";
 };
+
 type MigrationsSetLfsPreferenceRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/import/lfs";
@@ -24341,7 +24683,8 @@ type AppsGetRepoInstallationEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsGetRepoInstallationRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/installation";
@@ -24398,7 +24741,8 @@ type InteractionsGetRestrictionsForRepoEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsGetRestrictionsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/interaction-limits";
@@ -24424,7 +24768,8 @@ type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests for the given repository. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
    */
   limit: "existing_users" | "contributors_only" | "collaborators_only";
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsAddOrUpdateRestrictionsForRepoRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/interaction-limits";
@@ -24446,7 +24791,8 @@ type InteractionsRemoveRestrictionsForRepoEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"sombra">;
+
 type InteractionsRemoveRestrictionsForRepoRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/interaction-limits";
@@ -24472,6 +24818,7 @@ type ReposListInvitationsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListInvitationsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/invitations";
@@ -24615,6 +24962,7 @@ type ReposDeleteInvitationEndpoint = {
    */
   invitation_id: number;
 };
+
 type ReposDeleteInvitationRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/invitations/:invitation_id";
@@ -24640,6 +24988,7 @@ type ReposUpdateInvitationEndpoint = {
    */
   permissions?: "read" | "write" | "maintain" | "triage" | "admin";
 };
+
 type ReposUpdateInvitationRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/invitations/:invitation_id";
@@ -24820,6 +25169,7 @@ type IssuesListForRepoEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues";
@@ -25001,6 +25351,7 @@ type IssuesCreateEndpoint = {
    */
   assignees?: string[];
 };
+
 type IssuesCreateRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues";
@@ -25198,6 +25549,7 @@ type IssuesListCommentsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListCommentsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/comments";
@@ -25252,6 +25604,7 @@ type IssuesGetCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type IssuesGetCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/comments/:comment_id";
@@ -25307,6 +25660,7 @@ type IssuesUpdateCommentEndpoint = {
    */
   body: string;
 };
+
 type IssuesUpdateCommentRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/issues/comments/:comment_id";
@@ -25358,6 +25712,7 @@ type IssuesDeleteCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type IssuesDeleteCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/comments/:comment_id";
@@ -25398,7 +25753,8 @@ type ReactionsListForIssueCommentEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForIssueCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions";
@@ -25461,7 +25817,8 @@ type ReactionsCreateForIssueCommentEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForIssueCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions";
@@ -25513,7 +25870,8 @@ type ReactionsDeleteForIssueCommentEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForIssueCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id";
@@ -25539,6 +25897,7 @@ type IssuesListEventsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListEventsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/events";
@@ -25733,6 +26092,7 @@ type IssuesGetEventEndpoint = {
    */
   event_id: number;
 };
+
 type IssuesGetEventRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/events/:event_id";
@@ -25924,6 +26284,7 @@ type IssuesGetEndpoint = {
    */
   issue_number: number;
 };
+
 type IssuesGetRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number";
@@ -26133,6 +26494,7 @@ type IssuesUpdateEndpoint = {
    */
   assignees?: string[];
 };
+
 type IssuesUpdateRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/issues/:issue_number";
@@ -26318,6 +26680,7 @@ type IssuesAddAssigneesEndpoint = {
    */
   assignees?: string[];
 };
+
 type IssuesAddAssigneesRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues/:issue_number/assignees";
@@ -26482,6 +26845,7 @@ type IssuesRemoveAssigneesEndpoint = {
    */
   assignees?: string[];
 };
+
 type IssuesRemoveAssigneesRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/:issue_number/assignees";
@@ -26654,6 +27018,7 @@ type IssuesListCommentsEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListCommentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number/comments";
@@ -26710,6 +27075,7 @@ type IssuesCreateCommentEndpoint = {
    */
   body: string;
 };
+
 type IssuesCreateCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues/:issue_number/comments";
@@ -26769,6 +27135,7 @@ type IssuesListEventsEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListEventsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number/events";
@@ -26829,6 +27196,7 @@ type IssuesListLabelsOnIssueEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListLabelsOnIssueRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number/labels";
@@ -26866,6 +27234,7 @@ type IssuesAddLabelsEndpoint = {
    */
   labels: string[];
 };
+
 type IssuesAddLabelsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues/:issue_number/labels";
@@ -26901,6 +27270,7 @@ type IssuesReplaceAllLabelsEndpoint = {
    */
   labels?: string[];
 };
+
 type IssuesReplaceAllLabelsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/issues/:issue_number/labels";
@@ -26934,6 +27304,7 @@ type IssuesRemoveAllLabelsEndpoint = {
    */
   issue_number: number;
 };
+
 type IssuesRemoveAllLabelsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/:issue_number/labels";
@@ -26959,6 +27330,7 @@ type IssuesRemoveLabelEndpoint = {
    */
   name: string;
 };
+
 type IssuesRemoveLabelRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/:issue_number/labels/:name";
@@ -26998,6 +27370,7 @@ type IssuesLockEndpoint = {
    */
   lock_reason?: "off-topic" | "too heated" | "resolved" | "spam";
 };
+
 type IssuesLockRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/issues/:issue_number/lock";
@@ -27019,6 +27392,7 @@ type IssuesUnlockEndpoint = {
    */
   issue_number: number;
 };
+
 type IssuesUnlockRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/:issue_number/lock";
@@ -27059,7 +27433,8 @@ type ReactionsListForIssueEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForIssueRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number/reactions";
@@ -27122,7 +27497,8 @@ type ReactionsCreateForIssueEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForIssueRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/issues/:issue_number/reactions";
@@ -27174,7 +27550,8 @@ type ReactionsDeleteForIssueEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForIssueRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id";
@@ -27203,7 +27580,8 @@ type IssuesListEventsForTimelineEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"mockingbird">;
+
 type IssuesListEventsForTimelineRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/issues/:issue_number/timeline";
@@ -27262,6 +27640,7 @@ type ReposListDeployKeysEndpoint = {
    */
   page?: number;
 };
+
 type ReposListDeployKeysRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/keys";
@@ -27305,6 +27684,7 @@ type ReposAddDeployKeyEndpoint = {
    */
   read_only?: boolean;
 };
+
 type ReposAddDeployKeyRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/keys";
@@ -27335,6 +27715,7 @@ type ReposGetDeployKeyEndpoint = {
    */
   key_id: number;
 };
+
 type ReposGetDeployKeyRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/keys/:key_id";
@@ -27365,6 +27746,7 @@ type ReposRemoveDeployKeyEndpoint = {
    */
   key_id: number;
 };
+
 type ReposRemoveDeployKeyRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/keys/:key_id";
@@ -27390,6 +27772,7 @@ type IssuesListLabelsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListLabelsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/labels";
@@ -27431,6 +27814,7 @@ type IssuesCreateLabelEndpoint = {
    */
   description?: string;
 };
+
 type IssuesCreateLabelRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/labels";
@@ -27461,6 +27845,7 @@ type IssuesGetLabelEndpoint = {
    */
   name: string;
 };
+
 type IssuesGetLabelRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/labels/:name";
@@ -27503,6 +27888,7 @@ type IssuesUpdateLabelEndpoint = {
    */
   description?: string;
 };
+
 type IssuesUpdateLabelRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/labels/:name";
@@ -27533,6 +27919,7 @@ type IssuesDeleteLabelEndpoint = {
    */
   name: string;
 };
+
 type IssuesDeleteLabelRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/labels/:name";
@@ -27550,6 +27937,7 @@ type ReposListLanguagesEndpoint = {
    */
   repo: string;
 };
+
 type ReposListLanguagesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/languages";
@@ -27568,6 +27956,7 @@ type LicensesGetForRepoEndpoint = {
    */
   repo: string;
 };
+
 type LicensesGetForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/license";
@@ -27624,6 +28013,7 @@ type ReposMergeEndpoint = {
    */
   commit_message?: string;
 };
+
 type ReposMergeRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/merges";
@@ -27739,6 +28129,7 @@ type IssuesListMilestonesForRepoEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListMilestonesForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/milestones";
@@ -27813,6 +28204,7 @@ type IssuesCreateMilestoneEndpoint = {
    */
   due_on?: string;
 };
+
 type IssuesCreateMilestoneRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/milestones";
@@ -27872,6 +28264,7 @@ type IssuesGetMilestoneEndpoint = {
    */
   milestone_number: number;
 };
+
 type IssuesGetMilestoneRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/milestones/:milestone_number";
@@ -27947,6 +28340,7 @@ type IssuesUpdateMilestoneEndpoint = {
    */
   due_on?: string;
 };
+
 type IssuesUpdateMilestoneRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/milestones/:milestone_number";
@@ -28006,6 +28400,7 @@ type IssuesDeleteMilestoneEndpoint = {
    */
   milestone_number: number;
 };
+
 type IssuesDeleteMilestoneRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/milestones/:milestone_number";
@@ -28035,6 +28430,7 @@ type IssuesListLabelsForMilestoneEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListLabelsForMilestoneRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/milestones/:milestone_number/labels";
@@ -28088,6 +28484,7 @@ type ActivityListRepoNotificationsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListRepoNotificationsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/notifications";
@@ -28197,6 +28594,7 @@ type ActivityMarkRepoNotificationsAsReadEndpoint = {
    */
   last_read_at?: string;
 };
+
 type ActivityMarkRepoNotificationsAsReadRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/notifications";
@@ -28214,6 +28612,7 @@ type ReposGetPagesEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetPagesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pages";
@@ -28243,7 +28642,8 @@ type ReposEnablePagesSiteEndpoint = {
    * source parameter
    */
   source?: ReposEnablePagesSiteParamsSource;
-};
+} & RequiredPreview<"switcheroo">;
+
 type ReposEnablePagesSiteRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pages";
@@ -28272,7 +28672,8 @@ type ReposDisablePagesSiteEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"switcheroo">;
+
 type ReposDisablePagesSiteRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pages";
@@ -28298,6 +28699,7 @@ type ReposUpdateInformationAboutPagesSiteEndpoint = {
    */
   source?: '"gh-pages"' | '"master"' | '"master /docs"';
 };
+
 type ReposUpdateInformationAboutPagesSiteRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/pages";
@@ -28315,6 +28717,7 @@ type ReposRequestPageBuildEndpoint = {
    */
   repo: string;
 };
+
 type ReposRequestPageBuildRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pages/builds";
@@ -28341,6 +28744,7 @@ type ReposListPagesBuildsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListPagesBuildsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pages/builds";
@@ -28392,6 +28796,7 @@ type ReposGetLatestPagesBuildEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetLatestPagesBuildRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pages/builds/latest";
@@ -28444,6 +28849,7 @@ type ReposGetPagesBuildEndpoint = {
    */
   build_id: number;
 };
+
 type ReposGetPagesBuildRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pages/builds/:build_id";
@@ -28503,7 +28909,8 @@ type ProjectsListForRepoEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/projects";
@@ -28566,7 +28973,8 @@ type ProjectsCreateForRepoEndpoint = {
    * The description of the project.
    */
   body?: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsCreateForRepoRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/projects";
@@ -28647,6 +29055,7 @@ type PullsListEndpoint = {
    */
   page?: number;
 };
+
 type PullsListRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls";
@@ -29153,6 +29562,7 @@ type PullsCreateEndpoint = {
    */
   draft?: boolean;
 };
+
 type PullsCreateRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls";
@@ -29686,6 +30096,7 @@ type PullsListCommentsForRepoEndpoint = {
    */
   page?: number;
 };
+
 type PullsListCommentsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/comments";
@@ -29767,6 +30178,7 @@ type PullsGetCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type PullsGetCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
@@ -29847,6 +30259,7 @@ type PullsUpdateCommentEndpoint = {
    */
   body: string;
 };
+
 type PullsUpdateCommentRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
@@ -29923,6 +30336,7 @@ type PullsDeleteCommentEndpoint = {
    */
   comment_id: number;
 };
+
 type PullsDeleteCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
@@ -29963,7 +30377,8 @@ type ReactionsListForPullRequestReviewCommentEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForPullRequestReviewCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions";
@@ -30026,7 +30441,8 @@ type ReactionsCreateForPullRequestReviewCommentEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForPullRequestReviewCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions";
@@ -30078,7 +30494,8 @@ type ReactionsDeleteForPullRequestCommentEndpoint = {
    * reaction_id parameter
    */
   reaction_id: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsDeleteForPullRequestCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id";
@@ -30100,6 +30517,7 @@ type PullsGetEndpoint = {
    */
   pull_number: number;
 };
+
 type PullsGetRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number";
@@ -30637,6 +31055,7 @@ type PullsUpdateEndpoint = {
    */
   maintainer_can_modify?: boolean;
 };
+
 type PullsUpdateRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/pulls/:pull_number";
@@ -31174,6 +31593,7 @@ type PullsListCommentsEndpoint = {
    */
   page?: number;
 };
+
 type PullsListCommentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments";
@@ -31283,6 +31703,7 @@ type PullsCreateCommentEndpoint = {
    */
   start_side?: "LEFT" | "RIGHT" | "side";
 };
+
 type PullsCreateCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments";
@@ -31367,6 +31788,7 @@ type PullsCreateReviewCommentReplyEndpoint = {
    */
   body: string;
 };
+
 type PullsCreateReviewCommentReplyRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies";
@@ -31446,6 +31868,7 @@ type PullsListCommitsEndpoint = {
    */
   page?: number;
 };
+
 type PullsListCommitsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/commits";
@@ -31554,6 +31977,7 @@ type PullsListFilesEndpoint = {
    */
   page?: number;
 };
+
 type PullsListFilesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/files";
@@ -31588,6 +32012,7 @@ type PullsCheckIfMergedEndpoint = {
    */
   pull_number: number;
 };
+
 type PullsCheckIfMergedRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/merge";
@@ -31625,6 +32050,7 @@ type PullsMergeEndpoint = {
    */
   merge_method?: "merge" | "squash" | "rebase";
 };
+
 type PullsMergeRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/pulls/:pull_number/merge";
@@ -31655,6 +32081,7 @@ type PullsListReviewRequestsEndpoint = {
    */
   page?: number;
 };
+
 type PullsListReviewRequestsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
@@ -31722,6 +32149,7 @@ type PullsCreateReviewRequestEndpoint = {
    */
   team_reviewers?: string[];
 };
+
 type PullsCreateReviewRequestRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
@@ -32219,6 +32647,7 @@ type PullsDeleteReviewRequestEndpoint = {
    */
   team_reviewers?: string[];
 };
+
 type PullsDeleteReviewRequestRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
@@ -32248,6 +32677,7 @@ type PullsListReviewsEndpoint = {
    */
   page?: number;
 };
+
 type PullsListReviewsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews";
@@ -32324,6 +32754,7 @@ type PullsCreateReviewEndpoint = {
    */
   comments?: PullsCreateReviewParamsComments[];
 };
+
 type PullsCreateReviewRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews";
@@ -32386,6 +32817,7 @@ type PullsGetReviewEndpoint = {
    */
   review_id: number;
 };
+
 type PullsGetReviewRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
@@ -32449,6 +32881,7 @@ type PullsDeletePendingReviewEndpoint = {
    */
   review_id: number;
 };
+
 type PullsDeletePendingReviewRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
@@ -32515,6 +32948,7 @@ type PullsUpdateReviewEndpoint = {
    */
   body: string;
 };
+
 type PullsUpdateReviewRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id";
@@ -32585,6 +33019,7 @@ type PullsGetCommentsForReviewEndpoint = {
    */
   page?: number;
 };
+
 type PullsGetCommentsForReviewRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments";
@@ -32668,6 +33103,7 @@ type PullsDismissReviewEndpoint = {
    */
   message: string;
 };
+
 type PullsDismissReviewRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals";
@@ -32738,6 +33174,7 @@ type PullsSubmitReviewEndpoint = {
    */
   event: "APPROVE" | "REQUEST_CHANGES" | "COMMENT";
 };
+
 type PullsSubmitReviewRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events";
@@ -32800,7 +33237,8 @@ type PullsUpdateBranchEndpoint = {
    * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits on a repository](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
    */
   expected_head_sha?: string;
-};
+} & RequiredPreview<"lydian">;
+
 type PullsUpdateBranchRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/pulls/:pull_number/update-branch";
@@ -32823,6 +33261,7 @@ type ReposGetReadmeEndpoint = {
    */
   ref?: string;
 };
+
 type ReposGetReadmeRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/readme";
@@ -32867,6 +33306,7 @@ type ReposListReleasesEndpoint = {
    */
   page?: number;
 };
+
 type ReposListReleasesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases";
@@ -32984,6 +33424,7 @@ type ReposCreateReleaseEndpoint = {
    */
   prerelease?: boolean;
 };
+
 type ReposCreateReleaseRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/releases";
@@ -33045,6 +33486,7 @@ type ReposGetReleaseAssetEndpoint = {
    */
   asset_id: number;
 };
+
 type ReposGetReleaseAssetRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/assets/:asset_id";
@@ -33109,6 +33551,7 @@ type ReposUpdateReleaseAssetEndpoint = {
    */
   label?: string;
 };
+
 type ReposUpdateReleaseAssetRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/releases/assets/:asset_id";
@@ -33165,6 +33608,7 @@ type ReposDeleteReleaseAssetEndpoint = {
    */
   asset_id: number;
 };
+
 type ReposDeleteReleaseAssetRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/releases/assets/:asset_id";
@@ -33182,6 +33626,7 @@ type ReposGetLatestReleaseEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetLatestReleaseRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/latest";
@@ -33278,6 +33723,7 @@ type ReposGetReleaseByTagEndpoint = {
    */
   tag: string;
 };
+
 type ReposGetReleaseByTagRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/tags/:tag";
@@ -33374,6 +33820,7 @@ type ReposGetReleaseEndpoint = {
    */
   release_id: number;
 };
+
 type ReposGetReleaseRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/:release_id";
@@ -33494,6 +33941,7 @@ type ReposUpdateReleaseEndpoint = {
    */
   prerelease?: boolean;
 };
+
 type ReposUpdateReleaseRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/releases/:release_id";
@@ -33590,6 +34038,7 @@ type ReposDeleteReleaseEndpoint = {
    */
   release_id: number;
 };
+
 type ReposDeleteReleaseRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/releases/:release_id";
@@ -33619,6 +34068,7 @@ type ReposListAssetsForReleaseEndpoint = {
    */
   page?: number;
 };
+
 type ReposListAssetsForReleaseRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/:release_id/assets";
@@ -33693,10 +34143,14 @@ type ReposUploadReleaseAssetEndpoint = {
    * The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the "Create a release" endpoint
    */
   origin?: string;
-};
+  /**
+   * For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`
+   */
+  baseUrl: string;
+} & { headers: '{"content-type":string}' };
 type ReposUploadReleaseAssetRequestOptions = {
   method: "POST";
-  url: ":origin/repos/:owner/:repo/releases/:release_id/assets:?name,label";
+  url: "/repos/:owner/:repo/releases/:release_id/assets{?name,label}";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -33754,6 +34208,7 @@ type ActivityListStargazersForRepoEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListStargazersForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stargazers";
@@ -33794,6 +34249,7 @@ type ReposGetCodeFrequencyStatsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetCodeFrequencyStatsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stats/code_frequency";
@@ -33812,6 +34268,7 @@ type ReposGetCommitActivityStatsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetCommitActivityStatsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stats/commit_activity";
@@ -33837,6 +34294,7 @@ type ReposGetContributorsStatsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetContributorsStatsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stats/contributors";
@@ -33888,6 +34346,7 @@ type ReposGetParticipationStatsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetParticipationStatsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stats/participation";
@@ -33909,6 +34368,7 @@ type ReposGetPunchCardStatsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetPunchCardStatsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/stats/punch_card";
@@ -33949,6 +34409,7 @@ type ReposCreateStatusEndpoint = {
    */
   context?: string;
 };
+
 type ReposCreateStatusRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/statuses/:sha";
@@ -34007,6 +34468,7 @@ type ActivityListWatchersForRepoEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListWatchersForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/subscribers";
@@ -34047,6 +34509,7 @@ type ActivityGetRepoSubscriptionEndpoint = {
    */
   repo: string;
 };
+
 type ActivityGetRepoSubscriptionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/subscription";
@@ -34080,6 +34543,7 @@ type ActivitySetRepoSubscriptionEndpoint = {
    */
   ignored?: boolean;
 };
+
 type ActivitySetRepoSubscriptionRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/subscription";
@@ -34105,6 +34569,7 @@ type ActivityDeleteRepoSubscriptionEndpoint = {
    */
   repo: string;
 };
+
 type ActivityDeleteRepoSubscriptionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/subscription";
@@ -34130,6 +34595,7 @@ type ReposListTagsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListTagsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/tags";
@@ -34163,6 +34629,7 @@ type ReposListTeamsEndpoint = {
    */
   page?: number;
 };
+
 type ReposListTeamsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/teams";
@@ -34194,7 +34661,8 @@ type ReposGetAllTopicsEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"mercy">;
+
 type ReposGetAllTopicsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/topics";
@@ -34216,7 +34684,8 @@ type ReposReplaceAllTopicsEndpoint = {
    * An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
    */
   names: string[];
-};
+} & RequiredPreview<"mercy">;
+
 type ReposReplaceAllTopicsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/topics";
@@ -34239,6 +34708,7 @@ type ReposGetClonesEndpoint = {
    */
   per?: "day" | "week";
 };
+
 type ReposGetClonesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/traffic/clones";
@@ -34266,6 +34736,7 @@ type ReposGetTopPathsEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetTopPathsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/traffic/popular/paths";
@@ -34290,6 +34761,7 @@ type ReposGetTopReferrersEndpoint = {
    */
   repo: string;
 };
+
 type ReposGetTopReferrersRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/traffic/popular/referrers";
@@ -34319,6 +34791,7 @@ type ReposGetViewsEndpoint = {
    */
   per?: "day" | "week";
 };
+
 type ReposGetViewsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/traffic/views";
@@ -34354,6 +34827,7 @@ type ReposTransferEndpoint = {
    */
   team_ids?: number[];
 };
+
 type ReposTransferRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/transfer";
@@ -34477,7 +34951,8 @@ type ReposCheckVulnerabilityAlertsEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"dorian">;
+
 type ReposCheckVulnerabilityAlertsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/vulnerability-alerts";
@@ -34494,7 +34969,8 @@ type ReposEnableVulnerabilityAlertsEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"dorian">;
+
 type ReposEnableVulnerabilityAlertsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/vulnerability-alerts";
@@ -34511,7 +34987,8 @@ type ReposDisableVulnerabilityAlertsEndpoint = {
    * repo parameter
    */
   repo: string;
-};
+} & RequiredPreview<"dorian">;
+
 type ReposDisableVulnerabilityAlertsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/vulnerability-alerts";
@@ -34537,6 +35014,7 @@ type ReposGetArchiveLinkEndpoint = {
    */
   ref: string;
 };
+
 type ReposGetArchiveLinkRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/:archive_format/:ref";
@@ -34569,7 +35047,8 @@ type ReposCreateUsingTemplateEndpoint = {
    * Either `true` to create a new private repository or `false` to create a new public one.
    */
   private?: boolean;
-};
+} & RequiredPreview<"baptiste">;
+
 type ReposCreateUsingTemplateRequestOptions = {
   method: "POST";
   url: "/repos/:template_owner/:template_repo/generate";
@@ -34805,6 +35284,7 @@ type ReposListPublicEndpoint = {
    */
   page?: number;
 };
+
 type ReposListPublicRequestOptions = {
   method: "GET";
   url: "/repositories";
@@ -34900,6 +35380,7 @@ type ScimListProvisionedIdentitiesEndpoint = {
    */
   filter?: string;
 };
+
 type ScimListProvisionedIdentitiesRequestOptions = {
   method: "GET";
   url: "/scim/v2/organizations/:org/Users";
@@ -34947,6 +35428,7 @@ type ScimProvisionAndInviteUsersEndpoint = {
    */
   org: string;
 };
+
 type ScimProvisionAndInviteUsersRequestOptions = {
   method: "POST";
   url: "/scim/v2/organizations/:org/Users";
@@ -34989,6 +35471,7 @@ type ScimGetProvisioningDetailsForUserEndpoint = {
    */
   scim_user_id: number;
 };
+
 type ScimGetProvisioningDetailsForUserRequestOptions = {
   method: "GET";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
@@ -35031,6 +35514,7 @@ type ScimReplaceProvisionedUserInformationEndpoint = {
    */
   scim_user_id: number;
 };
+
 type ScimReplaceProvisionedUserInformationRequestOptions = {
   method: "PUT";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
@@ -35073,6 +35557,7 @@ type ScimUpdateUserAttributeEndpoint = {
    */
   scim_user_id: number;
 };
+
 type ScimUpdateUserAttributeRequestOptions = {
   method: "PATCH";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
@@ -35115,6 +35600,7 @@ type ScimRemoveUserFromOrgEndpoint = {
    */
   scim_user_id: number;
 };
+
 type ScimRemoveUserFromOrgRequestOptions = {
   method: "DELETE";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
@@ -35144,6 +35630,7 @@ type SearchCodeEndpoint = {
    */
   page?: number;
 };
+
 type SearchCodeRequestOptions = {
   method: "GET";
   url: "/search/code";
@@ -35253,7 +35740,8 @@ type SearchCommitsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"cloak">;
+
 type SearchCommitsRequestOptions = {
   method: "GET";
   url: "/search/commits";
@@ -35446,6 +35934,7 @@ type SearchIssuesAndPullRequestsEndpoint = {
    */
   page?: number;
 };
+
 type SearchIssuesAndPullRequestsRequestOptions = {
   method: "GET";
   url: "/search/issues";
@@ -35531,6 +36020,7 @@ type SearchLabelsEndpoint = {
    */
   order?: "desc" | "asc";
 };
+
 type SearchLabelsRequestOptions = {
   method: "GET";
   url: "/search/labels";
@@ -35575,6 +36065,7 @@ type SearchReposEndpoint = {
    */
   page?: number;
 };
+
 type SearchReposRequestOptions = {
   method: "GET";
   url: "/search/repositories";
@@ -35628,6 +36119,7 @@ type SearchTopicsEndpoint = {
    */
   q: string;
 };
+
 type SearchTopicsRequestOptions = {
   method: "GET";
   url: "/search/topics";
@@ -35675,6 +36167,7 @@ type SearchUsersEndpoint = {
    */
   page?: number;
 };
+
 type SearchUsersRequestOptions = {
   method: "GET";
   url: "/search/users";
@@ -35709,6 +36202,7 @@ type TeamsGetLegacyEndpoint = {
    */
   team_id: number;
 };
+
 type TeamsGetLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id";
@@ -35798,6 +36292,7 @@ type TeamsUpdateLegacyEndpoint = {
    */
   parent_team_id?: number;
 };
+
 type TeamsUpdateLegacyRequestOptions = {
   method: "PATCH";
   url: "/teams/:team_id";
@@ -35859,6 +36354,7 @@ type TeamsDeleteLegacyEndpoint = {
    */
   team_id: number;
 };
+
 type TeamsDeleteLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id";
@@ -35884,6 +36380,7 @@ type TeamsListDiscussionsLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListDiscussionsLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions";
@@ -35962,6 +36459,7 @@ type TeamsCreateDiscussionLegacyEndpoint = {
    */
   private?: boolean;
 };
+
 type TeamsCreateDiscussionLegacyRequestOptions = {
   method: "POST";
   url: "/teams/:team_id/discussions";
@@ -36029,6 +36527,7 @@ type TeamsGetDiscussionLegacyEndpoint = {
    */
   discussion_number: number;
 };
+
 type TeamsGetDiscussionLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions/:discussion_number";
@@ -36104,6 +36603,7 @@ type TeamsUpdateDiscussionLegacyEndpoint = {
    */
   body?: string;
 };
+
 type TeamsUpdateDiscussionLegacyRequestOptions = {
   method: "PATCH";
   url: "/teams/:team_id/discussions/:discussion_number";
@@ -36171,6 +36671,7 @@ type TeamsDeleteDiscussionLegacyEndpoint = {
    */
   discussion_number: number;
 };
+
 type TeamsDeleteDiscussionLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/discussions/:discussion_number";
@@ -36200,6 +36701,7 @@ type TeamsListDiscussionCommentsLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListDiscussionCommentsLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions/:discussion_number/comments";
@@ -36269,6 +36771,7 @@ type TeamsCreateDiscussionCommentLegacyEndpoint = {
    */
   body: string;
 };
+
 type TeamsCreateDiscussionCommentLegacyRequestOptions = {
   method: "POST";
   url: "/teams/:team_id/discussions/:discussion_number/comments";
@@ -36335,6 +36838,7 @@ type TeamsGetDiscussionCommentLegacyEndpoint = {
    */
   comment_number: number;
 };
+
 type TeamsGetDiscussionCommentLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
@@ -36405,6 +36909,7 @@ type TeamsUpdateDiscussionCommentLegacyEndpoint = {
    */
   body: string;
 };
+
 type TeamsUpdateDiscussionCommentLegacyRequestOptions = {
   method: "PATCH";
   url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
@@ -36471,6 +36976,7 @@ type TeamsDeleteDiscussionCommentLegacyEndpoint = {
    */
   comment_number: number;
 };
+
 type TeamsDeleteDiscussionCommentLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number";
@@ -36511,7 +37017,8 @@ type ReactionsListForTeamDiscussionCommentLegacyEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForTeamDiscussionCommentLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
@@ -36574,7 +37081,8 @@ type ReactionsCreateForTeamDiscussionCommentLegacyEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions = {
   method: "POST";
   url: "/teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions";
@@ -36638,7 +37146,8 @@ type ReactionsListForTeamDiscussionLegacyEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsListForTeamDiscussionLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/discussions/:discussion_number/reactions";
@@ -36697,7 +37206,8 @@ type ReactionsCreateForTeamDiscussionLegacyEndpoint = {
     | "hooray"
     | "rocket"
     | "eyes";
-};
+} & RequiredPreview<"squirrel-girl">;
+
 type ReactionsCreateForTeamDiscussionLegacyRequestOptions = {
   method: "POST";
   url: "/teams/:team_id/discussions/:discussion_number/reactions";
@@ -36746,6 +37256,7 @@ type TeamsListPendingInvitationsLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListPendingInvitationsLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/invitations";
@@ -36807,6 +37318,7 @@ type TeamsListMembersLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListMembersLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/members";
@@ -36847,6 +37359,7 @@ type TeamsGetMemberLegacyEndpoint = {
    */
   username: string;
 };
+
 type TeamsGetMemberLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/members/:username";
@@ -36864,6 +37377,7 @@ type TeamsAddMemberLegacyEndpoint = {
    */
   username: string;
 };
+
 type TeamsAddMemberLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/members/:username";
@@ -36890,6 +37404,7 @@ type TeamsRemoveMemberLegacyEndpoint = {
    */
   username: string;
 };
+
 type TeamsRemoveMemberLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/members/:username";
@@ -36907,6 +37422,7 @@ type TeamsGetMembershipLegacyEndpoint = {
    */
   username: string;
 };
+
 type TeamsGetMembershipLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/memberships/:username";
@@ -36935,6 +37451,7 @@ type TeamsAddOrUpdateMembershipLegacyEndpoint = {
    */
   role?: "member" | "maintainer";
 };
+
 type TeamsAddOrUpdateMembershipLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/memberships/:username";
@@ -36957,6 +37474,7 @@ type TeamsRemoveMembershipLegacyEndpoint = {
    */
   username: string;
 };
+
 type TeamsRemoveMembershipLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/memberships/:username";
@@ -36977,7 +37495,8 @@ type TeamsListProjectsLegacyEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsListProjectsLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/projects";
@@ -37040,7 +37559,8 @@ type TeamsReviewProjectLegacyEndpoint = {
    * project_id parameter
    */
   project_id: number;
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsReviewProjectLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/projects/:project_id";
@@ -37108,7 +37628,8 @@ type TeamsAddOrUpdateProjectLegacyEndpoint = {
    * Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)."
    */
   permission?: "read" | "write" | "admin";
-};
+} & RequiredPreview<"inertia">;
+
 type TeamsAddOrUpdateProjectLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/projects/:project_id";
@@ -37130,6 +37651,7 @@ type TeamsRemoveProjectLegacyEndpoint = {
    */
   project_id: number;
 };
+
 type TeamsRemoveProjectLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/projects/:project_id";
@@ -37151,6 +37673,7 @@ type TeamsListReposLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListReposLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/repos";
@@ -37287,6 +37810,7 @@ type TeamsCheckManagesRepoLegacyEndpoint = {
    */
   repo: string;
 };
+
 type TeamsCheckManagesRepoLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/repos/:owner/:repo";
@@ -37564,6 +38088,7 @@ type TeamsAddOrUpdateRepoLegacyEndpoint = {
    */
   permission?: "pull" | "push" | "admin";
 };
+
 type TeamsAddOrUpdateRepoLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/repos/:owner/:repo";
@@ -37585,6 +38110,7 @@ type TeamsRemoveRepoLegacyEndpoint = {
    */
   repo: string;
 };
+
 type TeamsRemoveRepoLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/repos/:owner/:repo";
@@ -37598,6 +38124,7 @@ type TeamsListIdPGroupsForLegacyEndpoint = {
    */
   team_id: number;
 };
+
 type TeamsListIdPGroupsForLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/team-sync/group-mappings";
@@ -37623,6 +38150,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint = {
    */
   groups: TeamsCreateOrUpdateIdPGroupConnectionsLegacyParamsGroups[];
 };
+
 type TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions = {
   method: "PATCH";
   url: "/teams/:team_id/team-sync/group-mappings";
@@ -37654,6 +38182,7 @@ type TeamsListChildLegacyEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListChildLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/teams";
@@ -37691,6 +38220,7 @@ type TeamsListChildLegacyResponseData = Array<
 >;
 
 type UsersGetAuthenticatedEndpoint = {};
+
 type UsersGetAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user";
@@ -37774,6 +38304,7 @@ type UsersUpdateAuthenticatedEndpoint = {
    */
   bio?: string;
 };
+
 type UsersUpdateAuthenticatedRequestOptions = {
   method: "PATCH";
   url: "/user";
@@ -37828,6 +38359,7 @@ type UsersUpdateAuthenticatedResponseData = {
 };
 
 type UsersListBlockedEndpoint = {};
+
 type UsersListBlockedRequestOptions = {
   method: "GET";
   url: "/user/blocks";
@@ -37862,6 +38394,7 @@ type UsersCheckBlockedEndpoint = {
    */
   username: string;
 };
+
 type UsersCheckBlockedRequestOptions = {
   method: "GET";
   url: "/user/blocks/:username";
@@ -37875,6 +38408,7 @@ type UsersBlockEndpoint = {
    */
   username: string;
 };
+
 type UsersBlockRequestOptions = {
   method: "PUT";
   url: "/user/blocks/:username";
@@ -37888,6 +38422,7 @@ type UsersUnblockEndpoint = {
    */
   username: string;
 };
+
 type UsersUnblockRequestOptions = {
   method: "DELETE";
   url: "/user/blocks/:username";
@@ -37905,6 +38440,7 @@ type UsersTogglePrimaryEmailVisibilityEndpoint = {
    */
   visibility: string;
 };
+
 type UsersTogglePrimaryEmailVisibilityRequestOptions = {
   method: "PATCH";
   url: "/user/email/visibility";
@@ -37931,6 +38467,7 @@ type UsersListEmailsEndpoint = {
    */
   page?: number;
 };
+
 type UsersListEmailsRequestOptions = {
   method: "GET";
   url: "/user/emails";
@@ -37951,6 +38488,7 @@ type UsersAddEmailsEndpoint = {
    */
   emails: string[];
 };
+
 type UsersAddEmailsRequestOptions = {
   method: "POST";
   url: "/user/emails";
@@ -37971,6 +38509,7 @@ type UsersDeleteEmailsEndpoint = {
    */
   emails: string[];
 };
+
 type UsersDeleteEmailsRequestOptions = {
   method: "DELETE";
   url: "/user/emails";
@@ -37988,6 +38527,7 @@ type UsersListFollowersForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type UsersListFollowersForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/followers";
@@ -38028,6 +38568,7 @@ type UsersListFollowedByAuthenticatedEndpoint = {
    */
   page?: number;
 };
+
 type UsersListFollowedByAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/following";
@@ -38064,6 +38605,7 @@ type UsersCheckFollowingEndpoint = {
    */
   username: string;
 };
+
 type UsersCheckFollowingRequestOptions = {
   method: "GET";
   url: "/user/following/:username";
@@ -38077,6 +38619,7 @@ type UsersFollowEndpoint = {
    */
   username: string;
 };
+
 type UsersFollowRequestOptions = {
   method: "PUT";
   url: "/user/following/:username";
@@ -38090,6 +38633,7 @@ type UsersUnfollowEndpoint = {
    */
   username: string;
 };
+
 type UsersUnfollowRequestOptions = {
   method: "DELETE";
   url: "/user/following/:username";
@@ -38107,6 +38651,7 @@ type UsersListGpgKeysEndpoint = {
    */
   page?: number;
 };
+
 type UsersListGpgKeysRequestOptions = {
   method: "GET";
   url: "/user/gpg_keys";
@@ -38153,6 +38698,7 @@ type UsersCreateGpgKeyEndpoint = {
    */
   armored_public_key?: string;
 };
+
 type UsersCreateGpgKeyRequestOptions = {
   method: "POST";
   url: "/user/gpg_keys";
@@ -38198,6 +38744,7 @@ type UsersGetGpgKeyEndpoint = {
    */
   gpg_key_id: number;
 };
+
 type UsersGetGpgKeyRequestOptions = {
   method: "GET";
   url: "/user/gpg_keys/:gpg_key_id";
@@ -38243,6 +38790,7 @@ type UsersDeleteGpgKeyEndpoint = {
    */
   gpg_key_id: number;
 };
+
 type UsersDeleteGpgKeyRequestOptions = {
   method: "DELETE";
   url: "/user/gpg_keys/:gpg_key_id";
@@ -38259,7 +38807,8 @@ type AppsListInstallationsForAuthenticatedUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsListInstallationsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/installations";
@@ -38330,7 +38879,8 @@ type AppsListInstallationReposForAuthenticatedUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsListInstallationReposForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/installations/:installation_id/repositories";
@@ -38460,7 +39010,8 @@ type AppsAddRepoToInstallationEndpoint = {
    * repository_id parameter
    */
   repository_id: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsAddRepoToInstallationRequestOptions = {
   method: "PUT";
   url: "/user/installations/:installation_id/repositories/:repository_id";
@@ -38477,7 +39028,8 @@ type AppsRemoveRepoFromInstallationEndpoint = {
    * repository_id parameter
    */
   repository_id: number;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsRemoveRepoFromInstallationRequestOptions = {
   method: "DELETE";
   url: "/user/installations/:installation_id/repositories/:repository_id";
@@ -38524,6 +39076,7 @@ type IssuesListForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type IssuesListForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/issues";
@@ -38791,6 +39344,7 @@ type UsersListPublicKeysEndpoint = {
    */
   page?: number;
 };
+
 type UsersListPublicKeysRequestOptions = {
   method: "GET";
   url: "/user/keys";
@@ -38812,6 +39366,7 @@ type UsersCreatePublicKeyEndpoint = {
    */
   key?: string;
 };
+
 type UsersCreatePublicKeyRequestOptions = {
   method: "POST";
   url: "/user/keys";
@@ -38826,6 +39381,7 @@ type UsersGetPublicKeyEndpoint = {
    */
   key_id: number;
 };
+
 type UsersGetPublicKeyRequestOptions = {
   method: "GET";
   url: "/user/keys/:key_id";
@@ -38840,6 +39396,7 @@ type UsersDeletePublicKeyEndpoint = {
    */
   key_id: number;
 };
+
 type UsersDeletePublicKeyRequestOptions = {
   method: "DELETE";
   url: "/user/keys/:key_id";
@@ -38857,6 +39414,7 @@ type AppsListSubscriptionsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type AppsListSubscriptionsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/marketplace_purchases";
@@ -38910,6 +39468,7 @@ type AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint = {
    */
   page?: number;
 };
+
 type AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions = {
   method: "GET";
   url: "/user/marketplace_purchases/stubbed";
@@ -38967,6 +39526,7 @@ type OrgsListMembershipsEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListMembershipsRequestOptions = {
   method: "GET";
   url: "/user/memberships/orgs";
@@ -39025,6 +39585,7 @@ type OrgsGetMembershipForAuthenticatedUserEndpoint = {
    */
   org: string;
 };
+
 type OrgsGetMembershipForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/memberships/orgs/:org";
@@ -39084,6 +39645,7 @@ type OrgsUpdateMembershipEndpoint = {
    */
   state: "active";
 };
+
 type OrgsUpdateMembershipRequestOptions = {
   method: "PATCH";
   url: "/user/memberships/orgs/:org";
@@ -39147,6 +39709,7 @@ type MigrationsStartForAuthenticatedUserEndpoint = {
    */
   exclude_attachments?: boolean;
 };
+
 type MigrationsStartForAuthenticatedUserRequestOptions = {
   method: "POST";
   url: "/user/migrations";
@@ -39304,7 +39867,8 @@ type MigrationsListForAuthenticatedUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsListForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/migrations";
@@ -39461,7 +40025,8 @@ type MigrationsGetStatusForAuthenticatedUserEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsGetStatusForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/migrations/:migration_id";
@@ -39615,7 +40180,8 @@ type MigrationsGetArchiveForAuthenticatedUserEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsGetArchiveForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/migrations/:migration_id/archive";
@@ -39628,7 +40194,8 @@ type MigrationsDeleteArchiveForAuthenticatedUserEndpoint = {
    * migration_id parameter
    */
   migration_id: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsDeleteArchiveForAuthenticatedUserRequestOptions = {
   method: "DELETE";
   url: "/user/migrations/:migration_id/archive";
@@ -39645,7 +40212,8 @@ type MigrationsUnlockRepoForAuthenticatedUserEndpoint = {
    * repo_name parameter
    */
   repo_name: string;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsUnlockRepoForAuthenticatedUserRequestOptions = {
   method: "DELETE";
   url: "/user/migrations/:migration_id/repos/:repo_name/lock";
@@ -39663,6 +40231,7 @@ type OrgsListForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/orgs";
@@ -39696,7 +40265,8 @@ type ProjectsCreateForAuthenticatedUserEndpoint = {
    * The description of the project.
    */
   body?: string;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsCreateForAuthenticatedUserRequestOptions = {
   method: "POST";
   url: "/user/projects";
@@ -39749,6 +40319,7 @@ type UsersListPublicEmailsEndpoint = {
    */
   page?: number;
 };
+
 type UsersListPublicEmailsRequestOptions = {
   method: "GET";
   url: "/user/public_emails";
@@ -39800,6 +40371,7 @@ type ReposListForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ReposListForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/repos";
@@ -39878,6 +40450,7 @@ type ReposCreateForAuthenticatedUserEndpoint = {
    */
   delete_branch_on_merge?: boolean;
 };
+
 type ReposCreateForAuthenticatedUserRequestOptions = {
   method: "POST";
   url: "/user/repos";
@@ -40002,6 +40575,7 @@ type ReposListInvitationsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ReposListInvitationsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/repository_invitations";
@@ -40137,6 +40711,7 @@ type ReposAcceptInvitationEndpoint = {
    */
   invitation_id: number;
 };
+
 type ReposAcceptInvitationRequestOptions = {
   method: "PATCH";
   url: "/user/repository_invitations/:invitation_id";
@@ -40150,6 +40725,7 @@ type ReposDeclineInvitationEndpoint = {
    */
   invitation_id: number;
 };
+
 type ReposDeclineInvitationRequestOptions = {
   method: "DELETE";
   url: "/user/repository_invitations/:invitation_id";
@@ -40175,6 +40751,7 @@ type ActivityListReposStarredByAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListReposStarredByAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/starred";
@@ -40302,6 +40879,7 @@ type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
    */
   repo: string;
 };
+
 type ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/starred/:owner/:repo";
@@ -40319,6 +40897,7 @@ type ActivityStarRepoForAuthenticatedUserEndpoint = {
    */
   repo: string;
 };
+
 type ActivityStarRepoForAuthenticatedUserRequestOptions = {
   method: "PUT";
   url: "/user/starred/:owner/:repo";
@@ -40336,6 +40915,7 @@ type ActivityUnstarRepoForAuthenticatedUserEndpoint = {
    */
   repo: string;
 };
+
 type ActivityUnstarRepoForAuthenticatedUserRequestOptions = {
   method: "DELETE";
   url: "/user/starred/:owner/:repo";
@@ -40353,6 +40933,7 @@ type ActivityListWatchedReposForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListWatchedReposForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/subscriptions";
@@ -40485,6 +41066,7 @@ type ActivityCheckWatchingRepoLegacyEndpoint = {
    */
   repo: string;
 };
+
 type ActivityCheckWatchingRepoLegacyRequestOptions = {
   method: "GET";
   url: "/user/subscriptions/:owner/:repo";
@@ -40502,6 +41084,7 @@ type ActivityWatchRepoLegacyEndpoint = {
    */
   repo: string;
 };
+
 type ActivityWatchRepoLegacyRequestOptions = {
   method: "PUT";
   url: "/user/subscriptions/:owner/:repo";
@@ -40519,6 +41102,7 @@ type ActivityStopWatchingRepoLegacyEndpoint = {
    */
   repo: string;
 };
+
 type ActivityStopWatchingRepoLegacyRequestOptions = {
   method: "DELETE";
   url: "/user/subscriptions/:owner/:repo";
@@ -40536,6 +41120,7 @@ type TeamsListForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type TeamsListForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/teams";
@@ -40607,7 +41192,8 @@ type MigrationsListReposForUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"wyandotte">;
+
 type MigrationsListReposForUserRequestOptions = {
   method: "GET";
   url: "/user/:migration_id/repositories";
@@ -40744,6 +41330,7 @@ type UsersListEndpoint = {
    */
   page?: number;
 };
+
 type UsersListRequestOptions = {
   method: "GET";
   url: "/users";
@@ -40778,6 +41365,7 @@ type UsersGetByUsernameEndpoint = {
    */
   username: string;
 };
+
 type UsersGetByUsernameRequestOptions = {
   method: "GET";
   url: "/users/:username";
@@ -40839,6 +41427,7 @@ type ActivityListEventsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListEventsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/users/:username/events";
@@ -40864,6 +41453,7 @@ type ActivityListOrgEventsForAuthenticatedUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListOrgEventsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/users/:username/events/orgs/:org";
@@ -40885,6 +41475,7 @@ type ActivityListPublicEventsForUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListPublicEventsForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/events/public";
@@ -40906,6 +41497,7 @@ type UsersListFollowersForUserEndpoint = {
    */
   page?: number;
 };
+
 type UsersListFollowersForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/followers";
@@ -40950,6 +41542,7 @@ type UsersListFollowingForUserEndpoint = {
    */
   page?: number;
 };
+
 type UsersListFollowingForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/following";
@@ -40990,6 +41583,7 @@ type UsersCheckFollowingForUserEndpoint = {
    */
   target_user: string;
 };
+
 type UsersCheckFollowingForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/following/:target_user";
@@ -41015,6 +41609,7 @@ type GistsListForUserEndpoint = {
    */
   page?: number;
 };
+
 type GistsListForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/gists";
@@ -41087,6 +41682,7 @@ type UsersListGpgKeysForUserEndpoint = {
    */
   page?: number;
 };
+
 type UsersListGpgKeysForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/gpg_keys";
@@ -41143,6 +41739,7 @@ type UsersGetContextForUserEndpoint = {
    */
   subject_id?: string;
 };
+
 type UsersGetContextForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/hovercard";
@@ -41162,7 +41759,8 @@ type AppsGetUserInstallationEndpoint = {
    * username parameter
    */
   username: string;
-};
+} & RequiredPreview<"machine-man">;
+
 type AppsGetUserInstallationRequestOptions = {
   method: "GET";
   url: "/users/:username/installation";
@@ -41225,6 +41823,7 @@ type UsersListPublicKeysForUserEndpoint = {
    */
   page?: number;
 };
+
 type UsersListPublicKeysForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/keys";
@@ -41250,6 +41849,7 @@ type OrgsListForUserEndpoint = {
    */
   page?: number;
 };
+
 type OrgsListForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/orgs";
@@ -41289,7 +41889,8 @@ type ProjectsListForUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-};
+} & RequiredPreview<"inertia">;
+
 type ProjectsListForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/projects";
@@ -41349,6 +41950,7 @@ type ActivityListReceivedEventsForUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListReceivedEventsForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/received_events";
@@ -41370,6 +41972,7 @@ type ActivityListReceivedPublicEventsForUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListReceivedPublicEventsForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/received_events/public";
@@ -41403,6 +42006,7 @@ type ReposListForUserEndpoint = {
    */
   page?: number;
 };
+
 type ReposListForUserRequestOptions = {
   method: "GET";
   url: "/users/:username/repos";
@@ -41432,6 +42036,7 @@ type ActivityListReposStarredByUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListReposStarredByUserRequestOptions = {
   method: "GET";
   url: "/users/:username/starred";
@@ -41563,6 +42168,7 @@ type ActivityListReposWatchedByUserEndpoint = {
    */
   page?: number;
 };
+
 type ActivityListReposWatchedByUserRequestOptions = {
   method: "GET";
   url: "/users/:username/subscriptions";
