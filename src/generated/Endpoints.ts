@@ -3,2965 +3,4753 @@ import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
 
 export interface Endpoints {
+  /**
+   * @see https://developer.github.com/v3/apps/#delete-an-installation
+   */
   "DELETE /app/installations/:installation_id": [
     AppsDeleteInstallationEndpoint,
     AppsDeleteInstallationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-authorization
+   */
   "DELETE /applications/:client_id/grant": [
     AppsDeleteAuthorizationEndpoint,
     AppsDeleteAuthorizationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
+   */
   "DELETE /applications/:client_id/grants/:access_token": [
     AppsRevokeGrantForApplicationEndpoint,
     AppsRevokeGrantForApplicationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token
+   */
   "DELETE /applications/:client_id/token": [
     AppsDeleteTokenEndpoint,
     AppsDeleteTokenRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
+   */
   "DELETE /applications/:client_id/tokens/:access_token": [
     AppsRevokeAuthorizationForApplicationEndpoint,
     AppsRevokeAuthorizationForApplicationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
+   */
   "DELETE /applications/grants/:grant_id": [
     OauthAuthorizationsDeleteGrantEndpoint,
     OauthAuthorizationsDeleteGrantRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
+   */
   "DELETE /authorizations/:authorization_id": [
     OauthAuthorizationsDeleteAuthorizationEndpoint,
     OauthAuthorizationsDeleteAuthorizationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#delete-a-gist
+   */
   "DELETE /gists/:gist_id": [
     GistsDeleteEndpoint,
     GistsDeleteRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/comments/#delete-a-comment
+   */
   "DELETE /gists/:gist_id/comments/:comment_id": [
     GistsDeleteCommentEndpoint,
     GistsDeleteCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#unstar-a-gist
+   */
   "DELETE /gists/:gist_id/star": [
     GistsUnstarEndpoint,
     GistsUnstarRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#revoke-an-installation-token
+   */
   "DELETE /installation/token": [
     AppsRevokeInstallationTokenEndpoint,
     AppsRevokeInstallationTokenRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription
+   */
   "DELETE /notifications/threads/:thread_id/subscription": [
     ActivityDeleteThreadSubscriptionEndpoint,
     ActivityDeleteThreadSubscriptionRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/blocking/#unblock-a-user
+   */
   "DELETE /orgs/:org/blocks/:username": [
     OrgsUnblockUserEndpoint,
     OrgsUnblockUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#remove-a-credential-authorization-for-an-organization
+   */
   "DELETE /orgs/:org/credential-authorizations/:credential_id": [
     OrgsRemoveCredentialAuthorizationEndpoint,
     OrgsRemoveCredentialAuthorizationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#delete-a-hook
+   */
   "DELETE /orgs/:org/hooks/:hook_id": [
     OrgsDeleteHookEndpoint,
     OrgsDeleteHookRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/orgs/#remove-interaction-restrictions-for-an-organization
+   */
   "DELETE /orgs/:org/interaction-limits": [
     InteractionsRemoveRestrictionsForOrgEndpoint,
     InteractionsRemoveRestrictionsForOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#remove-a-member
+   */
   "DELETE /orgs/:org/members/:username": [
     OrgsRemoveMemberEndpoint,
     OrgsRemoveMemberRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#remove-organization-membership
+   */
   "DELETE /orgs/:org/memberships/:username": [
     OrgsRemoveMembershipEndpoint,
     OrgsRemoveMembershipRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#delete-an-organization-migration-archive
+   */
   "DELETE /orgs/:org/migrations/:migration_id/archive": [
     MigrationsDeleteArchiveForOrgEndpoint,
     MigrationsDeleteArchiveForOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#unlock-an-organization-repository
+   */
   "DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock": [
     MigrationsUnlockRepoForOrgEndpoint,
     MigrationsUnlockRepoForOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator
+   */
   "DELETE /orgs/:org/outside_collaborators/:username": [
     OrgsRemoveOutsideCollaboratorEndpoint,
     OrgsRemoveOutsideCollaboratorRequestOptions,
     OrgsRemoveOutsideCollaboratorResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#conceal-a-users-membership
+   */
   "DELETE /orgs/:org/public_members/:username": [
     OrgsConcealMembershipEndpoint,
     OrgsConcealMembershipRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#delete-team
+   */
   "DELETE /orgs/:org/teams/:team_slug": [
     TeamsDeleteInOrgEndpoint,
     TeamsDeleteInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#delete-a-discussion
+   */
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsDeleteDiscussionInOrgEndpoint,
     TeamsDeleteDiscussionInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment
+   */
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsDeleteDiscussionCommentInOrgEndpoint,
     TeamsDeleteDiscussionCommentInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-team-discussion-comment-reaction
+   */
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id": [
     ReactionsDeleteForTeamDiscussionCommentEndpoint,
     ReactionsDeleteForTeamDiscussionCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-team-discussion-reaction
+   */
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id": [
     ReactionsDeleteForTeamDiscussionEndpoint,
     ReactionsDeleteForTeamDiscussionRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#remove-team-membership
+   */
   "DELETE /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsRemoveMembershipInOrgEndpoint,
     TeamsRemoveMembershipInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#remove-team-project
+   */
   "DELETE /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsRemoveProjectInOrgEndpoint,
     TeamsRemoveProjectInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#remove-team-repository
+   */
   "DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsRemoveRepoInOrgEndpoint,
     TeamsRemoveRepoInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#delete-a-project
+   */
   "DELETE /projects/:project_id": [
     ProjectsDeleteEndpoint,
     ProjectsDeleteRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/collaborators/#remove-user-as-a-collaborator
+   */
   "DELETE /projects/:project_id/collaborators/:username": [
     ProjectsRemoveCollaboratorEndpoint,
     ProjectsRemoveCollaboratorRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#delete-a-project-column
+   */
   "DELETE /projects/columns/:column_id": [
     ProjectsDeleteColumnEndpoint,
     ProjectsDeleteColumnRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#delete-a-project-card
+   */
   "DELETE /projects/columns/cards/:card_id": [
     ProjectsDeleteCardEndpoint,
     ProjectsDeleteCardRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
+   */
   "DELETE /reactions/:reaction_id": [
     ReactionsDeleteLegacyEndpoint,
     ReactionsDeleteLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#delete-a-repository
+   */
   "DELETE /repos/:owner/:repo": [
     ReposDeleteEndpoint,
     ReposDeleteRequestOptions,
     ReposDeleteResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/artifacts/#delete-an-artifact
+   */
   "DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id": [
     ActionsDeleteArtifactEndpoint,
     ActionsDeleteArtifactRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#remove-a-self-hosted-runner
+   */
   "DELETE /repos/:owner/:repo/actions/runners/:runner_id": [
     ActionsRemoveSelfHostedRunnerEndpoint,
     ActionsRemoveSelfHostedRunnerRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository
+   */
   "DELETE /repos/:owner/:repo/actions/secrets/:name": [
     ActionsDeleteSecretFromRepoEndpoint,
     ActionsDeleteSecretFromRepoRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#disable-automated-security-fixes
+   */
   "DELETE /repos/:owner/:repo/automated-security-fixes": [
     ReposDisableAutomatedSecurityFixesEndpoint,
     ReposDisableAutomatedSecurityFixesRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-branch-protection
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection": [
     ReposRemoveBranchProtectionEndpoint,
     ReposRemoveBranchProtectionRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-admin-enforcement-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposRemoveProtectedBranchAdminEnforcementEndpoint,
     ReposRemoveProtectedBranchAdminEnforcementRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-pull-request-review-enforcement-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint,
     ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposRemoveProtectedBranchRequiredSignaturesEndpoint,
     ReposRemoveProtectedBranchRequiredSignaturesRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposRemoveProtectedBranchRequiredStatusChecksEndpoint,
     ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-contexts-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint,
     ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions,
     ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-restrictions-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions": [
     ReposRemoveProtectedBranchRestrictionsEndpoint,
     ReposRemoveProtectedBranchRestrictionsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-app-restrictions-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposRemoveProtectedBranchAppRestrictionsEndpoint,
     ReposRemoveProtectedBranchAppRestrictionsRequestOptions,
     ReposRemoveProtectedBranchAppRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-team-restrictions-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposRemoveProtectedBranchTeamRestrictionsEndpoint,
     ReposRemoveProtectedBranchTeamRestrictionsRequestOptions,
     ReposRemoveProtectedBranchTeamRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#remove-user-restrictions-of-protected-branch
+   */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposRemoveProtectedBranchUserRestrictionsEndpoint,
     ReposRemoveProtectedBranchUserRestrictionsRequestOptions,
     ReposRemoveProtectedBranchUserRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator
+   */
   "DELETE /repos/:owner/:repo/collaborators/:username": [
     ReposRemoveCollaboratorEndpoint,
     ReposRemoveCollaboratorRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#delete-a-commit-comment
+   */
   "DELETE /repos/:owner/:repo/comments/:comment_id": [
     ReposDeleteCommitCommentEndpoint,
     ReposDeleteCommitCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-a-commit-comment-reaction
+   */
   "DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForCommitCommentEndpoint,
     ReactionsDeleteForCommitCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/contents/#delete-a-file
+   */
   "DELETE /repos/:owner/:repo/contents/:path": [
     ReposDeleteFileEndpoint,
     ReposDeleteFileRequestOptions,
     ReposDeleteFileResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#delete-a-deployment
+   */
   "DELETE /repos/:owner/:repo/deployments/:deployment_id": [
     ReposDeleteDeploymentEndpoint,
     ReposDeleteDeploymentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/downloads/#delete-a-download
+   */
   "DELETE /repos/:owner/:repo/downloads/:download_id": [
     ReposDeleteDownloadEndpoint,
     ReposDeleteDownloadRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/git/refs/#delete-a-reference
+   */
   "DELETE /repos/:owner/:repo/git/refs/:ref": [
     GitDeleteRefEndpoint,
     GitDeleteRefRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#delete-a-hook
+   */
   "DELETE /repos/:owner/:repo/hooks/:hook_id": [
     ReposDeleteHookEndpoint,
     ReposDeleteHookRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#cancel-an-import
+   */
   "DELETE /repos/:owner/:repo/import": [
     MigrationsCancelImportEndpoint,
     MigrationsCancelImportRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/repos/#remove-interaction-restrictions-for-a-repository
+   */
   "DELETE /repos/:owner/:repo/interaction-limits": [
     InteractionsRemoveRestrictionsForRepoEndpoint,
     InteractionsRemoveRestrictionsForRepoRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#delete-a-repository-invitation
+   */
   "DELETE /repos/:owner/:repo/invitations/:invitation_id": [
     ReposDeleteInvitationEndpoint,
     ReposDeleteInvitationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/assignees/#remove-assignees-from-an-issue
+   */
   "DELETE /repos/:owner/:repo/issues/:issue_number/assignees": [
     IssuesRemoveAssigneesEndpoint,
     IssuesRemoveAssigneesRequestOptions,
     IssuesRemoveAssigneesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue
+   */
   "DELETE /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesRemoveAllLabelsEndpoint,
     IssuesRemoveAllLabelsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#remove-a-label-from-an-issue
+   */
   "DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name": [
     IssuesRemoveLabelEndpoint,
     IssuesRemoveLabelRequestOptions,
     IssuesRemoveLabelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#unlock-an-issue
+   */
   "DELETE /repos/:owner/:repo/issues/:issue_number/lock": [
     IssuesUnlockEndpoint,
     IssuesUnlockRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-an-issue-reaction
+   */
   "DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id": [
     ReactionsDeleteForIssueEndpoint,
     ReactionsDeleteForIssueRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#delete-a-comment
+   */
   "DELETE /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesDeleteCommentEndpoint,
     IssuesDeleteCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-an-issue-comment-reaction
+   */
   "DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForIssueCommentEndpoint,
     ReactionsDeleteForIssueCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/keys/#remove-a-deploy-key
+   */
   "DELETE /repos/:owner/:repo/keys/:key_id": [
     ReposRemoveDeployKeyEndpoint,
     ReposRemoveDeployKeyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#delete-a-label
+   */
   "DELETE /repos/:owner/:repo/labels/:name": [
     IssuesDeleteLabelEndpoint,
     IssuesDeleteLabelRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/milestones/#delete-a-milestone
+   */
   "DELETE /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesDeleteMilestoneEndpoint,
     IssuesDeleteMilestoneRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#disable-a-pages-site
+   */
   "DELETE /repos/:owner/:repo/pages": [
     ReposDisablePagesSiteEndpoint,
     ReposDisablePagesSiteRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/review_requests/#delete-a-review-request
+   */
   "DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsDeleteReviewRequestEndpoint,
     PullsDeleteReviewRequestRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review
+   */
   "DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsDeletePendingReviewEndpoint,
     PullsDeletePendingReviewRequestOptions,
     PullsDeletePendingReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#delete-a-comment
+   */
   "DELETE /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsDeleteCommentEndpoint,
     PullsDeleteCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#delete-a-pull-request-comment-reaction
+   */
   "DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id": [
     ReactionsDeleteForPullRequestCommentEndpoint,
     ReactionsDeleteForPullRequestCommentRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#delete-a-release
+   */
   "DELETE /repos/:owner/:repo/releases/:release_id": [
     ReposDeleteReleaseEndpoint,
     ReposDeleteReleaseRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#delete-a-release-asset
+   */
   "DELETE /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposDeleteReleaseAssetEndpoint,
     ReposDeleteReleaseAssetRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription
+   */
   "DELETE /repos/:owner/:repo/subscription": [
     ActivityDeleteRepoSubscriptionEndpoint,
     ActivityDeleteRepoSubscriptionRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#disable-vulnerability-alerts
+   */
   "DELETE /repos/:owner/:repo/vulnerability-alerts": [
     ReposDisableVulnerabilityAlertsEndpoint,
     ReposDisableVulnerabilityAlertsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#remove-a-user-from-the-organization
+   */
   "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimRemoveUserFromOrgEndpoint,
     ScimRemoveUserFromOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#delete-team-legacy
+   */
   "DELETE /teams/:team_id": [
     TeamsDeleteLegacyEndpoint,
     TeamsDeleteLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
+   */
   "DELETE /teams/:team_id/discussions/:discussion_number": [
     TeamsDeleteDiscussionLegacyEndpoint,
     TeamsDeleteDiscussionLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
+   */
   "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsDeleteDiscussionCommentLegacyEndpoint,
     TeamsDeleteDiscussionCommentLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
+   */
   "DELETE /teams/:team_id/members/:username": [
     TeamsRemoveMemberLegacyEndpoint,
     TeamsRemoveMemberLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
+   */
   "DELETE /teams/:team_id/memberships/:username": [
     TeamsRemoveMembershipLegacyEndpoint,
     TeamsRemoveMembershipLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#remove-team-project-legacy
+   */
   "DELETE /teams/:team_id/projects/:project_id": [
     TeamsRemoveProjectLegacyEndpoint,
     TeamsRemoveProjectLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#remove-team-repository-legacy
+   */
   "DELETE /teams/:team_id/repos/:owner/:repo": [
     TeamsRemoveRepoLegacyEndpoint,
     TeamsRemoveRepoLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/blocking/#unblock-a-user
+   */
   "DELETE /user/blocks/:username": [
     UsersUnblockEndpoint,
     UsersUnblockRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/emails/#delete-email-addresses
+   */
   "DELETE /user/emails": [
     UsersDeleteEmailsEndpoint,
     UsersDeleteEmailsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#unfollow-a-user
+   */
   "DELETE /user/following/:username": [
     UsersUnfollowEndpoint,
     UsersUnfollowRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/gpg_keys/#delete-a-gpg-key
+   */
   "DELETE /user/gpg_keys/:gpg_key_id": [
     UsersDeleteGpgKeyEndpoint,
     UsersDeleteGpgKeyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#remove-repository-from-installation
+   */
   "DELETE /user/installations/:installation_id/repositories/:repository_id": [
     AppsRemoveRepoFromInstallationEndpoint,
     AppsRemoveRepoFromInstallationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/keys/#delete-a-public-key
+   */
   "DELETE /user/keys/:key_id": [
     UsersDeletePublicKeyEndpoint,
     UsersDeletePublicKeyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#delete-a-user-migration-archive
+   */
   "DELETE /user/migrations/:migration_id/archive": [
     MigrationsDeleteArchiveForAuthenticatedUserEndpoint,
     MigrationsDeleteArchiveForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#unlock-a-user-repository
+   */
   "DELETE /user/migrations/:migration_id/repos/:repo_name/lock": [
     MigrationsUnlockRepoForAuthenticatedUserEndpoint,
     MigrationsUnlockRepoForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#decline-a-repository-invitation
+   */
   "DELETE /user/repository_invitations/:invitation_id": [
     ReposDeclineInvitationEndpoint,
     ReposDeclineInvitationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user
+   */
   "DELETE /user/starred/:owner/:repo": [
     ActivityUnstarRepoForAuthenticatedUserEndpoint,
     ActivityUnstarRepoForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy
+   */
   "DELETE /user/subscriptions/:owner/:repo": [
     ActivityStopWatchingRepoLegacyEndpoint,
     ActivityStopWatchingRepoLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-the-authenticated-github-app
+   */
   "GET /app": [
     AppsGetAuthenticatedEndpoint,
     AppsGetAuthenticatedRequestOptions,
     AppsGetAuthenticatedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#list-installations
+   */
   "GET /app/installations": [
     AppsListInstallationsEndpoint,
     AppsListInstallationsRequestOptions,
     AppsListInstallationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-an-installation
+   */
   "GET /app/installations/:installation_id": [
     AppsGetInstallationEndpoint,
     AppsGetInstallationRequestOptions,
     AppsGetInstallationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
+   */
   "GET /applications/:client_id/tokens/:access_token": [
     AppsCheckAuthorizationEndpoint,
     AppsCheckAuthorizationRequestOptions,
     AppsCheckAuthorizationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#list-your-grants
+   */
   "GET /applications/grants": [
     OauthAuthorizationsListGrantsEndpoint,
     OauthAuthorizationsListGrantsRequestOptions,
     OauthAuthorizationsListGrantsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
+   */
   "GET /applications/grants/:grant_id": [
     OauthAuthorizationsGetGrantEndpoint,
     OauthAuthorizationsGetGrantRequestOptions,
     OauthAuthorizationsGetGrantResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-a-single-github-app
+   */
   "GET /apps/:app_slug": [
     AppsGetBySlugEndpoint,
     AppsGetBySlugRequestOptions,
     AppsGetBySlugResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
+   */
   "GET /authorizations": [
     OauthAuthorizationsListAuthorizationsEndpoint,
     OauthAuthorizationsListAuthorizationsRequestOptions,
     OauthAuthorizationsListAuthorizationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
+   */
   "GET /authorizations/:authorization_id": [
     OauthAuthorizationsGetAuthorizationEndpoint,
     OauthAuthorizationsGetAuthorizationRequestOptions,
     OauthAuthorizationsGetAuthorizationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct
+   */
   "GET /codes_of_conduct": [
     CodesOfConductGetAllCodesOfConductEndpoint,
     CodesOfConductGetAllCodesOfConductRequestOptions,
     CodesOfConductGetAllCodesOfConductResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct
+   */
   "GET /codes_of_conduct/:key": [
     CodesOfConductGetConductCodeEndpoint,
     CodesOfConductGetConductCodeRequestOptions,
     CodesOfConductGetConductCodeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/emojis/#emojis
+   */
   "GET /emojis": [EmojisGetEndpoint, EmojisGetRequestOptions, any];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-public-events
+   */
   "GET /events": [
     ActivityListPublicEventsEndpoint,
     ActivityListPublicEventsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/feeds/#get-feeds
+   */
   "GET /feeds": [
     ActivityGetFeedsEndpoint,
     ActivityGetFeedsRequestOptions,
     ActivityGetFeedsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user
+   */
   "GET /gists": [
     GistsListEndpoint,
     GistsListRequestOptions,
     GistsListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#get-a-gist
+   */
   "GET /gists/:gist_id": [
     GistsGetEndpoint,
     GistsGetRequestOptions,
     GistsGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist
+   */
   "GET /gists/:gist_id/:sha": [
     GistsGetRevisionEndpoint,
     GistsGetRevisionRequestOptions,
     GistsGetRevisionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist
+   */
   "GET /gists/:gist_id/comments": [
     GistsListCommentsEndpoint,
     GistsListCommentsRequestOptions,
     GistsListCommentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/comments/#get-a-single-comment
+   */
   "GET /gists/:gist_id/comments/:comment_id": [
     GistsGetCommentEndpoint,
     GistsGetCommentRequestOptions,
     GistsGetCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-gist-commits
+   */
   "GET /gists/:gist_id/commits": [
     GistsListCommitsEndpoint,
     GistsListCommitsRequestOptions,
     GistsListCommitsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-gist-forks
+   */
   "GET /gists/:gist_id/forks": [
     GistsListForksEndpoint,
     GistsListForksRequestOptions,
     GistsListForksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#check-if-a-gist-is-starred
+   */
   "GET /gists/:gist_id/star": [
     GistsCheckIsStarredEndpoint,
     GistsCheckIsStarredRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-public-gists
+   */
   "GET /gists/public": [
     GistsListPublicEndpoint,
     GistsListPublicRequestOptions,
     GistsListPublicResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-starred-gists
+   */
   "GET /gists/starred": [
     GistsListStarredEndpoint,
     GistsListStarredRequestOptions,
     GistsListStarredResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gitignore/#listing-available-templates
+   */
   "GET /gitignore/templates": [
     GitignoreListTemplatesEndpoint,
     GitignoreListTemplatesRequestOptions,
     GitignoreListTemplatesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gitignore/#get-a-single-template
+   */
   "GET /gitignore/templates/:name": [
     GitignoreGetTemplateEndpoint,
     GitignoreGetTemplateRequestOptions,
     GitignoreGetTemplateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#list-repositories
+   */
   "GET /installation/repositories": [
     AppsListReposEndpoint,
     AppsListReposRequestOptions,
     AppsListReposResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user
+   */
   "GET /issues": [
     IssuesListEndpoint,
     IssuesListRequestOptions,
     IssuesListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/legacy/#search-issues
+   */
   "GET /legacy/issues/search/:owner/:repository/:state/:keyword": [
     SearchIssuesLegacyEndpoint,
     SearchIssuesLegacyRequestOptions,
     SearchIssuesLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/legacy/#search-repositories
+   */
   "GET /legacy/repos/search/:keyword": [
     SearchReposLegacyEndpoint,
     SearchReposLegacyRequestOptions,
     SearchReposLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/legacy/#email-search
+   */
   "GET /legacy/user/email/:email": [
     SearchEmailLegacyEndpoint,
     SearchEmailLegacyRequestOptions,
     SearchEmailLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/legacy/#search-users
+   */
   "GET /legacy/user/search/:keyword": [
     SearchUsersLegacyEndpoint,
     SearchUsersLegacyRequestOptions,
     SearchUsersLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/licenses/#list-commonly-used-licenses
+   */
   "GET /licenses": [
     LicensesListCommonlyUsedEndpoint,
     LicensesListCommonlyUsedRequestOptions,
     LicensesListCommonlyUsedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/licenses/#get-an-individual-license
+   */
   "GET /licenses/:license": [
     LicensesGetEndpoint,
     LicensesGetRequestOptions,
     LicensesGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account
+   */
   "GET /marketplace_listing/accounts/:account_id": [
     AppsGetSubscriptionPlanForAccountEndpoint,
     AppsGetSubscriptionPlanForAccountRequestOptions,
     AppsGetSubscriptionPlanForAccountResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-plans
+   */
   "GET /marketplace_listing/plans": [
     AppsListPlansEndpoint,
     AppsListPlansRequestOptions,
     AppsListPlansResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan
+   */
   "GET /marketplace_listing/plans/:plan_id/accounts": [
     AppsListAccountsForPlanEndpoint,
     AppsListAccountsForPlanRequestOptions,
     AppsListAccountsForPlanResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed
+   */
   "GET /marketplace_listing/stubbed/accounts/:account_id": [
     AppsGetSubscriptionPlanForAccountStubbedEndpoint,
     AppsGetSubscriptionPlanForAccountStubbedRequestOptions,
     AppsGetSubscriptionPlanForAccountStubbedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-plans-stubbed
+   */
   "GET /marketplace_listing/stubbed/plans": [
     AppsListPlansStubbedEndpoint,
     AppsListPlansStubbedRequestOptions,
     AppsListPlansStubbedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed
+   */
   "GET /marketplace_listing/stubbed/plans/:plan_id/accounts": [
     AppsListAccountsForPlanStubbedEndpoint,
     AppsListAccountsForPlanStubbedRequestOptions,
     AppsListAccountsForPlanStubbedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/meta/#meta
+   */
   "GET /meta": [MetaGetEndpoint, MetaGetRequestOptions, MetaGetResponseData];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories
+   */
   "GET /networks/:owner/:repo/events": [
     ActivityListPublicEventsForRepoNetworkEndpoint,
     ActivityListPublicEventsForRepoNetworkRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user
+   */
   "GET /notifications": [
     ActivityListNotificationsForAuthenticatedUserEndpoint,
     ActivityListNotificationsForAuthenticatedUserRequestOptions,
     ActivityListNotificationsForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#get-a-thread
+   */
   "GET /notifications/threads/:thread_id": [
     ActivityGetThreadEndpoint,
     ActivityGetThreadRequestOptions,
     ActivityGetThreadResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#get-a-thread-subscription-for-the-authenticated-user
+   */
   "GET /notifications/threads/:thread_id/subscription": [
     ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint,
     ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions,
     ActivityGetThreadSubscriptionForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#list-all-organizations
+   */
   "GET /organizations": [
     OrgsListEndpoint,
     OrgsListRequestOptions,
     OrgsListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#get-an-organization
+   */
   "GET /orgs/:org": [
     OrgsGetEndpoint,
     OrgsGetRequestOptions,
     OrgsGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/blocking/#list-blocked-users
+   */
   "GET /orgs/:org/blocks": [
     OrgsListBlockedUsersEndpoint,
     OrgsListBlockedUsersRequestOptions,
     OrgsListBlockedUsersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/blocking/#check-whether-a-user-is-blocked-from-an-organization
+   */
   "GET /orgs/:org/blocks/:username": [
     OrgsCheckBlockedUserEndpoint,
     OrgsCheckBlockedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#list-credential-authorizations-for-an-organization
+   */
   "GET /orgs/:org/credential-authorizations": [
     OrgsListCredentialAuthorizationsEndpoint,
     OrgsListCredentialAuthorizationsRequestOptions,
     OrgsListCredentialAuthorizationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-public-organization-events
+   */
   "GET /orgs/:org/events": [
     ActivityListPublicOrgEventsEndpoint,
     ActivityListPublicOrgEventsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#list-hooks
+   */
   "GET /orgs/:org/hooks": [
     OrgsListHooksEndpoint,
     OrgsListHooksRequestOptions,
     OrgsListHooksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#get-single-hook
+   */
   "GET /orgs/:org/hooks/:hook_id": [
     OrgsGetHookEndpoint,
     OrgsGetHookRequestOptions,
     OrgsGetHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-an-organization-installation
+   */
   "GET /orgs/:org/installation": [
     AppsGetOrgInstallationEndpoint,
     AppsGetOrgInstallationRequestOptions,
     AppsGetOrgInstallationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#list-installations-for-an-organization
+   */
   "GET /orgs/:org/installations": [
     OrgsListInstallationsEndpoint,
     OrgsListInstallationsRequestOptions,
     OrgsListInstallationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/orgs/#get-interaction-restrictions-for-an-organization
+   */
   "GET /orgs/:org/interaction-limits": [
     InteractionsGetRestrictionsForOrgEndpoint,
     InteractionsGetRestrictionsForOrgRequestOptions,
     InteractionsGetRestrictionsForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#list-pending-organization-invitations
+   */
   "GET /orgs/:org/invitations": [
     OrgsListPendingInvitationsEndpoint,
     OrgsListPendingInvitationsRequestOptions,
     OrgsListPendingInvitationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#list-organization-invitation-teams
+   */
   "GET /orgs/:org/invitations/:invitation_id/teams": [
     OrgsListInvitationTeamsEndpoint,
     OrgsListInvitationTeamsRequestOptions,
     OrgsListInvitationTeamsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user
+   */
   "GET /orgs/:org/issues": [
     IssuesListForOrgEndpoint,
     IssuesListForOrgRequestOptions,
     IssuesListForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#members-list
+   */
   "GET /orgs/:org/members": [
     OrgsListMembersEndpoint,
     OrgsListMembersRequestOptions,
     OrgsListMembersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#check-membership
+   */
   "GET /orgs/:org/members/:username": [
     OrgsCheckMembershipEndpoint,
     OrgsCheckMembershipRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#get-organization-membership
+   */
   "GET /orgs/:org/memberships/:username": [
     OrgsGetMembershipEndpoint,
     OrgsGetMembershipRequestOptions,
     OrgsGetMembershipResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#list-organization-migrations
+   */
   "GET /orgs/:org/migrations": [
     MigrationsListForOrgEndpoint,
     MigrationsListForOrgRequestOptions,
     MigrationsListForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration
+   */
   "GET /orgs/:org/migrations/:migration_id": [
     MigrationsGetStatusForOrgEndpoint,
     MigrationsGetStatusForOrgRequestOptions,
     MigrationsGetStatusForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive
+   */
   "GET /orgs/:org/migrations/:migration_id/archive": [
     MigrationsDownloadArchiveForOrgEndpoint,
     MigrationsDownloadArchiveForOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#list-repositories-in-an-organization-migration
+   */
   "GET /orgs/:org/migrations/:migration_id/repositories": [
     MigrationsListReposForOrgEndpoint,
     MigrationsListReposForOrgRequestOptions,
     MigrationsListReposForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#list-outside-collaborators
+   */
   "GET /orgs/:org/outside_collaborators": [
     OrgsListOutsideCollaboratorsEndpoint,
     OrgsListOutsideCollaboratorsRequestOptions,
     OrgsListOutsideCollaboratorsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#list-organization-projects
+   */
   "GET /orgs/:org/projects": [
     ProjectsListForOrgEndpoint,
     ProjectsListForOrgRequestOptions,
     ProjectsListForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#public-members-list
+   */
   "GET /orgs/:org/public_members": [
     OrgsListPublicMembersEndpoint,
     OrgsListPublicMembersRequestOptions,
     OrgsListPublicMembersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#check-public-membership
+   */
   "GET /orgs/:org/public_members/:username": [
     OrgsCheckPublicMembershipEndpoint,
     OrgsCheckPublicMembershipRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-organization-repositories
+   */
   "GET /orgs/:org/repos": [
     ReposListForOrgEndpoint,
     ReposListForOrgRequestOptions,
     ReposListForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-in-an-organization
+   */
   "GET /orgs/:org/team-sync/groups": [
     TeamsListIdPGroupsForOrgEndpoint,
     TeamsListIdPGroupsForOrgRequestOptions,
     TeamsListIdPGroupsForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-teams
+   */
   "GET /orgs/:org/teams": [
     TeamsListEndpoint,
     TeamsListRequestOptions,
     TeamsListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#get-team-by-name
+   */
   "GET /orgs/:org/teams/:team_slug": [
     TeamsGetByNameEndpoint,
     TeamsGetByNameRequestOptions,
     TeamsGetByNameResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#list-discussions
+   */
   "GET /orgs/:org/teams/:team_slug/discussions": [
     TeamsListDiscussionsInOrgEndpoint,
     TeamsListDiscussionsInOrgRequestOptions,
     TeamsListDiscussionsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion
+   */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsGetDiscussionInOrgEndpoint,
     TeamsGetDiscussionInOrgRequestOptions,
     TeamsGetDiscussionInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments
+   */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": [
     TeamsListDiscussionCommentsInOrgEndpoint,
     TeamsListDiscussionCommentsInOrgRequestOptions,
     TeamsListDiscussionCommentsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment
+   */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsGetDiscussionCommentInOrgEndpoint,
     TeamsGetDiscussionCommentInOrgRequestOptions,
     TeamsGetDiscussionCommentInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment
+   */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsListForTeamDiscussionCommentInOrgEndpoint,
     ReactionsListForTeamDiscussionCommentInOrgRequestOptions,
     ReactionsListForTeamDiscussionCommentInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion
+   */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": [
     ReactionsListForTeamDiscussionInOrgEndpoint,
     ReactionsListForTeamDiscussionInOrgRequestOptions,
     ReactionsListForTeamDiscussionInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#list-pending-team-invitations
+   */
   "GET /orgs/:org/teams/:team_slug/invitations": [
     TeamsListPendingInvitationsInOrgEndpoint,
     TeamsListPendingInvitationsInOrgRequestOptions,
     TeamsListPendingInvitationsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#list-team-members
+   */
   "GET /orgs/:org/teams/:team_slug/members": [
     TeamsListMembersInOrgEndpoint,
     TeamsListMembersInOrgRequestOptions,
     TeamsListMembersInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#get-team-membership
+   */
   "GET /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsGetMembershipInOrgEndpoint,
     TeamsGetMembershipInOrgRequestOptions,
     TeamsGetMembershipInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-team-projects
+   */
   "GET /orgs/:org/teams/:team_slug/projects": [
     TeamsListProjectsInOrgEndpoint,
     TeamsListProjectsInOrgRequestOptions,
     TeamsListProjectsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#review-a-team-project
+   */
   "GET /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsReviewProjectInOrgEndpoint,
     TeamsReviewProjectInOrgRequestOptions,
     TeamsReviewProjectInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-team-repos
+   */
   "GET /orgs/:org/teams/:team_slug/repos": [
     TeamsListReposInOrgEndpoint,
     TeamsListReposInOrgRequestOptions,
     TeamsListReposInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository
+   */
   "GET /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsCheckManagesRepoInOrgEndpoint,
     TeamsCheckManagesRepoInOrgRequestOptions,
     TeamsCheckManagesRepoInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team
+   */
   "GET /orgs/:org/teams/:team_slug/team-sync/group-mappings": [
     TeamsListIdPGroupsInOrgEndpoint,
     TeamsListIdPGroupsInOrgRequestOptions,
     TeamsListIdPGroupsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-child-teams
+   */
   "GET /orgs/:org/teams/:team_slug/teams": [
     TeamsListChildInOrgEndpoint,
     TeamsListChildInOrgRequestOptions,
     TeamsListChildInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#get-a-project
+   */
   "GET /projects/:project_id": [
     ProjectsGetEndpoint,
     ProjectsGetRequestOptions,
     ProjectsGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/collaborators/#list-collaborators
+   */
   "GET /projects/:project_id/collaborators": [
     ProjectsListCollaboratorsEndpoint,
     ProjectsListCollaboratorsRequestOptions,
     ProjectsListCollaboratorsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/collaborators/#review-a-users-permission-level
+   */
   "GET /projects/:project_id/collaborators/:username/permission": [
     ProjectsReviewUserPermissionLevelEndpoint,
     ProjectsReviewUserPermissionLevelRequestOptions,
     ProjectsReviewUserPermissionLevelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#list-project-columns
+   */
   "GET /projects/:project_id/columns": [
     ProjectsListColumnsEndpoint,
     ProjectsListColumnsRequestOptions,
     ProjectsListColumnsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#get-a-project-column
+   */
   "GET /projects/columns/:column_id": [
     ProjectsGetColumnEndpoint,
     ProjectsGetColumnRequestOptions,
     ProjectsGetColumnResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#list-project-cards
+   */
   "GET /projects/columns/:column_id/cards": [
     ProjectsListCardsEndpoint,
     ProjectsListCardsRequestOptions,
     ProjectsListCardsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#get-a-project-card
+   */
   "GET /projects/columns/cards/:card_id": [
     ProjectsGetCardEndpoint,
     ProjectsGetCardRequestOptions,
     ProjectsGetCardResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status
+   */
   "GET /rate_limit": [
     RateLimitGetEndpoint,
     RateLimitGetRequestOptions,
     RateLimitGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#get-a-repository
+   */
   "GET /repos/:owner/:repo": [
     ReposGetEndpoint,
     ReposGetRequestOptions,
     ReposGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/contents/#get-archive-link
+   */
   "GET /repos/:owner/:repo/:archive_format/:ref": [
     ReposGetArchiveLinkEndpoint,
     ReposGetArchiveLinkRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository
+   */
   "GET /repos/:owner/:repo/actions/artifacts": [
     ActionsListArtifactsForRepoEndpoint,
     ActionsListArtifactsForRepoRequestOptions,
     ActionsListArtifactsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/artifacts/#get-an-artifact
+   */
   "GET /repos/:owner/:repo/actions/artifacts/:artifact_id": [
     ActionsGetArtifactEndpoint,
     ActionsGetArtifactRequestOptions,
     ActionsGetArtifactResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/artifacts/#download-an-artifact
+   */
   "GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format": [
     ActionsDownloadArtifactEndpoint,
     ActionsDownloadArtifactRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_jobs/#get-a-workflow-job
+   */
   "GET /repos/:owner/:repo/actions/jobs/:job_id": [
     ActionsGetWorkflowJobEndpoint,
     ActionsGetWorkflowJobRequestOptions,
     ActionsGetWorkflowJobResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_jobs/#list-workflow-job-logs
+   */
   "GET /repos/:owner/:repo/actions/jobs/:job_id/logs": [
     ActionsListWorkflowJobLogsEndpoint,
     ActionsListWorkflowJobLogsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#list-self-hosted-runners-for-a-repository
+   */
   "GET /repos/:owner/:repo/actions/runners": [
     ActionsListSelfHostedRunnersForRepoEndpoint,
     ActionsListSelfHostedRunnersForRepoRequestOptions,
     ActionsListSelfHostedRunnersForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#get-a-self-hosted-runner
+   */
   "GET /repos/:owner/:repo/actions/runners/:runner_id": [
     ActionsGetSelfHostedRunnerEndpoint,
     ActionsGetSelfHostedRunnerRequestOptions,
     ActionsGetSelfHostedRunnerResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#list-downloads-for-the-self-hosted-runner-application
+   */
   "GET /repos/:owner/:repo/actions/runners/downloads": [
     ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint,
     ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions,
     ActionsListDownloadsForSelfHostedRunnerApplicationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#list-repository-workflow-runs
+   */
   "GET /repos/:owner/:repo/actions/runs": [
     ActionsListRepoWorkflowRunsEndpoint,
     ActionsListRepoWorkflowRunsRequestOptions,
     ActionsListRepoWorkflowRunsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#get-a-workflow-run
+   */
   "GET /repos/:owner/:repo/actions/runs/:run_id": [
     ActionsGetWorkflowRunEndpoint,
     ActionsGetWorkflowRunRequestOptions,
     ActionsGetWorkflowRunResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/artifacts/#list-workflow-run-artifacts
+   */
   "GET /repos/:owner/:repo/actions/runs/:run_id/artifacts": [
     ActionsListWorkflowRunArtifactsEndpoint,
     ActionsListWorkflowRunArtifactsRequestOptions,
     ActionsListWorkflowRunArtifactsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_jobs/#list-jobs-for-a-workflow-run
+   */
   "GET /repos/:owner/:repo/actions/runs/:run_id/jobs": [
     ActionsListJobsForWorkflowRunEndpoint,
     ActionsListJobsForWorkflowRunRequestOptions,
     ActionsListJobsForWorkflowRunResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#list-workflow-run-logs
+   */
   "GET /repos/:owner/:repo/actions/runs/:run_id/logs": [
     ActionsListWorkflowRunLogsEndpoint,
     ActionsListWorkflowRunLogsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository
+   */
   "GET /repos/:owner/:repo/actions/secrets": [
     ActionsListSecretsForRepoEndpoint,
     ActionsListSecretsForRepoRequestOptions,
     ActionsListSecretsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#get-a-secret
+   */
   "GET /repos/:owner/:repo/actions/secrets/:name": [
     ActionsGetSecretEndpoint,
     ActionsGetSecretRequestOptions,
     ActionsGetSecretResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#get-your-public-key
+   */
   "GET /repos/:owner/:repo/actions/secrets/public-key": [
     ActionsGetPublicKeyEndpoint,
     ActionsGetPublicKeyRequestOptions,
     ActionsGetPublicKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflows/#list-repository-workflows
+   */
   "GET /repos/:owner/:repo/actions/workflows": [
     ActionsListRepoWorkflowsEndpoint,
     ActionsListRepoWorkflowsRequestOptions,
     ActionsListRepoWorkflowsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflows/#get-a-workflow
+   */
   "GET /repos/:owner/:repo/actions/workflows/:workflow_id": [
     ActionsGetWorkflowEndpoint,
     ActionsGetWorkflowRequestOptions,
     ActionsGetWorkflowResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#list-workflow-runs
+   */
   "GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs": [
     ActionsListWorkflowRunsEndpoint,
     ActionsListWorkflowRunsRequestOptions,
     ActionsListWorkflowRunsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/assignees/#list-assignees
+   */
   "GET /repos/:owner/:repo/assignees": [
     IssuesListAssigneesEndpoint,
     IssuesListAssigneesRequestOptions,
     IssuesListAssigneesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/assignees/#check-assignee
+   */
   "GET /repos/:owner/:repo/assignees/:assignee": [
     IssuesCheckAssigneeEndpoint,
     IssuesCheckAssigneeRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#list-branches
+   */
   "GET /repos/:owner/:repo/branches": [
     ReposListBranchesEndpoint,
     ReposListBranchesRequestOptions,
     ReposListBranchesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch": [
     ReposGetBranchEndpoint,
     ReposGetBranchRequestOptions,
     ReposGetBranchResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-branch-protection
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection": [
     ReposGetBranchProtectionEndpoint,
     ReposGetBranchProtectionRequestOptions,
     ReposGetBranchProtectionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-admin-enforcement-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposGetProtectedBranchAdminEnforcementEndpoint,
     ReposGetProtectedBranchAdminEnforcementRequestOptions,
     ReposGetProtectedBranchAdminEnforcementResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-pull-request-review-enforcement-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint,
     ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions,
     ReposGetProtectedBranchPullRequestReviewEnforcementResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-required-signatures-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposGetProtectedBranchRequiredSignaturesEndpoint,
     ReposGetProtectedBranchRequiredSignaturesRequestOptions,
     ReposGetProtectedBranchRequiredSignaturesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-required-status-checks-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposGetProtectedBranchRequiredStatusChecksEndpoint,
     ReposGetProtectedBranchRequiredStatusChecksRequestOptions,
     ReposGetProtectedBranchRequiredStatusChecksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposListProtectedBranchRequiredStatusChecksContextsEndpoint,
     ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions,
     ReposListProtectedBranchRequiredStatusChecksContextsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#get-restrictions-of-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions": [
     ReposGetProtectedBranchRestrictionsEndpoint,
     ReposGetProtectedBranchRestrictionsRequestOptions,
     ReposGetProtectedBranchRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposGetAppsWithAccessToProtectedBranchEndpoint,
     ReposGetAppsWithAccessToProtectedBranchRequestOptions,
     ReposGetAppsWithAccessToProtectedBranchResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposGetTeamsWithAccessToProtectedBranchEndpoint,
     ReposGetTeamsWithAccessToProtectedBranchRequestOptions,
     ReposGetTeamsWithAccessToProtectedBranchResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch
+   */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposGetUsersWithAccessToProtectedBranchEndpoint,
     ReposGetUsersWithAccessToProtectedBranchRequestOptions,
     ReposGetUsersWithAccessToProtectedBranchResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#get-a-check-run
+   */
   "GET /repos/:owner/:repo/check-runs/:check_run_id": [
     ChecksGetEndpoint,
     ChecksGetRequestOptions,
     ChecksGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#list-check-run-annotations
+   */
   "GET /repos/:owner/:repo/check-runs/:check_run_id/annotations": [
     ChecksListAnnotationsEndpoint,
     ChecksListAnnotationsRequestOptions,
     ChecksListAnnotationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/suites/#get-a-check-suite
+   */
   "GET /repos/:owner/:repo/check-suites/:check_suite_id": [
     ChecksGetSuiteEndpoint,
     ChecksGetSuiteRequestOptions,
     ChecksGetSuiteResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite
+   */
   "GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs": [
     ChecksListForSuiteEndpoint,
     ChecksListForSuiteRequestOptions,
     ChecksListForSuiteResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/collaborators/#list-collaborators
+   */
   "GET /repos/:owner/:repo/collaborators": [
     ReposListCollaboratorsEndpoint,
     ReposListCollaboratorsRequestOptions,
     ReposListCollaboratorsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator
+   */
   "GET /repos/:owner/:repo/collaborators/:username": [
     ReposCheckCollaboratorEndpoint,
     ReposCheckCollaboratorRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level
+   */
   "GET /repos/:owner/:repo/collaborators/:username/permission": [
     ReposGetCollaboratorPermissionLevelEndpoint,
     ReposGetCollaboratorPermissionLevelRequestOptions,
     ReposGetCollaboratorPermissionLevelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository
+   */
   "GET /repos/:owner/:repo/comments": [
     ReposListCommitCommentsEndpoint,
     ReposListCommitCommentsRequestOptions,
     ReposListCommitCommentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#get-a-single-commit-comment
+   */
   "GET /repos/:owner/:repo/comments/:comment_id": [
     ReposGetCommitCommentEndpoint,
     ReposGetCommitCommentRequestOptions,
     ReposGetCommitCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-commit-comment
+   */
   "GET /repos/:owner/:repo/comments/:comment_id/reactions": [
     ReactionsListForCommitCommentEndpoint,
     ReactionsListForCommitCommentRequestOptions,
     ReactionsListForCommitCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository
+   */
   "GET /repos/:owner/:repo/commits": [
     ReposListCommitsEndpoint,
     ReposListCommitsRequestOptions,
     ReposListCommitsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/commits/#list-branches-for-head-commit
+   */
   "GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head": [
     ReposListBranchesForHeadCommitEndpoint,
     ReposListBranchesForHeadCommitRequestOptions,
     ReposListBranchesForHeadCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit
+   */
   "GET /repos/:owner/:repo/commits/:commit_sha/comments": [
     ReposListCommentsForCommitEndpoint,
     ReposListCommentsForCommitRequestOptions,
     ReposListCommentsForCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-commit
+   */
   "GET /repos/:owner/:repo/commits/:commit_sha/pulls": [
     ReposListPullRequestsAssociatedWithCommitEndpoint,
     ReposListPullRequestsAssociatedWithCommitRequestOptions,
     ReposListPullRequestsAssociatedWithCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/commits/#get-a-single-commit
+   */
   "GET /repos/:owner/:repo/commits/:ref": [
     ReposGetCommitEndpoint,
     ReposGetCommitRequestOptions,
     ReposGetCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference
+   */
   "GET /repos/:owner/:repo/commits/:ref/check-runs": [
     ChecksListForRefEndpoint,
     ChecksListForRefRequestOptions,
     ChecksListForRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-git-reference
+   */
   "GET /repos/:owner/:repo/commits/:ref/check-suites": [
     ChecksListSuitesForRefEndpoint,
     ChecksListSuitesForRefRequestOptions,
     ChecksListSuitesForRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-ref
+   */
   "GET /repos/:owner/:repo/commits/:ref/status": [
     ReposGetCombinedStatusForRefEndpoint,
     ReposGetCombinedStatusForRefRequestOptions,
     ReposGetCombinedStatusForRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref
+   */
   "GET /repos/:owner/:repo/commits/:ref/statuses": [
     ReposListStatusesForRefEndpoint,
     ReposListStatusesForRefRequestOptions,
     ReposListStatusesForRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct
+   */
   "GET /repos/:owner/:repo/community/code_of_conduct": [
     CodesOfConductGetForRepoEndpoint,
     CodesOfConductGetForRepoRequestOptions,
     CodesOfConductGetForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/community/#retrieve-community-profile-metrics
+   */
   "GET /repos/:owner/:repo/community/profile": [
     ReposRetrieveCommunityProfileMetricsEndpoint,
     ReposRetrieveCommunityProfileMetricsRequestOptions,
     ReposRetrieveCommunityProfileMetricsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/commits/#compare-two-commits
+   */
   "GET /repos/:owner/:repo/compare/:base...:head": [
     ReposCompareCommitsEndpoint,
     ReposCompareCommitsRequestOptions,
     ReposCompareCommitsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/contents/#get-contents
+   */
   "GET /repos/:owner/:repo/contents/:path": [
     ReposGetContentsEndpoint,
     ReposGetContentsRequestOptions,
     ReposGetContentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-contributors
+   */
   "GET /repos/:owner/:repo/contributors": [
     ReposListContributorsEndpoint,
     ReposListContributorsRequestOptions,
     ReposListContributorsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#list-deployments
+   */
   "GET /repos/:owner/:repo/deployments": [
     ReposListDeploymentsEndpoint,
     ReposListDeploymentsRequestOptions,
     ReposListDeploymentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment
+   */
   "GET /repos/:owner/:repo/deployments/:deployment_id": [
     ReposGetDeploymentEndpoint,
     ReposGetDeploymentRequestOptions,
     ReposGetDeploymentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#list-deployment-statuses
+   */
   "GET /repos/:owner/:repo/deployments/:deployment_id/statuses": [
     ReposListDeploymentStatusesEndpoint,
     ReposListDeploymentStatusesRequestOptions,
     ReposListDeploymentStatusesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment-status
+   */
   "GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id": [
     ReposGetDeploymentStatusEndpoint,
     ReposGetDeploymentStatusRequestOptions,
     ReposGetDeploymentStatusResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/downloads/#list-downloads-for-a-repository
+   */
   "GET /repos/:owner/:repo/downloads": [
     ReposListDownloadsEndpoint,
     ReposListDownloadsRequestOptions,
     ReposListDownloadsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/downloads/#get-a-single-download
+   */
   "GET /repos/:owner/:repo/downloads/:download_id": [
     ReposGetDownloadEndpoint,
     ReposGetDownloadRequestOptions,
     ReposGetDownloadResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-repository-events
+   */
   "GET /repos/:owner/:repo/events": [
     ActivityListRepoEventsEndpoint,
     ActivityListRepoEventsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/forks/#list-forks
+   */
   "GET /repos/:owner/:repo/forks": [
     ReposListForksEndpoint,
     ReposListForksRequestOptions,
     ReposListForksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/blobs/#get-a-blob
+   */
   "GET /repos/:owner/:repo/git/blobs/:file_sha": [
     GitGetBlobEndpoint,
     GitGetBlobRequestOptions,
     GitGetBlobResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/commits/#get-a-commit
+   */
   "GET /repos/:owner/:repo/git/commits/:commit_sha": [
     GitGetCommitEndpoint,
     GitGetCommitRequestOptions,
     GitGetCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/refs/#list-matching-references
+   */
   "GET /repos/:owner/:repo/git/matching-refs/:ref": [
     GitListMatchingRefsEndpoint,
     GitListMatchingRefsRequestOptions,
     GitListMatchingRefsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/refs/#get-a-single-reference
+   */
   "GET /repos/:owner/:repo/git/ref/:ref": [
     GitGetRefEndpoint,
     GitGetRefRequestOptions,
     GitGetRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/tags/#get-a-tag
+   */
   "GET /repos/:owner/:repo/git/tags/:tag_sha": [
     GitGetTagEndpoint,
     GitGetTagRequestOptions,
     GitGetTagResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/trees/#get-a-tree
+   */
   "GET /repos/:owner/:repo/git/trees/:tree_sha": [
     GitGetTreeEndpoint,
     GitGetTreeRequestOptions,
     GitGetTreeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#list-hooks
+   */
   "GET /repos/:owner/:repo/hooks": [
     ReposListHooksEndpoint,
     ReposListHooksRequestOptions,
     ReposListHooksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#get-single-hook
+   */
   "GET /repos/:owner/:repo/hooks/:hook_id": [
     ReposGetHookEndpoint,
     ReposGetHookRequestOptions,
     ReposGetHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#get-import-progress
+   */
   "GET /repos/:owner/:repo/import": [
     MigrationsGetImportProgressEndpoint,
     MigrationsGetImportProgressRequestOptions,
     MigrationsGetImportProgressResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#get-commit-authors
+   */
   "GET /repos/:owner/:repo/import/authors": [
     MigrationsGetCommitAuthorsEndpoint,
     MigrationsGetCommitAuthorsRequestOptions,
     MigrationsGetCommitAuthorsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#get-large-files
+   */
   "GET /repos/:owner/:repo/import/large_files": [
     MigrationsGetLargeFilesEndpoint,
     MigrationsGetLargeFilesRequestOptions,
     MigrationsGetLargeFilesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-a-repository-installation
+   */
   "GET /repos/:owner/:repo/installation": [
     AppsGetRepoInstallationEndpoint,
     AppsGetRepoInstallationRequestOptions,
     AppsGetRepoInstallationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/repos/#get-interaction-restrictions-for-a-repository
+   */
   "GET /repos/:owner/:repo/interaction-limits": [
     InteractionsGetRestrictionsForRepoEndpoint,
     InteractionsGetRestrictionsForRepoRequestOptions,
     InteractionsGetRestrictionsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#list-invitations-for-a-repository
+   */
   "GET /repos/:owner/:repo/invitations": [
     ReposListInvitationsEndpoint,
     ReposListInvitationsRequestOptions,
     ReposListInvitationsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#list-repository-issues
+   */
   "GET /repos/:owner/:repo/issues": [
     IssuesListForRepoEndpoint,
     IssuesListForRepoRequestOptions,
     IssuesListForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#get-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number": [
     IssuesGetEndpoint,
     IssuesGetRequestOptions,
     IssuesGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number/comments": [
     IssuesListCommentsEndpoint,
     IssuesListCommentsRequestOptions,
     IssuesListCommentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/events/#list-events-for-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number/events": [
     IssuesListEventsEndpoint,
     IssuesListEventsRequestOptions,
     IssuesListEventsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesListLabelsOnIssueEndpoint,
     IssuesListLabelsOnIssueRequestOptions,
     IssuesListLabelsOnIssueResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number/reactions": [
     ReactionsListForIssueEndpoint,
     ReactionsListForIssueRequestOptions,
     ReactionsListForIssueResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue
+   */
   "GET /repos/:owner/:repo/issues/:issue_number/timeline": [
     IssuesListEventsForTimelineEndpoint,
     IssuesListEventsForTimelineRequestOptions,
     IssuesListEventsForTimelineResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository
+   */
   "GET /repos/:owner/:repo/issues/comments": [
     IssuesListCommentsForRepoEndpoint,
     IssuesListCommentsForRepoRequestOptions,
     IssuesListCommentsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#get-a-single-comment
+   */
   "GET /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesGetCommentEndpoint,
     IssuesGetCommentRequestOptions,
     IssuesGetCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-an-issue-comment
+   */
   "GET /repos/:owner/:repo/issues/comments/:comment_id/reactions": [
     ReactionsListForIssueCommentEndpoint,
     ReactionsListForIssueCommentRequestOptions,
     ReactionsListForIssueCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/events/#list-events-for-a-repository
+   */
   "GET /repos/:owner/:repo/issues/events": [
     IssuesListEventsForRepoEndpoint,
     IssuesListEventsForRepoRequestOptions,
     IssuesListEventsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/events/#get-a-single-event
+   */
   "GET /repos/:owner/:repo/issues/events/:event_id": [
     IssuesGetEventEndpoint,
     IssuesGetEventRequestOptions,
     IssuesGetEventResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/keys/#list-deploy-keys
+   */
   "GET /repos/:owner/:repo/keys": [
     ReposListDeployKeysEndpoint,
     ReposListDeployKeysRequestOptions,
     ReposListDeployKeysResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/keys/#get-a-deploy-key
+   */
   "GET /repos/:owner/:repo/keys/:key_id": [
     ReposGetDeployKeyEndpoint,
     ReposGetDeployKeyRequestOptions,
     ReposGetDeployKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository
+   */
   "GET /repos/:owner/:repo/labels": [
     IssuesListLabelsForRepoEndpoint,
     IssuesListLabelsForRepoRequestOptions,
     IssuesListLabelsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#get-a-single-label
+   */
   "GET /repos/:owner/:repo/labels/:name": [
     IssuesGetLabelEndpoint,
     IssuesGetLabelRequestOptions,
     IssuesGetLabelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-languages
+   */
   "GET /repos/:owner/:repo/languages": [
     ReposListLanguagesEndpoint,
     ReposListLanguagesRequestOptions,
     ReposListLanguagesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license
+   */
   "GET /repos/:owner/:repo/license": [
     LicensesGetForRepoEndpoint,
     LicensesGetForRepoRequestOptions,
     LicensesGetForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository
+   */
   "GET /repos/:owner/:repo/milestones": [
     IssuesListMilestonesForRepoEndpoint,
     IssuesListMilestonesForRepoRequestOptions,
     IssuesListMilestonesForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/milestones/#get-a-single-milestone
+   */
   "GET /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesGetMilestoneEndpoint,
     IssuesGetMilestoneRequestOptions,
     IssuesGetMilestoneResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone
+   */
   "GET /repos/:owner/:repo/milestones/:milestone_number/labels": [
     IssuesListLabelsForMilestoneEndpoint,
     IssuesListLabelsForMilestoneRequestOptions,
     IssuesListLabelsForMilestoneResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user
+   */
   "GET /repos/:owner/:repo/notifications": [
     ActivityListRepoNotificationsForAuthenticatedUserEndpoint,
     ActivityListRepoNotificationsForAuthenticatedUserRequestOptions,
     ActivityListRepoNotificationsForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site
+   */
   "GET /repos/:owner/:repo/pages": [
     ReposGetPagesEndpoint,
     ReposGetPagesRequestOptions,
     ReposGetPagesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#list-pages-builds
+   */
   "GET /repos/:owner/:repo/pages/builds": [
     ReposListPagesBuildsEndpoint,
     ReposListPagesBuildsRequestOptions,
     ReposListPagesBuildsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#get-a-specific-pages-build
+   */
   "GET /repos/:owner/:repo/pages/builds/:build_id": [
     ReposGetPagesBuildEndpoint,
     ReposGetPagesBuildRequestOptions,
     ReposGetPagesBuildResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#get-latest-pages-build
+   */
   "GET /repos/:owner/:repo/pages/builds/latest": [
     ReposGetLatestPagesBuildEndpoint,
     ReposGetLatestPagesBuildRequestOptions,
     ReposGetLatestPagesBuildResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#list-repository-projects
+   */
   "GET /repos/:owner/:repo/projects": [
     ProjectsListForRepoEndpoint,
     ProjectsListForRepoRequestOptions,
     ProjectsListForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#list-pull-requests
+   */
   "GET /repos/:owner/:repo/pulls": [
     PullsListEndpoint,
     PullsListRequestOptions,
     PullsListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#get-a-single-pull-request
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number": [
     PullsGetEndpoint,
     PullsGetRequestOptions,
     PullsGetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/comments": [
     PullsListCommentsEndpoint,
     PullsListCommentsRequestOptions,
     PullsListCommentsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#list-commits-on-a-pull-request
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/commits": [
     PullsListCommitsEndpoint,
     PullsListCommitsRequestOptions,
     PullsListCommitsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#list-pull-requests-files
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/files": [
     PullsListFilesEndpoint,
     PullsListFilesRequestOptions,
     PullsListFilesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/merge": [
     PullsCheckIfMergedEndpoint,
     PullsCheckIfMergedRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/review_requests/#list-review-requests
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsListReviewRequestsEndpoint,
     PullsListReviewRequestsRequestOptions,
     PullsListReviewRequestsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#list-reviews-on-a-pull-request
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews": [
     PullsListReviewsEndpoint,
     PullsListReviewsRequestOptions,
     PullsListReviewsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#get-a-single-review
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsGetReviewEndpoint,
     PullsGetReviewRequestOptions,
     PullsGetReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#get-comments-for-a-single-review
+   */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments": [
     PullsGetCommentsForReviewEndpoint,
     PullsGetCommentsForReviewRequestOptions,
     PullsGetCommentsForReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository
+   */
   "GET /repos/:owner/:repo/pulls/comments": [
     PullsListCommentsForRepoEndpoint,
     PullsListCommentsForRepoRequestOptions,
     PullsListCommentsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#get-a-single-comment
+   */
   "GET /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsGetCommentEndpoint,
     PullsGetCommentRequestOptions,
     PullsGetCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment
+   */
   "GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions": [
     ReactionsListForPullRequestReviewCommentEndpoint,
     ReactionsListForPullRequestReviewCommentRequestOptions,
     ReactionsListForPullRequestReviewCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/contents/#get-the-readme
+   */
   "GET /repos/:owner/:repo/readme": [
     ReposGetReadmeEndpoint,
     ReposGetReadmeRequestOptions,
     ReposGetReadmeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
+   */
   "GET /repos/:owner/:repo/releases": [
     ReposListReleasesEndpoint,
     ReposListReleasesRequestOptions,
     ReposListReleasesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#get-a-single-release
+   */
   "GET /repos/:owner/:repo/releases/:release_id": [
     ReposGetReleaseEndpoint,
     ReposGetReleaseRequestOptions,
     ReposGetReleaseResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#list-assets-for-a-release
+   */
   "GET /repos/:owner/:repo/releases/:release_id/assets": [
     ReposListAssetsForReleaseEndpoint,
     ReposListAssetsForReleaseRequestOptions,
     ReposListAssetsForReleaseResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#get-a-single-release-asset
+   */
   "GET /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposGetReleaseAssetEndpoint,
     ReposGetReleaseAssetRequestOptions,
     ReposGetReleaseAssetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#get-the-latest-release
+   */
   "GET /repos/:owner/:repo/releases/latest": [
     ReposGetLatestReleaseEndpoint,
     ReposGetLatestReleaseRequestOptions,
     ReposGetLatestReleaseResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#get-a-release-by-tag-name
+   */
   "GET /repos/:owner/:repo/releases/tags/:tag": [
     ReposGetReleaseByTagEndpoint,
     ReposGetReleaseByTagRequestOptions,
     ReposGetReleaseByTagResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#list-stargazers
+   */
   "GET /repos/:owner/:repo/stargazers": [
     ActivityListStargazersForRepoEndpoint,
     ActivityListStargazersForRepoRequestOptions,
     ActivityListStargazersForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-additions-and-deletions-per-week
+   */
   "GET /repos/:owner/:repo/stats/code_frequency": [
     ReposGetCodeFrequencyStatsEndpoint,
     ReposGetCodeFrequencyStatsRequestOptions,
     ReposGetCodeFrequencyStatsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-last-year-of-commit-activity-data
+   */
   "GET /repos/:owner/:repo/stats/commit_activity": [
     ReposGetCommitActivityStatsEndpoint,
     ReposGetCommitActivityStatsRequestOptions,
     ReposGetCommitActivityStatsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts
+   */
   "GET /repos/:owner/:repo/stats/contributors": [
     ReposGetContributorsStatsEndpoint,
     ReposGetContributorsStatsRequestOptions,
     ReposGetContributorsStatsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count-for-the-repository-owner-and-everyone-else
+   */
   "GET /repos/:owner/:repo/stats/participation": [
     ReposGetParticipationStatsEndpoint,
     ReposGetParticipationStatsRequestOptions,
     ReposGetParticipationStatsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day
+   */
   "GET /repos/:owner/:repo/stats/punch_card": [
     ReposGetPunchCardStatsEndpoint,
     ReposGetPunchCardStatsRequestOptions,
     ReposGetPunchCardStatsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#list-watchers
+   */
   "GET /repos/:owner/:repo/subscribers": [
     ActivityListWatchersForRepoEndpoint,
     ActivityListWatchersForRepoRequestOptions,
     ActivityListWatchersForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#get-a-repository-subscription
+   */
   "GET /repos/:owner/:repo/subscription": [
     ActivityGetRepoSubscriptionEndpoint,
     ActivityGetRepoSubscriptionRequestOptions,
     ActivityGetRepoSubscriptionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-tags
+   */
   "GET /repos/:owner/:repo/tags": [
     ReposListTagsEndpoint,
     ReposListTagsRequestOptions,
     ReposListTagsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-teams
+   */
   "GET /repos/:owner/:repo/teams": [
     ReposListTeamsEndpoint,
     ReposListTeamsRequestOptions,
     ReposListTeamsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#get-all-repository-topics
+   */
   "GET /repos/:owner/:repo/topics": [
     ReposGetAllTopicsEndpoint,
     ReposGetAllTopicsRequestOptions,
     ReposGetAllTopicsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/traffic/#clones
+   */
   "GET /repos/:owner/:repo/traffic/clones": [
     ReposGetClonesEndpoint,
     ReposGetClonesRequestOptions,
     ReposGetClonesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/traffic/#list-paths
+   */
   "GET /repos/:owner/:repo/traffic/popular/paths": [
     ReposGetTopPathsEndpoint,
     ReposGetTopPathsRequestOptions,
     ReposGetTopPathsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/traffic/#list-referrers
+   */
   "GET /repos/:owner/:repo/traffic/popular/referrers": [
     ReposGetTopReferrersEndpoint,
     ReposGetTopReferrersRequestOptions,
     ReposGetTopReferrersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/traffic/#views
+   */
   "GET /repos/:owner/:repo/traffic/views": [
     ReposGetViewsEndpoint,
     ReposGetViewsRequestOptions,
     ReposGetViewsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository
+   */
   "GET /repos/:owner/:repo/vulnerability-alerts": [
     ReposCheckVulnerabilityAlertsEndpoint,
     ReposCheckVulnerabilityAlertsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-public-repositories
+   */
   "GET /repositories": [
     ReposListPublicEndpoint,
     ReposListPublicRequestOptions,
     ReposListPublicResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#get-a-list-of-provisioned-identities
+   */
   "GET /scim/v2/organizations/:org/Users": [
     ScimListProvisionedIdentitiesEndpoint,
     ScimListProvisionedIdentitiesRequestOptions,
     ScimListProvisionedIdentitiesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#get-provisioning-details-for-a-single-user
+   */
   "GET /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimGetProvisioningDetailsForUserEndpoint,
     ScimGetProvisioningDetailsForUserRequestOptions,
     ScimGetProvisioningDetailsForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-code
+   */
   "GET /search/code": [
     SearchCodeEndpoint,
     SearchCodeRequestOptions,
     SearchCodeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-commits
+   */
   "GET /search/commits": [
     SearchCommitsEndpoint,
     SearchCommitsRequestOptions,
     SearchCommitsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-issues-and-pull-requests
+   */
   "GET /search/issues": [
     SearchIssuesAndPullRequestsEndpoint,
     SearchIssuesAndPullRequestsRequestOptions,
     SearchIssuesAndPullRequestsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-labels
+   */
   "GET /search/labels": [
     SearchLabelsEndpoint,
     SearchLabelsRequestOptions,
     SearchLabelsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-repositories
+   */
   "GET /search/repositories": [
     SearchReposEndpoint,
     SearchReposRequestOptions,
     SearchReposResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-topics
+   */
   "GET /search/topics": [
     SearchTopicsEndpoint,
     SearchTopicsRequestOptions,
     SearchTopicsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/search/#search-users
+   */
   "GET /search/users": [
     SearchUsersEndpoint,
     SearchUsersRequestOptions,
     SearchUsersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#get-team-legacy
+   */
   "GET /teams/:team_id": [
     TeamsGetLegacyEndpoint,
     TeamsGetLegacyRequestOptions,
     TeamsGetLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
+   */
   "GET /teams/:team_id/discussions": [
     TeamsListDiscussionsLegacyEndpoint,
     TeamsListDiscussionsLegacyRequestOptions,
     TeamsListDiscussionsLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
+   */
   "GET /teams/:team_id/discussions/:discussion_number": [
     TeamsGetDiscussionLegacyEndpoint,
     TeamsGetDiscussionLegacyRequestOptions,
     TeamsGetDiscussionLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
+   */
   "GET /teams/:team_id/discussions/:discussion_number/comments": [
     TeamsListDiscussionCommentsLegacyEndpoint,
     TeamsListDiscussionCommentsLegacyRequestOptions,
     TeamsListDiscussionCommentsLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
+   */
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsGetDiscussionCommentLegacyEndpoint,
     TeamsGetDiscussionCommentLegacyRequestOptions,
     TeamsGetDiscussionCommentLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
+   */
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsListForTeamDiscussionCommentLegacyEndpoint,
     ReactionsListForTeamDiscussionCommentLegacyRequestOptions,
     ReactionsListForTeamDiscussionCommentLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
+   */
   "GET /teams/:team_id/discussions/:discussion_number/reactions": [
     ReactionsListForTeamDiscussionLegacyEndpoint,
     ReactionsListForTeamDiscussionLegacyRequestOptions,
     ReactionsListForTeamDiscussionLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
+   */
   "GET /teams/:team_id/invitations": [
     TeamsListPendingInvitationsLegacyEndpoint,
     TeamsListPendingInvitationsLegacyRequestOptions,
     TeamsListPendingInvitationsLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#list-team-members-legacy
+   */
   "GET /teams/:team_id/members": [
     TeamsListMembersLegacyEndpoint,
     TeamsListMembersLegacyRequestOptions,
     TeamsListMembersLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#get-team-member-legacy
+   */
   "GET /teams/:team_id/members/:username": [
     TeamsGetMemberLegacyEndpoint,
     TeamsGetMemberLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
+   */
   "GET /teams/:team_id/memberships/:username": [
     TeamsGetMembershipLegacyEndpoint,
     TeamsGetMembershipLegacyRequestOptions,
     TeamsGetMembershipLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-team-projects-legacy
+   */
   "GET /teams/:team_id/projects": [
     TeamsListProjectsLegacyEndpoint,
     TeamsListProjectsLegacyRequestOptions,
     TeamsListProjectsLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#review-a-team-project-legacy
+   */
   "GET /teams/:team_id/projects/:project_id": [
     TeamsReviewProjectLegacyEndpoint,
     TeamsReviewProjectLegacyRequestOptions,
     TeamsReviewProjectLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-team-repos-legacy
+   */
   "GET /teams/:team_id/repos": [
     TeamsListReposLegacyEndpoint,
     TeamsListReposLegacyRequestOptions,
     TeamsListReposLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
+   */
   "GET /teams/:team_id/repos/:owner/:repo": [
     TeamsCheckManagesRepoLegacyEndpoint,
     TeamsCheckManagesRepoLegacyRequestOptions,
     TeamsCheckManagesRepoLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team-legacy
+   */
   "GET /teams/:team_id/team-sync/group-mappings": [
     TeamsListIdPGroupsForLegacyEndpoint,
     TeamsListIdPGroupsForLegacyRequestOptions,
     TeamsListIdPGroupsForLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-child-teams-legacy
+   */
   "GET /teams/:team_id/teams": [
     TeamsListChildLegacyEndpoint,
     TeamsListChildLegacyRequestOptions,
     TeamsListChildLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/#get-the-authenticated-user
+   */
   "GET /user": [
     UsersGetAuthenticatedEndpoint,
     UsersGetAuthenticatedRequestOptions,
     UsersGetAuthenticatedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration
+   */
   "GET /user/:migration_id/repositories": [
     MigrationsListReposForUserEndpoint,
     MigrationsListReposForUserRequestOptions,
     MigrationsListReposForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/blocking/#list-blocked-users
+   */
   "GET /user/blocks": [
     UsersListBlockedEndpoint,
     UsersListBlockedRequestOptions,
     UsersListBlockedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/blocking/#check-whether-youve-blocked-a-user
+   */
   "GET /user/blocks/:username": [
     UsersCheckBlockedEndpoint,
     UsersCheckBlockedRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user
+   */
   "GET /user/emails": [
     UsersListEmailsEndpoint,
     UsersListEmailsRequestOptions,
     UsersListEmailsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#list-followers-of-the-authenticated-user
+   */
   "GET /user/followers": [
     UsersListFollowersForAuthenticatedUserEndpoint,
     UsersListFollowersForAuthenticatedUserRequestOptions,
     UsersListFollowersForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user
+   */
   "GET /user/following": [
     UsersListFollowedByAuthenticatedEndpoint,
     UsersListFollowedByAuthenticatedRequestOptions,
     UsersListFollowedByAuthenticatedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user
+   */
   "GET /user/following/:username": [
     UsersCheckFollowingEndpoint,
     UsersCheckFollowingRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/gpg_keys/#list-your-gpg-keys
+   */
   "GET /user/gpg_keys": [
     UsersListGpgKeysEndpoint,
     UsersListGpgKeysRequestOptions,
     UsersListGpgKeysResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/gpg_keys/#get-a-single-gpg-key
+   */
   "GET /user/gpg_keys/:gpg_key_id": [
     UsersGetGpgKeyEndpoint,
     UsersGetGpgKeyRequestOptions,
     UsersGetGpgKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#list-installations-for-a-user
+   */
   "GET /user/installations": [
     AppsListInstallationsForAuthenticatedUserEndpoint,
     AppsListInstallationsForAuthenticatedUserRequestOptions,
     AppsListInstallationsForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-for-an-installation
+   */
   "GET /user/installations/:installation_id/repositories": [
     AppsListInstallationReposForAuthenticatedUserEndpoint,
     AppsListInstallationReposForAuthenticatedUserRequestOptions,
     AppsListInstallationReposForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user
+   */
   "GET /user/issues": [
     IssuesListForAuthenticatedUserEndpoint,
     IssuesListForAuthenticatedUserRequestOptions,
     IssuesListForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/keys/#list-your-public-keys
+   */
   "GET /user/keys": [
     UsersListPublicKeysEndpoint,
     UsersListPublicKeysRequestOptions,
     UsersListPublicKeysResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/keys/#get-a-single-public-key
+   */
   "GET /user/keys/:key_id": [
     UsersGetPublicKeyEndpoint,
     UsersGetPublicKeyRequestOptions,
     UsersGetPublicKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user
+   */
   "GET /user/marketplace_purchases": [
     AppsListSubscriptionsForAuthenticatedUserEndpoint,
     AppsListSubscriptionsForAuthenticatedUserRequestOptions,
     AppsListSubscriptionsForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed
+   */
   "GET /user/marketplace_purchases/stubbed": [
     AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint,
     AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions,
     AppsListSubscriptionsForAuthenticatedUserStubbedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#list-your-organization-memberships
+   */
   "GET /user/memberships/orgs": [
     OrgsListMembershipsEndpoint,
     OrgsListMembershipsRequestOptions,
     OrgsListMembershipsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#get-your-organization-membership
+   */
   "GET /user/memberships/orgs/:org": [
     OrgsGetMembershipForAuthenticatedUserEndpoint,
     OrgsGetMembershipForAuthenticatedUserRequestOptions,
     OrgsGetMembershipForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#list-user-migrations
+   */
   "GET /user/migrations": [
     MigrationsListForAuthenticatedUserEndpoint,
     MigrationsListForAuthenticatedUserRequestOptions,
     MigrationsListForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration
+   */
   "GET /user/migrations/:migration_id": [
     MigrationsGetStatusForAuthenticatedUserEndpoint,
     MigrationsGetStatusForAuthenticatedUserRequestOptions,
     MigrationsGetStatusForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive
+   */
   "GET /user/migrations/:migration_id/archive": [
     MigrationsGetArchiveForAuthenticatedUserEndpoint,
     MigrationsGetArchiveForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#list-your-organizations
+   */
   "GET /user/orgs": [
     OrgsListForAuthenticatedUserEndpoint,
     OrgsListForAuthenticatedUserRequestOptions,
     OrgsListForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-a-user
+   */
   "GET /user/public_emails": [
     UsersListPublicEmailsEndpoint,
     UsersListPublicEmailsRequestOptions,
     UsersListPublicEmailsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user
+   */
   "GET /user/repos": [
     ReposListForAuthenticatedUserEndpoint,
     ReposListForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#list-a-users-repository-invitations
+   */
   "GET /user/repository_invitations": [
     ReposListInvitationsForAuthenticatedUserEndpoint,
     ReposListInvitationsForAuthenticatedUserRequestOptions,
     ReposListInvitationsForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-the-authenticated-user
+   */
   "GET /user/starred": [
     ActivityListReposStarredByAuthenticatedUserEndpoint,
     ActivityListReposStarredByAuthenticatedUserRequestOptions,
     ActivityListReposStarredByAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user
+   */
   "GET /user/starred/:owner/:repo": [
     ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint,
     ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-the-authenticated-user
+   */
   "GET /user/subscriptions": [
     ActivityListWatchedReposForAuthenticatedUserEndpoint,
     ActivityListWatchedReposForAuthenticatedUserRequestOptions,
     ActivityListWatchedReposForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#check-if-you-are-watching-a-repository-legacy
+   */
   "GET /user/subscriptions/:owner/:repo": [
     ActivityCheckWatchingRepoLegacyEndpoint,
     ActivityCheckWatchingRepoLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#list-user-teams
+   */
   "GET /user/teams": [
     TeamsListForAuthenticatedUserEndpoint,
     TeamsListForAuthenticatedUserRequestOptions,
     TeamsListForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/#get-all-users
+   */
   "GET /users": [
     UsersListEndpoint,
     UsersListRequestOptions,
     UsersListResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/#get-a-single-user
+   */
   "GET /users/:username": [
     UsersGetByUsernameEndpoint,
     UsersGetByUsernameRequestOptions,
     UsersGetByUsernameResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user
+   */
   "GET /users/:username/events": [
     ActivityListEventsForAuthenticatedUserEndpoint,
     ActivityListEventsForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user
+   */
   "GET /users/:username/events/orgs/:org": [
     ActivityListOrgEventsForAuthenticatedUserEndpoint,
     ActivityListOrgEventsForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-public-events-for-a-user
+   */
   "GET /users/:username/events/public": [
     ActivityListPublicEventsForUserEndpoint,
     ActivityListPublicEventsForUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#list-followers-of-a-user
+   */
   "GET /users/:username/followers": [
     UsersListFollowersForUserEndpoint,
     UsersListFollowersForUserRequestOptions,
     UsersListFollowersForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user
+   */
   "GET /users/:username/following": [
     UsersListFollowingForUserEndpoint,
     UsersListFollowingForUserRequestOptions,
     UsersListFollowingForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#check-if-one-user-follows-another
+   */
   "GET /users/:username/following/:target_user": [
     UsersCheckFollowingForUserEndpoint,
     UsersCheckFollowingForUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#list-gists-for-a-user
+   */
   "GET /users/:username/gists": [
     GistsListForUserEndpoint,
     GistsListForUserRequestOptions,
     GistsListForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/gpg_keys/#list-gpg-keys-for-a-user
+   */
   "GET /users/:username/gpg_keys": [
     UsersListGpgKeysForUserEndpoint,
     UsersListGpgKeysForUserRequestOptions,
     UsersListGpgKeysForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/#get-contextual-information-about-a-user
+   */
   "GET /users/:username/hovercard": [
     UsersGetContextForUserEndpoint,
     UsersGetContextForUserRequestOptions,
     UsersGetContextForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#get-a-user-installation
+   */
   "GET /users/:username/installation": [
     AppsGetUserInstallationEndpoint,
     AppsGetUserInstallationRequestOptions,
     AppsGetUserInstallationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user
+   */
   "GET /users/:username/keys": [
     UsersListPublicKeysForUserEndpoint,
     UsersListPublicKeysForUserRequestOptions,
     UsersListPublicKeysForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#list-user-organizations
+   */
   "GET /users/:username/orgs": [
     OrgsListForUserEndpoint,
     OrgsListForUserRequestOptions,
     OrgsListForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#list-user-projects
+   */
   "GET /users/:username/projects": [
     ProjectsListForUserEndpoint,
     ProjectsListForUserRequestOptions,
     ProjectsListForUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-events-received-by-the-authenticated-user
+   */
   "GET /users/:username/received_events": [
     ActivityListReceivedEventsForUserEndpoint,
     ActivityListReceivedEventsForUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/events/#list-public-events-received-by-a-user
+   */
   "GET /users/:username/received_events/public": [
     ActivityListReceivedPublicEventsForUserEndpoint,
     ActivityListReceivedPublicEventsForUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#list-repositories-for-a-user
+   */
   "GET /users/:username/repos": [
     ReposListForUserEndpoint,
     ReposListForUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-a-user
+   */
   "GET /users/:username/starred": [
     ActivityListReposStarredByUserEndpoint,
     ActivityListReposStarredByUserRequestOptions,
     ActivityListReposStarredByUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-a-user
+   */
   "GET /users/:username/subscriptions": [
     ActivityListReposWatchedByUserEndpoint,
     ActivityListReposWatchedByUserRequestOptions,
     ActivityListReposWatchedByUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#reset-a-token
+   */
   "PATCH /applications/:client_id/token": [
     AppsResetTokenEndpoint,
     AppsResetTokenRequestOptions,
     AppsResetTokenResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
+   */
   "PATCH /authorizations/:authorization_id": [
     OauthAuthorizationsUpdateAuthorizationEndpoint,
     OauthAuthorizationsUpdateAuthorizationRequestOptions,
     OauthAuthorizationsUpdateAuthorizationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#update-a-gist
+   */
   "PATCH /gists/:gist_id": [
     GistsUpdateEndpoint,
     GistsUpdateRequestOptions,
     GistsUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/comments/#edit-a-comment
+   */
   "PATCH /gists/:gist_id/comments/:comment_id": [
     GistsUpdateCommentEndpoint,
     GistsUpdateCommentRequestOptions,
     GistsUpdateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read
+   */
   "PATCH /notifications/threads/:thread_id": [
     ActivityMarkThreadAsReadEndpoint,
     ActivityMarkThreadAsReadRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/#edit-an-organization
+   */
   "PATCH /orgs/:org": [
     OrgsUpdateEndpoint,
     OrgsUpdateRequestOptions,
     OrgsUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#edit-a-hook
+   */
   "PATCH /orgs/:org/hooks/:hook_id": [
     OrgsUpdateHookEndpoint,
     OrgsUpdateHookRequestOptions,
     OrgsUpdateHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#edit-team
+   */
   "PATCH /orgs/:org/teams/:team_slug": [
     TeamsUpdateInOrgEndpoint,
     TeamsUpdateInOrgRequestOptions,
     TeamsUpdateInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion
+   */
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number": [
     TeamsUpdateDiscussionInOrgEndpoint,
     TeamsUpdateDiscussionInOrgRequestOptions,
     TeamsUpdateDiscussionInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment
+   */
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": [
     TeamsUpdateDiscussionCommentInOrgEndpoint,
     TeamsUpdateDiscussionCommentInOrgRequestOptions,
     TeamsUpdateDiscussionCommentInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections
+   */
   "PATCH /orgs/:org/teams/:team_slug/team-sync/group-mappings": [
     TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint,
     TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions,
     TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#update-a-project
+   */
   "PATCH /projects/:project_id": [
     ProjectsUpdateEndpoint,
     ProjectsUpdateRequestOptions,
     ProjectsUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#update-a-project-column
+   */
   "PATCH /projects/columns/:column_id": [
     ProjectsUpdateColumnEndpoint,
     ProjectsUpdateColumnRequestOptions,
     ProjectsUpdateColumnResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#update-a-project-card
+   */
   "PATCH /projects/columns/cards/:card_id": [
     ProjectsUpdateCardEndpoint,
     ProjectsUpdateCardRequestOptions,
     ProjectsUpdateCardResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#update-a-repository
+   */
   "PATCH /repos/:owner/:repo": [
     ReposUpdateEndpoint,
     ReposUpdateRequestOptions,
     ReposUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch
+   */
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": [
     ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint,
     ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions,
     ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch
+   */
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks": [
     ReposUpdateProtectedBranchRequiredStatusChecksEndpoint,
     ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions,
     ReposUpdateProtectedBranchRequiredStatusChecksResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#update-a-check-run
+   */
   "PATCH /repos/:owner/:repo/check-runs/:check_run_id": [
     ChecksUpdateEndpoint,
     ChecksUpdateRequestOptions,
     ChecksUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites
+   */
   "PATCH /repos/:owner/:repo/check-suites/preferences": [
     ChecksSetSuitesPreferencesEndpoint,
     ChecksSetSuitesPreferencesRequestOptions,
     ChecksSetSuitesPreferencesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#update-a-commit-comment
+   */
   "PATCH /repos/:owner/:repo/comments/:comment_id": [
     ReposUpdateCommitCommentEndpoint,
     ReposUpdateCommitCommentRequestOptions,
     ReposUpdateCommitCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/refs/#update-a-reference
+   */
   "PATCH /repos/:owner/:repo/git/refs/:ref": [
     GitUpdateRefEndpoint,
     GitUpdateRefRequestOptions,
     GitUpdateRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#edit-a-hook
+   */
   "PATCH /repos/:owner/:repo/hooks/:hook_id": [
     ReposUpdateHookEndpoint,
     ReposUpdateHookRequestOptions,
     ReposUpdateHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#update-existing-import
+   */
   "PATCH /repos/:owner/:repo/import": [
     MigrationsUpdateImportEndpoint,
     MigrationsUpdateImportRequestOptions,
     MigrationsUpdateImportResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author
+   */
   "PATCH /repos/:owner/:repo/import/authors/:author_id": [
     MigrationsMapCommitAuthorEndpoint,
     MigrationsMapCommitAuthorRequestOptions,
     MigrationsMapCommitAuthorResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference
+   */
   "PATCH /repos/:owner/:repo/import/lfs": [
     MigrationsSetLfsPreferenceEndpoint,
     MigrationsSetLfsPreferenceRequestOptions,
     MigrationsSetLfsPreferenceResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#update-a-repository-invitation
+   */
   "PATCH /repos/:owner/:repo/invitations/:invitation_id": [
     ReposUpdateInvitationEndpoint,
     ReposUpdateInvitationRequestOptions,
     ReposUpdateInvitationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#update-an-issue
+   */
   "PATCH /repos/:owner/:repo/issues/:issue_number": [
     IssuesUpdateEndpoint,
     IssuesUpdateRequestOptions,
     IssuesUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#edit-a-comment
+   */
   "PATCH /repos/:owner/:repo/issues/comments/:comment_id": [
     IssuesUpdateCommentEndpoint,
     IssuesUpdateCommentRequestOptions,
     IssuesUpdateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#update-a-label
+   */
   "PATCH /repos/:owner/:repo/labels/:name": [
     IssuesUpdateLabelEndpoint,
     IssuesUpdateLabelRequestOptions,
     IssuesUpdateLabelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/milestones/#update-a-milestone
+   */
   "PATCH /repos/:owner/:repo/milestones/:milestone_number": [
     IssuesUpdateMilestoneEndpoint,
     IssuesUpdateMilestoneRequestOptions,
     IssuesUpdateMilestoneResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#update-a-pull-request
+   */
   "PATCH /repos/:owner/:repo/pulls/:pull_number": [
     PullsUpdateEndpoint,
     PullsUpdateRequestOptions,
     PullsUpdateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#edit-a-comment
+   */
   "PATCH /repos/:owner/:repo/pulls/comments/:comment_id": [
     PullsUpdateCommentEndpoint,
     PullsUpdateCommentRequestOptions,
     PullsUpdateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#edit-a-release
+   */
   "PATCH /repos/:owner/:repo/releases/:release_id": [
     ReposUpdateReleaseEndpoint,
     ReposUpdateReleaseRequestOptions,
     ReposUpdateReleaseResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#edit-a-release-asset
+   */
   "PATCH /repos/:owner/:repo/releases/assets/:asset_id": [
     ReposUpdateReleaseAssetEndpoint,
     ReposUpdateReleaseAssetRequestOptions,
     ReposUpdateReleaseAssetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#update-a-user-attribute
+   */
   "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimUpdateUserAttributeEndpoint,
     ScimUpdateUserAttributeRequestOptions,
     ScimUpdateUserAttributeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#edit-team-legacy
+   */
   "PATCH /teams/:team_id": [
     TeamsUpdateLegacyEndpoint,
     TeamsUpdateLegacyRequestOptions,
     TeamsUpdateLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
+   */
   "PATCH /teams/:team_id/discussions/:discussion_number": [
     TeamsUpdateDiscussionLegacyEndpoint,
     TeamsUpdateDiscussionLegacyRequestOptions,
     TeamsUpdateDiscussionLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
+   */
   "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": [
     TeamsUpdateDiscussionCommentLegacyEndpoint,
     TeamsUpdateDiscussionCommentLegacyRequestOptions,
     TeamsUpdateDiscussionCommentLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections-legacy
+   */
   "PATCH /teams/:team_id/team-sync/group-mappings": [
     TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint,
     TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions,
     TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/#update-the-authenticated-user
+   */
   "PATCH /user": [
     UsersUpdateAuthenticatedEndpoint,
     UsersUpdateAuthenticatedRequestOptions,
     UsersUpdateAuthenticatedResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility
+   */
   "PATCH /user/email/visibility": [
     UsersTogglePrimaryEmailVisibilityEndpoint,
     UsersTogglePrimaryEmailVisibilityRequestOptions,
     UsersTogglePrimaryEmailVisibilityResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#edit-your-organization-membership
+   */
   "PATCH /user/memberships/orgs/:org": [
     OrgsUpdateMembershipEndpoint,
     OrgsUpdateMembershipRequestOptions,
     OrgsUpdateMembershipResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/invitations/#accept-a-repository-invitation
+   */
   "PATCH /user/repository_invitations/:invitation_id": [
     ReposAcceptInvitationEndpoint,
     ReposAcceptInvitationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest
+   */
   "POST /app-manifests/:code/conversions": [
     AppsCreateFromManifestEndpoint,
     AppsCreateFromManifestRequestOptions,
     AppsCreateFromManifestResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/#create-a-new-installation-token
+   */
   "POST /app/installations/:installation_id/access_tokens": [
     AppsCreateInstallationTokenEndpoint,
     AppsCreateInstallationTokenRequestOptions,
     AppsCreateInstallationTokenResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#check-a-token
+   */
   "POST /applications/:client_id/token": [
     AppsCheckTokenEndpoint,
     AppsCheckTokenRequestOptions,
     AppsCheckTokenResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
+   */
   "POST /applications/:client_id/tokens/:access_token": [
     AppsResetAuthorizationEndpoint,
     AppsResetAuthorizationRequestOptions,
     AppsResetAuthorizationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
+   */
   "POST /authorizations": [
     OauthAuthorizationsCreateAuthorizationEndpoint,
     OauthAuthorizationsCreateAuthorizationRequestOptions,
     OauthAuthorizationsCreateAuthorizationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#create-a-content-attachment
+   */
   "POST /content_references/:content_reference_id/attachments": [
     AppsCreateContentAttachmentEndpoint,
     AppsCreateContentAttachmentRequestOptions,
     AppsCreateContentAttachmentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#create-a-gist
+   */
   "POST /gists": [
     GistsCreateEndpoint,
     GistsCreateRequestOptions,
     GistsCreateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/comments/#create-a-comment
+   */
   "POST /gists/:gist_id/comments": [
     GistsCreateCommentEndpoint,
     GistsCreateCommentRequestOptions,
     GistsCreateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#fork-a-gist
+   */
   "POST /gists/:gist_id/forks": [
     GistsForkEndpoint,
     GistsForkRequestOptions,
     GistsForkResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document
+   */
   "POST /markdown": [MarkdownRenderEndpoint, MarkdownRenderRequestOptions, any];
+  /**
+   * @see https://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode
+   */
   "POST /markdown/raw": [
     MarkdownRenderRawEndpoint,
     MarkdownRenderRawRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#create-a-hook
+   */
   "POST /orgs/:org/hooks": [
     OrgsCreateHookEndpoint,
     OrgsCreateHookRequestOptions,
     OrgsCreateHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/hooks/#ping-a-hook
+   */
   "POST /orgs/:org/hooks/:hook_id/pings": [
     OrgsPingHookEndpoint,
     OrgsPingHookRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#create-organization-invitation
+   */
   "POST /orgs/:org/invitations": [
     OrgsCreateInvitationEndpoint,
     OrgsCreateInvitationRequestOptions,
     OrgsCreateInvitationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/orgs/#start-an-organization-migration
+   */
   "POST /orgs/:org/migrations": [
     MigrationsStartForOrgEndpoint,
     MigrationsStartForOrgRequestOptions,
     MigrationsStartForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#create-an-organization-project
+   */
   "POST /orgs/:org/projects": [
     ProjectsCreateForOrgEndpoint,
     ProjectsCreateForOrgRequestOptions,
     ProjectsCreateForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#create-an-organization-repository
+   */
   "POST /orgs/:org/repos": [
     ReposCreateInOrgEndpoint,
     ReposCreateInOrgRequestOptions,
     ReposCreateInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#create-team
+   */
   "POST /orgs/:org/teams": [
     TeamsCreateEndpoint,
     TeamsCreateRequestOptions,
     TeamsCreateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#create-a-discussion
+   */
   "POST /orgs/:org/teams/:team_slug/discussions": [
     TeamsCreateDiscussionInOrgEndpoint,
     TeamsCreateDiscussionInOrgRequestOptions,
     TeamsCreateDiscussionInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment
+   */
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": [
     TeamsCreateDiscussionCommentInOrgEndpoint,
     TeamsCreateDiscussionCommentInOrgRequestOptions,
     TeamsCreateDiscussionCommentInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment
+   */
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsCreateForTeamDiscussionCommentInOrgEndpoint,
     ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions,
     ReactionsCreateForTeamDiscussionCommentInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion
+   */
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": [
     ReactionsCreateForTeamDiscussionInOrgEndpoint,
     ReactionsCreateForTeamDiscussionInOrgRequestOptions,
     ReactionsCreateForTeamDiscussionInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#create-a-project-column
+   */
   "POST /projects/:project_id/columns": [
     ProjectsCreateColumnEndpoint,
     ProjectsCreateColumnRequestOptions,
     ProjectsCreateColumnResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#create-a-project-card
+   */
   "POST /projects/columns/:column_id/cards": [
     ProjectsCreateCardEndpoint,
     ProjectsCreateCardRequestOptions,
     ProjectsCreateCardResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/columns/#move-a-project-column
+   */
   "POST /projects/columns/:column_id/moves": [
     ProjectsMoveColumnEndpoint,
     ProjectsMoveColumnRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/cards/#move-a-project-card
+   */
   "POST /projects/columns/cards/:card_id/moves": [
     ProjectsMoveCardEndpoint,
     ProjectsMoveCardRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#create-a-registration-token
+   */
   "POST /repos/:owner/:repo/actions/runners/registration-token": [
     ActionsCreateRegistrationTokenEndpoint,
     ActionsCreateRegistrationTokenRequestOptions,
     ActionsCreateRegistrationTokenResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/self_hosted_runners/#create-a-remove-token
+   */
   "POST /repos/:owner/:repo/actions/runners/remove-token": [
     ActionsCreateRemoveTokenEndpoint,
     ActionsCreateRemoveTokenRequestOptions,
     ActionsCreateRemoveTokenResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#cancel-a-workflow-run
+   */
   "POST /repos/:owner/:repo/actions/runs/:run_id/cancel": [
     ActionsCancelWorkflowRunEndpoint,
     ActionsCancelWorkflowRunRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/workflow_runs/#re-run-a-workflow
+   */
   "POST /repos/:owner/:repo/actions/runs/:run_id/rerun": [
     ActionsReRunWorkflowEndpoint,
     ActionsReRunWorkflowRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-admin-enforcement-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins": [
     ReposAddProtectedBranchAdminEnforcementEndpoint,
     ReposAddProtectedBranchAdminEnforcementRequestOptions,
     ReposAddProtectedBranchAdminEnforcementResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-required-signatures-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/required_signatures": [
     ReposAddProtectedBranchRequiredSignaturesEndpoint,
     ReposAddProtectedBranchRequiredSignaturesRequestOptions,
     ReposAddProtectedBranchRequiredSignaturesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-required-status-checks-contexts-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint,
     ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions,
     ReposAddProtectedBranchRequiredStatusChecksContextsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-app-restrictions-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposAddProtectedBranchAppRestrictionsEndpoint,
     ReposAddProtectedBranchAppRestrictionsRequestOptions,
     ReposAddProtectedBranchAppRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-team-restrictions-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposAddProtectedBranchTeamRestrictionsEndpoint,
     ReposAddProtectedBranchTeamRestrictionsRequestOptions,
     ReposAddProtectedBranchTeamRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#add-user-restrictions-of-protected-branch
+   */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposAddProtectedBranchUserRestrictionsEndpoint,
     ReposAddProtectedBranchUserRestrictionsRequestOptions,
     ReposAddProtectedBranchUserRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/runs/#create-a-check-run
+   */
   "POST /repos/:owner/:repo/check-runs": [
     ChecksCreateEndpoint,
     ChecksCreateRequestOptions,
     ChecksCreateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/suites/#create-a-check-suite
+   */
   "POST /repos/:owner/:repo/check-suites": [
     ChecksCreateSuiteEndpoint,
     ChecksCreateSuiteRequestOptions,
     ChecksCreateSuiteResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/checks/suites/#rerequest-a-check-suite
+   */
   "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": [
     ChecksRerequestSuiteEndpoint,
     ChecksRerequestSuiteRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-commit-comment
+   */
   "POST /repos/:owner/:repo/comments/:comment_id/reactions": [
     ReactionsCreateForCommitCommentEndpoint,
     ReactionsCreateForCommitCommentRequestOptions,
     ReactionsCreateForCommitCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/comments/#create-a-commit-comment
+   */
   "POST /repos/:owner/:repo/commits/:commit_sha/comments": [
     ReposCreateCommitCommentEndpoint,
     ReposCreateCommitCommentRequestOptions,
     ReposCreateCommitCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#create-a-deployment
+   */
   "POST /repos/:owner/:repo/deployments": [
     ReposCreateDeploymentEndpoint,
     ReposCreateDeploymentRequestOptions,
     ReposCreateDeploymentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/deployments/#create-a-deployment-status
+   */
   "POST /repos/:owner/:repo/deployments/:deployment_id/statuses": [
     ReposCreateDeploymentStatusEndpoint,
     ReposCreateDeploymentStatusRequestOptions,
     ReposCreateDeploymentStatusResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
+   */
   "POST /repos/:owner/:repo/dispatches": [
     ReposCreateDispatchEventEndpoint,
     ReposCreateDispatchEventRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/forks/#create-a-fork
+   */
   "POST /repos/:owner/:repo/forks": [
     ReposCreateForkEndpoint,
     ReposCreateForkRequestOptions,
     ReposCreateForkResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/blobs/#create-a-blob
+   */
   "POST /repos/:owner/:repo/git/blobs": [
     GitCreateBlobEndpoint,
     GitCreateBlobRequestOptions,
     GitCreateBlobResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/commits/#create-a-commit
+   */
   "POST /repos/:owner/:repo/git/commits": [
     GitCreateCommitEndpoint,
     GitCreateCommitRequestOptions,
     GitCreateCommitResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/refs/#create-a-reference
+   */
   "POST /repos/:owner/:repo/git/refs": [
     GitCreateRefEndpoint,
     GitCreateRefRequestOptions,
     GitCreateRefResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/tags/#create-a-tag-object
+   */
   "POST /repos/:owner/:repo/git/tags": [
     GitCreateTagEndpoint,
     GitCreateTagRequestOptions,
     GitCreateTagResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/git/trees/#create-a-tree
+   */
   "POST /repos/:owner/:repo/git/trees": [
     GitCreateTreeEndpoint,
     GitCreateTreeRequestOptions,
     GitCreateTreeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#create-a-hook
+   */
   "POST /repos/:owner/:repo/hooks": [
     ReposCreateHookEndpoint,
     ReposCreateHookRequestOptions,
     ReposCreateHookResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#ping-a-hook
+   */
   "POST /repos/:owner/:repo/hooks/:hook_id/pings": [
     ReposPingHookEndpoint,
     ReposPingHookRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/hooks/#test-a-push-hook
+   */
   "POST /repos/:owner/:repo/hooks/:hook_id/tests": [
     ReposTestPushHookEndpoint,
     ReposTestPushHookRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#create-an-issue
+   */
   "POST /repos/:owner/:repo/issues": [
     IssuesCreateEndpoint,
     IssuesCreateRequestOptions,
     IssuesCreateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/assignees/#add-assignees-to-an-issue
+   */
   "POST /repos/:owner/:repo/issues/:issue_number/assignees": [
     IssuesAddAssigneesEndpoint,
     IssuesAddAssigneesRequestOptions,
     IssuesAddAssigneesResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/comments/#create-a-comment
+   */
   "POST /repos/:owner/:repo/issues/:issue_number/comments": [
     IssuesCreateCommentEndpoint,
     IssuesCreateCommentRequestOptions,
     IssuesCreateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#add-labels-to-an-issue
+   */
   "POST /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesAddLabelsEndpoint,
     IssuesAddLabelsRequestOptions,
     IssuesAddLabelsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-an-issue
+   */
   "POST /repos/:owner/:repo/issues/:issue_number/reactions": [
     ReactionsCreateForIssueEndpoint,
     ReactionsCreateForIssueRequestOptions,
     ReactionsCreateForIssueResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-an-issue-comment
+   */
   "POST /repos/:owner/:repo/issues/comments/:comment_id/reactions": [
     ReactionsCreateForIssueCommentEndpoint,
     ReactionsCreateForIssueCommentRequestOptions,
     ReactionsCreateForIssueCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key
+   */
   "POST /repos/:owner/:repo/keys": [
     ReposAddDeployKeyEndpoint,
     ReposAddDeployKeyRequestOptions,
     ReposAddDeployKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#create-a-label
+   */
   "POST /repos/:owner/:repo/labels": [
     IssuesCreateLabelEndpoint,
     IssuesCreateLabelRequestOptions,
     IssuesCreateLabelResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/merging/#perform-a-merge
+   */
   "POST /repos/:owner/:repo/merges": [
     ReposMergeEndpoint,
     ReposMergeRequestOptions,
     ReposMergeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/milestones/#create-a-milestone
+   */
   "POST /repos/:owner/:repo/milestones": [
     IssuesCreateMilestoneEndpoint,
     IssuesCreateMilestoneRequestOptions,
     IssuesCreateMilestoneResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#enable-a-pages-site
+   */
   "POST /repos/:owner/:repo/pages": [
     ReposEnablePagesSiteEndpoint,
     ReposEnablePagesSiteRequestOptions,
     ReposEnablePagesSiteResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#request-a-page-build
+   */
   "POST /repos/:owner/:repo/pages/builds": [
     ReposRequestPageBuildEndpoint,
     ReposRequestPageBuildRequestOptions,
     ReposRequestPageBuildResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#create-a-repository-project
+   */
   "POST /repos/:owner/:repo/projects": [
     ProjectsCreateForRepoEndpoint,
     ProjectsCreateForRepoRequestOptions,
     ProjectsCreateForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#create-a-pull-request
+   */
   "POST /repos/:owner/:repo/pulls": [
     PullsCreateEndpoint,
     PullsCreateRequestOptions,
     PullsCreateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#create-a-comment
+   */
   "POST /repos/:owner/:repo/pulls/:pull_number/comments": [
     PullsCreateCommentEndpoint,
     PullsCreateCommentRequestOptions,
     PullsCreateCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply
+   */
   "POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies": [
     PullsCreateReviewCommentReplyEndpoint,
     PullsCreateReviewCommentReplyRequestOptions,
     PullsCreateReviewCommentReplyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
+   */
   "POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": [
     PullsCreateReviewRequestEndpoint,
     PullsCreateReviewRequestRequestOptions,
     PullsCreateReviewRequestResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#create-a-pull-request-review
+   */
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews": [
     PullsCreateReviewEndpoint,
     PullsCreateReviewRequestOptions,
     PullsCreateReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review
+   */
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events": [
     PullsSubmitReviewEndpoint,
     PullsSubmitReviewRequestOptions,
     PullsSubmitReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment
+   */
   "POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions": [
     ReactionsCreateForPullRequestReviewCommentEndpoint,
     ReactionsCreateForPullRequestReviewCommentRequestOptions,
     ReactionsCreateForPullRequestReviewCommentResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#create-a-release
+   */
   "POST /repos/:owner/:repo/releases": [
     ReposCreateReleaseEndpoint,
     ReposCreateReleaseRequestOptions,
     ReposCreateReleaseResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/statuses/#create-a-status
+   */
   "POST /repos/:owner/:repo/statuses/:sha": [
     ReposCreateStatusEndpoint,
     ReposCreateStatusRequestOptions,
     ReposCreateStatusResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#transfer-a-repository
+   */
   "POST /repos/:owner/:repo/transfer": [
     ReposTransferEndpoint,
     ReposTransferRequestOptions,
     ReposTransferResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#create-a-repository-using-a-template
+   */
   "POST /repos/:template_owner/:template_repo/generate": [
     ReposCreateUsingTemplateEndpoint,
     ReposCreateUsingTemplateRequestOptions,
     ReposCreateUsingTemplateResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#provision-and-invite-users
+   */
   "POST /scim/v2/organizations/:org/Users": [
     ScimProvisionAndInviteUsersEndpoint,
     ScimProvisionAndInviteUsersRequestOptions,
     ScimProvisionAndInviteUsersResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
+   */
   "POST /teams/:team_id/discussions": [
     TeamsCreateDiscussionLegacyEndpoint,
     TeamsCreateDiscussionLegacyRequestOptions,
     TeamsCreateDiscussionLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
+   */
   "POST /teams/:team_id/discussions/:discussion_number/comments": [
     TeamsCreateDiscussionCommentLegacyEndpoint,
     TeamsCreateDiscussionCommentLegacyRequestOptions,
     TeamsCreateDiscussionCommentLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
+   */
   "POST /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": [
     ReactionsCreateForTeamDiscussionCommentLegacyEndpoint,
     ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions,
     ReactionsCreateForTeamDiscussionCommentLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
+   */
   "POST /teams/:team_id/discussions/:discussion_number/reactions": [
     ReactionsCreateForTeamDiscussionLegacyEndpoint,
     ReactionsCreateForTeamDiscussionLegacyRequestOptions,
     ReactionsCreateForTeamDiscussionLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/emails/#add-email-addresses
+   */
   "POST /user/emails": [
     UsersAddEmailsEndpoint,
     UsersAddEmailsRequestOptions,
     UsersAddEmailsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key
+   */
   "POST /user/gpg_keys": [
     UsersCreateGpgKeyEndpoint,
     UsersCreateGpgKeyRequestOptions,
     UsersCreateGpgKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/users/keys/#create-a-public-key
+   */
   "POST /user/keys": [
     UsersCreatePublicKeyEndpoint,
     UsersCreatePublicKeyRequestOptions,
     UsersCreatePublicKeyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#start-a-user-migration
+   */
   "POST /user/migrations": [
     MigrationsStartForAuthenticatedUserEndpoint,
     MigrationsStartForAuthenticatedUserRequestOptions,
     MigrationsStartForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/#create-a-user-project
+   */
   "POST /user/projects": [
     ProjectsCreateForAuthenticatedUserEndpoint,
     ProjectsCreateForAuthenticatedUserRequestOptions,
     ProjectsCreateForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user
+   */
   "POST /user/repos": [
     ReposCreateForAuthenticatedUserEndpoint,
     ReposCreateForAuthenticatedUserRequestOptions,
     ReposCreateForAuthenticatedUserResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/releases/#upload-a-release-asset
+   */
   "POST :origin/repos/:owner/:repo/releases/:release_id/assets:?name,label": [
     ReposUploadReleaseAssetEndpoint,
     ReposUploadReleaseAssetRequestOptions,
     ReposUploadReleaseAssetResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
+   */
   "PUT /authorizations/clients/:client_id": [
     OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint,
     OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions,
     OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
+   */
   "PUT /authorizations/clients/:client_id/:fingerprint": [
     OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint,
     OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions,
     OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/gists/#star-a-gist
+   */
   "PUT /gists/:gist_id/star": [GistsStarEndpoint, GistsStarRequestOptions, any];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read
+   */
   "PUT /notifications": [
     ActivityMarkNotificationsAsReadEndpoint,
     ActivityMarkNotificationsAsReadRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription
+   */
   "PUT /notifications/threads/:thread_id/subscription": [
     ActivitySetThreadSubscriptionEndpoint,
     ActivitySetThreadSubscriptionRequestOptions,
     ActivitySetThreadSubscriptionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/blocking/#block-a-user
+   */
   "PUT /orgs/:org/blocks/:username": [
     OrgsBlockUserEndpoint,
     OrgsBlockUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization
+   */
   "PUT /orgs/:org/interaction-limits": [
     InteractionsAddOrUpdateRestrictionsForOrgEndpoint,
     InteractionsAddOrUpdateRestrictionsForOrgRequestOptions,
     InteractionsAddOrUpdateRestrictionsForOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership
+   */
   "PUT /orgs/:org/memberships/:username": [
     OrgsAddOrUpdateMembershipEndpoint,
     OrgsAddOrUpdateMembershipRequestOptions,
     OrgsAddOrUpdateMembershipResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#convert-member-to-outside-collaborator
+   */
   "PUT /orgs/:org/outside_collaborators/:username": [
     OrgsConvertMemberToOutsideCollaboratorEndpoint,
     OrgsConvertMemberToOutsideCollaboratorRequestOptions,
     OrgsConvertMemberToOutsideCollaboratorResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/orgs/members/#publicize-a-users-membership
+   */
   "PUT /orgs/:org/public_members/:username": [
     OrgsPublicizeMembershipEndpoint,
     OrgsPublicizeMembershipRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership
+   */
   "PUT /orgs/:org/teams/:team_slug/memberships/:username": [
     TeamsAddOrUpdateMembershipInOrgEndpoint,
     TeamsAddOrUpdateMembershipInOrgRequestOptions,
     TeamsAddOrUpdateMembershipInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-project
+   */
   "PUT /orgs/:org/teams/:team_slug/projects/:project_id": [
     TeamsAddOrUpdateProjectInOrgEndpoint,
     TeamsAddOrUpdateProjectInOrgRequestOptions,
     TeamsAddOrUpdateProjectInOrgResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository
+   */
   "PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo": [
     TeamsAddOrUpdateRepoInOrgEndpoint,
     TeamsAddOrUpdateRepoInOrgRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator
+   */
   "PUT /projects/:project_id/collaborators/:username": [
     ProjectsAddCollaboratorEndpoint,
     ProjectsAddCollaboratorRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository
+   */
   "PUT /repos/:owner/:repo/actions/secrets/:name": [
     ActionsCreateOrUpdateSecretForRepoEndpoint,
     ActionsCreateOrUpdateSecretForRepoRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#enable-automated-security-fixes
+   */
   "PUT /repos/:owner/:repo/automated-security-fixes": [
     ReposEnableAutomatedSecurityFixesEndpoint,
     ReposEnableAutomatedSecurityFixesRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#update-branch-protection
+   */
   "PUT /repos/:owner/:repo/branches/:branch/protection": [
     ReposUpdateBranchProtectionEndpoint,
     ReposUpdateBranchProtectionRequestOptions,
     ReposUpdateBranchProtectionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#replace-required-status-checks-contexts-of-protected-branch
+   */
   "PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": [
     ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint,
     ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions,
     ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch
+   */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": [
     ReposReplaceProtectedBranchAppRestrictionsEndpoint,
     ReposReplaceProtectedBranchAppRestrictionsRequestOptions,
     ReposReplaceProtectedBranchAppRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#replace-team-restrictions-of-protected-branch
+   */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": [
     ReposReplaceProtectedBranchTeamRestrictionsEndpoint,
     ReposReplaceProtectedBranchTeamRestrictionsRequestOptions,
     ReposReplaceProtectedBranchTeamRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/branches/#replace-user-restrictions-of-protected-branch
+   */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users": [
     ReposReplaceProtectedBranchUserRestrictionsEndpoint,
     ReposReplaceProtectedBranchUserRestrictionsRequestOptions,
     ReposReplaceProtectedBranchUserRestrictionsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator
+   */
   "PUT /repos/:owner/:repo/collaborators/:username": [
     ReposAddCollaboratorEndpoint,
     ReposAddCollaboratorRequestOptions,
     ReposAddCollaboratorResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/contents/#create-or-update-a-file
+   */
   "PUT /repos/:owner/:repo/contents/:path": [
     ReposCreateOrUpdateFileEndpoint,
     ReposCreateOrUpdateFileRequestOptions,
     ReposCreateOrUpdateFileResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/migrations/source_imports/#start-an-import
+   */
   "PUT /repos/:owner/:repo/import": [
     MigrationsStartImportEndpoint,
     MigrationsStartImportRequestOptions,
     MigrationsStartImportResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository
+   */
   "PUT /repos/:owner/:repo/interaction-limits": [
     InteractionsAddOrUpdateRestrictionsForRepoEndpoint,
     InteractionsAddOrUpdateRestrictionsForRepoRequestOptions,
     InteractionsAddOrUpdateRestrictionsForRepoResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue
+   */
   "PUT /repos/:owner/:repo/issues/:issue_number/labels": [
     IssuesReplaceAllLabelsEndpoint,
     IssuesReplaceAllLabelsRequestOptions,
     IssuesReplaceAllLabelsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/issues/#lock-an-issue
+   */
   "PUT /repos/:owner/:repo/issues/:issue_number/lock": [
     IssuesLockEndpoint,
     IssuesLockRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read
+   */
   "PUT /repos/:owner/:repo/notifications": [
     ActivityMarkRepoNotificationsAsReadEndpoint,
     ActivityMarkRepoNotificationsAsReadRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/pages/#update-information-about-a-pages-site
+   */
   "PUT /repos/:owner/:repo/pages": [
     ReposUpdateInformationAboutPagesSiteEndpoint,
     ReposUpdateInformationAboutPagesSiteRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button
+   */
   "PUT /repos/:owner/:repo/pulls/:pull_number/merge": [
     PullsMergeEndpoint,
     PullsMergeRequestOptions,
     PullsMergeResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review
+   */
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": [
     PullsUpdateReviewEndpoint,
     PullsUpdateReviewRequestOptions,
     PullsUpdateReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/reviews/#dismiss-a-pull-request-review
+   */
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals": [
     PullsDismissReviewEndpoint,
     PullsDismissReviewRequestOptions,
     PullsDismissReviewResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/pulls/#update-a-pull-request-branch
+   */
   "PUT /repos/:owner/:repo/pulls/:pull_number/update-branch": [
     PullsUpdateBranchEndpoint,
     PullsUpdateBranchRequestOptions,
     PullsUpdateBranchResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#set-a-repository-subscription
+   */
   "PUT /repos/:owner/:repo/subscription": [
     ActivitySetRepoSubscriptionEndpoint,
     ActivitySetRepoSubscriptionRequestOptions,
     ActivitySetRepoSubscriptionResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#replace-all-repository-topics
+   */
   "PUT /repos/:owner/:repo/topics": [
     ReposReplaceAllTopicsEndpoint,
     ReposReplaceAllTopicsRequestOptions,
     ReposReplaceAllTopicsResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/repos/#enable-vulnerability-alerts
+   */
   "PUT /repos/:owner/:repo/vulnerability-alerts": [
     ReposEnableVulnerabilityAlertsEndpoint,
     ReposEnableVulnerabilityAlertsRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/scim/#replace-a-provisioned-users-information
+   */
   "PUT /scim/v2/organizations/:org/Users/:scim_user_id": [
     ScimReplaceProvisionedUserInformationEndpoint,
     ScimReplaceProvisionedUserInformationRequestOptions,
     ScimReplaceProvisionedUserInformationResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#add-team-member-legacy
+   */
   "PUT /teams/:team_id/members/:username": [
     TeamsAddMemberLegacyEndpoint,
     TeamsAddMemberLegacyRequestOptions,
     TeamsAddMemberLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
+   */
   "PUT /teams/:team_id/memberships/:username": [
     TeamsAddOrUpdateMembershipLegacyEndpoint,
     TeamsAddOrUpdateMembershipLegacyRequestOptions,
     TeamsAddOrUpdateMembershipLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
+   */
   "PUT /teams/:team_id/projects/:project_id": [
     TeamsAddOrUpdateProjectLegacyEndpoint,
     TeamsAddOrUpdateProjectLegacyRequestOptions,
     TeamsAddOrUpdateProjectLegacyResponseData
   ];
+  /**
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
+   */
   "PUT /teams/:team_id/repos/:owner/:repo": [
     TeamsAddOrUpdateRepoLegacyEndpoint,
     TeamsAddOrUpdateRepoLegacyRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/blocking/#block-a-user
+   */
   "PUT /user/blocks/:username": [
     UsersBlockEndpoint,
     UsersBlockRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/users/followers/#follow-a-user
+   */
   "PUT /user/following/:username": [
     UsersFollowEndpoint,
     UsersFollowRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/apps/installations/#add-repository-to-installation
+   */
   "PUT /user/installations/:installation_id/repositories/:repository_id": [
     AppsAddRepoToInstallationEndpoint,
     AppsAddRepoToInstallationRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user
+   */
   "PUT /user/starred/:owner/:repo": [
     ActivityStarRepoForAuthenticatedUserEndpoint,
     ActivityStarRepoForAuthenticatedUserRequestOptions,
     any
   ];
+  /**
+   * @see https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy
+   */
   "PUT /user/subscriptions/:owner/:repo": [
     ActivityWatchRepoLegacyEndpoint,
     ActivityWatchRepoLegacyRequestOptions,
