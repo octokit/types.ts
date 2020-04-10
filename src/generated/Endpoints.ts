@@ -4272,6 +4272,14 @@ export interface Endpoints {
     ReposCreateReleaseResponseData
   ];
   /**
+   * @see https://developer.github.com/v3/repos/releases/#upload-a-release-asset
+   */
+  "POST /repos/:owner/:repo/releases/:release_id/assets{?name,label}": [
+    ReposUploadReleaseAssetEndpoint,
+    ReposUploadReleaseAssetRequestOptions,
+    ReposUploadReleaseAssetResponseData
+  ];
+  /**
    * @see https://developer.github.com/v3/repos/statuses/#create-a-status
    */
   "POST /repos/:owner/:repo/statuses/:sha": [
@@ -4382,14 +4390,6 @@ export interface Endpoints {
     ReposCreateForAuthenticatedUserEndpoint,
     ReposCreateForAuthenticatedUserRequestOptions,
     ReposCreateForAuthenticatedUserResponseData
-  ];
-  /**
-   * @see https://developer.github.com/v3/repos/releases/#upload-a-release-asset
-   */
-  "POST :origin/repos/:owner/:repo/releases/:release_id/assets:?name,label": [
-    ReposUploadReleaseAssetEndpoint,
-    ReposUploadReleaseAssetRequestOptions,
-    ReposUploadReleaseAssetResponseData
   ];
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app

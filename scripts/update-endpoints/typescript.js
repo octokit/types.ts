@@ -64,8 +64,7 @@ const typeMap = {
 for (const endpoint of ENDPOINTS) {
   if (endpoint.renamed) continue;
 
-  // replace {param} with :param
-  const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
+  const url = endpointToNormalizedUrl(endpoint);
   const route = `${endpoint.method} ${url}`;
 
   endpointsByRoute[route] = {
@@ -86,7 +85,7 @@ for (const endpoint of ENDPOINTS) {
 
   const typeWriter = new TypeWriter();
   const { method, parameters } = endpoint;
-  const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
+  const url = endpointToNormalizedUrl(endpoint);
 
   const optionsTypeName = pascalCase(
     `${endpoint.scope} ${endpoint.id} Endpoint`
@@ -210,4 +209,14 @@ function endpointToResponseTypeName(endpoint) {
   }
 
   return "any";
+}
+
+function endpointToNormalizedUrl(endpoint) {
+  return (
+    endpoint.url
+      // replace {param} with :param
+      .replace(/\{([^?][^}]+)}/g, ":$1")
+      // stecial case for "Upload a release asset": remove ":origin" prefix
+      .replace(/^:origin/, "")
+  );
 }
