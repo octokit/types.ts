@@ -64,22 +64,18 @@ const typeMap = {
 for (const endpoint of ENDPOINTS) {
   if (endpoint.renamed) continue;
 
-  const route = `${endpoint.method} ${endpoint.url.replace(
-    /\{([^}]+)}/g,
-    ":$1"
-  )}`;
+  // replace {param} with :param
+  const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
+  const route = `${endpoint.method} ${url}`;
 
-  if (!endpointsByRoute[route]) {
-    endpointsByRoute[route] = [];
-  }
-
-  endpointsByRoute[route].push({
+  endpointsByRoute[route] = {
+    documentationUrl: endpoint.documentationUrl,
     optionsTypeName: pascalCase(`${endpoint.scope} ${endpoint.id} Endpoint`),
     requestOptionsTypeName: pascalCase(
       `${endpoint.scope} ${endpoint.id} RequestOptions`
     ),
     responseTypeName: endpointToResponseTypeName(endpoint),
-  });
+  };
 }
 
 const options = [];

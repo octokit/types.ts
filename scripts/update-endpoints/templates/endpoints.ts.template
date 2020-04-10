@@ -4,7 +4,10 @@ import { RequestRequestOptions } from "../RequestRequestOptions";
 
 export interface Endpoints {
   {{#each endpointsByRoute}}
-  "{{@key}}": [{{union this "optionsTypeName"}}, {{union this "requestOptionsTypeName"}}, {{union this "responseTypeName"}}]
+  /**
+   * @see {{documentationUrl}}
+   */
+  "{{@key}}": [{{optionsTypeName}}, {{requestOptionsTypeName}}, {{responseTypeName}}]
   {{/each}}
 }
 
