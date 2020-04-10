@@ -5,6 +5,7 @@
     "id": "getAuthenticated",
     "method": "GET",
     "url": "/app",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-github-app",
     "parameters": [],
     "responses": [
       {
@@ -25,6 +26,7 @@
     "id": "createFromManifest",
     "method": "POST",
     "url": "/app-manifests/{code}/conversions",
+    "documentationUrl": "https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest",
     "parameters": [
       {
         "alias": null,
@@ -56,6 +58,7 @@
     "id": "listInstallations",
     "method": "GET",
     "url": "/app/installations",
+    "documentationUrl": "https://developer.github.com/v3/apps/#list-installations",
     "parameters": [
       {
         "alias": null,
@@ -97,6 +100,7 @@
     "id": "getInstallation",
     "method": "GET",
     "url": "/app/installations/{installation_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-installation",
     "parameters": [
       {
         "alias": null,
@@ -128,6 +132,7 @@
     "id": "deleteInstallation",
     "method": "DELETE",
     "url": "/app/installations/{installation_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation",
     "parameters": [
       {
         "alias": null,
@@ -149,6 +154,7 @@
     "id": "createInstallationToken",
     "method": "POST",
     "url": "/app/installations/{installation_id}/access_tokens",
+    "documentationUrl": "https://developer.github.com/v3/apps/#create-a-new-installation-token",
     "parameters": [
       {
         "alias": null,
@@ -200,6 +206,7 @@
     "id": "listGrants",
     "method": "GET",
     "url": "/applications/grants",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#list-your-grants",
     "parameters": [
       {
         "alias": null,
@@ -241,6 +248,7 @@
     "id": "getGrant",
     "method": "GET",
     "url": "/applications/grants/{grant_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant",
     "parameters": [
       {
         "alias": null,
@@ -272,6 +280,7 @@
     "id": "deleteGrant",
     "method": "DELETE",
     "url": "/applications/grants/{grant_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#delete-a-grant",
     "parameters": [
       {
         "alias": null,
@@ -293,6 +302,7 @@
     "id": "deleteAuthorization",
     "method": "DELETE",
     "url": "/applications/{client_id}/grant",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-authorization",
     "parameters": [
       {
         "alias": null,
@@ -324,6 +334,7 @@
     "id": "revokeGrantForApplication",
     "method": "DELETE",
     "url": "/applications/{client_id}/grants/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application",
     "parameters": [
       {
         "alias": null,
@@ -355,6 +366,7 @@
     "id": "revokeGrantForApplication",
     "method": "DELETE",
     "url": "/applications/{client_id}/grants/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application",
     "parameters": [
       {
         "alias": null,
@@ -388,6 +400,7 @@
     "id": "checkToken",
     "method": "POST",
     "url": "/applications/{client_id}/token",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#check-a-token",
     "parameters": [
       {
         "alias": null,
@@ -429,6 +442,7 @@
     "id": "resetToken",
     "method": "PATCH",
     "url": "/applications/{client_id}/token",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#reset-a-token",
     "parameters": [
       {
         "alias": null,
@@ -470,6 +484,7 @@
     "id": "deleteToken",
     "method": "DELETE",
     "url": "/applications/{client_id}/token",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token",
     "parameters": [
       {
         "alias": null,
@@ -501,6 +516,7 @@
     "id": "checkAuthorization",
     "method": "GET",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization",
     "parameters": [
       {
         "alias": null,
@@ -542,6 +558,7 @@
     "id": "checkAuthorization",
     "method": "GET",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization",
     "parameters": [
       {
         "alias": null,
@@ -585,6 +602,7 @@
     "id": "resetAuthorization",
     "method": "POST",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization",
     "parameters": [
       {
         "alias": null,
@@ -626,6 +644,7 @@
     "id": "resetAuthorization",
     "method": "POST",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization",
     "parameters": [
       {
         "alias": null,
@@ -669,6 +688,7 @@
     "id": "revokeAuthorizationForApplication",
     "method": "DELETE",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application",
     "parameters": [
       {
         "alias": null,
@@ -700,6 +720,7 @@
     "id": "revokeAuthorizationForApplication",
     "method": "DELETE",
     "url": "/applications/{client_id}/tokens/{access_token}",
+    "documentationUrl": "https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application",
     "parameters": [
       {
         "alias": null,
@@ -733,6 +754,7 @@
     "id": "getBySlug",
     "method": "GET",
     "url": "/apps/{app_slug}",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-single-github-app",
     "parameters": [
       {
         "alias": null,
@@ -764,6 +786,7 @@
     "id": "listAuthorizations",
     "method": "GET",
     "url": "/authorizations",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations",
     "parameters": [
       {
         "alias": null,
@@ -805,6 +828,7 @@
     "id": "createAuthorization",
     "method": "POST",
     "url": "/authorizations",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization",
     "parameters": [
       {
         "alias": null,
@@ -886,6 +910,7 @@
     "id": "getOrCreateAuthorizationForApp",
     "method": "PUT",
     "url": "/authorizations/clients/{client_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app",
     "parameters": [
       {
         "alias": null,
@@ -976,6 +1001,7 @@
     "id": "getOrCreateAuthorizationForAppAndFingerprint",
     "method": "PUT",
     "url": "/authorizations/clients/{client_id}/{fingerprint}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint",
     "parameters": [
       {
         "alias": null,
@@ -1066,6 +1092,7 @@
     "id": "getOrCreateAuthorizationForAppFingerprint",
     "method": "PUT",
     "url": "/authorizations/clients/{client_id}/{fingerprint}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint",
     "parameters": [
       {
         "alias": null,
@@ -1158,6 +1185,7 @@
     "id": "getAuthorization",
     "method": "GET",
     "url": "/authorizations/{authorization_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization",
     "parameters": [
       {
         "alias": null,
@@ -1189,6 +1217,7 @@
     "id": "updateAuthorization",
     "method": "PATCH",
     "url": "/authorizations/{authorization_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization",
     "parameters": [
       {
         "alias": null,
@@ -1280,6 +1309,7 @@
     "id": "deleteAuthorization",
     "method": "DELETE",
     "url": "/authorizations/{authorization_id}",
+    "documentationUrl": "https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization",
     "parameters": [
       {
         "alias": null,
@@ -1301,6 +1331,7 @@
     "id": "getAllCodesOfConduct",
     "method": "GET",
     "url": "/codes_of_conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
     "parameters": [],
     "responses": [
       {
@@ -1321,6 +1352,7 @@
     "id": "listConductCodes",
     "method": "GET",
     "url": "/codes_of_conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
     "parameters": [],
     "responses": [
       {
@@ -1343,6 +1375,7 @@
     "id": "getConductCode",
     "method": "GET",
     "url": "/codes_of_conduct/{key}",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct",
     "parameters": [
       {
         "alias": null,
@@ -1374,6 +1407,7 @@
     "id": "createContentAttachment",
     "method": "POST",
     "url": "/content_references/{content_reference_id}/attachments",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#create-a-content-attachment",
     "parameters": [
       {
         "alias": null,
@@ -1425,6 +1459,7 @@
     "id": "get",
     "method": "GET",
     "url": "/emojis",
+    "documentationUrl": "https://developer.github.com/v3/emojis/#emojis",
     "parameters": [],
     "responses": [],
     "renamed": null
@@ -1435,6 +1470,7 @@
     "id": "listPublicEvents",
     "method": "GET",
     "url": "/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events",
     "parameters": [
       {
         "alias": null,
@@ -1466,6 +1502,7 @@
     "id": "getFeeds",
     "method": "GET",
     "url": "/feeds",
+    "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
     "parameters": [],
     "responses": [
       {
@@ -1486,6 +1523,7 @@
     "id": "listFeeds",
     "method": "GET",
     "url": "/feeds",
+    "documentationUrl": "https://developer.github.com/v3/activity/feeds/#get-feeds",
     "parameters": [],
     "responses": [
       {
@@ -1508,6 +1546,7 @@
     "id": "list",
     "method": "GET",
     "url": "/gists",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -1559,6 +1598,7 @@
     "id": "create",
     "method": "POST",
     "url": "/gists",
+    "documentationUrl": "https://developer.github.com/v3/gists/#create-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -1620,6 +1660,7 @@
     "id": "listPublic",
     "method": "GET",
     "url": "/gists/public",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-public-gists",
     "parameters": [
       {
         "alias": null,
@@ -1671,6 +1712,7 @@
     "id": "listStarred",
     "method": "GET",
     "url": "/gists/starred",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-starred-gists",
     "parameters": [
       {
         "alias": null,
@@ -1722,6 +1764,7 @@
     "id": "get",
     "method": "GET",
     "url": "/gists/{gist_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -1753,6 +1796,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/gists/{gist_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/#update-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -1824,6 +1868,7 @@
     "id": "delete",
     "method": "DELETE",
     "url": "/gists/{gist_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/#delete-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -1845,6 +1890,7 @@
     "id": "listComments",
     "method": "GET",
     "url": "/gists/{gist_id}/comments",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -1896,6 +1942,7 @@
     "id": "createComment",
     "method": "POST",
     "url": "/gists/{gist_id}/comments",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#create-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -1937,6 +1984,7 @@
     "id": "getComment",
     "method": "GET",
     "url": "/gists/{gist_id}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#get-a-single-comment",
     "parameters": [
       {
         "alias": null,
@@ -1978,6 +2026,7 @@
     "id": "updateComment",
     "method": "PATCH",
     "url": "/gists/{gist_id}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#edit-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -2029,6 +2078,7 @@
     "id": "deleteComment",
     "method": "DELETE",
     "url": "/gists/{gist_id}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/gists/comments/#delete-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -2060,6 +2110,7 @@
     "id": "listCommits",
     "method": "GET",
     "url": "/gists/{gist_id}/commits",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gist-commits",
     "parameters": [
       {
         "alias": null,
@@ -2111,6 +2162,7 @@
     "id": "fork",
     "method": "POST",
     "url": "/gists/{gist_id}/forks",
+    "documentationUrl": "https://developer.github.com/v3/gists/#fork-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -2142,6 +2194,7 @@
     "id": "listForks",
     "method": "GET",
     "url": "/gists/{gist_id}/forks",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gist-forks",
     "parameters": [
       {
         "alias": null,
@@ -2193,6 +2246,7 @@
     "id": "star",
     "method": "PUT",
     "url": "/gists/{gist_id}/star",
+    "documentationUrl": "https://developer.github.com/v3/gists/#star-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -2214,6 +2268,7 @@
     "id": "unstar",
     "method": "DELETE",
     "url": "/gists/{gist_id}/star",
+    "documentationUrl": "https://developer.github.com/v3/gists/#unstar-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -2235,6 +2290,7 @@
     "id": "checkIsStarred",
     "method": "GET",
     "url": "/gists/{gist_id}/star",
+    "documentationUrl": "https://developer.github.com/v3/gists/#check-if-a-gist-is-starred",
     "parameters": [
       {
         "alias": null,
@@ -2256,6 +2312,7 @@
     "id": "getRevision",
     "method": "GET",
     "url": "/gists/{gist_id}/{sha}",
+    "documentationUrl": "https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist",
     "parameters": [
       {
         "alias": null,
@@ -2297,6 +2354,7 @@
     "id": "listTemplates",
     "method": "GET",
     "url": "/gitignore/templates",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#listing-available-templates",
     "parameters": [],
     "responses": [
       {
@@ -2317,6 +2375,7 @@
     "id": "getTemplate",
     "method": "GET",
     "url": "/gitignore/templates/{name}",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-a-single-template",
     "parameters": [
       {
         "alias": null,
@@ -2348,6 +2407,7 @@
     "id": "listRepos",
     "method": "GET",
     "url": "/installation/repositories",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories",
     "parameters": [
       {
         "alias": null,
@@ -2389,6 +2449,7 @@
     "id": "revokeInstallationToken",
     "method": "DELETE",
     "url": "/installation/token",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-token",
     "parameters": [],
     "responses": [],
     "renamed": null
@@ -2399,6 +2460,7 @@
     "id": "list",
     "method": "GET",
     "url": "/issues",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -2500,6 +2562,7 @@
     "id": "issuesLegacy",
     "method": "GET",
     "url": "/legacy/issues/search/{owner}/{repository}/{state}/{keyword}",
+    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-issues",
     "parameters": [
       {
         "alias": null,
@@ -2561,6 +2624,7 @@
     "id": "reposLegacy",
     "method": "GET",
     "url": "/legacy/repos/search/{keyword}",
+    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-repositories",
     "parameters": [
       {
         "alias": null,
@@ -2632,6 +2696,7 @@
     "id": "emailLegacy",
     "method": "GET",
     "url": "/legacy/user/email/{email}",
+    "documentationUrl": "https://developer.github.com/v3/search/legacy/#email-search",
     "parameters": [
       {
         "alias": null,
@@ -2663,6 +2728,7 @@
     "id": "usersLegacy",
     "method": "GET",
     "url": "/legacy/user/search/{keyword}",
+    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-users",
     "parameters": [
       {
         "alias": null,
@@ -2724,6 +2790,7 @@
     "id": "listCommonlyUsed",
     "method": "GET",
     "url": "/licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
     "parameters": [],
     "responses": [
       {
@@ -2744,6 +2811,7 @@
     "id": "list",
     "method": "GET",
     "url": "/licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
     "parameters": [],
     "responses": [
       {
@@ -2766,6 +2834,7 @@
     "id": "get",
     "method": "GET",
     "url": "/licenses/{license}",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-an-individual-license",
     "parameters": [
       {
         "alias": null,
@@ -2797,6 +2866,7 @@
     "id": "render",
     "method": "POST",
     "url": "/markdown",
+    "documentationUrl": "https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document",
     "parameters": [
       {
         "alias": null,
@@ -2838,6 +2908,7 @@
     "id": "renderRaw",
     "method": "POST",
     "url": "/markdown/raw",
+    "documentationUrl": "https://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode",
     "parameters": [
       {
         "alias": null,
@@ -2859,6 +2930,7 @@
     "id": "getSubscriptionPlanForAccount",
     "method": "GET",
     "url": "/marketplace_listing/accounts/{account_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account",
     "parameters": [
       {
         "alias": null,
@@ -2890,6 +2962,7 @@
     "id": "checkAccountIsAssociatedWithAny",
     "method": "GET",
     "url": "/marketplace_listing/accounts/{account_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account",
     "parameters": [
       {
         "alias": null,
@@ -2923,6 +2996,7 @@
     "id": "listPlans",
     "method": "GET",
     "url": "/marketplace_listing/plans",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-plans",
     "parameters": [
       {
         "alias": null,
@@ -2964,6 +3038,7 @@
     "id": "listAccountsForPlan",
     "method": "GET",
     "url": "/marketplace_listing/plans/{plan_id}/accounts",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan",
     "parameters": [
       {
         "alias": null,
@@ -3035,6 +3110,7 @@
     "id": "listAccountsUserOrOrgOnPlan",
     "method": "GET",
     "url": "/marketplace_listing/plans/{plan_id}/accounts",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan",
     "parameters": [
       {
         "alias": null,
@@ -3108,6 +3184,7 @@
     "id": "getSubscriptionPlanForAccountStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/accounts/{account_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -3139,6 +3216,7 @@
     "id": "checkAccountIsAssociatedWithAnyStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/accounts/{account_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -3172,6 +3250,7 @@
     "id": "listPlansStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/plans",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-plans-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -3213,6 +3292,7 @@
     "id": "listAccountsForPlanStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -3284,6 +3364,7 @@
     "id": "listAccountsUserOrOrgOnPlanStubbed",
     "method": "GET",
     "url": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -3357,6 +3438,7 @@
     "id": "get",
     "method": "GET",
     "url": "/meta",
+    "documentationUrl": "https://developer.github.com/v3/meta/#meta",
     "parameters": [],
     "responses": [
       {
@@ -3377,6 +3459,7 @@
     "id": "listPublicEventsForRepoNetwork",
     "method": "GET",
     "url": "/networks/{owner}/{repo}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories",
     "parameters": [
       {
         "alias": null,
@@ -3428,6 +3511,7 @@
     "id": "listNotificationsForAuthenticatedUser",
     "method": "GET",
     "url": "/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -3509,6 +3593,7 @@
     "id": "listNotifications",
     "method": "GET",
     "url": "/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -3592,6 +3677,7 @@
     "id": "markNotificationsAsRead",
     "method": "PUT",
     "url": "/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
     "parameters": [
       {
         "alias": null,
@@ -3613,6 +3699,7 @@
     "id": "markAsRead",
     "method": "PUT",
     "url": "/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
     "parameters": [
       {
         "alias": null,
@@ -3636,6 +3723,7 @@
     "id": "getThreadSubscription",
     "method": "PUT",
     "url": "/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read",
     "parameters": [
       {
         "alias": null,
@@ -3659,6 +3747,7 @@
     "id": "getThread",
     "method": "GET",
     "url": "/notifications/threads/{thread_id}",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#get-a-thread",
     "parameters": [
       {
         "alias": null,
@@ -3690,6 +3779,7 @@
     "id": "markThreadAsRead",
     "method": "PATCH",
     "url": "/notifications/threads/{thread_id}",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read",
     "parameters": [
       {
         "alias": null,
@@ -3711,6 +3801,7 @@
     "id": "getThreadSubscriptionForAuthenticatedUser",
     "method": "GET",
     "url": "/notifications/threads/{thread_id}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#get-a-thread-subscription-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -3742,6 +3833,7 @@
     "id": "setThreadSubscription",
     "method": "PUT",
     "url": "/notifications/threads/{thread_id}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription",
     "parameters": [
       {
         "alias": null,
@@ -3783,6 +3875,7 @@
     "id": "deleteThreadSubscription",
     "method": "DELETE",
     "url": "/notifications/threads/{thread_id}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription",
     "parameters": [
       {
         "alias": null,
@@ -3804,6 +3897,7 @@
     "id": "list",
     "method": "GET",
     "url": "/organizations",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#list-all-organizations",
     "parameters": [
       {
         "alias": null,
@@ -3855,6 +3949,7 @@
     "id": "get",
     "method": "GET",
     "url": "/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#get-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -3889,6 +3984,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#edit-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4060,6 +4156,7 @@
     "id": "listBlockedUsers",
     "method": "GET",
     "url": "/orgs/{org}/blocks",
+    "documentationUrl": "https://developer.github.com/v3/orgs/blocking/#list-blocked-users",
     "parameters": [
       {
         "alias": null,
@@ -4091,6 +4188,7 @@
     "id": "checkBlockedUser",
     "method": "GET",
     "url": "/orgs/{org}/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/blocking/#check-whether-a-user-is-blocked-from-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4122,6 +4220,7 @@
     "id": "blockUser",
     "method": "PUT",
     "url": "/orgs/{org}/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/blocking/#block-a-user",
     "parameters": [
       {
         "alias": null,
@@ -4153,6 +4252,7 @@
     "id": "unblockUser",
     "method": "DELETE",
     "url": "/orgs/{org}/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/blocking/#unblock-a-user",
     "parameters": [
       {
         "alias": null,
@@ -4184,6 +4284,7 @@
     "id": "listCredentialAuthorizations",
     "method": "GET",
     "url": "/orgs/{org}/credential-authorizations",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#list-credential-authorizations-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4215,6 +4316,7 @@
     "id": "removeCredentialAuthorization",
     "method": "DELETE",
     "url": "/orgs/{org}/credential-authorizations/{credential_id}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#remove-a-credential-authorization-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4246,6 +4348,7 @@
     "id": "listPublicOrgEvents",
     "method": "GET",
     "url": "/orgs/{org}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-organization-events",
     "parameters": [
       {
         "alias": null,
@@ -4287,6 +4390,7 @@
     "id": "listPublicEventsForOrg",
     "method": "GET",
     "url": "/orgs/{org}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-organization-events",
     "parameters": [
       {
         "alias": null,
@@ -4330,6 +4434,7 @@
     "id": "listHooks",
     "method": "GET",
     "url": "/orgs/{org}/hooks",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#list-hooks",
     "parameters": [
       {
         "alias": null,
@@ -4381,6 +4486,7 @@
     "id": "createHook",
     "method": "POST",
     "url": "/orgs/{org}/hooks",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#create-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -4492,6 +4598,7 @@
     "id": "getHook",
     "method": "GET",
     "url": "/orgs/{org}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#get-single-hook",
     "parameters": [
       {
         "alias": null,
@@ -4533,6 +4640,7 @@
     "id": "updateHook",
     "method": "PATCH",
     "url": "/orgs/{org}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#edit-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -4644,6 +4752,7 @@
     "id": "deleteHook",
     "method": "DELETE",
     "url": "/orgs/{org}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#delete-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -4675,6 +4784,7 @@
     "id": "pingHook",
     "method": "POST",
     "url": "/orgs/{org}/hooks/{hook_id}/pings",
+    "documentationUrl": "https://developer.github.com/v3/orgs/hooks/#ping-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -4706,6 +4816,7 @@
     "id": "getOrgInstallation",
     "method": "GET",
     "url": "/orgs/{org}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation",
     "parameters": [
       {
         "alias": null,
@@ -4737,6 +4848,7 @@
     "id": "findOrgInstallation",
     "method": "GET",
     "url": "/orgs/{org}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation",
     "parameters": [
       {
         "alias": null,
@@ -4770,6 +4882,7 @@
     "id": "listInstallations",
     "method": "GET",
     "url": "/orgs/{org}/installations",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#list-installations-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4821,6 +4934,7 @@
     "id": "getRestrictionsForOrg",
     "method": "GET",
     "url": "/orgs/{org}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#get-interaction-restrictions-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4852,6 +4966,7 @@
     "id": "addOrUpdateRestrictionsForOrg",
     "method": "PUT",
     "url": "/orgs/{org}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4893,6 +5008,7 @@
     "id": "removeRestrictionsForOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#remove-interaction-restrictions-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -4914,6 +5030,7 @@
     "id": "listPendingInvitations",
     "method": "GET",
     "url": "/orgs/{org}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#list-pending-organization-invitations",
     "parameters": [
       {
         "alias": null,
@@ -4965,6 +5082,7 @@
     "id": "createInvitation",
     "method": "POST",
     "url": "/orgs/{org}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#create-organization-invitation",
     "parameters": [
       {
         "alias": null,
@@ -5036,6 +5154,7 @@
     "id": "listInvitationTeams",
     "method": "GET",
     "url": "/orgs/{org}/invitations/{invitation_id}/teams",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#list-organization-invitation-teams",
     "parameters": [
       {
         "alias": null,
@@ -5097,6 +5216,7 @@
     "id": "listForOrg",
     "method": "GET",
     "url": "/orgs/{org}/issues",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -5208,6 +5328,7 @@
     "id": "listMembers",
     "method": "GET",
     "url": "/orgs/{org}/members",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#members-list",
     "parameters": [
       {
         "alias": null,
@@ -5279,6 +5400,7 @@
     "id": "checkMembership",
     "method": "GET",
     "url": "/orgs/{org}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#check-membership",
     "parameters": [
       {
         "alias": null,
@@ -5310,6 +5432,7 @@
     "id": "removeMember",
     "method": "DELETE",
     "url": "/orgs/{org}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#remove-a-member",
     "parameters": [
       {
         "alias": null,
@@ -5341,6 +5464,7 @@
     "id": "getMembership",
     "method": "GET",
     "url": "/orgs/{org}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#get-organization-membership",
     "parameters": [
       {
         "alias": null,
@@ -5388,6 +5512,7 @@
     "id": "addOrUpdateMembership",
     "method": "PUT",
     "url": "/orgs/{org}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership",
     "parameters": [
       {
         "alias": null,
@@ -5442,6 +5567,7 @@
     "id": "removeMembership",
     "method": "DELETE",
     "url": "/orgs/{org}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#remove-organization-membership",
     "parameters": [
       {
         "alias": null,
@@ -5473,6 +5599,7 @@
     "id": "startForOrg",
     "method": "POST",
     "url": "/orgs/{org}/migrations",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#start-an-organization-migration",
     "parameters": [
       {
         "alias": null,
@@ -5534,6 +5661,7 @@
     "id": "listForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#list-organization-migrations",
     "parameters": [
       {
         "alias": null,
@@ -5585,6 +5713,7 @@
     "id": "getStatusForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration",
     "parameters": [
       {
         "alias": null,
@@ -5626,6 +5755,7 @@
     "id": "downloadArchiveForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}/archive",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive",
     "parameters": [
       {
         "alias": null,
@@ -5657,6 +5787,7 @@
     "id": "getArchiveForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}/archive",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive",
     "parameters": [
       {
         "alias": null,
@@ -5690,6 +5821,7 @@
     "id": "deleteArchiveForOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/migrations/{migration_id}/archive",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#delete-an-organization-migration-archive",
     "parameters": [
       {
         "alias": null,
@@ -5721,6 +5853,7 @@
     "id": "unlockRepoForOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#unlock-an-organization-repository",
     "parameters": [
       {
         "alias": null,
@@ -5762,6 +5895,7 @@
     "id": "listReposForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#list-repositories-in-an-organization-migration",
     "parameters": [
       {
         "alias": null,
@@ -5823,6 +5957,7 @@
     "id": "listOutsideCollaborators",
     "method": "GET",
     "url": "/orgs/{org}/outside_collaborators",
+    "documentationUrl": "https://developer.github.com/v3/orgs/outside_collaborators/#list-outside-collaborators",
     "parameters": [
       {
         "alias": null,
@@ -5884,6 +6019,7 @@
     "id": "removeOutsideCollaborator",
     "method": "DELETE",
     "url": "/orgs/{org}/outside_collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -5925,6 +6061,7 @@
     "id": "convertMemberToOutsideCollaborator",
     "method": "PUT",
     "url": "/orgs/{org}/outside_collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/outside_collaborators/#convert-member-to-outside-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -5969,6 +6106,7 @@
     "id": "listForOrg",
     "method": "GET",
     "url": "/orgs/{org}/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#list-organization-projects",
     "parameters": [
       {
         "alias": null,
@@ -6030,6 +6168,7 @@
     "id": "createForOrg",
     "method": "POST",
     "url": "/orgs/{org}/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#create-an-organization-project",
     "parameters": [
       {
         "alias": null,
@@ -6081,6 +6220,7 @@
     "id": "listPublicMembers",
     "method": "GET",
     "url": "/orgs/{org}/public_members",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#public-members-list",
     "parameters": [
       {
         "alias": null,
@@ -6132,6 +6272,7 @@
     "id": "checkPublicMembership",
     "method": "GET",
     "url": "/orgs/{org}/public_members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#check-public-membership",
     "parameters": [
       {
         "alias": null,
@@ -6163,6 +6304,7 @@
     "id": "publicizeMembership",
     "method": "PUT",
     "url": "/orgs/{org}/public_members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#publicize-a-users-membership",
     "parameters": [
       {
         "alias": null,
@@ -6194,6 +6336,7 @@
     "id": "concealMembership",
     "method": "DELETE",
     "url": "/orgs/{org}/public_members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#conceal-a-users-membership",
     "parameters": [
       {
         "alias": null,
@@ -6225,6 +6368,7 @@
     "id": "listForOrg",
     "method": "GET",
     "url": "/orgs/{org}/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-organization-repositories",
     "parameters": [
       {
         "alias": null,
@@ -6314,6 +6458,7 @@
     "id": "createInOrg",
     "method": "POST",
     "url": "/orgs/{org}/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-an-organization-repository",
     "parameters": [
       {
         "alias": null,
@@ -6515,6 +6660,7 @@
     "id": "listIdPGroupsForOrg",
     "method": "GET",
     "url": "/orgs/{org}/team-sync/groups",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-in-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -6566,6 +6712,7 @@
     "id": "list",
     "method": "GET",
     "url": "/orgs/{org}/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-teams",
     "parameters": [
       {
         "alias": null,
@@ -6617,6 +6764,7 @@
     "id": "create",
     "method": "POST",
     "url": "/orgs/{org}/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#create-team",
     "parameters": [
       {
         "alias": null,
@@ -6718,6 +6866,7 @@
     "id": "getByName",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-by-name",
     "parameters": [
       {
         "alias": null,
@@ -6759,6 +6908,7 @@
     "id": "updateInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team",
     "parameters": [
       {
         "alias": null,
@@ -6850,6 +7000,7 @@
     "id": "deleteInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team",
     "parameters": [
       {
         "alias": null,
@@ -6881,6 +7032,7 @@
     "id": "listDiscussionsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#list-discussions",
     "parameters": [
       {
         "alias": null,
@@ -6952,6 +7104,7 @@
     "id": "createDiscussionInOrg",
     "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#create-a-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7023,6 +7176,7 @@
     "id": "getDiscussionInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7074,6 +7228,7 @@
     "id": "updateDiscussionInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7145,6 +7300,7 @@
     "id": "deleteDiscussionInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#delete-a-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7186,6 +7342,7 @@
     "id": "listDiscussionCommentsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments",
     "parameters": [
       {
         "alias": null,
@@ -7267,6 +7424,7 @@
     "id": "createDiscussionCommentInOrg",
     "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -7328,6 +7486,7 @@
     "id": "getDiscussionCommentInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment",
     "parameters": [
       {
         "alias": null,
@@ -7389,6 +7548,7 @@
     "id": "updateDiscussionCommentInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -7460,6 +7620,7 @@
     "id": "deleteDiscussionCommentInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -7511,6 +7672,7 @@
     "id": "listForTeamDiscussionCommentInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -7611,6 +7773,7 @@
     "id": "createForTeamDiscussionCommentInOrg",
     "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -7691,6 +7854,7 @@
     "id": "deleteForTeamDiscussionComment",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-team-discussion-comment-reaction",
     "parameters": [
       {
         "alias": null,
@@ -7752,6 +7916,7 @@
     "id": "listForTeamDiscussionInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7842,6 +8007,7 @@
     "id": "createForTeamDiscussionInOrg",
     "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7912,6 +8078,7 @@
     "id": "deleteForTeamDiscussion",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-team-discussion-reaction",
     "parameters": [
       {
         "alias": null,
@@ -7963,6 +8130,7 @@
     "id": "listPendingInvitationsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-pending-team-invitations",
     "parameters": [
       {
         "alias": null,
@@ -8024,6 +8192,7 @@
     "id": "listMembersInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/members",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-team-members",
     "parameters": [
       {
         "alias": null,
@@ -8095,6 +8264,7 @@
     "id": "getMembershipInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership",
     "parameters": [
       {
         "alias": null,
@@ -8152,6 +8322,7 @@
     "id": "addOrUpdateMembershipInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership",
     "parameters": [
       {
         "alias": null,
@@ -8225,6 +8396,7 @@
     "id": "removeMembershipInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership",
     "parameters": [
       {
         "alias": null,
@@ -8266,6 +8438,7 @@
     "id": "listProjectsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/projects",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-projects",
     "parameters": [
       {
         "alias": null,
@@ -8327,6 +8500,7 @@
     "id": "reviewProjectInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project",
     "parameters": [
       {
         "alias": null,
@@ -8378,6 +8552,7 @@
     "id": "addOrUpdateProjectInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project",
     "parameters": [
       {
         "alias": null,
@@ -8439,6 +8614,7 @@
     "id": "removeProjectInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project",
     "parameters": [
       {
         "alias": null,
@@ -8480,6 +8656,7 @@
     "id": "listReposInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos",
     "parameters": [
       {
         "alias": null,
@@ -8541,6 +8718,7 @@
     "id": "checkManagesRepoInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -8602,6 +8780,7 @@
     "id": "addOrUpdateRepoInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository",
     "parameters": [
       {
         "alias": null,
@@ -8663,6 +8842,7 @@
     "id": "removeRepoInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository",
     "parameters": [
       {
         "alias": null,
@@ -8714,6 +8894,7 @@
     "id": "listIdPGroupsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team",
     "parameters": [
       {
         "alias": null,
@@ -8755,6 +8936,7 @@
     "id": "createOrUpdateIdPGroupConnectionsInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections",
     "parameters": [
       {
         "alias": null,
@@ -8836,6 +9018,7 @@
     "id": "listChildInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-child-teams",
     "parameters": [
       {
         "alias": null,
@@ -8897,6 +9080,7 @@
     "id": "getCard",
     "method": "GET",
     "url": "/projects/columns/cards/{card_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#get-a-project-card",
     "parameters": [
       {
         "alias": null,
@@ -8928,6 +9112,7 @@
     "id": "updateCard",
     "method": "PATCH",
     "url": "/projects/columns/cards/{card_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#update-a-project-card",
     "parameters": [
       {
         "alias": null,
@@ -8979,6 +9164,7 @@
     "id": "deleteCard",
     "method": "DELETE",
     "url": "/projects/columns/cards/{card_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#delete-a-project-card",
     "parameters": [
       {
         "alias": null,
@@ -9000,6 +9186,7 @@
     "id": "moveCard",
     "method": "POST",
     "url": "/projects/columns/cards/{card_id}/moves",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#move-a-project-card",
     "parameters": [
       {
         "alias": null,
@@ -9041,6 +9228,7 @@
     "id": "getColumn",
     "method": "GET",
     "url": "/projects/columns/{column_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#get-a-project-column",
     "parameters": [
       {
         "alias": null,
@@ -9072,6 +9260,7 @@
     "id": "updateColumn",
     "method": "PATCH",
     "url": "/projects/columns/{column_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#update-a-project-column",
     "parameters": [
       {
         "alias": null,
@@ -9113,6 +9302,7 @@
     "id": "deleteColumn",
     "method": "DELETE",
     "url": "/projects/columns/{column_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#delete-a-project-column",
     "parameters": [
       {
         "alias": null,
@@ -9134,6 +9324,7 @@
     "id": "listCards",
     "method": "GET",
     "url": "/projects/columns/{column_id}/cards",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#list-project-cards",
     "parameters": [
       {
         "alias": null,
@@ -9195,6 +9386,7 @@
     "id": "createCard",
     "method": "POST",
     "url": "/projects/columns/{column_id}/cards",
+    "documentationUrl": "https://developer.github.com/v3/projects/cards/#create-a-project-card",
     "parameters": [
       {
         "alias": null,
@@ -9256,6 +9448,7 @@
     "id": "moveColumn",
     "method": "POST",
     "url": "/projects/columns/{column_id}/moves",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#move-a-project-column",
     "parameters": [
       {
         "alias": null,
@@ -9287,6 +9480,7 @@
     "id": "get",
     "method": "GET",
     "url": "/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/#get-a-project",
     "parameters": [
       {
         "alias": null,
@@ -9318,6 +9512,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/#update-a-project",
     "parameters": [
       {
         "alias": null,
@@ -9399,6 +9594,7 @@
     "id": "delete",
     "method": "DELETE",
     "url": "/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/projects/#delete-a-project",
     "parameters": [
       {
         "alias": null,
@@ -9420,6 +9616,7 @@
     "id": "listCollaborators",
     "method": "GET",
     "url": "/projects/{project_id}/collaborators",
+    "documentationUrl": "https://developer.github.com/v3/projects/collaborators/#list-collaborators",
     "parameters": [
       {
         "alias": null,
@@ -9481,6 +9678,7 @@
     "id": "addCollaborator",
     "method": "PUT",
     "url": "/projects/{project_id}/collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -9522,6 +9720,7 @@
     "id": "removeCollaborator",
     "method": "DELETE",
     "url": "/projects/{project_id}/collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/projects/collaborators/#remove-user-as-a-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -9553,6 +9752,7 @@
     "id": "reviewUserPermissionLevel",
     "method": "GET",
     "url": "/projects/{project_id}/collaborators/{username}/permission",
+    "documentationUrl": "https://developer.github.com/v3/projects/collaborators/#review-a-users-permission-level",
     "parameters": [
       {
         "alias": null,
@@ -9594,6 +9794,7 @@
     "id": "listColumns",
     "method": "GET",
     "url": "/projects/{project_id}/columns",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#list-project-columns",
     "parameters": [
       {
         "alias": null,
@@ -9645,6 +9846,7 @@
     "id": "createColumn",
     "method": "POST",
     "url": "/projects/{project_id}/columns",
+    "documentationUrl": "https://developer.github.com/v3/projects/columns/#create-a-project-column",
     "parameters": [
       {
         "alias": null,
@@ -9686,6 +9888,7 @@
     "id": "get",
     "method": "GET",
     "url": "/rate_limit",
+    "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status",
     "parameters": [],
     "responses": [
       {
@@ -9706,6 +9909,7 @@
     "id": "deleteLegacy",
     "method": "DELETE",
     "url": "/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-a-reaction-legacy",
     "parameters": [
       {
         "alias": null,
@@ -9727,6 +9931,7 @@
     "id": "delete",
     "method": "DELETE",
     "url": "/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-a-reaction-legacy",
     "parameters": [
       {
         "alias": null,
@@ -9750,6 +9955,7 @@
     "id": "get",
     "method": "GET",
     "url": "/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -9794,6 +10000,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/repos/#update-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -9985,6 +10192,7 @@
     "id": "delete",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/repos/#delete-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -10026,6 +10234,7 @@
     "id": "listArtifactsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/artifacts",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -10087,6 +10296,7 @@
     "id": "getArtifact",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#get-an-artifact",
     "parameters": [
       {
         "alias": null,
@@ -10138,6 +10348,7 @@
     "id": "deleteArtifact",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#delete-an-artifact",
     "parameters": [
       {
         "alias": null,
@@ -10179,6 +10390,7 @@
     "id": "downloadArtifact",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#download-an-artifact",
     "parameters": [
       {
         "alias": null,
@@ -10230,6 +10442,7 @@
     "id": "getWorkflowJob",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#get-a-workflow-job",
     "parameters": [
       {
         "alias": null,
@@ -10281,6 +10494,7 @@
     "id": "listWorkflowJobLogs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#list-workflow-job-logs",
     "parameters": [
       {
         "alias": null,
@@ -10342,6 +10556,7 @@
     "id": "listSelfHostedRunnersForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runners",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#list-self-hosted-runners-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -10403,6 +10618,7 @@
     "id": "listDownloadsForSelfHostedRunnerApplication",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runners/downloads",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#list-downloads-for-the-self-hosted-runner-application",
     "parameters": [
       {
         "alias": null,
@@ -10444,6 +10660,7 @@
     "id": "createRegistrationToken",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runners/registration-token",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#create-a-registration-token",
     "parameters": [
       {
         "alias": null,
@@ -10485,6 +10702,7 @@
     "id": "createRemoveToken",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runners/remove-token",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#create-a-remove-token",
     "parameters": [
       {
         "alias": null,
@@ -10526,6 +10744,7 @@
     "id": "getSelfHostedRunner",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#get-a-self-hosted-runner",
     "parameters": [
       {
         "alias": null,
@@ -10577,6 +10796,7 @@
     "id": "removeSelfHostedRunner",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self_hosted_runners/#remove-a-self-hosted-runner",
     "parameters": [
       {
         "alias": null,
@@ -10618,6 +10838,7 @@
     "id": "listRepoWorkflowRuns",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-repository-workflow-runs",
     "parameters": [
       {
         "alias": null,
@@ -10719,6 +10940,7 @@
     "id": "getWorkflowRun",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#get-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -10770,6 +10992,7 @@
     "id": "listWorkflowRunArtifacts",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
+    "documentationUrl": "https://developer.github.com/v3/actions/artifacts/#list-workflow-run-artifacts",
     "parameters": [
       {
         "alias": null,
@@ -10841,6 +11064,7 @@
     "id": "cancelWorkflowRun",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#cancel-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -10882,6 +11106,7 @@
     "id": "listJobsForWorkflowRun",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_jobs/#list-jobs-for-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -10963,6 +11188,7 @@
     "id": "listWorkflowRunLogs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-workflow-run-logs",
     "parameters": [
       {
         "alias": null,
@@ -11024,6 +11250,7 @@
     "id": "reRunWorkflow",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#re-run-a-workflow",
     "parameters": [
       {
         "alias": null,
@@ -11065,6 +11292,7 @@
     "id": "listSecretsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -11126,6 +11354,7 @@
     "id": "getPublicKey",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-your-public-key",
     "parameters": [
       {
         "alias": null,
@@ -11167,6 +11396,7 @@
     "id": "getSecret",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-secret",
     "parameters": [
       {
         "alias": null,
@@ -11218,6 +11448,7 @@
     "id": "createOrUpdateSecretForRepo",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -11279,6 +11510,7 @@
     "id": "deleteSecretFromRepo",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -11320,6 +11552,7 @@
     "id": "listRepoWorkflows",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/workflows",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflows/#list-repository-workflows",
     "parameters": [
       {
         "alias": null,
@@ -11381,6 +11614,7 @@
     "id": "getWorkflow",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflows/#get-a-workflow",
     "parameters": [
       {
         "alias": null,
@@ -11432,6 +11666,7 @@
     "id": "listWorkflowRuns",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#list-workflow-runs",
     "parameters": [
       {
         "alias": null,
@@ -11543,6 +11778,7 @@
     "id": "listAssignees",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/assignees",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#list-assignees",
     "parameters": [
       {
         "alias": null,
@@ -11604,6 +11840,7 @@
     "id": "checkAssignee",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/assignees/{assignee}",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-assignee",
     "parameters": [
       {
         "alias": null,
@@ -11645,6 +11882,7 @@
     "id": "enableAutomatedSecurityFixes",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/automated-security-fixes",
+    "documentationUrl": "https://developer.github.com/v3/repos/#enable-automated-security-fixes",
     "parameters": [
       {
         "alias": null,
@@ -11676,6 +11914,7 @@
     "id": "disableAutomatedSecurityFixes",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/automated-security-fixes",
+    "documentationUrl": "https://developer.github.com/v3/repos/#disable-automated-security-fixes",
     "parameters": [
       {
         "alias": null,
@@ -11707,6 +11946,7 @@
     "id": "listBranches",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-branches",
     "parameters": [
       {
         "alias": null,
@@ -11778,6 +12018,7 @@
     "id": "getBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-branch",
     "parameters": [
       {
         "alias": null,
@@ -11829,6 +12070,7 @@
     "id": "getBranchProtection",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-branch-protection",
     "parameters": [
       {
         "alias": null,
@@ -11880,6 +12122,7 @@
     "id": "updateBranchProtection",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#update-branch-protection",
     "parameters": [
       {
         "alias": null,
@@ -12111,6 +12354,7 @@
     "id": "removeBranchProtection",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-branch-protection",
     "parameters": [
       {
         "alias": null,
@@ -12152,6 +12396,7 @@
     "id": "getProtectedBranchAdminEnforcement",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-admin-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12203,6 +12448,7 @@
     "id": "addProtectedBranchAdminEnforcement",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-admin-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12254,6 +12500,7 @@
     "id": "removeProtectedBranchAdminEnforcement",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-admin-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12295,6 +12542,7 @@
     "id": "getProtectedBranchPullRequestReviewEnforcement",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-pull-request-review-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12346,6 +12594,7 @@
     "id": "updateProtectedBranchPullRequestReviewEnforcement",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12457,6 +12706,7 @@
     "id": "removeProtectedBranchPullRequestReviewEnforcement",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-pull-request-review-enforcement-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12498,6 +12748,7 @@
     "id": "getProtectedBranchRequiredSignatures",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-required-signatures-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12549,6 +12800,7 @@
     "id": "addProtectedBranchRequiredSignatures",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-required-signatures-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12600,6 +12852,7 @@
     "id": "removeProtectedBranchRequiredSignatures",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12641,6 +12894,7 @@
     "id": "getProtectedBranchRequiredStatusChecks",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-required-status-checks-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12692,6 +12946,7 @@
     "id": "updateProtectedBranchRequiredStatusChecks",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12763,6 +13018,7 @@
     "id": "removeProtectedBranchRequiredStatusChecks",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-required-status-checks-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12804,6 +13060,7 @@
     "id": "listProtectedBranchRequiredStatusChecksContexts",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12851,6 +13108,7 @@
     "id": "replaceProtectedBranchRequiredStatusChecksContexts",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#replace-required-status-checks-contexts-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12908,6 +13166,7 @@
     "id": "addProtectedBranchRequiredStatusChecksContexts",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-required-status-checks-contexts-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -12969,6 +13228,7 @@
     "id": "removeProtectedBranchRequiredStatusChecksContexts",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-required-status-checks-contexts-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13026,6 +13286,7 @@
     "id": "getProtectedBranchRestrictions",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#get-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13077,6 +13338,7 @@
     "id": "removeProtectedBranchRestrictions",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13118,6 +13380,7 @@
     "id": "getAppsWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13169,6 +13432,7 @@
     "id": "listAppsWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13222,6 +13486,7 @@
     "id": "replaceProtectedBranchAppRestrictions",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13283,6 +13548,7 @@
     "id": "addProtectedBranchAppRestrictions",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-app-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13344,6 +13610,7 @@
     "id": "removeProtectedBranchAppRestrictions",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-app-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13405,6 +13672,7 @@
     "id": "getTeamsWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13456,6 +13724,7 @@
     "id": "listProtectedBranchTeamRestrictions",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13509,6 +13778,7 @@
     "id": "listTeamsWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13562,6 +13832,7 @@
     "id": "replaceProtectedBranchTeamRestrictions",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#replace-team-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13623,6 +13894,7 @@
     "id": "addProtectedBranchTeamRestrictions",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-team-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13684,6 +13956,7 @@
     "id": "removeProtectedBranchTeamRestrictions",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-team-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13745,6 +14018,7 @@
     "id": "getUsersWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13796,6 +14070,7 @@
     "id": "listProtectedBranchUserRestrictions",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13849,6 +14124,7 @@
     "id": "listUsersWithAccessToProtectedBranch",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13902,6 +14178,7 @@
     "id": "replaceProtectedBranchUserRestrictions",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#replace-user-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -13963,6 +14240,7 @@
     "id": "addProtectedBranchUserRestrictions",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#add-user-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -14024,6 +14302,7 @@
     "id": "removeProtectedBranchUserRestrictions",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "documentationUrl": "https://developer.github.com/v3/repos/branches/#remove-user-restrictions-of-protected-branch",
     "parameters": [
       {
         "alias": null,
@@ -14085,6 +14364,7 @@
     "id": "create",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/check-runs",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#create-a-check-run",
     "parameters": [
       {
         "alias": null,
@@ -14436,6 +14716,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#update-a-check-run",
     "parameters": [
       {
         "alias": null,
@@ -14784,6 +15065,7 @@
     "id": "get",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#get-a-check-run",
     "parameters": [
       {
         "alias": null,
@@ -14835,6 +15117,7 @@
     "id": "listAnnotations",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-run-annotations",
     "parameters": [
       {
         "alias": null,
@@ -14906,6 +15189,7 @@
     "id": "createSuite",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/check-suites",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#create-a-check-suite",
     "parameters": [
       {
         "alias": null,
@@ -14957,6 +15241,7 @@
     "id": "setSuitesPreferences",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/check-suites/preferences",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites",
     "parameters": [
       {
         "alias": null,
@@ -15028,6 +15313,7 @@
     "id": "getSuite",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/check-suites/{check_suite_id}",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#get-a-check-suite",
     "parameters": [
       {
         "alias": null,
@@ -15079,6 +15365,7 @@
     "id": "listForSuite",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite",
     "parameters": [
       {
         "alias": null,
@@ -15180,6 +15467,7 @@
     "id": "rerequestSuite",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#rerequest-a-check-suite",
     "parameters": [
       {
         "alias": null,
@@ -15221,6 +15509,7 @@
     "id": "listCollaborators",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/collaborators",
+    "documentationUrl": "https://developer.github.com/v3/repos/collaborators/#list-collaborators",
     "parameters": [
       {
         "alias": null,
@@ -15292,6 +15581,7 @@
     "id": "checkCollaborator",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -15333,6 +15623,7 @@
     "id": "addCollaborator",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -15394,6 +15685,7 @@
     "id": "removeCollaborator",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/collaborators/{username}",
+    "documentationUrl": "https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator",
     "parameters": [
       {
         "alias": null,
@@ -15435,6 +15727,7 @@
     "id": "getCollaboratorPermissionLevel",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/collaborators/{username}/permission",
+    "documentationUrl": "https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level",
     "parameters": [
       {
         "alias": null,
@@ -15486,6 +15779,7 @@
     "id": "listCommitComments",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/comments",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -15547,6 +15841,7 @@
     "id": "getCommitComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#get-a-single-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -15598,6 +15893,7 @@
     "id": "updateCommitComment",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#update-a-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -15659,6 +15955,7 @@
     "id": "deleteCommitComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#delete-a-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -15700,6 +15997,7 @@
     "id": "listForCommitComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -15790,6 +16088,7 @@
     "id": "createForCommitComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -15860,6 +16159,7 @@
     "id": "deleteForCommitComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-a-commit-comment-reaction",
     "parameters": [
       {
         "alias": null,
@@ -15911,6 +16211,7 @@
     "id": "listCommits",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits",
+    "documentationUrl": "https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -16022,6 +16323,7 @@
     "id": "listBranchesForHeadCommit",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
+    "documentationUrl": "https://developer.github.com/v3/repos/commits/#list-branches-for-head-commit",
     "parameters": [
       {
         "alias": null,
@@ -16073,6 +16375,7 @@
     "id": "listCommentsForCommit",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit",
     "parameters": [
       {
         "alias": null,
@@ -16154,6 +16457,7 @@
     "id": "createCommitComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#create-a-commit-comment",
     "parameters": [
       {
         "alias": null,
@@ -16255,6 +16559,7 @@
     "id": "listPullRequestsAssociatedWithCommit",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
+    "documentationUrl": "https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-commit",
     "parameters": [
       {
         "alias": null,
@@ -16326,6 +16631,7 @@
     "id": "getCommit",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/repos/commits/#get-a-single-commit",
     "parameters": [
       {
         "alias": null,
@@ -16397,6 +16703,7 @@
     "id": "listForRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{ref}/check-runs",
+    "documentationUrl": "https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference",
     "parameters": [
       {
         "alias": null,
@@ -16498,6 +16805,7 @@
     "id": "listSuitesForRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{ref}/check-suites",
+    "documentationUrl": "https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-git-reference",
     "parameters": [
       {
         "alias": null,
@@ -16589,6 +16897,7 @@
     "id": "getCombinedStatusForRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{ref}/status",
+    "documentationUrl": "https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-ref",
     "parameters": [
       {
         "alias": null,
@@ -16640,6 +16949,7 @@
     "id": "listStatusesForRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/commits/{ref}/statuses",
+    "documentationUrl": "https://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref",
     "parameters": [
       {
         "alias": null,
@@ -16711,6 +17021,7 @@
     "id": "getForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/community/code_of_conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct",
     "parameters": [
       {
         "alias": null,
@@ -16752,6 +17063,7 @@
     "id": "retrieveCommunityProfileMetrics",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/community/profile",
+    "documentationUrl": "https://developer.github.com/v3/repos/community/#retrieve-community-profile-metrics",
     "parameters": [
       {
         "alias": null,
@@ -16793,6 +17105,7 @@
     "id": "compareCommits",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/compare/{base}...{head}",
+    "documentationUrl": "https://developer.github.com/v3/repos/commits/#compare-two-commits",
     "parameters": [
       {
         "alias": null,
@@ -16854,6 +17167,7 @@
     "id": "getContents",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/contents/{path}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#get-contents",
     "parameters": [
       {
         "alias": null,
@@ -16924,6 +17238,7 @@
     "id": "createOrUpdateFile",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/contents/{path}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#create-or-update-a-file",
     "parameters": [
       {
         "alias": null,
@@ -17084,6 +17399,7 @@
     "id": "createFile",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/contents/{path}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#create-or-update-a-file",
     "parameters": [
       {
         "alias": null,
@@ -17246,6 +17562,7 @@
     "id": "updateFile",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/contents/{path}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#create-or-update-a-file",
     "parameters": [
       {
         "alias": null,
@@ -17408,6 +17725,7 @@
     "id": "deleteFile",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/contents/{path}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#delete-a-file",
     "parameters": [
       {
         "alias": null,
@@ -17549,6 +17867,7 @@
     "id": "listContributors",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/contributors",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-contributors",
     "parameters": [
       {
         "alias": null,
@@ -17620,6 +17939,7 @@
     "id": "listDeployments",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#list-deployments",
     "parameters": [
       {
         "alias": null,
@@ -17721,6 +18041,7 @@
     "id": "createDeployment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/deployments",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#create-a-deployment",
     "parameters": [
       {
         "alias": null,
@@ -17876,6 +18197,7 @@
     "id": "getDeployment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#get-a-single-deployment",
     "parameters": [
       {
         "alias": null,
@@ -17927,6 +18249,7 @@
     "id": "deleteDeployment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#delete-a-deployment",
     "parameters": [
       {
         "alias": null,
@@ -17968,6 +18291,7 @@
     "id": "listDeploymentStatuses",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#list-deployment-statuses",
     "parameters": [
       {
         "alias": null,
@@ -18039,6 +18363,7 @@
     "id": "createDeploymentStatus",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#create-a-deployment-status",
     "parameters": [
       {
         "alias": null,
@@ -18168,6 +18493,7 @@
     "id": "getDeploymentStatus",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/deployments/#get-a-single-deployment-status",
     "parameters": [
       {
         "alias": null,
@@ -18229,6 +18555,7 @@
     "id": "createDispatchEvent",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/dispatches",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-dispatch-event",
     "parameters": [
       {
         "alias": null,
@@ -18280,6 +18607,7 @@
     "id": "listDownloads",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/downloads",
+    "documentationUrl": "https://developer.github.com/v3/repos/downloads/#list-downloads-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -18341,6 +18669,7 @@
     "id": "getDownload",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/downloads/{download_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/downloads/#get-a-single-download",
     "parameters": [
       {
         "alias": null,
@@ -18392,6 +18721,7 @@
     "id": "deleteDownload",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/downloads/{download_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/downloads/#delete-a-download",
     "parameters": [
       {
         "alias": null,
@@ -18433,6 +18763,7 @@
     "id": "listRepoEvents",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-repository-events",
     "parameters": [
       {
         "alias": null,
@@ -18484,6 +18815,7 @@
     "id": "listForks",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/forks",
+    "documentationUrl": "https://developer.github.com/v3/repos/forks/#list-forks",
     "parameters": [
       {
         "alias": null,
@@ -18555,6 +18887,7 @@
     "id": "createFork",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/forks",
+    "documentationUrl": "https://developer.github.com/v3/repos/forks/#create-a-fork",
     "parameters": [
       {
         "alias": null,
@@ -18606,6 +18939,7 @@
     "id": "createBlob",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/git/blobs",
+    "documentationUrl": "https://developer.github.com/v3/git/blobs/#create-a-blob",
     "parameters": [
       {
         "alias": null,
@@ -18667,6 +19001,7 @@
     "id": "getBlob",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/blobs/{file_sha}",
+    "documentationUrl": "https://developer.github.com/v3/git/blobs/#get-a-blob",
     "parameters": [
       {
         "alias": null,
@@ -18718,6 +19053,7 @@
     "id": "createCommit",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/git/commits",
+    "documentationUrl": "https://developer.github.com/v3/git/commits/#create-a-commit",
     "parameters": [
       {
         "alias": null,
@@ -18879,6 +19215,7 @@
     "id": "getCommit",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/commits/{commit_sha}",
+    "documentationUrl": "https://developer.github.com/v3/git/commits/#get-a-commit",
     "parameters": [
       {
         "alias": null,
@@ -18930,6 +19267,7 @@
     "id": "listMatchingRefs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/matching-refs/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#list-matching-references",
     "parameters": [
       {
         "alias": null,
@@ -19001,6 +19339,7 @@
     "id": "getRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/ref/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#get-a-single-reference",
     "parameters": [
       {
         "alias": null,
@@ -19052,6 +19391,7 @@
     "id": "createRef",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/git/refs",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#create-a-reference",
     "parameters": [
       {
         "alias": null,
@@ -19113,6 +19453,7 @@
     "id": "updateRef",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/git/refs/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#update-a-reference",
     "parameters": [
       {
         "alias": null,
@@ -19184,6 +19525,7 @@
     "id": "deleteRef",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/git/refs/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#delete-a-reference",
     "parameters": [
       {
         "alias": null,
@@ -19225,6 +19567,7 @@
     "id": "createTag",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/git/tags",
+    "documentationUrl": "https://developer.github.com/v3/git/tags/#create-a-tag-object",
     "parameters": [
       {
         "alias": null,
@@ -19346,6 +19689,7 @@
     "id": "getTag",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/tags/{tag_sha}",
+    "documentationUrl": "https://developer.github.com/v3/git/tags/#get-a-tag",
     "parameters": [
       {
         "alias": null,
@@ -19397,6 +19741,7 @@
     "id": "createTree",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/git/trees",
+    "documentationUrl": "https://developer.github.com/v3/git/trees/#create-a-tree",
     "parameters": [
       {
         "alias": null,
@@ -19508,6 +19853,7 @@
     "id": "getTree",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/trees/{tree_sha}",
+    "documentationUrl": "https://developer.github.com/v3/git/trees/#get-a-tree",
     "parameters": [
       {
         "alias": null,
@@ -19569,6 +19915,7 @@
     "id": "listHooks",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#list-hooks",
     "parameters": [
       {
         "alias": null,
@@ -19630,6 +19977,7 @@
     "id": "createHook",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#create-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -19751,6 +20099,7 @@
     "id": "getHook",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#get-single-hook",
     "parameters": [
       {
         "alias": null,
@@ -19802,6 +20151,7 @@
     "id": "updateHook",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#edit-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -19943,6 +20293,7 @@
     "id": "deleteHook",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#delete-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -19984,6 +20335,7 @@
     "id": "pingHook",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#ping-a-hook",
     "parameters": [
       {
         "alias": null,
@@ -20025,6 +20377,7 @@
     "id": "testPushHook",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
+    "documentationUrl": "https://developer.github.com/v3/repos/hooks/#test-a-push-hook",
     "parameters": [
       {
         "alias": null,
@@ -20066,6 +20419,7 @@
     "id": "startImport",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#start-an-import",
     "parameters": [
       {
         "alias": null,
@@ -20157,6 +20511,7 @@
     "id": "getImportProgress",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-import-progress",
     "parameters": [
       {
         "alias": null,
@@ -20198,6 +20553,7 @@
     "id": "updateImport",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-existing-import",
     "parameters": [
       {
         "alias": null,
@@ -20265,6 +20621,7 @@
     "id": "cancelImport",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#cancel-an-import",
     "parameters": [
       {
         "alias": null,
@@ -20296,6 +20653,7 @@
     "id": "getCommitAuthors",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/import/authors",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-commit-authors",
     "parameters": [
       {
         "alias": null,
@@ -20347,6 +20705,7 @@
     "id": "mapCommitAuthor",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/import/authors/{author_id}",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author",
     "parameters": [
       {
         "alias": null,
@@ -20418,6 +20777,7 @@
     "id": "getLargeFiles",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/import/large_files",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-large-files",
     "parameters": [
       {
         "alias": null,
@@ -20459,6 +20819,7 @@
     "id": "setLfsPreference",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/import/lfs",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference",
     "parameters": [
       {
         "alias": null,
@@ -20510,6 +20871,7 @@
     "id": "getRepoInstallation",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation",
     "parameters": [
       {
         "alias": null,
@@ -20551,6 +20913,7 @@
     "id": "findRepoInstallation",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation",
     "parameters": [
       {
         "alias": null,
@@ -20594,6 +20957,7 @@
     "id": "getRestrictionsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#get-interaction-restrictions-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -20635,6 +20999,7 @@
     "id": "addOrUpdateRestrictionsForRepo",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -20686,6 +21051,7 @@
     "id": "removeRestrictionsForRepo",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#remove-interaction-restrictions-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -20717,6 +21083,7 @@
     "id": "listInvitations",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#list-invitations-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -20778,6 +21145,7 @@
     "id": "deleteInvitation",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/invitations/{invitation_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#delete-a-repository-invitation",
     "parameters": [
       {
         "alias": null,
@@ -20819,6 +21187,7 @@
     "id": "updateInvitation",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/invitations/{invitation_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#update-a-repository-invitation",
     "parameters": [
       {
         "alias": null,
@@ -20880,6 +21249,7 @@
     "id": "listForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-repository-issues",
     "parameters": [
       {
         "alias": null,
@@ -21031,6 +21401,7 @@
     "id": "create",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues",
+    "documentationUrl": "https://developer.github.com/v3/issues/#create-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -21132,6 +21503,7 @@
     "id": "listCommentsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/comments",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -21223,6 +21595,7 @@
     "id": "getComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#get-a-single-comment",
     "parameters": [
       {
         "alias": null,
@@ -21274,6 +21647,7 @@
     "id": "updateComment",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#edit-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -21335,6 +21709,7 @@
     "id": "deleteComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#delete-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -21376,6 +21751,7 @@
     "id": "listForIssueComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -21466,6 +21842,7 @@
     "id": "createForIssueComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -21536,6 +21913,7 @@
     "id": "deleteForIssueComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-an-issue-comment-reaction",
     "parameters": [
       {
         "alias": null,
@@ -21587,6 +21965,7 @@
     "id": "listEventsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/events",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -21648,6 +22027,7 @@
     "id": "getEvent",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/events/{event_id}",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#get-a-single-event",
     "parameters": [
       {
         "alias": null,
@@ -21699,6 +22079,7 @@
     "id": "get",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}",
+    "documentationUrl": "https://developer.github.com/v3/issues/#get-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -21760,6 +22141,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}",
+    "documentationUrl": "https://developer.github.com/v3/issues/#update-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -21891,6 +22273,7 @@
     "id": "addAssignees",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#add-assignees-to-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -21962,6 +22345,7 @@
     "id": "removeAssignees",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#remove-assignees-from-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22033,6 +22417,7 @@
     "id": "listComments",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22124,6 +22509,7 @@
     "id": "createComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#create-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -22195,6 +22581,7 @@
     "id": "listEvents",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/events",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22276,6 +22663,7 @@
     "id": "listLabelsOnIssue",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22357,6 +22745,7 @@
     "id": "addLabels",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#add-labels-to-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22428,6 +22817,7 @@
     "id": "replaceAllLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22499,6 +22889,7 @@
     "id": "replaceLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22572,6 +22963,7 @@
     "id": "removeAllLabels",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22623,6 +23015,7 @@
     "id": "removeLabels",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22676,6 +23069,7 @@
     "id": "removeLabel",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#remove-a-label-from-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22747,6 +23141,7 @@
     "id": "lock",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+    "documentationUrl": "https://developer.github.com/v3/issues/#lock-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22808,6 +23203,7 @@
     "id": "unlock",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+    "documentationUrl": "https://developer.github.com/v3/issues/#unlock-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22859,6 +23255,7 @@
     "id": "listForIssue",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -22959,6 +23356,7 @@
     "id": "createForIssue",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -23039,6 +23437,7 @@
     "id": "deleteForIssue",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-an-issue-reaction",
     "parameters": [
       {
         "alias": null,
@@ -23090,6 +23489,7 @@
     "id": "listEventsForTimeline",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
+    "documentationUrl": "https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -23171,6 +23571,7 @@
     "id": "listDeployKeys",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/keys",
+    "documentationUrl": "https://developer.github.com/v3/repos/keys/#list-deploy-keys",
     "parameters": [
       {
         "alias": null,
@@ -23232,6 +23633,7 @@
     "id": "addDeployKey",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/keys",
+    "documentationUrl": "https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key",
     "parameters": [
       {
         "alias": null,
@@ -23303,6 +23705,7 @@
     "id": "getDeployKey",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/keys/{key_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/keys/#get-a-deploy-key",
     "parameters": [
       {
         "alias": null,
@@ -23354,6 +23757,7 @@
     "id": "removeDeployKey",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/keys/{key_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/keys/#remove-a-deploy-key",
     "parameters": [
       {
         "alias": null,
@@ -23395,6 +23799,7 @@
     "id": "listLabelsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository",
     "parameters": [
       {
         "alias": null,
@@ -23456,6 +23861,7 @@
     "id": "createLabel",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#create-a-label",
     "parameters": [
       {
         "alias": null,
@@ -23527,6 +23933,7 @@
     "id": "getLabel",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/labels/{name}",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-a-single-label",
     "parameters": [
       {
         "alias": null,
@@ -23578,6 +23985,7 @@
     "id": "updateLabel",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/labels/{name}",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#update-a-label",
     "parameters": [
       {
         "alias": null,
@@ -23659,6 +24067,7 @@
     "id": "deleteLabel",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/labels/{name}",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#delete-a-label",
     "parameters": [
       {
         "alias": null,
@@ -23700,6 +24109,7 @@
     "id": "listLanguages",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/languages",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-languages",
     "parameters": [
       {
         "alias": null,
@@ -23737,6 +24147,7 @@
     "id": "getForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/license",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license",
     "parameters": [
       {
         "alias": null,
@@ -23778,6 +24189,7 @@
     "id": "merge",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/merges",
+    "documentationUrl": "https://developer.github.com/v3/repos/merging/#perform-a-merge",
     "parameters": [
       {
         "alias": null,
@@ -23862,6 +24274,7 @@
     "id": "listMilestonesForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -23953,6 +24366,7 @@
     "id": "createMilestone",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/milestones",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#create-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -24034,6 +24448,7 @@
     "id": "getMilestone",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#get-a-single-milestone",
     "parameters": [
       {
         "alias": null,
@@ -24095,6 +24510,7 @@
     "id": "updateMilestone",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#update-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -24196,6 +24612,7 @@
     "id": "deleteMilestone",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#delete-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -24247,6 +24664,7 @@
     "id": "listLabelsForMilestone",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -24328,6 +24746,7 @@
     "id": "listRepoNotificationsForAuthenticatedUser",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -24429,6 +24848,7 @@
     "id": "listNotificationsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -24532,6 +24952,7 @@
     "id": "markRepoNotificationsAsRead",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read",
     "parameters": [
       {
         "alias": null,
@@ -24573,6 +24994,7 @@
     "id": "markNotificationsAsReadForRepo",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/notifications",
+    "documentationUrl": "https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read",
     "parameters": [
       {
         "alias": null,
@@ -24616,6 +25038,7 @@
     "id": "getPages",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pages",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site",
     "parameters": [
       {
         "alias": null,
@@ -24657,6 +25080,7 @@
     "id": "enablePagesSite",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pages",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#enable-a-pages-site",
     "parameters": [
       {
         "alias": null,
@@ -24728,6 +25152,7 @@
     "id": "disablePagesSite",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/pages",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#disable-a-pages-site",
     "parameters": [
       {
         "alias": null,
@@ -24759,6 +25184,7 @@
     "id": "updateInformationAboutPagesSite",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/pages",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#update-information-about-a-pages-site",
     "parameters": [
       {
         "alias": null,
@@ -24810,6 +25236,7 @@
     "id": "requestPageBuild",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pages/builds",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#request-a-page-build",
     "parameters": [
       {
         "alias": null,
@@ -24851,6 +25278,7 @@
     "id": "listPagesBuilds",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pages/builds",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#list-pages-builds",
     "parameters": [
       {
         "alias": null,
@@ -24912,6 +25340,7 @@
     "id": "getLatestPagesBuild",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pages/builds/latest",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#get-latest-pages-build",
     "parameters": [
       {
         "alias": null,
@@ -24953,6 +25382,7 @@
     "id": "getPagesBuild",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pages/builds/{build_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/pages/#get-a-specific-pages-build",
     "parameters": [
       {
         "alias": null,
@@ -25004,6 +25434,7 @@
     "id": "listForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#list-repository-projects",
     "parameters": [
       {
         "alias": null,
@@ -25075,6 +25506,7 @@
     "id": "createForRepo",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#create-a-repository-project",
     "parameters": [
       {
         "alias": null,
@@ -25136,6 +25568,7 @@
     "id": "list",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#list-pull-requests",
     "parameters": [
       {
         "alias": null,
@@ -25247,6 +25680,7 @@
     "id": "create",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#create-a-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -25348,6 +25782,7 @@
     "id": "listCommentsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/comments",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -25439,6 +25874,7 @@
     "id": "getComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#get-a-single-comment",
     "parameters": [
       {
         "alias": null,
@@ -25490,6 +25926,7 @@
     "id": "updateComment",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#edit-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -25551,6 +25988,7 @@
     "id": "deleteComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#delete-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -25592,6 +26030,7 @@
     "id": "listForPullRequestReviewComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment",
     "parameters": [
       {
         "alias": null,
@@ -25682,6 +26121,7 @@
     "id": "createForPullRequestReviewComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment",
     "parameters": [
       {
         "alias": null,
@@ -25752,6 +26192,7 @@
     "id": "deleteForPullRequestComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#delete-a-pull-request-comment-reaction",
     "parameters": [
       {
         "alias": null,
@@ -25803,6 +26244,7 @@
     "id": "get",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#get-a-single-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -25864,6 +26306,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#update-a-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -25975,6 +26418,7 @@
     "id": "listComments",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -26086,6 +26530,7 @@
     "id": "createComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#create-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -26237,6 +26682,7 @@
     "id": "createCommentReply",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#create-a-comment",
     "parameters": [
       {
         "alias": null,
@@ -26390,6 +26836,7 @@
     "id": "createReviewCommentReply",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies",
+    "documentationUrl": "https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply",
     "parameters": [
       {
         "alias": null,
@@ -26461,6 +26908,7 @@
     "id": "listCommits",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/commits",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#list-commits-on-a-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -26542,6 +26990,7 @@
     "id": "listFiles",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/files",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#list-pull-requests-files",
     "parameters": [
       {
         "alias": null,
@@ -26623,6 +27072,7 @@
     "id": "checkIfMerged",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged",
     "parameters": [
       {
         "alias": null,
@@ -26674,6 +27124,7 @@
     "id": "merge",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button",
     "parameters": [
       {
         "alias": null,
@@ -26793,6 +27244,7 @@
     "id": "listReviewRequests",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "documentationUrl": "https://developer.github.com/v3/pulls/review_requests/#list-review-requests",
     "parameters": [
       {
         "alias": null,
@@ -26874,6 +27326,7 @@
     "id": "createReviewRequest",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "documentationUrl": "https://developer.github.com/v3/pulls/review_requests/#create-a-review-request",
     "parameters": [
       {
         "alias": null,
@@ -26955,6 +27408,7 @@
     "id": "deleteReviewRequest",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "documentationUrl": "https://developer.github.com/v3/pulls/review_requests/#delete-a-review-request",
     "parameters": [
       {
         "alias": null,
@@ -27026,6 +27480,7 @@
     "id": "listReviews",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#list-reviews-on-a-pull-request",
     "parameters": [
       {
         "alias": null,
@@ -27107,6 +27562,7 @@
     "id": "createReview",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#create-a-pull-request-review",
     "parameters": [
       {
         "alias": null,
@@ -27238,6 +27694,7 @@
     "id": "getReview",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#get-a-single-review",
     "parameters": [
       {
         "alias": null,
@@ -27309,6 +27766,7 @@
     "id": "deletePendingReview",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review",
     "parameters": [
       {
         "alias": null,
@@ -27380,6 +27838,7 @@
     "id": "updateReview",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review",
     "parameters": [
       {
         "alias": null,
@@ -27461,6 +27920,7 @@
     "id": "getCommentsForReview",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#get-comments-for-a-single-review",
     "parameters": [
       {
         "alias": null,
@@ -27552,6 +28012,7 @@
     "id": "dismissReview",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#dismiss-a-pull-request-review",
     "parameters": [
       {
         "alias": null,
@@ -27633,6 +28094,7 @@
     "id": "submitReview",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events",
+    "documentationUrl": "https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review",
     "parameters": [
       {
         "alias": null,
@@ -27724,6 +28186,7 @@
     "id": "updateBranch",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
+    "documentationUrl": "https://developer.github.com/v3/pulls/#update-a-pull-request-branch",
     "parameters": [
       {
         "alias": null,
@@ -27785,6 +28248,7 @@
     "id": "getReadme",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/readme",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#get-the-readme",
     "parameters": [
       {
         "alias": null,
@@ -27836,6 +28300,7 @@
     "id": "listReleases",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -27897,6 +28362,7 @@
     "id": "createRelease",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/releases",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#create-a-release",
     "parameters": [
       {
         "alias": null,
@@ -27998,6 +28464,7 @@
     "id": "getReleaseAsset",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#get-a-single-release-asset",
     "parameters": [
       {
         "alias": null,
@@ -28049,6 +28516,7 @@
     "id": "updateReleaseAsset",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#edit-a-release-asset",
     "parameters": [
       {
         "alias": null,
@@ -28120,6 +28588,7 @@
     "id": "deleteReleaseAsset",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#delete-a-release-asset",
     "parameters": [
       {
         "alias": null,
@@ -28161,6 +28630,7 @@
     "id": "getLatestRelease",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases/latest",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#get-the-latest-release",
     "parameters": [
       {
         "alias": null,
@@ -28202,6 +28672,7 @@
     "id": "getReleaseByTag",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases/tags/{tag}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#get-a-release-by-tag-name",
     "parameters": [
       {
         "alias": null,
@@ -28253,6 +28724,7 @@
     "id": "getRelease",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases/{release_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#get-a-single-release",
     "parameters": [
       {
         "alias": null,
@@ -28304,6 +28776,7 @@
     "id": "updateRelease",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/releases/{release_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#edit-a-release",
     "parameters": [
       {
         "alias": null,
@@ -28415,6 +28888,7 @@
     "id": "deleteRelease",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/releases/{release_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#delete-a-release",
     "parameters": [
       {
         "alias": null,
@@ -28456,6 +28930,7 @@
     "id": "listAssetsForRelease",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#list-assets-for-a-release",
     "parameters": [
       {
         "alias": null,
@@ -28527,6 +29002,7 @@
     "id": "uploadReleaseAsset",
     "method": "POST",
     "url": "{origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}",
+    "documentationUrl": "https://developer.github.com/v3/repos/releases/#upload-a-release-asset",
     "parameters": [
       {
         "alias": null,
@@ -28628,6 +29104,7 @@
     "id": "listStargazersForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stargazers",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-stargazers",
     "parameters": [
       {
         "alias": null,
@@ -28698,6 +29175,7 @@
     "id": "getCodeFrequencyStats",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/code_frequency",
+    "documentationUrl": "https://developer.github.com/v3/repos/statistics/#get-the-number-of-additions-and-deletions-per-week",
     "parameters": [
       {
         "alias": null,
@@ -28735,6 +29213,7 @@
     "id": "getCommitActivityStats",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/commit_activity",
+    "documentationUrl": "https://developer.github.com/v3/repos/statistics/#get-the-last-year-of-commit-activity-data",
     "parameters": [
       {
         "alias": null,
@@ -28776,6 +29255,7 @@
     "id": "getContributorsStats",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/contributors",
+    "documentationUrl": "https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts",
     "parameters": [
       {
         "alias": null,
@@ -28817,6 +29297,7 @@
     "id": "getParticipationStats",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/participation",
+    "documentationUrl": "https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count-for-the-repository-owner-and-everyone-else",
     "parameters": [
       {
         "alias": null,
@@ -28858,6 +29339,7 @@
     "id": "getPunchCardStats",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/punch_card",
+    "documentationUrl": "https://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day",
     "parameters": [
       {
         "alias": null,
@@ -28895,6 +29377,7 @@
     "id": "createStatus",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/statuses/{sha}",
+    "documentationUrl": "https://developer.github.com/v3/repos/statuses/#create-a-status",
     "parameters": [
       {
         "alias": null,
@@ -28986,6 +29469,7 @@
     "id": "listWatchersForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/subscribers",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-watchers",
     "parameters": [
       {
         "alias": null,
@@ -29047,6 +29531,7 @@
     "id": "getRepoSubscription",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#get-a-repository-subscription",
     "parameters": [
       {
         "alias": null,
@@ -29088,6 +29573,7 @@
     "id": "setRepoSubscription",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#set-a-repository-subscription",
     "parameters": [
       {
         "alias": null,
@@ -29149,6 +29635,7 @@
     "id": "deleteRepoSubscription",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/subscription",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription",
     "parameters": [
       {
         "alias": null,
@@ -29180,6 +29667,7 @@
     "id": "listTags",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/tags",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-tags",
     "parameters": [
       {
         "alias": null,
@@ -29241,6 +29729,7 @@
     "id": "listTeams",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/teams",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-teams",
     "parameters": [
       {
         "alias": null,
@@ -29302,6 +29791,7 @@
     "id": "getAllTopics",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/topics",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-all-repository-topics",
     "parameters": [
       {
         "alias": null,
@@ -29341,6 +29831,7 @@
     "id": "listTopics",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/topics",
+    "documentationUrl": "https://developer.github.com/v3/repos/#get-all-repository-topics",
     "parameters": [
       {
         "alias": null,
@@ -29382,6 +29873,7 @@
     "id": "replaceAllTopics",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/topics",
+    "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-repository-topics",
     "parameters": [
       {
         "alias": null,
@@ -29431,6 +29923,7 @@
     "id": "replaceTopics",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/topics",
+    "documentationUrl": "https://developer.github.com/v3/repos/#replace-all-repository-topics",
     "parameters": [
       {
         "alias": null,
@@ -29482,6 +29975,7 @@
     "id": "getClones",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/traffic/clones",
+    "documentationUrl": "https://developer.github.com/v3/repos/traffic/#clones",
     "parameters": [
       {
         "alias": null,
@@ -29533,6 +30027,7 @@
     "id": "getTopPaths",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/traffic/popular/paths",
+    "documentationUrl": "https://developer.github.com/v3/repos/traffic/#list-paths",
     "parameters": [
       {
         "alias": null,
@@ -29574,6 +30069,7 @@
     "id": "getTopReferrers",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/traffic/popular/referrers",
+    "documentationUrl": "https://developer.github.com/v3/repos/traffic/#list-referrers",
     "parameters": [
       {
         "alias": null,
@@ -29615,6 +30111,7 @@
     "id": "getViews",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/traffic/views",
+    "documentationUrl": "https://developer.github.com/v3/repos/traffic/#views",
     "parameters": [
       {
         "alias": null,
@@ -29666,6 +30163,7 @@
     "id": "transfer",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/transfer",
+    "documentationUrl": "https://developer.github.com/v3/repos/#transfer-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -29727,6 +30225,7 @@
     "id": "checkVulnerabilityAlerts",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
+    "documentationUrl": "https://developer.github.com/v3/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -29758,6 +30257,7 @@
     "id": "enableVulnerabilityAlerts",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
+    "documentationUrl": "https://developer.github.com/v3/repos/#enable-vulnerability-alerts",
     "parameters": [
       {
         "alias": null,
@@ -29789,6 +30289,7 @@
     "id": "disableVulnerabilityAlerts",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
+    "documentationUrl": "https://developer.github.com/v3/repos/#disable-vulnerability-alerts",
     "parameters": [
       {
         "alias": null,
@@ -29820,6 +30321,7 @@
     "id": "getArchiveLink",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/{archive_format}/{ref}",
+    "documentationUrl": "https://developer.github.com/v3/repos/contents/#get-archive-link",
     "parameters": [
       {
         "alias": null,
@@ -29871,6 +30373,7 @@
     "id": "createUsingTemplate",
     "method": "POST",
     "url": "/repos/{template_owner}/{template_repo}/generate",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-using-a-template",
     "parameters": [
       {
         "alias": null,
@@ -29952,6 +30455,7 @@
     "id": "listPublic",
     "method": "GET",
     "url": "/repositories",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-public-repositories",
     "parameters": [
       {
         "alias": null,
@@ -30003,6 +30507,7 @@
     "id": "listProvisionedIdentities",
     "method": "GET",
     "url": "/scim/v2/organizations/{org}/Users",
+    "documentationUrl": "https://developer.github.com/v3/scim/#get-a-list-of-provisioned-identities",
     "parameters": [
       {
         "alias": null,
@@ -30067,6 +30572,7 @@
     "id": "provisionAndInviteUsers",
     "method": "POST",
     "url": "/scim/v2/organizations/{org}/Users",
+    "documentationUrl": "https://developer.github.com/v3/scim/#provision-and-invite-users",
     "parameters": [
       {
         "alias": null,
@@ -30098,6 +30604,7 @@
     "id": "provisionInviteUsers",
     "method": "POST",
     "url": "/scim/v2/organizations/{org}/Users",
+    "documentationUrl": "https://developer.github.com/v3/scim/#provision-and-invite-users",
     "parameters": [
       {
         "alias": null,
@@ -30131,6 +30638,7 @@
     "id": "getProvisioningDetailsForUser",
     "method": "GET",
     "url": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "documentationUrl": "https://developer.github.com/v3/scim/#get-provisioning-details-for-a-single-user",
     "parameters": [
       {
         "alias": null,
@@ -30182,6 +30690,7 @@
     "id": "replaceProvisionedUserInformation",
     "method": "PUT",
     "url": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "documentationUrl": "https://developer.github.com/v3/scim/#replace-a-provisioned-users-information",
     "parameters": [
       {
         "alias": null,
@@ -30233,6 +30742,7 @@
     "id": "updateProvisionedOrgMembership",
     "method": "PUT",
     "url": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "documentationUrl": "https://developer.github.com/v3/scim/#replace-a-provisioned-users-information",
     "parameters": [
       {
         "alias": null,
@@ -30286,6 +30796,7 @@
     "id": "updateUserAttribute",
     "method": "PATCH",
     "url": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "documentationUrl": "https://developer.github.com/v3/scim/#update-a-user-attribute",
     "parameters": [
       {
         "alias": null,
@@ -30337,6 +30848,7 @@
     "id": "removeUserFromOrg",
     "method": "DELETE",
     "url": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "documentationUrl": "https://developer.github.com/v3/scim/#remove-a-user-from-the-organization",
     "parameters": [
       {
         "alias": null,
@@ -30378,6 +30890,7 @@
     "id": "code",
     "method": "GET",
     "url": "/search/code",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-code",
     "parameters": [
       {
         "alias": null,
@@ -30449,6 +30962,7 @@
     "id": "commits",
     "method": "GET",
     "url": "/search/commits",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-commits",
     "parameters": [
       {
         "alias": null,
@@ -30520,6 +31034,7 @@
     "id": "issuesAndPullRequests",
     "method": "GET",
     "url": "/search/issues",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-issues-and-pull-requests",
     "parameters": [
       {
         "alias": null,
@@ -30603,6 +31118,7 @@
     "id": "issues",
     "method": "GET",
     "url": "/search/issues",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-issues-and-pull-requests",
     "parameters": [
       {
         "alias": null,
@@ -30688,6 +31204,7 @@
     "id": "labels",
     "method": "GET",
     "url": "/search/labels",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-labels",
     "parameters": [
       {
         "alias": null,
@@ -30749,6 +31266,7 @@
     "id": "repos",
     "method": "GET",
     "url": "/search/repositories",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-repositories",
     "parameters": [
       {
         "alias": null,
@@ -30820,6 +31338,7 @@
     "id": "topics",
     "method": "GET",
     "url": "/search/topics",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-topics",
     "parameters": [
       {
         "alias": null,
@@ -30851,6 +31370,7 @@
     "id": "users",
     "method": "GET",
     "url": "/search/users",
+    "documentationUrl": "https://developer.github.com/v3/search/#search-users",
     "parameters": [
       {
         "alias": null,
@@ -30922,6 +31442,7 @@
     "id": "getLegacy",
     "method": "GET",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -30953,6 +31474,7 @@
     "id": "get",
     "method": "GET",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -30986,6 +31508,7 @@
     "id": "updateLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31067,6 +31590,7 @@
     "id": "update",
     "method": "PATCH",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31150,6 +31674,7 @@
     "id": "deleteLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31171,6 +31696,7 @@
     "id": "delete",
     "method": "DELETE",
     "url": "/teams/{team_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31194,6 +31720,7 @@
     "id": "listDiscussionsLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#list-discussions-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31255,6 +31782,7 @@
     "id": "listDiscussions",
     "method": "GET",
     "url": "/teams/{team_id}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#list-discussions-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31318,6 +31846,7 @@
     "id": "createDiscussionLegacy",
     "method": "POST",
     "url": "/teams/{team_id}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31379,6 +31908,7 @@
     "id": "createDiscussion",
     "method": "POST",
     "url": "/teams/{team_id}/discussions",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31442,6 +31972,7 @@
     "id": "getDiscussionLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31483,6 +32014,7 @@
     "id": "getDiscussion",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31526,6 +32058,7 @@
     "id": "updateDiscussionLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31587,6 +32120,7 @@
     "id": "updateDiscussion",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31650,6 +32184,7 @@
     "id": "deleteDiscussionLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31681,6 +32216,7 @@
     "id": "deleteDiscussion",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31714,6 +32250,7 @@
     "id": "listDiscussionCommentsLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31785,6 +32322,7 @@
     "id": "listDiscussionComments",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31858,6 +32396,7 @@
     "id": "createDiscussionCommentLegacy",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31909,6 +32448,7 @@
     "id": "createDiscussionComment",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -31962,6 +32502,7 @@
     "id": "getDiscussionCommentLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32013,6 +32554,7 @@
     "id": "getDiscussionComment",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32066,6 +32608,7 @@
     "id": "updateDiscussionCommentLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32127,6 +32670,7 @@
     "id": "updateDiscussionComment",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32190,6 +32734,7 @@
     "id": "deleteDiscussionCommentLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32231,6 +32776,7 @@
     "id": "deleteDiscussionComment",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32274,6 +32820,7 @@
     "id": "listForTeamDiscussionCommentLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32364,6 +32911,7 @@
     "id": "listForTeamDiscussionComment",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32456,6 +33004,7 @@
     "id": "createForTeamDiscussionCommentLegacy",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32526,6 +33075,7 @@
     "id": "createForTeamDiscussionComment",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32598,6 +33148,7 @@
     "id": "listForTeamDiscussionLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32678,6 +33229,7 @@
     "id": "listForTeamDiscussion",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32760,6 +33312,7 @@
     "id": "createForTeamDiscussionLegacy",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32820,6 +33373,7 @@
     "id": "createForTeamDiscussion",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "documentationUrl": "https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32882,6 +33436,7 @@
     "id": "listPendingInvitationsLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32933,6 +33488,7 @@
     "id": "listPendingInvitations",
     "method": "GET",
     "url": "/teams/{team_id}/invitations",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy",
     "parameters": [
       {
         "alias": null,
@@ -32986,6 +33542,7 @@
     "id": "listMembersLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/members",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-team-members-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33047,6 +33604,7 @@
     "id": "listMembers",
     "method": "GET",
     "url": "/teams/{team_id}/members",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#list-team-members-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33110,6 +33668,7 @@
     "id": "getMemberLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33141,6 +33700,7 @@
     "id": "getMember",
     "method": "GET",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33174,6 +33734,7 @@
     "id": "addMemberLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33218,6 +33779,7 @@
     "id": "addMember",
     "method": "PUT",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33264,6 +33826,7 @@
     "id": "removeMemberLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33295,6 +33858,7 @@
     "id": "removeMember",
     "method": "DELETE",
     "url": "/teams/{team_id}/members/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-member-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33328,6 +33892,7 @@
     "id": "getMembershipLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33375,6 +33940,7 @@
     "id": "getMembership",
     "method": "GET",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33424,6 +33990,7 @@
     "id": "addOrUpdateMembershipLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33487,6 +34054,7 @@
     "id": "addOrUpdateMembership",
     "method": "PUT",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33552,6 +34120,7 @@
     "id": "removeMembershipLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33583,6 +34152,7 @@
     "id": "removeMembership",
     "method": "DELETE",
     "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33616,6 +34186,7 @@
     "id": "listProjectsLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/projects",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-projects-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33667,6 +34238,7 @@
     "id": "listProjects",
     "method": "GET",
     "url": "/teams/{team_id}/projects",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-projects-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33720,6 +34292,7 @@
     "id": "reviewProjectLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33761,6 +34334,7 @@
     "id": "reviewProject",
     "method": "GET",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33804,6 +34378,7 @@
     "id": "addOrUpdateProjectLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33855,6 +34430,7 @@
     "id": "addOrUpdateProject",
     "method": "PUT",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33908,6 +34484,7 @@
     "id": "removeProjectLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33939,6 +34516,7 @@
     "id": "removeProject",
     "method": "DELETE",
     "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33972,6 +34550,7 @@
     "id": "listReposLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/repos",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34023,6 +34602,7 @@
     "id": "listRepos",
     "method": "GET",
     "url": "/teams/{team_id}/repos",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34076,6 +34656,7 @@
     "id": "checkManagesRepoLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34127,6 +34708,7 @@
     "id": "checkManagesRepo",
     "method": "GET",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34180,6 +34762,7 @@
     "id": "addOrUpdateRepoLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34231,6 +34814,7 @@
     "id": "addOrUpdateRepo",
     "method": "PUT",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34284,6 +34868,7 @@
     "id": "removeRepoLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34325,6 +34910,7 @@
     "id": "removeRepo",
     "method": "DELETE",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34368,6 +34954,7 @@
     "id": "listIdPGroupsForLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34399,6 +34986,7 @@
     "id": "listIdPGroupsFor",
     "method": "GET",
     "url": "/teams/{team_id}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34432,6 +35020,7 @@
     "id": "createOrUpdateIdPGroupConnectionsLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34503,6 +35092,7 @@
     "id": "createOrUpdateIdPGroupConnections",
     "method": "PATCH",
     "url": "/teams/{team_id}/team-sync/group-mappings",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34576,6 +35166,7 @@
     "id": "listChildLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-child-teams-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34627,6 +35218,7 @@
     "id": "listChild",
     "method": "GET",
     "url": "/teams/{team_id}/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-child-teams-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34680,6 +35272,7 @@
     "id": "getAuthenticated",
     "method": "GET",
     "url": "/user",
+    "documentationUrl": "https://developer.github.com/v3/users/#get-the-authenticated-user",
     "parameters": [],
     "responses": [
       {
@@ -34703,6 +35296,7 @@
     "id": "updateAuthenticated",
     "method": "PATCH",
     "url": "/user",
+    "documentationUrl": "https://developer.github.com/v3/users/#update-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -34794,6 +35388,7 @@
     "id": "listBlocked",
     "method": "GET",
     "url": "/user/blocks",
+    "documentationUrl": "https://developer.github.com/v3/users/blocking/#list-blocked-users",
     "parameters": [],
     "responses": [
       {
@@ -34814,6 +35409,7 @@
     "id": "checkBlocked",
     "method": "GET",
     "url": "/user/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/blocking/#check-whether-youve-blocked-a-user",
     "parameters": [
       {
         "alias": null,
@@ -34835,6 +35431,7 @@
     "id": "block",
     "method": "PUT",
     "url": "/user/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/blocking/#block-a-user",
     "parameters": [
       {
         "alias": null,
@@ -34856,6 +35453,7 @@
     "id": "unblock",
     "method": "DELETE",
     "url": "/user/blocks/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/blocking/#unblock-a-user",
     "parameters": [
       {
         "alias": null,
@@ -34877,6 +35475,7 @@
     "id": "togglePrimaryEmailVisibility",
     "method": "PATCH",
     "url": "/user/email/visibility",
+    "documentationUrl": "https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility",
     "parameters": [
       {
         "alias": null,
@@ -34918,6 +35517,7 @@
     "id": "listEmails",
     "method": "GET",
     "url": "/user/emails",
+    "documentationUrl": "https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -34959,6 +35559,7 @@
     "id": "addEmails",
     "method": "POST",
     "url": "/user/emails",
+    "documentationUrl": "https://developer.github.com/v3/users/emails/#add-email-addresses",
     "parameters": [
       {
         "alias": null,
@@ -34990,6 +35591,7 @@
     "id": "deleteEmails",
     "method": "DELETE",
     "url": "/user/emails",
+    "documentationUrl": "https://developer.github.com/v3/users/emails/#delete-email-addresses",
     "parameters": [
       {
         "alias": null,
@@ -35011,6 +35613,7 @@
     "id": "listFollowersForAuthenticatedUser",
     "method": "GET",
     "url": "/user/followers",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-followers-of-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35052,6 +35655,7 @@
     "id": "listFollowedByAuthenticated",
     "method": "GET",
     "url": "/user/following",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35093,6 +35697,7 @@
     "id": "listFollowingForAuthenticatedUser",
     "method": "GET",
     "url": "/user/following",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35136,6 +35741,7 @@
     "id": "checkFollowing",
     "method": "GET",
     "url": "/user/following/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user",
     "parameters": [
       {
         "alias": null,
@@ -35157,6 +35763,7 @@
     "id": "follow",
     "method": "PUT",
     "url": "/user/following/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#follow-a-user",
     "parameters": [
       {
         "alias": null,
@@ -35178,6 +35785,7 @@
     "id": "unfollow",
     "method": "DELETE",
     "url": "/user/following/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#unfollow-a-user",
     "parameters": [
       {
         "alias": null,
@@ -35199,6 +35807,7 @@
     "id": "listGpgKeys",
     "method": "GET",
     "url": "/user/gpg_keys",
+    "documentationUrl": "https://developer.github.com/v3/users/gpg_keys/#list-your-gpg-keys",
     "parameters": [
       {
         "alias": null,
@@ -35240,6 +35849,7 @@
     "id": "createGpgKey",
     "method": "POST",
     "url": "/user/gpg_keys",
+    "documentationUrl": "https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key",
     "parameters": [
       {
         "alias": null,
@@ -35271,6 +35881,7 @@
     "id": "getGpgKey",
     "method": "GET",
     "url": "/user/gpg_keys/{gpg_key_id}",
+    "documentationUrl": "https://developer.github.com/v3/users/gpg_keys/#get-a-single-gpg-key",
     "parameters": [
       {
         "alias": null,
@@ -35302,6 +35913,7 @@
     "id": "deleteGpgKey",
     "method": "DELETE",
     "url": "/user/gpg_keys/{gpg_key_id}",
+    "documentationUrl": "https://developer.github.com/v3/users/gpg_keys/#delete-a-gpg-key",
     "parameters": [
       {
         "alias": null,
@@ -35323,6 +35935,7 @@
     "id": "listInstallationsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/installations",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-installations-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -35364,6 +35977,7 @@
     "id": "listInstallationReposForAuthenticatedUser",
     "method": "GET",
     "url": "/user/installations/{installation_id}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-for-an-installation",
     "parameters": [
       {
         "alias": null,
@@ -35415,6 +36029,7 @@
     "id": "addRepoToInstallation",
     "method": "PUT",
     "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#add-repository-to-installation",
     "parameters": [
       {
         "alias": null,
@@ -35446,6 +36061,7 @@
     "id": "removeRepoFromInstallation",
     "method": "DELETE",
     "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#remove-repository-from-installation",
     "parameters": [
       {
         "alias": null,
@@ -35477,6 +36093,7 @@
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/issues",
+    "documentationUrl": "https://developer.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35578,6 +36195,7 @@
     "id": "listPublicKeys",
     "method": "GET",
     "url": "/user/keys",
+    "documentationUrl": "https://developer.github.com/v3/users/keys/#list-your-public-keys",
     "parameters": [
       {
         "alias": null,
@@ -35619,6 +36237,7 @@
     "id": "createPublicKey",
     "method": "POST",
     "url": "/user/keys",
+    "documentationUrl": "https://developer.github.com/v3/users/keys/#create-a-public-key",
     "parameters": [
       {
         "alias": null,
@@ -35660,6 +36279,7 @@
     "id": "getPublicKey",
     "method": "GET",
     "url": "/user/keys/{key_id}",
+    "documentationUrl": "https://developer.github.com/v3/users/keys/#get-a-single-public-key",
     "parameters": [
       {
         "alias": null,
@@ -35691,6 +36311,7 @@
     "id": "deletePublicKey",
     "method": "DELETE",
     "url": "/user/keys/{key_id}",
+    "documentationUrl": "https://developer.github.com/v3/users/keys/#delete-a-public-key",
     "parameters": [
       {
         "alias": null,
@@ -35712,6 +36333,7 @@
     "id": "listSubscriptionsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/marketplace_purchases",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35753,6 +36375,7 @@
     "id": "listMarketplacePurchasesForAuthenticatedUser",
     "method": "GET",
     "url": "/user/marketplace_purchases",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -35796,6 +36419,7 @@
     "id": "listSubscriptionsForAuthenticatedUserStubbed",
     "method": "GET",
     "url": "/user/marketplace_purchases/stubbed",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -35837,6 +36461,7 @@
     "id": "listMarketplacePurchasesForAuthenticatedUserStubbed",
     "method": "GET",
     "url": "/user/marketplace_purchases/stubbed",
+    "documentationUrl": "https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed",
     "parameters": [
       {
         "alias": null,
@@ -35880,6 +36505,7 @@
     "id": "listMemberships",
     "method": "GET",
     "url": "/user/memberships/orgs",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#list-your-organization-memberships",
     "parameters": [
       {
         "alias": null,
@@ -35931,6 +36557,7 @@
     "id": "getMembershipForAuthenticatedUser",
     "method": "GET",
     "url": "/user/memberships/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#get-your-organization-membership",
     "parameters": [
       {
         "alias": null,
@@ -35962,6 +36589,7 @@
     "id": "updateMembership",
     "method": "PATCH",
     "url": "/user/memberships/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/orgs/members/#edit-your-organization-membership",
     "parameters": [
       {
         "alias": null,
@@ -36003,6 +36631,7 @@
     "id": "startForAuthenticatedUser",
     "method": "POST",
     "url": "/user/migrations",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#start-a-user-migration",
     "parameters": [
       {
         "alias": null,
@@ -36054,6 +36683,7 @@
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/migrations",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#list-user-migrations",
     "parameters": [
       {
         "alias": null,
@@ -36095,6 +36725,7 @@
     "id": "getStatusForAuthenticatedUser",
     "method": "GET",
     "url": "/user/migrations/{migration_id}",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration",
     "parameters": [
       {
         "alias": null,
@@ -36126,6 +36757,7 @@
     "id": "getArchiveForAuthenticatedUser",
     "method": "GET",
     "url": "/user/migrations/{migration_id}/archive",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive",
     "parameters": [
       {
         "alias": null,
@@ -36147,6 +36779,7 @@
     "id": "deleteArchiveForAuthenticatedUser",
     "method": "DELETE",
     "url": "/user/migrations/{migration_id}/archive",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#delete-a-user-migration-archive",
     "parameters": [
       {
         "alias": null,
@@ -36168,6 +36801,7 @@
     "id": "unlockRepoForAuthenticatedUser",
     "method": "DELETE",
     "url": "/user/migrations/{migration_id}/repos/{repo_name}/lock",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#unlock-a-user-repository",
     "parameters": [
       {
         "alias": null,
@@ -36199,6 +36833,7 @@
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/orgs",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#list-your-organizations",
     "parameters": [
       {
         "alias": null,
@@ -36240,6 +36875,7 @@
     "id": "createForAuthenticatedUser",
     "method": "POST",
     "url": "/user/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#create-a-user-project",
     "parameters": [
       {
         "alias": null,
@@ -36281,6 +36917,7 @@
     "id": "listPublicEmails",
     "method": "GET",
     "url": "/user/public_emails",
+    "documentationUrl": "https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -36322,6 +36959,7 @@
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36403,6 +37041,7 @@
     "id": "list",
     "method": "GET",
     "url": "/user/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36486,6 +37125,7 @@
     "id": "createForAuthenticatedUser",
     "method": "POST",
     "url": "/user/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36677,6 +37317,7 @@
     "id": "listInvitationsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/repository_invitations",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#list-a-users-repository-invitations",
     "parameters": [
       {
         "alias": null,
@@ -36718,6 +37359,7 @@
     "id": "acceptInvitation",
     "method": "PATCH",
     "url": "/user/repository_invitations/{invitation_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#accept-a-repository-invitation",
     "parameters": [
       {
         "alias": null,
@@ -36739,6 +37381,7 @@
     "id": "declineInvitation",
     "method": "DELETE",
     "url": "/user/repository_invitations/{invitation_id}",
+    "documentationUrl": "https://developer.github.com/v3/repos/invitations/#decline-a-repository-invitation",
     "parameters": [
       {
         "alias": null,
@@ -36760,6 +37403,7 @@
     "id": "listReposStarredByAuthenticatedUser",
     "method": "GET",
     "url": "/user/starred",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36830,6 +37474,7 @@
     "id": "checkRepoIsStarredByAuthenticatedUser",
     "method": "GET",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36861,6 +37506,7 @@
     "id": "checkStarringRepo",
     "method": "GET",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36894,6 +37540,7 @@
     "id": "starRepoForAuthenticatedUser",
     "method": "PUT",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36925,6 +37572,7 @@
     "id": "starRepo",
     "method": "PUT",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36958,6 +37606,7 @@
     "id": "unstarRepoForAuthenticatedUser",
     "method": "DELETE",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -36989,6 +37638,7 @@
     "id": "unstarRepo",
     "method": "DELETE",
     "url": "/user/starred/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37022,6 +37672,7 @@
     "id": "listWatchedReposForAuthenticatedUser",
     "method": "GET",
     "url": "/user/subscriptions",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37063,6 +37714,7 @@
     "id": "checkWatchingRepoLegacy",
     "method": "GET",
     "url": "/user/subscriptions/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#check-if-you-are-watching-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -37094,6 +37746,7 @@
     "id": "watchRepoLegacy",
     "method": "PUT",
     "url": "/user/subscriptions/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -37125,6 +37778,7 @@
     "id": "stopWatchingRepoLegacy",
     "method": "DELETE",
     "url": "/user/subscriptions/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -37156,6 +37810,7 @@
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-user-teams",
     "parameters": [
       {
         "alias": null,
@@ -37197,6 +37852,7 @@
     "id": "listReposForUser",
     "method": "GET",
     "url": "/user/{migration_id}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration",
     "parameters": [
       {
         "alias": null,
@@ -37248,6 +37904,7 @@
     "id": "list",
     "method": "GET",
     "url": "/users",
+    "documentationUrl": "https://developer.github.com/v3/users/#get-all-users",
     "parameters": [
       {
         "alias": null,
@@ -37299,6 +37956,7 @@
     "id": "getByUsername",
     "method": "GET",
     "url": "/users/{username}",
+    "documentationUrl": "https://developer.github.com/v3/users/#get-a-single-user",
     "parameters": [
       {
         "alias": null,
@@ -37333,6 +37991,7 @@
     "id": "listEventsForAuthenticatedUser",
     "method": "GET",
     "url": "/users/{username}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37374,6 +38033,7 @@
     "id": "listEventsForUser",
     "method": "GET",
     "url": "/users/{username}/events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37417,6 +38077,7 @@
     "id": "listOrgEventsForAuthenticatedUser",
     "method": "GET",
     "url": "/users/{username}/events/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37468,6 +38129,7 @@
     "id": "listEventsForOrg",
     "method": "GET",
     "url": "/users/{username}/events/orgs/{org}",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -37521,6 +38183,7 @@
     "id": "listPublicEventsForUser",
     "method": "GET",
     "url": "/users/{username}/events/public",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37562,6 +38225,7 @@
     "id": "listFollowersForUser",
     "method": "GET",
     "url": "/users/{username}/followers",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-followers-of-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37613,6 +38277,7 @@
     "id": "listFollowingForUser",
     "method": "GET",
     "url": "/users/{username}/following",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user",
     "parameters": [
       {
         "alias": null,
@@ -37664,6 +38329,7 @@
     "id": "checkFollowingForUser",
     "method": "GET",
     "url": "/users/{username}/following/{target_user}",
+    "documentationUrl": "https://developer.github.com/v3/users/followers/#check-if-one-user-follows-another",
     "parameters": [
       {
         "alias": null,
@@ -37695,6 +38361,7 @@
     "id": "listForUser",
     "method": "GET",
     "url": "/users/{username}/gists",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37756,6 +38423,7 @@
     "id": "listPublicForUser",
     "method": "GET",
     "url": "/users/{username}/gists",
+    "documentationUrl": "https://developer.github.com/v3/gists/#list-gists-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37819,6 +38487,7 @@
     "id": "listGpgKeysForUser",
     "method": "GET",
     "url": "/users/{username}/gpg_keys",
+    "documentationUrl": "https://developer.github.com/v3/users/gpg_keys/#list-gpg-keys-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37870,6 +38539,7 @@
     "id": "getContextForUser",
     "method": "GET",
     "url": "/users/{username}/hovercard",
+    "documentationUrl": "https://developer.github.com/v3/users/#get-contextual-information-about-a-user",
     "parameters": [
       {
         "alias": null,
@@ -37921,6 +38591,7 @@
     "id": "getUserInstallation",
     "method": "GET",
     "url": "/users/{username}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation",
     "parameters": [
       {
         "alias": null,
@@ -37952,6 +38623,7 @@
     "id": "findUserInstallation",
     "method": "GET",
     "url": "/users/{username}/installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation",
     "parameters": [
       {
         "alias": null,
@@ -37985,6 +38657,7 @@
     "id": "listPublicKeysForUser",
     "method": "GET",
     "url": "/users/{username}/keys",
+    "documentationUrl": "https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -38032,6 +38705,7 @@
     "id": "listForUser",
     "method": "GET",
     "url": "/users/{username}/orgs",
+    "documentationUrl": "https://developer.github.com/v3/orgs/#list-user-organizations",
     "parameters": [
       {
         "alias": null,
@@ -38083,6 +38757,7 @@
     "id": "listForUser",
     "method": "GET",
     "url": "/users/{username}/projects",
+    "documentationUrl": "https://developer.github.com/v3/projects/#list-user-projects",
     "parameters": [
       {
         "alias": null,
@@ -38144,6 +38819,7 @@
     "id": "listReceivedEventsForUser",
     "method": "GET",
     "url": "/users/{username}/received_events",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-events-received-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -38185,6 +38861,7 @@
     "id": "listReceivedPublicEventsForUser",
     "method": "GET",
     "url": "/users/{username}/received_events/public",
+    "documentationUrl": "https://developer.github.com/v3/activity/events/#list-public-events-received-by-a-user",
     "parameters": [
       {
         "alias": null,
@@ -38226,6 +38903,7 @@
     "id": "listForUser",
     "method": "GET",
     "url": "/users/{username}/repos",
+    "documentationUrl": "https://developer.github.com/v3/repos/#list-repositories-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -38297,6 +38975,7 @@
     "id": "listReposStarredByUser",
     "method": "GET",
     "url": "/users/{username}/starred",
+    "documentationUrl": "https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-a-user",
     "parameters": [
       {
         "alias": null,
@@ -38377,6 +39056,7 @@
     "id": "listReposWatchedByUser",
     "method": "GET",
     "url": "/users/{username}/subscriptions",
+    "documentationUrl": "https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-a-user",
     "parameters": [
       {
         "alias": null,

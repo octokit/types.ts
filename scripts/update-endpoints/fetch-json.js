@@ -16,6 +16,7 @@ const QUERY = `
       id(format: CAMELCASE)
       method
       url
+      documentationUrl
       parameters {
         alias
         allowNull
