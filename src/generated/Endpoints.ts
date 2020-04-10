@@ -8012,7 +8012,7 @@ type MarkdownRenderRawEndpoint = {
    * data parameter
    */
   data: string;
-} & { headers: '{"content-type":"text/plain; charset=utf-8"}' };
+} & { headers: { "content-type": "text/plain; charset=utf-8" } };
 type MarkdownRenderRawRequestOptions = {
   method: "POST";
   url: "/markdown/raw";
@@ -34147,7 +34147,7 @@ type ReposUploadReleaseAssetEndpoint = {
    * For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`
    */
   baseUrl: string;
-} & { headers: '{"content-type":string}' };
+} & { headers: { "content-type": string } };
 type ReposUploadReleaseAssetRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/releases/:release_id/assets{?name,label}";

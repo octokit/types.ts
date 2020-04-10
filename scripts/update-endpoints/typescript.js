@@ -153,7 +153,7 @@ for (const endpoint of ENDPOINTS) {
     requiredPreview: endpoint.previews.length
       ? endpoint.previews[0].name
       : null,
-    headers: JSON.stringify(headers),
+    headers,
     parameters: {
       name: optionsTypeName,
       parameters: parameters
