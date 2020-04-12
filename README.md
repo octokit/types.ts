@@ -13,12 +13,12 @@ Get parameter and response data types for a REST API endpoint
 ```ts
 import { Endpoints } from "./src";
 
-type listUserReposOptions = Endpoints["GET /repos/:owner/:repo"][0];
-type listUserReposResponseData = Endpoints["GET /repos/:owner/:repo"][2];
+type listUserReposParameters = Endpoints["GET /repos/:owner/:repo"]["parameters"];
+type listUserReposResponse = Endpoints["GET /repos/:owner/:repo"]["response"];
 
 async function listRepos(
-  options: listUserReposOptions
-): listUserReposResponseData {
+  options: listUserReposParameters
+): listUserReposResponse["data"] {
   // ...
 }
 ```
