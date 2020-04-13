@@ -8,6 +8,23 @@
 
 ## Usage
 
+Get parameter and response data types for a REST API endpoint
+
+```ts
+import { Endpoints } from "./src";
+
+type listUserReposParameters = Endpoints["GET /repos/:owner/:repo"]["parameters"];
+type listUserReposResponse = Endpoints["GET /repos/:owner/:repo"]["response"];
+
+async function listRepos(
+  options: listUserReposParameters
+): listUserReposResponse["data"] {
+  // ...
+}
+```
+
+Get parameter types for a REST API endpoint
+
 Get response types from endpoint methods
 
 ```ts

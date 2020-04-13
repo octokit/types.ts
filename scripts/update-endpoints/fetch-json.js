@@ -16,6 +16,7 @@ const QUERY = `
       id(format: CAMELCASE)
       method
       url
+      documentationUrl
       parameters {
         alias
         allowNull
@@ -24,6 +25,14 @@ const QUERY = `
         enum
         name
         type
+        required
+      }
+      previews(required: true) {
+        name
+      }
+      headers {
+        name
+        value
         required
       }
       responses {

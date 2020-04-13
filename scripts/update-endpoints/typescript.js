@@ -24,9 +24,6 @@ const ENDPOINTS_TEMPLATE_PATH = resolve(
   "endpoints.ts.template"
 );
 
-Handlebars.registerHelper("union", function (endpoints, key) {
-  return endpoints.map((endpoint) => endpoint[key]).join(" | ");
-});
 Handlebars.registerHelper("name", function (parameter) {
   let name = parameter.key;
 
@@ -50,6 +47,13 @@ Handlebars.registerHelper("type", function (parameter) {
 
   return type;
 });
+
+Handlebars.registerHelper("headersType", function (headers) {
+  const result = JSON.stringify(headers);
+
+  return `{ headers: ${result.replace(/\bnull\b/g, "string")}}`;
+});
+
 const template = Handlebars.compile(
   readFileSync(ENDPOINTS_TEMPLATE_PATH, "utf8")
 );
@@ -64,22 +68,17 @@ const typeMap = {
 for (const endpoint of ENDPOINTS) {
   if (endpoint.renamed) continue;
 
-  const route = `${endpoint.method} ${endpoint.url.replace(
-    /\{([^}]+)}/g,
-    ":$1"
-  )}`;
+  const url = endpointToNormalizedUrl(endpoint);
+  const route = `${endpoint.method} ${url}`;
 
-  if (!endpointsByRoute[route]) {
-    endpointsByRoute[route] = [];
-  }
-
-  endpointsByRoute[route].push({
+  endpointsByRoute[route] = {
+    documentationUrl: endpoint.documentationUrl,
     optionsTypeName: pascalCase(`${endpoint.scope} ${endpoint.id} Endpoint`),
     requestOptionsTypeName: pascalCase(
       `${endpoint.scope} ${endpoint.id} RequestOptions`
     ),
     responseTypeName: endpointToResponseTypeName(endpoint),
-  });
+  };
 }
 
 const options = [];
@@ -90,7 +89,7 @@ for (const endpoint of ENDPOINTS) {
 
   const typeWriter = new TypeWriter();
   const { method, parameters } = endpoint;
-  const url = endpoint.url.replace(/\{([^}]+)}/g, ":$1");
+  const url = endpointToNormalizedUrl(endpoint);
 
   const optionsTypeName = pascalCase(
     `${endpoint.scope} ${endpoint.id} Endpoint`
@@ -113,10 +112,52 @@ for (const endpoint of ENDPOINTS) {
     typeWriter.generate("typescript");
   }
 
+  const headers = endpoint.headers.reduce((result, header) => {
+    // accept header is set via mediatype
+    if (header.name === "accept") {
+      return result;
+    }
+
+    // content-length is set by fetch
+    if (header.name === "content-length") {
+      return result;
+    }
+
+    // // ignore headers with null values. THese can be required headers that must be set by the user,
+    // // such as `headers['content-type']` for `octokit.repos.uploadReleaseAsset()`
+    // if (header.value === null) {
+    //   return result;
+    // }
+
+    if (!result) {
+      result = {};
+    }
+
+    result[header.name] = header.value;
+    return result;
+  }, undefined);
+
+  const extraParameters = [];
+  // baseUrl must be set for "Upload a release asset"
+  if (optionsTypeName === "ReposUploadReleaseAssetEndpoint") {
+    extraParameters.push({
+      name: "baseUrl",
+      type: "string",
+      description:
+        "For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`",
+      required: true,
+    });
+  }
+
   options.push({
+    requiredPreview: endpoint.previews.length
+      ? endpoint.previews[0].name
+      : null,
+    headers,
     parameters: {
       name: optionsTypeName,
       parameters: parameters
+        .concat(extraParameters)
         .map(parameterize)
         // handle "object" & "object[]" types
         .map((parameter) => {
@@ -214,4 +255,14 @@ function endpointToResponseTypeName(endpoint) {
   }
 
   return "any";
+}
+
+function endpointToNormalizedUrl(endpoint) {
+  return (
+    endpoint.url
+      // replace {param} with :param
+      .replace(/\{([^?][^}]+)}/g, ":$1")
+      // stecial case for "Upload a release asset": remove ":origin" prefix
+      .replace(/^:origin/, "")
+  );
 }

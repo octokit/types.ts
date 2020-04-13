@@ -23,10 +23,10 @@ export interface RequestInterface {
   <R extends Route>(
     route: keyof Endpoints | R,
     options?: R extends keyof Endpoints
-      ? Endpoints[R][0] & RequestParameters
+      ? Endpoints[R]["parameters"] & RequestParameters
       : RequestParameters
   ): R extends keyof Endpoints
-    ? Promise<OctokitResponse<Endpoints[R][2]>>
+    ? Promise<Endpoints[R]["response"]>
     : Promise<OctokitResponse<any>>;
 
   /**
