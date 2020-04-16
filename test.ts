@@ -24,6 +24,8 @@ assertRequestMethod(test4.DEFAULTS.method);
 
 const result4 = test4({ method: "PUT", url: "/funk", headers: { foo: "bar" } });
 assertString(result4.headers.foo);
+// assert that "url" is optional if its set on defaults
+assertString(test4({}).url);
 
 const test5 = test4.defaults({
   method: "PUT",
@@ -71,3 +73,5 @@ const staticParseResult = endpoint.parse({
 });
 
 assertString(staticParseResult.headers["x-foo"]);
+
+endpoint({});
