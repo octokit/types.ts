@@ -1,5 +1,5 @@
 // This code is not executed, only statically analyzed using `tsc --noEmit`
-import { EndpointInterface, RequestMethod } from "./src";
+import { EndpointInterface, RequestMethod, RequestInterface } from "./src";
 
 const endpoint = null as EndpointInterface;
 
@@ -24,7 +24,9 @@ assertRequestMethod(test4.DEFAULTS.method);
 
 const result4 = test4({ method: "PUT", url: "/funk", headers: { foo: "bar" } });
 assertString(result4.headers.foo);
-// assert that "url" is optional if its set on defaults
+// "url" parameter is required
+// endpoint({});
+// "url" is optional if set on defaults
 assertString(test4({}).url);
 
 const test5 = test4.defaults({
@@ -74,4 +76,15 @@ const staticParseResult = endpoint.parse({
 
 assertString(staticParseResult.headers["x-foo"]);
 
-endpoint({});
+const request = null as RequestInterface;
+
+const rtest = request.defaults(fooOptions);
+const rtest2 = rtest.defaults(bazOptions);
+const rtest3 = rtest2.defaults(overrideOptions);
+const rtest4 = rtest3.defaults(routeOptions);
+
+assertString(rtest.endpoint.DEFAULTS.foo);
+assertString(rtest2.endpoint.DEFAULTS.foo);
+assertString(rtest2.endpoint.DEFAULTS.baz);
+assertString(rtest3.endpoint.DEFAULTS.foo);
+assertRequestMethod(rtest4.endpoint.DEFAULTS.method);

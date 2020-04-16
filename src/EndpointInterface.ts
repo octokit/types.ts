@@ -9,7 +9,7 @@ export interface EndpointInterface<D extends object = object> {
   /**
    * Transforms a GitHub REST API endpoint into generic request options
    *
-   * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
+   * @param {object} endpoint Must set `url` unless it's set defaults. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <O extends RequestParameters = RequestParameters>(
     options: O & { method?: string } & ("url" extends keyof D
