@@ -12039,6 +12039,50 @@
     "renamed": null
   },
   {
+    "name": "Delete workflow run logs",
+    "scope": "actions",
+    "id": "deleteWorkflowRunLogs",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow_runs/#delete-workflow-run-logs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Re-run a workflow",
     "scope": "actions",
     "id": "reRunWorkflow",
