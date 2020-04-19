@@ -3,24 +3,20 @@ import { EndpointInterface, RequestMethod, RequestInterface } from "./src";
 
 const endpoint = null as EndpointInterface;
 
+// WIP: shows error when remvoing `installation_id` or `mediaType`
 endpoint({
   url: "/app/installations/:installation_id",
   method: "DELETE",
+  installation_id: 123,
   mediaType: {
-    previews: ["machine-man"],
+    previews: ["machine-man", "foo"],
   },
-
-  // installation_id: 123,
 });
 
-endpoint({
-  url: "/app/installations/:installation_id",
-  method: "DELETE",
-  // installation_id: 123,
-  // mediaType: {
-  //   previews: ["machine-man"],
-  // },
-});
+// WIP: shows error because `method` from default options is not respected
+// endpoint({
+//   url: "/user",
+// });
 
 const fooOptions = { foo: "bar" };
 const bazOptions = { baz: "daz" };

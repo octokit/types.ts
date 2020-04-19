@@ -2,6 +2,8 @@
 import { OctokitResponse } from "../OctokitResponse";
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
+import { RequestParameters } from "../RequestParameters";
+import { RequestOptions } from "../RequestOptions";
 
 type RequiredPreview<T> = {
   mediaType: {
@@ -9,16 +11,22 @@ type RequiredPreview<T> = {
   };
 };
 
+type Endpoint<
+  Parameters extends RequestParameters,
+  Request extends RequestOptions,
+  Response extends OctokitResponse<any>
+> = {
+  parameters: Parameters;
+  request: Request;
+  response: Response;
+};
+
 export interface Endpoints {
   {{#each endpointsByRoute}}
   /**
    * @see {{documentationUrl}}
    */
-  "{{@key}}": {
-    parameters: {{optionsTypeName}},
-    request: {{requestOptionsTypeName}},
-    response: OctokitResponse<{{responseTypeName}}>,
-  },
+  "{{@key}}": Endpoint<{{optionsTypeName}}, {{requestOptionsTypeName}}, OctokitResponse<{{responseTypeName}}>>,
   {{/each}}
 }
 
