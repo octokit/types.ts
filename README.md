@@ -6,9 +6,23 @@
 [![Build Status](https://github.com/octokit/types.ts/workflows/Test/badge.svg)](https://github.com/octokit/types.ts/actions?workflow=Test)
 [![Greenkeeper](https://badges.greenkeeper.io/octokit/types.ts.svg)](https://greenkeeper.io/)
 
+<!-- toc -->
+
+- [Usage](#usage)
+  - [Get parameter and response data types for a REST API endpoint](#get-parameter-and-response-data-types-for-a-rest-api-endpoint)
+  - [Get response types from endpoint methods](#get-response-types-from-endpoint-methods)
+- [Contributing](#contributing)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## Usage
 
-Get parameter and response data types for a REST API endpoint
+See all exported types at https://octokit.github.io/types.ts
+
+## Examples
+
+### Get parameter and response data types for a REST API endpoint
 
 ```ts
 import { Endpoints } from "./src";
@@ -23,7 +37,7 @@ async function listRepos(
 }
 ```
 
-Get response types from endpoint methods
+### Get response types from endpoint methods
 
 ```ts
 import {
@@ -40,8 +54,6 @@ type CreateLabelResponseDataType = GetResponseDataTypeFromEndpointMethod<
   typeof octokit.issues.createLabel
 >;
 ```
-
-See https://octokit.github.io/types.ts for all exported types
 
 ## Contributing
 
