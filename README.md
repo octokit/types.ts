@@ -9,6 +9,7 @@
 <!-- toc -->
 
 - [Usage](#usage)
+- [Examples](#examples)
   - [Get parameter and response data types for a REST API endpoint](#get-parameter-and-response-data-types-for-a-rest-api-endpoint)
   - [Get response types from endpoint methods](#get-response-types-from-endpoint-methods)
 - [Contributing](#contributing)
