@@ -2,8 +2,63 @@ import { EndpointDefaults } from "./EndpointDefaults";
 import { RequestOptions } from "./RequestOptions";
 import { RequestParameters } from "./RequestParameters";
 import { Route } from "./Route";
+import { RequestMethod } from "./RequestMethod";
 
 import { Endpoints } from "./generated/Endpoints";
+
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+  k: infer I
+) => void
+  ? I
+  : never;
+
+type EndpointsByUrlAndMethod = UnionToIntersection<
+  {
+    [K in keyof Endpoints]: {
+      [TUrl in Endpoints[K]["request"]["url"]]: {
+        [TMethod in Endpoints[K]["request"]["method"]]: {
+          route: {
+            url: TUrl;
+            method: TMethod;
+          };
+          options: Endpoints[K]["parameters"] & {
+            url: TUrl;
+            method: TMethod;
+          };
+          request: Endpoints[K]["request"];
+        };
+      };
+    };
+  }[keyof Endpoints]
+>;
+
+type UnknownEndpointParameters = RequestParameters & {
+  method?: RequestMethod;
+  url: string;
+};
+
+type KnownOrUnknownEndpointParameters<
+  T extends UnknownEndpointParameters
+> = T["url"] extends keyof EndpointsByUrlAndMethod
+  ? T["method"] extends keyof EndpointsByUrlAndMethod[T["url"]]
+    ? EndpointsByUrlAndMethod[T["url"]][T["method"]] extends {
+        parameters: infer TOpt;
+      }
+      ? TOpt
+      : never
+    : never
+  : UnknownEndpointParameters;
+
+// https://stackoverflow.com/a/61281317/206879
+type KnownOptions<T> = T extends {
+  [k in keyof T]: {
+    [k: string]: infer OptionValue;
+  };
+}
+  ? OptionValue
+  : never;
+
+type KnownEndpoints = KnownOptions<EndpointsByUrlAndMethod>["route"];
 
 export interface EndpointInterface<D extends object = object> {
   /**
@@ -11,11 +66,11 @@ export interface EndpointInterface<D extends object = object> {
    *
    * @param {object} endpoint Must set `url` unless it's set defaults. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
-  <O extends RequestParameters = RequestParameters>(
-    options: O & { method?: string } & ("url" extends keyof D
-        ? { url?: string }
-        : { url: string })
-  ): RequestOptions & Pick<D & O, keyof RequestOptions>;
+  <O extends KnownEndpoints | UnknownEndpointParameters>(
+    options: O & KnownOrUnknownEndpointParameters<O>
+  ): O extends KnownEndpoints
+    ? EndpointsByUrlAndMethod[O["url"]][O["method"]]["request"]
+    : RequestOptions;
 
   /**
    * Transforms a GitHub REST API endpoint into generic request options
