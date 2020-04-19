@@ -41,7 +41,7 @@ type {{request.name}} = {
 {{/each}}
 
 {{#childParams}}
-export type {{paramTypeName}} = {
+type {{paramTypeName}} = {
 {{#params}}
   {{{name this}}}: {{{type this}}}
 {{/params}}
