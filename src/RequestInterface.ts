@@ -1,5 +1,4 @@
 import { EndpointInterface } from "./EndpointInterface";
-import { EndpointOptions } from "./EndpointOptions";
 import { OctokitResponse } from "./OctokitResponse";
 import { RequestParameters } from "./RequestParameters";
 import { Route } from "./Route";
