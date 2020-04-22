@@ -8962,14 +8962,6 @@ type OrgsListEndpoint = {
    * The integer ID of the last organization that you've seen.
    */
   since?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
 };
 
 type OrgsListRequestOptions = {
@@ -35621,14 +35613,6 @@ type ReposListPublicEndpoint = {
    * The integer ID of the last repository that you've seen.
    */
   since?: number;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
 };
 
 type ReposListPublicRequestOptions = {
@@ -41667,14 +41651,6 @@ type UsersListEndpoint = {
    * The integer ID of the last User that you've seen.
    */
   since?: string;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
 };
 
 type UsersListRequestOptions = {
