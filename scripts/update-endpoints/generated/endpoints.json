@@ -4166,26 +4166,6 @@
         "name": "since",
         "type": "integer",
         "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ],
     "previews": [],
@@ -32635,26 +32615,6 @@
         "name": "since",
         "type": "integer",
         "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ],
     "previews": [],
@@ -40545,26 +40505,6 @@
         "enum": null,
         "name": "since",
         "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
         "required": false
       }
     ],
