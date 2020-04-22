@@ -2,6 +2,8 @@
 import { OctokitResponse } from "../OctokitResponse";
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
+import { RequestParameters } from "../RequestParameters";
+import { RequestOptions } from "../RequestOptions";
 
 type RequiredPreview<T> = {
   mediaType: {
@@ -9,4901 +11,4817 @@ type RequiredPreview<T> = {
   };
 };
 
+type Endpoint<
+  Parameters extends RequestParameters,
+  Request extends RequestOptions,
+  Response extends OctokitResponse<any>
+> = {
+  parameters: Parameters;
+  request: Request;
+  response: Response;
+};
+
 export interface Endpoints {
   /**
    * @see https://developer.github.com/v3/apps/#delete-an-installation
    */
-  "DELETE /app/installations/:installation_id": {
-    parameters: AppsDeleteInstallationEndpoint;
-    request: AppsDeleteInstallationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /app/installations/:installation_id": Endpoint<
+    AppsDeleteInstallationEndpoint,
+    AppsDeleteInstallationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-authorization
    */
-  "DELETE /applications/:client_id/grant": {
-    parameters: AppsDeleteAuthorizationEndpoint;
-    request: AppsDeleteAuthorizationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /applications/:client_id/grant": Endpoint<
+    AppsDeleteAuthorizationEndpoint,
+    AppsDeleteAuthorizationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#revoke-a-grant-for-an-application
    */
-  "DELETE /applications/:client_id/grants/:access_token": {
-    parameters: AppsRevokeGrantForApplicationEndpoint;
-    request: AppsRevokeGrantForApplicationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /applications/:client_id/grants/:access_token": Endpoint<
+    AppsRevokeGrantForApplicationEndpoint,
+    AppsRevokeGrantForApplicationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#delete-an-app-token
    */
-  "DELETE /applications/:client_id/token": {
-    parameters: AppsDeleteTokenEndpoint;
-    request: AppsDeleteTokenRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /applications/:client_id/token": Endpoint<
+    AppsDeleteTokenEndpoint,
+    AppsDeleteTokenRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#revoke-an-authorization-for-an-application
    */
-  "DELETE /applications/:client_id/tokens/:access_token": {
-    parameters: AppsRevokeAuthorizationForApplicationEndpoint;
-    request: AppsRevokeAuthorizationForApplicationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /applications/:client_id/tokens/:access_token": Endpoint<
+    AppsRevokeAuthorizationForApplicationEndpoint,
+    AppsRevokeAuthorizationForApplicationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#delete-a-grant
    */
-  "DELETE /applications/grants/:grant_id": {
-    parameters: OauthAuthorizationsDeleteGrantEndpoint;
-    request: OauthAuthorizationsDeleteGrantRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /applications/grants/:grant_id": Endpoint<
+    OauthAuthorizationsDeleteGrantEndpoint,
+    OauthAuthorizationsDeleteGrantRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#delete-an-authorization
    */
-  "DELETE /authorizations/:authorization_id": {
-    parameters: OauthAuthorizationsDeleteAuthorizationEndpoint;
-    request: OauthAuthorizationsDeleteAuthorizationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /authorizations/:authorization_id": Endpoint<
+    OauthAuthorizationsDeleteAuthorizationEndpoint,
+    OauthAuthorizationsDeleteAuthorizationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#delete-a-gist
    */
-  "DELETE /gists/:gist_id": {
-    parameters: GistsDeleteEndpoint;
-    request: GistsDeleteRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /gists/:gist_id": Endpoint<
+    GistsDeleteEndpoint,
+    GistsDeleteRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/comments/#delete-a-comment
    */
-  "DELETE /gists/:gist_id/comments/:comment_id": {
-    parameters: GistsDeleteCommentEndpoint;
-    request: GistsDeleteCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /gists/:gist_id/comments/:comment_id": Endpoint<
+    GistsDeleteCommentEndpoint,
+    GistsDeleteCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#unstar-a-gist
    */
-  "DELETE /gists/:gist_id/star": {
-    parameters: GistsUnstarEndpoint;
-    request: GistsUnstarRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /gists/:gist_id/star": Endpoint<
+    GistsUnstarEndpoint,
+    GistsUnstarRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#revoke-an-installation-token
    */
-  "DELETE /installation/token": {
-    parameters: AppsRevokeInstallationTokenEndpoint;
-    request: AppsRevokeInstallationTokenRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /installation/token": Endpoint<
+    AppsRevokeInstallationTokenEndpoint,
+    AppsRevokeInstallationTokenRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#delete-a-thread-subscription
    */
-  "DELETE /notifications/threads/:thread_id/subscription": {
-    parameters: ActivityDeleteThreadSubscriptionEndpoint;
-    request: ActivityDeleteThreadSubscriptionRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /notifications/threads/:thread_id/subscription": Endpoint<
+    ActivityDeleteThreadSubscriptionEndpoint,
+    ActivityDeleteThreadSubscriptionRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/blocking/#unblock-a-user
    */
-  "DELETE /orgs/:org/blocks/:username": {
-    parameters: OrgsUnblockUserEndpoint;
-    request: OrgsUnblockUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/blocks/:username": Endpoint<
+    OrgsUnblockUserEndpoint,
+    OrgsUnblockUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#remove-a-credential-authorization-for-an-organization
    */
-  "DELETE /orgs/:org/credential-authorizations/:credential_id": {
-    parameters: OrgsRemoveCredentialAuthorizationEndpoint;
-    request: OrgsRemoveCredentialAuthorizationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/credential-authorizations/:credential_id": Endpoint<
+    OrgsRemoveCredentialAuthorizationEndpoint,
+    OrgsRemoveCredentialAuthorizationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#delete-a-hook
    */
-  "DELETE /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsDeleteHookEndpoint;
-    request: OrgsDeleteHookRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/hooks/:hook_id": Endpoint<
+    OrgsDeleteHookEndpoint,
+    OrgsDeleteHookRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/orgs/#remove-interaction-restrictions-for-an-organization
    */
-  "DELETE /orgs/:org/interaction-limits": {
-    parameters: InteractionsRemoveRestrictionsForOrgEndpoint;
-    request: InteractionsRemoveRestrictionsForOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/interaction-limits": Endpoint<
+    InteractionsRemoveRestrictionsForOrgEndpoint,
+    InteractionsRemoveRestrictionsForOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#remove-a-member
    */
-  "DELETE /orgs/:org/members/:username": {
-    parameters: OrgsRemoveMemberEndpoint;
-    request: OrgsRemoveMemberRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/members/:username": Endpoint<
+    OrgsRemoveMemberEndpoint,
+    OrgsRemoveMemberRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#remove-organization-membership
    */
-  "DELETE /orgs/:org/memberships/:username": {
-    parameters: OrgsRemoveMembershipEndpoint;
-    request: OrgsRemoveMembershipRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/memberships/:username": Endpoint<
+    OrgsRemoveMembershipEndpoint,
+    OrgsRemoveMembershipRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#delete-an-organization-migration-archive
    */
-  "DELETE /orgs/:org/migrations/:migration_id/archive": {
-    parameters: MigrationsDeleteArchiveForOrgEndpoint;
-    request: MigrationsDeleteArchiveForOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/migrations/:migration_id/archive": Endpoint<
+    MigrationsDeleteArchiveForOrgEndpoint,
+    MigrationsDeleteArchiveForOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#unlock-an-organization-repository
    */
-  "DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock": {
-    parameters: MigrationsUnlockRepoForOrgEndpoint;
-    request: MigrationsUnlockRepoForOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/migrations/:migration_id/repos/:repo_name/lock": Endpoint<
+    MigrationsUnlockRepoForOrgEndpoint,
+    MigrationsUnlockRepoForOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator
    */
-  "DELETE /orgs/:org/outside_collaborators/:username": {
-    parameters: OrgsRemoveOutsideCollaboratorEndpoint;
-    request: OrgsRemoveOutsideCollaboratorRequestOptions;
-    response: OctokitResponse<OrgsRemoveOutsideCollaboratorResponseData>;
-  };
+  "DELETE /orgs/:org/outside_collaborators/:username": Endpoint<
+    OrgsRemoveOutsideCollaboratorEndpoint,
+    OrgsRemoveOutsideCollaboratorRequestOptions,
+    OctokitResponse<OrgsRemoveOutsideCollaboratorResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#conceal-a-users-membership
    */
-  "DELETE /orgs/:org/public_members/:username": {
-    parameters: OrgsConcealMembershipEndpoint;
-    request: OrgsConcealMembershipRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/public_members/:username": Endpoint<
+    OrgsConcealMembershipEndpoint,
+    OrgsConcealMembershipRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#delete-team
    */
-  "DELETE /orgs/:org/teams/:team_slug": {
-    parameters: TeamsDeleteInOrgEndpoint;
-    request: TeamsDeleteInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug": Endpoint<
+    TeamsDeleteInOrgEndpoint,
+    TeamsDeleteInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#delete-a-discussion
    */
-  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number": {
-    parameters: TeamsDeleteDiscussionInOrgEndpoint;
-    request: TeamsDeleteDiscussionInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number": Endpoint<
+    TeamsDeleteDiscussionInOrgEndpoint,
+    TeamsDeleteDiscussionInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment
    */
-  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsDeleteDiscussionCommentInOrgEndpoint;
-    request: TeamsDeleteDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsDeleteDiscussionCommentInOrgEndpoint,
+    TeamsDeleteDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-team-discussion-comment-reaction
    */
-  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForTeamDiscussionCommentEndpoint;
-    request: ReactionsDeleteForTeamDiscussionCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForTeamDiscussionCommentEndpoint,
+    ReactionsDeleteForTeamDiscussionCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-team-discussion-reaction
    */
-  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForTeamDiscussionEndpoint;
-    request: ReactionsDeleteForTeamDiscussionRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForTeamDiscussionEndpoint,
+    ReactionsDeleteForTeamDiscussionRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#remove-team-membership
    */
-  "DELETE /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsRemoveMembershipInOrgEndpoint;
-    request: TeamsRemoveMembershipInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/memberships/:username": Endpoint<
+    TeamsRemoveMembershipInOrgEndpoint,
+    TeamsRemoveMembershipInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#remove-team-project
    */
-  "DELETE /orgs/:org/teams/:team_slug/projects/:project_id": {
-    parameters: TeamsRemoveProjectInOrgEndpoint;
-    request: TeamsRemoveProjectInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/projects/:project_id": Endpoint<
+    TeamsRemoveProjectInOrgEndpoint,
+    TeamsRemoveProjectInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#remove-team-repository
    */
-  "DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
-    parameters: TeamsRemoveRepoInOrgEndpoint;
-    request: TeamsRemoveRepoInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo": Endpoint<
+    TeamsRemoveRepoInOrgEndpoint,
+    TeamsRemoveRepoInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#delete-a-project
    */
-  "DELETE /projects/:project_id": {
-    parameters: ProjectsDeleteEndpoint;
-    request: ProjectsDeleteRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /projects/:project_id": Endpoint<
+    ProjectsDeleteEndpoint,
+    ProjectsDeleteRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/collaborators/#remove-user-as-a-collaborator
    */
-  "DELETE /projects/:project_id/collaborators/:username": {
-    parameters: ProjectsRemoveCollaboratorEndpoint;
-    request: ProjectsRemoveCollaboratorRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /projects/:project_id/collaborators/:username": Endpoint<
+    ProjectsRemoveCollaboratorEndpoint,
+    ProjectsRemoveCollaboratorRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#delete-a-project-column
    */
-  "DELETE /projects/columns/:column_id": {
-    parameters: ProjectsDeleteColumnEndpoint;
-    request: ProjectsDeleteColumnRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /projects/columns/:column_id": Endpoint<
+    ProjectsDeleteColumnEndpoint,
+    ProjectsDeleteColumnRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#delete-a-project-card
    */
-  "DELETE /projects/columns/cards/:card_id": {
-    parameters: ProjectsDeleteCardEndpoint;
-    request: ProjectsDeleteCardRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /projects/columns/cards/:card_id": Endpoint<
+    ProjectsDeleteCardEndpoint,
+    ProjectsDeleteCardRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-a-reaction-legacy
    */
-  "DELETE /reactions/:reaction_id": {
-    parameters: ReactionsDeleteLegacyEndpoint;
-    request: ReactionsDeleteLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /reactions/:reaction_id": Endpoint<
+    ReactionsDeleteLegacyEndpoint,
+    ReactionsDeleteLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#delete-a-repository
    */
-  "DELETE /repos/:owner/:repo": {
-    parameters: ReposDeleteEndpoint;
-    request: ReposDeleteRequestOptions;
-    response: OctokitResponse<ReposDeleteResponseData>;
-  };
+  "DELETE /repos/:owner/:repo": Endpoint<
+    ReposDeleteEndpoint,
+    ReposDeleteRequestOptions,
+    OctokitResponse<ReposDeleteResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/artifacts/#delete-an-artifact
    */
-  "DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id": {
-    parameters: ActionsDeleteArtifactEndpoint;
-    request: ActionsDeleteArtifactRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/actions/artifacts/:artifact_id": Endpoint<
+    ActionsDeleteArtifactEndpoint,
+    ActionsDeleteArtifactRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#remove-a-self-hosted-runner
    */
-  "DELETE /repos/:owner/:repo/actions/runners/:runner_id": {
-    parameters: ActionsRemoveSelfHostedRunnerEndpoint;
-    request: ActionsRemoveSelfHostedRunnerRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/actions/runners/:runner_id": Endpoint<
+    ActionsRemoveSelfHostedRunnerEndpoint,
+    ActionsRemoveSelfHostedRunnerRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#delete-workflow-run-logs
    */
-  "DELETE /repos/:owner/:repo/actions/runs/:run_id/logs": {
-    parameters: ActionsDeleteWorkflowRunLogsEndpoint;
-    request: ActionsDeleteWorkflowRunLogsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/actions/runs/:run_id/logs": Endpoint<
+    ActionsDeleteWorkflowRunLogsEndpoint,
+    ActionsDeleteWorkflowRunLogsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository
    */
-  "DELETE /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsDeleteSecretFromRepoEndpoint;
-    request: ActionsDeleteSecretFromRepoRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/actions/secrets/:name": Endpoint<
+    ActionsDeleteSecretFromRepoEndpoint,
+    ActionsDeleteSecretFromRepoRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#disable-automated-security-fixes
    */
-  "DELETE /repos/:owner/:repo/automated-security-fixes": {
-    parameters: ReposDisableAutomatedSecurityFixesEndpoint;
-    request: ReposDisableAutomatedSecurityFixesRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/automated-security-fixes": Endpoint<
+    ReposDisableAutomatedSecurityFixesEndpoint,
+    ReposDisableAutomatedSecurityFixesRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-branch-protection
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection": {
-    parameters: ReposRemoveBranchProtectionEndpoint;
-    request: ReposRemoveBranchProtectionRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection": Endpoint<
+    ReposRemoveBranchProtectionEndpoint,
+    ReposRemoveBranchProtectionRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-admin-enforcement-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposRemoveProtectedBranchAdminEnforcementEndpoint;
-    request: ReposRemoveProtectedBranchAdminEnforcementRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins": Endpoint<
+    ReposRemoveProtectedBranchAdminEnforcementEndpoint,
+    ReposRemoveProtectedBranchAdminEnforcementRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-pull-request-review-enforcement-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": Endpoint<
+    ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint,
+    ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposRemoveProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposRemoveProtectedBranchRequiredSignaturesRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures": Endpoint<
+    ReposRemoveProtectedBranchRequiredSignaturesEndpoint,
+    ReposRemoveProtectedBranchRequiredSignaturesRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposRemoveProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks": Endpoint<
+    ReposRemoveProtectedBranchRequiredStatusChecksEndpoint,
+    ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-contexts-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": Endpoint<
+    ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint,
+    ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    OctokitResponse<
       ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-restrictions-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions": {
-    parameters: ReposRemoveProtectedBranchRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchRestrictionsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions": Endpoint<
+    ReposRemoveProtectedBranchRestrictionsEndpoint,
+    ReposRemoveProtectedBranchRestrictionsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-app-restrictions-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposRemoveProtectedBranchAppRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchAppRestrictionsResponseData
-    >;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": Endpoint<
+    ReposRemoveProtectedBranchAppRestrictionsEndpoint,
+    ReposRemoveProtectedBranchAppRestrictionsRequestOptions,
+    OctokitResponse<ReposRemoveProtectedBranchAppRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-team-restrictions-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposRemoveProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchTeamRestrictionsResponseData
-    >;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": Endpoint<
+    ReposRemoveProtectedBranchTeamRestrictionsEndpoint,
+    ReposRemoveProtectedBranchTeamRestrictionsRequestOptions,
+    OctokitResponse<ReposRemoveProtectedBranchTeamRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#remove-user-restrictions-of-protected-branch
    */
-  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposRemoveProtectedBranchUserRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchUserRestrictionsResponseData
-    >;
-  };
+  "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users": Endpoint<
+    ReposRemoveProtectedBranchUserRestrictionsEndpoint,
+    ReposRemoveProtectedBranchUserRestrictionsRequestOptions,
+    OctokitResponse<ReposRemoveProtectedBranchUserRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator
    */
-  "DELETE /repos/:owner/:repo/collaborators/:username": {
-    parameters: ReposRemoveCollaboratorEndpoint;
-    request: ReposRemoveCollaboratorRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/collaborators/:username": Endpoint<
+    ReposRemoveCollaboratorEndpoint,
+    ReposRemoveCollaboratorRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#delete-a-commit-comment
    */
-  "DELETE /repos/:owner/:repo/comments/:comment_id": {
-    parameters: ReposDeleteCommitCommentEndpoint;
-    request: ReposDeleteCommitCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/comments/:comment_id": Endpoint<
+    ReposDeleteCommitCommentEndpoint,
+    ReposDeleteCommitCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-a-commit-comment-reaction
    */
-  "DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForCommitCommentEndpoint;
-    request: ReactionsDeleteForCommitCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/comments/:comment_id/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForCommitCommentEndpoint,
+    ReactionsDeleteForCommitCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/contents/#delete-a-file
    */
-  "DELETE /repos/:owner/:repo/contents/:path": {
-    parameters: ReposDeleteFileEndpoint;
-    request: ReposDeleteFileRequestOptions;
-    response: OctokitResponse<ReposDeleteFileResponseData>;
-  };
+  "DELETE /repos/:owner/:repo/contents/:path": Endpoint<
+    ReposDeleteFileEndpoint,
+    ReposDeleteFileRequestOptions,
+    OctokitResponse<ReposDeleteFileResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#delete-a-deployment
    */
-  "DELETE /repos/:owner/:repo/deployments/:deployment_id": {
-    parameters: ReposDeleteDeploymentEndpoint;
-    request: ReposDeleteDeploymentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/deployments/:deployment_id": Endpoint<
+    ReposDeleteDeploymentEndpoint,
+    ReposDeleteDeploymentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/downloads/#delete-a-download
    */
-  "DELETE /repos/:owner/:repo/downloads/:download_id": {
-    parameters: ReposDeleteDownloadEndpoint;
-    request: ReposDeleteDownloadRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/downloads/:download_id": Endpoint<
+    ReposDeleteDownloadEndpoint,
+    ReposDeleteDownloadRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/git/refs/#delete-a-reference
    */
-  "DELETE /repos/:owner/:repo/git/refs/:ref": {
-    parameters: GitDeleteRefEndpoint;
-    request: GitDeleteRefRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/git/refs/:ref": Endpoint<
+    GitDeleteRefEndpoint,
+    GitDeleteRefRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#delete-a-hook
    */
-  "DELETE /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposDeleteHookEndpoint;
-    request: ReposDeleteHookRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/hooks/:hook_id": Endpoint<
+    ReposDeleteHookEndpoint,
+    ReposDeleteHookRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#cancel-an-import
    */
-  "DELETE /repos/:owner/:repo/import": {
-    parameters: MigrationsCancelImportEndpoint;
-    request: MigrationsCancelImportRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/import": Endpoint<
+    MigrationsCancelImportEndpoint,
+    MigrationsCancelImportRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/repos/#remove-interaction-restrictions-for-a-repository
    */
-  "DELETE /repos/:owner/:repo/interaction-limits": {
-    parameters: InteractionsRemoveRestrictionsForRepoEndpoint;
-    request: InteractionsRemoveRestrictionsForRepoRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/interaction-limits": Endpoint<
+    InteractionsRemoveRestrictionsForRepoEndpoint,
+    InteractionsRemoveRestrictionsForRepoRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#delete-a-repository-invitation
    */
-  "DELETE /repos/:owner/:repo/invitations/:invitation_id": {
-    parameters: ReposDeleteInvitationEndpoint;
-    request: ReposDeleteInvitationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/invitations/:invitation_id": Endpoint<
+    ReposDeleteInvitationEndpoint,
+    ReposDeleteInvitationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/assignees/#remove-assignees-from-an-issue
    */
-  "DELETE /repos/:owner/:repo/issues/:issue_number/assignees": {
-    parameters: IssuesRemoveAssigneesEndpoint;
-    request: IssuesRemoveAssigneesRequestOptions;
-    response: OctokitResponse<IssuesRemoveAssigneesResponseData>;
-  };
+  "DELETE /repos/:owner/:repo/issues/:issue_number/assignees": Endpoint<
+    IssuesRemoveAssigneesEndpoint,
+    IssuesRemoveAssigneesRequestOptions,
+    OctokitResponse<IssuesRemoveAssigneesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#remove-all-labels-from-an-issue
    */
-  "DELETE /repos/:owner/:repo/issues/:issue_number/labels": {
-    parameters: IssuesRemoveAllLabelsEndpoint;
-    request: IssuesRemoveAllLabelsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/issues/:issue_number/labels": Endpoint<
+    IssuesRemoveAllLabelsEndpoint,
+    IssuesRemoveAllLabelsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#remove-a-label-from-an-issue
    */
-  "DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name": {
-    parameters: IssuesRemoveLabelEndpoint;
-    request: IssuesRemoveLabelRequestOptions;
-    response: OctokitResponse<IssuesRemoveLabelResponseData>;
-  };
+  "DELETE /repos/:owner/:repo/issues/:issue_number/labels/:name": Endpoint<
+    IssuesRemoveLabelEndpoint,
+    IssuesRemoveLabelRequestOptions,
+    OctokitResponse<IssuesRemoveLabelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#unlock-an-issue
    */
-  "DELETE /repos/:owner/:repo/issues/:issue_number/lock": {
-    parameters: IssuesUnlockEndpoint;
-    request: IssuesUnlockRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/issues/:issue_number/lock": Endpoint<
+    IssuesUnlockEndpoint,
+    IssuesUnlockRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-an-issue-reaction
    */
-  "DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForIssueEndpoint;
-    request: ReactionsDeleteForIssueRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/issues/:issue_number/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForIssueEndpoint,
+    ReactionsDeleteForIssueRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#delete-a-comment
    */
-  "DELETE /repos/:owner/:repo/issues/comments/:comment_id": {
-    parameters: IssuesDeleteCommentEndpoint;
-    request: IssuesDeleteCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/issues/comments/:comment_id": Endpoint<
+    IssuesDeleteCommentEndpoint,
+    IssuesDeleteCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-an-issue-comment-reaction
    */
-  "DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForIssueCommentEndpoint;
-    request: ReactionsDeleteForIssueCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/issues/comments/:comment_id/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForIssueCommentEndpoint,
+    ReactionsDeleteForIssueCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/keys/#remove-a-deploy-key
    */
-  "DELETE /repos/:owner/:repo/keys/:key_id": {
-    parameters: ReposRemoveDeployKeyEndpoint;
-    request: ReposRemoveDeployKeyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/keys/:key_id": Endpoint<
+    ReposRemoveDeployKeyEndpoint,
+    ReposRemoveDeployKeyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#delete-a-label
    */
-  "DELETE /repos/:owner/:repo/labels/:name": {
-    parameters: IssuesDeleteLabelEndpoint;
-    request: IssuesDeleteLabelRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/labels/:name": Endpoint<
+    IssuesDeleteLabelEndpoint,
+    IssuesDeleteLabelRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/milestones/#delete-a-milestone
    */
-  "DELETE /repos/:owner/:repo/milestones/:milestone_number": {
-    parameters: IssuesDeleteMilestoneEndpoint;
-    request: IssuesDeleteMilestoneRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/milestones/:milestone_number": Endpoint<
+    IssuesDeleteMilestoneEndpoint,
+    IssuesDeleteMilestoneRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#disable-a-pages-site
    */
-  "DELETE /repos/:owner/:repo/pages": {
-    parameters: ReposDisablePagesSiteEndpoint;
-    request: ReposDisablePagesSiteRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/pages": Endpoint<
+    ReposDisablePagesSiteEndpoint,
+    ReposDisablePagesSiteRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/review_requests/#delete-a-review-request
    */
-  "DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsDeleteReviewRequestEndpoint;
-    request: PullsDeleteReviewRequestRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": Endpoint<
+    PullsDeleteReviewRequestEndpoint,
+    PullsDeleteReviewRequestRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review
    */
-  "DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
-    parameters: PullsDeletePendingReviewEndpoint;
-    request: PullsDeletePendingReviewRequestOptions;
-    response: OctokitResponse<PullsDeletePendingReviewResponseData>;
-  };
+  "DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": Endpoint<
+    PullsDeletePendingReviewEndpoint,
+    PullsDeletePendingReviewRequestOptions,
+    OctokitResponse<PullsDeletePendingReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#delete-a-comment
    */
-  "DELETE /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsDeleteCommentEndpoint;
-    request: PullsDeleteCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/pulls/comments/:comment_id": Endpoint<
+    PullsDeleteCommentEndpoint,
+    PullsDeleteCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#delete-a-pull-request-comment-reaction
    */
-  "DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id": {
-    parameters: ReactionsDeleteForPullRequestCommentEndpoint;
-    request: ReactionsDeleteForPullRequestCommentRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/pulls/comments/:comment_id/reactions/:reaction_id": Endpoint<
+    ReactionsDeleteForPullRequestCommentEndpoint,
+    ReactionsDeleteForPullRequestCommentRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#delete-a-release
    */
-  "DELETE /repos/:owner/:repo/releases/:release_id": {
-    parameters: ReposDeleteReleaseEndpoint;
-    request: ReposDeleteReleaseRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/releases/:release_id": Endpoint<
+    ReposDeleteReleaseEndpoint,
+    ReposDeleteReleaseRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#delete-a-release-asset
    */
-  "DELETE /repos/:owner/:repo/releases/assets/:asset_id": {
-    parameters: ReposDeleteReleaseAssetEndpoint;
-    request: ReposDeleteReleaseAssetRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/releases/assets/:asset_id": Endpoint<
+    ReposDeleteReleaseAssetEndpoint,
+    ReposDeleteReleaseAssetRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription
    */
-  "DELETE /repos/:owner/:repo/subscription": {
-    parameters: ActivityDeleteRepoSubscriptionEndpoint;
-    request: ActivityDeleteRepoSubscriptionRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/subscription": Endpoint<
+    ActivityDeleteRepoSubscriptionEndpoint,
+    ActivityDeleteRepoSubscriptionRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#disable-vulnerability-alerts
    */
-  "DELETE /repos/:owner/:repo/vulnerability-alerts": {
-    parameters: ReposDisableVulnerabilityAlertsEndpoint;
-    request: ReposDisableVulnerabilityAlertsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /repos/:owner/:repo/vulnerability-alerts": Endpoint<
+    ReposDisableVulnerabilityAlertsEndpoint,
+    ReposDisableVulnerabilityAlertsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#remove-a-user-from-the-organization
    */
-  "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimRemoveUserFromOrgEndpoint;
-    request: ScimRemoveUserFromOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": Endpoint<
+    ScimRemoveUserFromOrgEndpoint,
+    ScimRemoveUserFromOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#delete-team-legacy
    */
-  "DELETE /teams/:team_id": {
-    parameters: TeamsDeleteLegacyEndpoint;
-    request: TeamsDeleteLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id": Endpoint<
+    TeamsDeleteLegacyEndpoint,
+    TeamsDeleteLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#delete-a-discussion-legacy
    */
-  "DELETE /teams/:team_id/discussions/:discussion_number": {
-    parameters: TeamsDeleteDiscussionLegacyEndpoint;
-    request: TeamsDeleteDiscussionLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/discussions/:discussion_number": Endpoint<
+    TeamsDeleteDiscussionLegacyEndpoint,
+    TeamsDeleteDiscussionLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
    */
-  "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsDeleteDiscussionCommentLegacyEndpoint;
-    request: TeamsDeleteDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsDeleteDiscussionCommentLegacyEndpoint,
+    TeamsDeleteDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#remove-team-member-legacy
    */
-  "DELETE /teams/:team_id/members/:username": {
-    parameters: TeamsRemoveMemberLegacyEndpoint;
-    request: TeamsRemoveMemberLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/members/:username": Endpoint<
+    TeamsRemoveMemberLegacyEndpoint,
+    TeamsRemoveMemberLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
    */
-  "DELETE /teams/:team_id/memberships/:username": {
-    parameters: TeamsRemoveMembershipLegacyEndpoint;
-    request: TeamsRemoveMembershipLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/memberships/:username": Endpoint<
+    TeamsRemoveMembershipLegacyEndpoint,
+    TeamsRemoveMembershipLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#remove-team-project-legacy
    */
-  "DELETE /teams/:team_id/projects/:project_id": {
-    parameters: TeamsRemoveProjectLegacyEndpoint;
-    request: TeamsRemoveProjectLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/projects/:project_id": Endpoint<
+    TeamsRemoveProjectLegacyEndpoint,
+    TeamsRemoveProjectLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#remove-team-repository-legacy
    */
-  "DELETE /teams/:team_id/repos/:owner/:repo": {
-    parameters: TeamsRemoveRepoLegacyEndpoint;
-    request: TeamsRemoveRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /teams/:team_id/repos/:owner/:repo": Endpoint<
+    TeamsRemoveRepoLegacyEndpoint,
+    TeamsRemoveRepoLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/blocking/#unblock-a-user
    */
-  "DELETE /user/blocks/:username": {
-    parameters: UsersUnblockEndpoint;
-    request: UsersUnblockRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/blocks/:username": Endpoint<
+    UsersUnblockEndpoint,
+    UsersUnblockRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/emails/#delete-email-addresses
    */
-  "DELETE /user/emails": {
-    parameters: UsersDeleteEmailsEndpoint;
-    request: UsersDeleteEmailsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/emails": Endpoint<
+    UsersDeleteEmailsEndpoint,
+    UsersDeleteEmailsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#unfollow-a-user
    */
-  "DELETE /user/following/:username": {
-    parameters: UsersUnfollowEndpoint;
-    request: UsersUnfollowRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/following/:username": Endpoint<
+    UsersUnfollowEndpoint,
+    UsersUnfollowRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/gpg_keys/#delete-a-gpg-key
    */
-  "DELETE /user/gpg_keys/:gpg_key_id": {
-    parameters: UsersDeleteGpgKeyEndpoint;
-    request: UsersDeleteGpgKeyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/gpg_keys/:gpg_key_id": Endpoint<
+    UsersDeleteGpgKeyEndpoint,
+    UsersDeleteGpgKeyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#remove-repository-from-installation
    */
-  "DELETE /user/installations/:installation_id/repositories/:repository_id": {
-    parameters: AppsRemoveRepoFromInstallationEndpoint;
-    request: AppsRemoveRepoFromInstallationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/installations/:installation_id/repositories/:repository_id": Endpoint<
+    AppsRemoveRepoFromInstallationEndpoint,
+    AppsRemoveRepoFromInstallationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/keys/#delete-a-public-key
    */
-  "DELETE /user/keys/:key_id": {
-    parameters: UsersDeletePublicKeyEndpoint;
-    request: UsersDeletePublicKeyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/keys/:key_id": Endpoint<
+    UsersDeletePublicKeyEndpoint,
+    UsersDeletePublicKeyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#delete-a-user-migration-archive
    */
-  "DELETE /user/migrations/:migration_id/archive": {
-    parameters: MigrationsDeleteArchiveForAuthenticatedUserEndpoint;
-    request: MigrationsDeleteArchiveForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/migrations/:migration_id/archive": Endpoint<
+    MigrationsDeleteArchiveForAuthenticatedUserEndpoint,
+    MigrationsDeleteArchiveForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#unlock-a-user-repository
    */
-  "DELETE /user/migrations/:migration_id/repos/:repo_name/lock": {
-    parameters: MigrationsUnlockRepoForAuthenticatedUserEndpoint;
-    request: MigrationsUnlockRepoForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/migrations/:migration_id/repos/:repo_name/lock": Endpoint<
+    MigrationsUnlockRepoForAuthenticatedUserEndpoint,
+    MigrationsUnlockRepoForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#decline-a-repository-invitation
    */
-  "DELETE /user/repository_invitations/:invitation_id": {
-    parameters: ReposDeclineInvitationEndpoint;
-    request: ReposDeclineInvitationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/repository_invitations/:invitation_id": Endpoint<
+    ReposDeclineInvitationEndpoint,
+    ReposDeclineInvitationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#unstar-a-repository-for-the-authenticated-user
    */
-  "DELETE /user/starred/:owner/:repo": {
-    parameters: ActivityUnstarRepoForAuthenticatedUserEndpoint;
-    request: ActivityUnstarRepoForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/starred/:owner/:repo": Endpoint<
+    ActivityUnstarRepoForAuthenticatedUserEndpoint,
+    ActivityUnstarRepoForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy
    */
-  "DELETE /user/subscriptions/:owner/:repo": {
-    parameters: ActivityStopWatchingRepoLegacyEndpoint;
-    request: ActivityStopWatchingRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "DELETE /user/subscriptions/:owner/:repo": Endpoint<
+    ActivityStopWatchingRepoLegacyEndpoint,
+    ActivityStopWatchingRepoLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-the-authenticated-github-app
    */
-  "GET /app": {
-    parameters: AppsGetAuthenticatedEndpoint;
-    request: AppsGetAuthenticatedRequestOptions;
-    response: OctokitResponse<AppsGetAuthenticatedResponseData>;
-  };
+  "GET /app": Endpoint<
+    AppsGetAuthenticatedEndpoint,
+    AppsGetAuthenticatedRequestOptions,
+    OctokitResponse<AppsGetAuthenticatedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#list-installations
    */
-  "GET /app/installations": {
-    parameters: AppsListInstallationsEndpoint;
-    request: AppsListInstallationsRequestOptions;
-    response: OctokitResponse<AppsListInstallationsResponseData>;
-  };
+  "GET /app/installations": Endpoint<
+    AppsListInstallationsEndpoint,
+    AppsListInstallationsRequestOptions,
+    OctokitResponse<AppsListInstallationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-an-installation
    */
-  "GET /app/installations/:installation_id": {
-    parameters: AppsGetInstallationEndpoint;
-    request: AppsGetInstallationRequestOptions;
-    response: OctokitResponse<AppsGetInstallationResponseData>;
-  };
+  "GET /app/installations/:installation_id": Endpoint<
+    AppsGetInstallationEndpoint,
+    AppsGetInstallationRequestOptions,
+    OctokitResponse<AppsGetInstallationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#check-an-authorization
    */
-  "GET /applications/:client_id/tokens/:access_token": {
-    parameters: AppsCheckAuthorizationEndpoint;
-    request: AppsCheckAuthorizationRequestOptions;
-    response: OctokitResponse<AppsCheckAuthorizationResponseData>;
-  };
+  "GET /applications/:client_id/tokens/:access_token": Endpoint<
+    AppsCheckAuthorizationEndpoint,
+    AppsCheckAuthorizationRequestOptions,
+    OctokitResponse<AppsCheckAuthorizationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#list-your-grants
    */
-  "GET /applications/grants": {
-    parameters: OauthAuthorizationsListGrantsEndpoint;
-    request: OauthAuthorizationsListGrantsRequestOptions;
-    response: OctokitResponse<OauthAuthorizationsListGrantsResponseData>;
-  };
+  "GET /applications/grants": Endpoint<
+    OauthAuthorizationsListGrantsEndpoint,
+    OauthAuthorizationsListGrantsRequestOptions,
+    OctokitResponse<OauthAuthorizationsListGrantsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#get-a-single-grant
    */
-  "GET /applications/grants/:grant_id": {
-    parameters: OauthAuthorizationsGetGrantEndpoint;
-    request: OauthAuthorizationsGetGrantRequestOptions;
-    response: OctokitResponse<OauthAuthorizationsGetGrantResponseData>;
-  };
+  "GET /applications/grants/:grant_id": Endpoint<
+    OauthAuthorizationsGetGrantEndpoint,
+    OauthAuthorizationsGetGrantRequestOptions,
+    OctokitResponse<OauthAuthorizationsGetGrantResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-a-single-github-app
    */
-  "GET /apps/:app_slug": {
-    parameters: AppsGetBySlugEndpoint;
-    request: AppsGetBySlugRequestOptions;
-    response: OctokitResponse<AppsGetBySlugResponseData>;
-  };
+  "GET /apps/:app_slug": Endpoint<
+    AppsGetBySlugEndpoint,
+    AppsGetBySlugRequestOptions,
+    OctokitResponse<AppsGetBySlugResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#list-your-authorizations
    */
-  "GET /authorizations": {
-    parameters: OauthAuthorizationsListAuthorizationsEndpoint;
-    request: OauthAuthorizationsListAuthorizationsRequestOptions;
-    response: OctokitResponse<
-      OauthAuthorizationsListAuthorizationsResponseData
-    >;
-  };
+  "GET /authorizations": Endpoint<
+    OauthAuthorizationsListAuthorizationsEndpoint,
+    OauthAuthorizationsListAuthorizationsRequestOptions,
+    OctokitResponse<OauthAuthorizationsListAuthorizationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#get-a-single-authorization
    */
-  "GET /authorizations/:authorization_id": {
-    parameters: OauthAuthorizationsGetAuthorizationEndpoint;
-    request: OauthAuthorizationsGetAuthorizationRequestOptions;
-    response: OctokitResponse<OauthAuthorizationsGetAuthorizationResponseData>;
-  };
+  "GET /authorizations/:authorization_id": Endpoint<
+    OauthAuthorizationsGetAuthorizationEndpoint,
+    OauthAuthorizationsGetAuthorizationRequestOptions,
+    OctokitResponse<OauthAuthorizationsGetAuthorizationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct
    */
-  "GET /codes_of_conduct": {
-    parameters: CodesOfConductGetAllCodesOfConductEndpoint;
-    request: CodesOfConductGetAllCodesOfConductRequestOptions;
-    response: OctokitResponse<CodesOfConductGetAllCodesOfConductResponseData>;
-  };
+  "GET /codes_of_conduct": Endpoint<
+    CodesOfConductGetAllCodesOfConductEndpoint,
+    CodesOfConductGetAllCodesOfConductRequestOptions,
+    OctokitResponse<CodesOfConductGetAllCodesOfConductResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct
    */
-  "GET /codes_of_conduct/:key": {
-    parameters: CodesOfConductGetConductCodeEndpoint;
-    request: CodesOfConductGetConductCodeRequestOptions;
-    response: OctokitResponse<CodesOfConductGetConductCodeResponseData>;
-  };
+  "GET /codes_of_conduct/:key": Endpoint<
+    CodesOfConductGetConductCodeEndpoint,
+    CodesOfConductGetConductCodeRequestOptions,
+    OctokitResponse<CodesOfConductGetConductCodeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/emojis/#emojis
    */
-  "GET /emojis": {
-    parameters: EmojisGetEndpoint;
-    request: EmojisGetRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /emojis": Endpoint<
+    EmojisGetEndpoint,
+    EmojisGetRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events
    */
-  "GET /events": {
-    parameters: ActivityListPublicEventsEndpoint;
-    request: ActivityListPublicEventsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /events": Endpoint<
+    ActivityListPublicEventsEndpoint,
+    ActivityListPublicEventsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/feeds/#get-feeds
    */
-  "GET /feeds": {
-    parameters: ActivityGetFeedsEndpoint;
-    request: ActivityGetFeedsRequestOptions;
-    response: OctokitResponse<ActivityGetFeedsResponseData>;
-  };
+  "GET /feeds": Endpoint<
+    ActivityGetFeedsEndpoint,
+    ActivityGetFeedsRequestOptions,
+    OctokitResponse<ActivityGetFeedsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user
    */
-  "GET /gists": {
-    parameters: GistsListEndpoint;
-    request: GistsListRequestOptions;
-    response: OctokitResponse<GistsListResponseData>;
-  };
+  "GET /gists": Endpoint<
+    GistsListEndpoint,
+    GistsListRequestOptions,
+    OctokitResponse<GistsListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#get-a-gist
    */
-  "GET /gists/:gist_id": {
-    parameters: GistsGetEndpoint;
-    request: GistsGetRequestOptions;
-    response: OctokitResponse<GistsGetResponseData>;
-  };
+  "GET /gists/:gist_id": Endpoint<
+    GistsGetEndpoint,
+    GistsGetRequestOptions,
+    OctokitResponse<GistsGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist
    */
-  "GET /gists/:gist_id/:sha": {
-    parameters: GistsGetRevisionEndpoint;
-    request: GistsGetRevisionRequestOptions;
-    response: OctokitResponse<GistsGetRevisionResponseData>;
-  };
+  "GET /gists/:gist_id/:sha": Endpoint<
+    GistsGetRevisionEndpoint,
+    GistsGetRevisionRequestOptions,
+    OctokitResponse<GistsGetRevisionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist
    */
-  "GET /gists/:gist_id/comments": {
-    parameters: GistsListCommentsEndpoint;
-    request: GistsListCommentsRequestOptions;
-    response: OctokitResponse<GistsListCommentsResponseData>;
-  };
+  "GET /gists/:gist_id/comments": Endpoint<
+    GistsListCommentsEndpoint,
+    GistsListCommentsRequestOptions,
+    OctokitResponse<GistsListCommentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/comments/#get-a-single-comment
    */
-  "GET /gists/:gist_id/comments/:comment_id": {
-    parameters: GistsGetCommentEndpoint;
-    request: GistsGetCommentRequestOptions;
-    response: OctokitResponse<GistsGetCommentResponseData>;
-  };
+  "GET /gists/:gist_id/comments/:comment_id": Endpoint<
+    GistsGetCommentEndpoint,
+    GistsGetCommentRequestOptions,
+    OctokitResponse<GistsGetCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-gist-commits
    */
-  "GET /gists/:gist_id/commits": {
-    parameters: GistsListCommitsEndpoint;
-    request: GistsListCommitsRequestOptions;
-    response: OctokitResponse<GistsListCommitsResponseData>;
-  };
+  "GET /gists/:gist_id/commits": Endpoint<
+    GistsListCommitsEndpoint,
+    GistsListCommitsRequestOptions,
+    OctokitResponse<GistsListCommitsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-gist-forks
    */
-  "GET /gists/:gist_id/forks": {
-    parameters: GistsListForksEndpoint;
-    request: GistsListForksRequestOptions;
-    response: OctokitResponse<GistsListForksResponseData>;
-  };
+  "GET /gists/:gist_id/forks": Endpoint<
+    GistsListForksEndpoint,
+    GistsListForksRequestOptions,
+    OctokitResponse<GistsListForksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#check-if-a-gist-is-starred
    */
-  "GET /gists/:gist_id/star": {
-    parameters: GistsCheckIsStarredEndpoint;
-    request: GistsCheckIsStarredRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /gists/:gist_id/star": Endpoint<
+    GistsCheckIsStarredEndpoint,
+    GistsCheckIsStarredRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-public-gists
    */
-  "GET /gists/public": {
-    parameters: GistsListPublicEndpoint;
-    request: GistsListPublicRequestOptions;
-    response: OctokitResponse<GistsListPublicResponseData>;
-  };
+  "GET /gists/public": Endpoint<
+    GistsListPublicEndpoint,
+    GistsListPublicRequestOptions,
+    OctokitResponse<GistsListPublicResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-starred-gists
    */
-  "GET /gists/starred": {
-    parameters: GistsListStarredEndpoint;
-    request: GistsListStarredRequestOptions;
-    response: OctokitResponse<GistsListStarredResponseData>;
-  };
+  "GET /gists/starred": Endpoint<
+    GistsListStarredEndpoint,
+    GistsListStarredRequestOptions,
+    OctokitResponse<GistsListStarredResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gitignore/#listing-available-templates
    */
-  "GET /gitignore/templates": {
-    parameters: GitignoreListTemplatesEndpoint;
-    request: GitignoreListTemplatesRequestOptions;
-    response: OctokitResponse<GitignoreListTemplatesResponseData>;
-  };
+  "GET /gitignore/templates": Endpoint<
+    GitignoreListTemplatesEndpoint,
+    GitignoreListTemplatesRequestOptions,
+    OctokitResponse<GitignoreListTemplatesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gitignore/#get-a-single-template
    */
-  "GET /gitignore/templates/:name": {
-    parameters: GitignoreGetTemplateEndpoint;
-    request: GitignoreGetTemplateRequestOptions;
-    response: OctokitResponse<GitignoreGetTemplateResponseData>;
-  };
+  "GET /gitignore/templates/:name": Endpoint<
+    GitignoreGetTemplateEndpoint,
+    GitignoreGetTemplateRequestOptions,
+    OctokitResponse<GitignoreGetTemplateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#list-repositories
    */
-  "GET /installation/repositories": {
-    parameters: AppsListReposEndpoint;
-    request: AppsListReposRequestOptions;
-    response: OctokitResponse<AppsListReposResponseData>;
-  };
+  "GET /installation/repositories": Endpoint<
+    AppsListReposEndpoint,
+    AppsListReposRequestOptions,
+    OctokitResponse<AppsListReposResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user
    */
-  "GET /issues": {
-    parameters: IssuesListEndpoint;
-    request: IssuesListRequestOptions;
-    response: OctokitResponse<IssuesListResponseData>;
-  };
+  "GET /issues": Endpoint<
+    IssuesListEndpoint,
+    IssuesListRequestOptions,
+    OctokitResponse<IssuesListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/legacy/#search-issues
    */
-  "GET /legacy/issues/search/:owner/:repository/:state/:keyword": {
-    parameters: SearchIssuesLegacyEndpoint;
-    request: SearchIssuesLegacyRequestOptions;
-    response: OctokitResponse<SearchIssuesLegacyResponseData>;
-  };
+  "GET /legacy/issues/search/:owner/:repository/:state/:keyword": Endpoint<
+    SearchIssuesLegacyEndpoint,
+    SearchIssuesLegacyRequestOptions,
+    OctokitResponse<SearchIssuesLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/legacy/#search-repositories
    */
-  "GET /legacy/repos/search/:keyword": {
-    parameters: SearchReposLegacyEndpoint;
-    request: SearchReposLegacyRequestOptions;
-    response: OctokitResponse<SearchReposLegacyResponseData>;
-  };
+  "GET /legacy/repos/search/:keyword": Endpoint<
+    SearchReposLegacyEndpoint,
+    SearchReposLegacyRequestOptions,
+    OctokitResponse<SearchReposLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/legacy/#email-search
    */
-  "GET /legacy/user/email/:email": {
-    parameters: SearchEmailLegacyEndpoint;
-    request: SearchEmailLegacyRequestOptions;
-    response: OctokitResponse<SearchEmailLegacyResponseData>;
-  };
+  "GET /legacy/user/email/:email": Endpoint<
+    SearchEmailLegacyEndpoint,
+    SearchEmailLegacyRequestOptions,
+    OctokitResponse<SearchEmailLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/legacy/#search-users
    */
-  "GET /legacy/user/search/:keyword": {
-    parameters: SearchUsersLegacyEndpoint;
-    request: SearchUsersLegacyRequestOptions;
-    response: OctokitResponse<SearchUsersLegacyResponseData>;
-  };
+  "GET /legacy/user/search/:keyword": Endpoint<
+    SearchUsersLegacyEndpoint,
+    SearchUsersLegacyRequestOptions,
+    OctokitResponse<SearchUsersLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/licenses/#list-commonly-used-licenses
    */
-  "GET /licenses": {
-    parameters: LicensesListCommonlyUsedEndpoint;
-    request: LicensesListCommonlyUsedRequestOptions;
-    response: OctokitResponse<LicensesListCommonlyUsedResponseData>;
-  };
+  "GET /licenses": Endpoint<
+    LicensesListCommonlyUsedEndpoint,
+    LicensesListCommonlyUsedRequestOptions,
+    OctokitResponse<LicensesListCommonlyUsedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/licenses/#get-an-individual-license
    */
-  "GET /licenses/:license": {
-    parameters: LicensesGetEndpoint;
-    request: LicensesGetRequestOptions;
-    response: OctokitResponse<LicensesGetResponseData>;
-  };
+  "GET /licenses/:license": Endpoint<
+    LicensesGetEndpoint,
+    LicensesGetRequestOptions,
+    OctokitResponse<LicensesGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account
    */
-  "GET /marketplace_listing/accounts/:account_id": {
-    parameters: AppsGetSubscriptionPlanForAccountEndpoint;
-    request: AppsGetSubscriptionPlanForAccountRequestOptions;
-    response: OctokitResponse<AppsGetSubscriptionPlanForAccountResponseData>;
-  };
+  "GET /marketplace_listing/accounts/:account_id": Endpoint<
+    AppsGetSubscriptionPlanForAccountEndpoint,
+    AppsGetSubscriptionPlanForAccountRequestOptions,
+    OctokitResponse<AppsGetSubscriptionPlanForAccountResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-plans
    */
-  "GET /marketplace_listing/plans": {
-    parameters: AppsListPlansEndpoint;
-    request: AppsListPlansRequestOptions;
-    response: OctokitResponse<AppsListPlansResponseData>;
-  };
+  "GET /marketplace_listing/plans": Endpoint<
+    AppsListPlansEndpoint,
+    AppsListPlansRequestOptions,
+    OctokitResponse<AppsListPlansResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan
    */
-  "GET /marketplace_listing/plans/:plan_id/accounts": {
-    parameters: AppsListAccountsForPlanEndpoint;
-    request: AppsListAccountsForPlanRequestOptions;
-    response: OctokitResponse<AppsListAccountsForPlanResponseData>;
-  };
+  "GET /marketplace_listing/plans/:plan_id/accounts": Endpoint<
+    AppsListAccountsForPlanEndpoint,
+    AppsListAccountsForPlanRequestOptions,
+    OctokitResponse<AppsListAccountsForPlanResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#get-a-subscription-plan-for-an-account-stubbed
    */
-  "GET /marketplace_listing/stubbed/accounts/:account_id": {
-    parameters: AppsGetSubscriptionPlanForAccountStubbedEndpoint;
-    request: AppsGetSubscriptionPlanForAccountStubbedRequestOptions;
-    response: OctokitResponse<
-      AppsGetSubscriptionPlanForAccountStubbedResponseData
-    >;
-  };
+  "GET /marketplace_listing/stubbed/accounts/:account_id": Endpoint<
+    AppsGetSubscriptionPlanForAccountStubbedEndpoint,
+    AppsGetSubscriptionPlanForAccountStubbedRequestOptions,
+    OctokitResponse<AppsGetSubscriptionPlanForAccountStubbedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-plans-stubbed
    */
-  "GET /marketplace_listing/stubbed/plans": {
-    parameters: AppsListPlansStubbedEndpoint;
-    request: AppsListPlansStubbedRequestOptions;
-    response: OctokitResponse<AppsListPlansStubbedResponseData>;
-  };
+  "GET /marketplace_listing/stubbed/plans": Endpoint<
+    AppsListPlansStubbedEndpoint,
+    AppsListPlansStubbedRequestOptions,
+    OctokitResponse<AppsListPlansStubbedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-accounts-for-a-plan-stubbed
    */
-  "GET /marketplace_listing/stubbed/plans/:plan_id/accounts": {
-    parameters: AppsListAccountsForPlanStubbedEndpoint;
-    request: AppsListAccountsForPlanStubbedRequestOptions;
-    response: OctokitResponse<AppsListAccountsForPlanStubbedResponseData>;
-  };
+  "GET /marketplace_listing/stubbed/plans/:plan_id/accounts": Endpoint<
+    AppsListAccountsForPlanStubbedEndpoint,
+    AppsListAccountsForPlanStubbedRequestOptions,
+    OctokitResponse<AppsListAccountsForPlanStubbedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/meta/#meta
    */
-  "GET /meta": {
-    parameters: MetaGetEndpoint;
-    request: MetaGetRequestOptions;
-    response: OctokitResponse<MetaGetResponseData>;
-  };
+  "GET /meta": Endpoint<
+    MetaGetEndpoint,
+    MetaGetRequestOptions,
+    OctokitResponse<MetaGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events-for-a-network-of-repositories
    */
-  "GET /networks/:owner/:repo/events": {
-    parameters: ActivityListPublicEventsForRepoNetworkEndpoint;
-    request: ActivityListPublicEventsForRepoNetworkRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /networks/:owner/:repo/events": Endpoint<
+    ActivityListPublicEventsForRepoNetworkEndpoint,
+    ActivityListPublicEventsForRepoNetworkRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#list-notifications-for-the-authenticated-user
    */
-  "GET /notifications": {
-    parameters: ActivityListNotificationsForAuthenticatedUserEndpoint;
-    request: ActivityListNotificationsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      ActivityListNotificationsForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /notifications": Endpoint<
+    ActivityListNotificationsForAuthenticatedUserEndpoint,
+    ActivityListNotificationsForAuthenticatedUserRequestOptions,
+    OctokitResponse<ActivityListNotificationsForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#get-a-thread
    */
-  "GET /notifications/threads/:thread_id": {
-    parameters: ActivityGetThreadEndpoint;
-    request: ActivityGetThreadRequestOptions;
-    response: OctokitResponse<ActivityGetThreadResponseData>;
-  };
+  "GET /notifications/threads/:thread_id": Endpoint<
+    ActivityGetThreadEndpoint,
+    ActivityGetThreadRequestOptions,
+    OctokitResponse<ActivityGetThreadResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#get-a-thread-subscription-for-the-authenticated-user
    */
-  "GET /notifications/threads/:thread_id/subscription": {
-    parameters: ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint;
-    request: ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
+  "GET /notifications/threads/:thread_id/subscription": Endpoint<
+    ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint,
+    ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions,
+    OctokitResponse<
       ActivityGetThreadSubscriptionForAuthenticatedUserResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#list-all-organizations
    */
-  "GET /organizations": {
-    parameters: OrgsListEndpoint;
-    request: OrgsListRequestOptions;
-    response: OctokitResponse<OrgsListResponseData>;
-  };
+  "GET /organizations": Endpoint<
+    OrgsListEndpoint,
+    OrgsListRequestOptions,
+    OctokitResponse<OrgsListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#get-an-organization
    */
-  "GET /orgs/:org": {
-    parameters: OrgsGetEndpoint;
-    request: OrgsGetRequestOptions;
-    response: OctokitResponse<OrgsGetResponseData>;
-  };
+  "GET /orgs/:org": Endpoint<
+    OrgsGetEndpoint,
+    OrgsGetRequestOptions,
+    OctokitResponse<OrgsGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/blocking/#list-blocked-users
    */
-  "GET /orgs/:org/blocks": {
-    parameters: OrgsListBlockedUsersEndpoint;
-    request: OrgsListBlockedUsersRequestOptions;
-    response: OctokitResponse<OrgsListBlockedUsersResponseData>;
-  };
+  "GET /orgs/:org/blocks": Endpoint<
+    OrgsListBlockedUsersEndpoint,
+    OrgsListBlockedUsersRequestOptions,
+    OctokitResponse<OrgsListBlockedUsersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/blocking/#check-whether-a-user-is-blocked-from-an-organization
    */
-  "GET /orgs/:org/blocks/:username": {
-    parameters: OrgsCheckBlockedUserEndpoint;
-    request: OrgsCheckBlockedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /orgs/:org/blocks/:username": Endpoint<
+    OrgsCheckBlockedUserEndpoint,
+    OrgsCheckBlockedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#list-credential-authorizations-for-an-organization
    */
-  "GET /orgs/:org/credential-authorizations": {
-    parameters: OrgsListCredentialAuthorizationsEndpoint;
-    request: OrgsListCredentialAuthorizationsRequestOptions;
-    response: OctokitResponse<OrgsListCredentialAuthorizationsResponseData>;
-  };
+  "GET /orgs/:org/credential-authorizations": Endpoint<
+    OrgsListCredentialAuthorizationsEndpoint,
+    OrgsListCredentialAuthorizationsRequestOptions,
+    OctokitResponse<OrgsListCredentialAuthorizationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-organization-events
    */
-  "GET /orgs/:org/events": {
-    parameters: ActivityListPublicOrgEventsEndpoint;
-    request: ActivityListPublicOrgEventsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /orgs/:org/events": Endpoint<
+    ActivityListPublicOrgEventsEndpoint,
+    ActivityListPublicOrgEventsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#list-hooks
    */
-  "GET /orgs/:org/hooks": {
-    parameters: OrgsListHooksEndpoint;
-    request: OrgsListHooksRequestOptions;
-    response: OctokitResponse<OrgsListHooksResponseData>;
-  };
+  "GET /orgs/:org/hooks": Endpoint<
+    OrgsListHooksEndpoint,
+    OrgsListHooksRequestOptions,
+    OctokitResponse<OrgsListHooksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#get-single-hook
    */
-  "GET /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsGetHookEndpoint;
-    request: OrgsGetHookRequestOptions;
-    response: OctokitResponse<OrgsGetHookResponseData>;
-  };
+  "GET /orgs/:org/hooks/:hook_id": Endpoint<
+    OrgsGetHookEndpoint,
+    OrgsGetHookRequestOptions,
+    OctokitResponse<OrgsGetHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-an-organization-installation
    */
-  "GET /orgs/:org/installation": {
-    parameters: AppsGetOrgInstallationEndpoint;
-    request: AppsGetOrgInstallationRequestOptions;
-    response: OctokitResponse<AppsGetOrgInstallationResponseData>;
-  };
+  "GET /orgs/:org/installation": Endpoint<
+    AppsGetOrgInstallationEndpoint,
+    AppsGetOrgInstallationRequestOptions,
+    OctokitResponse<AppsGetOrgInstallationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#list-installations-for-an-organization
    */
-  "GET /orgs/:org/installations": {
-    parameters: OrgsListInstallationsEndpoint;
-    request: OrgsListInstallationsRequestOptions;
-    response: OctokitResponse<OrgsListInstallationsResponseData>;
-  };
+  "GET /orgs/:org/installations": Endpoint<
+    OrgsListInstallationsEndpoint,
+    OrgsListInstallationsRequestOptions,
+    OctokitResponse<OrgsListInstallationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/orgs/#get-interaction-restrictions-for-an-organization
    */
-  "GET /orgs/:org/interaction-limits": {
-    parameters: InteractionsGetRestrictionsForOrgEndpoint;
-    request: InteractionsGetRestrictionsForOrgRequestOptions;
-    response: OctokitResponse<InteractionsGetRestrictionsForOrgResponseData>;
-  };
+  "GET /orgs/:org/interaction-limits": Endpoint<
+    InteractionsGetRestrictionsForOrgEndpoint,
+    InteractionsGetRestrictionsForOrgRequestOptions,
+    OctokitResponse<InteractionsGetRestrictionsForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#list-pending-organization-invitations
    */
-  "GET /orgs/:org/invitations": {
-    parameters: OrgsListPendingInvitationsEndpoint;
-    request: OrgsListPendingInvitationsRequestOptions;
-    response: OctokitResponse<OrgsListPendingInvitationsResponseData>;
-  };
+  "GET /orgs/:org/invitations": Endpoint<
+    OrgsListPendingInvitationsEndpoint,
+    OrgsListPendingInvitationsRequestOptions,
+    OctokitResponse<OrgsListPendingInvitationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#list-organization-invitation-teams
    */
-  "GET /orgs/:org/invitations/:invitation_id/teams": {
-    parameters: OrgsListInvitationTeamsEndpoint;
-    request: OrgsListInvitationTeamsRequestOptions;
-    response: OctokitResponse<OrgsListInvitationTeamsResponseData>;
-  };
+  "GET /orgs/:org/invitations/:invitation_id/teams": Endpoint<
+    OrgsListInvitationTeamsEndpoint,
+    OrgsListInvitationTeamsRequestOptions,
+    OctokitResponse<OrgsListInvitationTeamsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#list-organization-issues-assigned-to-the-authenticated-user
    */
-  "GET /orgs/:org/issues": {
-    parameters: IssuesListForOrgEndpoint;
-    request: IssuesListForOrgRequestOptions;
-    response: OctokitResponse<IssuesListForOrgResponseData>;
-  };
+  "GET /orgs/:org/issues": Endpoint<
+    IssuesListForOrgEndpoint,
+    IssuesListForOrgRequestOptions,
+    OctokitResponse<IssuesListForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#members-list
    */
-  "GET /orgs/:org/members": {
-    parameters: OrgsListMembersEndpoint;
-    request: OrgsListMembersRequestOptions;
-    response: OctokitResponse<OrgsListMembersResponseData>;
-  };
+  "GET /orgs/:org/members": Endpoint<
+    OrgsListMembersEndpoint,
+    OrgsListMembersRequestOptions,
+    OctokitResponse<OrgsListMembersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#check-membership
    */
-  "GET /orgs/:org/members/:username": {
-    parameters: OrgsCheckMembershipEndpoint;
-    request: OrgsCheckMembershipRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /orgs/:org/members/:username": Endpoint<
+    OrgsCheckMembershipEndpoint,
+    OrgsCheckMembershipRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#get-organization-membership
    */
-  "GET /orgs/:org/memberships/:username": {
-    parameters: OrgsGetMembershipEndpoint;
-    request: OrgsGetMembershipRequestOptions;
-    response: OctokitResponse<OrgsGetMembershipResponseData>;
-  };
+  "GET /orgs/:org/memberships/:username": Endpoint<
+    OrgsGetMembershipEndpoint,
+    OrgsGetMembershipRequestOptions,
+    OctokitResponse<OrgsGetMembershipResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#list-organization-migrations
    */
-  "GET /orgs/:org/migrations": {
-    parameters: MigrationsListForOrgEndpoint;
-    request: MigrationsListForOrgRequestOptions;
-    response: OctokitResponse<MigrationsListForOrgResponseData>;
-  };
+  "GET /orgs/:org/migrations": Endpoint<
+    MigrationsListForOrgEndpoint,
+    MigrationsListForOrgRequestOptions,
+    OctokitResponse<MigrationsListForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration
    */
-  "GET /orgs/:org/migrations/:migration_id": {
-    parameters: MigrationsGetStatusForOrgEndpoint;
-    request: MigrationsGetStatusForOrgRequestOptions;
-    response: OctokitResponse<MigrationsGetStatusForOrgResponseData>;
-  };
+  "GET /orgs/:org/migrations/:migration_id": Endpoint<
+    MigrationsGetStatusForOrgEndpoint,
+    MigrationsGetStatusForOrgRequestOptions,
+    OctokitResponse<MigrationsGetStatusForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#download-an-organization-migration-archive
    */
-  "GET /orgs/:org/migrations/:migration_id/archive": {
-    parameters: MigrationsDownloadArchiveForOrgEndpoint;
-    request: MigrationsDownloadArchiveForOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /orgs/:org/migrations/:migration_id/archive": Endpoint<
+    MigrationsDownloadArchiveForOrgEndpoint,
+    MigrationsDownloadArchiveForOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#list-repositories-in-an-organization-migration
    */
-  "GET /orgs/:org/migrations/:migration_id/repositories": {
-    parameters: MigrationsListReposForOrgEndpoint;
-    request: MigrationsListReposForOrgRequestOptions;
-    response: OctokitResponse<MigrationsListReposForOrgResponseData>;
-  };
+  "GET /orgs/:org/migrations/:migration_id/repositories": Endpoint<
+    MigrationsListReposForOrgEndpoint,
+    MigrationsListReposForOrgRequestOptions,
+    OctokitResponse<MigrationsListReposForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/outside_collaborators/#list-outside-collaborators
    */
-  "GET /orgs/:org/outside_collaborators": {
-    parameters: OrgsListOutsideCollaboratorsEndpoint;
-    request: OrgsListOutsideCollaboratorsRequestOptions;
-    response: OctokitResponse<OrgsListOutsideCollaboratorsResponseData>;
-  };
+  "GET /orgs/:org/outside_collaborators": Endpoint<
+    OrgsListOutsideCollaboratorsEndpoint,
+    OrgsListOutsideCollaboratorsRequestOptions,
+    OctokitResponse<OrgsListOutsideCollaboratorsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#list-organization-projects
    */
-  "GET /orgs/:org/projects": {
-    parameters: ProjectsListForOrgEndpoint;
-    request: ProjectsListForOrgRequestOptions;
-    response: OctokitResponse<ProjectsListForOrgResponseData>;
-  };
+  "GET /orgs/:org/projects": Endpoint<
+    ProjectsListForOrgEndpoint,
+    ProjectsListForOrgRequestOptions,
+    OctokitResponse<ProjectsListForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#public-members-list
    */
-  "GET /orgs/:org/public_members": {
-    parameters: OrgsListPublicMembersEndpoint;
-    request: OrgsListPublicMembersRequestOptions;
-    response: OctokitResponse<OrgsListPublicMembersResponseData>;
-  };
+  "GET /orgs/:org/public_members": Endpoint<
+    OrgsListPublicMembersEndpoint,
+    OrgsListPublicMembersRequestOptions,
+    OctokitResponse<OrgsListPublicMembersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#check-public-membership
    */
-  "GET /orgs/:org/public_members/:username": {
-    parameters: OrgsCheckPublicMembershipEndpoint;
-    request: OrgsCheckPublicMembershipRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /orgs/:org/public_members/:username": Endpoint<
+    OrgsCheckPublicMembershipEndpoint,
+    OrgsCheckPublicMembershipRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-organization-repositories
    */
-  "GET /orgs/:org/repos": {
-    parameters: ReposListForOrgEndpoint;
-    request: ReposListForOrgRequestOptions;
-    response: OctokitResponse<ReposListForOrgResponseData>;
-  };
+  "GET /orgs/:org/repos": Endpoint<
+    ReposListForOrgEndpoint,
+    ReposListForOrgRequestOptions,
+    OctokitResponse<ReposListForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-in-an-organization
    */
-  "GET /orgs/:org/team-sync/groups": {
-    parameters: TeamsListIdPGroupsForOrgEndpoint;
-    request: TeamsListIdPGroupsForOrgRequestOptions;
-    response: OctokitResponse<TeamsListIdPGroupsForOrgResponseData>;
-  };
+  "GET /orgs/:org/team-sync/groups": Endpoint<
+    TeamsListIdPGroupsForOrgEndpoint,
+    TeamsListIdPGroupsForOrgRequestOptions,
+    OctokitResponse<TeamsListIdPGroupsForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-teams
    */
-  "GET /orgs/:org/teams": {
-    parameters: TeamsListEndpoint;
-    request: TeamsListRequestOptions;
-    response: OctokitResponse<TeamsListResponseData>;
-  };
+  "GET /orgs/:org/teams": Endpoint<
+    TeamsListEndpoint,
+    TeamsListRequestOptions,
+    OctokitResponse<TeamsListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#get-team-by-name
    */
-  "GET /orgs/:org/teams/:team_slug": {
-    parameters: TeamsGetByNameEndpoint;
-    request: TeamsGetByNameRequestOptions;
-    response: OctokitResponse<TeamsGetByNameResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug": Endpoint<
+    TeamsGetByNameEndpoint,
+    TeamsGetByNameRequestOptions,
+    OctokitResponse<TeamsGetByNameResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#list-discussions
    */
-  "GET /orgs/:org/teams/:team_slug/discussions": {
-    parameters: TeamsListDiscussionsInOrgEndpoint;
-    request: TeamsListDiscussionsInOrgRequestOptions;
-    response: OctokitResponse<TeamsListDiscussionsInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions": Endpoint<
+    TeamsListDiscussionsInOrgEndpoint,
+    TeamsListDiscussionsInOrgRequestOptions,
+    OctokitResponse<TeamsListDiscussionsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion
    */
-  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number": {
-    parameters: TeamsGetDiscussionInOrgEndpoint;
-    request: TeamsGetDiscussionInOrgRequestOptions;
-    response: OctokitResponse<TeamsGetDiscussionInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number": Endpoint<
+    TeamsGetDiscussionInOrgEndpoint,
+    TeamsGetDiscussionInOrgRequestOptions,
+    OctokitResponse<TeamsGetDiscussionInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments
    */
-  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": {
-    parameters: TeamsListDiscussionCommentsInOrgEndpoint;
-    request: TeamsListDiscussionCommentsInOrgRequestOptions;
-    response: OctokitResponse<TeamsListDiscussionCommentsInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": Endpoint<
+    TeamsListDiscussionCommentsInOrgEndpoint,
+    TeamsListDiscussionCommentsInOrgRequestOptions,
+    OctokitResponse<TeamsListDiscussionCommentsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment
    */
-  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsGetDiscussionCommentInOrgEndpoint;
-    request: TeamsGetDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<TeamsGetDiscussionCommentInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsGetDiscussionCommentInOrgEndpoint,
+    TeamsGetDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<TeamsGetDiscussionCommentInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment
    */
-  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": {
-    parameters: ReactionsListForTeamDiscussionCommentInOrgEndpoint;
-    request: ReactionsListForTeamDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<
-      ReactionsListForTeamDiscussionCommentInOrgResponseData
-    >;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": Endpoint<
+    ReactionsListForTeamDiscussionCommentInOrgEndpoint,
+    ReactionsListForTeamDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<ReactionsListForTeamDiscussionCommentInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion
    */
-  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": {
-    parameters: ReactionsListForTeamDiscussionInOrgEndpoint;
-    request: ReactionsListForTeamDiscussionInOrgRequestOptions;
-    response: OctokitResponse<ReactionsListForTeamDiscussionInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": Endpoint<
+    ReactionsListForTeamDiscussionInOrgEndpoint,
+    ReactionsListForTeamDiscussionInOrgRequestOptions,
+    OctokitResponse<ReactionsListForTeamDiscussionInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#list-pending-team-invitations
    */
-  "GET /orgs/:org/teams/:team_slug/invitations": {
-    parameters: TeamsListPendingInvitationsInOrgEndpoint;
-    request: TeamsListPendingInvitationsInOrgRequestOptions;
-    response: OctokitResponse<TeamsListPendingInvitationsInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/invitations": Endpoint<
+    TeamsListPendingInvitationsInOrgEndpoint,
+    TeamsListPendingInvitationsInOrgRequestOptions,
+    OctokitResponse<TeamsListPendingInvitationsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#list-team-members
    */
-  "GET /orgs/:org/teams/:team_slug/members": {
-    parameters: TeamsListMembersInOrgEndpoint;
-    request: TeamsListMembersInOrgRequestOptions;
-    response: OctokitResponse<TeamsListMembersInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/members": Endpoint<
+    TeamsListMembersInOrgEndpoint,
+    TeamsListMembersInOrgRequestOptions,
+    OctokitResponse<TeamsListMembersInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#get-team-membership
    */
-  "GET /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsGetMembershipInOrgEndpoint;
-    request: TeamsGetMembershipInOrgRequestOptions;
-    response: OctokitResponse<TeamsGetMembershipInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/memberships/:username": Endpoint<
+    TeamsGetMembershipInOrgEndpoint,
+    TeamsGetMembershipInOrgRequestOptions,
+    OctokitResponse<TeamsGetMembershipInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-team-projects
    */
-  "GET /orgs/:org/teams/:team_slug/projects": {
-    parameters: TeamsListProjectsInOrgEndpoint;
-    request: TeamsListProjectsInOrgRequestOptions;
-    response: OctokitResponse<TeamsListProjectsInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/projects": Endpoint<
+    TeamsListProjectsInOrgEndpoint,
+    TeamsListProjectsInOrgRequestOptions,
+    OctokitResponse<TeamsListProjectsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#review-a-team-project
    */
-  "GET /orgs/:org/teams/:team_slug/projects/:project_id": {
-    parameters: TeamsReviewProjectInOrgEndpoint;
-    request: TeamsReviewProjectInOrgRequestOptions;
-    response: OctokitResponse<TeamsReviewProjectInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/projects/:project_id": Endpoint<
+    TeamsReviewProjectInOrgEndpoint,
+    TeamsReviewProjectInOrgRequestOptions,
+    OctokitResponse<TeamsReviewProjectInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-team-repos
    */
-  "GET /orgs/:org/teams/:team_slug/repos": {
-    parameters: TeamsListReposInOrgEndpoint;
-    request: TeamsListReposInOrgRequestOptions;
-    response: OctokitResponse<TeamsListReposInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/repos": Endpoint<
+    TeamsListReposInOrgEndpoint,
+    TeamsListReposInOrgRequestOptions,
+    OctokitResponse<TeamsListReposInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository
    */
-  "GET /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
-    parameters: TeamsCheckManagesRepoInOrgEndpoint;
-    request: TeamsCheckManagesRepoInOrgRequestOptions;
-    response: OctokitResponse<TeamsCheckManagesRepoInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/repos/:owner/:repo": Endpoint<
+    TeamsCheckManagesRepoInOrgEndpoint,
+    TeamsCheckManagesRepoInOrgRequestOptions,
+    OctokitResponse<TeamsCheckManagesRepoInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team
    */
-  "GET /orgs/:org/teams/:team_slug/team-sync/group-mappings": {
-    parameters: TeamsListIdPGroupsInOrgEndpoint;
-    request: TeamsListIdPGroupsInOrgRequestOptions;
-    response: OctokitResponse<TeamsListIdPGroupsInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/team-sync/group-mappings": Endpoint<
+    TeamsListIdPGroupsInOrgEndpoint,
+    TeamsListIdPGroupsInOrgRequestOptions,
+    OctokitResponse<TeamsListIdPGroupsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-child-teams
    */
-  "GET /orgs/:org/teams/:team_slug/teams": {
-    parameters: TeamsListChildInOrgEndpoint;
-    request: TeamsListChildInOrgRequestOptions;
-    response: OctokitResponse<TeamsListChildInOrgResponseData>;
-  };
+  "GET /orgs/:org/teams/:team_slug/teams": Endpoint<
+    TeamsListChildInOrgEndpoint,
+    TeamsListChildInOrgRequestOptions,
+    OctokitResponse<TeamsListChildInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#get-a-project
    */
-  "GET /projects/:project_id": {
-    parameters: ProjectsGetEndpoint;
-    request: ProjectsGetRequestOptions;
-    response: OctokitResponse<ProjectsGetResponseData>;
-  };
+  "GET /projects/:project_id": Endpoint<
+    ProjectsGetEndpoint,
+    ProjectsGetRequestOptions,
+    OctokitResponse<ProjectsGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/collaborators/#list-collaborators
    */
-  "GET /projects/:project_id/collaborators": {
-    parameters: ProjectsListCollaboratorsEndpoint;
-    request: ProjectsListCollaboratorsRequestOptions;
-    response: OctokitResponse<ProjectsListCollaboratorsResponseData>;
-  };
+  "GET /projects/:project_id/collaborators": Endpoint<
+    ProjectsListCollaboratorsEndpoint,
+    ProjectsListCollaboratorsRequestOptions,
+    OctokitResponse<ProjectsListCollaboratorsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/collaborators/#review-a-users-permission-level
    */
-  "GET /projects/:project_id/collaborators/:username/permission": {
-    parameters: ProjectsReviewUserPermissionLevelEndpoint;
-    request: ProjectsReviewUserPermissionLevelRequestOptions;
-    response: OctokitResponse<ProjectsReviewUserPermissionLevelResponseData>;
-  };
+  "GET /projects/:project_id/collaborators/:username/permission": Endpoint<
+    ProjectsReviewUserPermissionLevelEndpoint,
+    ProjectsReviewUserPermissionLevelRequestOptions,
+    OctokitResponse<ProjectsReviewUserPermissionLevelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#list-project-columns
    */
-  "GET /projects/:project_id/columns": {
-    parameters: ProjectsListColumnsEndpoint;
-    request: ProjectsListColumnsRequestOptions;
-    response: OctokitResponse<ProjectsListColumnsResponseData>;
-  };
+  "GET /projects/:project_id/columns": Endpoint<
+    ProjectsListColumnsEndpoint,
+    ProjectsListColumnsRequestOptions,
+    OctokitResponse<ProjectsListColumnsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#get-a-project-column
    */
-  "GET /projects/columns/:column_id": {
-    parameters: ProjectsGetColumnEndpoint;
-    request: ProjectsGetColumnRequestOptions;
-    response: OctokitResponse<ProjectsGetColumnResponseData>;
-  };
+  "GET /projects/columns/:column_id": Endpoint<
+    ProjectsGetColumnEndpoint,
+    ProjectsGetColumnRequestOptions,
+    OctokitResponse<ProjectsGetColumnResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#list-project-cards
    */
-  "GET /projects/columns/:column_id/cards": {
-    parameters: ProjectsListCardsEndpoint;
-    request: ProjectsListCardsRequestOptions;
-    response: OctokitResponse<ProjectsListCardsResponseData>;
-  };
+  "GET /projects/columns/:column_id/cards": Endpoint<
+    ProjectsListCardsEndpoint,
+    ProjectsListCardsRequestOptions,
+    OctokitResponse<ProjectsListCardsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#get-a-project-card
    */
-  "GET /projects/columns/cards/:card_id": {
-    parameters: ProjectsGetCardEndpoint;
-    request: ProjectsGetCardRequestOptions;
-    response: OctokitResponse<ProjectsGetCardResponseData>;
-  };
+  "GET /projects/columns/cards/:card_id": Endpoint<
+    ProjectsGetCardEndpoint,
+    ProjectsGetCardRequestOptions,
+    OctokitResponse<ProjectsGetCardResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status
    */
-  "GET /rate_limit": {
-    parameters: RateLimitGetEndpoint;
-    request: RateLimitGetRequestOptions;
-    response: OctokitResponse<RateLimitGetResponseData>;
-  };
+  "GET /rate_limit": Endpoint<
+    RateLimitGetEndpoint,
+    RateLimitGetRequestOptions,
+    OctokitResponse<RateLimitGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#get-a-repository
    */
-  "GET /repos/:owner/:repo": {
-    parameters: ReposGetEndpoint;
-    request: ReposGetRequestOptions;
-    response: OctokitResponse<ReposGetResponseData>;
-  };
+  "GET /repos/:owner/:repo": Endpoint<
+    ReposGetEndpoint,
+    ReposGetRequestOptions,
+    OctokitResponse<ReposGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/contents/#get-archive-link
    */
-  "GET /repos/:owner/:repo/:archive_format/:ref": {
-    parameters: ReposGetArchiveLinkEndpoint;
-    request: ReposGetArchiveLinkRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/:archive_format/:ref": Endpoint<
+    ReposGetArchiveLinkEndpoint,
+    ReposGetArchiveLinkRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/artifacts/#list-artifacts-for-a-repository
    */
-  "GET /repos/:owner/:repo/actions/artifacts": {
-    parameters: ActionsListArtifactsForRepoEndpoint;
-    request: ActionsListArtifactsForRepoRequestOptions;
-    response: OctokitResponse<ActionsListArtifactsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/artifacts": Endpoint<
+    ActionsListArtifactsForRepoEndpoint,
+    ActionsListArtifactsForRepoRequestOptions,
+    OctokitResponse<ActionsListArtifactsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/artifacts/#get-an-artifact
    */
-  "GET /repos/:owner/:repo/actions/artifacts/:artifact_id": {
-    parameters: ActionsGetArtifactEndpoint;
-    request: ActionsGetArtifactRequestOptions;
-    response: OctokitResponse<ActionsGetArtifactResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/artifacts/:artifact_id": Endpoint<
+    ActionsGetArtifactEndpoint,
+    ActionsGetArtifactRequestOptions,
+    OctokitResponse<ActionsGetArtifactResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/artifacts/#download-an-artifact
    */
-  "GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format": {
-    parameters: ActionsDownloadArtifactEndpoint;
-    request: ActionsDownloadArtifactRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/actions/artifacts/:artifact_id/:archive_format": Endpoint<
+    ActionsDownloadArtifactEndpoint,
+    ActionsDownloadArtifactRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_jobs/#get-a-workflow-job
    */
-  "GET /repos/:owner/:repo/actions/jobs/:job_id": {
-    parameters: ActionsGetWorkflowJobEndpoint;
-    request: ActionsGetWorkflowJobRequestOptions;
-    response: OctokitResponse<ActionsGetWorkflowJobResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/jobs/:job_id": Endpoint<
+    ActionsGetWorkflowJobEndpoint,
+    ActionsGetWorkflowJobRequestOptions,
+    OctokitResponse<ActionsGetWorkflowJobResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_jobs/#list-workflow-job-logs
    */
-  "GET /repos/:owner/:repo/actions/jobs/:job_id/logs": {
-    parameters: ActionsListWorkflowJobLogsEndpoint;
-    request: ActionsListWorkflowJobLogsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/actions/jobs/:job_id/logs": Endpoint<
+    ActionsListWorkflowJobLogsEndpoint,
+    ActionsListWorkflowJobLogsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#list-self-hosted-runners-for-a-repository
    */
-  "GET /repos/:owner/:repo/actions/runners": {
-    parameters: ActionsListSelfHostedRunnersForRepoEndpoint;
-    request: ActionsListSelfHostedRunnersForRepoRequestOptions;
-    response: OctokitResponse<ActionsListSelfHostedRunnersForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runners": Endpoint<
+    ActionsListSelfHostedRunnersForRepoEndpoint,
+    ActionsListSelfHostedRunnersForRepoRequestOptions,
+    OctokitResponse<ActionsListSelfHostedRunnersForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#get-a-self-hosted-runner
    */
-  "GET /repos/:owner/:repo/actions/runners/:runner_id": {
-    parameters: ActionsGetSelfHostedRunnerEndpoint;
-    request: ActionsGetSelfHostedRunnerRequestOptions;
-    response: OctokitResponse<ActionsGetSelfHostedRunnerResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runners/:runner_id": Endpoint<
+    ActionsGetSelfHostedRunnerEndpoint,
+    ActionsGetSelfHostedRunnerRequestOptions,
+    OctokitResponse<ActionsGetSelfHostedRunnerResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#list-downloads-for-the-self-hosted-runner-application
    */
-  "GET /repos/:owner/:repo/actions/runners/downloads": {
-    parameters: ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint;
-    request: ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions;
-    response: OctokitResponse<
+  "GET /repos/:owner/:repo/actions/runners/downloads": Endpoint<
+    ActionsListDownloadsForSelfHostedRunnerApplicationEndpoint,
+    ActionsListDownloadsForSelfHostedRunnerApplicationRequestOptions,
+    OctokitResponse<
       ActionsListDownloadsForSelfHostedRunnerApplicationResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#list-repository-workflow-runs
    */
-  "GET /repos/:owner/:repo/actions/runs": {
-    parameters: ActionsListRepoWorkflowRunsEndpoint;
-    request: ActionsListRepoWorkflowRunsRequestOptions;
-    response: OctokitResponse<ActionsListRepoWorkflowRunsResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runs": Endpoint<
+    ActionsListRepoWorkflowRunsEndpoint,
+    ActionsListRepoWorkflowRunsRequestOptions,
+    OctokitResponse<ActionsListRepoWorkflowRunsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#get-a-workflow-run
    */
-  "GET /repos/:owner/:repo/actions/runs/:run_id": {
-    parameters: ActionsGetWorkflowRunEndpoint;
-    request: ActionsGetWorkflowRunRequestOptions;
-    response: OctokitResponse<ActionsGetWorkflowRunResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runs/:run_id": Endpoint<
+    ActionsGetWorkflowRunEndpoint,
+    ActionsGetWorkflowRunRequestOptions,
+    OctokitResponse<ActionsGetWorkflowRunResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/artifacts/#list-workflow-run-artifacts
    */
-  "GET /repos/:owner/:repo/actions/runs/:run_id/artifacts": {
-    parameters: ActionsListWorkflowRunArtifactsEndpoint;
-    request: ActionsListWorkflowRunArtifactsRequestOptions;
-    response: OctokitResponse<ActionsListWorkflowRunArtifactsResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runs/:run_id/artifacts": Endpoint<
+    ActionsListWorkflowRunArtifactsEndpoint,
+    ActionsListWorkflowRunArtifactsRequestOptions,
+    OctokitResponse<ActionsListWorkflowRunArtifactsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_jobs/#list-jobs-for-a-workflow-run
    */
-  "GET /repos/:owner/:repo/actions/runs/:run_id/jobs": {
-    parameters: ActionsListJobsForWorkflowRunEndpoint;
-    request: ActionsListJobsForWorkflowRunRequestOptions;
-    response: OctokitResponse<ActionsListJobsForWorkflowRunResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/runs/:run_id/jobs": Endpoint<
+    ActionsListJobsForWorkflowRunEndpoint,
+    ActionsListJobsForWorkflowRunRequestOptions,
+    OctokitResponse<ActionsListJobsForWorkflowRunResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#list-workflow-run-logs
    */
-  "GET /repos/:owner/:repo/actions/runs/:run_id/logs": {
-    parameters: ActionsListWorkflowRunLogsEndpoint;
-    request: ActionsListWorkflowRunLogsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/actions/runs/:run_id/logs": Endpoint<
+    ActionsListWorkflowRunLogsEndpoint,
+    ActionsListWorkflowRunLogsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository
    */
-  "GET /repos/:owner/:repo/actions/secrets": {
-    parameters: ActionsListSecretsForRepoEndpoint;
-    request: ActionsListSecretsForRepoRequestOptions;
-    response: OctokitResponse<ActionsListSecretsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/secrets": Endpoint<
+    ActionsListSecretsForRepoEndpoint,
+    ActionsListSecretsForRepoRequestOptions,
+    OctokitResponse<ActionsListSecretsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/secrets/#get-a-secret
    */
-  "GET /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsGetSecretEndpoint;
-    request: ActionsGetSecretRequestOptions;
-    response: OctokitResponse<ActionsGetSecretResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/secrets/:name": Endpoint<
+    ActionsGetSecretEndpoint,
+    ActionsGetSecretRequestOptions,
+    OctokitResponse<ActionsGetSecretResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/secrets/#get-your-public-key
    */
-  "GET /repos/:owner/:repo/actions/secrets/public-key": {
-    parameters: ActionsGetPublicKeyEndpoint;
-    request: ActionsGetPublicKeyRequestOptions;
-    response: OctokitResponse<ActionsGetPublicKeyResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/secrets/public-key": Endpoint<
+    ActionsGetPublicKeyEndpoint,
+    ActionsGetPublicKeyRequestOptions,
+    OctokitResponse<ActionsGetPublicKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflows/#list-repository-workflows
    */
-  "GET /repos/:owner/:repo/actions/workflows": {
-    parameters: ActionsListRepoWorkflowsEndpoint;
-    request: ActionsListRepoWorkflowsRequestOptions;
-    response: OctokitResponse<ActionsListRepoWorkflowsResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/workflows": Endpoint<
+    ActionsListRepoWorkflowsEndpoint,
+    ActionsListRepoWorkflowsRequestOptions,
+    OctokitResponse<ActionsListRepoWorkflowsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflows/#get-a-workflow
    */
-  "GET /repos/:owner/:repo/actions/workflows/:workflow_id": {
-    parameters: ActionsGetWorkflowEndpoint;
-    request: ActionsGetWorkflowRequestOptions;
-    response: OctokitResponse<ActionsGetWorkflowResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/workflows/:workflow_id": Endpoint<
+    ActionsGetWorkflowEndpoint,
+    ActionsGetWorkflowRequestOptions,
+    OctokitResponse<ActionsGetWorkflowResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#list-workflow-runs
    */
-  "GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs": {
-    parameters: ActionsListWorkflowRunsEndpoint;
-    request: ActionsListWorkflowRunsRequestOptions;
-    response: OctokitResponse<ActionsListWorkflowRunsResponseData>;
-  };
+  "GET /repos/:owner/:repo/actions/workflows/:workflow_id/runs": Endpoint<
+    ActionsListWorkflowRunsEndpoint,
+    ActionsListWorkflowRunsRequestOptions,
+    OctokitResponse<ActionsListWorkflowRunsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/assignees/#list-assignees
    */
-  "GET /repos/:owner/:repo/assignees": {
-    parameters: IssuesListAssigneesEndpoint;
-    request: IssuesListAssigneesRequestOptions;
-    response: OctokitResponse<IssuesListAssigneesResponseData>;
-  };
+  "GET /repos/:owner/:repo/assignees": Endpoint<
+    IssuesListAssigneesEndpoint,
+    IssuesListAssigneesRequestOptions,
+    OctokitResponse<IssuesListAssigneesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/assignees/#check-assignee
    */
-  "GET /repos/:owner/:repo/assignees/:assignee": {
-    parameters: IssuesCheckAssigneeEndpoint;
-    request: IssuesCheckAssigneeRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/assignees/:assignee": Endpoint<
+    IssuesCheckAssigneeEndpoint,
+    IssuesCheckAssigneeRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#list-branches
    */
-  "GET /repos/:owner/:repo/branches": {
-    parameters: ReposListBranchesEndpoint;
-    request: ReposListBranchesRequestOptions;
-    response: OctokitResponse<ReposListBranchesResponseData>;
-  };
+  "GET /repos/:owner/:repo/branches": Endpoint<
+    ReposListBranchesEndpoint,
+    ReposListBranchesRequestOptions,
+    OctokitResponse<ReposListBranchesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch": {
-    parameters: ReposGetBranchEndpoint;
-    request: ReposGetBranchRequestOptions;
-    response: OctokitResponse<ReposGetBranchResponseData>;
-  };
+  "GET /repos/:owner/:repo/branches/:branch": Endpoint<
+    ReposGetBranchEndpoint,
+    ReposGetBranchRequestOptions,
+    OctokitResponse<ReposGetBranchResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-branch-protection
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection": {
-    parameters: ReposGetBranchProtectionEndpoint;
-    request: ReposGetBranchProtectionRequestOptions;
-    response: OctokitResponse<ReposGetBranchProtectionResponseData>;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection": Endpoint<
+    ReposGetBranchProtectionEndpoint,
+    ReposGetBranchProtectionRequestOptions,
+    OctokitResponse<ReposGetBranchProtectionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-admin-enforcement-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposGetProtectedBranchAdminEnforcementEndpoint;
-    request: ReposGetProtectedBranchAdminEnforcementRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchAdminEnforcementResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins": Endpoint<
+    ReposGetProtectedBranchAdminEnforcementEndpoint,
+    ReposGetProtectedBranchAdminEnforcementRequestOptions,
+    OctokitResponse<ReposGetProtectedBranchAdminEnforcementResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-pull-request-review-enforcement-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions;
-    response: OctokitResponse<
+  "GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": Endpoint<
+    ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint,
+    ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    OctokitResponse<
       ReposGetProtectedBranchPullRequestReviewEnforcementResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-required-signatures-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposGetProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposGetProtectedBranchRequiredSignaturesRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchRequiredSignaturesResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/required_signatures": Endpoint<
+    ReposGetProtectedBranchRequiredSignaturesEndpoint,
+    ReposGetProtectedBranchRequiredSignaturesRequestOptions,
+    OctokitResponse<ReposGetProtectedBranchRequiredSignaturesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-required-status-checks-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposGetProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposGetProtectedBranchRequiredStatusChecksRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchRequiredStatusChecksResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks": Endpoint<
+    ReposGetProtectedBranchRequiredStatusChecksEndpoint,
+    ReposGetProtectedBranchRequiredStatusChecksRequestOptions,
+    OctokitResponse<ReposGetProtectedBranchRequiredStatusChecksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposListProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
+  "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": Endpoint<
+    ReposListProtectedBranchRequiredStatusChecksContextsEndpoint,
+    ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    OctokitResponse<
       ReposListProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#get-restrictions-of-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions": {
-    parameters: ReposGetProtectedBranchRestrictionsEndpoint;
-    request: ReposGetProtectedBranchRestrictionsRequestOptions;
-    response: OctokitResponse<ReposGetProtectedBranchRestrictionsResponseData>;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions": Endpoint<
+    ReposGetProtectedBranchRestrictionsEndpoint,
+    ReposGetProtectedBranchRestrictionsRequestOptions,
+    OctokitResponse<ReposGetProtectedBranchRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposGetAppsWithAccessToProtectedBranchEndpoint;
-    request: ReposGetAppsWithAccessToProtectedBranchRequestOptions;
-    response: OctokitResponse<
-      ReposGetAppsWithAccessToProtectedBranchResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": Endpoint<
+    ReposGetAppsWithAccessToProtectedBranchEndpoint,
+    ReposGetAppsWithAccessToProtectedBranchRequestOptions,
+    OctokitResponse<ReposGetAppsWithAccessToProtectedBranchResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposGetTeamsWithAccessToProtectedBranchEndpoint;
-    request: ReposGetTeamsWithAccessToProtectedBranchRequestOptions;
-    response: OctokitResponse<
-      ReposGetTeamsWithAccessToProtectedBranchResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": Endpoint<
+    ReposGetTeamsWithAccessToProtectedBranchEndpoint,
+    ReposGetTeamsWithAccessToProtectedBranchRequestOptions,
+    OctokitResponse<ReposGetTeamsWithAccessToProtectedBranchResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch
    */
-  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposGetUsersWithAccessToProtectedBranchEndpoint;
-    request: ReposGetUsersWithAccessToProtectedBranchRequestOptions;
-    response: OctokitResponse<
-      ReposGetUsersWithAccessToProtectedBranchResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": Endpoint<
+    ReposGetUsersWithAccessToProtectedBranchEndpoint,
+    ReposGetUsersWithAccessToProtectedBranchRequestOptions,
+    OctokitResponse<ReposGetUsersWithAccessToProtectedBranchResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#get-a-check-run
    */
-  "GET /repos/:owner/:repo/check-runs/:check_run_id": {
-    parameters: ChecksGetEndpoint;
-    request: ChecksGetRequestOptions;
-    response: OctokitResponse<ChecksGetResponseData>;
-  };
+  "GET /repos/:owner/:repo/check-runs/:check_run_id": Endpoint<
+    ChecksGetEndpoint,
+    ChecksGetRequestOptions,
+    OctokitResponse<ChecksGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#list-check-run-annotations
    */
-  "GET /repos/:owner/:repo/check-runs/:check_run_id/annotations": {
-    parameters: ChecksListAnnotationsEndpoint;
-    request: ChecksListAnnotationsRequestOptions;
-    response: OctokitResponse<ChecksListAnnotationsResponseData>;
-  };
+  "GET /repos/:owner/:repo/check-runs/:check_run_id/annotations": Endpoint<
+    ChecksListAnnotationsEndpoint,
+    ChecksListAnnotationsRequestOptions,
+    OctokitResponse<ChecksListAnnotationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/suites/#get-a-check-suite
    */
-  "GET /repos/:owner/:repo/check-suites/:check_suite_id": {
-    parameters: ChecksGetSuiteEndpoint;
-    request: ChecksGetSuiteRequestOptions;
-    response: OctokitResponse<ChecksGetSuiteResponseData>;
-  };
+  "GET /repos/:owner/:repo/check-suites/:check_suite_id": Endpoint<
+    ChecksGetSuiteEndpoint,
+    ChecksGetSuiteRequestOptions,
+    OctokitResponse<ChecksGetSuiteResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite
    */
-  "GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs": {
-    parameters: ChecksListForSuiteEndpoint;
-    request: ChecksListForSuiteRequestOptions;
-    response: OctokitResponse<ChecksListForSuiteResponseData>;
-  };
+  "GET /repos/:owner/:repo/check-suites/:check_suite_id/check-runs": Endpoint<
+    ChecksListForSuiteEndpoint,
+    ChecksListForSuiteRequestOptions,
+    OctokitResponse<ChecksListForSuiteResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#list-collaborators
    */
-  "GET /repos/:owner/:repo/collaborators": {
-    parameters: ReposListCollaboratorsEndpoint;
-    request: ReposListCollaboratorsRequestOptions;
-    response: OctokitResponse<ReposListCollaboratorsResponseData>;
-  };
+  "GET /repos/:owner/:repo/collaborators": Endpoint<
+    ReposListCollaboratorsEndpoint,
+    ReposListCollaboratorsRequestOptions,
+    OctokitResponse<ReposListCollaboratorsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator
    */
-  "GET /repos/:owner/:repo/collaborators/:username": {
-    parameters: ReposCheckCollaboratorEndpoint;
-    request: ReposCheckCollaboratorRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/collaborators/:username": Endpoint<
+    ReposCheckCollaboratorEndpoint,
+    ReposCheckCollaboratorRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level
    */
-  "GET /repos/:owner/:repo/collaborators/:username/permission": {
-    parameters: ReposGetCollaboratorPermissionLevelEndpoint;
-    request: ReposGetCollaboratorPermissionLevelRequestOptions;
-    response: OctokitResponse<ReposGetCollaboratorPermissionLevelResponseData>;
-  };
+  "GET /repos/:owner/:repo/collaborators/:username/permission": Endpoint<
+    ReposGetCollaboratorPermissionLevelEndpoint,
+    ReposGetCollaboratorPermissionLevelRequestOptions,
+    OctokitResponse<ReposGetCollaboratorPermissionLevelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository
    */
-  "GET /repos/:owner/:repo/comments": {
-    parameters: ReposListCommitCommentsEndpoint;
-    request: ReposListCommitCommentsRequestOptions;
-    response: OctokitResponse<ReposListCommitCommentsResponseData>;
-  };
+  "GET /repos/:owner/:repo/comments": Endpoint<
+    ReposListCommitCommentsEndpoint,
+    ReposListCommitCommentsRequestOptions,
+    OctokitResponse<ReposListCommitCommentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#get-a-single-commit-comment
    */
-  "GET /repos/:owner/:repo/comments/:comment_id": {
-    parameters: ReposGetCommitCommentEndpoint;
-    request: ReposGetCommitCommentRequestOptions;
-    response: OctokitResponse<ReposGetCommitCommentResponseData>;
-  };
+  "GET /repos/:owner/:repo/comments/:comment_id": Endpoint<
+    ReposGetCommitCommentEndpoint,
+    ReposGetCommitCommentRequestOptions,
+    OctokitResponse<ReposGetCommitCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-commit-comment
    */
-  "GET /repos/:owner/:repo/comments/:comment_id/reactions": {
-    parameters: ReactionsListForCommitCommentEndpoint;
-    request: ReactionsListForCommitCommentRequestOptions;
-    response: OctokitResponse<ReactionsListForCommitCommentResponseData>;
-  };
+  "GET /repos/:owner/:repo/comments/:comment_id/reactions": Endpoint<
+    ReactionsListForCommitCommentEndpoint,
+    ReactionsListForCommitCommentRequestOptions,
+    OctokitResponse<ReactionsListForCommitCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository
    */
-  "GET /repos/:owner/:repo/commits": {
-    parameters: ReposListCommitsEndpoint;
-    request: ReposListCommitsRequestOptions;
-    response: OctokitResponse<ReposListCommitsResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits": Endpoint<
+    ReposListCommitsEndpoint,
+    ReposListCommitsRequestOptions,
+    OctokitResponse<ReposListCommitsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/commits/#list-branches-for-head-commit
    */
-  "GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head": {
-    parameters: ReposListBranchesForHeadCommitEndpoint;
-    request: ReposListBranchesForHeadCommitRequestOptions;
-    response: OctokitResponse<ReposListBranchesForHeadCommitResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:commit_sha/branches-where-head": Endpoint<
+    ReposListBranchesForHeadCommitEndpoint,
+    ReposListBranchesForHeadCommitRequestOptions,
+    OctokitResponse<ReposListBranchesForHeadCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit
    */
-  "GET /repos/:owner/:repo/commits/:commit_sha/comments": {
-    parameters: ReposListCommentsForCommitEndpoint;
-    request: ReposListCommentsForCommitRequestOptions;
-    response: OctokitResponse<ReposListCommentsForCommitResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:commit_sha/comments": Endpoint<
+    ReposListCommentsForCommitEndpoint,
+    ReposListCommentsForCommitRequestOptions,
+    OctokitResponse<ReposListCommentsForCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-commit
    */
-  "GET /repos/:owner/:repo/commits/:commit_sha/pulls": {
-    parameters: ReposListPullRequestsAssociatedWithCommitEndpoint;
-    request: ReposListPullRequestsAssociatedWithCommitRequestOptions;
-    response: OctokitResponse<
-      ReposListPullRequestsAssociatedWithCommitResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/commits/:commit_sha/pulls": Endpoint<
+    ReposListPullRequestsAssociatedWithCommitEndpoint,
+    ReposListPullRequestsAssociatedWithCommitRequestOptions,
+    OctokitResponse<ReposListPullRequestsAssociatedWithCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/commits/#get-a-single-commit
    */
-  "GET /repos/:owner/:repo/commits/:ref": {
-    parameters: ReposGetCommitEndpoint;
-    request: ReposGetCommitRequestOptions;
-    response: OctokitResponse<ReposGetCommitResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:ref": Endpoint<
+    ReposGetCommitEndpoint,
+    ReposGetCommitRequestOptions,
+    OctokitResponse<ReposGetCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-git-reference
    */
-  "GET /repos/:owner/:repo/commits/:ref/check-runs": {
-    parameters: ChecksListForRefEndpoint;
-    request: ChecksListForRefRequestOptions;
-    response: OctokitResponse<ChecksListForRefResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:ref/check-runs": Endpoint<
+    ChecksListForRefEndpoint,
+    ChecksListForRefRequestOptions,
+    OctokitResponse<ChecksListForRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-git-reference
    */
-  "GET /repos/:owner/:repo/commits/:ref/check-suites": {
-    parameters: ChecksListSuitesForRefEndpoint;
-    request: ChecksListSuitesForRefRequestOptions;
-    response: OctokitResponse<ChecksListSuitesForRefResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:ref/check-suites": Endpoint<
+    ChecksListSuitesForRefEndpoint,
+    ChecksListSuitesForRefRequestOptions,
+    OctokitResponse<ChecksListSuitesForRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-ref
    */
-  "GET /repos/:owner/:repo/commits/:ref/status": {
-    parameters: ReposGetCombinedStatusForRefEndpoint;
-    request: ReposGetCombinedStatusForRefRequestOptions;
-    response: OctokitResponse<ReposGetCombinedStatusForRefResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:ref/status": Endpoint<
+    ReposGetCombinedStatusForRefEndpoint,
+    ReposGetCombinedStatusForRefRequestOptions,
+    OctokitResponse<ReposGetCombinedStatusForRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref
    */
-  "GET /repos/:owner/:repo/commits/:ref/statuses": {
-    parameters: ReposListStatusesForRefEndpoint;
-    request: ReposListStatusesForRefRequestOptions;
-    response: OctokitResponse<ReposListStatusesForRefResponseData>;
-  };
+  "GET /repos/:owner/:repo/commits/:ref/statuses": Endpoint<
+    ReposListStatusesForRefEndpoint,
+    ReposListStatusesForRefRequestOptions,
+    OctokitResponse<ReposListStatusesForRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct
    */
-  "GET /repos/:owner/:repo/community/code_of_conduct": {
-    parameters: CodesOfConductGetForRepoEndpoint;
-    request: CodesOfConductGetForRepoRequestOptions;
-    response: OctokitResponse<CodesOfConductGetForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/community/code_of_conduct": Endpoint<
+    CodesOfConductGetForRepoEndpoint,
+    CodesOfConductGetForRepoRequestOptions,
+    OctokitResponse<CodesOfConductGetForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/community/#retrieve-community-profile-metrics
    */
-  "GET /repos/:owner/:repo/community/profile": {
-    parameters: ReposRetrieveCommunityProfileMetricsEndpoint;
-    request: ReposRetrieveCommunityProfileMetricsRequestOptions;
-    response: OctokitResponse<ReposRetrieveCommunityProfileMetricsResponseData>;
-  };
+  "GET /repos/:owner/:repo/community/profile": Endpoint<
+    ReposRetrieveCommunityProfileMetricsEndpoint,
+    ReposRetrieveCommunityProfileMetricsRequestOptions,
+    OctokitResponse<ReposRetrieveCommunityProfileMetricsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/commits/#compare-two-commits
    */
-  "GET /repos/:owner/:repo/compare/:base...:head": {
-    parameters: ReposCompareCommitsEndpoint;
-    request: ReposCompareCommitsRequestOptions;
-    response: OctokitResponse<ReposCompareCommitsResponseData>;
-  };
+  "GET /repos/:owner/:repo/compare/:base...:head": Endpoint<
+    ReposCompareCommitsEndpoint,
+    ReposCompareCommitsRequestOptions,
+    OctokitResponse<ReposCompareCommitsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/contents/#get-contents
    */
-  "GET /repos/:owner/:repo/contents/:path": {
-    parameters: ReposGetContentsEndpoint;
-    request: ReposGetContentsRequestOptions;
-    response: OctokitResponse<ReposGetContentsResponseData>;
-  };
+  "GET /repos/:owner/:repo/contents/:path": Endpoint<
+    ReposGetContentsEndpoint,
+    ReposGetContentsRequestOptions,
+    OctokitResponse<ReposGetContentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-contributors
    */
-  "GET /repos/:owner/:repo/contributors": {
-    parameters: ReposListContributorsEndpoint;
-    request: ReposListContributorsRequestOptions;
-    response: OctokitResponse<ReposListContributorsResponseData>;
-  };
+  "GET /repos/:owner/:repo/contributors": Endpoint<
+    ReposListContributorsEndpoint,
+    ReposListContributorsRequestOptions,
+    OctokitResponse<ReposListContributorsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#list-deployments
    */
-  "GET /repos/:owner/:repo/deployments": {
-    parameters: ReposListDeploymentsEndpoint;
-    request: ReposListDeploymentsRequestOptions;
-    response: OctokitResponse<ReposListDeploymentsResponseData>;
-  };
+  "GET /repos/:owner/:repo/deployments": Endpoint<
+    ReposListDeploymentsEndpoint,
+    ReposListDeploymentsRequestOptions,
+    OctokitResponse<ReposListDeploymentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment
    */
-  "GET /repos/:owner/:repo/deployments/:deployment_id": {
-    parameters: ReposGetDeploymentEndpoint;
-    request: ReposGetDeploymentRequestOptions;
-    response: OctokitResponse<ReposGetDeploymentResponseData>;
-  };
+  "GET /repos/:owner/:repo/deployments/:deployment_id": Endpoint<
+    ReposGetDeploymentEndpoint,
+    ReposGetDeploymentRequestOptions,
+    OctokitResponse<ReposGetDeploymentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#list-deployment-statuses
    */
-  "GET /repos/:owner/:repo/deployments/:deployment_id/statuses": {
-    parameters: ReposListDeploymentStatusesEndpoint;
-    request: ReposListDeploymentStatusesRequestOptions;
-    response: OctokitResponse<ReposListDeploymentStatusesResponseData>;
-  };
+  "GET /repos/:owner/:repo/deployments/:deployment_id/statuses": Endpoint<
+    ReposListDeploymentStatusesEndpoint,
+    ReposListDeploymentStatusesRequestOptions,
+    OctokitResponse<ReposListDeploymentStatusesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment-status
    */
-  "GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id": {
-    parameters: ReposGetDeploymentStatusEndpoint;
-    request: ReposGetDeploymentStatusRequestOptions;
-    response: OctokitResponse<ReposGetDeploymentStatusResponseData>;
-  };
+  "GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id": Endpoint<
+    ReposGetDeploymentStatusEndpoint,
+    ReposGetDeploymentStatusRequestOptions,
+    OctokitResponse<ReposGetDeploymentStatusResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/downloads/#list-downloads-for-a-repository
    */
-  "GET /repos/:owner/:repo/downloads": {
-    parameters: ReposListDownloadsEndpoint;
-    request: ReposListDownloadsRequestOptions;
-    response: OctokitResponse<ReposListDownloadsResponseData>;
-  };
+  "GET /repos/:owner/:repo/downloads": Endpoint<
+    ReposListDownloadsEndpoint,
+    ReposListDownloadsRequestOptions,
+    OctokitResponse<ReposListDownloadsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/downloads/#get-a-single-download
    */
-  "GET /repos/:owner/:repo/downloads/:download_id": {
-    parameters: ReposGetDownloadEndpoint;
-    request: ReposGetDownloadRequestOptions;
-    response: OctokitResponse<ReposGetDownloadResponseData>;
-  };
+  "GET /repos/:owner/:repo/downloads/:download_id": Endpoint<
+    ReposGetDownloadEndpoint,
+    ReposGetDownloadRequestOptions,
+    OctokitResponse<ReposGetDownloadResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-repository-events
    */
-  "GET /repos/:owner/:repo/events": {
-    parameters: ActivityListRepoEventsEndpoint;
-    request: ActivityListRepoEventsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/events": Endpoint<
+    ActivityListRepoEventsEndpoint,
+    ActivityListRepoEventsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/forks/#list-forks
    */
-  "GET /repos/:owner/:repo/forks": {
-    parameters: ReposListForksEndpoint;
-    request: ReposListForksRequestOptions;
-    response: OctokitResponse<ReposListForksResponseData>;
-  };
+  "GET /repos/:owner/:repo/forks": Endpoint<
+    ReposListForksEndpoint,
+    ReposListForksRequestOptions,
+    OctokitResponse<ReposListForksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/blobs/#get-a-blob
    */
-  "GET /repos/:owner/:repo/git/blobs/:file_sha": {
-    parameters: GitGetBlobEndpoint;
-    request: GitGetBlobRequestOptions;
-    response: OctokitResponse<GitGetBlobResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/blobs/:file_sha": Endpoint<
+    GitGetBlobEndpoint,
+    GitGetBlobRequestOptions,
+    OctokitResponse<GitGetBlobResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/commits/#get-a-commit
    */
-  "GET /repos/:owner/:repo/git/commits/:commit_sha": {
-    parameters: GitGetCommitEndpoint;
-    request: GitGetCommitRequestOptions;
-    response: OctokitResponse<GitGetCommitResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/commits/:commit_sha": Endpoint<
+    GitGetCommitEndpoint,
+    GitGetCommitRequestOptions,
+    OctokitResponse<GitGetCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/refs/#list-matching-references
    */
-  "GET /repos/:owner/:repo/git/matching-refs/:ref": {
-    parameters: GitListMatchingRefsEndpoint;
-    request: GitListMatchingRefsRequestOptions;
-    response: OctokitResponse<GitListMatchingRefsResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/matching-refs/:ref": Endpoint<
+    GitListMatchingRefsEndpoint,
+    GitListMatchingRefsRequestOptions,
+    OctokitResponse<GitListMatchingRefsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/refs/#get-a-single-reference
    */
-  "GET /repos/:owner/:repo/git/ref/:ref": {
-    parameters: GitGetRefEndpoint;
-    request: GitGetRefRequestOptions;
-    response: OctokitResponse<GitGetRefResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/ref/:ref": Endpoint<
+    GitGetRefEndpoint,
+    GitGetRefRequestOptions,
+    OctokitResponse<GitGetRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/tags/#get-a-tag
    */
-  "GET /repos/:owner/:repo/git/tags/:tag_sha": {
-    parameters: GitGetTagEndpoint;
-    request: GitGetTagRequestOptions;
-    response: OctokitResponse<GitGetTagResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/tags/:tag_sha": Endpoint<
+    GitGetTagEndpoint,
+    GitGetTagRequestOptions,
+    OctokitResponse<GitGetTagResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/trees/#get-a-tree
    */
-  "GET /repos/:owner/:repo/git/trees/:tree_sha": {
-    parameters: GitGetTreeEndpoint;
-    request: GitGetTreeRequestOptions;
-    response: OctokitResponse<GitGetTreeResponseData>;
-  };
+  "GET /repos/:owner/:repo/git/trees/:tree_sha": Endpoint<
+    GitGetTreeEndpoint,
+    GitGetTreeRequestOptions,
+    OctokitResponse<GitGetTreeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#list-hooks
    */
-  "GET /repos/:owner/:repo/hooks": {
-    parameters: ReposListHooksEndpoint;
-    request: ReposListHooksRequestOptions;
-    response: OctokitResponse<ReposListHooksResponseData>;
-  };
+  "GET /repos/:owner/:repo/hooks": Endpoint<
+    ReposListHooksEndpoint,
+    ReposListHooksRequestOptions,
+    OctokitResponse<ReposListHooksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#get-single-hook
    */
-  "GET /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposGetHookEndpoint;
-    request: ReposGetHookRequestOptions;
-    response: OctokitResponse<ReposGetHookResponseData>;
-  };
+  "GET /repos/:owner/:repo/hooks/:hook_id": Endpoint<
+    ReposGetHookEndpoint,
+    ReposGetHookRequestOptions,
+    OctokitResponse<ReposGetHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#get-import-progress
    */
-  "GET /repos/:owner/:repo/import": {
-    parameters: MigrationsGetImportProgressEndpoint;
-    request: MigrationsGetImportProgressRequestOptions;
-    response: OctokitResponse<MigrationsGetImportProgressResponseData>;
-  };
+  "GET /repos/:owner/:repo/import": Endpoint<
+    MigrationsGetImportProgressEndpoint,
+    MigrationsGetImportProgressRequestOptions,
+    OctokitResponse<MigrationsGetImportProgressResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#get-commit-authors
    */
-  "GET /repos/:owner/:repo/import/authors": {
-    parameters: MigrationsGetCommitAuthorsEndpoint;
-    request: MigrationsGetCommitAuthorsRequestOptions;
-    response: OctokitResponse<MigrationsGetCommitAuthorsResponseData>;
-  };
+  "GET /repos/:owner/:repo/import/authors": Endpoint<
+    MigrationsGetCommitAuthorsEndpoint,
+    MigrationsGetCommitAuthorsRequestOptions,
+    OctokitResponse<MigrationsGetCommitAuthorsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#get-large-files
    */
-  "GET /repos/:owner/:repo/import/large_files": {
-    parameters: MigrationsGetLargeFilesEndpoint;
-    request: MigrationsGetLargeFilesRequestOptions;
-    response: OctokitResponse<MigrationsGetLargeFilesResponseData>;
-  };
+  "GET /repos/:owner/:repo/import/large_files": Endpoint<
+    MigrationsGetLargeFilesEndpoint,
+    MigrationsGetLargeFilesRequestOptions,
+    OctokitResponse<MigrationsGetLargeFilesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-a-repository-installation
    */
-  "GET /repos/:owner/:repo/installation": {
-    parameters: AppsGetRepoInstallationEndpoint;
-    request: AppsGetRepoInstallationRequestOptions;
-    response: OctokitResponse<AppsGetRepoInstallationResponseData>;
-  };
+  "GET /repos/:owner/:repo/installation": Endpoint<
+    AppsGetRepoInstallationEndpoint,
+    AppsGetRepoInstallationRequestOptions,
+    OctokitResponse<AppsGetRepoInstallationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/repos/#get-interaction-restrictions-for-a-repository
    */
-  "GET /repos/:owner/:repo/interaction-limits": {
-    parameters: InteractionsGetRestrictionsForRepoEndpoint;
-    request: InteractionsGetRestrictionsForRepoRequestOptions;
-    response: OctokitResponse<InteractionsGetRestrictionsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/interaction-limits": Endpoint<
+    InteractionsGetRestrictionsForRepoEndpoint,
+    InteractionsGetRestrictionsForRepoRequestOptions,
+    OctokitResponse<InteractionsGetRestrictionsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#list-invitations-for-a-repository
    */
-  "GET /repos/:owner/:repo/invitations": {
-    parameters: ReposListInvitationsEndpoint;
-    request: ReposListInvitationsRequestOptions;
-    response: OctokitResponse<ReposListInvitationsResponseData>;
-  };
+  "GET /repos/:owner/:repo/invitations": Endpoint<
+    ReposListInvitationsEndpoint,
+    ReposListInvitationsRequestOptions,
+    OctokitResponse<ReposListInvitationsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#list-repository-issues
    */
-  "GET /repos/:owner/:repo/issues": {
-    parameters: IssuesListForRepoEndpoint;
-    request: IssuesListForRepoRequestOptions;
-    response: OctokitResponse<IssuesListForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues": Endpoint<
+    IssuesListForRepoEndpoint,
+    IssuesListForRepoRequestOptions,
+    OctokitResponse<IssuesListForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#get-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number": {
-    parameters: IssuesGetEndpoint;
-    request: IssuesGetRequestOptions;
-    response: OctokitResponse<IssuesGetResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number": Endpoint<
+    IssuesGetEndpoint,
+    IssuesGetRequestOptions,
+    OctokitResponse<IssuesGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number/comments": {
-    parameters: IssuesListCommentsEndpoint;
-    request: IssuesListCommentsRequestOptions;
-    response: OctokitResponse<IssuesListCommentsResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number/comments": Endpoint<
+    IssuesListCommentsEndpoint,
+    IssuesListCommentsRequestOptions,
+    OctokitResponse<IssuesListCommentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/events/#list-events-for-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number/events": {
-    parameters: IssuesListEventsEndpoint;
-    request: IssuesListEventsRequestOptions;
-    response: OctokitResponse<IssuesListEventsResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number/events": Endpoint<
+    IssuesListEventsEndpoint,
+    IssuesListEventsRequestOptions,
+    OctokitResponse<IssuesListEventsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number/labels": {
-    parameters: IssuesListLabelsOnIssueEndpoint;
-    request: IssuesListLabelsOnIssueRequestOptions;
-    response: OctokitResponse<IssuesListLabelsOnIssueResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number/labels": Endpoint<
+    IssuesListLabelsOnIssueEndpoint,
+    IssuesListLabelsOnIssueRequestOptions,
+    OctokitResponse<IssuesListLabelsOnIssueResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number/reactions": {
-    parameters: ReactionsListForIssueEndpoint;
-    request: ReactionsListForIssueRequestOptions;
-    response: OctokitResponse<ReactionsListForIssueResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number/reactions": Endpoint<
+    ReactionsListForIssueEndpoint,
+    ReactionsListForIssueRequestOptions,
+    OctokitResponse<ReactionsListForIssueResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue
    */
-  "GET /repos/:owner/:repo/issues/:issue_number/timeline": {
-    parameters: IssuesListEventsForTimelineEndpoint;
-    request: IssuesListEventsForTimelineRequestOptions;
-    response: OctokitResponse<IssuesListEventsForTimelineResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/:issue_number/timeline": Endpoint<
+    IssuesListEventsForTimelineEndpoint,
+    IssuesListEventsForTimelineRequestOptions,
+    OctokitResponse<IssuesListEventsForTimelineResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository
    */
-  "GET /repos/:owner/:repo/issues/comments": {
-    parameters: IssuesListCommentsForRepoEndpoint;
-    request: IssuesListCommentsForRepoRequestOptions;
-    response: OctokitResponse<IssuesListCommentsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/comments": Endpoint<
+    IssuesListCommentsForRepoEndpoint,
+    IssuesListCommentsForRepoRequestOptions,
+    OctokitResponse<IssuesListCommentsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#get-a-single-comment
    */
-  "GET /repos/:owner/:repo/issues/comments/:comment_id": {
-    parameters: IssuesGetCommentEndpoint;
-    request: IssuesGetCommentRequestOptions;
-    response: OctokitResponse<IssuesGetCommentResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/comments/:comment_id": Endpoint<
+    IssuesGetCommentEndpoint,
+    IssuesGetCommentRequestOptions,
+    OctokitResponse<IssuesGetCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-an-issue-comment
    */
-  "GET /repos/:owner/:repo/issues/comments/:comment_id/reactions": {
-    parameters: ReactionsListForIssueCommentEndpoint;
-    request: ReactionsListForIssueCommentRequestOptions;
-    response: OctokitResponse<ReactionsListForIssueCommentResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/comments/:comment_id/reactions": Endpoint<
+    ReactionsListForIssueCommentEndpoint,
+    ReactionsListForIssueCommentRequestOptions,
+    OctokitResponse<ReactionsListForIssueCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/events/#list-events-for-a-repository
    */
-  "GET /repos/:owner/:repo/issues/events": {
-    parameters: IssuesListEventsForRepoEndpoint;
-    request: IssuesListEventsForRepoRequestOptions;
-    response: OctokitResponse<IssuesListEventsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/events": Endpoint<
+    IssuesListEventsForRepoEndpoint,
+    IssuesListEventsForRepoRequestOptions,
+    OctokitResponse<IssuesListEventsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/events/#get-a-single-event
    */
-  "GET /repos/:owner/:repo/issues/events/:event_id": {
-    parameters: IssuesGetEventEndpoint;
-    request: IssuesGetEventRequestOptions;
-    response: OctokitResponse<IssuesGetEventResponseData>;
-  };
+  "GET /repos/:owner/:repo/issues/events/:event_id": Endpoint<
+    IssuesGetEventEndpoint,
+    IssuesGetEventRequestOptions,
+    OctokitResponse<IssuesGetEventResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/keys/#list-deploy-keys
    */
-  "GET /repos/:owner/:repo/keys": {
-    parameters: ReposListDeployKeysEndpoint;
-    request: ReposListDeployKeysRequestOptions;
-    response: OctokitResponse<ReposListDeployKeysResponseData>;
-  };
+  "GET /repos/:owner/:repo/keys": Endpoint<
+    ReposListDeployKeysEndpoint,
+    ReposListDeployKeysRequestOptions,
+    OctokitResponse<ReposListDeployKeysResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/keys/#get-a-deploy-key
    */
-  "GET /repos/:owner/:repo/keys/:key_id": {
-    parameters: ReposGetDeployKeyEndpoint;
-    request: ReposGetDeployKeyRequestOptions;
-    response: OctokitResponse<ReposGetDeployKeyResponseData>;
-  };
+  "GET /repos/:owner/:repo/keys/:key_id": Endpoint<
+    ReposGetDeployKeyEndpoint,
+    ReposGetDeployKeyRequestOptions,
+    OctokitResponse<ReposGetDeployKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository
    */
-  "GET /repos/:owner/:repo/labels": {
-    parameters: IssuesListLabelsForRepoEndpoint;
-    request: IssuesListLabelsForRepoRequestOptions;
-    response: OctokitResponse<IssuesListLabelsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/labels": Endpoint<
+    IssuesListLabelsForRepoEndpoint,
+    IssuesListLabelsForRepoRequestOptions,
+    OctokitResponse<IssuesListLabelsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#get-a-single-label
    */
-  "GET /repos/:owner/:repo/labels/:name": {
-    parameters: IssuesGetLabelEndpoint;
-    request: IssuesGetLabelRequestOptions;
-    response: OctokitResponse<IssuesGetLabelResponseData>;
-  };
+  "GET /repos/:owner/:repo/labels/:name": Endpoint<
+    IssuesGetLabelEndpoint,
+    IssuesGetLabelRequestOptions,
+    OctokitResponse<IssuesGetLabelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-languages
    */
-  "GET /repos/:owner/:repo/languages": {
-    parameters: ReposListLanguagesEndpoint;
-    request: ReposListLanguagesRequestOptions;
-    response: OctokitResponse<ReposListLanguagesResponseData>;
-  };
+  "GET /repos/:owner/:repo/languages": Endpoint<
+    ReposListLanguagesEndpoint,
+    ReposListLanguagesRequestOptions,
+    OctokitResponse<ReposListLanguagesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license
    */
-  "GET /repos/:owner/:repo/license": {
-    parameters: LicensesGetForRepoEndpoint;
-    request: LicensesGetForRepoRequestOptions;
-    response: OctokitResponse<LicensesGetForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/license": Endpoint<
+    LicensesGetForRepoEndpoint,
+    LicensesGetForRepoRequestOptions,
+    OctokitResponse<LicensesGetForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository
    */
-  "GET /repos/:owner/:repo/milestones": {
-    parameters: IssuesListMilestonesForRepoEndpoint;
-    request: IssuesListMilestonesForRepoRequestOptions;
-    response: OctokitResponse<IssuesListMilestonesForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/milestones": Endpoint<
+    IssuesListMilestonesForRepoEndpoint,
+    IssuesListMilestonesForRepoRequestOptions,
+    OctokitResponse<IssuesListMilestonesForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/milestones/#get-a-single-milestone
    */
-  "GET /repos/:owner/:repo/milestones/:milestone_number": {
-    parameters: IssuesGetMilestoneEndpoint;
-    request: IssuesGetMilestoneRequestOptions;
-    response: OctokitResponse<IssuesGetMilestoneResponseData>;
-  };
+  "GET /repos/:owner/:repo/milestones/:milestone_number": Endpoint<
+    IssuesGetMilestoneEndpoint,
+    IssuesGetMilestoneRequestOptions,
+    OctokitResponse<IssuesGetMilestoneResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone
    */
-  "GET /repos/:owner/:repo/milestones/:milestone_number/labels": {
-    parameters: IssuesListLabelsForMilestoneEndpoint;
-    request: IssuesListLabelsForMilestoneRequestOptions;
-    response: OctokitResponse<IssuesListLabelsForMilestoneResponseData>;
-  };
+  "GET /repos/:owner/:repo/milestones/:milestone_number/labels": Endpoint<
+    IssuesListLabelsForMilestoneEndpoint,
+    IssuesListLabelsForMilestoneRequestOptions,
+    OctokitResponse<IssuesListLabelsForMilestoneResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#list-repository-notifications-for-the-authenticated-user
    */
-  "GET /repos/:owner/:repo/notifications": {
-    parameters: ActivityListRepoNotificationsForAuthenticatedUserEndpoint;
-    request: ActivityListRepoNotificationsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
+  "GET /repos/:owner/:repo/notifications": Endpoint<
+    ActivityListRepoNotificationsForAuthenticatedUserEndpoint,
+    ActivityListRepoNotificationsForAuthenticatedUserRequestOptions,
+    OctokitResponse<
       ActivityListRepoNotificationsForAuthenticatedUserResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site
    */
-  "GET /repos/:owner/:repo/pages": {
-    parameters: ReposGetPagesEndpoint;
-    request: ReposGetPagesRequestOptions;
-    response: OctokitResponse<ReposGetPagesResponseData>;
-  };
+  "GET /repos/:owner/:repo/pages": Endpoint<
+    ReposGetPagesEndpoint,
+    ReposGetPagesRequestOptions,
+    OctokitResponse<ReposGetPagesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#list-pages-builds
    */
-  "GET /repos/:owner/:repo/pages/builds": {
-    parameters: ReposListPagesBuildsEndpoint;
-    request: ReposListPagesBuildsRequestOptions;
-    response: OctokitResponse<ReposListPagesBuildsResponseData>;
-  };
+  "GET /repos/:owner/:repo/pages/builds": Endpoint<
+    ReposListPagesBuildsEndpoint,
+    ReposListPagesBuildsRequestOptions,
+    OctokitResponse<ReposListPagesBuildsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#get-a-specific-pages-build
    */
-  "GET /repos/:owner/:repo/pages/builds/:build_id": {
-    parameters: ReposGetPagesBuildEndpoint;
-    request: ReposGetPagesBuildRequestOptions;
-    response: OctokitResponse<ReposGetPagesBuildResponseData>;
-  };
+  "GET /repos/:owner/:repo/pages/builds/:build_id": Endpoint<
+    ReposGetPagesBuildEndpoint,
+    ReposGetPagesBuildRequestOptions,
+    OctokitResponse<ReposGetPagesBuildResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#get-latest-pages-build
    */
-  "GET /repos/:owner/:repo/pages/builds/latest": {
-    parameters: ReposGetLatestPagesBuildEndpoint;
-    request: ReposGetLatestPagesBuildRequestOptions;
-    response: OctokitResponse<ReposGetLatestPagesBuildResponseData>;
-  };
+  "GET /repos/:owner/:repo/pages/builds/latest": Endpoint<
+    ReposGetLatestPagesBuildEndpoint,
+    ReposGetLatestPagesBuildRequestOptions,
+    OctokitResponse<ReposGetLatestPagesBuildResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#list-repository-projects
    */
-  "GET /repos/:owner/:repo/projects": {
-    parameters: ProjectsListForRepoEndpoint;
-    request: ProjectsListForRepoRequestOptions;
-    response: OctokitResponse<ProjectsListForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/projects": Endpoint<
+    ProjectsListForRepoEndpoint,
+    ProjectsListForRepoRequestOptions,
+    OctokitResponse<ProjectsListForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#list-pull-requests
    */
-  "GET /repos/:owner/:repo/pulls": {
-    parameters: PullsListEndpoint;
-    request: PullsListRequestOptions;
-    response: OctokitResponse<PullsListResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls": Endpoint<
+    PullsListEndpoint,
+    PullsListRequestOptions,
+    OctokitResponse<PullsListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#get-a-single-pull-request
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number": {
-    parameters: PullsGetEndpoint;
-    request: PullsGetRequestOptions;
-    response: OctokitResponse<PullsGetResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number": Endpoint<
+    PullsGetEndpoint,
+    PullsGetRequestOptions,
+    OctokitResponse<PullsGetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/comments": {
-    parameters: PullsListCommentsEndpoint;
-    request: PullsListCommentsRequestOptions;
-    response: OctokitResponse<PullsListCommentsResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/comments": Endpoint<
+    PullsListCommentsEndpoint,
+    PullsListCommentsRequestOptions,
+    OctokitResponse<PullsListCommentsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#list-commits-on-a-pull-request
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/commits": {
-    parameters: PullsListCommitsEndpoint;
-    request: PullsListCommitsRequestOptions;
-    response: OctokitResponse<PullsListCommitsResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/commits": Endpoint<
+    PullsListCommitsEndpoint,
+    PullsListCommitsRequestOptions,
+    OctokitResponse<PullsListCommitsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#list-pull-requests-files
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/files": {
-    parameters: PullsListFilesEndpoint;
-    request: PullsListFilesRequestOptions;
-    response: OctokitResponse<PullsListFilesResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/files": Endpoint<
+    PullsListFilesEndpoint,
+    PullsListFilesRequestOptions,
+    OctokitResponse<PullsListFilesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/merge": {
-    parameters: PullsCheckIfMergedEndpoint;
-    request: PullsCheckIfMergedRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/merge": Endpoint<
+    PullsCheckIfMergedEndpoint,
+    PullsCheckIfMergedRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/review_requests/#list-review-requests
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsListReviewRequestsEndpoint;
-    request: PullsListReviewRequestsRequestOptions;
-    response: OctokitResponse<PullsListReviewRequestsResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": Endpoint<
+    PullsListReviewRequestsEndpoint,
+    PullsListReviewRequestsRequestOptions,
+    OctokitResponse<PullsListReviewRequestsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#list-reviews-on-a-pull-request
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/reviews": {
-    parameters: PullsListReviewsEndpoint;
-    request: PullsListReviewsRequestOptions;
-    response: OctokitResponse<PullsListReviewsResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/reviews": Endpoint<
+    PullsListReviewsEndpoint,
+    PullsListReviewsRequestOptions,
+    OctokitResponse<PullsListReviewsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#get-a-single-review
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
-    parameters: PullsGetReviewEndpoint;
-    request: PullsGetReviewRequestOptions;
-    response: OctokitResponse<PullsGetReviewResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": Endpoint<
+    PullsGetReviewEndpoint,
+    PullsGetReviewRequestOptions,
+    OctokitResponse<PullsGetReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#get-comments-for-a-single-review
    */
-  "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments": {
-    parameters: PullsGetCommentsForReviewEndpoint;
-    request: PullsGetCommentsForReviewRequestOptions;
-    response: OctokitResponse<PullsGetCommentsForReviewResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments": Endpoint<
+    PullsGetCommentsForReviewEndpoint,
+    PullsGetCommentsForReviewRequestOptions,
+    OctokitResponse<PullsGetCommentsForReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository
    */
-  "GET /repos/:owner/:repo/pulls/comments": {
-    parameters: PullsListCommentsForRepoEndpoint;
-    request: PullsListCommentsForRepoRequestOptions;
-    response: OctokitResponse<PullsListCommentsForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/comments": Endpoint<
+    PullsListCommentsForRepoEndpoint,
+    PullsListCommentsForRepoRequestOptions,
+    OctokitResponse<PullsListCommentsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#get-a-single-comment
    */
-  "GET /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsGetCommentEndpoint;
-    request: PullsGetCommentRequestOptions;
-    response: OctokitResponse<PullsGetCommentResponseData>;
-  };
+  "GET /repos/:owner/:repo/pulls/comments/:comment_id": Endpoint<
+    PullsGetCommentEndpoint,
+    PullsGetCommentRequestOptions,
+    OctokitResponse<PullsGetCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment
    */
-  "GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions": {
-    parameters: ReactionsListForPullRequestReviewCommentEndpoint;
-    request: ReactionsListForPullRequestReviewCommentRequestOptions;
-    response: OctokitResponse<
-      ReactionsListForPullRequestReviewCommentResponseData
-    >;
-  };
+  "GET /repos/:owner/:repo/pulls/comments/:comment_id/reactions": Endpoint<
+    ReactionsListForPullRequestReviewCommentEndpoint,
+    ReactionsListForPullRequestReviewCommentRequestOptions,
+    OctokitResponse<ReactionsListForPullRequestReviewCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/contents/#get-the-readme
    */
-  "GET /repos/:owner/:repo/readme": {
-    parameters: ReposGetReadmeEndpoint;
-    request: ReposGetReadmeRequestOptions;
-    response: OctokitResponse<ReposGetReadmeResponseData>;
-  };
+  "GET /repos/:owner/:repo/readme": Endpoint<
+    ReposGetReadmeEndpoint,
+    ReposGetReadmeRequestOptions,
+    OctokitResponse<ReposGetReadmeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
    */
-  "GET /repos/:owner/:repo/releases": {
-    parameters: ReposListReleasesEndpoint;
-    request: ReposListReleasesRequestOptions;
-    response: OctokitResponse<ReposListReleasesResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases": Endpoint<
+    ReposListReleasesEndpoint,
+    ReposListReleasesRequestOptions,
+    OctokitResponse<ReposListReleasesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#get-a-single-release
    */
-  "GET /repos/:owner/:repo/releases/:release_id": {
-    parameters: ReposGetReleaseEndpoint;
-    request: ReposGetReleaseRequestOptions;
-    response: OctokitResponse<ReposGetReleaseResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases/:release_id": Endpoint<
+    ReposGetReleaseEndpoint,
+    ReposGetReleaseRequestOptions,
+    OctokitResponse<ReposGetReleaseResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#list-assets-for-a-release
    */
-  "GET /repos/:owner/:repo/releases/:release_id/assets": {
-    parameters: ReposListAssetsForReleaseEndpoint;
-    request: ReposListAssetsForReleaseRequestOptions;
-    response: OctokitResponse<ReposListAssetsForReleaseResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases/:release_id/assets": Endpoint<
+    ReposListAssetsForReleaseEndpoint,
+    ReposListAssetsForReleaseRequestOptions,
+    OctokitResponse<ReposListAssetsForReleaseResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#get-a-single-release-asset
    */
-  "GET /repos/:owner/:repo/releases/assets/:asset_id": {
-    parameters: ReposGetReleaseAssetEndpoint;
-    request: ReposGetReleaseAssetRequestOptions;
-    response: OctokitResponse<ReposGetReleaseAssetResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases/assets/:asset_id": Endpoint<
+    ReposGetReleaseAssetEndpoint,
+    ReposGetReleaseAssetRequestOptions,
+    OctokitResponse<ReposGetReleaseAssetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#get-the-latest-release
    */
-  "GET /repos/:owner/:repo/releases/latest": {
-    parameters: ReposGetLatestReleaseEndpoint;
-    request: ReposGetLatestReleaseRequestOptions;
-    response: OctokitResponse<ReposGetLatestReleaseResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases/latest": Endpoint<
+    ReposGetLatestReleaseEndpoint,
+    ReposGetLatestReleaseRequestOptions,
+    OctokitResponse<ReposGetLatestReleaseResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#get-a-release-by-tag-name
    */
-  "GET /repos/:owner/:repo/releases/tags/:tag": {
-    parameters: ReposGetReleaseByTagEndpoint;
-    request: ReposGetReleaseByTagRequestOptions;
-    response: OctokitResponse<ReposGetReleaseByTagResponseData>;
-  };
+  "GET /repos/:owner/:repo/releases/tags/:tag": Endpoint<
+    ReposGetReleaseByTagEndpoint,
+    ReposGetReleaseByTagRequestOptions,
+    OctokitResponse<ReposGetReleaseByTagResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#list-stargazers
    */
-  "GET /repos/:owner/:repo/stargazers": {
-    parameters: ActivityListStargazersForRepoEndpoint;
-    request: ActivityListStargazersForRepoRequestOptions;
-    response: OctokitResponse<ActivityListStargazersForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/stargazers": Endpoint<
+    ActivityListStargazersForRepoEndpoint,
+    ActivityListStargazersForRepoRequestOptions,
+    OctokitResponse<ActivityListStargazersForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-additions-and-deletions-per-week
    */
-  "GET /repos/:owner/:repo/stats/code_frequency": {
-    parameters: ReposGetCodeFrequencyStatsEndpoint;
-    request: ReposGetCodeFrequencyStatsRequestOptions;
-    response: OctokitResponse<ReposGetCodeFrequencyStatsResponseData>;
-  };
+  "GET /repos/:owner/:repo/stats/code_frequency": Endpoint<
+    ReposGetCodeFrequencyStatsEndpoint,
+    ReposGetCodeFrequencyStatsRequestOptions,
+    OctokitResponse<ReposGetCodeFrequencyStatsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statistics/#get-the-last-year-of-commit-activity-data
    */
-  "GET /repos/:owner/:repo/stats/commit_activity": {
-    parameters: ReposGetCommitActivityStatsEndpoint;
-    request: ReposGetCommitActivityStatsRequestOptions;
-    response: OctokitResponse<ReposGetCommitActivityStatsResponseData>;
-  };
+  "GET /repos/:owner/:repo/stats/commit_activity": Endpoint<
+    ReposGetCommitActivityStatsEndpoint,
+    ReposGetCommitActivityStatsRequestOptions,
+    OctokitResponse<ReposGetCommitActivityStatsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts
    */
-  "GET /repos/:owner/:repo/stats/contributors": {
-    parameters: ReposGetContributorsStatsEndpoint;
-    request: ReposGetContributorsStatsRequestOptions;
-    response: OctokitResponse<ReposGetContributorsStatsResponseData>;
-  };
+  "GET /repos/:owner/:repo/stats/contributors": Endpoint<
+    ReposGetContributorsStatsEndpoint,
+    ReposGetContributorsStatsRequestOptions,
+    OctokitResponse<ReposGetContributorsStatsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count-for-the-repository-owner-and-everyone-else
    */
-  "GET /repos/:owner/:repo/stats/participation": {
-    parameters: ReposGetParticipationStatsEndpoint;
-    request: ReposGetParticipationStatsRequestOptions;
-    response: OctokitResponse<ReposGetParticipationStatsResponseData>;
-  };
+  "GET /repos/:owner/:repo/stats/participation": Endpoint<
+    ReposGetParticipationStatsEndpoint,
+    ReposGetParticipationStatsRequestOptions,
+    OctokitResponse<ReposGetParticipationStatsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day
    */
-  "GET /repos/:owner/:repo/stats/punch_card": {
-    parameters: ReposGetPunchCardStatsEndpoint;
-    request: ReposGetPunchCardStatsRequestOptions;
-    response: OctokitResponse<ReposGetPunchCardStatsResponseData>;
-  };
+  "GET /repos/:owner/:repo/stats/punch_card": Endpoint<
+    ReposGetPunchCardStatsEndpoint,
+    ReposGetPunchCardStatsRequestOptions,
+    OctokitResponse<ReposGetPunchCardStatsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#list-watchers
    */
-  "GET /repos/:owner/:repo/subscribers": {
-    parameters: ActivityListWatchersForRepoEndpoint;
-    request: ActivityListWatchersForRepoRequestOptions;
-    response: OctokitResponse<ActivityListWatchersForRepoResponseData>;
-  };
+  "GET /repos/:owner/:repo/subscribers": Endpoint<
+    ActivityListWatchersForRepoEndpoint,
+    ActivityListWatchersForRepoRequestOptions,
+    OctokitResponse<ActivityListWatchersForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#get-a-repository-subscription
    */
-  "GET /repos/:owner/:repo/subscription": {
-    parameters: ActivityGetRepoSubscriptionEndpoint;
-    request: ActivityGetRepoSubscriptionRequestOptions;
-    response: OctokitResponse<ActivityGetRepoSubscriptionResponseData>;
-  };
+  "GET /repos/:owner/:repo/subscription": Endpoint<
+    ActivityGetRepoSubscriptionEndpoint,
+    ActivityGetRepoSubscriptionRequestOptions,
+    OctokitResponse<ActivityGetRepoSubscriptionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-tags
    */
-  "GET /repos/:owner/:repo/tags": {
-    parameters: ReposListTagsEndpoint;
-    request: ReposListTagsRequestOptions;
-    response: OctokitResponse<ReposListTagsResponseData>;
-  };
+  "GET /repos/:owner/:repo/tags": Endpoint<
+    ReposListTagsEndpoint,
+    ReposListTagsRequestOptions,
+    OctokitResponse<ReposListTagsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-teams
    */
-  "GET /repos/:owner/:repo/teams": {
-    parameters: ReposListTeamsEndpoint;
-    request: ReposListTeamsRequestOptions;
-    response: OctokitResponse<ReposListTeamsResponseData>;
-  };
+  "GET /repos/:owner/:repo/teams": Endpoint<
+    ReposListTeamsEndpoint,
+    ReposListTeamsRequestOptions,
+    OctokitResponse<ReposListTeamsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#get-all-repository-topics
    */
-  "GET /repos/:owner/:repo/topics": {
-    parameters: ReposGetAllTopicsEndpoint;
-    request: ReposGetAllTopicsRequestOptions;
-    response: OctokitResponse<ReposGetAllTopicsResponseData>;
-  };
+  "GET /repos/:owner/:repo/topics": Endpoint<
+    ReposGetAllTopicsEndpoint,
+    ReposGetAllTopicsRequestOptions,
+    OctokitResponse<ReposGetAllTopicsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/traffic/#clones
    */
-  "GET /repos/:owner/:repo/traffic/clones": {
-    parameters: ReposGetClonesEndpoint;
-    request: ReposGetClonesRequestOptions;
-    response: OctokitResponse<ReposGetClonesResponseData>;
-  };
+  "GET /repos/:owner/:repo/traffic/clones": Endpoint<
+    ReposGetClonesEndpoint,
+    ReposGetClonesRequestOptions,
+    OctokitResponse<ReposGetClonesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/traffic/#list-paths
    */
-  "GET /repos/:owner/:repo/traffic/popular/paths": {
-    parameters: ReposGetTopPathsEndpoint;
-    request: ReposGetTopPathsRequestOptions;
-    response: OctokitResponse<ReposGetTopPathsResponseData>;
-  };
+  "GET /repos/:owner/:repo/traffic/popular/paths": Endpoint<
+    ReposGetTopPathsEndpoint,
+    ReposGetTopPathsRequestOptions,
+    OctokitResponse<ReposGetTopPathsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/traffic/#list-referrers
    */
-  "GET /repos/:owner/:repo/traffic/popular/referrers": {
-    parameters: ReposGetTopReferrersEndpoint;
-    request: ReposGetTopReferrersRequestOptions;
-    response: OctokitResponse<ReposGetTopReferrersResponseData>;
-  };
+  "GET /repos/:owner/:repo/traffic/popular/referrers": Endpoint<
+    ReposGetTopReferrersEndpoint,
+    ReposGetTopReferrersRequestOptions,
+    OctokitResponse<ReposGetTopReferrersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/traffic/#views
    */
-  "GET /repos/:owner/:repo/traffic/views": {
-    parameters: ReposGetViewsEndpoint;
-    request: ReposGetViewsRequestOptions;
-    response: OctokitResponse<ReposGetViewsResponseData>;
-  };
+  "GET /repos/:owner/:repo/traffic/views": Endpoint<
+    ReposGetViewsEndpoint,
+    ReposGetViewsRequestOptions,
+    OctokitResponse<ReposGetViewsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#check-if-vulnerability-alerts-are-enabled-for-a-repository
    */
-  "GET /repos/:owner/:repo/vulnerability-alerts": {
-    parameters: ReposCheckVulnerabilityAlertsEndpoint;
-    request: ReposCheckVulnerabilityAlertsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /repos/:owner/:repo/vulnerability-alerts": Endpoint<
+    ReposCheckVulnerabilityAlertsEndpoint,
+    ReposCheckVulnerabilityAlertsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-public-repositories
    */
-  "GET /repositories": {
-    parameters: ReposListPublicEndpoint;
-    request: ReposListPublicRequestOptions;
-    response: OctokitResponse<ReposListPublicResponseData>;
-  };
+  "GET /repositories": Endpoint<
+    ReposListPublicEndpoint,
+    ReposListPublicRequestOptions,
+    OctokitResponse<ReposListPublicResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#get-a-list-of-provisioned-identities
    */
-  "GET /scim/v2/organizations/:org/Users": {
-    parameters: ScimListProvisionedIdentitiesEndpoint;
-    request: ScimListProvisionedIdentitiesRequestOptions;
-    response: OctokitResponse<ScimListProvisionedIdentitiesResponseData>;
-  };
+  "GET /scim/v2/organizations/:org/Users": Endpoint<
+    ScimListProvisionedIdentitiesEndpoint,
+    ScimListProvisionedIdentitiesRequestOptions,
+    OctokitResponse<ScimListProvisionedIdentitiesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#get-provisioning-details-for-a-single-user
    */
-  "GET /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimGetProvisioningDetailsForUserEndpoint;
-    request: ScimGetProvisioningDetailsForUserRequestOptions;
-    response: OctokitResponse<ScimGetProvisioningDetailsForUserResponseData>;
-  };
+  "GET /scim/v2/organizations/:org/Users/:scim_user_id": Endpoint<
+    ScimGetProvisioningDetailsForUserEndpoint,
+    ScimGetProvisioningDetailsForUserRequestOptions,
+    OctokitResponse<ScimGetProvisioningDetailsForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-code
    */
-  "GET /search/code": {
-    parameters: SearchCodeEndpoint;
-    request: SearchCodeRequestOptions;
-    response: OctokitResponse<SearchCodeResponseData>;
-  };
+  "GET /search/code": Endpoint<
+    SearchCodeEndpoint,
+    SearchCodeRequestOptions,
+    OctokitResponse<SearchCodeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-commits
    */
-  "GET /search/commits": {
-    parameters: SearchCommitsEndpoint;
-    request: SearchCommitsRequestOptions;
-    response: OctokitResponse<SearchCommitsResponseData>;
-  };
+  "GET /search/commits": Endpoint<
+    SearchCommitsEndpoint,
+    SearchCommitsRequestOptions,
+    OctokitResponse<SearchCommitsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-issues-and-pull-requests
    */
-  "GET /search/issues": {
-    parameters: SearchIssuesAndPullRequestsEndpoint;
-    request: SearchIssuesAndPullRequestsRequestOptions;
-    response: OctokitResponse<SearchIssuesAndPullRequestsResponseData>;
-  };
+  "GET /search/issues": Endpoint<
+    SearchIssuesAndPullRequestsEndpoint,
+    SearchIssuesAndPullRequestsRequestOptions,
+    OctokitResponse<SearchIssuesAndPullRequestsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-labels
    */
-  "GET /search/labels": {
-    parameters: SearchLabelsEndpoint;
-    request: SearchLabelsRequestOptions;
-    response: OctokitResponse<SearchLabelsResponseData>;
-  };
+  "GET /search/labels": Endpoint<
+    SearchLabelsEndpoint,
+    SearchLabelsRequestOptions,
+    OctokitResponse<SearchLabelsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-repositories
    */
-  "GET /search/repositories": {
-    parameters: SearchReposEndpoint;
-    request: SearchReposRequestOptions;
-    response: OctokitResponse<SearchReposResponseData>;
-  };
+  "GET /search/repositories": Endpoint<
+    SearchReposEndpoint,
+    SearchReposRequestOptions,
+    OctokitResponse<SearchReposResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-topics
    */
-  "GET /search/topics": {
-    parameters: SearchTopicsEndpoint;
-    request: SearchTopicsRequestOptions;
-    response: OctokitResponse<SearchTopicsResponseData>;
-  };
+  "GET /search/topics": Endpoint<
+    SearchTopicsEndpoint,
+    SearchTopicsRequestOptions,
+    OctokitResponse<SearchTopicsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/search/#search-users
    */
-  "GET /search/users": {
-    parameters: SearchUsersEndpoint;
-    request: SearchUsersRequestOptions;
-    response: OctokitResponse<SearchUsersResponseData>;
-  };
+  "GET /search/users": Endpoint<
+    SearchUsersEndpoint,
+    SearchUsersRequestOptions,
+    OctokitResponse<SearchUsersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#get-team-legacy
    */
-  "GET /teams/:team_id": {
-    parameters: TeamsGetLegacyEndpoint;
-    request: TeamsGetLegacyRequestOptions;
-    response: OctokitResponse<TeamsGetLegacyResponseData>;
-  };
+  "GET /teams/:team_id": Endpoint<
+    TeamsGetLegacyEndpoint,
+    TeamsGetLegacyRequestOptions,
+    OctokitResponse<TeamsGetLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#list-discussions-legacy
    */
-  "GET /teams/:team_id/discussions": {
-    parameters: TeamsListDiscussionsLegacyEndpoint;
-    request: TeamsListDiscussionsLegacyRequestOptions;
-    response: OctokitResponse<TeamsListDiscussionsLegacyResponseData>;
-  };
+  "GET /teams/:team_id/discussions": Endpoint<
+    TeamsListDiscussionsLegacyEndpoint,
+    TeamsListDiscussionsLegacyRequestOptions,
+    OctokitResponse<TeamsListDiscussionsLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
    */
-  "GET /teams/:team_id/discussions/:discussion_number": {
-    parameters: TeamsGetDiscussionLegacyEndpoint;
-    request: TeamsGetDiscussionLegacyRequestOptions;
-    response: OctokitResponse<TeamsGetDiscussionLegacyResponseData>;
-  };
+  "GET /teams/:team_id/discussions/:discussion_number": Endpoint<
+    TeamsGetDiscussionLegacyEndpoint,
+    TeamsGetDiscussionLegacyRequestOptions,
+    OctokitResponse<TeamsGetDiscussionLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
    */
-  "GET /teams/:team_id/discussions/:discussion_number/comments": {
-    parameters: TeamsListDiscussionCommentsLegacyEndpoint;
-    request: TeamsListDiscussionCommentsLegacyRequestOptions;
-    response: OctokitResponse<TeamsListDiscussionCommentsLegacyResponseData>;
-  };
+  "GET /teams/:team_id/discussions/:discussion_number/comments": Endpoint<
+    TeamsListDiscussionCommentsLegacyEndpoint,
+    TeamsListDiscussionCommentsLegacyRequestOptions,
+    OctokitResponse<TeamsListDiscussionCommentsLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
    */
-  "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsGetDiscussionCommentLegacyEndpoint;
-    request: TeamsGetDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<TeamsGetDiscussionCommentLegacyResponseData>;
-  };
+  "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsGetDiscussionCommentLegacyEndpoint,
+    TeamsGetDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<TeamsGetDiscussionCommentLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-comment-legacy
    */
-  "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": {
-    parameters: ReactionsListForTeamDiscussionCommentLegacyEndpoint;
-    request: ReactionsListForTeamDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<
-      ReactionsListForTeamDiscussionCommentLegacyResponseData
-    >;
-  };
+  "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": Endpoint<
+    ReactionsListForTeamDiscussionCommentLegacyEndpoint,
+    ReactionsListForTeamDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<ReactionsListForTeamDiscussionCommentLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-team-discussion-legacy
    */
-  "GET /teams/:team_id/discussions/:discussion_number/reactions": {
-    parameters: ReactionsListForTeamDiscussionLegacyEndpoint;
-    request: ReactionsListForTeamDiscussionLegacyRequestOptions;
-    response: OctokitResponse<ReactionsListForTeamDiscussionLegacyResponseData>;
-  };
+  "GET /teams/:team_id/discussions/:discussion_number/reactions": Endpoint<
+    ReactionsListForTeamDiscussionLegacyEndpoint,
+    ReactionsListForTeamDiscussionLegacyRequestOptions,
+    OctokitResponse<ReactionsListForTeamDiscussionLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#list-pending-team-invitations-legacy
    */
-  "GET /teams/:team_id/invitations": {
-    parameters: TeamsListPendingInvitationsLegacyEndpoint;
-    request: TeamsListPendingInvitationsLegacyRequestOptions;
-    response: OctokitResponse<TeamsListPendingInvitationsLegacyResponseData>;
-  };
+  "GET /teams/:team_id/invitations": Endpoint<
+    TeamsListPendingInvitationsLegacyEndpoint,
+    TeamsListPendingInvitationsLegacyRequestOptions,
+    OctokitResponse<TeamsListPendingInvitationsLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#list-team-members-legacy
    */
-  "GET /teams/:team_id/members": {
-    parameters: TeamsListMembersLegacyEndpoint;
-    request: TeamsListMembersLegacyRequestOptions;
-    response: OctokitResponse<TeamsListMembersLegacyResponseData>;
-  };
+  "GET /teams/:team_id/members": Endpoint<
+    TeamsListMembersLegacyEndpoint,
+    TeamsListMembersLegacyRequestOptions,
+    OctokitResponse<TeamsListMembersLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#get-team-member-legacy
    */
-  "GET /teams/:team_id/members/:username": {
-    parameters: TeamsGetMemberLegacyEndpoint;
-    request: TeamsGetMemberLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /teams/:team_id/members/:username": Endpoint<
+    TeamsGetMemberLegacyEndpoint,
+    TeamsGetMemberLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
    */
-  "GET /teams/:team_id/memberships/:username": {
-    parameters: TeamsGetMembershipLegacyEndpoint;
-    request: TeamsGetMembershipLegacyRequestOptions;
-    response: OctokitResponse<TeamsGetMembershipLegacyResponseData>;
-  };
+  "GET /teams/:team_id/memberships/:username": Endpoint<
+    TeamsGetMembershipLegacyEndpoint,
+    TeamsGetMembershipLegacyRequestOptions,
+    OctokitResponse<TeamsGetMembershipLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-team-projects-legacy
    */
-  "GET /teams/:team_id/projects": {
-    parameters: TeamsListProjectsLegacyEndpoint;
-    request: TeamsListProjectsLegacyRequestOptions;
-    response: OctokitResponse<TeamsListProjectsLegacyResponseData>;
-  };
+  "GET /teams/:team_id/projects": Endpoint<
+    TeamsListProjectsLegacyEndpoint,
+    TeamsListProjectsLegacyRequestOptions,
+    OctokitResponse<TeamsListProjectsLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#review-a-team-project-legacy
    */
-  "GET /teams/:team_id/projects/:project_id": {
-    parameters: TeamsReviewProjectLegacyEndpoint;
-    request: TeamsReviewProjectLegacyRequestOptions;
-    response: OctokitResponse<TeamsReviewProjectLegacyResponseData>;
-  };
+  "GET /teams/:team_id/projects/:project_id": Endpoint<
+    TeamsReviewProjectLegacyEndpoint,
+    TeamsReviewProjectLegacyRequestOptions,
+    OctokitResponse<TeamsReviewProjectLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-team-repos-legacy
    */
-  "GET /teams/:team_id/repos": {
-    parameters: TeamsListReposLegacyEndpoint;
-    request: TeamsListReposLegacyRequestOptions;
-    response: OctokitResponse<TeamsListReposLegacyResponseData>;
-  };
+  "GET /teams/:team_id/repos": Endpoint<
+    TeamsListReposLegacyEndpoint,
+    TeamsListReposLegacyRequestOptions,
+    OctokitResponse<TeamsListReposLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
    */
-  "GET /teams/:team_id/repos/:owner/:repo": {
-    parameters: TeamsCheckManagesRepoLegacyEndpoint;
-    request: TeamsCheckManagesRepoLegacyRequestOptions;
-    response: OctokitResponse<TeamsCheckManagesRepoLegacyResponseData>;
-  };
+  "GET /teams/:team_id/repos/:owner/:repo": Endpoint<
+    TeamsCheckManagesRepoLegacyEndpoint,
+    TeamsCheckManagesRepoLegacyRequestOptions,
+    OctokitResponse<TeamsCheckManagesRepoLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team-legacy
    */
-  "GET /teams/:team_id/team-sync/group-mappings": {
-    parameters: TeamsListIdPGroupsForLegacyEndpoint;
-    request: TeamsListIdPGroupsForLegacyRequestOptions;
-    response: OctokitResponse<TeamsListIdPGroupsForLegacyResponseData>;
-  };
+  "GET /teams/:team_id/team-sync/group-mappings": Endpoint<
+    TeamsListIdPGroupsForLegacyEndpoint,
+    TeamsListIdPGroupsForLegacyRequestOptions,
+    OctokitResponse<TeamsListIdPGroupsForLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-child-teams-legacy
    */
-  "GET /teams/:team_id/teams": {
-    parameters: TeamsListChildLegacyEndpoint;
-    request: TeamsListChildLegacyRequestOptions;
-    response: OctokitResponse<TeamsListChildLegacyResponseData>;
-  };
+  "GET /teams/:team_id/teams": Endpoint<
+    TeamsListChildLegacyEndpoint,
+    TeamsListChildLegacyRequestOptions,
+    OctokitResponse<TeamsListChildLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/#get-the-authenticated-user
    */
-  "GET /user": {
-    parameters: UsersGetAuthenticatedEndpoint;
-    request: UsersGetAuthenticatedRequestOptions;
-    response: OctokitResponse<UsersGetAuthenticatedResponseData>;
-  };
+  "GET /user": Endpoint<
+    UsersGetAuthenticatedEndpoint,
+    UsersGetAuthenticatedRequestOptions,
+    OctokitResponse<UsersGetAuthenticatedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration
    */
-  "GET /user/:migration_id/repositories": {
-    parameters: MigrationsListReposForUserEndpoint;
-    request: MigrationsListReposForUserRequestOptions;
-    response: OctokitResponse<MigrationsListReposForUserResponseData>;
-  };
+  "GET /user/:migration_id/repositories": Endpoint<
+    MigrationsListReposForUserEndpoint,
+    MigrationsListReposForUserRequestOptions,
+    OctokitResponse<MigrationsListReposForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/blocking/#list-blocked-users
    */
-  "GET /user/blocks": {
-    parameters: UsersListBlockedEndpoint;
-    request: UsersListBlockedRequestOptions;
-    response: OctokitResponse<UsersListBlockedResponseData>;
-  };
+  "GET /user/blocks": Endpoint<
+    UsersListBlockedEndpoint,
+    UsersListBlockedRequestOptions,
+    OctokitResponse<UsersListBlockedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/blocking/#check-whether-youve-blocked-a-user
    */
-  "GET /user/blocks/:username": {
-    parameters: UsersCheckBlockedEndpoint;
-    request: UsersCheckBlockedRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/blocks/:username": Endpoint<
+    UsersCheckBlockedEndpoint,
+    UsersCheckBlockedRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user
    */
-  "GET /user/emails": {
-    parameters: UsersListEmailsEndpoint;
-    request: UsersListEmailsRequestOptions;
-    response: OctokitResponse<UsersListEmailsResponseData>;
-  };
+  "GET /user/emails": Endpoint<
+    UsersListEmailsEndpoint,
+    UsersListEmailsRequestOptions,
+    OctokitResponse<UsersListEmailsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#list-followers-of-the-authenticated-user
    */
-  "GET /user/followers": {
-    parameters: UsersListFollowersForAuthenticatedUserEndpoint;
-    request: UsersListFollowersForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      UsersListFollowersForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/followers": Endpoint<
+    UsersListFollowersForAuthenticatedUserEndpoint,
+    UsersListFollowersForAuthenticatedUserRequestOptions,
+    OctokitResponse<UsersListFollowersForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user
    */
-  "GET /user/following": {
-    parameters: UsersListFollowedByAuthenticatedEndpoint;
-    request: UsersListFollowedByAuthenticatedRequestOptions;
-    response: OctokitResponse<UsersListFollowedByAuthenticatedResponseData>;
-  };
+  "GET /user/following": Endpoint<
+    UsersListFollowedByAuthenticatedEndpoint,
+    UsersListFollowedByAuthenticatedRequestOptions,
+    OctokitResponse<UsersListFollowedByAuthenticatedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user
    */
-  "GET /user/following/:username": {
-    parameters: UsersCheckFollowingEndpoint;
-    request: UsersCheckFollowingRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/following/:username": Endpoint<
+    UsersCheckFollowingEndpoint,
+    UsersCheckFollowingRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/gpg_keys/#list-your-gpg-keys
    */
-  "GET /user/gpg_keys": {
-    parameters: UsersListGpgKeysEndpoint;
-    request: UsersListGpgKeysRequestOptions;
-    response: OctokitResponse<UsersListGpgKeysResponseData>;
-  };
+  "GET /user/gpg_keys": Endpoint<
+    UsersListGpgKeysEndpoint,
+    UsersListGpgKeysRequestOptions,
+    OctokitResponse<UsersListGpgKeysResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/gpg_keys/#get-a-single-gpg-key
    */
-  "GET /user/gpg_keys/:gpg_key_id": {
-    parameters: UsersGetGpgKeyEndpoint;
-    request: UsersGetGpgKeyRequestOptions;
-    response: OctokitResponse<UsersGetGpgKeyResponseData>;
-  };
+  "GET /user/gpg_keys/:gpg_key_id": Endpoint<
+    UsersGetGpgKeyEndpoint,
+    UsersGetGpgKeyRequestOptions,
+    OctokitResponse<UsersGetGpgKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#list-installations-for-a-user
    */
-  "GET /user/installations": {
-    parameters: AppsListInstallationsForAuthenticatedUserEndpoint;
-    request: AppsListInstallationsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      AppsListInstallationsForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/installations": Endpoint<
+    AppsListInstallationsForAuthenticatedUserEndpoint,
+    AppsListInstallationsForAuthenticatedUserRequestOptions,
+    OctokitResponse<AppsListInstallationsForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-for-an-installation
    */
-  "GET /user/installations/:installation_id/repositories": {
-    parameters: AppsListInstallationReposForAuthenticatedUserEndpoint;
-    request: AppsListInstallationReposForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      AppsListInstallationReposForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/installations/:installation_id/repositories": Endpoint<
+    AppsListInstallationReposForAuthenticatedUserEndpoint,
+    AppsListInstallationReposForAuthenticatedUserRequestOptions,
+    OctokitResponse<AppsListInstallationReposForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user
    */
-  "GET /user/issues": {
-    parameters: IssuesListForAuthenticatedUserEndpoint;
-    request: IssuesListForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<IssuesListForAuthenticatedUserResponseData>;
-  };
+  "GET /user/issues": Endpoint<
+    IssuesListForAuthenticatedUserEndpoint,
+    IssuesListForAuthenticatedUserRequestOptions,
+    OctokitResponse<IssuesListForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/keys/#list-your-public-keys
    */
-  "GET /user/keys": {
-    parameters: UsersListPublicKeysEndpoint;
-    request: UsersListPublicKeysRequestOptions;
-    response: OctokitResponse<UsersListPublicKeysResponseData>;
-  };
+  "GET /user/keys": Endpoint<
+    UsersListPublicKeysEndpoint,
+    UsersListPublicKeysRequestOptions,
+    OctokitResponse<UsersListPublicKeysResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/keys/#get-a-single-public-key
    */
-  "GET /user/keys/:key_id": {
-    parameters: UsersGetPublicKeyEndpoint;
-    request: UsersGetPublicKeyRequestOptions;
-    response: OctokitResponse<UsersGetPublicKeyResponseData>;
-  };
+  "GET /user/keys/:key_id": Endpoint<
+    UsersGetPublicKeyEndpoint,
+    UsersGetPublicKeyRequestOptions,
+    OctokitResponse<UsersGetPublicKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user
    */
-  "GET /user/marketplace_purchases": {
-    parameters: AppsListSubscriptionsForAuthenticatedUserEndpoint;
-    request: AppsListSubscriptionsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      AppsListSubscriptionsForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/marketplace_purchases": Endpoint<
+    AppsListSubscriptionsForAuthenticatedUserEndpoint,
+    AppsListSubscriptionsForAuthenticatedUserRequestOptions,
+    OctokitResponse<AppsListSubscriptionsForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user-stubbed
    */
-  "GET /user/marketplace_purchases/stubbed": {
-    parameters: AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint;
-    request: AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions;
-    response: OctokitResponse<
+  "GET /user/marketplace_purchases/stubbed": Endpoint<
+    AppsListSubscriptionsForAuthenticatedUserStubbedEndpoint,
+    AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions,
+    OctokitResponse<
       AppsListSubscriptionsForAuthenticatedUserStubbedResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#list-your-organization-memberships
    */
-  "GET /user/memberships/orgs": {
-    parameters: OrgsListMembershipsEndpoint;
-    request: OrgsListMembershipsRequestOptions;
-    response: OctokitResponse<OrgsListMembershipsResponseData>;
-  };
+  "GET /user/memberships/orgs": Endpoint<
+    OrgsListMembershipsEndpoint,
+    OrgsListMembershipsRequestOptions,
+    OctokitResponse<OrgsListMembershipsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#get-your-organization-membership
    */
-  "GET /user/memberships/orgs/:org": {
-    parameters: OrgsGetMembershipForAuthenticatedUserEndpoint;
-    request: OrgsGetMembershipForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      OrgsGetMembershipForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/memberships/orgs/:org": Endpoint<
+    OrgsGetMembershipForAuthenticatedUserEndpoint,
+    OrgsGetMembershipForAuthenticatedUserRequestOptions,
+    OctokitResponse<OrgsGetMembershipForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#list-user-migrations
    */
-  "GET /user/migrations": {
-    parameters: MigrationsListForAuthenticatedUserEndpoint;
-    request: MigrationsListForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<MigrationsListForAuthenticatedUserResponseData>;
-  };
+  "GET /user/migrations": Endpoint<
+    MigrationsListForAuthenticatedUserEndpoint,
+    MigrationsListForAuthenticatedUserRequestOptions,
+    OctokitResponse<MigrationsListForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration
    */
-  "GET /user/migrations/:migration_id": {
-    parameters: MigrationsGetStatusForAuthenticatedUserEndpoint;
-    request: MigrationsGetStatusForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      MigrationsGetStatusForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/migrations/:migration_id": Endpoint<
+    MigrationsGetStatusForAuthenticatedUserEndpoint,
+    MigrationsGetStatusForAuthenticatedUserRequestOptions,
+    OctokitResponse<MigrationsGetStatusForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#download-a-user-migration-archive
    */
-  "GET /user/migrations/:migration_id/archive": {
-    parameters: MigrationsGetArchiveForAuthenticatedUserEndpoint;
-    request: MigrationsGetArchiveForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/migrations/:migration_id/archive": Endpoint<
+    MigrationsGetArchiveForAuthenticatedUserEndpoint,
+    MigrationsGetArchiveForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#list-your-organizations
    */
-  "GET /user/orgs": {
-    parameters: OrgsListForAuthenticatedUserEndpoint;
-    request: OrgsListForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<OrgsListForAuthenticatedUserResponseData>;
-  };
+  "GET /user/orgs": Endpoint<
+    OrgsListForAuthenticatedUserEndpoint,
+    OrgsListForAuthenticatedUserRequestOptions,
+    OctokitResponse<OrgsListForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-a-user
    */
-  "GET /user/public_emails": {
-    parameters: UsersListPublicEmailsEndpoint;
-    request: UsersListPublicEmailsRequestOptions;
-    response: OctokitResponse<UsersListPublicEmailsResponseData>;
-  };
+  "GET /user/public_emails": Endpoint<
+    UsersListPublicEmailsEndpoint,
+    UsersListPublicEmailsRequestOptions,
+    OctokitResponse<UsersListPublicEmailsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user
    */
-  "GET /user/repos": {
-    parameters: ReposListForAuthenticatedUserEndpoint;
-    request: ReposListForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/repos": Endpoint<
+    ReposListForAuthenticatedUserEndpoint,
+    ReposListForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#list-a-users-repository-invitations
    */
-  "GET /user/repository_invitations": {
-    parameters: ReposListInvitationsForAuthenticatedUserEndpoint;
-    request: ReposListInvitationsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      ReposListInvitationsForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/repository_invitations": Endpoint<
+    ReposListInvitationsForAuthenticatedUserEndpoint,
+    ReposListInvitationsForAuthenticatedUserRequestOptions,
+    OctokitResponse<ReposListInvitationsForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-the-authenticated-user
    */
-  "GET /user/starred": {
-    parameters: ActivityListReposStarredByAuthenticatedUserEndpoint;
-    request: ActivityListReposStarredByAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      ActivityListReposStarredByAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/starred": Endpoint<
+    ActivityListReposStarredByAuthenticatedUserEndpoint,
+    ActivityListReposStarredByAuthenticatedUserRequestOptions,
+    OctokitResponse<ActivityListReposStarredByAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#check-if-a-repository-is-starred-by-the-authenticated-user
    */
-  "GET /user/starred/:owner/:repo": {
-    parameters: ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint;
-    request: ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/starred/:owner/:repo": Endpoint<
+    ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint,
+    ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-the-authenticated-user
    */
-  "GET /user/subscriptions": {
-    parameters: ActivityListWatchedReposForAuthenticatedUserEndpoint;
-    request: ActivityListWatchedReposForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<
-      ActivityListWatchedReposForAuthenticatedUserResponseData
-    >;
-  };
+  "GET /user/subscriptions": Endpoint<
+    ActivityListWatchedReposForAuthenticatedUserEndpoint,
+    ActivityListWatchedReposForAuthenticatedUserRequestOptions,
+    OctokitResponse<ActivityListWatchedReposForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#check-if-you-are-watching-a-repository-legacy
    */
-  "GET /user/subscriptions/:owner/:repo": {
-    parameters: ActivityCheckWatchingRepoLegacyEndpoint;
-    request: ActivityCheckWatchingRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /user/subscriptions/:owner/:repo": Endpoint<
+    ActivityCheckWatchingRepoLegacyEndpoint,
+    ActivityCheckWatchingRepoLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#list-user-teams
    */
-  "GET /user/teams": {
-    parameters: TeamsListForAuthenticatedUserEndpoint;
-    request: TeamsListForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<TeamsListForAuthenticatedUserResponseData>;
-  };
+  "GET /user/teams": Endpoint<
+    TeamsListForAuthenticatedUserEndpoint,
+    TeamsListForAuthenticatedUserRequestOptions,
+    OctokitResponse<TeamsListForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/#get-all-users
    */
-  "GET /users": {
-    parameters: UsersListEndpoint;
-    request: UsersListRequestOptions;
-    response: OctokitResponse<UsersListResponseData>;
-  };
+  "GET /users": Endpoint<
+    UsersListEndpoint,
+    UsersListRequestOptions,
+    OctokitResponse<UsersListResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/#get-a-single-user
    */
-  "GET /users/:username": {
-    parameters: UsersGetByUsernameEndpoint;
-    request: UsersGetByUsernameRequestOptions;
-    response: OctokitResponse<UsersGetByUsernameResponseData>;
-  };
+  "GET /users/:username": Endpoint<
+    UsersGetByUsernameEndpoint,
+    UsersGetByUsernameRequestOptions,
+    OctokitResponse<UsersGetByUsernameResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-events-for-the-authenticated-user
    */
-  "GET /users/:username/events": {
-    parameters: ActivityListEventsForAuthenticatedUserEndpoint;
-    request: ActivityListEventsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/events": Endpoint<
+    ActivityListEventsForAuthenticatedUserEndpoint,
+    ActivityListEventsForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-organization-events-for-the-authenticated-user
    */
-  "GET /users/:username/events/orgs/:org": {
-    parameters: ActivityListOrgEventsForAuthenticatedUserEndpoint;
-    request: ActivityListOrgEventsForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/events/orgs/:org": Endpoint<
+    ActivityListOrgEventsForAuthenticatedUserEndpoint,
+    ActivityListOrgEventsForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events-for-a-user
    */
-  "GET /users/:username/events/public": {
-    parameters: ActivityListPublicEventsForUserEndpoint;
-    request: ActivityListPublicEventsForUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/events/public": Endpoint<
+    ActivityListPublicEventsForUserEndpoint,
+    ActivityListPublicEventsForUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#list-followers-of-a-user
    */
-  "GET /users/:username/followers": {
-    parameters: UsersListFollowersForUserEndpoint;
-    request: UsersListFollowersForUserRequestOptions;
-    response: OctokitResponse<UsersListFollowersForUserResponseData>;
-  };
+  "GET /users/:username/followers": Endpoint<
+    UsersListFollowersForUserEndpoint,
+    UsersListFollowersForUserRequestOptions,
+    OctokitResponse<UsersListFollowersForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user
    */
-  "GET /users/:username/following": {
-    parameters: UsersListFollowingForUserEndpoint;
-    request: UsersListFollowingForUserRequestOptions;
-    response: OctokitResponse<UsersListFollowingForUserResponseData>;
-  };
+  "GET /users/:username/following": Endpoint<
+    UsersListFollowingForUserEndpoint,
+    UsersListFollowingForUserRequestOptions,
+    OctokitResponse<UsersListFollowingForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#check-if-one-user-follows-another
    */
-  "GET /users/:username/following/:target_user": {
-    parameters: UsersCheckFollowingForUserEndpoint;
-    request: UsersCheckFollowingForUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/following/:target_user": Endpoint<
+    UsersCheckFollowingForUserEndpoint,
+    UsersCheckFollowingForUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#list-gists-for-a-user
    */
-  "GET /users/:username/gists": {
-    parameters: GistsListForUserEndpoint;
-    request: GistsListForUserRequestOptions;
-    response: OctokitResponse<GistsListForUserResponseData>;
-  };
+  "GET /users/:username/gists": Endpoint<
+    GistsListForUserEndpoint,
+    GistsListForUserRequestOptions,
+    OctokitResponse<GistsListForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/gpg_keys/#list-gpg-keys-for-a-user
    */
-  "GET /users/:username/gpg_keys": {
-    parameters: UsersListGpgKeysForUserEndpoint;
-    request: UsersListGpgKeysForUserRequestOptions;
-    response: OctokitResponse<UsersListGpgKeysForUserResponseData>;
-  };
+  "GET /users/:username/gpg_keys": Endpoint<
+    UsersListGpgKeysForUserEndpoint,
+    UsersListGpgKeysForUserRequestOptions,
+    OctokitResponse<UsersListGpgKeysForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/#get-contextual-information-about-a-user
    */
-  "GET /users/:username/hovercard": {
-    parameters: UsersGetContextForUserEndpoint;
-    request: UsersGetContextForUserRequestOptions;
-    response: OctokitResponse<UsersGetContextForUserResponseData>;
-  };
+  "GET /users/:username/hovercard": Endpoint<
+    UsersGetContextForUserEndpoint,
+    UsersGetContextForUserRequestOptions,
+    OctokitResponse<UsersGetContextForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#get-a-user-installation
    */
-  "GET /users/:username/installation": {
-    parameters: AppsGetUserInstallationEndpoint;
-    request: AppsGetUserInstallationRequestOptions;
-    response: OctokitResponse<AppsGetUserInstallationResponseData>;
-  };
+  "GET /users/:username/installation": Endpoint<
+    AppsGetUserInstallationEndpoint,
+    AppsGetUserInstallationRequestOptions,
+    OctokitResponse<AppsGetUserInstallationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user
    */
-  "GET /users/:username/keys": {
-    parameters: UsersListPublicKeysForUserEndpoint;
-    request: UsersListPublicKeysForUserRequestOptions;
-    response: OctokitResponse<UsersListPublicKeysForUserResponseData>;
-  };
+  "GET /users/:username/keys": Endpoint<
+    UsersListPublicKeysForUserEndpoint,
+    UsersListPublicKeysForUserRequestOptions,
+    OctokitResponse<UsersListPublicKeysForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#list-user-organizations
    */
-  "GET /users/:username/orgs": {
-    parameters: OrgsListForUserEndpoint;
-    request: OrgsListForUserRequestOptions;
-    response: OctokitResponse<OrgsListForUserResponseData>;
-  };
+  "GET /users/:username/orgs": Endpoint<
+    OrgsListForUserEndpoint,
+    OrgsListForUserRequestOptions,
+    OctokitResponse<OrgsListForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#list-user-projects
    */
-  "GET /users/:username/projects": {
-    parameters: ProjectsListForUserEndpoint;
-    request: ProjectsListForUserRequestOptions;
-    response: OctokitResponse<ProjectsListForUserResponseData>;
-  };
+  "GET /users/:username/projects": Endpoint<
+    ProjectsListForUserEndpoint,
+    ProjectsListForUserRequestOptions,
+    OctokitResponse<ProjectsListForUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-events-received-by-the-authenticated-user
    */
-  "GET /users/:username/received_events": {
-    parameters: ActivityListReceivedEventsForUserEndpoint;
-    request: ActivityListReceivedEventsForUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/received_events": Endpoint<
+    ActivityListReceivedEventsForUserEndpoint,
+    ActivityListReceivedEventsForUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events-received-by-a-user
    */
-  "GET /users/:username/received_events/public": {
-    parameters: ActivityListReceivedPublicEventsForUserEndpoint;
-    request: ActivityListReceivedPublicEventsForUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/received_events/public": Endpoint<
+    ActivityListReceivedPublicEventsForUserEndpoint,
+    ActivityListReceivedPublicEventsForUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#list-repositories-for-a-user
    */
-  "GET /users/:username/repos": {
-    parameters: ReposListForUserEndpoint;
-    request: ReposListForUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "GET /users/:username/repos": Endpoint<
+    ReposListForUserEndpoint,
+    ReposListForUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#list-repositories-starred-by-a-user
    */
-  "GET /users/:username/starred": {
-    parameters: ActivityListReposStarredByUserEndpoint;
-    request: ActivityListReposStarredByUserRequestOptions;
-    response: OctokitResponse<ActivityListReposStarredByUserResponseData>;
-  };
+  "GET /users/:username/starred": Endpoint<
+    ActivityListReposStarredByUserEndpoint,
+    ActivityListReposStarredByUserRequestOptions,
+    OctokitResponse<ActivityListReposStarredByUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#list-repositories-watched-by-a-user
    */
-  "GET /users/:username/subscriptions": {
-    parameters: ActivityListReposWatchedByUserEndpoint;
-    request: ActivityListReposWatchedByUserRequestOptions;
-    response: OctokitResponse<ActivityListReposWatchedByUserResponseData>;
-  };
+  "GET /users/:username/subscriptions": Endpoint<
+    ActivityListReposWatchedByUserEndpoint,
+    ActivityListReposWatchedByUserRequestOptions,
+    OctokitResponse<ActivityListReposWatchedByUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#reset-a-token
    */
-  "PATCH /applications/:client_id/token": {
-    parameters: AppsResetTokenEndpoint;
-    request: AppsResetTokenRequestOptions;
-    response: OctokitResponse<AppsResetTokenResponseData>;
-  };
+  "PATCH /applications/:client_id/token": Endpoint<
+    AppsResetTokenEndpoint,
+    AppsResetTokenRequestOptions,
+    OctokitResponse<AppsResetTokenResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#update-an-existing-authorization
    */
-  "PATCH /authorizations/:authorization_id": {
-    parameters: OauthAuthorizationsUpdateAuthorizationEndpoint;
-    request: OauthAuthorizationsUpdateAuthorizationRequestOptions;
-    response: OctokitResponse<
-      OauthAuthorizationsUpdateAuthorizationResponseData
-    >;
-  };
+  "PATCH /authorizations/:authorization_id": Endpoint<
+    OauthAuthorizationsUpdateAuthorizationEndpoint,
+    OauthAuthorizationsUpdateAuthorizationRequestOptions,
+    OctokitResponse<OauthAuthorizationsUpdateAuthorizationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#update-a-gist
    */
-  "PATCH /gists/:gist_id": {
-    parameters: GistsUpdateEndpoint;
-    request: GistsUpdateRequestOptions;
-    response: OctokitResponse<GistsUpdateResponseData>;
-  };
+  "PATCH /gists/:gist_id": Endpoint<
+    GistsUpdateEndpoint,
+    GistsUpdateRequestOptions,
+    OctokitResponse<GistsUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/comments/#edit-a-comment
    */
-  "PATCH /gists/:gist_id/comments/:comment_id": {
-    parameters: GistsUpdateCommentEndpoint;
-    request: GistsUpdateCommentRequestOptions;
-    response: OctokitResponse<GistsUpdateCommentResponseData>;
-  };
+  "PATCH /gists/:gist_id/comments/:comment_id": Endpoint<
+    GistsUpdateCommentEndpoint,
+    GistsUpdateCommentRequestOptions,
+    OctokitResponse<GistsUpdateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#mark-a-thread-as-read
    */
-  "PATCH /notifications/threads/:thread_id": {
-    parameters: ActivityMarkThreadAsReadEndpoint;
-    request: ActivityMarkThreadAsReadRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PATCH /notifications/threads/:thread_id": Endpoint<
+    ActivityMarkThreadAsReadEndpoint,
+    ActivityMarkThreadAsReadRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/#edit-an-organization
    */
-  "PATCH /orgs/:org": {
-    parameters: OrgsUpdateEndpoint;
-    request: OrgsUpdateRequestOptions;
-    response: OctokitResponse<OrgsUpdateResponseData>;
-  };
+  "PATCH /orgs/:org": Endpoint<
+    OrgsUpdateEndpoint,
+    OrgsUpdateRequestOptions,
+    OctokitResponse<OrgsUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#edit-a-hook
    */
-  "PATCH /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsUpdateHookEndpoint;
-    request: OrgsUpdateHookRequestOptions;
-    response: OctokitResponse<OrgsUpdateHookResponseData>;
-  };
+  "PATCH /orgs/:org/hooks/:hook_id": Endpoint<
+    OrgsUpdateHookEndpoint,
+    OrgsUpdateHookRequestOptions,
+    OctokitResponse<OrgsUpdateHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#edit-team
    */
-  "PATCH /orgs/:org/teams/:team_slug": {
-    parameters: TeamsUpdateInOrgEndpoint;
-    request: TeamsUpdateInOrgRequestOptions;
-    response: OctokitResponse<TeamsUpdateInOrgResponseData>;
-  };
+  "PATCH /orgs/:org/teams/:team_slug": Endpoint<
+    TeamsUpdateInOrgEndpoint,
+    TeamsUpdateInOrgRequestOptions,
+    OctokitResponse<TeamsUpdateInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion
    */
-  "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number": {
-    parameters: TeamsUpdateDiscussionInOrgEndpoint;
-    request: TeamsUpdateDiscussionInOrgRequestOptions;
-    response: OctokitResponse<TeamsUpdateDiscussionInOrgResponseData>;
-  };
+  "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number": Endpoint<
+    TeamsUpdateDiscussionInOrgEndpoint,
+    TeamsUpdateDiscussionInOrgRequestOptions,
+    OctokitResponse<TeamsUpdateDiscussionInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment
    */
-  "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsUpdateDiscussionCommentInOrgEndpoint;
-    request: TeamsUpdateDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<TeamsUpdateDiscussionCommentInOrgResponseData>;
-  };
+  "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsUpdateDiscussionCommentInOrgEndpoint,
+    TeamsUpdateDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<TeamsUpdateDiscussionCommentInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections
    */
-  "PATCH /orgs/:org/teams/:team_slug/team-sync/group-mappings": {
-    parameters: TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint;
-    request: TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions;
-    response: OctokitResponse<
-      TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData
-    >;
-  };
+  "PATCH /orgs/:org/teams/:team_slug/team-sync/group-mappings": Endpoint<
+    TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint,
+    TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions,
+    OctokitResponse<TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#update-a-project
    */
-  "PATCH /projects/:project_id": {
-    parameters: ProjectsUpdateEndpoint;
-    request: ProjectsUpdateRequestOptions;
-    response: OctokitResponse<ProjectsUpdateResponseData>;
-  };
+  "PATCH /projects/:project_id": Endpoint<
+    ProjectsUpdateEndpoint,
+    ProjectsUpdateRequestOptions,
+    OctokitResponse<ProjectsUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#update-a-project-column
    */
-  "PATCH /projects/columns/:column_id": {
-    parameters: ProjectsUpdateColumnEndpoint;
-    request: ProjectsUpdateColumnRequestOptions;
-    response: OctokitResponse<ProjectsUpdateColumnResponseData>;
-  };
+  "PATCH /projects/columns/:column_id": Endpoint<
+    ProjectsUpdateColumnEndpoint,
+    ProjectsUpdateColumnRequestOptions,
+    OctokitResponse<ProjectsUpdateColumnResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#update-a-project-card
    */
-  "PATCH /projects/columns/cards/:card_id": {
-    parameters: ProjectsUpdateCardEndpoint;
-    request: ProjectsUpdateCardRequestOptions;
-    response: OctokitResponse<ProjectsUpdateCardResponseData>;
-  };
+  "PATCH /projects/columns/cards/:card_id": Endpoint<
+    ProjectsUpdateCardEndpoint,
+    ProjectsUpdateCardRequestOptions,
+    OctokitResponse<ProjectsUpdateCardResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#update-a-repository
    */
-  "PATCH /repos/:owner/:repo": {
-    parameters: ReposUpdateEndpoint;
-    request: ReposUpdateRequestOptions;
-    response: OctokitResponse<ReposUpdateResponseData>;
-  };
+  "PATCH /repos/:owner/:repo": Endpoint<
+    ReposUpdateEndpoint,
+    ReposUpdateRequestOptions,
+    OctokitResponse<ReposUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch
    */
-  "PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions;
-    response: OctokitResponse<
+  "PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": Endpoint<
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint,
+    ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions,
+    OctokitResponse<
       ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch
    */
-  "PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposUpdateProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions;
-    response: OctokitResponse<
-      ReposUpdateProtectedBranchRequiredStatusChecksResponseData
-    >;
-  };
+  "PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks": Endpoint<
+    ReposUpdateProtectedBranchRequiredStatusChecksEndpoint,
+    ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions,
+    OctokitResponse<ReposUpdateProtectedBranchRequiredStatusChecksResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#update-a-check-run
    */
-  "PATCH /repos/:owner/:repo/check-runs/:check_run_id": {
-    parameters: ChecksUpdateEndpoint;
-    request: ChecksUpdateRequestOptions;
-    response: OctokitResponse<ChecksUpdateResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/check-runs/:check_run_id": Endpoint<
+    ChecksUpdateEndpoint,
+    ChecksUpdateRequestOptions,
+    OctokitResponse<ChecksUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/suites/#update-repository-preferences-for-check-suites
    */
-  "PATCH /repos/:owner/:repo/check-suites/preferences": {
-    parameters: ChecksSetSuitesPreferencesEndpoint;
-    request: ChecksSetSuitesPreferencesRequestOptions;
-    response: OctokitResponse<ChecksSetSuitesPreferencesResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/check-suites/preferences": Endpoint<
+    ChecksSetSuitesPreferencesEndpoint,
+    ChecksSetSuitesPreferencesRequestOptions,
+    OctokitResponse<ChecksSetSuitesPreferencesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#update-a-commit-comment
    */
-  "PATCH /repos/:owner/:repo/comments/:comment_id": {
-    parameters: ReposUpdateCommitCommentEndpoint;
-    request: ReposUpdateCommitCommentRequestOptions;
-    response: OctokitResponse<ReposUpdateCommitCommentResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/comments/:comment_id": Endpoint<
+    ReposUpdateCommitCommentEndpoint,
+    ReposUpdateCommitCommentRequestOptions,
+    OctokitResponse<ReposUpdateCommitCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/refs/#update-a-reference
    */
-  "PATCH /repos/:owner/:repo/git/refs/:ref": {
-    parameters: GitUpdateRefEndpoint;
-    request: GitUpdateRefRequestOptions;
-    response: OctokitResponse<GitUpdateRefResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/git/refs/:ref": Endpoint<
+    GitUpdateRefEndpoint,
+    GitUpdateRefRequestOptions,
+    OctokitResponse<GitUpdateRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#edit-a-hook
    */
-  "PATCH /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposUpdateHookEndpoint;
-    request: ReposUpdateHookRequestOptions;
-    response: OctokitResponse<ReposUpdateHookResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/hooks/:hook_id": Endpoint<
+    ReposUpdateHookEndpoint,
+    ReposUpdateHookRequestOptions,
+    OctokitResponse<ReposUpdateHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#update-existing-import
    */
-  "PATCH /repos/:owner/:repo/import": {
-    parameters: MigrationsUpdateImportEndpoint;
-    request: MigrationsUpdateImportRequestOptions;
-    response: OctokitResponse<MigrationsUpdateImportResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/import": Endpoint<
+    MigrationsUpdateImportEndpoint,
+    MigrationsUpdateImportRequestOptions,
+    OctokitResponse<MigrationsUpdateImportResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#map-a-commit-author
    */
-  "PATCH /repos/:owner/:repo/import/authors/:author_id": {
-    parameters: MigrationsMapCommitAuthorEndpoint;
-    request: MigrationsMapCommitAuthorRequestOptions;
-    response: OctokitResponse<MigrationsMapCommitAuthorResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/import/authors/:author_id": Endpoint<
+    MigrationsMapCommitAuthorEndpoint,
+    MigrationsMapCommitAuthorRequestOptions,
+    OctokitResponse<MigrationsMapCommitAuthorResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference
    */
-  "PATCH /repos/:owner/:repo/import/lfs": {
-    parameters: MigrationsSetLfsPreferenceEndpoint;
-    request: MigrationsSetLfsPreferenceRequestOptions;
-    response: OctokitResponse<MigrationsSetLfsPreferenceResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/import/lfs": Endpoint<
+    MigrationsSetLfsPreferenceEndpoint,
+    MigrationsSetLfsPreferenceRequestOptions,
+    OctokitResponse<MigrationsSetLfsPreferenceResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#update-a-repository-invitation
    */
-  "PATCH /repos/:owner/:repo/invitations/:invitation_id": {
-    parameters: ReposUpdateInvitationEndpoint;
-    request: ReposUpdateInvitationRequestOptions;
-    response: OctokitResponse<ReposUpdateInvitationResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/invitations/:invitation_id": Endpoint<
+    ReposUpdateInvitationEndpoint,
+    ReposUpdateInvitationRequestOptions,
+    OctokitResponse<ReposUpdateInvitationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#update-an-issue
    */
-  "PATCH /repos/:owner/:repo/issues/:issue_number": {
-    parameters: IssuesUpdateEndpoint;
-    request: IssuesUpdateRequestOptions;
-    response: OctokitResponse<IssuesUpdateResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/issues/:issue_number": Endpoint<
+    IssuesUpdateEndpoint,
+    IssuesUpdateRequestOptions,
+    OctokitResponse<IssuesUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#edit-a-comment
    */
-  "PATCH /repos/:owner/:repo/issues/comments/:comment_id": {
-    parameters: IssuesUpdateCommentEndpoint;
-    request: IssuesUpdateCommentRequestOptions;
-    response: OctokitResponse<IssuesUpdateCommentResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/issues/comments/:comment_id": Endpoint<
+    IssuesUpdateCommentEndpoint,
+    IssuesUpdateCommentRequestOptions,
+    OctokitResponse<IssuesUpdateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#update-a-label
    */
-  "PATCH /repos/:owner/:repo/labels/:name": {
-    parameters: IssuesUpdateLabelEndpoint;
-    request: IssuesUpdateLabelRequestOptions;
-    response: OctokitResponse<IssuesUpdateLabelResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/labels/:name": Endpoint<
+    IssuesUpdateLabelEndpoint,
+    IssuesUpdateLabelRequestOptions,
+    OctokitResponse<IssuesUpdateLabelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/milestones/#update-a-milestone
    */
-  "PATCH /repos/:owner/:repo/milestones/:milestone_number": {
-    parameters: IssuesUpdateMilestoneEndpoint;
-    request: IssuesUpdateMilestoneRequestOptions;
-    response: OctokitResponse<IssuesUpdateMilestoneResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/milestones/:milestone_number": Endpoint<
+    IssuesUpdateMilestoneEndpoint,
+    IssuesUpdateMilestoneRequestOptions,
+    OctokitResponse<IssuesUpdateMilestoneResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#update-a-pull-request
    */
-  "PATCH /repos/:owner/:repo/pulls/:pull_number": {
-    parameters: PullsUpdateEndpoint;
-    request: PullsUpdateRequestOptions;
-    response: OctokitResponse<PullsUpdateResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/pulls/:pull_number": Endpoint<
+    PullsUpdateEndpoint,
+    PullsUpdateRequestOptions,
+    OctokitResponse<PullsUpdateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#edit-a-comment
    */
-  "PATCH /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsUpdateCommentEndpoint;
-    request: PullsUpdateCommentRequestOptions;
-    response: OctokitResponse<PullsUpdateCommentResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/pulls/comments/:comment_id": Endpoint<
+    PullsUpdateCommentEndpoint,
+    PullsUpdateCommentRequestOptions,
+    OctokitResponse<PullsUpdateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#edit-a-release
    */
-  "PATCH /repos/:owner/:repo/releases/:release_id": {
-    parameters: ReposUpdateReleaseEndpoint;
-    request: ReposUpdateReleaseRequestOptions;
-    response: OctokitResponse<ReposUpdateReleaseResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/releases/:release_id": Endpoint<
+    ReposUpdateReleaseEndpoint,
+    ReposUpdateReleaseRequestOptions,
+    OctokitResponse<ReposUpdateReleaseResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#edit-a-release-asset
    */
-  "PATCH /repos/:owner/:repo/releases/assets/:asset_id": {
-    parameters: ReposUpdateReleaseAssetEndpoint;
-    request: ReposUpdateReleaseAssetRequestOptions;
-    response: OctokitResponse<ReposUpdateReleaseAssetResponseData>;
-  };
+  "PATCH /repos/:owner/:repo/releases/assets/:asset_id": Endpoint<
+    ReposUpdateReleaseAssetEndpoint,
+    ReposUpdateReleaseAssetRequestOptions,
+    OctokitResponse<ReposUpdateReleaseAssetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#update-a-user-attribute
    */
-  "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimUpdateUserAttributeEndpoint;
-    request: ScimUpdateUserAttributeRequestOptions;
-    response: OctokitResponse<ScimUpdateUserAttributeResponseData>;
-  };
+  "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": Endpoint<
+    ScimUpdateUserAttributeEndpoint,
+    ScimUpdateUserAttributeRequestOptions,
+    OctokitResponse<ScimUpdateUserAttributeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#edit-team-legacy
    */
-  "PATCH /teams/:team_id": {
-    parameters: TeamsUpdateLegacyEndpoint;
-    request: TeamsUpdateLegacyRequestOptions;
-    response: OctokitResponse<TeamsUpdateLegacyResponseData>;
-  };
+  "PATCH /teams/:team_id": Endpoint<
+    TeamsUpdateLegacyEndpoint,
+    TeamsUpdateLegacyRequestOptions,
+    OctokitResponse<TeamsUpdateLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
    */
-  "PATCH /teams/:team_id/discussions/:discussion_number": {
-    parameters: TeamsUpdateDiscussionLegacyEndpoint;
-    request: TeamsUpdateDiscussionLegacyRequestOptions;
-    response: OctokitResponse<TeamsUpdateDiscussionLegacyResponseData>;
-  };
+  "PATCH /teams/:team_id/discussions/:discussion_number": Endpoint<
+    TeamsUpdateDiscussionLegacyEndpoint,
+    TeamsUpdateDiscussionLegacyRequestOptions,
+    OctokitResponse<TeamsUpdateDiscussionLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
    */
-  "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
-    parameters: TeamsUpdateDiscussionCommentLegacyEndpoint;
-    request: TeamsUpdateDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<TeamsUpdateDiscussionCommentLegacyResponseData>;
-  };
+  "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": Endpoint<
+    TeamsUpdateDiscussionCommentLegacyEndpoint,
+    TeamsUpdateDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<TeamsUpdateDiscussionCommentLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#create-or-update-idp-group-connections-legacy
    */
-  "PATCH /teams/:team_id/team-sync/group-mappings": {
-    parameters: TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint;
-    request: TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions;
-    response: OctokitResponse<
-      TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData
-    >;
-  };
+  "PATCH /teams/:team_id/team-sync/group-mappings": Endpoint<
+    TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint,
+    TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions,
+    OctokitResponse<TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/#update-the-authenticated-user
    */
-  "PATCH /user": {
-    parameters: UsersUpdateAuthenticatedEndpoint;
-    request: UsersUpdateAuthenticatedRequestOptions;
-    response: OctokitResponse<UsersUpdateAuthenticatedResponseData>;
-  };
+  "PATCH /user": Endpoint<
+    UsersUpdateAuthenticatedEndpoint,
+    UsersUpdateAuthenticatedRequestOptions,
+    OctokitResponse<UsersUpdateAuthenticatedResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility
    */
-  "PATCH /user/email/visibility": {
-    parameters: UsersTogglePrimaryEmailVisibilityEndpoint;
-    request: UsersTogglePrimaryEmailVisibilityRequestOptions;
-    response: OctokitResponse<UsersTogglePrimaryEmailVisibilityResponseData>;
-  };
+  "PATCH /user/email/visibility": Endpoint<
+    UsersTogglePrimaryEmailVisibilityEndpoint,
+    UsersTogglePrimaryEmailVisibilityRequestOptions,
+    OctokitResponse<UsersTogglePrimaryEmailVisibilityResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#edit-your-organization-membership
    */
-  "PATCH /user/memberships/orgs/:org": {
-    parameters: OrgsUpdateMembershipEndpoint;
-    request: OrgsUpdateMembershipRequestOptions;
-    response: OctokitResponse<OrgsUpdateMembershipResponseData>;
-  };
+  "PATCH /user/memberships/orgs/:org": Endpoint<
+    OrgsUpdateMembershipEndpoint,
+    OrgsUpdateMembershipRequestOptions,
+    OctokitResponse<OrgsUpdateMembershipResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/invitations/#accept-a-repository-invitation
    */
-  "PATCH /user/repository_invitations/:invitation_id": {
-    parameters: ReposAcceptInvitationEndpoint;
-    request: ReposAcceptInvitationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PATCH /user/repository_invitations/:invitation_id": Endpoint<
+    ReposAcceptInvitationEndpoint,
+    ReposAcceptInvitationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#create-a-github-app-from-a-manifest
    */
-  "POST /app-manifests/:code/conversions": {
-    parameters: AppsCreateFromManifestEndpoint;
-    request: AppsCreateFromManifestRequestOptions;
-    response: OctokitResponse<AppsCreateFromManifestResponseData>;
-  };
+  "POST /app-manifests/:code/conversions": Endpoint<
+    AppsCreateFromManifestEndpoint,
+    AppsCreateFromManifestRequestOptions,
+    OctokitResponse<AppsCreateFromManifestResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/#create-a-new-installation-token
    */
-  "POST /app/installations/:installation_id/access_tokens": {
-    parameters: AppsCreateInstallationTokenEndpoint;
-    request: AppsCreateInstallationTokenRequestOptions;
-    response: OctokitResponse<AppsCreateInstallationTokenResponseData>;
-  };
+  "POST /app/installations/:installation_id/access_tokens": Endpoint<
+    AppsCreateInstallationTokenEndpoint,
+    AppsCreateInstallationTokenRequestOptions,
+    OctokitResponse<AppsCreateInstallationTokenResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#check-a-token
    */
-  "POST /applications/:client_id/token": {
-    parameters: AppsCheckTokenEndpoint;
-    request: AppsCheckTokenRequestOptions;
-    response: OctokitResponse<AppsCheckTokenResponseData>;
-  };
+  "POST /applications/:client_id/token": Endpoint<
+    AppsCheckTokenEndpoint,
+    AppsCheckTokenRequestOptions,
+    OctokitResponse<AppsCheckTokenResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#reset-an-authorization
    */
-  "POST /applications/:client_id/tokens/:access_token": {
-    parameters: AppsResetAuthorizationEndpoint;
-    request: AppsResetAuthorizationRequestOptions;
-    response: OctokitResponse<AppsResetAuthorizationResponseData>;
-  };
+  "POST /applications/:client_id/tokens/:access_token": Endpoint<
+    AppsResetAuthorizationEndpoint,
+    AppsResetAuthorizationRequestOptions,
+    OctokitResponse<AppsResetAuthorizationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#create-a-new-authorization
    */
-  "POST /authorizations": {
-    parameters: OauthAuthorizationsCreateAuthorizationEndpoint;
-    request: OauthAuthorizationsCreateAuthorizationRequestOptions;
-    response: OctokitResponse<
-      OauthAuthorizationsCreateAuthorizationResponseData
-    >;
-  };
+  "POST /authorizations": Endpoint<
+    OauthAuthorizationsCreateAuthorizationEndpoint,
+    OauthAuthorizationsCreateAuthorizationRequestOptions,
+    OctokitResponse<OauthAuthorizationsCreateAuthorizationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#create-a-content-attachment
    */
-  "POST /content_references/:content_reference_id/attachments": {
-    parameters: AppsCreateContentAttachmentEndpoint;
-    request: AppsCreateContentAttachmentRequestOptions;
-    response: OctokitResponse<AppsCreateContentAttachmentResponseData>;
-  };
+  "POST /content_references/:content_reference_id/attachments": Endpoint<
+    AppsCreateContentAttachmentEndpoint,
+    AppsCreateContentAttachmentRequestOptions,
+    OctokitResponse<AppsCreateContentAttachmentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#create-a-gist
    */
-  "POST /gists": {
-    parameters: GistsCreateEndpoint;
-    request: GistsCreateRequestOptions;
-    response: OctokitResponse<GistsCreateResponseData>;
-  };
+  "POST /gists": Endpoint<
+    GistsCreateEndpoint,
+    GistsCreateRequestOptions,
+    OctokitResponse<GistsCreateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/comments/#create-a-comment
    */
-  "POST /gists/:gist_id/comments": {
-    parameters: GistsCreateCommentEndpoint;
-    request: GistsCreateCommentRequestOptions;
-    response: OctokitResponse<GistsCreateCommentResponseData>;
-  };
+  "POST /gists/:gist_id/comments": Endpoint<
+    GistsCreateCommentEndpoint,
+    GistsCreateCommentRequestOptions,
+    OctokitResponse<GistsCreateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#fork-a-gist
    */
-  "POST /gists/:gist_id/forks": {
-    parameters: GistsForkEndpoint;
-    request: GistsForkRequestOptions;
-    response: OctokitResponse<GistsForkResponseData>;
-  };
+  "POST /gists/:gist_id/forks": Endpoint<
+    GistsForkEndpoint,
+    GistsForkRequestOptions,
+    OctokitResponse<GistsForkResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document
    */
-  "POST /markdown": {
-    parameters: MarkdownRenderEndpoint;
-    request: MarkdownRenderRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /markdown": Endpoint<
+    MarkdownRenderEndpoint,
+    MarkdownRenderRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/markdown/#render-a-markdown-document-in-raw-mode
    */
-  "POST /markdown/raw": {
-    parameters: MarkdownRenderRawEndpoint;
-    request: MarkdownRenderRawRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /markdown/raw": Endpoint<
+    MarkdownRenderRawEndpoint,
+    MarkdownRenderRawRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#create-a-hook
    */
-  "POST /orgs/:org/hooks": {
-    parameters: OrgsCreateHookEndpoint;
-    request: OrgsCreateHookRequestOptions;
-    response: OctokitResponse<OrgsCreateHookResponseData>;
-  };
+  "POST /orgs/:org/hooks": Endpoint<
+    OrgsCreateHookEndpoint,
+    OrgsCreateHookRequestOptions,
+    OctokitResponse<OrgsCreateHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#ping-a-hook
    */
-  "POST /orgs/:org/hooks/:hook_id/pings": {
-    parameters: OrgsPingHookEndpoint;
-    request: OrgsPingHookRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /orgs/:org/hooks/:hook_id/pings": Endpoint<
+    OrgsPingHookEndpoint,
+    OrgsPingHookRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#create-organization-invitation
    */
-  "POST /orgs/:org/invitations": {
-    parameters: OrgsCreateInvitationEndpoint;
-    request: OrgsCreateInvitationRequestOptions;
-    response: OctokitResponse<OrgsCreateInvitationResponseData>;
-  };
+  "POST /orgs/:org/invitations": Endpoint<
+    OrgsCreateInvitationEndpoint,
+    OrgsCreateInvitationRequestOptions,
+    OctokitResponse<OrgsCreateInvitationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#start-an-organization-migration
    */
-  "POST /orgs/:org/migrations": {
-    parameters: MigrationsStartForOrgEndpoint;
-    request: MigrationsStartForOrgRequestOptions;
-    response: OctokitResponse<MigrationsStartForOrgResponseData>;
-  };
+  "POST /orgs/:org/migrations": Endpoint<
+    MigrationsStartForOrgEndpoint,
+    MigrationsStartForOrgRequestOptions,
+    OctokitResponse<MigrationsStartForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#create-an-organization-project
    */
-  "POST /orgs/:org/projects": {
-    parameters: ProjectsCreateForOrgEndpoint;
-    request: ProjectsCreateForOrgRequestOptions;
-    response: OctokitResponse<ProjectsCreateForOrgResponseData>;
-  };
+  "POST /orgs/:org/projects": Endpoint<
+    ProjectsCreateForOrgEndpoint,
+    ProjectsCreateForOrgRequestOptions,
+    OctokitResponse<ProjectsCreateForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#create-an-organization-repository
    */
-  "POST /orgs/:org/repos": {
-    parameters: ReposCreateInOrgEndpoint;
-    request: ReposCreateInOrgRequestOptions;
-    response: OctokitResponse<ReposCreateInOrgResponseData>;
-  };
+  "POST /orgs/:org/repos": Endpoint<
+    ReposCreateInOrgEndpoint,
+    ReposCreateInOrgRequestOptions,
+    OctokitResponse<ReposCreateInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#create-team
    */
-  "POST /orgs/:org/teams": {
-    parameters: TeamsCreateEndpoint;
-    request: TeamsCreateRequestOptions;
-    response: OctokitResponse<TeamsCreateResponseData>;
-  };
+  "POST /orgs/:org/teams": Endpoint<
+    TeamsCreateEndpoint,
+    TeamsCreateRequestOptions,
+    OctokitResponse<TeamsCreateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#create-a-discussion
    */
-  "POST /orgs/:org/teams/:team_slug/discussions": {
-    parameters: TeamsCreateDiscussionInOrgEndpoint;
-    request: TeamsCreateDiscussionInOrgRequestOptions;
-    response: OctokitResponse<TeamsCreateDiscussionInOrgResponseData>;
-  };
+  "POST /orgs/:org/teams/:team_slug/discussions": Endpoint<
+    TeamsCreateDiscussionInOrgEndpoint,
+    TeamsCreateDiscussionInOrgRequestOptions,
+    OctokitResponse<TeamsCreateDiscussionInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment
    */
-  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": {
-    parameters: TeamsCreateDiscussionCommentInOrgEndpoint;
-    request: TeamsCreateDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<TeamsCreateDiscussionCommentInOrgResponseData>;
-  };
+  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": Endpoint<
+    TeamsCreateDiscussionCommentInOrgEndpoint,
+    TeamsCreateDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<TeamsCreateDiscussionCommentInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment
    */
-  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": {
-    parameters: ReactionsCreateForTeamDiscussionCommentInOrgEndpoint;
-    request: ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions;
-    response: OctokitResponse<
-      ReactionsCreateForTeamDiscussionCommentInOrgResponseData
-    >;
-  };
+  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number/reactions": Endpoint<
+    ReactionsCreateForTeamDiscussionCommentInOrgEndpoint,
+    ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions,
+    OctokitResponse<ReactionsCreateForTeamDiscussionCommentInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion
    */
-  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": {
-    parameters: ReactionsCreateForTeamDiscussionInOrgEndpoint;
-    request: ReactionsCreateForTeamDiscussionInOrgRequestOptions;
-    response: OctokitResponse<
-      ReactionsCreateForTeamDiscussionInOrgResponseData
-    >;
-  };
+  "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/reactions": Endpoint<
+    ReactionsCreateForTeamDiscussionInOrgEndpoint,
+    ReactionsCreateForTeamDiscussionInOrgRequestOptions,
+    OctokitResponse<ReactionsCreateForTeamDiscussionInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#create-a-project-column
    */
-  "POST /projects/:project_id/columns": {
-    parameters: ProjectsCreateColumnEndpoint;
-    request: ProjectsCreateColumnRequestOptions;
-    response: OctokitResponse<ProjectsCreateColumnResponseData>;
-  };
+  "POST /projects/:project_id/columns": Endpoint<
+    ProjectsCreateColumnEndpoint,
+    ProjectsCreateColumnRequestOptions,
+    OctokitResponse<ProjectsCreateColumnResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#create-a-project-card
    */
-  "POST /projects/columns/:column_id/cards": {
-    parameters: ProjectsCreateCardEndpoint;
-    request: ProjectsCreateCardRequestOptions;
-    response: OctokitResponse<ProjectsCreateCardResponseData>;
-  };
+  "POST /projects/columns/:column_id/cards": Endpoint<
+    ProjectsCreateCardEndpoint,
+    ProjectsCreateCardRequestOptions,
+    OctokitResponse<ProjectsCreateCardResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/columns/#move-a-project-column
    */
-  "POST /projects/columns/:column_id/moves": {
-    parameters: ProjectsMoveColumnEndpoint;
-    request: ProjectsMoveColumnRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /projects/columns/:column_id/moves": Endpoint<
+    ProjectsMoveColumnEndpoint,
+    ProjectsMoveColumnRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/cards/#move-a-project-card
    */
-  "POST /projects/columns/cards/:card_id/moves": {
-    parameters: ProjectsMoveCardEndpoint;
-    request: ProjectsMoveCardRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /projects/columns/cards/:card_id/moves": Endpoint<
+    ProjectsMoveCardEndpoint,
+    ProjectsMoveCardRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#create-a-registration-token
    */
-  "POST /repos/:owner/:repo/actions/runners/registration-token": {
-    parameters: ActionsCreateRegistrationTokenEndpoint;
-    request: ActionsCreateRegistrationTokenRequestOptions;
-    response: OctokitResponse<ActionsCreateRegistrationTokenResponseData>;
-  };
+  "POST /repos/:owner/:repo/actions/runners/registration-token": Endpoint<
+    ActionsCreateRegistrationTokenEndpoint,
+    ActionsCreateRegistrationTokenRequestOptions,
+    OctokitResponse<ActionsCreateRegistrationTokenResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/self_hosted_runners/#create-a-remove-token
    */
-  "POST /repos/:owner/:repo/actions/runners/remove-token": {
-    parameters: ActionsCreateRemoveTokenEndpoint;
-    request: ActionsCreateRemoveTokenRequestOptions;
-    response: OctokitResponse<ActionsCreateRemoveTokenResponseData>;
-  };
+  "POST /repos/:owner/:repo/actions/runners/remove-token": Endpoint<
+    ActionsCreateRemoveTokenEndpoint,
+    ActionsCreateRemoveTokenRequestOptions,
+    OctokitResponse<ActionsCreateRemoveTokenResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#cancel-a-workflow-run
    */
-  "POST /repos/:owner/:repo/actions/runs/:run_id/cancel": {
-    parameters: ActionsCancelWorkflowRunEndpoint;
-    request: ActionsCancelWorkflowRunRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/actions/runs/:run_id/cancel": Endpoint<
+    ActionsCancelWorkflowRunEndpoint,
+    ActionsCancelWorkflowRunRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/workflow_runs/#re-run-a-workflow
    */
-  "POST /repos/:owner/:repo/actions/runs/:run_id/rerun": {
-    parameters: ActionsReRunWorkflowEndpoint;
-    request: ActionsReRunWorkflowRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/actions/runs/:run_id/rerun": Endpoint<
+    ActionsReRunWorkflowEndpoint,
+    ActionsReRunWorkflowRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-admin-enforcement-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposAddProtectedBranchAdminEnforcementEndpoint;
-    request: ReposAddProtectedBranchAdminEnforcementRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchAdminEnforcementResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins": Endpoint<
+    ReposAddProtectedBranchAdminEnforcementEndpoint,
+    ReposAddProtectedBranchAdminEnforcementRequestOptions,
+    OctokitResponse<ReposAddProtectedBranchAdminEnforcementResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-required-signatures-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposAddProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposAddProtectedBranchRequiredSignaturesRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchRequiredSignaturesResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/branches/:branch/protection/required_signatures": Endpoint<
+    ReposAddProtectedBranchRequiredSignaturesEndpoint,
+    ReposAddProtectedBranchRequiredSignaturesRequestOptions,
+    OctokitResponse<ReposAddProtectedBranchRequiredSignaturesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-required-status-checks-contexts-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
+  "POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": Endpoint<
+    ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint,
+    ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    OctokitResponse<
       ReposAddProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-app-restrictions-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposAddProtectedBranchAppRestrictionsEndpoint;
-    request: ReposAddProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchAppRestrictionsResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": Endpoint<
+    ReposAddProtectedBranchAppRestrictionsEndpoint,
+    ReposAddProtectedBranchAppRestrictionsRequestOptions,
+    OctokitResponse<ReposAddProtectedBranchAppRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-team-restrictions-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposAddProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposAddProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchTeamRestrictionsResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": Endpoint<
+    ReposAddProtectedBranchTeamRestrictionsEndpoint,
+    ReposAddProtectedBranchTeamRestrictionsRequestOptions,
+    OctokitResponse<ReposAddProtectedBranchTeamRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#add-user-restrictions-of-protected-branch
    */
-  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposAddProtectedBranchUserRestrictionsEndpoint;
-    request: ReposAddProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchUserRestrictionsResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users": Endpoint<
+    ReposAddProtectedBranchUserRestrictionsEndpoint,
+    ReposAddProtectedBranchUserRestrictionsRequestOptions,
+    OctokitResponse<ReposAddProtectedBranchUserRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/runs/#create-a-check-run
    */
-  "POST /repos/:owner/:repo/check-runs": {
-    parameters: ChecksCreateEndpoint;
-    request: ChecksCreateRequestOptions;
-    response: OctokitResponse<ChecksCreateResponseData>;
-  };
+  "POST /repos/:owner/:repo/check-runs": Endpoint<
+    ChecksCreateEndpoint,
+    ChecksCreateRequestOptions,
+    OctokitResponse<ChecksCreateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/suites/#create-a-check-suite
    */
-  "POST /repos/:owner/:repo/check-suites": {
-    parameters: ChecksCreateSuiteEndpoint;
-    request: ChecksCreateSuiteRequestOptions;
-    response: OctokitResponse<ChecksCreateSuiteResponseData>;
-  };
+  "POST /repos/:owner/:repo/check-suites": Endpoint<
+    ChecksCreateSuiteEndpoint,
+    ChecksCreateSuiteRequestOptions,
+    OctokitResponse<ChecksCreateSuiteResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/checks/suites/#rerequest-a-check-suite
    */
-  "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": {
-    parameters: ChecksRerequestSuiteEndpoint;
-    request: ChecksRerequestSuiteRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": Endpoint<
+    ChecksRerequestSuiteEndpoint,
+    ChecksRerequestSuiteRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-commit-comment
    */
-  "POST /repos/:owner/:repo/comments/:comment_id/reactions": {
-    parameters: ReactionsCreateForCommitCommentEndpoint;
-    request: ReactionsCreateForCommitCommentRequestOptions;
-    response: OctokitResponse<ReactionsCreateForCommitCommentResponseData>;
-  };
+  "POST /repos/:owner/:repo/comments/:comment_id/reactions": Endpoint<
+    ReactionsCreateForCommitCommentEndpoint,
+    ReactionsCreateForCommitCommentRequestOptions,
+    OctokitResponse<ReactionsCreateForCommitCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/comments/#create-a-commit-comment
    */
-  "POST /repos/:owner/:repo/commits/:commit_sha/comments": {
-    parameters: ReposCreateCommitCommentEndpoint;
-    request: ReposCreateCommitCommentRequestOptions;
-    response: OctokitResponse<ReposCreateCommitCommentResponseData>;
-  };
+  "POST /repos/:owner/:repo/commits/:commit_sha/comments": Endpoint<
+    ReposCreateCommitCommentEndpoint,
+    ReposCreateCommitCommentRequestOptions,
+    OctokitResponse<ReposCreateCommitCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#create-a-deployment
    */
-  "POST /repos/:owner/:repo/deployments": {
-    parameters: ReposCreateDeploymentEndpoint;
-    request: ReposCreateDeploymentRequestOptions;
-    response: OctokitResponse<ReposCreateDeploymentResponseData>;
-  };
+  "POST /repos/:owner/:repo/deployments": Endpoint<
+    ReposCreateDeploymentEndpoint,
+    ReposCreateDeploymentRequestOptions,
+    OctokitResponse<ReposCreateDeploymentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/deployments/#create-a-deployment-status
    */
-  "POST /repos/:owner/:repo/deployments/:deployment_id/statuses": {
-    parameters: ReposCreateDeploymentStatusEndpoint;
-    request: ReposCreateDeploymentStatusRequestOptions;
-    response: OctokitResponse<ReposCreateDeploymentStatusResponseData>;
-  };
+  "POST /repos/:owner/:repo/deployments/:deployment_id/statuses": Endpoint<
+    ReposCreateDeploymentStatusEndpoint,
+    ReposCreateDeploymentStatusRequestOptions,
+    OctokitResponse<ReposCreateDeploymentStatusResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#create-a-repository-dispatch-event
    */
-  "POST /repos/:owner/:repo/dispatches": {
-    parameters: ReposCreateDispatchEventEndpoint;
-    request: ReposCreateDispatchEventRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/dispatches": Endpoint<
+    ReposCreateDispatchEventEndpoint,
+    ReposCreateDispatchEventRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/forks/#create-a-fork
    */
-  "POST /repos/:owner/:repo/forks": {
-    parameters: ReposCreateForkEndpoint;
-    request: ReposCreateForkRequestOptions;
-    response: OctokitResponse<ReposCreateForkResponseData>;
-  };
+  "POST /repos/:owner/:repo/forks": Endpoint<
+    ReposCreateForkEndpoint,
+    ReposCreateForkRequestOptions,
+    OctokitResponse<ReposCreateForkResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/blobs/#create-a-blob
    */
-  "POST /repos/:owner/:repo/git/blobs": {
-    parameters: GitCreateBlobEndpoint;
-    request: GitCreateBlobRequestOptions;
-    response: OctokitResponse<GitCreateBlobResponseData>;
-  };
+  "POST /repos/:owner/:repo/git/blobs": Endpoint<
+    GitCreateBlobEndpoint,
+    GitCreateBlobRequestOptions,
+    OctokitResponse<GitCreateBlobResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/commits/#create-a-commit
    */
-  "POST /repos/:owner/:repo/git/commits": {
-    parameters: GitCreateCommitEndpoint;
-    request: GitCreateCommitRequestOptions;
-    response: OctokitResponse<GitCreateCommitResponseData>;
-  };
+  "POST /repos/:owner/:repo/git/commits": Endpoint<
+    GitCreateCommitEndpoint,
+    GitCreateCommitRequestOptions,
+    OctokitResponse<GitCreateCommitResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/refs/#create-a-reference
    */
-  "POST /repos/:owner/:repo/git/refs": {
-    parameters: GitCreateRefEndpoint;
-    request: GitCreateRefRequestOptions;
-    response: OctokitResponse<GitCreateRefResponseData>;
-  };
+  "POST /repos/:owner/:repo/git/refs": Endpoint<
+    GitCreateRefEndpoint,
+    GitCreateRefRequestOptions,
+    OctokitResponse<GitCreateRefResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/tags/#create-a-tag-object
    */
-  "POST /repos/:owner/:repo/git/tags": {
-    parameters: GitCreateTagEndpoint;
-    request: GitCreateTagRequestOptions;
-    response: OctokitResponse<GitCreateTagResponseData>;
-  };
+  "POST /repos/:owner/:repo/git/tags": Endpoint<
+    GitCreateTagEndpoint,
+    GitCreateTagRequestOptions,
+    OctokitResponse<GitCreateTagResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/git/trees/#create-a-tree
    */
-  "POST /repos/:owner/:repo/git/trees": {
-    parameters: GitCreateTreeEndpoint;
-    request: GitCreateTreeRequestOptions;
-    response: OctokitResponse<GitCreateTreeResponseData>;
-  };
+  "POST /repos/:owner/:repo/git/trees": Endpoint<
+    GitCreateTreeEndpoint,
+    GitCreateTreeRequestOptions,
+    OctokitResponse<GitCreateTreeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#create-a-hook
    */
-  "POST /repos/:owner/:repo/hooks": {
-    parameters: ReposCreateHookEndpoint;
-    request: ReposCreateHookRequestOptions;
-    response: OctokitResponse<ReposCreateHookResponseData>;
-  };
+  "POST /repos/:owner/:repo/hooks": Endpoint<
+    ReposCreateHookEndpoint,
+    ReposCreateHookRequestOptions,
+    OctokitResponse<ReposCreateHookResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#ping-a-hook
    */
-  "POST /repos/:owner/:repo/hooks/:hook_id/pings": {
-    parameters: ReposPingHookEndpoint;
-    request: ReposPingHookRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/hooks/:hook_id/pings": Endpoint<
+    ReposPingHookEndpoint,
+    ReposPingHookRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/hooks/#test-a-push-hook
    */
-  "POST /repos/:owner/:repo/hooks/:hook_id/tests": {
-    parameters: ReposTestPushHookEndpoint;
-    request: ReposTestPushHookRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "POST /repos/:owner/:repo/hooks/:hook_id/tests": Endpoint<
+    ReposTestPushHookEndpoint,
+    ReposTestPushHookRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#create-an-issue
    */
-  "POST /repos/:owner/:repo/issues": {
-    parameters: IssuesCreateEndpoint;
-    request: IssuesCreateRequestOptions;
-    response: OctokitResponse<IssuesCreateResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues": Endpoint<
+    IssuesCreateEndpoint,
+    IssuesCreateRequestOptions,
+    OctokitResponse<IssuesCreateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/assignees/#add-assignees-to-an-issue
    */
-  "POST /repos/:owner/:repo/issues/:issue_number/assignees": {
-    parameters: IssuesAddAssigneesEndpoint;
-    request: IssuesAddAssigneesRequestOptions;
-    response: OctokitResponse<IssuesAddAssigneesResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues/:issue_number/assignees": Endpoint<
+    IssuesAddAssigneesEndpoint,
+    IssuesAddAssigneesRequestOptions,
+    OctokitResponse<IssuesAddAssigneesResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/comments/#create-a-comment
    */
-  "POST /repos/:owner/:repo/issues/:issue_number/comments": {
-    parameters: IssuesCreateCommentEndpoint;
-    request: IssuesCreateCommentRequestOptions;
-    response: OctokitResponse<IssuesCreateCommentResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues/:issue_number/comments": Endpoint<
+    IssuesCreateCommentEndpoint,
+    IssuesCreateCommentRequestOptions,
+    OctokitResponse<IssuesCreateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#add-labels-to-an-issue
    */
-  "POST /repos/:owner/:repo/issues/:issue_number/labels": {
-    parameters: IssuesAddLabelsEndpoint;
-    request: IssuesAddLabelsRequestOptions;
-    response: OctokitResponse<IssuesAddLabelsResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues/:issue_number/labels": Endpoint<
+    IssuesAddLabelsEndpoint,
+    IssuesAddLabelsRequestOptions,
+    OctokitResponse<IssuesAddLabelsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-an-issue
    */
-  "POST /repos/:owner/:repo/issues/:issue_number/reactions": {
-    parameters: ReactionsCreateForIssueEndpoint;
-    request: ReactionsCreateForIssueRequestOptions;
-    response: OctokitResponse<ReactionsCreateForIssueResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues/:issue_number/reactions": Endpoint<
+    ReactionsCreateForIssueEndpoint,
+    ReactionsCreateForIssueRequestOptions,
+    OctokitResponse<ReactionsCreateForIssueResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-an-issue-comment
    */
-  "POST /repos/:owner/:repo/issues/comments/:comment_id/reactions": {
-    parameters: ReactionsCreateForIssueCommentEndpoint;
-    request: ReactionsCreateForIssueCommentRequestOptions;
-    response: OctokitResponse<ReactionsCreateForIssueCommentResponseData>;
-  };
+  "POST /repos/:owner/:repo/issues/comments/:comment_id/reactions": Endpoint<
+    ReactionsCreateForIssueCommentEndpoint,
+    ReactionsCreateForIssueCommentRequestOptions,
+    OctokitResponse<ReactionsCreateForIssueCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key
    */
-  "POST /repos/:owner/:repo/keys": {
-    parameters: ReposAddDeployKeyEndpoint;
-    request: ReposAddDeployKeyRequestOptions;
-    response: OctokitResponse<ReposAddDeployKeyResponseData>;
-  };
+  "POST /repos/:owner/:repo/keys": Endpoint<
+    ReposAddDeployKeyEndpoint,
+    ReposAddDeployKeyRequestOptions,
+    OctokitResponse<ReposAddDeployKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#create-a-label
    */
-  "POST /repos/:owner/:repo/labels": {
-    parameters: IssuesCreateLabelEndpoint;
-    request: IssuesCreateLabelRequestOptions;
-    response: OctokitResponse<IssuesCreateLabelResponseData>;
-  };
+  "POST /repos/:owner/:repo/labels": Endpoint<
+    IssuesCreateLabelEndpoint,
+    IssuesCreateLabelRequestOptions,
+    OctokitResponse<IssuesCreateLabelResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/merging/#perform-a-merge
    */
-  "POST /repos/:owner/:repo/merges": {
-    parameters: ReposMergeEndpoint;
-    request: ReposMergeRequestOptions;
-    response: OctokitResponse<ReposMergeResponseData>;
-  };
+  "POST /repos/:owner/:repo/merges": Endpoint<
+    ReposMergeEndpoint,
+    ReposMergeRequestOptions,
+    OctokitResponse<ReposMergeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/milestones/#create-a-milestone
    */
-  "POST /repos/:owner/:repo/milestones": {
-    parameters: IssuesCreateMilestoneEndpoint;
-    request: IssuesCreateMilestoneRequestOptions;
-    response: OctokitResponse<IssuesCreateMilestoneResponseData>;
-  };
+  "POST /repos/:owner/:repo/milestones": Endpoint<
+    IssuesCreateMilestoneEndpoint,
+    IssuesCreateMilestoneRequestOptions,
+    OctokitResponse<IssuesCreateMilestoneResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#enable-a-pages-site
    */
-  "POST /repos/:owner/:repo/pages": {
-    parameters: ReposEnablePagesSiteEndpoint;
-    request: ReposEnablePagesSiteRequestOptions;
-    response: OctokitResponse<ReposEnablePagesSiteResponseData>;
-  };
+  "POST /repos/:owner/:repo/pages": Endpoint<
+    ReposEnablePagesSiteEndpoint,
+    ReposEnablePagesSiteRequestOptions,
+    OctokitResponse<ReposEnablePagesSiteResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#request-a-page-build
    */
-  "POST /repos/:owner/:repo/pages/builds": {
-    parameters: ReposRequestPageBuildEndpoint;
-    request: ReposRequestPageBuildRequestOptions;
-    response: OctokitResponse<ReposRequestPageBuildResponseData>;
-  };
+  "POST /repos/:owner/:repo/pages/builds": Endpoint<
+    ReposRequestPageBuildEndpoint,
+    ReposRequestPageBuildRequestOptions,
+    OctokitResponse<ReposRequestPageBuildResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#create-a-repository-project
    */
-  "POST /repos/:owner/:repo/projects": {
-    parameters: ProjectsCreateForRepoEndpoint;
-    request: ProjectsCreateForRepoRequestOptions;
-    response: OctokitResponse<ProjectsCreateForRepoResponseData>;
-  };
+  "POST /repos/:owner/:repo/projects": Endpoint<
+    ProjectsCreateForRepoEndpoint,
+    ProjectsCreateForRepoRequestOptions,
+    OctokitResponse<ProjectsCreateForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#create-a-pull-request
    */
-  "POST /repos/:owner/:repo/pulls": {
-    parameters: PullsCreateEndpoint;
-    request: PullsCreateRequestOptions;
-    response: OctokitResponse<PullsCreateResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls": Endpoint<
+    PullsCreateEndpoint,
+    PullsCreateRequestOptions,
+    OctokitResponse<PullsCreateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#create-a-comment
    */
-  "POST /repos/:owner/:repo/pulls/:pull_number/comments": {
-    parameters: PullsCreateCommentEndpoint;
-    request: PullsCreateCommentRequestOptions;
-    response: OctokitResponse<PullsCreateCommentResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls/:pull_number/comments": Endpoint<
+    PullsCreateCommentEndpoint,
+    PullsCreateCommentRequestOptions,
+    OctokitResponse<PullsCreateCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply
    */
-  "POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies": {
-    parameters: PullsCreateReviewCommentReplyEndpoint;
-    request: PullsCreateReviewCommentReplyRequestOptions;
-    response: OctokitResponse<PullsCreateReviewCommentReplyResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies": Endpoint<
+    PullsCreateReviewCommentReplyEndpoint,
+    PullsCreateReviewCommentReplyRequestOptions,
+    OctokitResponse<PullsCreateReviewCommentReplyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
    */
-  "POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsCreateReviewRequestEndpoint;
-    request: PullsCreateReviewRequestRequestOptions;
-    response: OctokitResponse<PullsCreateReviewRequestResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": Endpoint<
+    PullsCreateReviewRequestEndpoint,
+    PullsCreateReviewRequestRequestOptions,
+    OctokitResponse<PullsCreateReviewRequestResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#create-a-pull-request-review
    */
-  "POST /repos/:owner/:repo/pulls/:pull_number/reviews": {
-    parameters: PullsCreateReviewEndpoint;
-    request: PullsCreateReviewRequestOptions;
-    response: OctokitResponse<PullsCreateReviewResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls/:pull_number/reviews": Endpoint<
+    PullsCreateReviewEndpoint,
+    PullsCreateReviewRequestOptions,
+    OctokitResponse<PullsCreateReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review
    */
-  "POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events": {
-    parameters: PullsSubmitReviewEndpoint;
-    request: PullsSubmitReviewRequestOptions;
-    response: OctokitResponse<PullsSubmitReviewResponseData>;
-  };
+  "POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events": Endpoint<
+    PullsSubmitReviewEndpoint,
+    PullsSubmitReviewRequestOptions,
+    OctokitResponse<PullsSubmitReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment
    */
-  "POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions": {
-    parameters: ReactionsCreateForPullRequestReviewCommentEndpoint;
-    request: ReactionsCreateForPullRequestReviewCommentRequestOptions;
-    response: OctokitResponse<
-      ReactionsCreateForPullRequestReviewCommentResponseData
-    >;
-  };
+  "POST /repos/:owner/:repo/pulls/comments/:comment_id/reactions": Endpoint<
+    ReactionsCreateForPullRequestReviewCommentEndpoint,
+    ReactionsCreateForPullRequestReviewCommentRequestOptions,
+    OctokitResponse<ReactionsCreateForPullRequestReviewCommentResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#create-a-release
    */
-  "POST /repos/:owner/:repo/releases": {
-    parameters: ReposCreateReleaseEndpoint;
-    request: ReposCreateReleaseRequestOptions;
-    response: OctokitResponse<ReposCreateReleaseResponseData>;
-  };
+  "POST /repos/:owner/:repo/releases": Endpoint<
+    ReposCreateReleaseEndpoint,
+    ReposCreateReleaseRequestOptions,
+    OctokitResponse<ReposCreateReleaseResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/releases/#upload-a-release-asset
    */
-  "POST /repos/:owner/:repo/releases/:release_id/assets{?name,label}": {
-    parameters: ReposUploadReleaseAssetEndpoint;
-    request: ReposUploadReleaseAssetRequestOptions;
-    response: OctokitResponse<ReposUploadReleaseAssetResponseData>;
-  };
+  "POST /repos/:owner/:repo/releases/:release_id/assets{?name,label}": Endpoint<
+    ReposUploadReleaseAssetEndpoint,
+    ReposUploadReleaseAssetRequestOptions,
+    OctokitResponse<ReposUploadReleaseAssetResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/statuses/#create-a-status
    */
-  "POST /repos/:owner/:repo/statuses/:sha": {
-    parameters: ReposCreateStatusEndpoint;
-    request: ReposCreateStatusRequestOptions;
-    response: OctokitResponse<ReposCreateStatusResponseData>;
-  };
+  "POST /repos/:owner/:repo/statuses/:sha": Endpoint<
+    ReposCreateStatusEndpoint,
+    ReposCreateStatusRequestOptions,
+    OctokitResponse<ReposCreateStatusResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#transfer-a-repository
    */
-  "POST /repos/:owner/:repo/transfer": {
-    parameters: ReposTransferEndpoint;
-    request: ReposTransferRequestOptions;
-    response: OctokitResponse<ReposTransferResponseData>;
-  };
+  "POST /repos/:owner/:repo/transfer": Endpoint<
+    ReposTransferEndpoint,
+    ReposTransferRequestOptions,
+    OctokitResponse<ReposTransferResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#create-a-repository-using-a-template
    */
-  "POST /repos/:template_owner/:template_repo/generate": {
-    parameters: ReposCreateUsingTemplateEndpoint;
-    request: ReposCreateUsingTemplateRequestOptions;
-    response: OctokitResponse<ReposCreateUsingTemplateResponseData>;
-  };
+  "POST /repos/:template_owner/:template_repo/generate": Endpoint<
+    ReposCreateUsingTemplateEndpoint,
+    ReposCreateUsingTemplateRequestOptions,
+    OctokitResponse<ReposCreateUsingTemplateResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#provision-and-invite-users
    */
-  "POST /scim/v2/organizations/:org/Users": {
-    parameters: ScimProvisionAndInviteUsersEndpoint;
-    request: ScimProvisionAndInviteUsersRequestOptions;
-    response: OctokitResponse<ScimProvisionAndInviteUsersResponseData>;
-  };
+  "POST /scim/v2/organizations/:org/Users": Endpoint<
+    ScimProvisionAndInviteUsersEndpoint,
+    ScimProvisionAndInviteUsersRequestOptions,
+    OctokitResponse<ScimProvisionAndInviteUsersResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
    */
-  "POST /teams/:team_id/discussions": {
-    parameters: TeamsCreateDiscussionLegacyEndpoint;
-    request: TeamsCreateDiscussionLegacyRequestOptions;
-    response: OctokitResponse<TeamsCreateDiscussionLegacyResponseData>;
-  };
+  "POST /teams/:team_id/discussions": Endpoint<
+    TeamsCreateDiscussionLegacyEndpoint,
+    TeamsCreateDiscussionLegacyRequestOptions,
+    OctokitResponse<TeamsCreateDiscussionLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
    */
-  "POST /teams/:team_id/discussions/:discussion_number/comments": {
-    parameters: TeamsCreateDiscussionCommentLegacyEndpoint;
-    request: TeamsCreateDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<TeamsCreateDiscussionCommentLegacyResponseData>;
-  };
+  "POST /teams/:team_id/discussions/:discussion_number/comments": Endpoint<
+    TeamsCreateDiscussionCommentLegacyEndpoint,
+    TeamsCreateDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<TeamsCreateDiscussionCommentLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-comment-legacy
    */
-  "POST /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": {
-    parameters: ReactionsCreateForTeamDiscussionCommentLegacyEndpoint;
-    request: ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions;
-    response: OctokitResponse<
-      ReactionsCreateForTeamDiscussionCommentLegacyResponseData
-    >;
-  };
+  "POST /teams/:team_id/discussions/:discussion_number/comments/:comment_number/reactions": Endpoint<
+    ReactionsCreateForTeamDiscussionCommentLegacyEndpoint,
+    ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions,
+    OctokitResponse<ReactionsCreateForTeamDiscussionCommentLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/reactions/#create-reaction-for-a-team-discussion-legacy
    */
-  "POST /teams/:team_id/discussions/:discussion_number/reactions": {
-    parameters: ReactionsCreateForTeamDiscussionLegacyEndpoint;
-    request: ReactionsCreateForTeamDiscussionLegacyRequestOptions;
-    response: OctokitResponse<
-      ReactionsCreateForTeamDiscussionLegacyResponseData
-    >;
-  };
+  "POST /teams/:team_id/discussions/:discussion_number/reactions": Endpoint<
+    ReactionsCreateForTeamDiscussionLegacyEndpoint,
+    ReactionsCreateForTeamDiscussionLegacyRequestOptions,
+    OctokitResponse<ReactionsCreateForTeamDiscussionLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/emails/#add-email-addresses
    */
-  "POST /user/emails": {
-    parameters: UsersAddEmailsEndpoint;
-    request: UsersAddEmailsRequestOptions;
-    response: OctokitResponse<UsersAddEmailsResponseData>;
-  };
+  "POST /user/emails": Endpoint<
+    UsersAddEmailsEndpoint,
+    UsersAddEmailsRequestOptions,
+    OctokitResponse<UsersAddEmailsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key
    */
-  "POST /user/gpg_keys": {
-    parameters: UsersCreateGpgKeyEndpoint;
-    request: UsersCreateGpgKeyRequestOptions;
-    response: OctokitResponse<UsersCreateGpgKeyResponseData>;
-  };
+  "POST /user/gpg_keys": Endpoint<
+    UsersCreateGpgKeyEndpoint,
+    UsersCreateGpgKeyRequestOptions,
+    OctokitResponse<UsersCreateGpgKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/users/keys/#create-a-public-key
    */
-  "POST /user/keys": {
-    parameters: UsersCreatePublicKeyEndpoint;
-    request: UsersCreatePublicKeyRequestOptions;
-    response: OctokitResponse<UsersCreatePublicKeyResponseData>;
-  };
+  "POST /user/keys": Endpoint<
+    UsersCreatePublicKeyEndpoint,
+    UsersCreatePublicKeyRequestOptions,
+    OctokitResponse<UsersCreatePublicKeyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/users/#start-a-user-migration
    */
-  "POST /user/migrations": {
-    parameters: MigrationsStartForAuthenticatedUserEndpoint;
-    request: MigrationsStartForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<MigrationsStartForAuthenticatedUserResponseData>;
-  };
+  "POST /user/migrations": Endpoint<
+    MigrationsStartForAuthenticatedUserEndpoint,
+    MigrationsStartForAuthenticatedUserRequestOptions,
+    OctokitResponse<MigrationsStartForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/#create-a-user-project
    */
-  "POST /user/projects": {
-    parameters: ProjectsCreateForAuthenticatedUserEndpoint;
-    request: ProjectsCreateForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<ProjectsCreateForAuthenticatedUserResponseData>;
-  };
+  "POST /user/projects": Endpoint<
+    ProjectsCreateForAuthenticatedUserEndpoint,
+    ProjectsCreateForAuthenticatedUserRequestOptions,
+    OctokitResponse<ProjectsCreateForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#create-a-repository-for-the-authenticated-user
    */
-  "POST /user/repos": {
-    parameters: ReposCreateForAuthenticatedUserEndpoint;
-    request: ReposCreateForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<ReposCreateForAuthenticatedUserResponseData>;
-  };
+  "POST /user/repos": Endpoint<
+    ReposCreateForAuthenticatedUserEndpoint,
+    ReposCreateForAuthenticatedUserRequestOptions,
+    OctokitResponse<ReposCreateForAuthenticatedUserResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app
    */
-  "PUT /authorizations/clients/:client_id": {
-    parameters: OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint;
-    request: OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions;
-    response: OctokitResponse<
+  "PUT /authorizations/clients/:client_id": Endpoint<
+    OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint,
+    OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions,
+    OctokitResponse<
       OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/oauth_authorizations/#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
    */
-  "PUT /authorizations/clients/:client_id/:fingerprint": {
-    parameters: OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint;
-    request: OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions;
-    response: OctokitResponse<
+  "PUT /authorizations/clients/:client_id/:fingerprint": Endpoint<
+    OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint,
+    OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptions,
+    OctokitResponse<
       OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/gists/#star-a-gist
    */
-  "PUT /gists/:gist_id/star": {
-    parameters: GistsStarEndpoint;
-    request: GistsStarRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /gists/:gist_id/star": Endpoint<
+    GistsStarEndpoint,
+    GistsStarRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#mark-notifications-as-read
    */
-  "PUT /notifications": {
-    parameters: ActivityMarkNotificationsAsReadEndpoint;
-    request: ActivityMarkNotificationsAsReadRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /notifications": Endpoint<
+    ActivityMarkNotificationsAsReadEndpoint,
+    ActivityMarkNotificationsAsReadRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#set-a-thread-subscription
    */
-  "PUT /notifications/threads/:thread_id/subscription": {
-    parameters: ActivitySetThreadSubscriptionEndpoint;
-    request: ActivitySetThreadSubscriptionRequestOptions;
-    response: OctokitResponse<ActivitySetThreadSubscriptionResponseData>;
-  };
+  "PUT /notifications/threads/:thread_id/subscription": Endpoint<
+    ActivitySetThreadSubscriptionEndpoint,
+    ActivitySetThreadSubscriptionRequestOptions,
+    OctokitResponse<ActivitySetThreadSubscriptionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/blocking/#block-a-user
    */
-  "PUT /orgs/:org/blocks/:username": {
-    parameters: OrgsBlockUserEndpoint;
-    request: OrgsBlockUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /orgs/:org/blocks/:username": Endpoint<
+    OrgsBlockUserEndpoint,
+    OrgsBlockUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization
    */
-  "PUT /orgs/:org/interaction-limits": {
-    parameters: InteractionsAddOrUpdateRestrictionsForOrgEndpoint;
-    request: InteractionsAddOrUpdateRestrictionsForOrgRequestOptions;
-    response: OctokitResponse<
-      InteractionsAddOrUpdateRestrictionsForOrgResponseData
-    >;
-  };
+  "PUT /orgs/:org/interaction-limits": Endpoint<
+    InteractionsAddOrUpdateRestrictionsForOrgEndpoint,
+    InteractionsAddOrUpdateRestrictionsForOrgRequestOptions,
+    OctokitResponse<InteractionsAddOrUpdateRestrictionsForOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership
    */
-  "PUT /orgs/:org/memberships/:username": {
-    parameters: OrgsAddOrUpdateMembershipEndpoint;
-    request: OrgsAddOrUpdateMembershipRequestOptions;
-    response: OctokitResponse<OrgsAddOrUpdateMembershipResponseData>;
-  };
+  "PUT /orgs/:org/memberships/:username": Endpoint<
+    OrgsAddOrUpdateMembershipEndpoint,
+    OrgsAddOrUpdateMembershipRequestOptions,
+    OctokitResponse<OrgsAddOrUpdateMembershipResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/outside_collaborators/#convert-member-to-outside-collaborator
    */
-  "PUT /orgs/:org/outside_collaborators/:username": {
-    parameters: OrgsConvertMemberToOutsideCollaboratorEndpoint;
-    request: OrgsConvertMemberToOutsideCollaboratorRequestOptions;
-    response: OctokitResponse<
-      OrgsConvertMemberToOutsideCollaboratorResponseData
-    >;
-  };
+  "PUT /orgs/:org/outside_collaborators/:username": Endpoint<
+    OrgsConvertMemberToOutsideCollaboratorEndpoint,
+    OrgsConvertMemberToOutsideCollaboratorRequestOptions,
+    OctokitResponse<OrgsConvertMemberToOutsideCollaboratorResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/orgs/members/#publicize-a-users-membership
    */
-  "PUT /orgs/:org/public_members/:username": {
-    parameters: OrgsPublicizeMembershipEndpoint;
-    request: OrgsPublicizeMembershipRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /orgs/:org/public_members/:username": Endpoint<
+    OrgsPublicizeMembershipEndpoint,
+    OrgsPublicizeMembershipRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership
    */
-  "PUT /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsAddOrUpdateMembershipInOrgEndpoint;
-    request: TeamsAddOrUpdateMembershipInOrgRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateMembershipInOrgResponseData>;
-  };
+  "PUT /orgs/:org/teams/:team_slug/memberships/:username": Endpoint<
+    TeamsAddOrUpdateMembershipInOrgEndpoint,
+    TeamsAddOrUpdateMembershipInOrgRequestOptions,
+    OctokitResponse<TeamsAddOrUpdateMembershipInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#add-or-update-team-project
    */
-  "PUT /orgs/:org/teams/:team_slug/projects/:project_id": {
-    parameters: TeamsAddOrUpdateProjectInOrgEndpoint;
-    request: TeamsAddOrUpdateProjectInOrgRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateProjectInOrgResponseData>;
-  };
+  "PUT /orgs/:org/teams/:team_slug/projects/:project_id": Endpoint<
+    TeamsAddOrUpdateProjectInOrgEndpoint,
+    TeamsAddOrUpdateProjectInOrgRequestOptions,
+    OctokitResponse<TeamsAddOrUpdateProjectInOrgResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#add-or-update-team-repository
    */
-  "PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
-    parameters: TeamsAddOrUpdateRepoInOrgEndpoint;
-    request: TeamsAddOrUpdateRepoInOrgRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo": Endpoint<
+    TeamsAddOrUpdateRepoInOrgEndpoint,
+    TeamsAddOrUpdateRepoInOrgRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator
    */
-  "PUT /projects/:project_id/collaborators/:username": {
-    parameters: ProjectsAddCollaboratorEndpoint;
-    request: ProjectsAddCollaboratorRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /projects/:project_id/collaborators/:username": Endpoint<
+    ProjectsAddCollaboratorEndpoint,
+    ProjectsAddCollaboratorRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository
    */
-  "PUT /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsCreateOrUpdateSecretForRepoEndpoint;
-    request: ActionsCreateOrUpdateSecretForRepoRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/actions/secrets/:name": Endpoint<
+    ActionsCreateOrUpdateSecretForRepoEndpoint,
+    ActionsCreateOrUpdateSecretForRepoRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#enable-automated-security-fixes
    */
-  "PUT /repos/:owner/:repo/automated-security-fixes": {
-    parameters: ReposEnableAutomatedSecurityFixesEndpoint;
-    request: ReposEnableAutomatedSecurityFixesRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/automated-security-fixes": Endpoint<
+    ReposEnableAutomatedSecurityFixesEndpoint,
+    ReposEnableAutomatedSecurityFixesRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#update-branch-protection
    */
-  "PUT /repos/:owner/:repo/branches/:branch/protection": {
-    parameters: ReposUpdateBranchProtectionEndpoint;
-    request: ReposUpdateBranchProtectionRequestOptions;
-    response: OctokitResponse<ReposUpdateBranchProtectionResponseData>;
-  };
+  "PUT /repos/:owner/:repo/branches/:branch/protection": Endpoint<
+    ReposUpdateBranchProtectionEndpoint,
+    ReposUpdateBranchProtectionRequestOptions,
+    OctokitResponse<ReposUpdateBranchProtectionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#replace-required-status-checks-contexts-of-protected-branch
    */
-  "PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
+  "PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": Endpoint<
+    ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint,
+    ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions,
+    OctokitResponse<
       ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
-  };
+    >
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch
    */
-  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposReplaceProtectedBranchAppRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchAppRestrictionsResponseData
-    >;
-  };
+  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": Endpoint<
+    ReposReplaceProtectedBranchAppRestrictionsEndpoint,
+    ReposReplaceProtectedBranchAppRestrictionsRequestOptions,
+    OctokitResponse<ReposReplaceProtectedBranchAppRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#replace-team-restrictions-of-protected-branch
    */
-  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposReplaceProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchTeamRestrictionsResponseData
-    >;
-  };
+  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": Endpoint<
+    ReposReplaceProtectedBranchTeamRestrictionsEndpoint,
+    ReposReplaceProtectedBranchTeamRestrictionsRequestOptions,
+    OctokitResponse<ReposReplaceProtectedBranchTeamRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/branches/#replace-user-restrictions-of-protected-branch
    */
-  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposReplaceProtectedBranchUserRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchUserRestrictionsResponseData
-    >;
-  };
+  "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users": Endpoint<
+    ReposReplaceProtectedBranchUserRestrictionsEndpoint,
+    ReposReplaceProtectedBranchUserRestrictionsRequestOptions,
+    OctokitResponse<ReposReplaceProtectedBranchUserRestrictionsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator
    */
-  "PUT /repos/:owner/:repo/collaborators/:username": {
-    parameters: ReposAddCollaboratorEndpoint;
-    request: ReposAddCollaboratorRequestOptions;
-    response: OctokitResponse<ReposAddCollaboratorResponseData>;
-  };
+  "PUT /repos/:owner/:repo/collaborators/:username": Endpoint<
+    ReposAddCollaboratorEndpoint,
+    ReposAddCollaboratorRequestOptions,
+    OctokitResponse<ReposAddCollaboratorResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/contents/#create-or-update-a-file
    */
-  "PUT /repos/:owner/:repo/contents/:path": {
-    parameters: ReposCreateOrUpdateFileEndpoint;
-    request: ReposCreateOrUpdateFileRequestOptions;
-    response: OctokitResponse<ReposCreateOrUpdateFileResponseData>;
-  };
+  "PUT /repos/:owner/:repo/contents/:path": Endpoint<
+    ReposCreateOrUpdateFileEndpoint,
+    ReposCreateOrUpdateFileRequestOptions,
+    OctokitResponse<ReposCreateOrUpdateFileResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#start-an-import
    */
-  "PUT /repos/:owner/:repo/import": {
-    parameters: MigrationsStartImportEndpoint;
-    request: MigrationsStartImportRequestOptions;
-    response: OctokitResponse<MigrationsStartImportResponseData>;
-  };
+  "PUT /repos/:owner/:repo/import": Endpoint<
+    MigrationsStartImportEndpoint,
+    MigrationsStartImportRequestOptions,
+    OctokitResponse<MigrationsStartImportResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository
    */
-  "PUT /repos/:owner/:repo/interaction-limits": {
-    parameters: InteractionsAddOrUpdateRestrictionsForRepoEndpoint;
-    request: InteractionsAddOrUpdateRestrictionsForRepoRequestOptions;
-    response: OctokitResponse<
-      InteractionsAddOrUpdateRestrictionsForRepoResponseData
-    >;
-  };
+  "PUT /repos/:owner/:repo/interaction-limits": Endpoint<
+    InteractionsAddOrUpdateRestrictionsForRepoEndpoint,
+    InteractionsAddOrUpdateRestrictionsForRepoRequestOptions,
+    OctokitResponse<InteractionsAddOrUpdateRestrictionsForRepoResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue
    */
-  "PUT /repos/:owner/:repo/issues/:issue_number/labels": {
-    parameters: IssuesReplaceAllLabelsEndpoint;
-    request: IssuesReplaceAllLabelsRequestOptions;
-    response: OctokitResponse<IssuesReplaceAllLabelsResponseData>;
-  };
+  "PUT /repos/:owner/:repo/issues/:issue_number/labels": Endpoint<
+    IssuesReplaceAllLabelsEndpoint,
+    IssuesReplaceAllLabelsRequestOptions,
+    OctokitResponse<IssuesReplaceAllLabelsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/issues/#lock-an-issue
    */
-  "PUT /repos/:owner/:repo/issues/:issue_number/lock": {
-    parameters: IssuesLockEndpoint;
-    request: IssuesLockRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/issues/:issue_number/lock": Endpoint<
+    IssuesLockEndpoint,
+    IssuesLockRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/notifications/#mark-repository-notifications-as-read
    */
-  "PUT /repos/:owner/:repo/notifications": {
-    parameters: ActivityMarkRepoNotificationsAsReadEndpoint;
-    request: ActivityMarkRepoNotificationsAsReadRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/notifications": Endpoint<
+    ActivityMarkRepoNotificationsAsReadEndpoint,
+    ActivityMarkRepoNotificationsAsReadRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/pages/#update-information-about-a-pages-site
    */
-  "PUT /repos/:owner/:repo/pages": {
-    parameters: ReposUpdateInformationAboutPagesSiteEndpoint;
-    request: ReposUpdateInformationAboutPagesSiteRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/pages": Endpoint<
+    ReposUpdateInformationAboutPagesSiteEndpoint,
+    ReposUpdateInformationAboutPagesSiteRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button
    */
-  "PUT /repos/:owner/:repo/pulls/:pull_number/merge": {
-    parameters: PullsMergeEndpoint;
-    request: PullsMergeRequestOptions;
-    response: OctokitResponse<PullsMergeResponseData>;
-  };
+  "PUT /repos/:owner/:repo/pulls/:pull_number/merge": Endpoint<
+    PullsMergeEndpoint,
+    PullsMergeRequestOptions,
+    OctokitResponse<PullsMergeResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review
    */
-  "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
-    parameters: PullsUpdateReviewEndpoint;
-    request: PullsUpdateReviewRequestOptions;
-    response: OctokitResponse<PullsUpdateReviewResponseData>;
-  };
+  "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": Endpoint<
+    PullsUpdateReviewEndpoint,
+    PullsUpdateReviewRequestOptions,
+    OctokitResponse<PullsUpdateReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/reviews/#dismiss-a-pull-request-review
    */
-  "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals": {
-    parameters: PullsDismissReviewEndpoint;
-    request: PullsDismissReviewRequestOptions;
-    response: OctokitResponse<PullsDismissReviewResponseData>;
-  };
+  "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals": Endpoint<
+    PullsDismissReviewEndpoint,
+    PullsDismissReviewRequestOptions,
+    OctokitResponse<PullsDismissReviewResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/pulls/#update-a-pull-request-branch
    */
-  "PUT /repos/:owner/:repo/pulls/:pull_number/update-branch": {
-    parameters: PullsUpdateBranchEndpoint;
-    request: PullsUpdateBranchRequestOptions;
-    response: OctokitResponse<PullsUpdateBranchResponseData>;
-  };
+  "PUT /repos/:owner/:repo/pulls/:pull_number/update-branch": Endpoint<
+    PullsUpdateBranchEndpoint,
+    PullsUpdateBranchRequestOptions,
+    OctokitResponse<PullsUpdateBranchResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#set-a-repository-subscription
    */
-  "PUT /repos/:owner/:repo/subscription": {
-    parameters: ActivitySetRepoSubscriptionEndpoint;
-    request: ActivitySetRepoSubscriptionRequestOptions;
-    response: OctokitResponse<ActivitySetRepoSubscriptionResponseData>;
-  };
+  "PUT /repos/:owner/:repo/subscription": Endpoint<
+    ActivitySetRepoSubscriptionEndpoint,
+    ActivitySetRepoSubscriptionRequestOptions,
+    OctokitResponse<ActivitySetRepoSubscriptionResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#replace-all-repository-topics
    */
-  "PUT /repos/:owner/:repo/topics": {
-    parameters: ReposReplaceAllTopicsEndpoint;
-    request: ReposReplaceAllTopicsRequestOptions;
-    response: OctokitResponse<ReposReplaceAllTopicsResponseData>;
-  };
+  "PUT /repos/:owner/:repo/topics": Endpoint<
+    ReposReplaceAllTopicsEndpoint,
+    ReposReplaceAllTopicsRequestOptions,
+    OctokitResponse<ReposReplaceAllTopicsResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/repos/#enable-vulnerability-alerts
    */
-  "PUT /repos/:owner/:repo/vulnerability-alerts": {
-    parameters: ReposEnableVulnerabilityAlertsEndpoint;
-    request: ReposEnableVulnerabilityAlertsRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /repos/:owner/:repo/vulnerability-alerts": Endpoint<
+    ReposEnableVulnerabilityAlertsEndpoint,
+    ReposEnableVulnerabilityAlertsRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/scim/#replace-a-provisioned-users-information
    */
-  "PUT /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimReplaceProvisionedUserInformationEndpoint;
-    request: ScimReplaceProvisionedUserInformationRequestOptions;
-    response: OctokitResponse<
-      ScimReplaceProvisionedUserInformationResponseData
-    >;
-  };
+  "PUT /scim/v2/organizations/:org/Users/:scim_user_id": Endpoint<
+    ScimReplaceProvisionedUserInformationEndpoint,
+    ScimReplaceProvisionedUserInformationRequestOptions,
+    OctokitResponse<ScimReplaceProvisionedUserInformationResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#add-team-member-legacy
    */
-  "PUT /teams/:team_id/members/:username": {
-    parameters: TeamsAddMemberLegacyEndpoint;
-    request: TeamsAddMemberLegacyRequestOptions;
-    response: OctokitResponse<TeamsAddMemberLegacyResponseData>;
-  };
+  "PUT /teams/:team_id/members/:username": Endpoint<
+    TeamsAddMemberLegacyEndpoint,
+    TeamsAddMemberLegacyRequestOptions,
+    OctokitResponse<TeamsAddMemberLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
    */
-  "PUT /teams/:team_id/memberships/:username": {
-    parameters: TeamsAddOrUpdateMembershipLegacyEndpoint;
-    request: TeamsAddOrUpdateMembershipLegacyRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateMembershipLegacyResponseData>;
-  };
+  "PUT /teams/:team_id/memberships/:username": Endpoint<
+    TeamsAddOrUpdateMembershipLegacyEndpoint,
+    TeamsAddOrUpdateMembershipLegacyRequestOptions,
+    OctokitResponse<TeamsAddOrUpdateMembershipLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
    */
-  "PUT /teams/:team_id/projects/:project_id": {
-    parameters: TeamsAddOrUpdateProjectLegacyEndpoint;
-    request: TeamsAddOrUpdateProjectLegacyRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateProjectLegacyResponseData>;
-  };
+  "PUT /teams/:team_id/projects/:project_id": Endpoint<
+    TeamsAddOrUpdateProjectLegacyEndpoint,
+    TeamsAddOrUpdateProjectLegacyRequestOptions,
+    OctokitResponse<TeamsAddOrUpdateProjectLegacyResponseData>
+  >;
   /**
    * @see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
    */
-  "PUT /teams/:team_id/repos/:owner/:repo": {
-    parameters: TeamsAddOrUpdateRepoLegacyEndpoint;
-    request: TeamsAddOrUpdateRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /teams/:team_id/repos/:owner/:repo": Endpoint<
+    TeamsAddOrUpdateRepoLegacyEndpoint,
+    TeamsAddOrUpdateRepoLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/blocking/#block-a-user
    */
-  "PUT /user/blocks/:username": {
-    parameters: UsersBlockEndpoint;
-    request: UsersBlockRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /user/blocks/:username": Endpoint<
+    UsersBlockEndpoint,
+    UsersBlockRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/users/followers/#follow-a-user
    */
-  "PUT /user/following/:username": {
-    parameters: UsersFollowEndpoint;
-    request: UsersFollowRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /user/following/:username": Endpoint<
+    UsersFollowEndpoint,
+    UsersFollowRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/apps/installations/#add-repository-to-installation
    */
-  "PUT /user/installations/:installation_id/repositories/:repository_id": {
-    parameters: AppsAddRepoToInstallationEndpoint;
-    request: AppsAddRepoToInstallationRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /user/installations/:installation_id/repositories/:repository_id": Endpoint<
+    AppsAddRepoToInstallationEndpoint,
+    AppsAddRepoToInstallationRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/starring/#star-a-repository-for-the-authenticated-user
    */
-  "PUT /user/starred/:owner/:repo": {
-    parameters: ActivityStarRepoForAuthenticatedUserEndpoint;
-    request: ActivityStarRepoForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /user/starred/:owner/:repo": Endpoint<
+    ActivityStarRepoForAuthenticatedUserEndpoint,
+    ActivityStarRepoForAuthenticatedUserRequestOptions,
+    OctokitResponse<any>
+  >;
   /**
    * @see https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy
    */
-  "PUT /user/subscriptions/:owner/:repo": {
-    parameters: ActivityWatchRepoLegacyEndpoint;
-    request: ActivityWatchRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
+  "PUT /user/subscriptions/:owner/:repo": Endpoint<
+    ActivityWatchRepoLegacyEndpoint,
+    ActivityWatchRepoLegacyRequestOptions,
+    OctokitResponse<any>
+  >;
 }
 
 type AppsGetAuthenticatedEndpoint = {} & RequiredPreview<"machine-man">;
