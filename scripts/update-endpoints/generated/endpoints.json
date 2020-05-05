@@ -243,6 +243,54 @@
     "renamed": null
   },
   {
+    "name": "Suspend an installation",
+    "scope": "apps",
+    "id": "suspendInstallation",
+    "method": "PUT",
+    "url": "/app/installations/{installation_id}/suspended",
+    "documentationUrl": "https://developer.github.com/v3/apps/#suspend-an-installation",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "installation_id parameter",
+        "enum": null,
+        "name": "installation_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Unsuspend an installation",
+    "scope": "apps",
+    "id": "unsuspendInstallation",
+    "method": "DELETE",
+    "url": "/app/installations/{installation_id}/suspended",
+    "documentationUrl": "https://developer.github.com/v3/apps/#unsuspend-an-installation",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "installation_id parameter",
+        "enum": null,
+        "name": "installation_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "List your grants",
     "scope": "oauthAuthorizations",
     "id": "listGrants",
@@ -11471,12 +11519,12 @@
     "renamed": null
   },
   {
-    "name": "List workflow job logs",
+    "name": "Download workflow job logs",
     "scope": "actions",
-    "id": "listWorkflowJobLogs",
+    "id": "downloadWorkflowJobLogs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#list-workflow-job-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
     "parameters": [
       {
         "alias": null,
@@ -11507,32 +11555,58 @@
         "name": "job_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ],
     "previews": [],
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Download workflow job logs",
+    "scope": "actions",
+    "id": "listWorkflowJobLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "job_id parameter",
+        "enum": null,
+        "name": "job_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"actions/list-workflow-job-logs\" operation ID is now \"actions/download-workflow-job-logs\""
+    }
   },
   {
     "name": "List self-hosted runners for a repository",
@@ -12429,12 +12503,12 @@
     "renamed": null
   },
   {
-    "name": "List workflow run logs",
+    "name": "Download workflow run logs",
     "scope": "actions",
-    "id": "listWorkflowRunLogs",
+    "id": "downloadWorkflowRunLogs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-workflow-run-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs",
     "parameters": [
       {
         "alias": null,
@@ -12465,32 +12539,58 @@
         "name": "run_id",
         "type": "integer",
         "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Results per page (max 100)",
-        "enum": null,
-        "name": "per_page",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Page number of the results to fetch.",
-        "enum": null,
-        "name": "page",
-        "type": "integer",
-        "required": false
       }
     ],
     "previews": [],
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Download workflow run logs",
+    "scope": "actions",
+    "id": "listWorkflowRunLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "run_id parameter",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"actions/list-workflow-run-logs\" operation ID is now \"actions/download-workflow-run-logs\""
+    }
   },
   {
     "name": "Delete workflow run logs",
