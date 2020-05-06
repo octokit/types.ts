@@ -1973,6 +1973,22 @@ export interface Endpoints {
     response: OctokitResponse<ChecksListForSuiteResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository
+   */
+  "GET /repos/:owner/:repo/code-scanning/alerts": {
+    parameters: CodeScanningListAlertsForRepoEndpoint;
+    request: CodeScanningListAlertsForRepoRequestOptions;
+    response: OctokitResponse<CodeScanningListAlertsForRepoResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   */
+  "GET /repos/:owner/:repo/code-scanning/alerts/:alert_id": {
+    parameters: CodeScanningGetAlertEndpoint;
+    request: CodeScanningGetAlertRequestOptions;
+    response: OctokitResponse<CodeScanningGetAlertResponseData>;
+  };
+  /**
    * @see https://developer.github.com/v3/repos/collaborators/#list-collaborators
    */
   "GET /repos/:owner/:repo/collaborators": {
@@ -20216,6 +20232,77 @@ type ChecksRerequestSuiteRequestOptions = {
   url: "/repos/:owner/:repo/check-suites/:check_suite_id/rerequest";
   headers: RequestHeaders;
   request: RequestRequestOptions;
+};
+
+type CodeScanningListAlertsForRepoEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+  /**
+   * Set to `closed` to list only closed code scanning alerts.
+   */
+  state?: string;
+};
+
+type CodeScanningListAlertsForRepoRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/code-scanning/alerts";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type CodeScanningListAlertsForRepoResponseDataItem = {
+  rule_id: string;
+  rule_severity: string;
+  rule_description: string;
+  tool: string;
+  created_at: string;
+  open: boolean;
+  closed_by: null;
+  closed_at: null;
+  url: string;
+  html_url: string;
+};
+type CodeScanningListAlertsForRepoResponseData = Array<
+  CodeScanningListAlertsForRepoResponseDataItem
+>;
+
+type CodeScanningGetAlertEndpoint = {
+  /**
+   * owner parameter
+   */
+  owner: string;
+  /**
+   * repo parameter
+   */
+  repo: string;
+  /**
+   * alert_id parameter
+   */
+  alert_id: number;
+};
+
+type CodeScanningGetAlertRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+type CodeScanningGetAlertResponseData = {
+  rule_id: string;
+  rule_severity: string;
+  rule_description: string;
+  tool: string;
+  created_at: string;
+  open: boolean;
+  closed_by: null;
+  closed_at: null;
+  url: string;
+  html_url: string;
 };
 
 type ReposListCollaboratorsEndpoint = {

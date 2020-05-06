@@ -17104,6 +17104,114 @@
     "renamed": null
   },
   {
+    "name": "List code scanning alerts for a repository",
+    "scope": "codeScanning",
+    "id": "listAlertsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
+    "documentationUrl": "https://developer.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Set to `closed` to list only closed code scanning alerts.",
+        "enum": null,
+        "name": "state",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "[{\"rule_id\":\"js/trivial-conditional\",\"rule_severity\":\"warning\",\"rule_description\":\"Useless conditional\",\"tool\":\"CodeQL\",\"created_at\":\"2020-05-06T12:00:00Z\",\"open\":true,\"closed_by\":null,\"closed_at\":null,\"url\":\"https://api.github.com/repos/Octo-org/octo-repo/code-scanning/alerts/25\",\"html_url\":\"https://github.com/Octo-org/octo-repo/security/code-scanning/25\"},{\"rule_id\":\"js/useless-expression\",\"rule_severity\":\"warning\",\"rule_description\":\"Expression has no effect\",\"tool\":\"CodeQL\",\"created_at\":\"2020-05-06T12:00:00Z\",\"open\":true,\"closed_by\":null,\"closed_at\":null,\"url\":\"https://api.github.com/repos/Octo-org/octo-repo/code-scanning/alerts/88\",\"html_url\":\"https://github.com/Octo-org/octo-repo/security/code-scanning/88\"}]"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a code scanning alert",
+    "scope": "codeScanning",
+    "id": "getAlert",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_id}",
+    "documentationUrl": "https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "owner parameter",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "repo parameter",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "alert_id parameter",
+        "enum": null,
+        "name": "alert_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "examples": [
+          {
+            "data": "{\"rule_id\":\"js/useless-expression\",\"rule_severity\":\"warning\",\"rule_description\":\"Expression has no effect\",\"tool\":\"CodeQL\",\"created_at\":\"2020-05-06T12:00:00Z\",\"open\":true,\"closed_by\":null,\"closed_at\":null,\"url\":\"https://api.github.com/repos/Octo-org/octo-repo/code-scanning/alerts/88\",\"html_url\":\"https://github.com/Octo-org/octo-repo/security/code-scanning/88\"}"
+          }
+        ]
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List collaborators",
     "scope": "repos",
     "id": "listCollaborators",
