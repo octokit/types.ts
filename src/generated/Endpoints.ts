@@ -20249,6 +20249,10 @@ type CodeScanningListAlertsForRepoEndpoint = {
    * Set to `closed` to list only closed code scanning alerts.
    */
   state?: string;
+  /**
+   * Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.
+   */
+  ref?: string;
 };
 
 type CodeScanningListAlertsForRepoRequestOptions = {
