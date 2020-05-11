@@ -17142,6 +17142,16 @@
         "name": "state",
         "type": "string",
         "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.",
+        "enum": null,
+        "name": "ref",
+        "type": "string",
+        "required": false
       }
     ],
     "previews": [],
