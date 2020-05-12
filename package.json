@@ -60,10 +60,17 @@
       "@semantic-release/github",
       "@semantic-release/npm",
       [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ],
+      [
         "semantic-release-plugin-update-version-in-files",
         {
           "files": [
-            "src/VERSION.ts"
+            "pkg/dist-src/VERSION.js",
+            "pkg/dist-types/VERSION.d.ts"
           ]
         }
       ]
