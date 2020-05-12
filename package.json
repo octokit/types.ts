@@ -5,11 +5,11 @@
     "access": "public"
   },
   "description": "Shared TypeScript definitions for Octokit projects",
-  "main": "src/index.ts",
-  "files": [
-    "src/"
-  ],
+  "dependencies": {
+    "@types/node": ">= 8"
+  },
   "scripts": {
+    "build": "pika build",
     "docs": "typedoc --module commonjs --readme none --out docs src/ && touch docs/.nojekyll",
     "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
@@ -32,6 +32,10 @@
   "devDependencies": {
     "@gimenete/type-writer": "^0.1.5",
     "@octokit/graphql": "^4.2.2",
+    "@pika/pack": "^0.5.0",
+    "@pika/plugin-build-node": "^0.9.0",
+    "@pika/plugin-build-web": "^0.9.0",
+    "@pika/plugin-ts-standard-pkg": "^0.9.0",
     "handlebars": "^4.7.6",
     "lodash.set": "^4.3.2",
     "npm-run-all": "^4.1.5",
@@ -44,6 +48,19 @@
     "typedoc": "^0.17.0",
     "typescript": "^3.6.4"
   },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-ts-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ],
+      [
+        "@pika/plugin-build-web"
+      ]
+    ]
+  },
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
@@ -51,16 +68,21 @@
       "@semantic-release/github",
       "@semantic-release/npm",
       [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "./pkg"
+        }
+      ],
+      [
         "semantic-release-plugin-update-version-in-files",
         {
           "files": [
-            "src/VERSION.ts"
+            "pkg/dist-src/VERSION.js",
+            "pkg/dist-types/VERSION.d.ts",
+            "pkg/*/index.js"
           ]
         }
       ]
     ]
-  },
-  "dependencies": {
-    "@types/node": ">= 8"
   }
 }
