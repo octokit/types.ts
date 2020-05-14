@@ -2795,242 +2795,6 @@
     "renamed": null
   },
   {
-    "name": "Search issues",
-    "scope": "search",
-    "id": "issuesLegacy",
-    "method": "GET",
-    "url": "/legacy/issues/search/{owner}/{repository}/{state}/{keyword}",
-    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-issues",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "owner parameter",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "repository parameter",
-        "enum": null,
-        "name": "repository",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Indicates the state of the issues to return. Can be either `open` or `closed`.",
-        "enum": ["open", "closed"],
-        "name": "state",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The search term.",
-        "enum": null,
-        "name": "keyword",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"issues\":[{\"gravatar_id\":\"\",\"position\":10,\"number\":10,\"votes\":2,\"created_at\":\"2010-06-04T23:20:33Z\",\"comments\":5,\"body\":\"Issue body goes here\",\"title\":\"This is is the issue title\",\"updated_at\":\"2010-06-04T23:20:33Z\",\"html_url\":\"https://github.com/pengwynn/linkedin/issues/10\",\"user\":\"ckarbass\",\"labels\":[\"api\",\"feature request\",\"investigation\"],\"state\":\"open\"}]}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Search repositories",
-    "scope": "search",
-    "id": "reposLegacy",
-    "method": "GET",
-    "url": "/legacy/repos/search/{keyword}",
-    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-repositories",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The search term.",
-        "enum": null,
-        "name": "keyword",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Filter results by language.",
-        "enum": null,
-        "name": "language",
-        "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The page number to fetch.",
-        "enum": null,
-        "name": "start_page",
-        "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.",
-        "enum": ["stars", "forks", "updated"],
-        "name": "sort",
-        "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The sort field. if `sort` param is provided. Can be either `asc` or `desc`.",
-        "enum": ["asc", "desc"],
-        "name": "order",
-        "type": "string",
-        "required": false
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"repositories\":[{\"type\":\"repo\",\"created\":\"2011-09-05T11:07:54Z\",\"watchers\":2913,\"has_downloads\":true,\"username\":\"mathiasbynens\",\"homepage\":\"http://mths.be/dotfiles\",\"url\":\"https://github.com/mathiasbynens/dotfiles\",\"fork\":false,\"has_issues\":true,\"has_wiki\":false,\"forks\":520,\"size\":192,\"private\":false,\"followers\":2913,\"name\":\"dotfiles\",\"owner\":\"mathiasbynens\",\"open_issues\":12,\"pushed_at\":\"2012-06-05T03:37:13Z\",\"score\":1,\"pushed\":\"2012-06-05T03:37:13Z\",\"description\":\"sensible hacker defaults for OS X\",\"language\":\"VimL\",\"created_at\":\"2011-09-05T11:07:54Z\"}]}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Email search",
-    "scope": "search",
-    "id": "emailLegacy",
-    "method": "GET",
-    "url": "/legacy/user/email/{email}",
-    "documentationUrl": "https://developer.github.com/v3/search/legacy/#email-search",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The email address.",
-        "enum": null,
-        "name": "email",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"user\":{\"public_repo_count\":2,\"public_gist_count\":1,\"followers_count\":20,\"following_count\":0,\"created\":\"2009-10-05T01:32:06Z\",\"created_at\":\"2009-10-05T01:32:06Z\",\"name\":\"monalisa octocat\",\"company\":\"GitHub\",\"blog\":\"https://github.com/blog\",\"location\":\"San Francisco\",\"email\":\"octocat@github.com\",\"id\":2,\"login\":\"octocat\",\"type\":\"User\",\"gravatar_id\":\"\"}}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Search users",
-    "scope": "search",
-    "id": "usersLegacy",
-    "method": "GET",
-    "url": "/legacy/user/search/{keyword}",
-    "documentationUrl": "https://developer.github.com/v3/search/legacy/#search-users",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The search term.",
-        "enum": null,
-        "name": "keyword",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The page number to fetch.",
-        "enum": null,
-        "name": "start_page",
-        "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.",
-        "enum": ["stars", "forks", "updated"],
-        "name": "sort",
-        "type": "string",
-        "required": false
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The sort field. if `sort` param is provided. Can be either `asc` or `desc`.",
-        "enum": ["asc", "desc"],
-        "name": "order",
-        "type": "string",
-        "required": false
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "examples": [
-          {
-            "data": "{\"users\":[{\"gravatar_id\":\"\",\"name\":\"Hirotaka Kawata\",\"created_at\":\"2009-10-05T01:32:06Z\",\"location\":\"Tsukuba, Ibaraki, Japan\",\"public_repo_count\":8,\"followers\":10,\"language\":\"Python\",\"fullname\":\"Hirotaka Kawata\",\"username\":\"techno\",\"id\":\"user-135050\",\"repos\":8,\"type\":\"user\",\"followers_count\":10,\"login\":\"techno\",\"score\":1,\"created\":\"2009-10-05T01:32:06Z\"}]}"
-          }
-        ]
-      }
-    ],
-    "renamed": null
-  },
-  {
     "name": "List commonly used licenses",
     "scope": "licenses",
     "id": "listCommonlyUsed",
@@ -36242,7 +36006,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "\"Get team member\" is now \"Get team member (Legacy)\""
+      "note": "The path for \"Get team member (Legacy)\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -36338,7 +36102,7 @@
       }
     ],
     "renamed": {
-      "note": "\"Add team member\" is now \"Add team member (Legacy)\""
+      "note": "The path for \"Add team member (Legacy)\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -36408,7 +36172,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "\"Remove team member\" is now \"Remove team member (Legacy)\""
+      "note": "The path for \"Remove team member (Legacy)\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -40501,108 +40265,6 @@
         ]
       }
     ],
-    "renamed": null
-  },
-  {
-    "name": "Check if you are watching a repository (LEGACY)",
-    "scope": "activity",
-    "id": "checkWatchingRepoLegacy",
-    "method": "GET",
-    "url": "/user/subscriptions/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/activity/watching/#check-if-you-are-watching-a-repository-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "owner parameter",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "repo parameter",
-        "enum": null,
-        "name": "repo",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [],
-    "renamed": null
-  },
-  {
-    "name": "Watch a repository (LEGACY)",
-    "scope": "activity",
-    "id": "watchRepoLegacy",
-    "method": "PUT",
-    "url": "/user/subscriptions/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "owner parameter",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "repo parameter",
-        "enum": null,
-        "name": "repo",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [],
-    "renamed": null
-  },
-  {
-    "name": "Stop watching a repository (LEGACY)",
-    "scope": "activity",
-    "id": "stopWatchingRepoLegacy",
-    "method": "DELETE",
-    "url": "/user/subscriptions/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "owner parameter",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "repo parameter",
-        "enum": null,
-        "name": "repo",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [],
     "renamed": null
   },
   {

@@ -827,14 +827,6 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy
-   */
-  "DELETE /user/subscriptions/:owner/:repo": {
-    parameters: ActivityStopWatchingRepoLegacyEndpoint;
-    request: ActivityStopWatchingRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
-  /**
    * @see https://developer.github.com/v3/apps/#get-the-authenticated-github-app
    */
   "GET /app": {
@@ -1059,38 +1051,6 @@ export interface Endpoints {
     parameters: IssuesListEndpoint;
     request: IssuesListRequestOptions;
     response: OctokitResponse<IssuesListResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/search/legacy/#search-issues
-   */
-  "GET /legacy/issues/search/:owner/:repository/:state/:keyword": {
-    parameters: SearchIssuesLegacyEndpoint;
-    request: SearchIssuesLegacyRequestOptions;
-    response: OctokitResponse<SearchIssuesLegacyResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/search/legacy/#search-repositories
-   */
-  "GET /legacy/repos/search/:keyword": {
-    parameters: SearchReposLegacyEndpoint;
-    request: SearchReposLegacyRequestOptions;
-    response: OctokitResponse<SearchReposLegacyResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/search/legacy/#email-search
-   */
-  "GET /legacy/user/email/:email": {
-    parameters: SearchEmailLegacyEndpoint;
-    request: SearchEmailLegacyRequestOptions;
-    response: OctokitResponse<SearchEmailLegacyResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/search/legacy/#search-users
-   */
-  "GET /legacy/user/search/:keyword": {
-    parameters: SearchUsersLegacyEndpoint;
-    request: SearchUsersLegacyRequestOptions;
-    response: OctokitResponse<SearchUsersLegacyResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/licenses/#list-commonly-used-licenses
@@ -3305,14 +3265,6 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/activity/watching/#check-if-you-are-watching-a-repository-legacy
-   */
-  "GET /user/subscriptions/:owner/:repo": {
-    parameters: ActivityCheckWatchingRepoLegacyEndpoint;
-    request: ActivityCheckWatchingRepoLegacyRequestOptions;
-    response: OctokitResponse<any>;
-  };
-  /**
    * @see https://developer.github.com/v3/teams/#list-user-teams
    */
   "GET /user/teams": {
@@ -4974,14 +4926,6 @@ export interface Endpoints {
   "PUT /user/starred/:owner/:repo": {
     parameters: ActivityStarRepoForAuthenticatedUserEndpoint;
     request: ActivityStarRepoForAuthenticatedUserRequestOptions;
-    response: OctokitResponse<any>;
-  };
-  /**
-   * @see https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy
-   */
-  "PUT /user/subscriptions/:owner/:repo": {
-    parameters: ActivityWatchRepoLegacyEndpoint;
-    request: ActivityWatchRepoLegacyRequestOptions;
     response: OctokitResponse<any>;
   };
 }
@@ -8002,189 +7946,6 @@ type IssuesListResponseDataItem = {
   repository: IssuesListResponseDataItemRepository;
 };
 type IssuesListResponseData = Array<IssuesListResponseDataItem>;
-
-type SearchIssuesLegacyEndpoint = {
-  /**
-   * owner parameter
-   */
-  owner: string;
-  /**
-   * repository parameter
-   */
-  repository: string;
-  /**
-   * Indicates the state of the issues to return. Can be either `open` or `closed`.
-   */
-  state: "open" | "closed";
-  /**
-   * The search term.
-   */
-  keyword: string;
-};
-
-type SearchIssuesLegacyRequestOptions = {
-  method: "GET";
-  url: "/legacy/issues/search/:owner/:repository/:state/:keyword";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-type SearchIssuesLegacyResponseDataIssuesItem = {
-  gravatar_id: string;
-  position: number;
-  number: number;
-  votes: number;
-  created_at: string;
-  comments: number;
-  body: string;
-  title: string;
-  updated_at: string;
-  html_url: string;
-  user: string;
-  labels: Array<string>;
-  state: string;
-};
-type SearchIssuesLegacyResponseData = {
-  issues: Array<SearchIssuesLegacyResponseDataIssuesItem>;
-};
-
-type SearchReposLegacyEndpoint = {
-  /**
-   * The search term.
-   */
-  keyword: string;
-  /**
-   * Filter results by language.
-   */
-  language?: string;
-  /**
-   * The page number to fetch.
-   */
-  start_page?: string;
-  /**
-   * The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.
-   */
-  sort?: "stars" | "forks" | "updated";
-  /**
-   * The sort field. if `sort` param is provided. Can be either `asc` or `desc`.
-   */
-  order?: "asc" | "desc";
-};
-
-type SearchReposLegacyRequestOptions = {
-  method: "GET";
-  url: "/legacy/repos/search/:keyword";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-type SearchReposLegacyResponseDataRepositoriesItem = {
-  type: string;
-  created: string;
-  watchers: number;
-  has_downloads: boolean;
-  username: string;
-  homepage: string;
-  url: string;
-  fork: boolean;
-  has_issues: boolean;
-  has_wiki: boolean;
-  forks: number;
-  size: number;
-  private: boolean;
-  followers: number;
-  name: string;
-  owner: string;
-  open_issues: number;
-  pushed_at: string;
-  score: number;
-  pushed: string;
-  description: string;
-  language: string;
-  created_at: string;
-};
-type SearchReposLegacyResponseData = {
-  repositories: Array<SearchReposLegacyResponseDataRepositoriesItem>;
-};
-
-type SearchEmailLegacyEndpoint = {
-  /**
-   * The email address.
-   */
-  email: string;
-};
-
-type SearchEmailLegacyRequestOptions = {
-  method: "GET";
-  url: "/legacy/user/email/:email";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-type SearchEmailLegacyResponseDataUser = {
-  public_repo_count: number;
-  public_gist_count: number;
-  followers_count: number;
-  following_count: number;
-  created: string;
-  created_at: string;
-  name: string;
-  company: string;
-  blog: string;
-  location: string;
-  email: string;
-  id: number;
-  login: string;
-  type: string;
-  gravatar_id: string;
-};
-type SearchEmailLegacyResponseData = {
-  user: SearchEmailLegacyResponseDataUser;
-};
-
-type SearchUsersLegacyEndpoint = {
-  /**
-   * The search term.
-   */
-  keyword: string;
-  /**
-   * The page number to fetch.
-   */
-  start_page?: string;
-  /**
-   * The sort field. One of `stars`, `forks`, or `updated`. Default: results are sorted by best match.
-   */
-  sort?: "stars" | "forks" | "updated";
-  /**
-   * The sort field. if `sort` param is provided. Can be either `asc` or `desc`.
-   */
-  order?: "asc" | "desc";
-};
-
-type SearchUsersLegacyRequestOptions = {
-  method: "GET";
-  url: "/legacy/user/search/:keyword";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-type SearchUsersLegacyResponseDataUsersItem = {
-  gravatar_id: string;
-  name: string;
-  created_at: string;
-  location: string;
-  public_repo_count: number;
-  followers: number;
-  language: string;
-  fullname: string;
-  username: string;
-  id: string;
-  repos: number;
-  type: string;
-  followers_count: number;
-  login: string;
-  score: number;
-  created: string;
-};
-type SearchUsersLegacyResponseData = {
-  users: Array<SearchUsersLegacyResponseDataUsersItem>;
-};
 
 type LicensesListCommonlyUsedEndpoint = {};
 
@@ -41506,60 +41267,6 @@ type ActivityListWatchedReposForAuthenticatedUserResponseDataItem = {
 type ActivityListWatchedReposForAuthenticatedUserResponseData = Array<
   ActivityListWatchedReposForAuthenticatedUserResponseDataItem
 >;
-
-type ActivityCheckWatchingRepoLegacyEndpoint = {
-  /**
-   * owner parameter
-   */
-  owner: string;
-  /**
-   * repo parameter
-   */
-  repo: string;
-};
-
-type ActivityCheckWatchingRepoLegacyRequestOptions = {
-  method: "GET";
-  url: "/user/subscriptions/:owner/:repo";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-
-type ActivityWatchRepoLegacyEndpoint = {
-  /**
-   * owner parameter
-   */
-  owner: string;
-  /**
-   * repo parameter
-   */
-  repo: string;
-};
-
-type ActivityWatchRepoLegacyRequestOptions = {
-  method: "PUT";
-  url: "/user/subscriptions/:owner/:repo";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-
-type ActivityStopWatchingRepoLegacyEndpoint = {
-  /**
-   * owner parameter
-   */
-  owner: string;
-  /**
-   * repo parameter
-   */
-  repo: string;
-};
-
-type ActivityStopWatchingRepoLegacyRequestOptions = {
-  method: "DELETE";
-  url: "/user/subscriptions/:owner/:repo";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
 
 type TeamsListForAuthenticatedUserEndpoint = {
   /**
