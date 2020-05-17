@@ -38,9 +38,7 @@ const QUERY = `
       responses {
         code
         description
-        examples {
-          data
-        }
+        schema
       }
       renamed {
         note
