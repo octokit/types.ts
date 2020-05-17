@@ -27,7 +27,7 @@ const ENDPOINTS_TEMPLATE_PATH = resolve(
 Handlebars.registerHelper("name", function (parameter) {
   let name = parameter.key;
 
-  if (/[.\[]/.test(name)) {
+  if (/[.\[]/.test(name) && name !== "[key: string]") {
     name = `"${name}"`;
   }
 
@@ -228,11 +228,24 @@ writeFileSync(
 console.log(`${ENDPOINTS_PATH} updated.`);
 
 function parameterize(parameter) {
-  const key = parameter.name;
+  let key = parameter.name;
   const type = typeMap[parameter.type] || parameter.type;
   const enums = parameter.enum
     ? parameter.enum.map(JSON.stringify).join("|")
     : null;
+
+  if (/\*/.test(key)) {
+    return {
+      name: pascalCase(key.replace(/\*/, "Object")),
+      key: key.replace(/\*/, "[key: string]"),
+      required: true,
+      type: enums || type,
+      alias: parameter.alias,
+      deprecated: parameter.deprecated,
+      allowNull: parameter.allowNull,
+      jsdoc: stringToJsdocComment(parameter.description),
+    };
+  }
 
   return {
     name: pascalCase(key),
