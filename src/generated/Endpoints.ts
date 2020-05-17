@@ -123,6 +123,22 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
+   * @see https://developer.github.com/v3/actions/secrets/#delete-an-organization-secret
+   */
+  "DELETE /orgs/:org/actions/secrets/:secret_name": {
+    parameters: ActionsDeleteOrgSecretEndpoint;
+    request: ActionsDeleteOrgSecretRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret
+   */
+  "DELETE /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id": {
+    parameters: ActionsRemoveSelectedRepoFromOrgSecretEndpoint;
+    request: ActionsRemoveSelectedRepoFromOrgSecretRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
    * @see https://developer.github.com/v3/orgs/blocking/#unblock-a-user
    */
   "DELETE /orgs/:org/blocks/:username": {
@@ -339,11 +355,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository
+   * @see https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret
    */
-  "DELETE /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsDeleteSecretFromRepoEndpoint;
-    request: ActionsDeleteSecretFromRepoRequestOptions;
+  "DELETE /repos/:owner/:repo/actions/secrets/:secret_name": {
+    parameters: ActionsDeleteRepoSecretEndpoint;
+    request: ActionsDeleteRepoSecretRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -1203,6 +1219,38 @@ export interface Endpoints {
     response: OctokitResponse<ActionsListRunnerApplicationsForOrgResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/actions/secrets/#list-organization-secrets
+   */
+  "GET /orgs/:org/actions/secrets": {
+    parameters: ActionsListOrgSecretsEndpoint;
+    request: ActionsListOrgSecretsRequestOptions;
+    response: OctokitResponse<ActionsListOrgSecretsResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#get-an-organization-secret
+   */
+  "GET /orgs/:org/actions/secrets/:secret_name": {
+    parameters: ActionsGetOrgSecretEndpoint;
+    request: ActionsGetOrgSecretRequestOptions;
+    response: OctokitResponse<ActionsGetOrgSecretResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret
+   */
+  "GET /orgs/:org/actions/secrets/:secret_name/repositories": {
+    parameters: ActionsListSelectedReposForOrgSecretEndpoint;
+    request: ActionsListSelectedReposForOrgSecretRequestOptions;
+    response: OctokitResponse<ActionsListSelectedReposForOrgSecretResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key
+   */
+  "GET /orgs/:org/actions/secrets/public-key": {
+    parameters: ActionsGetOrgPublicKeyEndpoint;
+    request: ActionsGetOrgPublicKeyRequestOptions;
+    response: OctokitResponse<ActionsGetOrgPublicKeyResponseData>;
+  };
+  /**
    * @see https://developer.github.com/v3/orgs/blocking/#list-blocked-users
    */
   "GET /orgs/:org/blocks": {
@@ -1725,28 +1773,36 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository
+   * @see https://developer.github.com/v3/actions/workflow-runs/#get-workflow-run-usage
+   */
+  "GET /repos/:owner/:repo/actions/runs/:run_id/timing": {
+    parameters: ActionsGetWorkflowRunUsageEndpoint;
+    request: ActionsGetWorkflowRunUsageRequestOptions;
+    response: OctokitResponse<ActionsGetWorkflowRunUsageResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#list-repository-secrets
    */
   "GET /repos/:owner/:repo/actions/secrets": {
-    parameters: ActionsListSecretsForRepoEndpoint;
-    request: ActionsListSecretsForRepoRequestOptions;
-    response: OctokitResponse<ActionsListSecretsForRepoResponseData>;
+    parameters: ActionsListRepoSecretsEndpoint;
+    request: ActionsListRepoSecretsRequestOptions;
+    response: OctokitResponse<ActionsListRepoSecretsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/secrets/#get-a-secret
+   * @see https://developer.github.com/v3/actions/secrets/#get-a-repository-secret
    */
-  "GET /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsGetSecretEndpoint;
-    request: ActionsGetSecretRequestOptions;
-    response: OctokitResponse<ActionsGetSecretResponseData>;
+  "GET /repos/:owner/:repo/actions/secrets/:secret_name": {
+    parameters: ActionsGetRepoSecretEndpoint;
+    request: ActionsGetRepoSecretRequestOptions;
+    response: OctokitResponse<ActionsGetRepoSecretResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/secrets/#get-your-public-key
+   * @see https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key
    */
   "GET /repos/:owner/:repo/actions/secrets/public-key": {
-    parameters: ActionsGetPublicKeyEndpoint;
-    request: ActionsGetPublicKeyRequestOptions;
-    response: OctokitResponse<ActionsGetPublicKeyResponseData>;
+    parameters: ActionsGetRepoPublicKeyEndpoint;
+    request: ActionsGetRepoPublicKeyRequestOptions;
+    response: OctokitResponse<ActionsGetRepoPublicKeyResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/actions/workflows/#list-repository-workflows
@@ -1771,6 +1827,14 @@ export interface Endpoints {
     parameters: ActionsListWorkflowRunsEndpoint;
     request: ActionsListWorkflowRunsRequestOptions;
     response: OctokitResponse<ActionsListWorkflowRunsResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/workflows/#get-workflow-usage
+   */
+  "GET /repos/:owner/:repo/actions/workflows/:workflow_id/timing": {
+    parameters: ActionsGetWorkflowUsageEndpoint;
+    request: ActionsGetWorkflowUsageRequestOptions;
+    response: OctokitResponse<ActionsGetWorkflowUsageResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/issues/assignees/#list-assignees
@@ -4610,6 +4674,30 @@ export interface Endpoints {
     response: OctokitResponse<ActivitySetThreadSubscriptionResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret
+   */
+  "PUT /orgs/:org/actions/secrets/:secret_name": {
+    parameters: ActionsCreateOrUpdateOrgSecretEndpoint;
+    request: ActionsCreateOrUpdateOrgSecretRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret
+   */
+  "PUT /orgs/:org/actions/secrets/:secret_name/repositories": {
+    parameters: ActionsSetSelectedReposForOrgSecretEndpoint;
+    request: ActionsSetSelectedReposForOrgSecretRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/secrets/#add-selected-repository-to-an-organization-secret
+   */
+  "PUT /orgs/:org/actions/secrets/:secret_name/repositories/:repository_id": {
+    parameters: ActionsAddSelectedRepoToOrgSecretEndpoint;
+    request: ActionsAddSelectedRepoToOrgSecretRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
    * @see https://developer.github.com/v3/orgs/blocking/#block-a-user
    */
   "PUT /orgs/:org/blocks/:username": {
@@ -4689,11 +4777,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository
+   * @see https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret
    */
-  "PUT /repos/:owner/:repo/actions/secrets/:name": {
-    parameters: ActionsCreateOrUpdateSecretForRepoEndpoint;
-    request: ActionsCreateOrUpdateSecretForRepoRequestOptions;
+  "PUT /repos/:owner/:repo/actions/secrets/:secret_name": {
+    parameters: ActionsCreateOrUpdateRepoSecretEndpoint;
+    request: ActionsCreateOrUpdateRepoSecretRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -8762,6 +8850,246 @@ type ActionsDeleteSelfHostedRunnerFromOrgRequestOptions = {
   request: RequestRequestOptions;
 };
 
+type ActionsListOrgSecretsEndpoint = {
+  org: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type ActionsListOrgSecretsRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/secrets";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListOrgSecretsResponseData {
+  total_count: number;
+  secrets: {
+    name: string;
+    created_at: string;
+    updated_at: string;
+    visibility: string;
+    selected_repositories_url: string;
+  }[];
+}
+
+type ActionsGetOrgPublicKeyEndpoint = {
+  org: string;
+};
+
+type ActionsGetOrgPublicKeyRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/secrets/public-key";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetOrgPublicKeyResponseData {
+  key_id: string;
+  key: string;
+}
+
+type ActionsGetOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+};
+
+type ActionsGetOrgSecretRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/secrets/:secret_name";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetOrgSecretResponseData {
+  name: string;
+  created_at: string;
+  updated_at: string;
+  visibility: string;
+  selected_repositories_url: string;
+}
+
+type ActionsCreateOrUpdateOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+  /**
+   * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key) endpoint.
+   */
+  encrypted_value?: string;
+  /**
+   * ID of the key you used to encrypt the secret.
+   */
+  key_id?: string;
+  /**
+   * Configures the access that repositories have to the organization secret. Can be one of:
+   * \- `all` - All repositories in an organization can access the secret.
+   * \- `private` - Private repositories in an organization can access the secret.
+   * \- `selected` - Only specific repositories can access the secret.
+   */
+  visibility?: "all" | "private" | "selected";
+  /**
+   * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.
+   */
+  selected_repository_ids?: string[];
+};
+
+type ActionsCreateOrUpdateOrgSecretRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/secrets/:secret_name";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsDeleteOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+};
+
+type ActionsDeleteOrgSecretRequestOptions = {
+  method: "DELETE";
+  url: "/orgs/:org/actions/secrets/:secret_name";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsListSelectedReposForOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+};
+
+type ActionsListSelectedReposForOrgSecretRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/secrets/:secret_name/repositories";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListSelectedReposForOrgSecretResponseData {
+  total_count: number;
+  repositories: {
+    id: number;
+    node_id: string;
+    name: string;
+    full_name: string;
+    owner: {
+      login: string;
+      id: number;
+      node_id: string;
+      avatar_url: string;
+      gravatar_id: string;
+      url: string;
+      html_url: string;
+      followers_url: string;
+      following_url: string;
+      gists_url: string;
+      starred_url: string;
+      subscriptions_url: string;
+      organizations_url: string;
+      repos_url: string;
+      events_url: string;
+      received_events_url: string;
+      type: string;
+      site_admin: boolean;
+    };
+    private: boolean;
+    html_url: string;
+    description: string;
+    fork: boolean;
+    url: string;
+    archive_url: string;
+    assignees_url: string;
+    blobs_url: string;
+    branches_url: string;
+    collaborators_url: string;
+    comments_url: string;
+    commits_url: string;
+    compare_url: string;
+    contents_url: string;
+    contributors_url: string;
+    deployments_url: string;
+    downloads_url: string;
+    events_url: string;
+    forks_url: string;
+    git_commits_url: string;
+    git_refs_url: string;
+    git_tags_url: string;
+    git_url: string;
+    issue_comment_url: string;
+    issue_events_url: string;
+    issues_url: string;
+    keys_url: string;
+    labels_url: string;
+    languages_url: string;
+    merges_url: string;
+    milestones_url: string;
+    notifications_url: string;
+    pulls_url: string;
+    releases_url: string;
+    ssh_url: string;
+    stargazers_url: string;
+    statuses_url: string;
+    subscribers_url: string;
+    subscription_url: string;
+    tags_url: string;
+    teams_url: string;
+    trees_url: string;
+  }[];
+}
+
+type ActionsSetSelectedReposForOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+  /**
+   * An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.
+   */
+  selected_repository_ids?: number[];
+};
+
+type ActionsSetSelectedReposForOrgSecretRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/secrets/:secret_name/repositories";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsAddSelectedRepoToOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+
+  repository_id: number;
+};
+
+type ActionsAddSelectedRepoToOrgSecretRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/secrets/:secret_name/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsRemoveSelectedRepoFromOrgSecretEndpoint = {
+  org: string;
+
+  secret_name: string;
+
+  repository_id: number;
+};
+
+type ActionsRemoveSelectedRepoFromOrgSecretRequestOptions = {
+  method: "DELETE";
+  url: "/orgs/:org/actions/secrets/:secret_name/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type OrgsListBlockedUsersEndpoint = {
   org: string;
 };
@@ -8927,7 +9255,7 @@ type OrgsCreateHookEndpoint = {
    */
   config: OrgsCreateHookParamsConfig;
   /**
-   * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.
+   * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
   events?: string[];
   /**
@@ -8993,7 +9321,7 @@ type OrgsUpdateHookEndpoint = {
    */
   config?: OrgsUpdateHookParamsConfig;
   /**
-   * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.
+   * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
   events?: string[];
   /**
@@ -15307,7 +15635,39 @@ type ActionsReRunWorkflowRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ActionsListSecretsForRepoEndpoint = {
+type ActionsGetWorkflowRunUsageEndpoint = {
+  owner: string;
+
+  repo: string;
+
+  run_id: number;
+};
+
+type ActionsGetWorkflowRunUsageRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/actions/runs/:run_id/timing";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetWorkflowRunUsageResponseData {
+  billable: {
+    UBUNTU: {
+      total_ms: number;
+      jobs: number;
+    };
+    MACOS: {
+      total_ms: number;
+      jobs: number;
+    };
+    WINDOWS: {
+      total_ms: number;
+      jobs: number;
+    };
+  };
+  run_duration_ms: number;
+}
+
+type ActionsListRepoSecretsEndpoint = {
   owner: string;
 
   repo: string;
@@ -15321,13 +15681,13 @@ type ActionsListSecretsForRepoEndpoint = {
   page?: number;
 };
 
-type ActionsListSecretsForRepoRequestOptions = {
+type ActionsListRepoSecretsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/secrets";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ActionsListSecretsForRepoResponseData {
+export interface ActionsListRepoSecretsResponseData {
   total_count: number;
   secrets: {
     name: string;
@@ -15336,51 +15696,51 @@ export interface ActionsListSecretsForRepoResponseData {
   }[];
 }
 
-type ActionsGetPublicKeyEndpoint = {
+type ActionsGetRepoPublicKeyEndpoint = {
   owner: string;
 
   repo: string;
 };
 
-type ActionsGetPublicKeyRequestOptions = {
+type ActionsGetRepoPublicKeyRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/secrets/public-key";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ActionsGetPublicKeyResponseData {
+export interface ActionsGetRepoPublicKeyResponseData {
   key_id: string;
   key: string;
 }
 
-type ActionsGetSecretEndpoint = {
+type ActionsGetRepoSecretEndpoint = {
   owner: string;
 
   repo: string;
 
-  name: string;
+  secret_name: string;
 };
 
-type ActionsGetSecretRequestOptions = {
+type ActionsGetRepoSecretRequestOptions = {
   method: "GET";
-  url: "/repos/:owner/:repo/actions/secrets/:name";
+  url: "/repos/:owner/:repo/actions/secrets/:secret_name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ActionsGetSecretResponseData {
+export interface ActionsGetRepoSecretResponseData {
   name: string;
   created_at: string;
   updated_at: string;
 }
 
-type ActionsCreateOrUpdateSecretForRepoEndpoint = {
+type ActionsCreateOrUpdateRepoSecretEndpoint = {
   owner: string;
 
   repo: string;
 
-  name: string;
+  secret_name: string;
   /**
-   * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.
+   * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.
    */
   encrypted_value?: string;
   /**
@@ -15389,24 +15749,24 @@ type ActionsCreateOrUpdateSecretForRepoEndpoint = {
   key_id?: string;
 };
 
-type ActionsCreateOrUpdateSecretForRepoRequestOptions = {
+type ActionsCreateOrUpdateRepoSecretRequestOptions = {
   method: "PUT";
-  url: "/repos/:owner/:repo/actions/secrets/:name";
+  url: "/repos/:owner/:repo/actions/secrets/:secret_name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ActionsDeleteSecretFromRepoEndpoint = {
+type ActionsDeleteRepoSecretEndpoint = {
   owner: string;
 
   repo: string;
 
-  name: string;
+  secret_name: string;
 };
 
-type ActionsDeleteSecretFromRepoRequestOptions = {
+type ActionsDeleteRepoSecretRequestOptions = {
   method: "DELETE";
-  url: "/repos/:owner/:repo/actions/secrets/:name";
+  url: "/repos/:owner/:repo/actions/secrets/:secret_name";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -15685,6 +16045,34 @@ export interface ActionsListWorkflowRunsResponseData {
       deployments_url: string;
     };
   }[];
+}
+
+type ActionsGetWorkflowUsageEndpoint = {
+  owner: string;
+
+  repo: string;
+
+  workflow_id: number;
+};
+
+type ActionsGetWorkflowUsageRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/actions/workflows/:workflow_id/timing";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetWorkflowUsageResponseData {
+  billable: {
+    UBUNTU: {
+      total_ms: number;
+    };
+    MACOS: {
+      total_ms: number;
+    };
+    WINDOWS: {
+      total_ms: number;
+    };
+  };
 }
 
 type IssuesListAssigneesEndpoint = {
@@ -17268,7 +17656,7 @@ type ChecksCreateEndpoint = {
    */
   output?: ChecksCreateParamsOutput;
   /**
-   * Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/v3/activity/events/types/#checkrunevent) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)." To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)."
+   * Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/webhooks/event-payloads/#check_run) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)." To learn more about check runs and requested actions, see "[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions)."
    */
   actions?: ChecksCreateParamsActions[];
 } & RequiredPreview<"antiope">;
@@ -22095,7 +22483,7 @@ type ReposCreateHookEndpoint = {
    */
   config: ReposCreateHookParamsConfig;
   /**
-   * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.
+   * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
   events?: string[];
   /**
@@ -22181,7 +22569,7 @@ type ReposUpdateHookEndpoint = {
    */
   config?: ReposUpdateHookParamsConfig;
   /**
-   * Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for. This replaces the entire array of events.
+   * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
    */
   events?: string[];
   /**
