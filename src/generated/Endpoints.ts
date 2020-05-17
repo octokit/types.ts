@@ -39580,11 +39580,17 @@ type ActivityListReposWatchedByUserResponseData = Array<
 
 type AppsCreateInstallationTokenParamsPermissions = {};
 type GistsCreateParamsFiles = {
-  content?: string;
+  [key: string]: GistsCreateParamsFilesKeyString;
+};
+type GistsCreateParamsFilesKeyString = {
+  content: string;
 };
 type GistsUpdateParamsFiles = {
-  content?: string;
-  filename?: string;
+  [key: string]: GistsUpdateParamsFilesKeyString;
+};
+type GistsUpdateParamsFilesKeyString = {
+  content: string;
+  filename: string;
 };
 type OrgsCreateHookParamsConfig = {
   url: string;
