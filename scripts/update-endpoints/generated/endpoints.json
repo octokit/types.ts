@@ -4158,6 +4158,406 @@
     "renamed": null
   },
   {
+    "name": "List organization secrets",
+    "scope": "actions",
+    "id": "listOrgSecrets",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-organization-secrets",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"secrets\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"selected_repositories_url\":{\"type\":\"string\"}},\"required\":[\"name\",\"created_at\",\"updated_at\",\"visibility\"]}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an organization public key",
+    "scope": "actions",
+    "id": "getOrgPublicKey",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/public-key",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"key_id\":{\"type\":\"string\"},\"key\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get an organization secret",
+    "scope": "actions",
+    "id": "getOrgSecret",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"selected_repositories_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create or update an organization secret",
+    "scope": "actions",
+    "id": "createOrUpdateOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an organization public key](https://developer.github.com/v3/actions/secrets/#get-an-organization-public-key) endpoint.",
+        "enum": null,
+        "name": "encrypted_value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "ID of the key you used to encrypt the secret.",
+        "enum": null,
+        "name": "key_id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Configures the access that repositories have to the organization secret. Can be one of:  \n\\- `all` - All repositories in an organization can access the secret.  \n\\- `private` - Private repositories in an organization can access the secret.  \n\\- `selected` - Only specific repositories can access the secret.",
+        "enum": ["all", "private", "selected"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can manage the list of selected repositories using the [List selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret), [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret), and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.",
+        "enum": null,
+        "name": "selected_repository_ids",
+        "type": "string[]",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete an organization secret",
+    "scope": "actions",
+    "id": "deleteOrgSecret",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "List selected repositories for an organization secret",
+    "scope": "actions",
+    "id": "listSelectedReposForOrgSecret",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-selected-repositories-for-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"repositories\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Set selected repositories for an organization secret",
+    "scope": "actions",
+    "id": "setSelectedReposForOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the `visibility` is set to `selected`. You can add and remove individual repositories using the [Set selected repositories for an organization secret](https://developer.github.com/v3/actions/secrets/#set-selected-repositories-for-an-organization-secret) and [Remove selected repository from an organization secret](https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret) endpoints.",
+        "enum": null,
+        "name": "selected_repository_ids",
+        "type": "integer[]",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add selected repository to an organization secret",
+    "scope": "actions",
+    "id": "addSelectedRepoToOrgSecret",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#add-selected-repository-to-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repository_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove selected repository from an organization secret",
+    "scope": "actions",
+    "id": "removeSelectedRepoFromOrgSecret",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#remove-selected-repository-from-an-organization-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repository_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "List blocked users",
     "scope": "orgs",
     "id": "listBlockedUsers",
@@ -4555,7 +4955,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "enum": null,
         "name": "config.secret",
         "type": "string",
@@ -4575,7 +4975,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "enum": null,
         "name": "events",
         "type": "string[]",
@@ -4705,7 +5105,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "enum": null,
         "name": "config.secret",
         "type": "string",
@@ -4725,7 +5125,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "enum": null,
         "name": "events",
         "type": "string[]",
@@ -11770,12 +12170,62 @@
     "renamed": null
   },
   {
-    "name": "List secrets for a repository",
+    "name": "Get workflow run usage",
     "scope": "actions",
-    "id": "listSecretsForRepo",
+    "id": "getWorkflowRunUsage",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/timing",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#get-workflow-run-usage",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "run_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"billable\":{\"type\":\"object\",\"properties\":{\"UBUNTU\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"},\"jobs\":{\"type\":\"number\"}}},\"MACOS\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"},\"jobs\":{\"type\":\"number\"}}},\"WINDOWS\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"},\"jobs\":{\"type\":\"number\"}}}}},\"run_duration_ms\":{\"type\":\"number\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List repository secrets",
+    "scope": "actions",
+    "id": "listRepoSecrets",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-secrets-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-repository-secrets",
     "parameters": [
       {
         "alias": null,
@@ -11830,12 +12280,74 @@
     "renamed": null
   },
   {
-    "name": "Get your public key",
+    "name": "List repository secrets",
     "scope": "actions",
-    "id": "getPublicKey",
+    "id": "listSecretsForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#list-repository-secrets",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"secrets\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"}},\"required\":[\"name\",\"created_at\",\"updated_at\"]}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"actions/list-secrets-for-repo\" operation ID is now \"actions/list-repo-secrets\""
+    }
+  },
+  {
+    "name": "Get a repository public key",
+    "scope": "actions",
+    "id": "getRepoPublicKey",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-your-public-key",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key",
     "parameters": [
       {
         "alias": null,
@@ -11870,12 +12382,54 @@
     "renamed": null
   },
   {
-    "name": "Get a secret",
+    "name": "Get a repository public key",
     "scope": "actions",
-    "id": "getSecret",
+    "id": "getPublicKey",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-secret",
+    "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"key_id\":{\"type\":\"string\"},\"key\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"actions/get-public-key\" operation ID is now \"actions/get-repo-public-key\""
+    }
+  },
+  {
+    "name": "Get a repository secret",
+    "scope": "actions",
+    "id": "getRepoSecret",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-secret",
     "parameters": [
       {
         "alias": null,
@@ -11903,9 +12457,19 @@
         "deprecated": null,
         "description": "",
         "enum": null,
-        "name": "name",
+        "name": "secret_name",
         "type": "string",
         "required": true
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "name",
+        "type": null,
+        "required": null
       }
     ],
     "previews": [],
@@ -11920,12 +12484,12 @@
     "renamed": null
   },
   {
-    "name": "Create or update a secret for a repository",
+    "name": "Get a repository secret",
     "scope": "actions",
-    "id": "createOrUpdateSecretForRepo",
-    "method": "PUT",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-secret-for-a-repository",
+    "id": "getSecret",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#get-a-repository-secret",
     "parameters": [
       {
         "alias": null,
@@ -11953,7 +12517,49 @@
         "deprecated": null,
         "description": "",
         "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
         "name": "name",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"actions/get-secret\" operation ID is now \"actions/get-repo-secret\""
+    }
+  },
+  {
+    "name": "Create or update a repository secret",
+    "scope": "actions",
+    "id": "createOrUpdateRepoSecret",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
         "type": "string",
         "required": true
       },
@@ -11961,7 +12567,27 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.",
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.",
         "enum": null,
         "name": "encrypted_value",
         "type": "string",
@@ -11976,6 +12602,16 @@
         "name": "key_id",
         "type": "string",
         "required": false
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "name",
+        "type": null,
+        "required": null
       }
     ],
     "previews": [],
@@ -11984,12 +12620,12 @@
     "renamed": null
   },
   {
-    "name": "Delete a secret from a repository",
+    "name": "Create or update a repository secret",
     "scope": "actions",
-    "id": "deleteSecretFromRepo",
-    "method": "DELETE",
-    "url": "/repos/{owner}/{repo}/actions/secrets/{name}",
-    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-secret-from-a-repository",
+    "id": "createOrUpdateSecretForRepo",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#create-or-update-a-repository-secret",
     "parameters": [
       {
         "alias": null,
@@ -12017,15 +12653,157 @@
         "deprecated": null,
         "description": "",
         "enum": null,
-        "name": "name",
+        "name": "secret_name",
         "type": "string",
         "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://developer.github.com/v3/actions/secrets/#get-a-repository-public-key) endpoint.",
+        "enum": null,
+        "name": "encrypted_value",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "ID of the key you used to encrypt the secret.",
+        "enum": null,
+        "name": "key_id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "name",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+    }
+  },
+  {
+    "name": "Delete a repository secret",
+    "scope": "actions",
+    "id": "deleteRepoSecret",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "name",
+        "type": null,
+        "required": null
       }
     ],
     "previews": [],
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Delete a repository secret",
+    "scope": "actions",
+    "id": "createOrUpdateSecretForRepo",
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "secret_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "secret_name",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "name",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+    }
   },
   {
     "name": "List repository workflows",
@@ -12243,6 +13021,56 @@
         "code": 200,
         "description": "response",
         "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"workflow_runs\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"head_branch\":{\"type\":\"string\"},\"head_sha\":{\"type\":\"string\"},\"run_number\":{\"type\":\"number\"},\"event\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"conclusion\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"pull_requests\":{\"type\":\"array\",\"items\":{}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"jobs_url\":{\"type\":\"string\"},\"logs_url\":{\"type\":\"string\"},\"check_suite_url\":{\"type\":\"string\"},\"artifacts_url\":{\"type\":\"string\"},\"cancel_url\":{\"type\":\"string\"},\"rerun_url\":{\"type\":\"string\"},\"workflow_url\":{\"type\":\"string\"},\"head_commit\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"tree_id\":{\"type\":\"string\"},\"message\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"author\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"}}},\"committer\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"}}}}},\"repository\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"}}},\"head_repository\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"}}}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get workflow usage",
+    "scope": "actions",
+    "id": "getWorkflowUsage",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflows/#get-workflow-usage",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "workflow_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"billable\":{\"type\":\"object\",\"properties\":{\"UBUNTU\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"}}},\"MACOS\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"}}},\"WINDOWS\":{\"type\":\"object\",\"properties\":{\"total_ms\":{\"type\":\"number\"}}}}}}}"
       }
     ],
     "renamed": null
@@ -15123,7 +15951,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/v3/activity/events/types/#checkrunevent) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\" To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\"",
+        "description": "Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the [`check_run.requested_action` webhook](https://developer.github.com/webhooks/event-payloads/#check_run) to your app. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. See the [`actions` object](https://developer.github.com/v3/checks/runs/#actions-object) description. To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\" To learn more about check runs and requested actions, see \"[Check runs and requested actions](https://developer.github.com/v3/checks/runs/#check-runs-and-requested-actions).\"",
         "enum": null,
         "name": "actions",
         "type": "object[]",
@@ -20588,7 +21416,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "enum": null,
         "name": "config.secret",
         "type": "string",
@@ -20608,7 +21436,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.",
         "enum": null,
         "name": "events",
         "type": "string[]",
@@ -20758,7 +21586,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/#delivery-headers) header.",
+        "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value in the [`X-Hub-Signature`](https://developer.github.com/webhooks/event-payloads/#delivery-headers) header.",
         "enum": null,
         "name": "config.secret",
         "type": "string",
@@ -20778,7 +21606,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Determines what [events](https://developer.github.com/v3/activity/events/types/) the hook is triggered for. This replaces the entire array of events.",
+        "description": "Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.",
         "enum": null,
         "name": "events",
         "type": "string[]",
