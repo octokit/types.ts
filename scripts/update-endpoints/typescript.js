@@ -240,6 +240,9 @@ async function getResponseSchemasString(responsesSchemas) {
 
   const strings = await Promise.all(
     responsesSchemas.map(({ schema, name }) => {
+      if (name === "ReposListInvitationsResponseData") {
+        debugger;
+      }
       patchSchema(schema);
       return compile(schema, name, { bannerComment: false });
     })
@@ -249,6 +252,10 @@ async function getResponseSchemasString(responsesSchemas) {
 }
 
 function patchSchema(schema) {
+  if (schema.items) {
+    patchSchema(schema.items);
+  }
+
   if (!schema.properties) return;
 
   // make all keys required, set additionalProperties to false
