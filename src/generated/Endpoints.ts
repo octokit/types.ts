@@ -4975,9 +4975,6 @@ type AppsGetAuthenticatedResponseData = {
 };
 
 type AppsCreateFromManifestEndpoint = {
-  /**
-   * code parameter
-   */
   code: string;
 };
 
@@ -5079,9 +5076,6 @@ type AppsListInstallationsResponseData = Array<
 >;
 
 type AppsGetInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
 } & RequiredPreview<"machine-man">;
 
@@ -5127,9 +5121,6 @@ type AppsGetInstallationResponseData = {
 };
 
 type AppsDeleteInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
 } & RequiredPreview<"machine-man">;
 
@@ -5141,9 +5132,6 @@ type AppsDeleteInstallationRequestOptions = {
 };
 
 type AppsCreateInstallationTokenEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
   /**
    * The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the "[List repositories](https://developer.github.com/v3/apps/installations/#list-repositories)" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.
@@ -5280,9 +5268,6 @@ type AppsCreateInstallationTokenResponseData = {
 };
 
 type AppsSuspendInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
 };
 
@@ -5294,9 +5279,6 @@ type AppsSuspendInstallationRequestOptions = {
 };
 
 type AppsUnsuspendInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
 };
 
@@ -5342,9 +5324,6 @@ type OauthAuthorizationsListGrantsResponseData = Array<
 >;
 
 type OauthAuthorizationsGetGrantEndpoint = {
-  /**
-   * grant_id parameter
-   */
   grant_id: number;
 };
 
@@ -5369,9 +5348,6 @@ type OauthAuthorizationsGetGrantResponseData = {
 };
 
 type OauthAuthorizationsDeleteGrantEndpoint = {
-  /**
-   * grant_id parameter
-   */
   grant_id: number;
 };
 
@@ -5383,9 +5359,6 @@ type OauthAuthorizationsDeleteGrantRequestOptions = {
 };
 
 type AppsDeleteAuthorizationEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
   /**
    * The OAuth access token used to authenticate to the GitHub API.
@@ -5401,13 +5374,8 @@ type AppsDeleteAuthorizationRequestOptions = {
 };
 
 type AppsRevokeGrantForApplicationEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
-  /**
-   * access_token parameter
-   */
+
   access_token: string;
 };
 
@@ -5419,9 +5387,6 @@ type AppsRevokeGrantForApplicationRequestOptions = {
 };
 
 type AppsCheckTokenEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
   /**
    * The OAuth access token used to authenticate to the GitHub API.
@@ -5477,9 +5442,6 @@ type AppsCheckTokenResponseData = {
 };
 
 type AppsResetTokenEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
   /**
    * The OAuth access token used to authenticate to the GitHub API.
@@ -5535,9 +5497,6 @@ type AppsResetTokenResponseData = {
 };
 
 type AppsDeleteTokenEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
   /**
    * The OAuth access token used to authenticate to the GitHub API.
@@ -5553,13 +5512,8 @@ type AppsDeleteTokenRequestOptions = {
 };
 
 type AppsCheckAuthorizationEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
-  /**
-   * access_token parameter
-   */
+
   access_token: string;
 };
 
@@ -5611,13 +5565,8 @@ type AppsCheckAuthorizationResponseData = {
 };
 
 type AppsResetAuthorizationEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
-  /**
-   * access_token parameter
-   */
+
   access_token: string;
 };
 
@@ -5669,13 +5618,8 @@ type AppsResetAuthorizationResponseData = {
 };
 
 type AppsRevokeAuthorizationForApplicationEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
-  /**
-   * access_token parameter
-   */
+
   access_token: string;
 };
 
@@ -5687,9 +5631,6 @@ type AppsRevokeAuthorizationForApplicationRequestOptions = {
 };
 
 type AppsGetBySlugEndpoint = {
-  /**
-   * app_slug parameter
-   */
   app_slug: string;
 } & RequiredPreview<"machine-man">;
 
@@ -5828,9 +5769,6 @@ type OauthAuthorizationsCreateAuthorizationResponseData = {
 };
 
 type OauthAuthorizationsGetOrCreateAuthorizationForAppEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
   /**
    * The 40 character OAuth app client secret associated with the client ID specified in the URL.
@@ -5881,13 +5819,8 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData = {
 };
 
 type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintEndpoint = {
-  /**
-   * client_id parameter
-   */
   client_id: string;
-  /**
-   * fingerprint parameter
-   */
+
   fingerprint: string;
   /**
    * The 40 character OAuth app client secret associated with the client ID specified in the URL.
@@ -5934,9 +5867,6 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData
 };
 
 type OauthAuthorizationsGetAuthorizationEndpoint = {
-  /**
-   * authorization_id parameter
-   */
   authorization_id: number;
 };
 
@@ -5967,9 +5897,6 @@ type OauthAuthorizationsGetAuthorizationResponseData = {
 };
 
 type OauthAuthorizationsUpdateAuthorizationEndpoint = {
-  /**
-   * authorization_id parameter
-   */
   authorization_id: number;
   /**
    * Replaces the authorization scopes with these.
@@ -6024,9 +5951,6 @@ type OauthAuthorizationsUpdateAuthorizationResponseData = {
 };
 
 type OauthAuthorizationsDeleteAuthorizationEndpoint = {
-  /**
-   * authorization_id parameter
-   */
   authorization_id: number;
 };
 
@@ -6057,9 +5981,6 @@ type CodesOfConductGetAllCodesOfConductResponseData = Array<
 >;
 
 type CodesOfConductGetConductCodeEndpoint = {
-  /**
-   * key parameter
-   */
   key: string;
 } & RequiredPreview<"scarlet-witch">;
 
@@ -6077,9 +5998,6 @@ type CodesOfConductGetConductCodeResponseData = {
 };
 
 type AppsCreateContentAttachmentEndpoint = {
-  /**
-   * content_reference_id parameter
-   */
   content_reference_id: number;
   /**
    * The title of the content attachment displayed in the body or comment of an issue or pull request.
@@ -6573,9 +6491,6 @@ type GistsListStarredResponseDataItem = {
 type GistsListStarredResponseData = Array<GistsListStarredResponseDataItem>;
 
 type GistsGetEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -6730,9 +6645,6 @@ type GistsGetResponseData = {
 };
 
 type GistsUpdateEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
   /**
    * A descriptive name for this gist.
@@ -6895,9 +6807,6 @@ type GistsUpdateResponseData = {
 };
 
 type GistsDeleteEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -6909,9 +6818,6 @@ type GistsDeleteRequestOptions = {
 };
 
 type GistsListCommentsEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
   /**
    * Results per page (max 100)
@@ -6961,9 +6867,6 @@ type GistsListCommentsResponseDataItem = {
 type GistsListCommentsResponseData = Array<GistsListCommentsResponseDataItem>;
 
 type GistsCreateCommentEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
   /**
    * The comment text.
@@ -7008,13 +6911,8 @@ type GistsCreateCommentResponseData = {
 };
 
 type GistsGetCommentEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -7055,13 +6953,8 @@ type GistsGetCommentResponseData = {
 };
 
 type GistsUpdateCommentEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The comment text.
@@ -7106,13 +6999,8 @@ type GistsUpdateCommentResponseData = {
 };
 
 type GistsDeleteCommentEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -7124,9 +7012,6 @@ type GistsDeleteCommentRequestOptions = {
 };
 
 type GistsListCommitsEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
   /**
    * Results per page (max 100)
@@ -7179,9 +7064,6 @@ type GistsListCommitsResponseDataItem = {
 type GistsListCommitsResponseData = Array<GistsListCommitsResponseDataItem>;
 
 type GistsForkEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -7243,9 +7125,6 @@ type GistsForkResponseData = {
 };
 
 type GistsListForksEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
   /**
    * Results per page (max 100)
@@ -7293,9 +7172,6 @@ type GistsListForksResponseDataItem = {
 type GistsListForksResponseData = Array<GistsListForksResponseDataItem>;
 
 type GistsStarEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -7307,9 +7183,6 @@ type GistsStarRequestOptions = {
 };
 
 type GistsUnstarEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -7321,9 +7194,6 @@ type GistsUnstarRequestOptions = {
 };
 
 type GistsCheckIsStarredEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
 };
 
@@ -7335,13 +7205,8 @@ type GistsCheckIsStarredRequestOptions = {
 };
 
 type GistsGetRevisionEndpoint = {
-  /**
-   * gist_id parameter
-   */
   gist_id: string;
-  /**
-   * sha parameter
-   */
+
   sha: string;
 };
 
@@ -7506,9 +7371,6 @@ type GitignoreListTemplatesRequestOptions = {
 type GitignoreListTemplatesResponseData = Array<string>;
 
 type GitignoreGetTemplateEndpoint = {
-  /**
-   * name parameter
-   */
   name: string;
 };
 
@@ -7967,9 +7829,6 @@ type LicensesListCommonlyUsedResponseData = Array<
 >;
 
 type LicensesGetEndpoint = {
-  /**
-   * license parameter
-   */
   license: string;
 };
 
@@ -8033,9 +7892,6 @@ type MarkdownRenderRawRequestOptions = {
 };
 
 type AppsGetSubscriptionPlanForAccountEndpoint = {
-  /**
-   * account_id parameter
-   */
   account_id: number;
 };
 
@@ -8136,9 +7992,6 @@ type AppsListPlansResponseDataItem = {
 type AppsListPlansResponseData = Array<AppsListPlansResponseDataItem>;
 
 type AppsListAccountsForPlanEndpoint = {
-  /**
-   * plan_id parameter
-   */
   plan_id: number;
   /**
    * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
@@ -8224,9 +8077,6 @@ type AppsListAccountsForPlanResponseData = Array<
 >;
 
 type AppsGetSubscriptionPlanForAccountStubbedEndpoint = {
-  /**
-   * account_id parameter
-   */
   account_id: number;
 };
 
@@ -8329,9 +8179,6 @@ type AppsListPlansStubbedResponseData = Array<
 >;
 
 type AppsListAccountsForPlanStubbedEndpoint = {
-  /**
-   * plan_id parameter
-   */
   plan_id: number;
   /**
    * Sorts the GitHub accounts by the date they were created or last updated. Can be one of `created` or `updated`.
@@ -8442,13 +8289,8 @@ type MetaGetResponseData = {
 };
 
 type ActivityListPublicEventsForRepoNetworkEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -8604,9 +8446,6 @@ type ActivityMarkNotificationsAsReadRequestOptions = {
 };
 
 type ActivityGetThreadEndpoint = {
-  /**
-   * thread_id parameter
-   */
   thread_id: number;
 };
 
@@ -8703,9 +8542,6 @@ type ActivityGetThreadResponseData = {
 };
 
 type ActivityMarkThreadAsReadEndpoint = {
-  /**
-   * thread_id parameter
-   */
   thread_id: number;
 };
 
@@ -8717,9 +8553,6 @@ type ActivityMarkThreadAsReadRequestOptions = {
 };
 
 type ActivityGetThreadSubscriptionForAuthenticatedUserEndpoint = {
-  /**
-   * thread_id parameter
-   */
   thread_id: number;
 };
 
@@ -8739,9 +8572,6 @@ type ActivityGetThreadSubscriptionForAuthenticatedUserResponseData = {
 };
 
 type ActivitySetThreadSubscriptionEndpoint = {
-  /**
-   * thread_id parameter
-   */
   thread_id: number;
   /**
    * Unsubscribes and subscribes you to a conversation. Set `ignored` to `true` to block all notifications from this thread.
@@ -8765,9 +8595,6 @@ type ActivitySetThreadSubscriptionResponseData = {
 };
 
 type ActivityDeleteThreadSubscriptionEndpoint = {
-  /**
-   * thread_id parameter
-   */
   thread_id: number;
 };
 
@@ -8808,9 +8635,6 @@ type OrgsListResponseDataItem = {
 type OrgsListResponseData = Array<OrgsListResponseDataItem>;
 
 type OrgsGetEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -8872,9 +8696,6 @@ type OrgsGetResponseData = {
 };
 
 type OrgsUpdateEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Billing email address. This address is not publicized.
@@ -9011,9 +8832,6 @@ type OrgsUpdateResponseData = {
 };
 
 type ActionsListSelfHostedRunnersForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -9043,9 +8861,6 @@ type ActionsListSelfHostedRunnersForOrgResponseData = {
 };
 
 type ActionsListRunnerApplicationsForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -9066,9 +8881,6 @@ type ActionsListRunnerApplicationsForOrgResponseData = Array<
 >;
 
 type ActionsCreateRegistrationTokenForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -9084,9 +8896,6 @@ type ActionsCreateRegistrationTokenForOrgResponseData = {
 };
 
 type ActionsCreateRemoveTokenForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -9102,13 +8911,8 @@ type ActionsCreateRemoveTokenForOrgResponseData = {
 };
 
 type ActionsGetSelfHostedRunnerForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * runner_id parameter
-   */
+
   runner_id: number;
 };
 
@@ -9126,13 +8930,8 @@ type ActionsGetSelfHostedRunnerForOrgResponseData = {
 };
 
 type ActionsDeleteSelfHostedRunnerFromOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * runner_id parameter
-   */
+
   runner_id: number;
 };
 
@@ -9144,9 +8943,6 @@ type ActionsDeleteSelfHostedRunnerFromOrgRequestOptions = {
 };
 
 type OrgsListBlockedUsersEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -9181,13 +8977,8 @@ type OrgsListBlockedUsersResponseData = Array<
 >;
 
 type OrgsCheckBlockedUserEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -9199,13 +8990,8 @@ type OrgsCheckBlockedUserRequestOptions = {
 };
 
 type OrgsBlockUserEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -9217,13 +9003,8 @@ type OrgsBlockUserRequestOptions = {
 };
 
 type OrgsUnblockUserEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -9235,9 +9016,6 @@ type OrgsUnblockUserRequestOptions = {
 };
 
 type OrgsListCredentialAuthorizationsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -9260,13 +9038,8 @@ type OrgsListCredentialAuthorizationsResponseData = Array<
 >;
 
 type OrgsRemoveCredentialAuthorizationEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * credential_id parameter
-   */
+
   credential_id: number;
 };
 
@@ -9278,9 +9051,6 @@ type OrgsRemoveCredentialAuthorizationRequestOptions = {
 };
 
 type ActivityListPublicOrgEventsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -9300,9 +9070,6 @@ type ActivityListPublicOrgEventsRequestOptions = {
 };
 
 type OrgsListHooksEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -9338,9 +9105,6 @@ type OrgsListHooksResponseDataItem = {
 type OrgsListHooksResponseData = Array<OrgsListHooksResponseDataItem>;
 
 type OrgsCreateHookEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Must be passed as "web".
@@ -9380,13 +9144,8 @@ type OrgsCreateHookResponseData = {
 };
 
 type OrgsGetHookEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -9410,13 +9169,8 @@ type OrgsGetHookResponseData = {
 };
 
 type OrgsUpdateHookEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/orgs/hooks/#update-hook-config-params).
@@ -9452,13 +9206,8 @@ type OrgsUpdateHookResponseData = {
 };
 
 type OrgsDeleteHookEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -9470,13 +9219,8 @@ type OrgsDeleteHookRequestOptions = {
 };
 
 type OrgsPingHookEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -9488,9 +9232,6 @@ type OrgsPingHookRequestOptions = {
 };
 
 type AppsGetOrgInstallationEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 } & RequiredPreview<"machine-man">;
 
@@ -9542,9 +9283,6 @@ type AppsGetOrgInstallationResponseData = {
 };
 
 type OrgsListInstallationsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -9610,9 +9348,6 @@ type OrgsListInstallationsResponseData = {
 };
 
 type InteractionsGetRestrictionsForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 } & RequiredPreview<"sombra">;
 
@@ -9629,9 +9364,6 @@ type InteractionsGetRestrictionsForOrgResponseData = {
 };
 
 type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
@@ -9652,9 +9384,6 @@ type InteractionsAddOrUpdateRestrictionsForOrgResponseData = {
 };
 
 type InteractionsRemoveRestrictionsForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 } & RequiredPreview<"sombra">;
 
@@ -9666,9 +9395,6 @@ type InteractionsRemoveRestrictionsForOrgRequestOptions = {
 };
 
 type OrgsListPendingInvitationsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -9721,9 +9447,6 @@ type OrgsListPendingInvitationsResponseData = Array<
 >;
 
 type OrgsCreateInvitationEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * **Required unless you provide `email`**. GitHub user ID for the person you are inviting.
@@ -9784,13 +9507,8 @@ type OrgsCreateInvitationResponseData = {
 };
 
 type OrgsListInvitationTeamsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * invitation_id parameter
-   */
+
   invitation_id: number;
   /**
    * Results per page (max 100)
@@ -9827,9 +9545,6 @@ type OrgsListInvitationTeamsResponseData = Array<
 >;
 
 type IssuesListForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Indicates which sorts of issues to return. Can be one of:
@@ -10126,9 +9841,6 @@ type IssuesListForOrgResponseDataItem = {
 type IssuesListForOrgResponseData = Array<IssuesListForOrgResponseDataItem>;
 
 type OrgsListMembersEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Filter members returned in the list. Can be one of:
@@ -10182,13 +9894,8 @@ type OrgsListMembersResponseDataItem = {
 type OrgsListMembersResponseData = Array<OrgsListMembersResponseDataItem>;
 
 type OrgsCheckMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -10200,13 +9907,8 @@ type OrgsCheckMembershipRequestOptions = {
 };
 
 type OrgsRemoveMemberEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -10218,13 +9920,8 @@ type OrgsRemoveMemberRequestOptions = {
 };
 
 type OrgsGetMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -10278,13 +9975,8 @@ type OrgsGetMembershipResponseData = {
 };
 
 type OrgsAddOrUpdateMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
   /**
    * The role to give the user in the organization. Can be one of:
@@ -10344,13 +10036,8 @@ type OrgsAddOrUpdateMembershipResponseData = {
 };
 
 type OrgsRemoveMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -10362,9 +10049,6 @@ type OrgsRemoveMembershipRequestOptions = {
 };
 
 type MigrationsStartForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * A list of arrays indicating which repositories should be migrated.
@@ -10521,9 +10205,6 @@ type MigrationsStartForOrgResponseData = {
 };
 
 type MigrationsListForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -10679,13 +10360,8 @@ type MigrationsListForOrgResponseData = Array<
 >;
 
 type MigrationsGetStatusForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * migration_id parameter
-   */
+
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -10830,13 +10506,8 @@ type MigrationsGetStatusForOrgResponseData = {
 };
 
 type MigrationsDownloadArchiveForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * migration_id parameter
-   */
+
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -10848,13 +10519,8 @@ type MigrationsDownloadArchiveForOrgRequestOptions = {
 };
 
 type MigrationsDeleteArchiveForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * migration_id parameter
-   */
+
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -10866,17 +10532,10 @@ type MigrationsDeleteArchiveForOrgRequestOptions = {
 };
 
 type MigrationsUnlockRepoForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * migration_id parameter
-   */
+
   migration_id: number;
-  /**
-   * repo_name parameter
-   */
+
   repo_name: string;
 } & RequiredPreview<"wyandotte">;
 
@@ -10888,13 +10547,8 @@ type MigrationsUnlockRepoForOrgRequestOptions = {
 };
 
 type MigrationsListReposForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * migration_id parameter
-   */
+
   migration_id: number;
   /**
    * Results per page (max 100)
@@ -11029,9 +10683,6 @@ type MigrationsListReposForOrgResponseData = Array<
 >;
 
 type OrgsListOutsideCollaboratorsEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Filter the list of outside collaborators. Can be one of:
@@ -11080,13 +10731,8 @@ type OrgsListOutsideCollaboratorsResponseData = Array<
 >;
 
 type OrgsRemoveOutsideCollaboratorEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -11102,13 +10748,8 @@ type OrgsRemoveOutsideCollaboratorResponseData = {
 };
 
 type OrgsConvertMemberToOutsideCollaboratorEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -11124,9 +10765,6 @@ type OrgsConvertMemberToOutsideCollaboratorResponseData = {
 };
 
 type ProjectsListForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
@@ -11186,9 +10824,6 @@ type ProjectsListForOrgResponseDataItem = {
 type ProjectsListForOrgResponseData = Array<ProjectsListForOrgResponseDataItem>;
 
 type ProjectsCreateForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * The name of the project.
@@ -11243,9 +10878,6 @@ type ProjectsCreateForOrgResponseData = {
 };
 
 type OrgsListPublicMembersEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -11288,13 +10920,8 @@ type OrgsListPublicMembersResponseData = Array<
 >;
 
 type OrgsCheckPublicMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -11306,13 +10933,8 @@ type OrgsCheckPublicMembershipRequestOptions = {
 };
 
 type OrgsPublicizeMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -11324,13 +10946,8 @@ type OrgsPublicizeMembershipRequestOptions = {
 };
 
 type OrgsConcealMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -11342,9 +10959,6 @@ type OrgsConcealMembershipRequestOptions = {
 };
 
 type ReposListForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Specifies the types of repositories you want returned. Can be one of `all`, `public`, `private`, `forks`, `sources`, `member`, `internal`. Default: `all`. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, `type` can also be `internal`.
@@ -11496,9 +11110,6 @@ type ReposListForOrgResponseDataItem = {
 type ReposListForOrgResponseData = Array<ReposListForOrgResponseDataItem>;
 
 type ReposCreateInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * The name of the repository.
@@ -11686,9 +11297,6 @@ type ReposCreateInOrgResponseData = {
 };
 
 type TeamsListIdPGroupsForOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -11716,9 +11324,6 @@ type TeamsListIdPGroupsForOrgResponseData = {
 };
 
 type TeamsListEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Results per page (max 100)
@@ -11753,9 +11358,6 @@ type TeamsListResponseDataItem = {
 type TeamsListResponseData = Array<TeamsListResponseDataItem>;
 
 type TeamsCreateEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * The name of the team.
@@ -11853,13 +11455,8 @@ type TeamsCreateResponseData = {
 };
 
 type TeamsGetByNameEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
 };
 
@@ -11919,13 +11516,8 @@ type TeamsGetByNameResponseData = {
 };
 
 type TeamsUpdateInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * The name of the team.
@@ -12013,13 +11605,8 @@ type TeamsUpdateInOrgResponseData = {
 };
 
 type TeamsDeleteInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
 };
 
@@ -12031,13 +11618,8 @@ type TeamsDeleteInOrgRequestOptions = {
 };
 
 type TeamsListDiscussionsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -12114,13 +11696,8 @@ type TeamsListDiscussionsInOrgResponseData = Array<
 >;
 
 type TeamsCreateDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * The discussion post's title.
@@ -12194,17 +11771,10 @@ type TeamsCreateDiscussionInOrgResponseData = {
 };
 
 type TeamsGetDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
 };
 
@@ -12266,17 +11836,10 @@ type TeamsGetDiscussionInOrgResponseData = {
 };
 
 type TeamsUpdateDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The discussion post's title.
@@ -12346,17 +11909,10 @@ type TeamsUpdateDiscussionInOrgResponseData = {
 };
 
 type TeamsDeleteDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
 };
 
@@ -12368,17 +11924,10 @@ type TeamsDeleteDiscussionInOrgRequestOptions = {
 };
 
 type TeamsListDiscussionCommentsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -12450,17 +11999,10 @@ type TeamsListDiscussionCommentsInOrgResponseData = Array<
 >;
 
 type TeamsCreateDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The discussion comment's body text.
@@ -12521,21 +12063,12 @@ type TeamsCreateDiscussionCommentInOrgResponseData = {
 };
 
 type TeamsGetDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
 };
 
@@ -12592,21 +12125,12 @@ type TeamsGetDiscussionCommentInOrgResponseData = {
 };
 
 type TeamsUpdateDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * The discussion comment's body text.
@@ -12667,21 +12191,12 @@ type TeamsUpdateDiscussionCommentInOrgResponseData = {
 };
 
 type TeamsDeleteDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
 };
 
@@ -12693,21 +12208,12 @@ type TeamsDeleteDiscussionCommentInOrgRequestOptions = {
 };
 
 type ReactionsListForTeamDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
@@ -12769,21 +12275,12 @@ type ReactionsListForTeamDiscussionCommentInOrgResponseData = Array<
 >;
 
 type ReactionsCreateForTeamDiscussionCommentInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion comment.
@@ -12834,25 +12331,14 @@ type ReactionsCreateForTeamDiscussionCommentInOrgResponseData = {
 };
 
 type ReactionsDeleteForTeamDiscussionCommentEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -12864,17 +12350,10 @@ type ReactionsDeleteForTeamDiscussionCommentRequestOptions = {
 };
 
 type ReactionsListForTeamDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion.
@@ -12936,17 +12415,10 @@ type ReactionsListForTeamDiscussionInOrgResponseData = Array<
 >;
 
 type ReactionsCreateForTeamDiscussionInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion.
@@ -12997,21 +12469,12 @@ type ReactionsCreateForTeamDiscussionInOrgResponseData = {
 };
 
 type ReactionsDeleteForTeamDiscussionEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -13023,13 +12486,8 @@ type ReactionsDeleteForTeamDiscussionRequestOptions = {
 };
 
 type TeamsListPendingInvitationsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Results per page (max 100)
@@ -13082,13 +12540,8 @@ type TeamsListPendingInvitationsInOrgResponseData = Array<
 >;
 
 type TeamsListMembersInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Filters members returned by their role in the team. Can be one of:
@@ -13138,17 +12591,10 @@ type TeamsListMembersInOrgResponseData = Array<
 >;
 
 type TeamsGetMembershipInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -13165,17 +12611,10 @@ type TeamsGetMembershipInOrgResponseData = {
 };
 
 type TeamsAddOrUpdateMembershipInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * username parameter
-   */
+
   username: string;
   /**
    * The role that this user should have in the team. Can be one of:
@@ -13198,17 +12637,10 @@ type TeamsAddOrUpdateMembershipInOrgResponseData = {
 };
 
 type TeamsRemoveMembershipInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -13220,13 +12652,8 @@ type TeamsRemoveMembershipInOrgRequestOptions = {
 };
 
 type TeamsListProjectsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Results per page (max 100)
@@ -13292,17 +12719,10 @@ type TeamsListProjectsInOrgResponseData = Array<
 >;
 
 type TeamsReviewProjectInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -13357,17 +12777,10 @@ type TeamsReviewProjectInOrgResponseData = {
 };
 
 type TeamsAddOrUpdateProjectInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
   /**
    * The permission to grant to the team for this project. Can be one of:
@@ -13391,17 +12804,10 @@ type TeamsAddOrUpdateProjectInOrgResponseData = {
 };
 
 type TeamsRemoveProjectInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
 };
 
@@ -13413,13 +12819,8 @@ type TeamsRemoveProjectInOrgRequestOptions = {
 };
 
 type TeamsListReposInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Results per page (max 100)
@@ -13554,21 +12955,12 @@ type TeamsListReposInOrgResponseData = Array<
 >;
 
 type TeamsCheckManagesRepoInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -13827,21 +13219,12 @@ type TeamsCheckManagesRepoInOrgResponseData = {
 };
 
 type TeamsAddOrUpdateRepoInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The permission to grant the team on this repository. Can be one of:
@@ -13864,21 +13247,12 @@ type TeamsAddOrUpdateRepoInOrgRequestOptions = {
 };
 
 type TeamsRemoveRepoInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -13890,13 +13264,8 @@ type TeamsRemoveRepoInOrgRequestOptions = {
 };
 
 type TeamsListIdPGroupsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
 };
 
@@ -13916,13 +13285,8 @@ type TeamsListIdPGroupsInOrgResponseData = {
 };
 
 type TeamsCreateOrUpdateIdPGroupConnectionsInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * The IdP groups you want to connect to a GitHub team. When updating, the new `groups` object will replace the original one. You must include any existing groups that you don't want to remove.
@@ -13946,13 +13310,8 @@ type TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData = {
 };
 
 type TeamsListChildInOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * team_slug parameter
-   */
+
   team_slug: string;
   /**
    * Results per page (max 100)
@@ -14001,9 +13360,6 @@ type TeamsListChildInOrgResponseData = Array<
 >;
 
 type ProjectsGetCardEndpoint = {
-  /**
-   * card_id parameter
-   */
   card_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14048,9 +13404,6 @@ type ProjectsGetCardResponseData = {
 };
 
 type ProjectsUpdateCardEndpoint = {
-  /**
-   * card_id parameter
-   */
   card_id: number;
   /**
    * The card's note content. Only valid for cards without another type of content, so this cannot be specified if the card already has a `content_id` and `content_type`.
@@ -14103,9 +13456,6 @@ type ProjectsUpdateCardResponseData = {
 };
 
 type ProjectsDeleteCardEndpoint = {
-  /**
-   * card_id parameter
-   */
   card_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14117,9 +13467,6 @@ type ProjectsDeleteCardRequestOptions = {
 };
 
 type ProjectsMoveCardEndpoint = {
-  /**
-   * card_id parameter
-   */
   card_id: number;
   /**
    * Can be one of `top`, `bottom`, or `after:<card_id>`, where `<card_id>` is the `id` value of a card in the same column, or in the new column specified by `column_id`.
@@ -14139,9 +13486,6 @@ type ProjectsMoveCardRequestOptions = {
 };
 
 type ProjectsGetColumnEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14163,9 +13507,6 @@ type ProjectsGetColumnResponseData = {
 };
 
 type ProjectsUpdateColumnEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
   /**
    * The new name of the column.
@@ -14191,9 +13532,6 @@ type ProjectsUpdateColumnResponseData = {
 };
 
 type ProjectsDeleteColumnEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14205,9 +13543,6 @@ type ProjectsDeleteColumnRequestOptions = {
 };
 
 type ProjectsListCardsEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
   /**
    * Filters the project cards that are returned by the card's state. Can be one of `all`,`archived`, or `not_archived`.
@@ -14265,9 +13600,6 @@ type ProjectsListCardsResponseDataItem = {
 type ProjectsListCardsResponseData = Array<ProjectsListCardsResponseDataItem>;
 
 type ProjectsCreateCardEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
   /**
    * The card's note content. Only valid for cards without another type of content, so you must omit when specifying `content_id` and `content_type`.
@@ -14325,9 +13657,6 @@ type ProjectsCreateCardResponseData = {
 };
 
 type ProjectsMoveColumnEndpoint = {
-  /**
-   * column_id parameter
-   */
   column_id: number;
   /**
    * Can be one of `first`, `last`, or `after:<column_id>`, where `<column_id>` is the `id` value of a column in the same project.
@@ -14343,9 +13672,6 @@ type ProjectsMoveColumnRequestOptions = {
 };
 
 type ProjectsGetEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14392,9 +13718,6 @@ type ProjectsGetResponseData = {
 };
 
 type ProjectsUpdateEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
   /**
    * The name of the project.
@@ -14473,9 +13796,6 @@ type ProjectsUpdateResponseData = {
 };
 
 type ProjectsDeleteEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -14487,9 +13807,6 @@ type ProjectsDeleteRequestOptions = {
 };
 
 type ProjectsListCollaboratorsEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
   /**
    * Filters the collaborators by their affiliation. Can be one of:
@@ -14539,13 +13856,8 @@ type ProjectsListCollaboratorsResponseData = Array<
 >;
 
 type ProjectsAddCollaboratorEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
   /**
    * The permission to grant the collaborator. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://developer.github.com/v3/#http-verbs)." Can be one of:
@@ -14564,13 +13876,8 @@ type ProjectsAddCollaboratorRequestOptions = {
 };
 
 type ProjectsRemoveCollaboratorEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 } & RequiredPreview<"inertia">;
 
@@ -14582,13 +13889,8 @@ type ProjectsRemoveCollaboratorRequestOptions = {
 };
 
 type ProjectsReviewUserPermissionLevelEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 } & RequiredPreview<"inertia">;
 
@@ -14624,9 +13926,6 @@ type ProjectsReviewUserPermissionLevelResponseData = {
 };
 
 type ProjectsListColumnsEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
   /**
    * Results per page (max 100)
@@ -14659,9 +13958,6 @@ type ProjectsListColumnsResponseData = Array<
 >;
 
 type ProjectsCreateColumnEndpoint = {
-  /**
-   * project_id parameter
-   */
   project_id: number;
   /**
    * The name of the column.
@@ -14731,9 +14027,6 @@ type RateLimitGetResponseData = {
 };
 
 type ReactionsDeleteLegacyEndpoint = {
-  /**
-   * reaction_id parameter
-   */
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -14745,13 +14038,8 @@ type ReactionsDeleteLegacyRequestOptions = {
 };
 
 type ReposGetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -15126,13 +14414,8 @@ type ReposGetResponseData = {
 };
 
 type ReposUpdateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the repository.
@@ -15551,13 +14834,8 @@ type ReposUpdateResponseData = {
 };
 
 type ReposDeleteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -15570,13 +14848,8 @@ type ReposDeleteRequestOptions = {
 type ReposDeleteResponseData = { message: string; documentation_url: string };
 
 type ActionsListArtifactsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -15611,17 +14884,10 @@ type ActionsListArtifactsForRepoResponseData = {
 };
 
 type ActionsGetArtifactEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * artifact_id parameter
-   */
+
   artifact_id: number;
 };
 
@@ -15644,17 +14910,10 @@ type ActionsGetArtifactResponseData = {
 };
 
 type ActionsDeleteArtifactEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * artifact_id parameter
-   */
+
   artifact_id: number;
 };
 
@@ -15666,21 +14925,12 @@ type ActionsDeleteArtifactRequestOptions = {
 };
 
 type ActionsDownloadArtifactEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * artifact_id parameter
-   */
+
   artifact_id: number;
-  /**
-   * archive_format parameter
-   */
+
   archive_format: string;
 };
 
@@ -15692,17 +14942,10 @@ type ActionsDownloadArtifactRequestOptions = {
 };
 
 type ActionsGetWorkflowJobEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * job_id parameter
-   */
+
   job_id: number;
 };
 
@@ -15738,17 +14981,10 @@ type ActionsGetWorkflowJobResponseData = {
 };
 
 type ActionsDownloadWorkflowJobLogsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * job_id parameter
-   */
+
   job_id: number;
 };
 
@@ -15760,13 +14996,8 @@ type ActionsDownloadWorkflowJobLogsRequestOptions = {
 };
 
 type ActionsListSelfHostedRunnersForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -15796,13 +15027,8 @@ type ActionsListSelfHostedRunnersForRepoResponseData = {
 };
 
 type ActionsListRunnerApplicationsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -15823,13 +15049,8 @@ type ActionsListRunnerApplicationsForRepoResponseData = Array<
 >;
 
 type ActionsCreateRegistrationTokenForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -15845,13 +15066,8 @@ type ActionsCreateRegistrationTokenForRepoResponseData = {
 };
 
 type ActionsCreateRemoveTokenForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -15867,17 +15083,10 @@ type ActionsCreateRemoveTokenForRepoResponseData = {
 };
 
 type ActionsGetSelfHostedRunnerForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * runner_id parameter
-   */
+
   runner_id: number;
 };
 
@@ -15895,17 +15104,10 @@ type ActionsGetSelfHostedRunnerForRepoResponseData = {
 };
 
 type ActionsDeleteSelfHostedRunnerFromRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * runner_id parameter
-   */
+
   runner_id: number;
 };
 
@@ -15917,13 +15119,8 @@ type ActionsDeleteSelfHostedRunnerFromRepoRequestOptions = {
 };
 
 type ActionsListRepoWorkflowRunsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
@@ -16141,17 +15338,10 @@ type ActionsListRepoWorkflowRunsResponseData = {
 };
 
 type ActionsGetWorkflowRunEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
 };
 
@@ -16341,17 +15531,10 @@ type ActionsGetWorkflowRunResponseData = {
 };
 
 type ActionsListWorkflowRunArtifactsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
   /**
    * Results per page (max 100)
@@ -16386,17 +15569,10 @@ type ActionsListWorkflowRunArtifactsResponseData = {
 };
 
 type ActionsCancelWorkflowRunEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
 };
 
@@ -16408,17 +15584,10 @@ type ActionsCancelWorkflowRunRequestOptions = {
 };
 
 type ActionsListJobsForWorkflowRunEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
   /**
    * Filters jobs by their `completed_at` timestamp. Can be one of:
@@ -16472,17 +15641,10 @@ type ActionsListJobsForWorkflowRunResponseData = {
 };
 
 type ActionsDownloadWorkflowRunLogsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
 };
 
@@ -16494,17 +15656,10 @@ type ActionsDownloadWorkflowRunLogsRequestOptions = {
 };
 
 type ActionsDeleteWorkflowRunLogsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
 };
 
@@ -16516,17 +15671,10 @@ type ActionsDeleteWorkflowRunLogsRequestOptions = {
 };
 
 type ActionsReRunWorkflowEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * run_id parameter
-   */
+
   run_id: number;
 };
 
@@ -16538,13 +15686,8 @@ type ActionsReRunWorkflowRequestOptions = {
 };
 
 type ActionsListSecretsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -16573,13 +15716,8 @@ type ActionsListSecretsForRepoResponseData = {
 };
 
 type ActionsGetPublicKeyEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -16592,17 +15730,10 @@ type ActionsGetPublicKeyRequestOptions = {
 type ActionsGetPublicKeyResponseData = { key_id: string; key: string };
 
 type ActionsGetSecretEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
 };
 
@@ -16619,17 +15750,10 @@ type ActionsGetSecretResponseData = {
 };
 
 type ActionsCreateOrUpdateSecretForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
   /**
    * Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get your public key](https://developer.github.com/v3/actions/secrets/#get-your-public-key) endpoint.
@@ -16649,17 +15773,10 @@ type ActionsCreateOrUpdateSecretForRepoRequestOptions = {
 };
 
 type ActionsDeleteSecretFromRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
 };
 
@@ -16671,13 +15788,8 @@ type ActionsDeleteSecretFromRepoRequestOptions = {
 };
 
 type ActionsListRepoWorkflowsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -16713,17 +15825,10 @@ type ActionsListRepoWorkflowsResponseData = {
 };
 
 type ActionsGetWorkflowEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * workflow_id parameter
-   */
+
   workflow_id: number;
 };
 
@@ -16747,17 +15852,10 @@ type ActionsGetWorkflowResponseData = {
 };
 
 type ActionsListWorkflowRunsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * workflow_id parameter
-   */
+
   workflow_id: number;
   /**
    * Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.
@@ -16975,13 +16073,8 @@ type ActionsListWorkflowRunsResponseData = {
 };
 
 type IssuesListAssigneesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -17024,17 +16117,10 @@ type IssuesListAssigneesResponseData = Array<
 >;
 
 type IssuesCheckAssigneeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * assignee parameter
-   */
+
   assignee: string;
 };
 
@@ -17046,13 +16132,8 @@ type IssuesCheckAssigneeRequestOptions = {
 };
 
 type ReposEnableAutomatedSecurityFixesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"london">;
 
@@ -17064,13 +16145,8 @@ type ReposEnableAutomatedSecurityFixesRequestOptions = {
 };
 
 type ReposDisableAutomatedSecurityFixesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"london">;
 
@@ -17082,13 +16158,8 @@ type ReposDisableAutomatedSecurityFixesRequestOptions = {
 };
 
 type ReposListBranchesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches.
@@ -17129,17 +16200,10 @@ type ReposListBranchesResponseDataItem = {
 type ReposListBranchesResponseData = Array<ReposListBranchesResponseDataItem>;
 
 type ReposGetBranchEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17217,17 +16281,10 @@ type ReposGetBranchResponseData = {
 };
 
 type ReposGetBranchProtectionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17395,17 +16452,10 @@ type ReposGetBranchProtectionResponseData = {
 };
 
 type ReposUpdateBranchProtectionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * Require status checks to pass before merging. Set to `null` to disable.
@@ -17603,17 +16653,10 @@ type ReposUpdateBranchProtectionResponseData = {
 };
 
 type ReposRemoveBranchProtectionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17625,17 +16668,10 @@ type ReposRemoveBranchProtectionRequestOptions = {
 };
 
 type ReposGetProtectedBranchAdminEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17651,17 +16687,10 @@ type ReposGetProtectedBranchAdminEnforcementResponseData = {
 };
 
 type ReposAddProtectedBranchAdminEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17677,17 +16706,10 @@ type ReposAddProtectedBranchAdminEnforcementResponseData = {
 };
 
 type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17699,17 +16721,10 @@ type ReposRemoveProtectedBranchAdminEnforcementRequestOptions = {
 };
 
 type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17773,17 +16788,10 @@ type ReposGetProtectedBranchPullRequestReviewEnforcementResponseData = {
 };
 
 type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * Specify which users and teams can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
@@ -17863,17 +16871,10 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData = {
 };
 
 type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17885,17 +16886,10 @@ type ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions = {
 };
 
 type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 } & RequiredPreview<"zzzax">;
 
@@ -17911,17 +16905,10 @@ type ReposGetProtectedBranchRequiredSignaturesResponseData = {
 };
 
 type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 } & RequiredPreview<"zzzax">;
 
@@ -17937,17 +16924,10 @@ type ReposAddProtectedBranchRequiredSignaturesResponseData = {
 };
 
 type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 } & RequiredPreview<"zzzax">;
 
@@ -17959,17 +16939,10 @@ type ReposRemoveProtectedBranchRequiredSignaturesRequestOptions = {
 };
 
 type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -17987,17 +16960,10 @@ type ReposGetProtectedBranchRequiredStatusChecksResponseData = {
 };
 
 type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * Require branches to be up to date before merging.
@@ -18023,17 +16989,10 @@ type ReposUpdateProtectedBranchRequiredStatusChecksResponseData = {
 };
 
 type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18045,17 +17004,10 @@ type ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions = {
 };
 
 type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18070,17 +17022,10 @@ type ReposListProtectedBranchRequiredStatusChecksContextsResponseData = Array<
 >;
 
 type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * contexts parameter
@@ -18099,17 +17044,10 @@ type ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData = Array
 >;
 
 type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * contexts parameter
@@ -18128,17 +17066,10 @@ type ReposAddProtectedBranchRequiredStatusChecksContextsResponseData = Array<
 >;
 
 type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * contexts parameter
@@ -18157,17 +17088,10 @@ type ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData = Array<
 >;
 
 type ReposGetProtectedBranchRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18256,17 +17180,10 @@ type ReposGetProtectedBranchRestrictionsResponseData = {
 };
 
 type ReposRemoveProtectedBranchRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18278,17 +17195,10 @@ type ReposRemoveProtectedBranchRestrictionsRequestOptions = {
 };
 
 type ReposGetAppsWithAccessToProtectedBranchEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18337,17 +17247,10 @@ type ReposGetAppsWithAccessToProtectedBranchResponseData = Array<
 >;
 
 type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * apps parameter
@@ -18400,17 +17303,10 @@ type ReposReplaceProtectedBranchAppRestrictionsResponseData = Array<
 >;
 
 type ReposAddProtectedBranchAppRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * apps parameter
@@ -18463,17 +17359,10 @@ type ReposAddProtectedBranchAppRestrictionsResponseData = Array<
 >;
 
 type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * apps parameter
@@ -18526,17 +17415,10 @@ type ReposRemoveProtectedBranchAppRestrictionsResponseData = Array<
 >;
 
 type ReposGetTeamsWithAccessToProtectedBranchEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18565,17 +17447,10 @@ type ReposGetTeamsWithAccessToProtectedBranchResponseData = Array<
 >;
 
 type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * teams parameter
@@ -18608,17 +17483,10 @@ type ReposReplaceProtectedBranchTeamRestrictionsResponseData = Array<
 >;
 
 type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * teams parameter
@@ -18651,17 +17519,10 @@ type ReposAddProtectedBranchTeamRestrictionsResponseData = Array<
 >;
 
 type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * teams parameter
@@ -18694,17 +17555,10 @@ type ReposRemoveProtectedBranchTeamRestrictionsResponseData = Array<
 >;
 
 type ReposGetUsersWithAccessToProtectedBranchEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
 };
 
@@ -18739,17 +17593,10 @@ type ReposGetUsersWithAccessToProtectedBranchResponseData = Array<
 >;
 
 type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * users parameter
@@ -18788,17 +17635,10 @@ type ReposReplaceProtectedBranchUserRestrictionsResponseData = Array<
 >;
 
 type ReposAddProtectedBranchUserRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * users parameter
@@ -18837,17 +17677,10 @@ type ReposAddProtectedBranchUserRestrictionsResponseData = Array<
 >;
 
 type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * branch parameter
-   */
+
   branch: string;
   /**
    * users parameter
@@ -18886,13 +17719,8 @@ type ReposRemoveProtectedBranchUserRestrictionsResponseData = Array<
 >;
 
 type ChecksCreateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the check. For example, "code-coverage".
@@ -19039,17 +17867,10 @@ type ChecksCreateResponseData = {
 };
 
 type ChecksUpdateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_run_id parameter
-   */
+
   check_run_id: number;
   /**
    * The name of the check. For example, "code-coverage".
@@ -19192,17 +18013,10 @@ type ChecksUpdateResponseData = {
 };
 
 type ChecksGetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_run_id parameter
-   */
+
   check_run_id: number;
 } & RequiredPreview<"antiope">;
 
@@ -19301,17 +18115,10 @@ type ChecksGetResponseData = {
 };
 
 type ChecksListAnnotationsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_run_id parameter
-   */
+
   check_run_id: number;
   /**
    * Results per page (max 100)
@@ -19345,13 +18152,8 @@ type ChecksListAnnotationsResponseData = Array<
 >;
 
 type ChecksCreateSuiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The sha of the head commit.
@@ -19522,13 +18324,8 @@ type ChecksCreateSuiteResponseData = {
 };
 
 type ChecksSetSuitesPreferencesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the [`auto_trigger_checks` object](https://developer.github.com/v3/checks/suites/#auto_trigger_checks-object) description for details.
@@ -19664,17 +18461,10 @@ type ChecksSetSuitesPreferencesResponseData = {
 };
 
 type ChecksGetSuiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_suite_id parameter
-   */
+
   check_suite_id: number;
 } & RequiredPreview<"antiope">;
 
@@ -19841,17 +18631,10 @@ type ChecksGetSuiteResponseData = {
 };
 
 type ChecksListForSuiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_suite_id parameter
-   */
+
   check_suite_id: number;
   /**
    * Returns check runs with the specified `name`.
@@ -19976,17 +18759,10 @@ type ChecksListForSuiteResponseData = {
 };
 
 type ChecksRerequestSuiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * check_suite_id parameter
-   */
+
   check_suite_id: number;
 } & RequiredPreview<"antiope">;
 
@@ -19998,13 +18774,8 @@ type ChecksRerequestSuiteRequestOptions = {
 };
 
 type CodeScanningListAlertsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Set to `closed` to list only closed code scanning alerts.
@@ -20039,17 +18810,10 @@ type CodeScanningListAlertsForRepoResponseData = Array<
 >;
 
 type CodeScanningGetAlertEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * alert_id parameter
-   */
+
   alert_id: number;
 };
 
@@ -20073,13 +18837,8 @@ type CodeScanningGetAlertResponseData = {
 };
 
 type ReposListCollaboratorsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Filter collaborators returned by their affiliation. Can be one of:
@@ -20135,17 +18894,10 @@ type ReposListCollaboratorsResponseData = Array<
 >;
 
 type ReposCheckCollaboratorEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -20157,17 +18909,10 @@ type ReposCheckCollaboratorRequestOptions = {
 };
 
 type ReposAddCollaboratorEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * username parameter
-   */
+
   username: string;
   /**
    * The permission to grant the collaborator. **Only valid on organization-owned repositories.** Can be one of:
@@ -20307,17 +19052,10 @@ type ReposAddCollaboratorResponseData = {
 };
 
 type ReposRemoveCollaboratorEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -20329,17 +19067,10 @@ type ReposRemoveCollaboratorRequestOptions = {
 };
 
 type ReposGetCollaboratorPermissionLevelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -20375,13 +19106,8 @@ type ReposGetCollaboratorPermissionLevelResponseData = {
 };
 
 type ReposListCommitCommentsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -20438,17 +19164,10 @@ type ReposListCommitCommentsResponseData = Array<
 >;
 
 type ReposGetCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -20494,17 +19213,10 @@ type ReposGetCommitCommentResponseData = {
 };
 
 type ReposUpdateCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The contents of the comment
@@ -20554,17 +19266,10 @@ type ReposUpdateCommitCommentResponseData = {
 };
 
 type ReposDeleteCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -20576,17 +19281,10 @@ type ReposDeleteCommitCommentRequestOptions = {
 };
 
 type ReactionsListForCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a commit comment.
@@ -20648,17 +19346,10 @@ type ReactionsListForCommitCommentResponseData = Array<
 >;
 
 type ReactionsCreateForCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the commit comment.
@@ -20709,21 +19400,12 @@ type ReactionsCreateForCommitCommentResponseData = {
 };
 
 type ReactionsDeleteForCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -20735,13 +19417,8 @@ type ReactionsDeleteForCommitCommentRequestOptions = {
 };
 
 type ReposListCommitsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * SHA or branch to start listing commits from. Default: the repository’s default branch (usually `master`).
@@ -20860,17 +19537,10 @@ type ReposListCommitsResponseDataItem = {
 type ReposListCommitsResponseData = Array<ReposListCommitsResponseDataItem>;
 
 type ReposListBranchesForHeadCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * commit_sha parameter
-   */
+
   commit_sha: string;
 } & RequiredPreview<"groot">;
 
@@ -20894,17 +19564,10 @@ type ReposListBranchesForHeadCommitResponseData = Array<
 >;
 
 type ReposListCommentsForCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * commit_sha parameter
-   */
+
   commit_sha: string;
   /**
    * Results per page (max 100)
@@ -20961,17 +19624,10 @@ type ReposListCommentsForCommitResponseData = Array<
 >;
 
 type ReposCreateCommitCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * commit_sha parameter
-   */
+
   commit_sha: string;
   /**
    * The contents of the comment.
@@ -21033,17 +19689,10 @@ type ReposCreateCommitCommentResponseData = {
 };
 
 type ReposListPullRequestsAssociatedWithCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * commit_sha parameter
-   */
+
   commit_sha: string;
   /**
    * Results per page (max 100)
@@ -21554,17 +20203,10 @@ type ReposListPullRequestsAssociatedWithCommitResponseData = Array<
 >;
 
 type ReposGetCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
 };
 
@@ -21671,17 +20313,10 @@ type ReposGetCommitResponseData = {
 };
 
 type ChecksListForRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
   /**
    * Returns check runs with the specified `name`.
@@ -21806,17 +20441,10 @@ type ChecksListForRefResponseData = {
 };
 
 type ChecksListSuitesForRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
   /**
    * Filters check suites by GitHub App `id`.
@@ -22003,17 +20631,10 @@ type ChecksListSuitesForRefResponseData = {
 };
 
 type ReposGetCombinedStatusForRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
 };
 
@@ -22115,17 +20736,10 @@ type ReposGetCombinedStatusForRefResponseData = {
 };
 
 type ReposListStatusesForRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
   /**
    * Results per page (max 100)
@@ -22181,13 +20795,8 @@ type ReposListStatusesForRefResponseData = Array<
 >;
 
 type CodesOfConductGetForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"scarlet-witch">;
 
@@ -22205,13 +20814,8 @@ type CodesOfConductGetForRepoResponseData = {
 };
 
 type ReposRetrieveCommunityProfileMetricsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -22267,21 +20871,12 @@ type ReposRetrieveCommunityProfileMetricsResponseData = {
 };
 
 type ReposCompareCommitsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * base parameter
-   */
+
   base: string;
-  /**
-   * head parameter
-   */
+
   head: string;
 };
 
@@ -22572,17 +21167,10 @@ type ReposCompareCommitsResponseData = {
 };
 
 type ReposGetContentsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * path parameter
-   */
+
   path: string;
   /**
    * The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
@@ -22638,17 +21226,10 @@ type ReposGetContentsResponseData =
   | Array<ReposGetContentsResponseDataItem>;
 
 type ReposCreateOrUpdateFileEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * path parameter
-   */
+
   path: string;
   /**
    * The commit message.
@@ -22742,17 +21323,10 @@ type ReposCreateOrUpdateFileResponseData = {
 };
 
 type ReposDeleteFileEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * path parameter
-   */
+
   path: string;
   /**
    * The commit message.
@@ -22822,13 +21396,8 @@ type ReposDeleteFileResponseData = {
 };
 
 type ReposListContributorsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Set to `1` or `true` to include anonymous contributors in results.
@@ -22876,13 +21445,8 @@ type ReposListContributorsResponseData = Array<
 >;
 
 type ReposListDeploymentsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The SHA recorded at creation time.
@@ -22961,13 +21525,8 @@ type ReposListDeploymentsResponseData = Array<
 >;
 
 type ReposCreateDeploymentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The ref to deploy. This can be a branch, tag, or SHA.
@@ -23057,17 +21616,10 @@ type ReposCreateDeploymentResponseData = {
 };
 
 type ReposGetDeploymentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * deployment_id parameter
-   */
+
   deployment_id: number;
 };
 
@@ -23119,17 +21671,10 @@ type ReposGetDeploymentResponseData = {
 };
 
 type ReposDeleteDeploymentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * deployment_id parameter
-   */
+
   deployment_id: number;
 };
 
@@ -23141,17 +21686,10 @@ type ReposDeleteDeploymentRequestOptions = {
 };
 
 type ReposListDeploymentStatusesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * deployment_id parameter
-   */
+
   deployment_id: number;
   /**
    * Results per page (max 100)
@@ -23210,17 +21748,10 @@ type ReposListDeploymentStatusesResponseData = Array<
 >;
 
 type ReposCreateDeploymentStatusEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * deployment_id parameter
-   */
+
   deployment_id: number;
   /**
    * The state of the status. Can be one of `error`, `failure`, `inactive`, `in_progress`, `queued` `pending`, or `success`. **Note:** To use the `inactive` state, you must provide the [`application/vnd.github.ant-man-preview+json`](https://developer.github.com/v3/previews/#enhanced-deployments) custom media type. To use the `in_progress` and `queued` states, you must provide the [`application/vnd.github.flash-preview+json`](https://developer.github.com/v3/previews/#deployment-statuses) custom media type.
@@ -23307,21 +21838,12 @@ type ReposCreateDeploymentStatusResponseData = {
 };
 
 type ReposGetDeploymentStatusEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * deployment_id parameter
-   */
+
   deployment_id: number;
-  /**
-   * status_id parameter
-   */
+
   status_id: number;
 };
 
@@ -23369,13 +21891,8 @@ type ReposGetDeploymentStatusResponseData = {
 };
 
 type ReposCreateDispatchEventEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * **Required:** A custom webhook event name.
@@ -23395,13 +21912,8 @@ type ReposCreateDispatchEventRequestOptions = {
 };
 
 type ReposListDownloadsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -23432,17 +21944,10 @@ type ReposListDownloadsResponseDataItem = {
 type ReposListDownloadsResponseData = Array<ReposListDownloadsResponseDataItem>;
 
 type ReposGetDownloadEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * download_id parameter
-   */
+
   download_id: number;
 };
 
@@ -23464,17 +21969,10 @@ type ReposGetDownloadResponseData = {
 };
 
 type ReposDeleteDownloadEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * download_id parameter
-   */
+
   download_id: number;
 };
 
@@ -23486,13 +21984,8 @@ type ReposDeleteDownloadRequestOptions = {
 };
 
 type ActivityListRepoEventsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -23512,13 +22005,8 @@ type ActivityListRepoEventsRequestOptions = {
 };
 
 type ReposListForksEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The sort order. Can be either `newest`, `oldest`, or `stargazers`.
@@ -23655,13 +22143,8 @@ type ReposListForksResponseDataItem = {
 type ReposListForksResponseData = Array<ReposListForksResponseDataItem>;
 
 type ReposCreateForkEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Optional parameter to specify the organization name if forking into an organization.
@@ -23784,13 +22267,8 @@ type ReposCreateForkResponseData = {
 };
 
 type GitCreateBlobEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The new blob's content.
@@ -23811,17 +22289,10 @@ type GitCreateBlobRequestOptions = {
 type GitCreateBlobResponseData = { url: string; sha: string };
 
 type GitGetBlobEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * file_sha parameter
-   */
+
   file_sha: string;
 };
 
@@ -23840,13 +22311,8 @@ type GitGetBlobResponseData = {
 };
 
 type GitCreateCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The commit message
@@ -23911,17 +22377,10 @@ type GitCreateCommitResponseData = {
 };
 
 type GitGetCommitEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * commit_sha parameter
-   */
+
   commit_sha: string;
 };
 
@@ -23961,17 +22420,10 @@ type GitGetCommitResponseData = {
 };
 
 type GitListMatchingRefsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
   /**
    * Results per page (max 100)
@@ -24005,17 +22457,10 @@ type GitListMatchingRefsResponseData = Array<
 >;
 
 type GitGetRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
 };
 
@@ -24034,13 +22479,8 @@ type GitGetRefResponseData = {
 };
 
 type GitCreateRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
@@ -24071,17 +22511,10 @@ type GitCreateRefResponseData = {
 };
 
 type GitUpdateRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
   /**
    * The SHA1 value to set this reference to
@@ -24112,17 +22545,10 @@ type GitUpdateRefResponseData = {
 };
 
 type GitDeleteRefEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
 };
 
@@ -24134,13 +22560,8 @@ type GitDeleteRefRequestOptions = {
 };
 
 type GitCreateTagEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The tag's name. This is typically a version (e.g., "v0.0.1").
@@ -24198,17 +22619,10 @@ type GitCreateTagResponseData = {
 };
 
 type GitGetTagEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * tag_sha parameter
-   */
+
   tag_sha: string;
 };
 
@@ -24242,13 +22656,8 @@ type GitGetTagResponseData = {
 };
 
 type GitCreateTreeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Objects (of `path`, `mode`, `type`, and `sha`) specifying a tree structure.
@@ -24321,13 +22730,8 @@ type GitGetTreeResponseData = {
 };
 
 type ReposListHooksEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -24372,13 +22776,8 @@ type ReposListHooksResponseDataItem = {
 type ReposListHooksResponseData = Array<ReposListHooksResponseDataItem>;
 
 type ReposCreateHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Use `web` to create a webhook. Default: `web`. This parameter only accepts the value `web`.
@@ -24430,17 +22829,10 @@ type ReposCreateHookResponseData = {
 };
 
 type ReposGetHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -24476,17 +22868,10 @@ type ReposGetHookResponseData = {
 };
 
 type ReposUpdateHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/repos/hooks/#create-hook-config-params).
@@ -24542,17 +22927,10 @@ type ReposUpdateHookResponseData = {
 };
 
 type ReposDeleteHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -24564,17 +22942,10 @@ type ReposDeleteHookRequestOptions = {
 };
 
 type ReposPingHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -24586,17 +22957,10 @@ type ReposPingHookRequestOptions = {
 };
 
 type ReposTestPushHookEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * hook_id parameter
-   */
+
   hook_id: number;
 };
 
@@ -24608,13 +22972,8 @@ type ReposTestPushHookRequestOptions = {
 };
 
 type MigrationsStartImportEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The URL of the originating repository.
@@ -24663,13 +23022,8 @@ type MigrationsStartImportResponseData = {
 };
 
 type MigrationsGetImportProgressEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -24696,13 +23050,8 @@ type MigrationsGetImportProgressResponseData = {
 };
 
 type MigrationsUpdateImportEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The username to provide to the originating repository.
@@ -24740,13 +23089,8 @@ type MigrationsUpdateImportResponseData = {
 };
 
 type MigrationsCancelImportEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -24758,13 +23102,8 @@ type MigrationsCancelImportRequestOptions = {
 };
 
 type MigrationsGetCommitAuthorsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Only authors found after this id are returned. Provide the highest author ID you've seen so far. New authors may be added to the list at any point while the importer is performing the `raw` step.
@@ -24792,17 +23131,10 @@ type MigrationsGetCommitAuthorsResponseData = Array<
 >;
 
 type MigrationsMapCommitAuthorEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * author_id parameter
-   */
+
   author_id: number;
   /**
    * The new Git author email.
@@ -24831,13 +23163,8 @@ type MigrationsMapCommitAuthorResponseData = {
 };
 
 type MigrationsGetLargeFilesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -24858,13 +23185,8 @@ type MigrationsGetLargeFilesResponseData = Array<
 >;
 
 type MigrationsSetLfsPreferenceEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Can be one of `opt_in` (large files will be stored using Git LFS) or `opt_out` (large files will be removed during the import).
@@ -24895,13 +23217,8 @@ type MigrationsSetLfsPreferenceResponseData = {
 };
 
 type AppsGetRepoInstallationEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"machine-man">;
 
@@ -24953,13 +23270,8 @@ type AppsGetRepoInstallationResponseData = {
 };
 
 type InteractionsGetRestrictionsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"sombra">;
 
@@ -24976,13 +23288,8 @@ type InteractionsGetRestrictionsForRepoResponseData = {
 };
 
 type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests for the given repository. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
@@ -25003,13 +23310,8 @@ type InteractionsAddOrUpdateRestrictionsForRepoResponseData = {
 };
 
 type InteractionsRemoveRestrictionsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"sombra">;
 
@@ -25021,13 +23323,8 @@ type InteractionsRemoveRestrictionsForRepoRequestOptions = {
 };
 
 type ReposListInvitationsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -25169,17 +23466,10 @@ type ReposListInvitationsResponseData = Array<
 >;
 
 type ReposDeleteInvitationEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * invitation_id parameter
-   */
+
   invitation_id: number;
 };
 
@@ -25191,17 +23481,10 @@ type ReposDeleteInvitationRequestOptions = {
 };
 
 type ReposUpdateInvitationEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * invitation_id parameter
-   */
+
   invitation_id: number;
   /**
    * The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
@@ -25336,13 +23619,8 @@ type ReposUpdateInvitationResponseData = {
 };
 
 type IssuesListForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * If an `integer` is passed, it should refer to a milestone by its `number` field. If the string `*` is passed, issues with any milestone are accepted. If the string `none` is passed, issues without milestones are returned.
@@ -25538,13 +23816,8 @@ type IssuesListForRepoResponseDataItem = {
 type IssuesListForRepoResponseData = Array<IssuesListForRepoResponseDataItem>;
 
 type IssuesCreateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The title of the issue.
@@ -25740,13 +24013,8 @@ type IssuesCreateResponseData = {
 };
 
 type IssuesListCommentsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Either `created` or `updated`.
@@ -25811,17 +24079,10 @@ type IssuesListCommentsForRepoResponseData = Array<
 >;
 
 type IssuesGetCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -25863,17 +24124,10 @@ type IssuesGetCommentResponseData = {
 };
 
 type IssuesUpdateCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The contents of the comment.
@@ -25919,17 +24173,10 @@ type IssuesUpdateCommentResponseData = {
 };
 
 type IssuesDeleteCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -25941,17 +24188,10 @@ type IssuesDeleteCommentRequestOptions = {
 };
 
 type ReactionsListForIssueCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to an issue comment.
@@ -26013,17 +24253,10 @@ type ReactionsListForIssueCommentResponseData = Array<
 >;
 
 type ReactionsCreateForIssueCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the issue comment.
@@ -26074,21 +24307,12 @@ type ReactionsCreateForIssueCommentResponseData = {
 };
 
 type ReactionsDeleteForIssueCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -26100,13 +24324,8 @@ type ReactionsDeleteForIssueCommentRequestOptions = {
 };
 
 type IssuesListEventsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -26299,17 +24518,10 @@ type IssuesListEventsForRepoResponseData = Array<
 >;
 
 type IssuesGetEventEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * event_id parameter
-   */
+
   event_id: number;
 };
 
@@ -26491,17 +24703,10 @@ type IssuesGetEventResponseData = {
 };
 
 type IssuesGetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
 };
 
@@ -26673,17 +24878,10 @@ type IssuesGetResponseData = {
 };
 
 type IssuesUpdateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The title of the issue.
@@ -26883,17 +25081,10 @@ type IssuesUpdateResponseData = {
 };
 
 type IssuesAddAssigneesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
@@ -27048,17 +25239,10 @@ type IssuesAddAssigneesResponseData = {
 };
 
 type IssuesRemoveAssigneesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
@@ -27213,17 +25397,10 @@ type IssuesRemoveAssigneesResponseData = {
 };
 
 type IssuesListCommentsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Only comments updated at or after this time are returned. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -27278,17 +25455,10 @@ type IssuesListCommentsResponseDataItem = {
 type IssuesListCommentsResponseData = Array<IssuesListCommentsResponseDataItem>;
 
 type IssuesCreateCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The contents of the comment.
@@ -27334,17 +25504,10 @@ type IssuesCreateCommentResponseData = {
 };
 
 type IssuesListEventsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Results per page (max 100)
@@ -27395,17 +25558,10 @@ type IssuesListEventsResponseDataItem = {
 type IssuesListEventsResponseData = Array<IssuesListEventsResponseDataItem>;
 
 type IssuesListLabelsOnIssueEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Results per page (max 100)
@@ -27437,17 +25593,10 @@ type IssuesListLabelsOnIssueResponseData = Array<
 >;
 
 type IssuesAddLabelsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The name of the label to add to the issue. Must contain at least one label. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
@@ -27473,17 +25622,10 @@ type IssuesAddLabelsResponseDataItem = {
 type IssuesAddLabelsResponseData = Array<IssuesAddLabelsResponseDataItem>;
 
 type IssuesReplaceAllLabelsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.
@@ -27511,17 +25653,10 @@ type IssuesReplaceAllLabelsResponseData = Array<
 >;
 
 type IssuesRemoveAllLabelsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
 };
 
@@ -27533,21 +25668,12 @@ type IssuesRemoveAllLabelsRequestOptions = {
 };
 
 type IssuesRemoveLabelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
-  /**
-   * name parameter
-   */
+
   name: string;
 };
 
@@ -27569,17 +25695,10 @@ type IssuesRemoveLabelResponseDataItem = {
 type IssuesRemoveLabelResponseData = Array<IssuesRemoveLabelResponseDataItem>;
 
 type IssuesLockEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:
@@ -27599,17 +25718,10 @@ type IssuesLockRequestOptions = {
 };
 
 type IssuesUnlockEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
 };
 
@@ -27621,17 +25733,10 @@ type IssuesUnlockRequestOptions = {
 };
 
 type ReactionsListForIssueEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to an issue.
@@ -27693,17 +25798,10 @@ type ReactionsListForIssueResponseData = Array<
 >;
 
 type ReactionsCreateForIssueEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the issue.
@@ -27754,21 +25852,12 @@ type ReactionsCreateForIssueResponseData = {
 };
 
 type ReactionsDeleteForIssueEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -27780,17 +25869,10 @@ type ReactionsDeleteForIssueRequestOptions = {
 };
 
 type IssuesListEventsForTimelineEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * issue_number parameter
-   */
+
   issue_number: number;
   /**
    * Results per page (max 100)
@@ -27843,13 +25925,8 @@ type IssuesListEventsForTimelineResponseData = Array<
 >;
 
 type ReposListDeployKeysEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -27881,13 +25958,8 @@ type ReposListDeployKeysResponseData = Array<
 >;
 
 type ReposAddDeployKeyEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * A name for the key.
@@ -27922,17 +25994,10 @@ type ReposAddDeployKeyResponseData = {
 };
 
 type ReposGetDeployKeyEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * key_id parameter
-   */
+
   key_id: number;
 };
 
@@ -27953,17 +26018,10 @@ type ReposGetDeployKeyResponseData = {
 };
 
 type ReposRemoveDeployKeyEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * key_id parameter
-   */
+
   key_id: number;
 };
 
@@ -27975,13 +26033,8 @@ type ReposRemoveDeployKeyRequestOptions = {
 };
 
 type IssuesListLabelsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -28013,13 +26066,8 @@ type IssuesListLabelsForRepoResponseData = Array<
 >;
 
 type IssuesCreateLabelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
@@ -28052,17 +26100,10 @@ type IssuesCreateLabelResponseData = {
 };
 
 type IssuesGetLabelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
 };
 
@@ -28083,17 +26124,10 @@ type IssuesGetLabelResponseData = {
 };
 
 type IssuesUpdateLabelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
   /**
    * The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see [emoji-cheat-sheet.com](http://emoji-cheat-sheet.com/).
@@ -28126,17 +26160,10 @@ type IssuesUpdateLabelResponseData = {
 };
 
 type IssuesDeleteLabelEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * name parameter
-   */
+
   name: string;
 };
 
@@ -28148,13 +26175,8 @@ type IssuesDeleteLabelRequestOptions = {
 };
 
 type ReposListLanguagesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -28167,13 +26189,8 @@ type ReposListLanguagesRequestOptions = {
 type ReposListLanguagesResponseData = { C: number; Python: number };
 
 type LicensesGetForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -28212,13 +26229,8 @@ type LicensesGetForRepoResponseData = {
 };
 
 type ReposMergeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the base branch that the head will be merged into.
@@ -28320,13 +26332,8 @@ type ReposMergeResponseData = {
 };
 
 type IssuesListMilestonesForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The state of the milestone. Either `open`, `closed`, or `all`.
@@ -28399,13 +26406,8 @@ type IssuesListMilestonesForRepoResponseData = Array<
 >;
 
 type IssuesCreateMilestoneEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The title of the milestone.
@@ -28471,17 +26473,10 @@ type IssuesCreateMilestoneResponseData = {
 };
 
 type IssuesGetMilestoneEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * milestone_number parameter
-   */
+
   milestone_number: number;
 };
 
@@ -28531,17 +26526,10 @@ type IssuesGetMilestoneResponseData = {
 };
 
 type IssuesUpdateMilestoneEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * milestone_number parameter
-   */
+
   milestone_number: number;
   /**
    * The title of the milestone.
@@ -28607,17 +26595,10 @@ type IssuesUpdateMilestoneResponseData = {
 };
 
 type IssuesDeleteMilestoneEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * milestone_number parameter
-   */
+
   milestone_number: number;
 };
 
@@ -28629,17 +26610,10 @@ type IssuesDeleteMilestoneRequestOptions = {
 };
 
 type IssuesListLabelsForMilestoneEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * milestone_number parameter
-   */
+
   milestone_number: number;
   /**
    * Results per page (max 100)
@@ -28671,13 +26645,8 @@ type IssuesListLabelsForMilestoneResponseData = Array<
 >;
 
 type ActivityListRepoNotificationsForAuthenticatedUserEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * If `true`, show notifications marked as read.
@@ -28801,13 +26770,8 @@ type ActivityListRepoNotificationsForAuthenticatedUserResponseData = Array<
 >;
 
 type ActivityMarkRepoNotificationsAsReadEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
@@ -28823,13 +26787,8 @@ type ActivityMarkRepoNotificationsAsReadRequestOptions = {
 };
 
 type ReposGetPagesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -28850,17 +26809,10 @@ type ReposGetPagesResponseData = {
 };
 
 type ReposEnablePagesSiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * source parameter
-   */
+
   source?: ReposEnablePagesSiteParamsSource;
 } & RequiredPreview<"switcheroo">;
 
@@ -28884,13 +26836,8 @@ type ReposEnablePagesSiteResponseData = {
 };
 
 type ReposDisablePagesSiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"switcheroo">;
 
@@ -28902,13 +26849,8 @@ type ReposDisablePagesSiteRequestOptions = {
 };
 
 type ReposUpdateInformationAboutPagesSiteEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see "[Using a custom domain with GitHub Pages](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)."
@@ -28928,13 +26870,8 @@ type ReposUpdateInformationAboutPagesSiteRequestOptions = {
 };
 
 type ReposRequestPageBuildEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -28947,13 +26884,8 @@ type ReposRequestPageBuildRequestOptions = {
 type ReposRequestPageBuildResponseData = { url: string; status: string };
 
 type ReposListPagesBuildsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -29007,13 +26939,8 @@ type ReposListPagesBuildsResponseData = Array<
 >;
 
 type ReposGetLatestPagesBuildEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -29056,17 +26983,10 @@ type ReposGetLatestPagesBuildResponseData = {
 };
 
 type ReposGetPagesBuildEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * build_id parameter
-   */
+
   build_id: number;
 };
 
@@ -29109,13 +27029,8 @@ type ReposGetPagesBuildResponseData = {
 };
 
 type ProjectsListForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
@@ -29177,13 +27092,8 @@ type ProjectsListForRepoResponseData = Array<
 >;
 
 type ProjectsCreateForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the project.
@@ -29238,13 +27148,8 @@ type ProjectsCreateForRepoResponseData = {
 };
 
 type PullsListEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Either `open`, `closed`, or `all` to filter by state.
@@ -29749,13 +27654,8 @@ type PullsListResponseDataItem = {
 type PullsListResponseData = Array<PullsListResponseDataItem>;
 
 type PullsCreateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The title of the new pull request.
@@ -30287,13 +28187,8 @@ type PullsCreateResponseData = {
 };
 
 type PullsListCommentsForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Can be either `created` or `updated` comments.
@@ -30385,17 +28280,10 @@ type PullsListCommentsForRepoResponseData = Array<
 >;
 
 type PullsGetCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -30462,17 +28350,10 @@ type PullsGetCommentResponseData = {
 };
 
 type PullsUpdateCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The text of the reply to the review comment.
@@ -30543,17 +28424,10 @@ type PullsUpdateCommentResponseData = {
 };
 
 type PullsDeleteCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
 };
 
@@ -30565,17 +28439,10 @@ type PullsDeleteCommentRequestOptions = {
 };
 
 type ReactionsListForPullRequestReviewCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a pull request review comment.
@@ -30637,17 +28504,10 @@ type ReactionsListForPullRequestReviewCommentResponseData = Array<
 >;
 
 type ReactionsCreateForPullRequestReviewCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the pull request review comment.
@@ -30698,21 +28558,12 @@ type ReactionsCreateForPullRequestReviewCommentResponseData = {
 };
 
 type ReactionsDeleteForPullRequestCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
-  /**
-   * reaction_id parameter
-   */
+
   reaction_id: number;
 } & RequiredPreview<"squirrel-girl">;
 
@@ -30724,17 +28575,10 @@ type ReactionsDeleteForPullRequestCommentRequestOptions = {
 };
 
 type PullsGetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
 };
 
@@ -31242,17 +29086,10 @@ type PullsGetResponseData = {
 };
 
 type PullsUpdateEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * The title of the pull request.
@@ -31780,17 +29617,10 @@ type PullsUpdateResponseData = {
 };
 
 type PullsListCommentsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Can be either `created` or `updated` comments.
@@ -31878,17 +29708,10 @@ type PullsListCommentsResponseDataItem = {
 type PullsListCommentsResponseData = Array<PullsListCommentsResponseDataItem>;
 
 type PullsCreateCommentEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * The text of the review comment.
@@ -31987,21 +29810,12 @@ type PullsCreateCommentResponseData = {
 };
 
 type PullsCreateReviewCommentReplyEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * comment_id parameter
-   */
+
   comment_id: number;
   /**
    * The text of the review comment.
@@ -32067,17 +29881,10 @@ type PullsCreateReviewCommentReplyResponseData = {
 };
 
 type PullsListCommitsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Results per page (max 100)
@@ -32176,17 +29983,10 @@ type PullsListCommitsResponseDataItem = {
 type PullsListCommitsResponseData = Array<PullsListCommitsResponseDataItem>;
 
 type PullsListFilesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Results per page (max 100)
@@ -32219,17 +30019,10 @@ type PullsListFilesResponseDataItem = {
 type PullsListFilesResponseData = Array<PullsListFilesResponseDataItem>;
 
 type PullsCheckIfMergedEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
 };
 
@@ -32241,17 +30034,10 @@ type PullsCheckIfMergedRequestOptions = {
 };
 
 type PullsMergeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Title for the automatic commit message.
@@ -32280,17 +30066,10 @@ type PullsMergeRequestOptions = {
 type PullsMergeResponseData = { sha: string; merged: boolean; message: string };
 
 type PullsListReviewRequestsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Results per page (max 100)
@@ -32348,17 +30127,10 @@ type PullsListReviewRequestsResponseData = {
 };
 
 type PullsCreateReviewRequestEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * An array of user `login`s that will be requested.
@@ -32846,17 +30618,10 @@ type PullsCreateReviewRequestResponseData = {
 };
 
 type PullsDeleteReviewRequestEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * An array of user `login`s that will be removed.
@@ -32876,17 +30641,10 @@ type PullsDeleteReviewRequestRequestOptions = {
 };
 
 type PullsListReviewsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * Results per page (max 100)
@@ -32945,17 +30703,10 @@ type PullsListReviewsResponseDataItem = {
 type PullsListReviewsResponseData = Array<PullsListReviewsResponseDataItem>;
 
 type PullsCreateReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the `position`. Defaults to the most recent commit in the pull request when you do not specify a value.
@@ -33020,21 +30771,12 @@ type PullsCreateReviewResponseData = {
 };
 
 type PullsGetReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
 };
 
@@ -33084,21 +30826,12 @@ type PullsGetReviewResponseData = {
 };
 
 type PullsDeletePendingReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
 };
 
@@ -33147,21 +30880,12 @@ type PullsDeletePendingReviewResponseData = {
 };
 
 type PullsUpdateReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
   /**
    * The body text of the pull request review.
@@ -33214,21 +30938,12 @@ type PullsUpdateReviewResponseData = {
 };
 
 type PullsGetCommentsForReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
   /**
    * Results per page (max 100)
@@ -33302,21 +31017,12 @@ type PullsGetCommentsForReviewResponseData = Array<
 >;
 
 type PullsDismissReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
   /**
    * The message for the pull request review dismissal
@@ -33369,21 +31075,12 @@ type PullsDismissReviewResponseData = {
 };
 
 type PullsSubmitReviewEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
-  /**
-   * review_id parameter
-   */
+
   review_id: number;
   /**
    * The body text of the pull request review
@@ -33441,17 +31138,10 @@ type PullsSubmitReviewResponseData = {
 };
 
 type PullsUpdateBranchEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * pull_number parameter
-   */
+
   pull_number: number;
   /**
    * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits on a repository](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
@@ -33468,13 +31158,8 @@ type PullsUpdateBranchRequestOptions = {
 type PullsUpdateBranchResponseData = { message: string; url: string };
 
 type ReposGetReadmeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the commit/branch/tag. Default: the repository’s default branch (usually `master`)
@@ -33509,13 +31194,8 @@ type ReposGetReadmeResponseData = {
 };
 
 type ReposListReleasesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -33611,13 +31291,8 @@ type ReposListReleasesResponseDataItem = {
 type ReposListReleasesResponseData = Array<ReposListReleasesResponseDataItem>;
 
 type ReposCreateReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The name of the tag.
@@ -33693,17 +31368,10 @@ type ReposCreateReleaseResponseData = {
 };
 
 type ReposGetReleaseAssetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * asset_id parameter
-   */
+
   asset_id: number;
 };
 
@@ -33750,17 +31418,10 @@ type ReposGetReleaseAssetResponseData = {
 };
 
 type ReposUpdateReleaseAssetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * asset_id parameter
-   */
+
   asset_id: number;
   /**
    * The file name of the asset.
@@ -33815,17 +31476,10 @@ type ReposUpdateReleaseAssetResponseData = {
 };
 
 type ReposDeleteReleaseAssetEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * asset_id parameter
-   */
+
   asset_id: number;
 };
 
@@ -33837,13 +31491,8 @@ type ReposDeleteReleaseAssetRequestOptions = {
 };
 
 type ReposGetLatestReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -33930,17 +31579,10 @@ type ReposGetLatestReleaseResponseData = {
 };
 
 type ReposGetReleaseByTagEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * tag parameter
-   */
+
   tag: string;
 };
 
@@ -34027,17 +31669,10 @@ type ReposGetReleaseByTagResponseData = {
 };
 
 type ReposGetReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * release_id parameter
-   */
+
   release_id: number;
 };
 
@@ -34124,17 +31759,10 @@ type ReposGetReleaseResponseData = {
 };
 
 type ReposUpdateReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * release_id parameter
-   */
+
   release_id: number;
   /**
    * The name of the tag.
@@ -34245,17 +31873,10 @@ type ReposUpdateReleaseResponseData = {
 };
 
 type ReposDeleteReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * release_id parameter
-   */
+
   release_id: number;
 };
 
@@ -34267,17 +31888,10 @@ type ReposDeleteReleaseRequestOptions = {
 };
 
 type ReposListAssetsForReleaseEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * release_id parameter
-   */
+
   release_id: number;
   /**
    * Results per page (max 100)
@@ -34411,13 +32025,8 @@ type ReposUploadReleaseAssetResponseData = {
 };
 
 type ActivityListStargazersForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -34460,13 +32069,8 @@ type ActivityListStargazersForRepoResponseData = Array<
 >;
 
 type ReposGetCodeFrequencyStatsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34479,13 +32083,8 @@ type ReposGetCodeFrequencyStatsRequestOptions = {
 type ReposGetCodeFrequencyStatsResponseData = Array<Array<number>>;
 
 type ReposGetCommitActivityStatsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34505,13 +32104,8 @@ type ReposGetCommitActivityStatsResponseData = Array<
 >;
 
 type ReposGetContributorsStatsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34557,13 +32151,8 @@ type ReposGetContributorsStatsResponseData = Array<
 >;
 
 type ReposGetParticipationStatsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34579,13 +32168,8 @@ type ReposGetParticipationStatsResponseData = {
 };
 
 type ReposGetPunchCardStatsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34598,17 +32182,10 @@ type ReposGetPunchCardStatsRequestOptions = {
 type ReposGetPunchCardStatsResponseData = Array<Array<number>>;
 
 type ReposCreateStatusEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * sha parameter
-   */
+
   sha: string;
   /**
    * The state of the status. Can be one of `error`, `failure`, `pending`, or `success`.
@@ -34671,13 +32248,8 @@ type ReposCreateStatusResponseData = {
 };
 
 type ActivityListWatchersForRepoEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -34720,13 +32292,8 @@ type ActivityListWatchersForRepoResponseData = Array<
 >;
 
 type ActivityGetRepoSubscriptionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34746,13 +32313,8 @@ type ActivityGetRepoSubscriptionResponseData = {
 };
 
 type ActivitySetRepoSubscriptionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Determines if notifications should be received from this repository.
@@ -34780,13 +32342,8 @@ type ActivitySetRepoSubscriptionResponseData = {
 };
 
 type ActivityDeleteRepoSubscriptionEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34798,13 +32355,8 @@ type ActivityDeleteRepoSubscriptionRequestOptions = {
 };
 
 type ReposListTagsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -34832,13 +32384,8 @@ type ReposListTagsResponseDataItem = {
 type ReposListTagsResponseData = Array<ReposListTagsResponseDataItem>;
 
 type ReposListTeamsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Results per page (max 100)
@@ -34873,13 +32420,8 @@ type ReposListTeamsResponseDataItem = {
 type ReposListTeamsResponseData = Array<ReposListTeamsResponseDataItem>;
 
 type ReposGetAllTopicsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"mercy">;
 
@@ -34892,13 +32434,8 @@ type ReposGetAllTopicsRequestOptions = {
 type ReposGetAllTopicsResponseData = { names: Array<string> };
 
 type ReposReplaceAllTopicsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * An array of topics to add to the repository. Pass one or more topics to _replace_ the set of existing topics. Send an empty array (`[]`) to clear all topics from the repository. **Note:** Topic `names` cannot contain uppercase letters.
@@ -34915,13 +32452,8 @@ type ReposReplaceAllTopicsRequestOptions = {
 type ReposReplaceAllTopicsResponseData = { names: Array<string> };
 
 type ReposGetClonesEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Must be one of: `day`, `week`.
@@ -34947,13 +32479,8 @@ type ReposGetClonesResponseData = {
 };
 
 type ReposGetTopPathsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34972,13 +32499,8 @@ type ReposGetTopPathsResponseDataItem = {
 type ReposGetTopPathsResponseData = Array<ReposGetTopPathsResponseDataItem>;
 
 type ReposGetTopReferrersEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -34998,13 +32520,8 @@ type ReposGetTopReferrersResponseData = Array<
 >;
 
 type ReposGetViewsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * Must be one of: `day`, `week`.
@@ -35030,13 +32547,8 @@ type ReposGetViewsResponseData = {
 };
 
 type ReposTransferEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * **Required:** The username or organization name the repository will be transferred to.
@@ -35163,13 +32675,8 @@ type ReposTransferResponseData = {
 };
 
 type ReposCheckVulnerabilityAlertsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"dorian">;
 
@@ -35181,13 +32688,8 @@ type ReposCheckVulnerabilityAlertsRequestOptions = {
 };
 
 type ReposEnableVulnerabilityAlertsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"dorian">;
 
@@ -35199,13 +32701,8 @@ type ReposEnableVulnerabilityAlertsRequestOptions = {
 };
 
 type ReposDisableVulnerabilityAlertsEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 } & RequiredPreview<"dorian">;
 
@@ -35217,21 +32714,12 @@ type ReposDisableVulnerabilityAlertsRequestOptions = {
 };
 
 type ReposGetArchiveLinkEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * archive_format parameter
-   */
+
   archive_format: string;
-  /**
-   * ref parameter
-   */
+
   ref: string;
 };
 
@@ -35243,13 +32731,8 @@ type ReposGetArchiveLinkRequestOptions = {
 };
 
 type ReposCreateUsingTemplateEndpoint = {
-  /**
-   * template_owner parameter
-   */
   template_owner: string;
-  /**
-   * template_repo parameter
-   */
+
   template_repo: string;
   /**
    * The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
@@ -35575,9 +33058,6 @@ type ReposListPublicResponseDataItem = {
 type ReposListPublicResponseData = Array<ReposListPublicResponseDataItem>;
 
 type ScimListProvisionedIdentitiesEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * Used for pagination: the index of the first result to return.
@@ -35635,9 +33115,6 @@ type ScimListProvisionedIdentitiesResponseData = {
 };
 
 type ScimProvisionAndInviteUsersEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -35674,13 +33151,8 @@ type ScimProvisionAndInviteUsersResponseData = {
 };
 
 type ScimGetProvisioningDetailsForUserEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * scim_user_id parameter
-   */
+
   scim_user_id: number;
 };
 
@@ -35717,13 +33189,8 @@ type ScimGetProvisioningDetailsForUserResponseData = {
 };
 
 type ScimReplaceProvisionedUserInformationEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * scim_user_id parameter
-   */
+
   scim_user_id: number;
 };
 
@@ -35760,13 +33227,8 @@ type ScimReplaceProvisionedUserInformationResponseData = {
 };
 
 type ScimUpdateUserAttributeEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * scim_user_id parameter
-   */
+
   scim_user_id: number;
 };
 
@@ -35803,13 +33265,8 @@ type ScimUpdateUserAttributeResponseData = {
 };
 
 type ScimRemoveUserFromOrgEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
-  /**
-   * scim_user_id parameter
-   */
+
   scim_user_id: number;
 };
 
@@ -36409,9 +33866,6 @@ type SearchUsersResponseData = {
 };
 
 type TeamsGetLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
 };
 
@@ -36471,9 +33925,6 @@ type TeamsGetLegacyResponseData = {
 };
 
 type TeamsUpdateLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * The name of the team.
@@ -36561,9 +34012,6 @@ type TeamsUpdateLegacyResponseData = {
 };
 
 type TeamsDeleteLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
 };
 
@@ -36575,9 +34023,6 @@ type TeamsDeleteLegacyRequestOptions = {
 };
 
 type TeamsListDiscussionsLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -36654,9 +34099,6 @@ type TeamsListDiscussionsLegacyResponseData = Array<
 >;
 
 type TeamsCreateDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * The discussion post's title.
@@ -36730,13 +34172,8 @@ type TeamsCreateDiscussionLegacyResponseData = {
 };
 
 type TeamsGetDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
 };
 
@@ -36798,13 +34235,8 @@ type TeamsGetDiscussionLegacyResponseData = {
 };
 
 type TeamsUpdateDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The discussion post's title.
@@ -36874,13 +34306,8 @@ type TeamsUpdateDiscussionLegacyResponseData = {
 };
 
 type TeamsDeleteDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
 };
 
@@ -36892,13 +34319,8 @@ type TeamsDeleteDiscussionLegacyRequestOptions = {
 };
 
 type TeamsListDiscussionCommentsLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * Sorts the discussion comments by the date they were created. To return the oldest comments first, set to `asc`. Can be one of `asc` or `desc`.
@@ -36970,13 +34392,8 @@ type TeamsListDiscussionCommentsLegacyResponseData = Array<
 >;
 
 type TeamsCreateDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The discussion comment's body text.
@@ -37037,17 +34454,10 @@ type TeamsCreateDiscussionCommentLegacyResponseData = {
 };
 
 type TeamsGetDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
 };
 
@@ -37104,17 +34514,10 @@ type TeamsGetDiscussionCommentLegacyResponseData = {
 };
 
 type TeamsUpdateDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * The discussion comment's body text.
@@ -37175,17 +34578,10 @@ type TeamsUpdateDiscussionCommentLegacyResponseData = {
 };
 
 type TeamsDeleteDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
 };
 
@@ -37197,17 +34593,10 @@ type TeamsDeleteDiscussionCommentLegacyRequestOptions = {
 };
 
 type ReactionsListForTeamDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion comment.
@@ -37269,17 +34658,10 @@ type ReactionsListForTeamDiscussionCommentLegacyResponseData = Array<
 >;
 
 type ReactionsCreateForTeamDiscussionCommentLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
-  /**
-   * comment_number parameter
-   */
+
   comment_number: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion comment.
@@ -37330,13 +34712,8 @@ type ReactionsCreateForTeamDiscussionCommentLegacyResponseData = {
 };
 
 type ReactionsListForTeamDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * Returns a single [reaction type](https://developer.github.com/v3/reactions/#reaction-types). Omit this parameter to list all reactions to a team discussion.
@@ -37398,13 +34775,8 @@ type ReactionsListForTeamDiscussionLegacyResponseData = Array<
 >;
 
 type ReactionsCreateForTeamDiscussionLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * discussion_number parameter
-   */
+
   discussion_number: number;
   /**
    * The [reaction type](https://developer.github.com/v3/reactions/#reaction-types) to add to the team discussion.
@@ -37455,9 +34827,6 @@ type ReactionsCreateForTeamDiscussionLegacyResponseData = {
 };
 
 type TeamsListPendingInvitationsLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Results per page (max 100)
@@ -37510,9 +34879,6 @@ type TeamsListPendingInvitationsLegacyResponseData = Array<
 >;
 
 type TeamsListMembersLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Filters members returned by their role in the team. Can be one of:
@@ -37562,13 +34928,8 @@ type TeamsListMembersLegacyResponseData = Array<
 >;
 
 type TeamsGetMemberLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -37580,13 +34941,8 @@ type TeamsGetMemberLegacyRequestOptions = {
 };
 
 type TeamsAddMemberLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -37607,13 +34963,8 @@ type TeamsAddMemberLegacyResponseData = {
 };
 
 type TeamsRemoveMemberLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -37625,13 +34976,8 @@ type TeamsRemoveMemberLegacyRequestOptions = {
 };
 
 type TeamsGetMembershipLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -37648,13 +34994,8 @@ type TeamsGetMembershipLegacyResponseData = {
 };
 
 type TeamsAddOrUpdateMembershipLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
   /**
    * The role that this user should have in the team. Can be one of:
@@ -37677,13 +35018,8 @@ type TeamsAddOrUpdateMembershipLegacyResponseData = {
 };
 
 type TeamsRemoveMembershipLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * username parameter
-   */
+
   username: string;
 };
 
@@ -37695,9 +35031,6 @@ type TeamsRemoveMembershipLegacyRequestOptions = {
 };
 
 type TeamsListProjectsLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Results per page (max 100)
@@ -37763,13 +35096,8 @@ type TeamsListProjectsLegacyResponseData = Array<
 >;
 
 type TeamsReviewProjectLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
 } & RequiredPreview<"inertia">;
 
@@ -37824,13 +35152,8 @@ type TeamsReviewProjectLegacyResponseData = {
 };
 
 type TeamsAddOrUpdateProjectLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
   /**
    * The permission to grant to the team for this project. Can be one of:
@@ -37854,13 +35177,8 @@ type TeamsAddOrUpdateProjectLegacyResponseData = {
 };
 
 type TeamsRemoveProjectLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * project_id parameter
-   */
+
   project_id: number;
 };
 
@@ -37872,9 +35190,6 @@ type TeamsRemoveProjectLegacyRequestOptions = {
 };
 
 type TeamsListReposLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Results per page (max 100)
@@ -38009,17 +35324,10 @@ type TeamsListReposLegacyResponseData = Array<
 >;
 
 type TeamsCheckManagesRepoLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -38278,17 +35586,10 @@ type TeamsCheckManagesRepoLegacyResponseData = {
 };
 
 type TeamsAddOrUpdateRepoLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
   /**
    * The permission to grant the team on this repository. Can be one of:
@@ -38309,17 +35610,10 @@ type TeamsAddOrUpdateRepoLegacyRequestOptions = {
 };
 
 type TeamsRemoveRepoLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
-  /**
-   * owner parameter
-   */
+
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -38331,9 +35625,6 @@ type TeamsRemoveRepoLegacyRequestOptions = {
 };
 
 type TeamsListIdPGroupsForLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
 };
 
@@ -38353,9 +35644,6 @@ type TeamsListIdPGroupsForLegacyResponseData = {
 };
 
 type TeamsCreateOrUpdateIdPGroupConnectionsLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * The IdP groups you want to connect to a GitHub team. When updating, the new `groups` object will replace the original one. You must include any existing groups that you don't want to remove.
@@ -38381,9 +35669,6 @@ type TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData = {
 };
 
 type TeamsListChildLegacyEndpoint = {
-  /**
-   * team_id parameter
-   */
   team_id: number;
   /**
    * Results per page (max 100)
@@ -38601,9 +35886,6 @@ type UsersListBlockedResponseDataItem = {
 type UsersListBlockedResponseData = Array<UsersListBlockedResponseDataItem>;
 
 type UsersCheckBlockedEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38615,9 +35897,6 @@ type UsersCheckBlockedRequestOptions = {
 };
 
 type UsersBlockEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38629,9 +35908,6 @@ type UsersBlockRequestOptions = {
 };
 
 type UsersUnblockEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38812,9 +36088,6 @@ type UsersListFollowedByAuthenticatedResponseData = Array<
 >;
 
 type UsersCheckFollowingEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38826,9 +36099,6 @@ type UsersCheckFollowingRequestOptions = {
 };
 
 type UsersFollowEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38840,9 +36110,6 @@ type UsersFollowRequestOptions = {
 };
 
 type UsersUnfollowEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -38951,9 +36218,6 @@ type UsersCreateGpgKeyResponseData = {
 };
 
 type UsersGetGpgKeyEndpoint = {
-  /**
-   * gpg_key_id parameter
-   */
   gpg_key_id: number;
 };
 
@@ -38997,9 +36261,6 @@ type UsersGetGpgKeyResponseData = {
 };
 
 type UsersDeleteGpgKeyEndpoint = {
-  /**
-   * gpg_key_id parameter
-   */
   gpg_key_id: number;
 };
 
@@ -39079,9 +36340,6 @@ type AppsListInstallationsForAuthenticatedUserResponseData = {
 };
 
 type AppsListInstallationReposForAuthenticatedUserEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
   /**
    * Results per page (max 100)
@@ -39214,13 +36472,8 @@ type AppsListInstallationReposForAuthenticatedUserResponseData = {
 };
 
 type AppsAddRepoToInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
-  /**
-   * repository_id parameter
-   */
+
   repository_id: number;
 } & RequiredPreview<"machine-man">;
 
@@ -39232,13 +36485,8 @@ type AppsAddRepoToInstallationRequestOptions = {
 };
 
 type AppsRemoveRepoFromInstallationEndpoint = {
-  /**
-   * installation_id parameter
-   */
   installation_id: number;
-  /**
-   * repository_id parameter
-   */
+
   repository_id: number;
 } & RequiredPreview<"machine-man">;
 
@@ -39588,9 +36836,6 @@ type UsersCreatePublicKeyRequestOptions = {
 type UsersCreatePublicKeyResponseData = { key_id: string; key: string };
 
 type UsersGetPublicKeyEndpoint = {
-  /**
-   * key_id parameter
-   */
   key_id: number;
 };
 
@@ -39603,9 +36848,6 @@ type UsersGetPublicKeyRequestOptions = {
 type UsersGetPublicKeyResponseData = { key_id: string; key: string };
 
 type UsersDeletePublicKeyEndpoint = {
-  /**
-   * key_id parameter
-   */
   key_id: number;
 };
 
@@ -39792,9 +37034,6 @@ type OrgsListMembershipsResponseData = Array<
 >;
 
 type OrgsGetMembershipForAuthenticatedUserEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
 };
 
@@ -39848,9 +37087,6 @@ type OrgsGetMembershipForAuthenticatedUserResponseData = {
 };
 
 type OrgsUpdateMembershipEndpoint = {
-  /**
-   * org parameter
-   */
   org: string;
   /**
    * The state that the membership should be in. Only `"active"` will be accepted.
@@ -40233,9 +37469,6 @@ type MigrationsListForAuthenticatedUserResponseData = Array<
 >;
 
 type MigrationsGetStatusForAuthenticatedUserEndpoint = {
-  /**
-   * migration_id parameter
-   */
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -40388,9 +37621,6 @@ type MigrationsGetStatusForAuthenticatedUserResponseData = {
 };
 
 type MigrationsGetArchiveForAuthenticatedUserEndpoint = {
-  /**
-   * migration_id parameter
-   */
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -40402,9 +37632,6 @@ type MigrationsGetArchiveForAuthenticatedUserRequestOptions = {
 };
 
 type MigrationsDeleteArchiveForAuthenticatedUserEndpoint = {
-  /**
-   * migration_id parameter
-   */
   migration_id: number;
 } & RequiredPreview<"wyandotte">;
 
@@ -40416,13 +37643,8 @@ type MigrationsDeleteArchiveForAuthenticatedUserRequestOptions = {
 };
 
 type MigrationsUnlockRepoForAuthenticatedUserEndpoint = {
-  /**
-   * migration_id parameter
-   */
   migration_id: number;
-  /**
-   * repo_name parameter
-   */
+
   repo_name: string;
 } & RequiredPreview<"wyandotte">;
 
@@ -40918,9 +38140,6 @@ type ReposListInvitationsForAuthenticatedUserResponseData = Array<
 >;
 
 type ReposAcceptInvitationEndpoint = {
-  /**
-   * invitation_id parameter
-   */
   invitation_id: number;
 };
 
@@ -40932,9 +38151,6 @@ type ReposAcceptInvitationRequestOptions = {
 };
 
 type ReposDeclineInvitationEndpoint = {
-  /**
-   * invitation_id parameter
-   */
   invitation_id: number;
 };
 
@@ -41082,13 +38298,8 @@ type ActivityListReposStarredByAuthenticatedUserResponseData = Array<
 >;
 
 type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -41100,13 +38311,8 @@ type ActivityCheckRepoIsStarredByAuthenticatedUserRequestOptions = {
 };
 
 type ActivityStarRepoForAuthenticatedUserEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -41118,13 +38324,8 @@ type ActivityStarRepoForAuthenticatedUserRequestOptions = {
 };
 
 type ActivityUnstarRepoForAuthenticatedUserEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
 };
 
@@ -41338,9 +38539,6 @@ type TeamsListForAuthenticatedUserResponseData = Array<
 >;
 
 type MigrationsListReposForUserEndpoint = {
-  /**
-   * migration_id parameter
-   */
   migration_id: number;
   /**
    * Results per page (max 100)
@@ -41510,9 +38708,6 @@ type UsersListResponseDataItem = {
 type UsersListResponseData = Array<UsersListResponseDataItem>;
 
 type UsersGetByUsernameEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 };
 
@@ -41564,9 +38759,6 @@ type UsersGetByUsernameResponseData = {
 };
 
 type ActivityListEventsForAuthenticatedUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41586,13 +38778,8 @@ type ActivityListEventsForAuthenticatedUserRequestOptions = {
 };
 
 type ActivityListOrgEventsForAuthenticatedUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
-  /**
-   * org parameter
-   */
+
   org: string;
   /**
    * Results per page (max 100)
@@ -41612,9 +38799,6 @@ type ActivityListOrgEventsForAuthenticatedUserRequestOptions = {
 };
 
 type ActivityListPublicEventsForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41634,9 +38818,6 @@ type ActivityListPublicEventsForUserRequestOptions = {
 };
 
 type UsersListFollowersForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41679,9 +38860,6 @@ type UsersListFollowersForUserResponseData = Array<
 >;
 
 type UsersListFollowingForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41724,13 +38902,8 @@ type UsersListFollowingForUserResponseData = Array<
 >;
 
 type UsersCheckFollowingForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
-  /**
-   * target_user parameter
-   */
+
   target_user: string;
 };
 
@@ -41742,9 +38915,6 @@ type UsersCheckFollowingForUserRequestOptions = {
 };
 
 type GistsListForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Only gists updated at or after this time are returned.
@@ -41819,9 +38989,6 @@ type GistsListForUserResponseDataItem = {
 type GistsListForUserResponseData = Array<GistsListForUserResponseDataItem>;
 
 type UsersListGpgKeysForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41876,9 +39043,6 @@ type UsersListGpgKeysForUserResponseData = Array<
 >;
 
 type UsersGetContextForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`.
@@ -41905,9 +39069,6 @@ type UsersGetContextForUserResponseData = {
 };
 
 type AppsGetUserInstallationEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
 } & RequiredPreview<"machine-man">;
 
@@ -41960,9 +39121,6 @@ type AppsGetUserInstallationResponseData = {
 };
 
 type UsersListPublicKeysForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -41986,9 +39144,6 @@ type UsersListPublicKeysForUserResponseData = Array<
 >;
 
 type OrgsListForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -42023,9 +39178,6 @@ type OrgsListForUserResponseDataItem = {
 type OrgsListForUserResponseData = Array<OrgsListForUserResponseDataItem>;
 
 type ProjectsListForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Indicates the state of the projects to return. Can be either `open`, `closed`, or `all`.
@@ -42087,9 +39239,6 @@ type ProjectsListForUserResponseData = Array<
 >;
 
 type ActivityListReceivedEventsForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -42109,9 +39258,6 @@ type ActivityListReceivedEventsForUserRequestOptions = {
 };
 
 type ActivityListReceivedPublicEventsForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
@@ -42131,9 +39277,6 @@ type ActivityListReceivedPublicEventsForUserRequestOptions = {
 };
 
 type ReposListForUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Can be one of `all`, `owner`, `member`.
@@ -42165,9 +39308,6 @@ type ReposListForUserRequestOptions = {
 };
 
 type ActivityListReposStarredByUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * One of `created` (when the repository was starred) or `updated` (when it was last pushed to).
@@ -42305,9 +39445,6 @@ type ActivityListReposStarredByUserResponseData = Array<
 >;
 
 type ActivityListReposWatchedByUserEndpoint = {
-  /**
-   * username parameter
-   */
   username: string;
   /**
    * Results per page (max 100)
