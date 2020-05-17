@@ -1800,9 +1800,19 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "files.*",
+        "type": "object",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
         "description": "The content of the file.",
         "enum": null,
-        "name": "files.content",
+        "name": "files.*.content",
         "type": "string",
         "required": false
       },
@@ -2026,9 +2036,19 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "files.*",
+        "type": "object",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
         "description": "The updated content of the file.",
         "enum": null,
-        "name": "files.content",
+        "name": "files.*.content",
         "type": "string",
         "required": false
       },
@@ -2038,7 +2058,7 @@
         "deprecated": null,
         "description": "The new name for this file. To delete a file, set the value of the filename to `null`.",
         "enum": null,
-        "name": "files.filename",
+        "name": "files.*.filename",
         "type": "string",
         "required": false
       }
