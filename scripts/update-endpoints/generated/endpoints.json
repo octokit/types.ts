@@ -12752,7 +12752,7 @@
   {
     "name": "Delete a repository secret",
     "scope": "actions",
-    "id": "createOrUpdateSecretForRepo",
+    "id": "deleteSecretFromRepo",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
     "documentationUrl": "https://developer.github.com/v3/actions/secrets/#delete-a-repository-secret",
@@ -12802,7 +12802,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "\"actions/create-or-update-secret-for-repo\" operation ID is now \"actions/create-or-update-repo-secret\""
+      "note": "\"actions/delete-secret-from-repo\" operation ID is now \"actions/delete-repo-secret\""
     }
   },
   {
