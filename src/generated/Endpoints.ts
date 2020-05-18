@@ -6699,41 +6699,15 @@ export interface GistsUpdateResponseData {
   git_push_url: string;
   html_url: string;
   files: {
-    "hello_world.rb": {
-      filename: string;
-      type: string;
-      language: string;
-      raw_url: string;
-      size: number;
-      truncated: boolean;
-      content: string;
-    };
-    "hello_world.py": {
-      filename: string;
-      type: string;
-      language: string;
-      raw_url: string;
-      size: number;
-      truncated: boolean;
-      content: string;
-    };
-    "hello_world.md": {
-      filename: string;
-      type: string;
-      language: string;
-      raw_url: string;
-      size: number;
-      truncated: boolean;
-      content: string;
-    };
-    "new_file.txt": {
-      filename: string;
-      type: string;
-      language: string;
-      raw_url: string;
-      size: number;
-      truncated: boolean;
-      content: string;
+    [k: string]: {
+      filename?: string;
+      type?: string;
+      language?: string;
+      raw_url?: string;
+      size?: number;
+      truncated?: boolean;
+      content?: string;
+      [k: string]: unknown;
     };
   };
   public: boolean;
@@ -7091,12 +7065,13 @@ export interface GistsForkResponseData {
   git_push_url: string;
   html_url: string;
   files: {
-    "hello_world.rb": {
-      filename: string;
-      type: string;
-      language: string;
-      raw_url: string;
-      size: number;
+    [k: string]: {
+      filename?: string;
+      type?: string;
+      language?: string;
+      raw_url?: string;
+      size?: number;
+      [k: string]: unknown;
     };
   };
   public: boolean;
