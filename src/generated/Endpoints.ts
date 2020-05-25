@@ -15108,6 +15108,7 @@ export interface ActionsListRepoWorkflowRunsResponseData {
     event: string;
     status: string;
     conclusion: string;
+    workflow_id: number;
     url: string;
     html_url: string;
     pull_requests: unknown[];
@@ -15295,6 +15296,7 @@ export interface ActionsGetWorkflowRunResponseData {
   event: string;
   status: string;
   conclusion: string;
+  workflow_id: number;
   url: string;
   html_url: string;
   pull_requests: unknown[];
@@ -15858,6 +15860,7 @@ export interface ActionsListWorkflowRunsResponseData {
     event: string;
     status: string;
     conclusion: string;
+    workflow_id: number;
     url: string;
     html_url: string;
     pull_requests: unknown[];
