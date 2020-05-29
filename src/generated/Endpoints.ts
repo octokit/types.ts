@@ -8553,6 +8553,7 @@ export interface OrgsGetResponseData {
   blog: string;
   location: string;
   email: string;
+  twitter_username: string;
   is_verified: boolean;
   has_organization_projects: boolean;
   has_repository_projects: boolean;
@@ -8597,6 +8598,10 @@ type OrgsUpdateEndpoint = {
    * The publicly visible email address.
    */
   email?: string;
+  /**
+   * The Twitter username of the company.
+   */
+  twitter_username?: string;
   /**
    * The location.
    */
@@ -8688,6 +8693,7 @@ export interface OrgsUpdateResponseData {
   blog: string;
   location: string;
   email: string;
+  twitter_username: string;
   is_verified: boolean;
   has_organization_projects: boolean;
   has_repository_projects: boolean;
@@ -11494,6 +11500,7 @@ export interface TeamsCreateResponseData {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -11554,6 +11561,7 @@ export interface TeamsGetByNameResponseData {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -11642,6 +11650,7 @@ export interface TeamsUpdateInOrgResponseData {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -33300,6 +33309,7 @@ export interface TeamsGetLegacyResponseData {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -33386,6 +33396,7 @@ export interface TeamsUpdateLegacyResponseData {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -35078,6 +35089,7 @@ export interface UsersGetAuthenticatedResponseData {
   email: string;
   hireable: boolean;
   bio: string;
+  twitter_username: string;
   public_repos: number;
   public_gists: number;
   followers: number;
@@ -35127,6 +35139,10 @@ type UsersUpdateAuthenticatedEndpoint = {
    * The new short biography of the user.
    */
   bio?: string;
+  /**
+   * The new Twitter username of the user.
+   */
+  twitter_username?: string;
 };
 
 type UsersUpdateAuthenticatedRequestOptions = {
@@ -35161,6 +35177,7 @@ export interface UsersUpdateAuthenticatedResponseData {
   email: string;
   hireable: boolean;
   bio: string;
+  twitter_username: string;
   public_repos: number;
   public_gists: number;
   followers: number;
@@ -37853,6 +37870,7 @@ export type TeamsListForAuthenticatedUserResponseData = {
     blog: string;
     location: string;
     email: string;
+    twitter_username: string;
     is_verified: boolean;
     has_organization_projects: boolean;
     has_repository_projects: boolean;
@@ -38064,6 +38082,7 @@ export interface UsersGetByUsernameResponseData {
   email: string;
   hireable: boolean;
   bio: string;
+  twitter_username: string;
   public_repos: number;
   public_gists: number;
   followers: number;
