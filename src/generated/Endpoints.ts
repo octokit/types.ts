@@ -5264,6 +5264,7 @@ export interface AppsCreateInstallationTokenResponseData {
     issues: string;
     contents: string;
   };
+  repository_selection: string;
   repositories: {
     id: number;
     node_id: string;
