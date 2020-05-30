@@ -5175,10 +5175,9 @@ export type AppsListInstallationsResponseData = {
   target_id: number;
   target_type: string;
   permissions: {
+    checks: string;
     metadata: string;
     contents: string;
-    issues: string;
-    single_file: string;
   };
   events: string[];
   single_file_name: string;
@@ -5218,10 +5217,9 @@ export interface AppsGetInstallationResponseData {
   target_id: number;
   target_type: string;
   permissions: {
+    checks: string;
     metadata: string;
     contents: string;
-    issues: string;
-    single_file: string;
   };
   events: string[];
   single_file_name: string;
@@ -9374,6 +9372,7 @@ export interface AppsGetOrgInstallationResponseData {
   account: {
     login: string;
     id: number;
+    node_id: string;
     avatar_url: string;
     gravatar_id: string;
     url: string;
@@ -22084,6 +22083,7 @@ type GitGetCommitRequestOptions = {
 };
 export interface GitGetCommitResponseData {
   sha: string;
+  node_id: string;
   url: string;
   author: {
     date: string;
@@ -22896,6 +22896,7 @@ export interface AppsGetRepoInstallationResponseData {
   account: {
     login: string;
     id: number;
+    node_id: string;
     avatar_url: string;
     gravatar_id: string;
     url: string;
@@ -35652,10 +35653,9 @@ export interface AppsListInstallationsForAuthenticatedUserResponseData {
     target_id: number;
     target_type: string;
     permissions: {
+      checks: string;
       metadata: string;
       contents: string;
-      issues: string;
-      single_file: string;
     };
     events: string[];
     single_file_name: string;
