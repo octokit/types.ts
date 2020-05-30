@@ -30155,8 +30155,6 @@ export type PullsListReviewsResponseData = {
     site_admin: boolean;
   };
   body: string;
-  submitted_at: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30168,6 +30166,8 @@ export type PullsListReviewsResponseData = {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }[];
 
 type PullsCreateReviewEndpoint = {
@@ -30224,7 +30224,6 @@ export interface PullsCreateReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30236,6 +30235,8 @@ export interface PullsCreateReviewResponseData {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }
 
 type PullsGetReviewEndpoint = {
@@ -30278,8 +30279,6 @@ export interface PullsGetReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  submitted_at: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30291,6 +30290,8 @@ export interface PullsGetReviewResponseData {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }
 
 type PullsDeletePendingReviewEndpoint = {
@@ -30333,7 +30334,6 @@ export interface PullsDeletePendingReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30345,6 +30345,7 @@ export interface PullsDeletePendingReviewResponseData {
       href: string;
     };
   };
+  commit_id: string;
 }
 
 type PullsUpdateReviewEndpoint = {
@@ -30391,7 +30392,6 @@ export interface PullsUpdateReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30403,6 +30403,8 @@ export interface PullsUpdateReviewResponseData {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }
 
 type PullsGetCommentsForReviewEndpoint = {
@@ -30524,7 +30526,6 @@ export interface PullsDismissReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30536,6 +30537,8 @@ export interface PullsDismissReviewResponseData {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }
 
 type PullsSubmitReviewEndpoint = {
@@ -30586,8 +30589,6 @@ export interface PullsSubmitReviewResponseData {
     site_admin: boolean;
   };
   body: string;
-  submitted_at: string;
-  commit_id: string;
   state: string;
   html_url: string;
   pull_request_url: string;
@@ -30599,6 +30600,8 @@ export interface PullsSubmitReviewResponseData {
       href: string;
     };
   };
+  submitted_at: string;
+  commit_id: string;
 }
 
 type PullsUpdateBranchEndpoint = {
