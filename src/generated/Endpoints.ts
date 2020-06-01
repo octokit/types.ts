@@ -5181,7 +5181,7 @@ export type AppsListInstallationsResponseData = {
   };
   events: string[];
   single_file_name: string;
-  repository_selection: string;
+  repository_selection: "all" | "selected";
 }[];
 
 type AppsGetInstallationEndpoint = {
@@ -5223,7 +5223,7 @@ export interface AppsGetInstallationResponseData {
   };
   events: string[];
   single_file_name: string;
-  repository_selection: string;
+  repository_selection: "all" | "selected";
 }
 
 type AppsDeleteInstallationEndpoint = {
@@ -5262,7 +5262,7 @@ export interface AppsCreateInstallationTokenResponseData {
     issues: string;
     contents: string;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   repositories: {
     id: number;
     node_id: string;
@@ -9389,7 +9389,7 @@ export interface AppsGetOrgInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
@@ -9449,7 +9449,7 @@ export interface OrgsListInstallationsResponseData {
       type: string;
       site_admin: boolean;
     };
-    repository_selection: string;
+    repository_selection: "all" | "selected";
     access_tokens_url: string;
     repositories_url: string;
     html_url: string;
@@ -22913,7 +22913,7 @@ export interface AppsGetRepoInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
@@ -38422,7 +38422,7 @@ export interface AppsGetUserInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
