@@ -83,7 +83,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#delete-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#delete-a-gist-comment
    */
   "DELETE /gists/:gist_id/comments/:comment_id": {
     parameters: GistsDeleteCommentEndpoint;
@@ -973,7 +973,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist
+   * @see https://developer.github.com/v3/gists/#get-a-gist-revision
    */
   "GET /gists/:gist_id/:sha": {
     parameters: GistsGetRevisionEndpoint;
@@ -981,7 +981,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsGetRevisionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist
+   * @see https://developer.github.com/v3/gists/comments/#list-gist-comments
    */
   "GET /gists/:gist_id/comments": {
     parameters: GistsListCommentsEndpoint;
@@ -989,7 +989,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsListCommentsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#get-a-single-comment
+   * @see https://developer.github.com/v3/gists/comments/#get-a-gist-comment
    */
   "GET /gists/:gist_id/comments/:comment_id": {
     parameters: GistsGetCommentEndpoint;
@@ -3530,7 +3530,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#edit-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#update-a-gist-comment
    */
   "PATCH /gists/:gist_id/comments/:comment_id": {
     parameters: GistsUpdateCommentEndpoint;
@@ -3916,7 +3916,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsCreateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#create-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#create-a-gist-comment
    */
   "POST /gists/:gist_id/comments": {
     parameters: GistsCreateCommentEndpoint;
