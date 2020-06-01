@@ -83,7 +83,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#delete-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#delete-a-gist-comment
    */
   "DELETE /gists/:gist_id/comments/:comment_id": {
     parameters: GistsDeleteCommentEndpoint;
@@ -973,7 +973,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/#get-a-specific-revision-of-a-gist
+   * @see https://developer.github.com/v3/gists/#get-a-gist-revision
    */
   "GET /gists/:gist_id/:sha": {
     parameters: GistsGetRevisionEndpoint;
@@ -981,7 +981,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsGetRevisionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#list-comments-on-a-gist
+   * @see https://developer.github.com/v3/gists/comments/#list-gist-comments
    */
   "GET /gists/:gist_id/comments": {
     parameters: GistsListCommentsEndpoint;
@@ -989,7 +989,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsListCommentsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#get-a-single-comment
+   * @see https://developer.github.com/v3/gists/comments/#get-a-gist-comment
    */
   "GET /gists/:gist_id/comments/:comment_id": {
     parameters: GistsGetCommentEndpoint;
@@ -3530,7 +3530,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#edit-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#update-a-gist-comment
    */
   "PATCH /gists/:gist_id/comments/:comment_id": {
     parameters: GistsUpdateCommentEndpoint;
@@ -3916,7 +3916,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsCreateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gists/comments/#create-a-comment
+   * @see https://developer.github.com/v3/gists/comments/#create-a-gist-comment
    */
   "POST /gists/:gist_id/comments": {
     parameters: GistsCreateCommentEndpoint;
@@ -5181,7 +5181,7 @@ export type AppsListInstallationsResponseData = {
   };
   events: string[];
   single_file_name: string;
-  repository_selection: string;
+  repository_selection: "all" | "selected";
 }[];
 
 type AppsGetInstallationEndpoint = {
@@ -5223,7 +5223,7 @@ export interface AppsGetInstallationResponseData {
   };
   events: string[];
   single_file_name: string;
-  repository_selection: string;
+  repository_selection: "all" | "selected";
 }
 
 type AppsDeleteInstallationEndpoint = {
@@ -5262,7 +5262,7 @@ export interface AppsCreateInstallationTokenResponseData {
     issues: string;
     contents: string;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   repositories: {
     id: number;
     node_id: string;
@@ -9389,7 +9389,7 @@ export interface AppsGetOrgInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
@@ -9449,7 +9449,7 @@ export interface OrgsListInstallationsResponseData {
       type: string;
       site_admin: boolean;
     };
-    repository_selection: string;
+    repository_selection: "all" | "selected";
     access_tokens_url: string;
     repositories_url: string;
     html_url: string;
@@ -22913,7 +22913,7 @@ export interface AppsGetRepoInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
@@ -38422,7 +38422,7 @@ export interface AppsGetUserInstallationResponseData {
     type: string;
     site_admin: boolean;
   };
-  repository_selection: string;
+  repository_selection: "all" | "selected";
   access_tokens_url: string;
   repositories_url: string;
   html_url: string;
