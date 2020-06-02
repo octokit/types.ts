@@ -219,7 +219,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#delete-team
+   * @see https://developer.github.com/v3/teams/#delete-a-team
    */
   "DELETE /orgs/:org/teams/:team_slug": {
     parameters: TeamsDeleteInOrgEndpoint;
@@ -235,7 +235,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment
+   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment
    */
   "DELETE /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsDeleteDiscussionCommentInOrgEndpoint;
@@ -259,15 +259,15 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#remove-team-membership
+   * @see https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user
    */
   "DELETE /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsRemoveMembershipInOrgEndpoint;
-    request: TeamsRemoveMembershipInOrgRequestOptions;
+    parameters: TeamsRemoveMembershipForUserInOrgEndpoint;
+    request: TeamsRemoveMembershipForUserInOrgRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#remove-team-project
+   * @see https://developer.github.com/v3/teams/#remove-a-project-from-a-team
    */
   "DELETE /orgs/:org/teams/:team_slug/projects/:project_id": {
     parameters: TeamsRemoveProjectInOrgEndpoint;
@@ -275,7 +275,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#remove-team-repository
+   * @see https://developer.github.com/v3/teams/#remove-a-repository-from-a-team
    */
   "DELETE /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
     parameters: TeamsRemoveRepoInOrgEndpoint;
@@ -587,7 +587,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#delete-a-comment
+   * @see https://developer.github.com/v3/issues/comments/#delete-an-issue-comment
    */
   "DELETE /repos/:owner/:repo/issues/comments/:comment_id": {
     parameters: IssuesDeleteCommentEndpoint;
@@ -1379,7 +1379,7 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsListForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration
+   * @see https://developer.github.com/v3/migrations/orgs/#get-an-organization-migration-status
    */
   "GET /orgs/:org/migrations/:migration_id": {
     parameters: MigrationsGetStatusForOrgEndpoint;
@@ -1443,7 +1443,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-in-an-organization
+   * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-an-organization
    */
   "GET /orgs/:org/team-sync/groups": {
     parameters: TeamsListIdPGroupsForOrgEndpoint;
@@ -1459,7 +1459,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#get-team-by-name
+   * @see https://developer.github.com/v3/teams/#get-a-team-by-name
    */
   "GET /orgs/:org/teams/:team_slug": {
     parameters: TeamsGetByNameEndpoint;
@@ -1475,7 +1475,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListDiscussionsInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion
+   * @see https://developer.github.com/v3/teams/discussions/#get-a-discussion
    */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number": {
     parameters: TeamsGetDiscussionInOrgEndpoint;
@@ -1483,7 +1483,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsGetDiscussionInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments
+   * @see https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments
    */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": {
     parameters: TeamsListDiscussionCommentsInOrgEndpoint;
@@ -1491,7 +1491,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListDiscussionCommentsInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment
+   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment
    */
   "GET /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsGetDiscussionCommentInOrgEndpoint;
@@ -1533,12 +1533,12 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListMembersInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#get-team-membership
+   * @see https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user
    */
   "GET /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsGetMembershipInOrgEndpoint;
-    request: TeamsGetMembershipInOrgRequestOptions;
-    response: OctokitResponse<TeamsGetMembershipInOrgResponseData>;
+    parameters: TeamsGetMembershipForUserInOrgEndpoint;
+    request: TeamsGetMembershipForUserInOrgRequestOptions;
+    response: OctokitResponse<TeamsGetMembershipForUserInOrgResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/#list-team-projects
@@ -1549,15 +1549,15 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListProjectsInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#review-a-team-project
+   * @see https://developer.github.com/v3/teams/#check-team-permissions-for-a-project
    */
   "GET /orgs/:org/teams/:team_slug/projects/:project_id": {
-    parameters: TeamsReviewProjectInOrgEndpoint;
-    request: TeamsReviewProjectInOrgRequestOptions;
-    response: OctokitResponse<TeamsReviewProjectInOrgResponseData>;
+    parameters: TeamsCheckPermissionsForProjectInOrgEndpoint;
+    request: TeamsCheckPermissionsForProjectInOrgRequestOptions;
+    response: OctokitResponse<TeamsCheckPermissionsForProjectInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#list-team-repos
+   * @see https://developer.github.com/v3/teams/#list-team-repositories
    */
   "GET /orgs/:org/teams/:team_slug/repos": {
     parameters: TeamsListReposInOrgEndpoint;
@@ -1565,12 +1565,12 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListReposInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository
+   * @see https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository
    */
   "GET /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
-    parameters: TeamsCheckManagesRepoInOrgEndpoint;
-    request: TeamsCheckManagesRepoInOrgRequestOptions;
-    response: OctokitResponse<TeamsCheckManagesRepoInOrgResponseData>;
+    parameters: TeamsCheckPermissionsForRepoInOrgEndpoint;
+    request: TeamsCheckPermissionsForRepoInOrgRequestOptions;
+    response: OctokitResponse<TeamsCheckPermissionsForRepoInOrgResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team
@@ -1845,11 +1845,11 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListAssigneesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/assignees/#check-assignee
+   * @see https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned
    */
   "GET /repos/:owner/:repo/assignees/:assignee": {
-    parameters: IssuesCheckAssigneeEndpoint;
-    request: IssuesCheckAssigneeRequestOptions;
+    parameters: IssuesCheckUserCanBeAssignedEndpoint;
+    request: IssuesCheckUserCanBeAssignedRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -2263,7 +2263,7 @@ export interface Endpoints {
     response: OctokitResponse<GitListMatchingRefsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/git/refs/#get-a-single-reference
+   * @see https://developer.github.com/v3/git/refs/#get-a-reference
    */
   "GET /repos/:owner/:repo/git/ref/:ref": {
     parameters: GitGetRefEndpoint;
@@ -2303,12 +2303,12 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetHookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/source_imports/#get-import-progress
+   * @see https://developer.github.com/v3/migrations/source_imports/#get-an-import-status
    */
   "GET /repos/:owner/:repo/import": {
-    parameters: MigrationsGetImportProgressEndpoint;
-    request: MigrationsGetImportProgressRequestOptions;
-    response: OctokitResponse<MigrationsGetImportProgressResponseData>;
+    parameters: MigrationsGetImportStatusEndpoint;
+    request: MigrationsGetImportStatusRequestOptions;
+    response: OctokitResponse<MigrationsGetImportStatusResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#get-commit-authors
@@ -2367,7 +2367,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue
+   * @see https://developer.github.com/v3/issues/comments/#list-issue-comments
    */
   "GET /repos/:owner/:repo/issues/:issue_number/comments": {
     parameters: IssuesListCommentsEndpoint;
@@ -2375,7 +2375,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListCommentsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/events/#list-events-for-an-issue
+   * @see https://developer.github.com/v3/issues/events/#list-issue-events
    */
   "GET /repos/:owner/:repo/issues/:issue_number/events": {
     parameters: IssuesListEventsEndpoint;
@@ -2383,7 +2383,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListEventsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue
+   * @see https://developer.github.com/v3/issues/labels/#list-labels-for-an-issue
    */
   "GET /repos/:owner/:repo/issues/:issue_number/labels": {
     parameters: IssuesListLabelsOnIssueEndpoint;
@@ -2399,7 +2399,7 @@ export interface Endpoints {
     response: OctokitResponse<ReactionsListForIssueResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue
+   * @see https://developer.github.com/v3/issues/timeline/#list-timeline-events-for-an-issue
    */
   "GET /repos/:owner/:repo/issues/:issue_number/timeline": {
     parameters: IssuesListEventsForTimelineEndpoint;
@@ -2407,7 +2407,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListEventsForTimelineResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository
+   * @see https://developer.github.com/v3/issues/comments/#list-issue-comments-for-a-repository
    */
   "GET /repos/:owner/:repo/issues/comments": {
     parameters: IssuesListCommentsForRepoEndpoint;
@@ -2415,7 +2415,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListCommentsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#get-a-single-comment
+   * @see https://developer.github.com/v3/issues/comments/#get-an-issue-comment
    */
   "GET /repos/:owner/:repo/issues/comments/:comment_id": {
     parameters: IssuesGetCommentEndpoint;
@@ -2431,7 +2431,7 @@ export interface Endpoints {
     response: OctokitResponse<ReactionsListForIssueCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/events/#list-events-for-a-repository
+   * @see https://developer.github.com/v3/issues/events/#list-issue-events-for-a-repository
    */
   "GET /repos/:owner/:repo/issues/events": {
     parameters: IssuesListEventsForRepoEndpoint;
@@ -2439,7 +2439,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListEventsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/events/#get-a-single-event
+   * @see https://developer.github.com/v3/issues/events/#get-an-issue-event
    */
   "GET /repos/:owner/:repo/issues/events/:event_id": {
     parameters: IssuesGetEventEndpoint;
@@ -2463,7 +2463,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetDeployKeyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository
+   * @see https://developer.github.com/v3/issues/labels/#list-labels-for-a-repository
    */
   "GET /repos/:owner/:repo/labels": {
     parameters: IssuesListLabelsForRepoEndpoint;
@@ -2471,7 +2471,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListLabelsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/labels/#get-a-single-label
+   * @see https://developer.github.com/v3/issues/labels/#get-a-label
    */
   "GET /repos/:owner/:repo/labels/:name": {
     parameters: IssuesGetLabelEndpoint;
@@ -2495,15 +2495,15 @@ export interface Endpoints {
     response: OctokitResponse<LicensesGetForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository
+   * @see https://developer.github.com/v3/issues/milestones/#list-milestones
    */
   "GET /repos/:owner/:repo/milestones": {
-    parameters: IssuesListMilestonesForRepoEndpoint;
-    request: IssuesListMilestonesForRepoRequestOptions;
-    response: OctokitResponse<IssuesListMilestonesForRepoResponseData>;
+    parameters: IssuesListMilestonesEndpoint;
+    request: IssuesListMilestonesRequestOptions;
+    response: OctokitResponse<IssuesListMilestonesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/milestones/#get-a-single-milestone
+   * @see https://developer.github.com/v3/issues/milestones/#get-a-milestone
    */
   "GET /repos/:owner/:repo/milestones/:milestone_number": {
     parameters: IssuesGetMilestoneEndpoint;
@@ -2511,7 +2511,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesGetMilestoneResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone
+   * @see https://developer.github.com/v3/issues/labels/#list-labels-for-issues-in-a-milestone
    */
   "GET /repos/:owner/:repo/milestones/:milestone_number/labels": {
     parameters: IssuesListLabelsForMilestoneEndpoint;
@@ -3252,7 +3252,7 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsListForAuthenticatedUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration
+   * @see https://developer.github.com/v3/migrations/users/#get-a-user-migration-status
    */
   "GET /user/migrations/:migration_id": {
     parameters: MigrationsGetStatusForAuthenticatedUserEndpoint;
@@ -3333,7 +3333,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#list-user-teams
+   * @see https://developer.github.com/v3/teams/#list-teams-for-the-authenticated-user
    */
   "GET /user/teams": {
     parameters: TeamsListForAuthenticatedUserEndpoint;
@@ -3562,7 +3562,7 @@ export interface Endpoints {
     response: OctokitResponse<OrgsUpdateHookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#edit-team
+   * @see https://developer.github.com/v3/teams/#update-a-team
    */
   "PATCH /orgs/:org/teams/:team_slug": {
     parameters: TeamsUpdateInOrgEndpoint;
@@ -3570,7 +3570,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsUpdateInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion
+   * @see https://developer.github.com/v3/teams/discussions/#update-a-discussion
    */
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number": {
     parameters: TeamsUpdateDiscussionInOrgEndpoint;
@@ -3578,7 +3578,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsUpdateDiscussionInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment
+   * @see https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment
    */
   "PATCH /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsUpdateDiscussionCommentInOrgEndpoint;
@@ -3688,7 +3688,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateHookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/source_imports/#update-existing-import
+   * @see https://developer.github.com/v3/migrations/source_imports/#update-an-import
    */
   "PATCH /repos/:owner/:repo/import": {
     parameters: MigrationsUpdateImportEndpoint;
@@ -3704,7 +3704,7 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsMapCommitAuthorResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference
+   * @see https://developer.github.com/v3/migrations/source_imports/#update-git-lfs-preference
    */
   "PATCH /repos/:owner/:repo/import/lfs": {
     parameters: MigrationsSetLfsPreferenceEndpoint;
@@ -3728,7 +3728,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#edit-a-comment
+   * @see https://developer.github.com/v3/issues/comments/#update-an-issue-comment
    */
   "PATCH /repos/:owner/:repo/issues/comments/:comment_id": {
     parameters: IssuesUpdateCommentEndpoint;
@@ -4012,7 +4012,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposCreateInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#create-team
+   * @see https://developer.github.com/v3/teams/#create-a-team
    */
   "POST /orgs/:org/teams": {
     parameters: TeamsCreateEndpoint;
@@ -4028,7 +4028,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsCreateDiscussionInOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment
+   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment
    */
   "POST /orgs/:org/teams/:team_slug/discussions/:discussion_number/comments": {
     parameters: TeamsCreateDiscussionCommentInOrgEndpoint;
@@ -4338,7 +4338,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesAddAssigneesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/issues/comments/#create-a-comment
+   * @see https://developer.github.com/v3/issues/comments/#create-an-issue-comment
    */
   "POST /repos/:owner/:repo/issues/:issue_number/comments": {
     parameters: IssuesCreateCommentEndpoint;
@@ -4742,30 +4742,32 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership
+   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user
    */
   "PUT /orgs/:org/teams/:team_slug/memberships/:username": {
-    parameters: TeamsAddOrUpdateMembershipInOrgEndpoint;
-    request: TeamsAddOrUpdateMembershipInOrgRequestOptions;
+    parameters: TeamsAddOrUpdateMembershipForUserInOrgEndpoint;
+    request: TeamsAddOrUpdateMembershipForUserInOrgRequestOptions;
     response: OctokitResponse<
-      | TeamsAddOrUpdateMembershipInOrgResponseData
-      | TeamsAddOrUpdateMembershipInOrgResponse422Data
+      | TeamsAddOrUpdateMembershipForUserInOrgResponseData
+      | TeamsAddOrUpdateMembershipForUserInOrgResponse422Data
     >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#add-or-update-team-project
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-project-permissions
    */
   "PUT /orgs/:org/teams/:team_slug/projects/:project_id": {
-    parameters: TeamsAddOrUpdateProjectInOrgEndpoint;
-    request: TeamsAddOrUpdateProjectInOrgRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateProjectInOrgResponseData>;
+    parameters: TeamsAddOrUpdateProjectPermissionsInOrgEndpoint;
+    request: TeamsAddOrUpdateProjectPermissionsInOrgRequestOptions;
+    response: OctokitResponse<
+      TeamsAddOrUpdateProjectPermissionsInOrgResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions
    */
   "PUT /orgs/:org/teams/:team_slug/repos/:owner/:repo": {
-    parameters: TeamsAddOrUpdateRepoInOrgEndpoint;
-    request: TeamsAddOrUpdateRepoInOrgRequestOptions;
+    parameters: TeamsAddOrUpdateRepoPermissionsInOrgEndpoint;
+    request: TeamsAddOrUpdateRepoPermissionsInOrgRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -4878,12 +4880,12 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue
+   * @see https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue
    */
   "PUT /repos/:owner/:repo/issues/:issue_number/labels": {
-    parameters: IssuesReplaceAllLabelsEndpoint;
-    request: IssuesReplaceAllLabelsRequestOptions;
-    response: OctokitResponse<IssuesReplaceAllLabelsResponseData>;
+    parameters: IssuesSetLabelsEndpoint;
+    request: IssuesSetLabelsRequestOptions;
+    response: OctokitResponse<IssuesSetLabelsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/issues/#lock-an-issue
@@ -12611,7 +12613,7 @@ export type TeamsListMembersInOrgResponseData = {
   site_admin: boolean;
 }[];
 
-type TeamsGetMembershipInOrgEndpoint = {
+type TeamsGetMembershipForUserInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12619,19 +12621,19 @@ type TeamsGetMembershipInOrgEndpoint = {
   username: string;
 };
 
-type TeamsGetMembershipInOrgRequestOptions = {
+type TeamsGetMembershipForUserInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsGetMembershipInOrgResponseData {
+export interface TeamsGetMembershipForUserInOrgResponseData {
   url: string;
   role: string;
   state: string;
 }
 
-type TeamsAddOrUpdateMembershipInOrgEndpoint = {
+type TeamsAddOrUpdateMembershipForUserInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12645,19 +12647,19 @@ type TeamsAddOrUpdateMembershipInOrgEndpoint = {
   role?: "member" | "maintainer";
 };
 
-type TeamsAddOrUpdateMembershipInOrgRequestOptions = {
+type TeamsAddOrUpdateMembershipForUserInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsAddOrUpdateMembershipInOrgResponseData {
+export interface TeamsAddOrUpdateMembershipForUserInOrgResponseData {
   url: string;
   role: string;
   state: string;
 }
 
-export interface TeamsAddOrUpdateMembershipInOrgResponse422Data {
+export interface TeamsAddOrUpdateMembershipForUserInOrgResponse422Data {
   message: string;
   errors: {
     code: string;
@@ -12666,7 +12668,7 @@ export interface TeamsAddOrUpdateMembershipInOrgResponse422Data {
   }[];
 }
 
-type TeamsRemoveMembershipInOrgEndpoint = {
+type TeamsRemoveMembershipForUserInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12674,7 +12676,7 @@ type TeamsRemoveMembershipInOrgEndpoint = {
   username: string;
 };
 
-type TeamsRemoveMembershipInOrgRequestOptions = {
+type TeamsRemoveMembershipForUserInOrgRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/teams/:team_slug/memberships/:username";
   headers: RequestHeaders;
@@ -12743,7 +12745,7 @@ export type TeamsListProjectsInOrgResponseData = {
   };
 }[];
 
-type TeamsReviewProjectInOrgEndpoint = {
+type TeamsCheckPermissionsForProjectInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12751,13 +12753,13 @@ type TeamsReviewProjectInOrgEndpoint = {
   project_id: number;
 } & RequiredPreview<"inertia">;
 
-type TeamsReviewProjectInOrgRequestOptions = {
+type TeamsCheckPermissionsForProjectInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsReviewProjectInOrgResponseData {
+export interface TeamsCheckPermissionsForProjectInOrgResponseData {
   owner_url: string;
   url: string;
   html_url: string;
@@ -12799,7 +12801,7 @@ export interface TeamsReviewProjectInOrgResponseData {
   };
 }
 
-type TeamsAddOrUpdateProjectInOrgEndpoint = {
+type TeamsAddOrUpdateProjectPermissionsInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12815,13 +12817,13 @@ type TeamsAddOrUpdateProjectInOrgEndpoint = {
   permission?: "read" | "write" | "admin";
 } & RequiredPreview<"inertia">;
 
-type TeamsAddOrUpdateProjectInOrgRequestOptions = {
+type TeamsAddOrUpdateProjectPermissionsInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsAddOrUpdateProjectInOrgResponseData {
+export interface TeamsAddOrUpdateProjectPermissionsInOrgResponseData {
   message: string;
   documentation_url: string;
 }
@@ -12971,7 +12973,7 @@ export type TeamsListReposInOrgResponseData = {
   };
 }[];
 
-type TeamsCheckManagesRepoInOrgEndpoint = {
+type TeamsCheckPermissionsForRepoInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -12981,13 +12983,13 @@ type TeamsCheckManagesRepoInOrgEndpoint = {
   repo: string;
 };
 
-type TeamsCheckManagesRepoInOrgRequestOptions = {
+type TeamsCheckPermissionsForRepoInOrgRequestOptions = {
   method: "GET";
   url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsCheckManagesRepoInOrgResponseData {
+export interface TeamsCheckPermissionsForRepoInOrgResponseData {
   organization: {
     login: string;
     id: number;
@@ -13227,7 +13229,7 @@ export interface TeamsCheckManagesRepoInOrgResponseData {
   };
 }
 
-type TeamsAddOrUpdateRepoInOrgEndpoint = {
+type TeamsAddOrUpdateRepoPermissionsInOrgEndpoint = {
   org: string;
 
   team_slug: string;
@@ -13248,7 +13250,7 @@ type TeamsAddOrUpdateRepoInOrgEndpoint = {
   permission?: "pull" | "push" | "admin" | "maintain" | "triage";
 };
 
-type TeamsAddOrUpdateRepoInOrgRequestOptions = {
+type TeamsAddOrUpdateRepoPermissionsInOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/teams/:team_slug/repos/:owner/:repo";
   headers: RequestHeaders;
@@ -13729,7 +13731,7 @@ type ProjectsUpdateEndpoint = {
    */
   state?: "open" | "closed";
   /**
-   * The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project](https://developer.github.com/v3/teams/#add-or-update-team-project) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).
+   * The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).
    *
    * **Note:** Updating a project's `organization_permission` requires `admin` access to the project.
    *
@@ -16103,7 +16105,7 @@ export type IssuesListAssigneesResponseData = {
   site_admin: boolean;
 }[];
 
-type IssuesCheckAssigneeEndpoint = {
+type IssuesCheckUserCanBeAssignedEndpoint = {
   owner: string;
 
   repo: string;
@@ -16111,7 +16113,7 @@ type IssuesCheckAssigneeEndpoint = {
   assignee: string;
 };
 
-type IssuesCheckAssigneeRequestOptions = {
+type IssuesCheckUserCanBeAssignedRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/assignees/:assignee";
   headers: RequestHeaders;
@@ -22377,22 +22379,15 @@ export interface GitCreateTreeResponseData {
 }
 
 type GitGetTreeEndpoint = {
-  /**
-   * owner parameter
-   */
   owner: string;
-  /**
-   * repo parameter
-   */
+
   repo: string;
-  /**
-   * tree_sha parameter
-   */
+
   tree_sha: string;
   /**
-   * recursive parameter
+   * Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `"true"`, and `"false"`. Omit this parameter to prevent recursively returning objects or subtrees.
    */
-  recursive?: "1";
+  recursive?: string;
 };
 
 type GitGetTreeRequestOptions = {
@@ -22698,19 +22693,19 @@ export interface MigrationsStartImportResponseData {
   repository_url: string;
 }
 
-type MigrationsGetImportProgressEndpoint = {
+type MigrationsGetImportStatusEndpoint = {
   owner: string;
 
   repo: string;
 };
 
-type MigrationsGetImportProgressRequestOptions = {
+type MigrationsGetImportStatusRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/import";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface MigrationsGetImportProgressResponseData {
+export interface MigrationsGetImportStatusResponseData {
   vcs: string;
   use_lfs: string;
   vcs_url: string;
@@ -25185,7 +25180,7 @@ export type IssuesAddLabelsResponseData = {
   default: boolean;
 }[];
 
-type IssuesReplaceAllLabelsEndpoint = {
+type IssuesSetLabelsEndpoint = {
   owner: string;
 
   repo: string;
@@ -25197,13 +25192,13 @@ type IssuesReplaceAllLabelsEndpoint = {
   labels?: string[];
 };
 
-type IssuesReplaceAllLabelsRequestOptions = {
+type IssuesSetLabelsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/issues/:issue_number/labels";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type IssuesReplaceAllLabelsResponseData = {
+export type IssuesSetLabelsResponseData = {
   id: number;
   node_id: string;
   url: string;
@@ -25883,7 +25878,7 @@ export interface ReposMergeResponse409Data {
   message: string;
 }
 
-type IssuesListMilestonesForRepoEndpoint = {
+type IssuesListMilestonesEndpoint = {
   owner: string;
 
   repo: string;
@@ -25909,13 +25904,13 @@ type IssuesListMilestonesForRepoEndpoint = {
   page?: number;
 };
 
-type IssuesListMilestonesForRepoRequestOptions = {
+type IssuesListMilestonesRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/milestones";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type IssuesListMilestonesForRepoResponseData = {
+export type IssuesListMilestonesResponseData = {
   url: string;
   html_url: string;
   labels_url: string;
