@@ -22392,6 +22392,48 @@
     "renamed": null
   },
   {
+    "name": "Get an import status",
+    "scope": "migrations",
+    "id": "getImportProgress",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-an-import-status",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"vcs\":{\"type\":\"string\"},\"use_lfs\":{\"type\":\"string\"},\"vcs_url\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"status_text\":{\"type\":\"string\"},\"has_large_files\":{\"type\":\"boolean\"},\"large_files_size\":{\"type\":\"number\"},\"large_files_count\":{\"type\":\"number\"},\"authors_count\":{\"type\":\"number\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"authors_url\":{\"type\":\"string\"},\"repository_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"migrations/get-import-progress\" operation ID is now \"migrations/get-import-status\""
+    }
+  },
+  {
     "name": "Update an import",
     "scope": "migrations",
     "id": "updateImport",
@@ -26202,6 +26244,98 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "List milestones",
+    "scope": "issues",
+    "id": "listMilestonesForRepo",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/milestones",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The state of the milestone. Either `open`, `closed`, or `all`.",
+        "enum": ["open", "closed", "all"],
+        "name": "state",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "What to sort results by. Either `due_on` or `completeness`.",
+        "enum": ["due_on", "completeness"],
+        "name": "sort",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The direction of the sort. Either `asc` or `desc`.",
+        "enum": ["asc", "desc"],
+        "name": "direction",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"title\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"open_issues\":{\"type\":\"number\"},\"closed_issues\":{\"type\":\"number\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"closed_at\":{\"type\":\"string\"},\"due_on\":{\"type\":\"string\"}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"issues/list-milestones-for-repo\" operation ID is now \"issues/list-milestones\""
+    }
   },
   {
     "name": "Create a milestone",
