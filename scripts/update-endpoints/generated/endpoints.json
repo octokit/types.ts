@@ -6142,12 +6142,12 @@
     "renamed": null
   },
   {
-    "name": "Get the status of an organization migration",
+    "name": "Get an organization migration status",
     "scope": "migrations",
     "id": "getStatusForOrg",
     "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}",
-    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#get-the-status-of-an-organization-migration",
+    "documentationUrl": "https://developer.github.com/v3/migrations/orgs/#get-an-organization-migration-status",
     "parameters": [
       {
         "alias": null,
@@ -7128,12 +7128,12 @@
     "renamed": null
   },
   {
-    "name": "List IdP groups in an organization",
+    "name": "List IdP groups for an organization",
     "scope": "teams",
     "id": "listIdPGroupsForOrg",
     "method": "GET",
     "url": "/orgs/{org}/team-sync/groups",
-    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-in-an-organization",
+    "documentationUrl": "https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -7228,12 +7228,12 @@
     "renamed": null
   },
   {
-    "name": "Create team",
+    "name": "Create a team",
     "scope": "teams",
     "id": "create",
     "method": "POST",
     "url": "/orgs/{org}/teams",
-    "documentationUrl": "https://developer.github.com/v3/teams/#create-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#create-a-team",
     "parameters": [
       {
         "alias": null,
@@ -7328,12 +7328,12 @@
     "renamed": null
   },
   {
-    "name": "Get team by name",
+    "name": "Get a team by name",
     "scope": "teams",
     "id": "getByName",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-by-name",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-a-team-by-name",
     "parameters": [
       {
         "alias": null,
@@ -7368,12 +7368,12 @@
     "renamed": null
   },
   {
-    "name": "Edit team",
+    "name": "Update a team",
     "scope": "teams",
     "id": "updateInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#update-a-team",
     "parameters": [
       {
         "alias": null,
@@ -7458,12 +7458,12 @@
     "renamed": null
   },
   {
-    "name": "Delete team",
+    "name": "Delete a team",
     "scope": "teams",
     "id": "deleteInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-a-team",
     "parameters": [
       {
         "alias": null,
@@ -7632,12 +7632,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single discussion",
+    "name": "Get a discussion",
     "scope": "teams",
     "id": "getDiscussionInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7682,12 +7682,12 @@
     "renamed": null
   },
   {
-    "name": "Edit a discussion",
+    "name": "Update a discussion",
     "scope": "teams",
     "id": "updateDiscussionInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#update-a-discussion",
     "parameters": [
       {
         "alias": null,
@@ -7796,12 +7796,12 @@
     "renamed": null
   },
   {
-    "name": "List comments",
+    "name": "List discussion comments",
     "scope": "teams",
     "id": "listDiscussionCommentsInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments",
     "parameters": [
       {
         "alias": null,
@@ -7876,12 +7876,12 @@
     "renamed": null
   },
   {
-    "name": "Create a comment",
+    "name": "Create a discussion comment",
     "scope": "teams",
     "id": "createDiscussionCommentInOrg",
     "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -7936,12 +7936,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment",
+    "name": "Get a discussion comment",
     "scope": "teams",
     "id": "getDiscussionCommentInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -7996,12 +7996,12 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment",
+    "name": "Update a discussion comment",
     "scope": "teams",
     "id": "updateDiscussionCommentInOrg",
     "method": "PATCH",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -8066,12 +8066,12 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment",
+    "name": "Delete a discussion comment",
     "scope": "teams",
     "id": "deleteDiscussionCommentInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment",
     "parameters": [
       {
         "alias": null,
@@ -8740,12 +8740,12 @@
     "renamed": null
   },
   {
-    "name": "Get team membership",
+    "name": "Get team membership for a user",
     "scope": "teams",
-    "id": "getMembershipInOrg",
+    "id": "getMembershipForUserInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -8790,12 +8790,64 @@
     "renamed": null
   },
   {
-    "name": "Add or update team membership",
+    "name": "Get team membership for a user",
     "scope": "teams",
-    "id": "addOrUpdateMembershipInOrg",
+    "id": "getMembershipInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/get-membership-in-org\" operation ID is now \"teams/get-membership-for-user-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team membership for a user",
+    "scope": "teams",
+    "id": "addOrUpdateMembershipForUserInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -8855,12 +8907,79 @@
     "renamed": null
   },
   {
-    "name": "Remove team membership",
+    "name": "Add or update team membership for a user",
     "scope": "teams",
-    "id": "removeMembershipInOrg",
+    "id": "addOrUpdateMembershipInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "enum": ["member", "maintainer"],
+        "name": "role",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"errors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\"},\"field\":{\"type\":\"string\"},\"resource\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/add-or-update-membership-in-org\" operation ID is now \"teams/add-or-update-membership-for-user-in-org\""
+    }
+  },
+  {
+    "name": "Remove team membership for a user",
+    "scope": "teams",
+    "id": "removeMembershipForUserInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
     "parameters": [
       {
         "alias": null,
@@ -8897,6 +9016,52 @@
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Remove team membership for a user",
+    "scope": "teams",
+    "id": "removeMembershipInOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"teams/remove-membership-in-org\" operation ID is now \"teams/remove-membership-for-user-in-org\""
+    }
   },
   {
     "name": "List team projects",
@@ -8965,12 +9130,12 @@
     "renamed": null
   },
   {
-    "name": "Review a team project",
+    "name": "Check team permissions for a project",
     "scope": "teams",
-    "id": "reviewProjectInOrg",
+    "id": "checkPermissionsForProjectInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project",
     "parameters": [
       {
         "alias": null,
@@ -9021,12 +9186,70 @@
     "renamed": null
   },
   {
-    "name": "Add or update team project",
+    "name": "Check team permissions for a project",
     "scope": "teams",
-    "id": "addOrUpdateProjectInOrg",
+    "id": "reviewProjectInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"owner_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"columns_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"organization_permission\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"read\":{\"type\":\"boolean\"},\"write\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/review-project-in-org\" operation ID is now \"teams/check-permissions-for-project-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team project permissions",
+    "scope": "teams",
+    "id": "addOrUpdateProjectPermissionsInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions",
     "parameters": [
       {
         "alias": null,
@@ -9087,12 +9310,80 @@
     "renamed": null
   },
   {
-    "name": "Remove team project",
+    "name": "Add or update team project permissions",
+    "scope": "teams",
+    "id": "addOrUpdateProjectInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+        "enum": ["read", "write", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 403,
+        "description": "Response if the project is not owned by the organization",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"documentation_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/add-or-update-project-in-org\" operation ID is now \"teams/add-or-update-project-permissions-in-org\""
+    }
+  },
+  {
+    "name": "Remove a project from a team",
     "scope": "teams",
     "id": "removeProjectInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-project-from-a-team",
     "parameters": [
       {
         "alias": null,
@@ -9131,12 +9422,12 @@
     "renamed": null
   },
   {
-    "name": "List team repos",
+    "name": "List team repositories",
     "scope": "teams",
     "id": "listReposInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repositories",
     "parameters": [
       {
         "alias": null,
@@ -9191,12 +9482,12 @@
     "renamed": null
   },
   {
-    "name": "Check if a team manages a repository",
+    "name": "Check team permissions for a repository",
     "scope": "teams",
-    "id": "checkManagesRepoInOrg",
+    "id": "checkPermissionsForRepoInOrg",
     "method": "GET",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -9251,12 +9542,74 @@
     "renamed": null
   },
   {
-    "name": "Add or update team repository",
+    "name": "Check team permissions for a repository",
     "scope": "teams",
-    "id": "addOrUpdateRepoInOrg",
+    "id": "checkManagesRepoInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Alternative response with repository permissions",
+        "schema": "{\"type\":\"object\",\"properties\":{\"organization\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"parent\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"source\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"permissions\":{\"type\":\"object\",\"properties\":{\"pull\":{\"type\":\"boolean\"},\"triage\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"maintain\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/check-manages-repo-in-org\" operation ID is now \"teams/check-permissions-for-repo-in-org\""
+    }
+  },
+  {
+    "name": "Add or update team repository permissions",
+    "scope": "teams",
+    "id": "addOrUpdateRepoPermissionsInOrg",
     "method": "PUT",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions",
     "parameters": [
       {
         "alias": null,
@@ -9315,12 +9668,78 @@
     "renamed": null
   },
   {
-    "name": "Remove team repository",
+    "name": "Add or update team repository permissions",
+    "scope": "teams",
+    "id": "addOrUpdateRepoInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_slug",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n\\* `maintain` - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.  \n\\* `triage` - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "enum": ["pull", "push", "admin", "maintain", "triage"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"teams/add-or-update-repo-in-org\" operation ID is now \"teams/add-or-update-repo-permissions-in-org\""
+    }
+  },
+  {
+    "name": "Remove a repository from a team",
     "scope": "teams",
     "id": "removeRepoInOrg",
     "method": "DELETE",
     "url": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-repository-from-a-team",
     "parameters": [
       {
         "alias": null,
@@ -10092,7 +10511,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project](https://developer.github.com/v3/teams/#add-or-update-team-project) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).  \n  \n**Note:** Updating a project's `organization_permission` requires `admin` access to the project.  \n  \nCan be one of:  \n\\* `read` - Organization members can read, but not write to or administer this project.  \n\\* `write` - Organization members can read and write, but not administer this project.  \n\\* `admin` - Organization members can read, write and administer this project.  \n\\* `none` - Organization members can only see this project if it is public.",
+        "description": "The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).  \n  \n**Note:** Updating a project's `organization_permission` requires `admin` access to the project.  \n  \nCan be one of:  \n\\* `read` - Organization members can read, but not write to or administer this project.  \n\\* `write` - Organization members can read and write, but not administer this project.  \n\\* `admin` - Organization members can read, write and administer this project.  \n\\* `none` - Organization members can only see this project if it is public.",
         "enum": null,
         "name": "organization_permission",
         "type": "string",
@@ -13146,12 +13565,12 @@
     "renamed": null
   },
   {
-    "name": "Check assignee",
+    "name": "Check if a user can be assigned",
     "scope": "issues",
-    "id": "checkAssignee",
+    "id": "checkUserCanBeAssigned",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/assignees/{assignee}",
-    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-assignee",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
     "parameters": [
       {
         "alias": null,
@@ -13188,6 +13607,52 @@
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Check if a user can be assigned",
+    "scope": "issues",
+    "id": "checkAssignee",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/assignees/{assignee}",
+    "documentationUrl": "https://developer.github.com/v3/issues/assignees/#check-if-a-user-can-be-assigned",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "assignee",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"issues/check-assignee\" operation ID is now \"issues/check-user-can-be-assigned\""
+    }
   },
   {
     "name": "Enable automated security fixes",
@@ -20731,12 +21196,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single reference",
+    "name": "Get a reference",
     "scope": "git",
     "id": "getRef",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/git/ref/{ref}",
-    "documentationUrl": "https://developer.github.com/v3/git/refs/#get-a-single-reference",
+    "documentationUrl": "https://developer.github.com/v3/git/refs/#get-a-reference",
     "parameters": [
       {
         "alias": null,
@@ -21246,7 +21711,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "owner parameter",
+        "description": "",
         "enum": null,
         "name": "owner",
         "type": "string",
@@ -21256,7 +21721,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "repo parameter",
+        "description": "",
         "enum": null,
         "name": "repo",
         "type": "string",
@@ -21266,7 +21731,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "tree_sha parameter",
+        "description": "",
         "enum": null,
         "name": "tree_sha",
         "type": "string",
@@ -21276,10 +21741,10 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "recursive parameter",
-        "enum": ["1"],
+        "description": "Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in `:tree_sha`. For example, setting `recursive` to any of the following will enable returning objects or subtrees: `0`, `1`, `\"true\"`, and `\"false\"`. Omit this parameter to prevent recursively returning objects or subtrees.",
+        "enum": null,
         "name": "recursive",
-        "type": "integer",
+        "type": "string",
         "required": false
       }
     ],
@@ -21288,7 +21753,7 @@
     "responses": [
       {
         "code": 200,
-        "description": "If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, you can clone the repository and iterate over the Git data locally.",
+        "description": "response",
         "schema": "{\"type\":\"object\",\"properties\":{\"sha\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"tree\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"path\":{\"type\":\"string\"},\"mode\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"size\":{\"type\":\"number\"},\"sha\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"}},\"required\":[\"path\",\"mode\",\"type\",\"sha\",\"url\",\"size\"]}},\"truncated\":{\"type\":\"boolean\"}}}"
       }
     ],
@@ -21887,12 +22352,12 @@
     "renamed": null
   },
   {
-    "name": "Get import progress",
+    "name": "Get an import status",
     "scope": "migrations",
-    "id": "getImportProgress",
+    "id": "getImportStatus",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/import",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-import-progress",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#get-an-import-status",
     "parameters": [
       {
         "alias": null,
@@ -21927,12 +22392,12 @@
     "renamed": null
   },
   {
-    "name": "Update existing import",
+    "name": "Update an import",
     "scope": "migrations",
     "id": "updateImport",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/import",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-existing-import",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-an-import",
     "parameters": [
       {
         "alias": null,
@@ -22181,12 +22646,12 @@
     "renamed": null
   },
   {
-    "name": "Set Git LFS preference",
+    "name": "Update Git LFS preference",
     "scope": "migrations",
     "id": "setLfsPreference",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/import/lfs",
-    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#set-git-lfs-preference",
+    "documentationUrl": "https://developer.github.com/v3/migrations/source_imports/#update-git-lfs-preference",
     "parameters": [
       {
         "alias": null,
@@ -22881,12 +23346,12 @@
     "renamed": null
   },
   {
-    "name": "List comments in a repository",
+    "name": "List issue comments for a repository",
     "scope": "issues",
     "id": "listCommentsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/comments",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-issue-comments-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -22971,12 +23436,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment",
+    "name": "Get an issue comment",
     "scope": "issues",
     "id": "getComment",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#get-a-single-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#get-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -23021,12 +23486,12 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment",
+    "name": "Update an issue comment",
     "scope": "issues",
     "id": "updateComment",
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#edit-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#update-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -23081,12 +23546,12 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment",
+    "name": "Delete an issue comment",
     "scope": "issues",
     "id": "deleteComment",
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#delete-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#delete-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -23355,12 +23820,12 @@
     "renamed": null
   },
   {
-    "name": "List events for a repository",
+    "name": "List issue events for a repository",
     "scope": "issues",
     "id": "listEventsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/events",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-issue-events-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -23415,12 +23880,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single event",
+    "name": "Get an issue event",
     "scope": "issues",
     "id": "getEvent",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/events/{event_id}",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#get-a-single-event",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#get-an-issue-event",
     "parameters": [
       {
         "alias": null,
@@ -23795,12 +24260,12 @@
     "renamed": null
   },
   {
-    "name": "List comments on an issue",
+    "name": "List issue comments",
     "scope": "issues",
     "id": "listComments",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#list-issue-comments",
     "parameters": [
       {
         "alias": null,
@@ -23885,12 +24350,12 @@
     "renamed": null
   },
   {
-    "name": "Create a comment",
+    "name": "Create an issue comment",
     "scope": "issues",
     "id": "createComment",
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/issues/comments/#create-a-comment",
+    "documentationUrl": "https://developer.github.com/v3/issues/comments/#create-an-issue-comment",
     "parameters": [
       {
         "alias": null,
@@ -23955,12 +24420,12 @@
     "renamed": null
   },
   {
-    "name": "List events for an issue",
+    "name": "List issue events",
     "scope": "issues",
     "id": "listEvents",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/events",
-    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-events-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/events/#list-issue-events",
     "parameters": [
       {
         "alias": null,
@@ -24035,12 +24500,12 @@
     "renamed": null
   },
   {
-    "name": "List labels on an issue",
+    "name": "List labels for an issue",
     "scope": "issues",
     "id": "listLabelsOnIssue",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-on-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -24185,12 +24650,12 @@
     "renamed": null
   },
   {
-    "name": "Replace all labels for an issue",
+    "name": "Set labels for an issue",
     "scope": "issues",
-    "id": "replaceAllLabels",
+    "id": "setLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -24255,12 +24720,12 @@
     "renamed": null
   },
   {
-    "name": "Replace all labels for an issue",
+    "name": "Set labels for an issue",
     "scope": "issues",
     "id": "replaceLabels",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#replace-all-labels-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -24875,12 +25340,12 @@
     "renamed": null
   },
   {
-    "name": "List events for an issue",
+    "name": "List timeline events for an issue",
     "scope": "issues",
     "id": "listEventsForTimeline",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
-    "documentationUrl": "https://developer.github.com/v3/issues/timeline/#list-events-for-an-issue",
+    "documentationUrl": "https://developer.github.com/v3/issues/timeline/#list-timeline-events-for-an-issue",
     "parameters": [
       {
         "alias": null,
@@ -25185,12 +25650,12 @@
     "renamed": null
   },
   {
-    "name": "List all labels for this repository",
+    "name": "List labels for a repository",
     "scope": "issues",
     "id": "listLabelsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/labels",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-all-labels-for-this-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -25315,12 +25780,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single label",
+    "name": "Get a label",
     "scope": "issues",
     "id": "getLabel",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/labels/{name}",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-a-single-label",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-a-label",
     "parameters": [
       {
         "alias": null,
@@ -25649,12 +26114,12 @@
     "renamed": null
   },
   {
-    "name": "List milestones for a repository",
+    "name": "List milestones",
     "scope": "issues",
-    "id": "listMilestonesForRepo",
+    "id": "listMilestones",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones",
-    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#list-milestones",
     "parameters": [
       {
         "alias": null,
@@ -25819,12 +26284,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single milestone",
+    "name": "Get a milestone",
     "scope": "issues",
     "id": "getMilestone",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}",
-    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#get-a-single-milestone",
+    "documentationUrl": "https://developer.github.com/v3/issues/milestones/#get-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -26033,12 +26498,12 @@
     "renamed": null
   },
   {
-    "name": "Get labels for every issue in a milestone",
+    "name": "List labels for issues in a milestone",
     "scope": "issues",
     "id": "listLabelsForMilestone",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/milestones/{milestone_number}/labels",
-    "documentationUrl": "https://developer.github.com/v3/issues/labels/#get-labels-for-every-issue-in-a-milestone",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#list-labels-for-issues-in-a-milestone",
     "parameters": [
       {
         "alias": null,
@@ -38023,12 +38488,12 @@
     "renamed": null
   },
   {
-    "name": "Get the status of a user migration",
+    "name": "Get a user migration status",
     "scope": "migrations",
     "id": "getStatusForAuthenticatedUser",
     "method": "GET",
     "url": "/user/migrations/{migration_id}",
-    "documentationUrl": "https://developer.github.com/v3/migrations/users/#get-the-status-of-a-user-migration",
+    "documentationUrl": "https://developer.github.com/v3/migrations/users/#get-a-user-migration-status",
     "parameters": [
       {
         "alias": null,
@@ -39048,12 +39513,12 @@
     "renamed": null
   },
   {
-    "name": "List user teams",
+    "name": "List teams for the authenticated user",
     "scope": "teams",
     "id": "listForAuthenticatedUser",
     "method": "GET",
     "url": "/user/teams",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-user-teams",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-teams-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
