@@ -33354,12 +33354,12 @@
     "renamed": null
   },
   {
-    "name": "Get team (Legacy)",
+    "name": "Get a team (Legacy)",
     "scope": "teams",
     "id": "getLegacy",
     "method": "GET",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33384,12 +33384,12 @@
     "renamed": null
   },
   {
-    "name": "Get team (Legacy)",
+    "name": "Get a team (Legacy)",
     "scope": "teams",
     "id": "get",
     "method": "GET",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#get-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#get-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33412,16 +33412,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Get team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Get a team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Edit team (Legacy)",
+    "name": "Update a team (Legacy)",
     "scope": "teams",
     "id": "updateLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#update-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33496,12 +33496,12 @@
     "renamed": null
   },
   {
-    "name": "Edit team (Legacy)",
+    "name": "Update a team (Legacy)",
     "scope": "teams",
     "id": "update",
     "method": "PATCH",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#edit-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#update-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33574,16 +33574,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Edit team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Update a team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Delete team (Legacy)",
+    "name": "Delete a team (Legacy)",
     "scope": "teams",
     "id": "deleteLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33602,12 +33602,12 @@
     "renamed": null
   },
   {
-    "name": "Delete team (Legacy)",
+    "name": "Delete a team (Legacy)",
     "scope": "teams",
     "id": "delete",
     "method": "DELETE",
     "url": "/teams/{team_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#delete-team-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#delete-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33624,7 +33624,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Delete team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Delete a team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -33872,12 +33872,12 @@
     }
   },
   {
-    "name": "Get a single discussion (Legacy)",
+    "name": "Get a discussion (Legacy)",
     "scope": "teams",
     "id": "getDiscussionLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33912,12 +33912,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single discussion (Legacy)",
+    "name": "Get a discussion (Legacy)",
     "scope": "teams",
     "id": "getDiscussion",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#get-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -33950,16 +33950,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Get a single discussion\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Get a discussion\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Edit a discussion (Legacy)",
+    "name": "Update a discussion (Legacy)",
     "scope": "teams",
     "id": "updateDiscussionLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#update-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34014,12 +34014,12 @@
     "renamed": null
   },
   {
-    "name": "Edit a discussion (Legacy)",
+    "name": "Update a discussion (Legacy)",
     "scope": "teams",
     "id": "updateDiscussion",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussions/#update-a-discussion-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34072,7 +34072,7 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Edit a discussion\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Update a discussion\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -34146,12 +34146,12 @@
     }
   },
   {
-    "name": "List comments (Legacy)",
+    "name": "List discussion comments (Legacy)",
     "scope": "teams",
     "id": "listDiscussionCommentsLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34216,12 +34216,12 @@
     "renamed": null
   },
   {
-    "name": "List comments (Legacy)",
+    "name": "List discussion comments (Legacy)",
     "scope": "teams",
     "id": "listDiscussionComments",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34284,16 +34284,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"List comments\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"List discussion comments\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Create a comment (Legacy)",
+    "name": "Create a discussion comment (Legacy)",
     "scope": "teams",
     "id": "createDiscussionCommentLegacy",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34338,12 +34338,12 @@
     "renamed": null
   },
   {
-    "name": "Create a comment (Legacy)",
+    "name": "Create a discussion comment (Legacy)",
     "scope": "teams",
     "id": "createDiscussionComment",
     "method": "POST",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34386,16 +34386,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Create a comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Create a discussion comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Get a single comment (Legacy)",
+    "name": "Get a discussion comment (Legacy)",
     "scope": "teams",
     "id": "getDiscussionCommentLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34440,12 +34440,12 @@
     "renamed": null
   },
   {
-    "name": "Get a single comment (Legacy)",
+    "name": "Get a discussion comment (Legacy)",
     "scope": "teams",
     "id": "getDiscussionComment",
     "method": "GET",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34488,16 +34488,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Get a single comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Get a discussion comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Edit a comment (Legacy)",
+    "name": "Update a discussion comment (Legacy)",
     "scope": "teams",
     "id": "updateDiscussionCommentLegacy",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34552,12 +34552,12 @@
     "renamed": null
   },
   {
-    "name": "Edit a comment (Legacy)",
+    "name": "Update a discussion comment (Legacy)",
     "scope": "teams",
     "id": "updateDiscussionComment",
     "method": "PATCH",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34610,16 +34610,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Edit a comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Update a discussion comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Delete a comment (Legacy)",
+    "name": "Delete a discussion comment (Legacy)",
     "scope": "teams",
     "id": "deleteDiscussionCommentLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34658,12 +34658,12 @@
     "renamed": null
   },
   {
-    "name": "Delete a comment (Legacy)",
+    "name": "Delete a discussion comment (Legacy)",
     "scope": "teams",
     "id": "deleteDiscussionComment",
     "method": "DELETE",
     "url": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment-legacy",
     "parameters": [
       {
         "alias": null,
@@ -34700,7 +34700,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Delete a comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Delete a discussion comment\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
@@ -35798,52 +35798,94 @@
     }
   },
   {
-    "name": "Get team membership (Legacy)",
+    "name": "Get team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "getMembershipForUserLegacy",
+    "method": "GET",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "getMembershipForUser",
+    "method": "GET",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "The path for \"Get team membership for a user\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Get team membership for a user (Legacy)",
     "scope": "teams",
     "id": "getMembershipLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "username",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Get team membership (Legacy)",
-    "scope": "teams",
-    "id": "getMembership",
-    "method": "GET",
-    "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user-legacy",
     "parameters": [
       {
         "alias": null,
@@ -35876,71 +35918,128 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Get team membership\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/get-membership-legacy\" operation ID is now \"teams/get-membership-for-user-legacy\""
     }
   },
   {
-    "name": "Add or update team membership (Legacy)",
+    "name": "Add or update team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateMembershipForUserLegacy",
+    "method": "PUT",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "enum": ["member", "maintainer"],
+        "name": "role",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"errors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\"},\"field\":{\"type\":\"string\"},\"resource\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Add or update team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateMembershipForUser",
+    "method": "PUT",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "enum": ["member", "maintainer"],
+        "name": "role",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"errors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\"},\"field\":{\"type\":\"string\"},\"resource\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "The path for \"Add or update team membership for a user\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Add or update team membership for a user (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateMembershipLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "username",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
-        "enum": ["member", "maintainer"],
-        "name": "role",
-        "type": "string",
-        "required": false
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
-      },
-      {
-        "code": 422,
-        "description": "Response if you attempt to add an organization to a team",
-        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"errors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\"},\"field\":{\"type\":\"string\"},\"resource\":{\"type\":\"string\"}}}}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Add or update team membership (Legacy)",
-    "scope": "teams",
-    "id": "addOrUpdateMembership",
-    "method": "PUT",
-    "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user-legacy",
     "parameters": [
       {
         "alias": null,
@@ -35988,50 +36087,86 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Add or update team membership\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/add-or-update-membership-legacy\" operation ID is now \"teams/add-or-update-membership-for-user-legacy\""
     }
   },
   {
-    "name": "Remove team membership (Legacy)",
+    "name": "Remove team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "removeMembershipForUserLegacy",
+    "method": "DELETE",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "removeMembershipForUser",
+    "method": "DELETE",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "The path for \"Remove team membership for a user\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Remove team membership for a user (Legacy)",
     "scope": "teams",
     "id": "removeMembershipLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "username",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [],
-    "renamed": null
-  },
-  {
-    "name": "Remove team membership (Legacy)",
-    "scope": "teams",
-    "id": "removeMembership",
-    "method": "DELETE",
-    "url": "/teams/{team_id}/memberships/{username}",
-    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36058,7 +36193,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Remove team membership\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/remove-membership-legacy\" operation ID is now \"teams/remove-membership-for-user-legacy\""
     }
   },
   {
@@ -36176,58 +36311,106 @@
     }
   },
   {
-    "name": "Review a team project (Legacy)",
+    "name": "Check team permissions for a project (Legacy)",
+    "scope": "teams",
+    "id": "checkPermissionsForProjectLegacy",
+    "method": "GET",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"owner_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"columns_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"organization_permission\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"read\":{\"type\":\"boolean\"},\"write\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Check team permissions for a project (Legacy)",
+    "scope": "teams",
+    "id": "checkPermissionsForProject",
+    "method": "GET",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"owner_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"columns_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"organization_permission\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"read\":{\"type\":\"boolean\"},\"write\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "The path for \"Check team permissions for a project\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Check team permissions for a project (Legacy)",
     "scope": "teams",
     "id": "reviewProjectLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "project_id",
-        "type": "integer",
-        "required": true
-      }
-    ],
-    "previews": [{ "name": "inertia" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json",
-        "required": true
-      }
-    ],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"owner_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"columns_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"organization_permission\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"read\":{\"type\":\"boolean\"},\"write\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Review a team project (Legacy)",
-    "scope": "teams",
-    "id": "reviewProject",
-    "method": "GET",
-    "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#review-a-team-project-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36266,72 +36449,130 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Review a team project\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/review-project-legacy\" operation ID is now \"teams/check-permissions-for-project-legacy\""
     }
   },
   {
-    "name": "Add or update team project (Legacy)",
+    "name": "Add or update team project permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateProjectPermissionsLegacy",
+    "method": "PUT",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+        "enum": ["read", "write", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 403,
+        "description": "Response if the project is not owned by the organization",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"documentation_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Add or update team project permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateProjectPermissions",
+    "method": "PUT",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+        "enum": ["read", "write", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 403,
+        "description": "Response if the project is not owned by the organization",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"documentation_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "The path for \"Add or update team project permissions\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Add or update team project permissions (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateProjectLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "project_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
-        "enum": ["read", "write", "admin"],
-        "name": "permission",
-        "type": "string",
-        "required": false
-      }
-    ],
-    "previews": [{ "name": "inertia" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.inertia-preview+json",
-        "required": true
-      }
-    ],
-    "responses": [
-      {
-        "code": 403,
-        "description": "Response if the project is not owned by the organization",
-        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"documentation_url\":{\"type\":\"string\"}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Add or update team project (Legacy)",
-    "scope": "teams",
-    "id": "addOrUpdateProject",
-    "method": "PUT",
-    "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36380,16 +36621,16 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Add or update team project\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/add-or-update-project-legacy\" operation ID is now \"teams/add-or-update-project-permissions-legacy\""
     }
   },
   {
-    "name": "Remove team project (Legacy)",
+    "name": "Remove a project from a team (Legacy)",
     "scope": "teams",
     "id": "removeProjectLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-project-from-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36418,12 +36659,12 @@
     "renamed": null
   },
   {
-    "name": "Remove team project (Legacy)",
+    "name": "Remove a project from a team (Legacy)",
     "scope": "teams",
     "id": "removeProject",
     "method": "DELETE",
     "url": "/teams/{team_id}/projects/{project_id}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-project-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-project-from-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36450,16 +36691,16 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Remove team project\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Remove a project from a team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "List team repos (Legacy)",
+    "name": "List team repositories (Legacy)",
     "scope": "teams",
     "id": "listReposLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/repos",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repositories-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36504,12 +36745,12 @@
     "renamed": null
   },
   {
-    "name": "List team repos (Legacy)",
+    "name": "List team repositories (Legacy)",
     "scope": "teams",
     "id": "listRepos",
     "method": "GET",
     "url": "/teams/{team_id}/repos",
-    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repos-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#list-team-repositories-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36552,66 +36793,118 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"List team repos\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"List team repositories\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {
-    "name": "Check if a team manages a repository (Legacy)",
+    "name": "Check team permissions for a repository (Legacy)",
+    "scope": "teams",
+    "id": "checkPermissionsForRepoLegacy",
+    "method": "GET",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Alternative response with extra repository information",
+        "schema": "{\"type\":\"object\",\"properties\":{\"organization\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"parent\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"source\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"permissions\":{\"type\":\"object\",\"properties\":{\"pull\":{\"type\":\"boolean\"},\"triage\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"maintain\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Check team permissions for a repository (Legacy)",
+    "scope": "teams",
+    "id": "checkPermissionsForRepo",
+    "method": "GET",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Alternative response with extra repository information",
+        "schema": "{\"type\":\"object\",\"properties\":{\"organization\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"parent\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"source\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"permissions\":{\"type\":\"object\",\"properties\":{\"pull\":{\"type\":\"boolean\"},\"triage\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"maintain\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "The path for \"Check team permissions for a repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Check team permissions for a repository (Legacy)",
     "scope": "teams",
     "id": "checkManagesRepoLegacy",
     "method": "GET",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "repo",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "Alternative response with extra repository information",
-        "schema": "{\"type\":\"object\",\"properties\":{\"organization\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"parent\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"source\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"permissions\":{\"type\":\"object\",\"properties\":{\"pull\":{\"type\":\"boolean\"},\"triage\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"maintain\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Check if a team manages a repository (Legacy)",
-    "scope": "teams",
-    "id": "checkManagesRepo",
-    "method": "GET",
-    "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36654,70 +36947,126 @@
       }
     ],
     "renamed": {
-      "note": "The path for \"Check if a team manages a repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/check-manages-repo-legacy\" operation ID is now \"teams/check-permissions-for-repo-legacy\""
     }
   },
   {
-    "name": "Add or update team repository (Legacy)",
+    "name": "Add or update team repository permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateRepoPermissionsLegacy",
+    "method": "PUT",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "enum": ["pull", "push", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add or update team repository permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateRepoPermissions",
+    "method": "PUT",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "enum": ["pull", "push", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "The path for \"Add or update team repository permissions\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+    }
+  },
+  {
+    "name": "Add or update team repository permissions (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateRepoLegacy",
     "method": "PUT",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "team_id",
-        "type": "integer",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "owner",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "repo",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
-        "enum": ["pull", "push", "admin"],
-        "name": "permission",
-        "type": "string",
-        "required": false
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [],
-    "renamed": null
-  },
-  {
-    "name": "Add or update team repository (Legacy)",
-    "scope": "teams",
-    "id": "addOrUpdateRepo",
-    "method": "PUT",
-    "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36764,16 +37113,16 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Add or update team repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "\"teams/add-or-update-repo-legacy\" operation ID is now \"teams/add-or-update-repo-permissions-legacy\""
     }
   },
   {
-    "name": "Remove team repository (Legacy)",
+    "name": "Remove a repository from a team (Legacy)",
     "scope": "teams",
     "id": "removeRepoLegacy",
     "method": "DELETE",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-repository-from-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36812,12 +37161,12 @@
     "renamed": null
   },
   {
-    "name": "Remove team repository (Legacy)",
+    "name": "Remove a repository from a team (Legacy)",
     "scope": "teams",
     "id": "removeRepo",
     "method": "DELETE",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://developer.github.com/v3/teams/#remove-team-repository-legacy",
+    "documentationUrl": "https://developer.github.com/v3/teams/#remove-a-repository-from-a-team-legacy",
     "parameters": [
       {
         "alias": null,
@@ -36854,7 +37203,7 @@
     "headers": [],
     "responses": [],
     "renamed": {
-      "note": "The path for \"Remove team repository\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
+      "note": "The path for \"Remove a repository from a team\" changed  from \"/teams/{team_id}*\" to \"/orgs/{org}/teams/{team_slug}*\"). The operation ID for the old path now has a \"-legacy\" suffix. The route with the new path has a \"-for-org\" suffix in the operation ID to avoid breaking changes"
     }
   },
   {

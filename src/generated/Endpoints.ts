@@ -707,7 +707,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#delete-team-legacy
+   * @see https://developer.github.com/v3/teams/#delete-a-team-legacy
    */
   "DELETE /teams/:team_id": {
     parameters: TeamsDeleteLegacyEndpoint;
@@ -723,7 +723,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-comment-legacy
+   * @see https://developer.github.com/v3/teams/discussion_comments/#delete-a-discussion-comment-legacy
    */
   "DELETE /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsDeleteDiscussionCommentLegacyEndpoint;
@@ -739,15 +739,15 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#remove-team-membership-legacy
+   * @see https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user-legacy
    */
   "DELETE /teams/:team_id/memberships/:username": {
-    parameters: TeamsRemoveMembershipLegacyEndpoint;
-    request: TeamsRemoveMembershipLegacyRequestOptions;
+    parameters: TeamsRemoveMembershipForUserLegacyEndpoint;
+    request: TeamsRemoveMembershipForUserLegacyRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#remove-team-project-legacy
+   * @see https://developer.github.com/v3/teams/#remove-a-project-from-a-team-legacy
    */
   "DELETE /teams/:team_id/projects/:project_id": {
     parameters: TeamsRemoveProjectLegacyEndpoint;
@@ -755,7 +755,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#remove-team-repository-legacy
+   * @see https://developer.github.com/v3/teams/#remove-a-repository-from-a-team-legacy
    */
   "DELETE /teams/:team_id/repos/:owner/:repo": {
     parameters: TeamsRemoveRepoLegacyEndpoint;
@@ -2942,7 +2942,7 @@ export interface Endpoints {
     response: OctokitResponse<SearchUsersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#get-team-legacy
+   * @see https://developer.github.com/v3/teams/#get-a-team-legacy
    */
   "GET /teams/:team_id": {
     parameters: TeamsGetLegacyEndpoint;
@@ -2958,7 +2958,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListDiscussionsLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussions/#get-a-single-discussion-legacy
+   * @see https://developer.github.com/v3/teams/discussions/#get-a-discussion-legacy
    */
   "GET /teams/:team_id/discussions/:discussion_number": {
     parameters: TeamsGetDiscussionLegacyEndpoint;
@@ -2966,7 +2966,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsGetDiscussionLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#list-comments-legacy
+   * @see https://developer.github.com/v3/teams/discussion_comments/#list-discussion-comments-legacy
    */
   "GET /teams/:team_id/discussions/:discussion_number/comments": {
     parameters: TeamsListDiscussionCommentsLegacyEndpoint;
@@ -2974,7 +2974,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListDiscussionCommentsLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-single-comment-legacy
+   * @see https://developer.github.com/v3/teams/discussion_comments/#get-a-discussion-comment-legacy
    */
   "GET /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsGetDiscussionCommentLegacyEndpoint;
@@ -3024,12 +3024,12 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#get-team-membership-legacy
+   * @see https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user-legacy
    */
   "GET /teams/:team_id/memberships/:username": {
-    parameters: TeamsGetMembershipLegacyEndpoint;
-    request: TeamsGetMembershipLegacyRequestOptions;
-    response: OctokitResponse<TeamsGetMembershipLegacyResponseData>;
+    parameters: TeamsGetMembershipForUserLegacyEndpoint;
+    request: TeamsGetMembershipForUserLegacyRequestOptions;
+    response: OctokitResponse<TeamsGetMembershipForUserLegacyResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/#list-team-projects-legacy
@@ -3040,15 +3040,17 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListProjectsLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#review-a-team-project-legacy
+   * @see https://developer.github.com/v3/teams/#check-team-permissions-for-a-project-legacy
    */
   "GET /teams/:team_id/projects/:project_id": {
-    parameters: TeamsReviewProjectLegacyEndpoint;
-    request: TeamsReviewProjectLegacyRequestOptions;
-    response: OctokitResponse<TeamsReviewProjectLegacyResponseData>;
+    parameters: TeamsCheckPermissionsForProjectLegacyEndpoint;
+    request: TeamsCheckPermissionsForProjectLegacyRequestOptions;
+    response: OctokitResponse<
+      TeamsCheckPermissionsForProjectLegacyResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#list-team-repos-legacy
+   * @see https://developer.github.com/v3/teams/#list-team-repositories-legacy
    */
   "GET /teams/:team_id/repos": {
     parameters: TeamsListReposLegacyEndpoint;
@@ -3056,12 +3058,12 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListReposLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#check-if-a-team-manages-a-repository-legacy
+   * @see https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy
    */
   "GET /teams/:team_id/repos/:owner/:repo": {
-    parameters: TeamsCheckManagesRepoLegacyEndpoint;
-    request: TeamsCheckManagesRepoLegacyRequestOptions;
-    response: OctokitResponse<TeamsCheckManagesRepoLegacyResponseData>;
+    parameters: TeamsCheckPermissionsForRepoLegacyEndpoint;
+    request: TeamsCheckPermissionsForRepoLegacyRequestOptions;
+    response: OctokitResponse<TeamsCheckPermissionsForRepoLegacyResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/team_sync/#list-idp-groups-for-a-team-legacy
@@ -3792,7 +3794,7 @@ export interface Endpoints {
     response: OctokitResponse<ScimUpdateUserAttributeResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#edit-team-legacy
+   * @see https://developer.github.com/v3/teams/#update-a-team-legacy
    */
   "PATCH /teams/:team_id": {
     parameters: TeamsUpdateLegacyEndpoint;
@@ -3800,7 +3802,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsUpdateLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussions/#edit-a-discussion-legacy
+   * @see https://developer.github.com/v3/teams/discussions/#update-a-discussion-legacy
    */
   "PATCH /teams/:team_id/discussions/:discussion_number": {
     parameters: TeamsUpdateDiscussionLegacyEndpoint;
@@ -3808,7 +3810,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsUpdateDiscussionLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#edit-a-comment-legacy
+   * @see https://developer.github.com/v3/teams/discussion_comments/#update-a-discussion-comment-legacy
    */
   "PATCH /teams/:team_id/discussions/:discussion_number/comments/:comment_number": {
     parameters: TeamsUpdateDiscussionCommentLegacyEndpoint;
@@ -4544,7 +4546,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsCreateDiscussionLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-comment-legacy
+   * @see https://developer.github.com/v3/teams/discussion_comments/#create-a-discussion-comment-legacy
    */
   "POST /teams/:team_id/discussions/:discussion_number/comments": {
     parameters: TeamsCreateDiscussionCommentLegacyEndpoint;
@@ -4990,30 +4992,32 @@ export interface Endpoints {
     response: OctokitResponse<TeamsAddMemberLegacyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-legacy
+   * @see https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user-legacy
    */
   "PUT /teams/:team_id/memberships/:username": {
-    parameters: TeamsAddOrUpdateMembershipLegacyEndpoint;
-    request: TeamsAddOrUpdateMembershipLegacyRequestOptions;
+    parameters: TeamsAddOrUpdateMembershipForUserLegacyEndpoint;
+    request: TeamsAddOrUpdateMembershipForUserLegacyRequestOptions;
     response: OctokitResponse<
-      | TeamsAddOrUpdateMembershipLegacyResponseData
-      | TeamsAddOrUpdateMembershipLegacyResponse422Data
+      | TeamsAddOrUpdateMembershipForUserLegacyResponseData
+      | TeamsAddOrUpdateMembershipForUserLegacyResponse422Data
     >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#add-or-update-team-project-legacy
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-project-permissions-legacy
    */
   "PUT /teams/:team_id/projects/:project_id": {
-    parameters: TeamsAddOrUpdateProjectLegacyEndpoint;
-    request: TeamsAddOrUpdateProjectLegacyRequestOptions;
-    response: OctokitResponse<TeamsAddOrUpdateProjectLegacyResponseData>;
+    parameters: TeamsAddOrUpdateProjectPermissionsLegacyEndpoint;
+    request: TeamsAddOrUpdateProjectPermissionsLegacyRequestOptions;
+    response: OctokitResponse<
+      TeamsAddOrUpdateProjectPermissionsLegacyResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository-legacy
+   * @see https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy
    */
   "PUT /teams/:team_id/repos/:owner/:repo": {
-    parameters: TeamsAddOrUpdateRepoLegacyEndpoint;
-    request: TeamsAddOrUpdateRepoLegacyRequestOptions;
+    parameters: TeamsAddOrUpdateRepoPermissionsLegacyEndpoint;
+    request: TeamsAddOrUpdateRepoPermissionsLegacyRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -34334,25 +34338,25 @@ type TeamsRemoveMemberLegacyRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type TeamsGetMembershipLegacyEndpoint = {
+type TeamsGetMembershipForUserLegacyEndpoint = {
   team_id: number;
 
   username: string;
 };
 
-type TeamsGetMembershipLegacyRequestOptions = {
+type TeamsGetMembershipForUserLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsGetMembershipLegacyResponseData {
+export interface TeamsGetMembershipForUserLegacyResponseData {
   url: string;
   role: string;
   state: string;
 }
 
-type TeamsAddOrUpdateMembershipLegacyEndpoint = {
+type TeamsAddOrUpdateMembershipForUserLegacyEndpoint = {
   team_id: number;
 
   username: string;
@@ -34364,19 +34368,19 @@ type TeamsAddOrUpdateMembershipLegacyEndpoint = {
   role?: "member" | "maintainer";
 };
 
-type TeamsAddOrUpdateMembershipLegacyRequestOptions = {
+type TeamsAddOrUpdateMembershipForUserLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsAddOrUpdateMembershipLegacyResponseData {
+export interface TeamsAddOrUpdateMembershipForUserLegacyResponseData {
   url: string;
   role: string;
   state: string;
 }
 
-export interface TeamsAddOrUpdateMembershipLegacyResponse422Data {
+export interface TeamsAddOrUpdateMembershipForUserLegacyResponse422Data {
   message: string;
   errors: {
     code: string;
@@ -34385,13 +34389,13 @@ export interface TeamsAddOrUpdateMembershipLegacyResponse422Data {
   }[];
 }
 
-type TeamsRemoveMembershipLegacyEndpoint = {
+type TeamsRemoveMembershipForUserLegacyEndpoint = {
   team_id: number;
 
   username: string;
 };
 
-type TeamsRemoveMembershipLegacyRequestOptions = {
+type TeamsRemoveMembershipForUserLegacyRequestOptions = {
   method: "DELETE";
   url: "/teams/:team_id/memberships/:username";
   headers: RequestHeaders;
@@ -34458,19 +34462,19 @@ export type TeamsListProjectsLegacyResponseData = {
   };
 }[];
 
-type TeamsReviewProjectLegacyEndpoint = {
+type TeamsCheckPermissionsForProjectLegacyEndpoint = {
   team_id: number;
 
   project_id: number;
 } & RequiredPreview<"inertia">;
 
-type TeamsReviewProjectLegacyRequestOptions = {
+type TeamsCheckPermissionsForProjectLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsReviewProjectLegacyResponseData {
+export interface TeamsCheckPermissionsForProjectLegacyResponseData {
   owner_url: string;
   url: string;
   html_url: string;
@@ -34512,7 +34516,7 @@ export interface TeamsReviewProjectLegacyResponseData {
   };
 }
 
-type TeamsAddOrUpdateProjectLegacyEndpoint = {
+type TeamsAddOrUpdateProjectPermissionsLegacyEndpoint = {
   team_id: number;
 
   project_id: number;
@@ -34526,13 +34530,13 @@ type TeamsAddOrUpdateProjectLegacyEndpoint = {
   permission?: "read" | "write" | "admin";
 } & RequiredPreview<"inertia">;
 
-type TeamsAddOrUpdateProjectLegacyRequestOptions = {
+type TeamsAddOrUpdateProjectPermissionsLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/projects/:project_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsAddOrUpdateProjectLegacyResponseData {
+export interface TeamsAddOrUpdateProjectPermissionsLegacyResponseData {
   message: string;
   documentation_url: string;
 }
@@ -34678,7 +34682,7 @@ export type TeamsListReposLegacyResponseData = {
   };
 }[];
 
-type TeamsCheckManagesRepoLegacyEndpoint = {
+type TeamsCheckPermissionsForRepoLegacyEndpoint = {
   team_id: number;
 
   owner: string;
@@ -34686,13 +34690,13 @@ type TeamsCheckManagesRepoLegacyEndpoint = {
   repo: string;
 };
 
-type TeamsCheckManagesRepoLegacyRequestOptions = {
+type TeamsCheckPermissionsForRepoLegacyRequestOptions = {
   method: "GET";
   url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface TeamsCheckManagesRepoLegacyResponseData {
+export interface TeamsCheckPermissionsForRepoLegacyResponseData {
   organization: {
     login: string;
     id: number;
@@ -34932,7 +34936,7 @@ export interface TeamsCheckManagesRepoLegacyResponseData {
   };
 }
 
-type TeamsAddOrUpdateRepoLegacyEndpoint = {
+type TeamsAddOrUpdateRepoPermissionsLegacyEndpoint = {
   team_id: number;
 
   owner: string;
@@ -34949,7 +34953,7 @@ type TeamsAddOrUpdateRepoLegacyEndpoint = {
   permission?: "pull" | "push" | "admin";
 };
 
-type TeamsAddOrUpdateRepoLegacyRequestOptions = {
+type TeamsAddOrUpdateRepoPermissionsLegacyRequestOptions = {
   method: "PUT";
   url: "/teams/:team_id/repos/:owner/:repo";
   headers: RequestHeaders;
