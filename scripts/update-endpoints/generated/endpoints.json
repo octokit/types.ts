@@ -12444,6 +12444,108 @@
     "renamed": null
   },
   {
+    "name": "List workflow runs for a repository",
+    "scope": "actions",
+    "id": "listRepoWorkflowRuns",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs-for-a-repository",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns someone's workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.",
+        "enum": null,
+        "name": "actor",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with a branch. Use the name of the branch of the `push`.",
+        "enum": null,
+        "name": "branch",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow run triggered by the event you specify. For example, `push`, `pull_request` or `issue`. For more information, see \"[Events that trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows)\" in the GitHub Help documentation.",
+        "enum": null,
+        "name": "event",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Returns workflow runs associated with the check run `status` or `conclusion` you specify. For example, a conclusion can be `success` or a status can be `completed`. For more information, see the `status` and `conclusion` options available in \"[Create a check run](https://developer.github.com/v3/checks/runs/#create-a-check-run).\"",
+        "enum": ["completed", "status", "conclusion"],
+        "name": "status",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"workflow_runs\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"head_branch\":{\"type\":\"string\"},\"head_sha\":{\"type\":\"string\"},\"run_number\":{\"type\":\"number\"},\"event\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"conclusion\":{\"type\":\"string\"},\"workflow_id\":{\"type\":\"number\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"pull_requests\":{\"type\":\"array\",\"items\":{}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"jobs_url\":{\"type\":\"string\"},\"logs_url\":{\"type\":\"string\"},\"check_suite_url\":{\"type\":\"string\"},\"artifacts_url\":{\"type\":\"string\"},\"cancel_url\":{\"type\":\"string\"},\"rerun_url\":{\"type\":\"string\"},\"workflow_url\":{\"type\":\"string\"},\"head_commit\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\"},\"tree_id\":{\"type\":\"string\"},\"message\":{\"type\":\"string\"},\"timestamp\":{\"type\":\"string\"},\"author\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"}}},\"committer\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"email\":{\"type\":\"string\"}}}}},\"repository\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"}}},\"head_repository\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"}}}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"actions/list-repo-workflow-runs\" operation ID is now \"actions/list-workflow-runs-for-repo\""
+    }
+  },
+  {
     "name": "Get a workflow run",
     "scope": "actions",
     "id": "getWorkflowRun",
