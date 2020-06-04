@@ -11,7 +11,7 @@ type RequiredPreview<T> = {
 
 export interface Endpoints {
   /**
-   * @see https://developer.github.com/v3/apps/#delete-an-installation
+   * @see https://developer.github.com/v3/apps/#delete-an-installation-for-the-authenticated-app
    */
   "DELETE /app/installations/:installation_id": {
     parameters: AppsDeleteInstallationEndpoint;
@@ -19,7 +19,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#unsuspend-an-installation
+   * @see https://developer.github.com/v3/apps/#unsuspend-an-app-installation
    */
   "DELETE /app/installations/:installation_id/suspended": {
     parameters: AppsUnsuspendInstallationEndpoint;
@@ -99,11 +99,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#revoke-an-installation-token
+   * @see https://developer.github.com/v3/apps/installations/#revoke-an-installation-access-token
    */
   "DELETE /installation/token": {
-    parameters: AppsRevokeInstallationTokenEndpoint;
-    request: AppsRevokeInstallationTokenRequestOptions;
+    parameters: AppsRevokeInstallationAccessTokenEndpoint;
+    request: AppsRevokeInstallationAccessTokenRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -795,7 +795,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#remove-repository-from-installation
+   * @see https://developer.github.com/v3/apps/installations/#remove-a-repository-from-an-app-installation
    */
   "DELETE /user/installations/:installation_id/repositories/:repository_id": {
     parameters: AppsRemoveRepoFromInstallationEndpoint;
@@ -843,7 +843,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-the-authenticated-github-app
+   * @see https://developer.github.com/v3/apps/#get-the-authenticated-app
    */
   "GET /app": {
     parameters: AppsGetAuthenticatedEndpoint;
@@ -851,7 +851,7 @@ export interface Endpoints {
     response: OctokitResponse<AppsGetAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#list-installations
+   * @see https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app
    */
   "GET /app/installations": {
     parameters: AppsListInstallationsEndpoint;
@@ -859,7 +859,7 @@ export interface Endpoints {
     response: OctokitResponse<AppsListInstallationsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-an-installation
+   * @see https://developer.github.com/v3/apps/#get-an-installation-for-the-authenticated-app
    */
   "GET /app/installations/:installation_id": {
     parameters: AppsGetInstallationEndpoint;
@@ -891,7 +891,7 @@ export interface Endpoints {
     response: OctokitResponse<OauthAuthorizationsGetGrantResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-a-single-github-app
+   * @see https://developer.github.com/v3/apps/#get-an-app
    */
   "GET /apps/:app_slug": {
     parameters: AppsGetBySlugEndpoint;
@@ -1053,12 +1053,14 @@ export interface Endpoints {
     response: OctokitResponse<GitignoreGetTemplateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#list-repositories
+   * @see https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation
    */
   "GET /installation/repositories": {
-    parameters: AppsListReposEndpoint;
-    request: AppsListReposRequestOptions;
-    response: OctokitResponse<AppsListReposResponseData>;
+    parameters: AppsListReposAccessibleToInstallationEndpoint;
+    request: AppsListReposAccessibleToInstallationRequestOptions;
+    response: OctokitResponse<
+      AppsListReposAccessibleToInstallationResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/issues/#list-issues-assigned-to-the-authenticated-user
@@ -1299,7 +1301,7 @@ export interface Endpoints {
     response: OctokitResponse<OrgsGetHookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-an-organization-installation
+   * @see https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app
    */
   "GET /orgs/:org/installation": {
     parameters: AppsGetOrgInstallationEndpoint;
@@ -1693,19 +1695,19 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/workflow-jobs/#get-a-workflow-job
+   * @see https://developer.github.com/v3/actions/workflow-jobs/#get-a-job-for-a-workflow-run
    */
   "GET /repos/:owner/:repo/actions/jobs/:job_id": {
-    parameters: ActionsGetWorkflowJobEndpoint;
-    request: ActionsGetWorkflowJobRequestOptions;
-    response: OctokitResponse<ActionsGetWorkflowJobResponseData>;
+    parameters: ActionsGetJobForWorkflowRunEndpoint;
+    request: ActionsGetJobForWorkflowRunRequestOptions;
+    response: OctokitResponse<ActionsGetJobForWorkflowRunResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs
+   * @see https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run
    */
   "GET /repos/:owner/:repo/actions/jobs/:job_id/logs": {
-    parameters: ActionsDownloadWorkflowJobLogsEndpoint;
-    request: ActionsDownloadWorkflowJobLogsRequestOptions;
+    parameters: ActionsDownloadJobLogsForWorkflowRunEndpoint;
+    request: ActionsDownloadJobLogsForWorkflowRunRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -1733,12 +1735,12 @@ export interface Endpoints {
     response: OctokitResponse<ActionsListRunnerApplicationsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs
+   * @see https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs-for-a-repository
    */
   "GET /repos/:owner/:repo/actions/runs": {
-    parameters: ActionsListRepoWorkflowRunsEndpoint;
-    request: ActionsListRepoWorkflowRunsRequestOptions;
-    response: OctokitResponse<ActionsListRepoWorkflowRunsResponseData>;
+    parameters: ActionsListWorkflowRunsForRepoEndpoint;
+    request: ActionsListWorkflowRunsForRepoRequestOptions;
+    response: OctokitResponse<ActionsListWorkflowRunsForRepoResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run
@@ -2327,7 +2329,7 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsGetLargeFilesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-a-repository-installation
+   * @see https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app
    */
   "GET /repos/:owner/:repo/installation": {
     parameters: AppsGetRepoInstallationEndpoint;
@@ -3164,7 +3166,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersGetGpgKeyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#list-installations-for-a-user
+   * @see https://developer.github.com/v3/apps/installations/#list-app-installations-accessible-to-the-user-access-token
    */
   "GET /user/installations": {
     parameters: AppsListInstallationsForAuthenticatedUserEndpoint;
@@ -3174,7 +3176,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-for-an-installation
+   * @see https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-access-token
    */
   "GET /user/installations/:installation_id/repositories": {
     parameters: AppsListInstallationReposForAuthenticatedUserEndpoint;
@@ -3431,7 +3433,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersGetContextForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#get-a-user-installation
+   * @see https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app
    */
   "GET /users/:username/installation": {
     parameters: AppsGetUserInstallationEndpoint;
@@ -3868,12 +3870,12 @@ export interface Endpoints {
     response: OctokitResponse<AppsCreateFromManifestResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#create-a-new-installation-token
+   * @see https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app
    */
   "POST /app/installations/:installation_id/access_tokens": {
-    parameters: AppsCreateInstallationTokenEndpoint;
-    request: AppsCreateInstallationTokenRequestOptions;
-    response: OctokitResponse<AppsCreateInstallationTokenResponseData>;
+    parameters: AppsCreateInstallationAccessTokenEndpoint;
+    request: AppsCreateInstallationAccessTokenRequestOptions;
+    response: OctokitResponse<AppsCreateInstallationAccessTokenResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/apps/oauth_applications/#check-a-token
@@ -4622,7 +4624,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposCreateForAuthenticatedUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/#suspend-an-installation
+   * @see https://developer.github.com/v3/apps/#suspend-an-app-installation
    */
   "PUT /app/installations/:installation_id/suspended": {
     parameters: AppsSuspendInstallationEndpoint;
@@ -4708,14 +4710,12 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization
+   * @see https://developer.github.com/v3/interactions/orgs/#set-interaction-restrictions-for-an-organization
    */
   "PUT /orgs/:org/interaction-limits": {
-    parameters: InteractionsAddOrUpdateRestrictionsForOrgEndpoint;
-    request: InteractionsAddOrUpdateRestrictionsForOrgRequestOptions;
-    response: OctokitResponse<
-      InteractionsAddOrUpdateRestrictionsForOrgResponseData
-    >;
+    parameters: InteractionsSetRestrictionsForOrgEndpoint;
+    request: InteractionsSetRestrictionsForOrgRequestOptions;
+    response: OctokitResponse<InteractionsSetRestrictionsForOrgResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership
@@ -4872,14 +4872,12 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsStartImportResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository
+   * @see https://developer.github.com/v3/interactions/repos/#set-interaction-restrictions-for-a-repository
    */
   "PUT /repos/:owner/:repo/interaction-limits": {
-    parameters: InteractionsAddOrUpdateRestrictionsForRepoEndpoint;
-    request: InteractionsAddOrUpdateRestrictionsForRepoRequestOptions;
-    response: OctokitResponse<
-      InteractionsAddOrUpdateRestrictionsForRepoResponseData
-    >;
+    parameters: InteractionsSetRestrictionsForRepoEndpoint;
+    request: InteractionsSetRestrictionsForRepoRequestOptions;
+    response: OctokitResponse<InteractionsSetRestrictionsForRepoResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue
@@ -5037,7 +5035,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/apps/installations/#add-repository-to-installation
+   * @see https://developer.github.com/v3/apps/installations/#add-a-repository-to-an-app-installation
    */
   "PUT /user/installations/:installation_id/repositories/:repository_id": {
     parameters: AppsAddRepoToInstallationEndpoint;
@@ -5243,25 +5241,25 @@ type AppsDeleteInstallationRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type AppsCreateInstallationTokenEndpoint = {
+type AppsCreateInstallationAccessTokenEndpoint = {
   installation_id: number;
   /**
-   * The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the "[List repositories](https://developer.github.com/v3/apps/installations/#list-repositories)" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.
+   * The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the "[List repositories accessible to the app installation](https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation)" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.
    */
   repository_ids?: number[];
   /**
    * The permissions granted to the access token. The permissions object includes the permission names and their access type. For a complete list of permissions and allowable values, see "[GitHub App permissions](https://developer.github.com/apps/building-github-apps/creating-github-apps-using-url-parameters/#github-app-permissions)."
    */
-  permissions?: AppsCreateInstallationTokenParamsPermissions;
+  permissions?: AppsCreateInstallationAccessTokenParamsPermissions;
 } & RequiredPreview<"machine-man">;
 
-type AppsCreateInstallationTokenRequestOptions = {
+type AppsCreateInstallationAccessTokenRequestOptions = {
   method: "POST";
   url: "/app/installations/:installation_id/access_tokens";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface AppsCreateInstallationTokenResponseData {
+export interface AppsCreateInstallationAccessTokenResponseData {
   token: string;
   expires_at: string;
   permissions: {
@@ -7331,7 +7329,7 @@ export interface GitignoreGetTemplateResponseData {
   source: string;
 }
 
-type AppsListReposEndpoint = {
+type AppsListReposAccessibleToInstallationEndpoint = {
   /**
    * Results per page (max 100)
    */
@@ -7342,13 +7340,13 @@ type AppsListReposEndpoint = {
   page?: number;
 } & RequiredPreview<"machine-man">;
 
-type AppsListReposRequestOptions = {
+type AppsListReposAccessibleToInstallationRequestOptions = {
   method: "GET";
   url: "/installation/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface AppsListReposResponseData {
+export interface AppsListReposAccessibleToInstallationResponseData {
   total_count: number;
   repositories: {
     id: number;
@@ -7452,9 +7450,9 @@ export interface AppsListReposResponseData {
   }[];
 }
 
-type AppsRevokeInstallationTokenEndpoint = {};
+type AppsRevokeInstallationAccessTokenEndpoint = {};
 
-type AppsRevokeInstallationTokenRequestOptions = {
+type AppsRevokeInstallationAccessTokenRequestOptions = {
   method: "DELETE";
   url: "/installation/token";
   headers: RequestHeaders;
@@ -9491,7 +9489,7 @@ export interface InteractionsGetRestrictionsForOrgResponseData {
   expires_at: string;
 }
 
-type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
+type InteractionsSetRestrictionsForOrgEndpoint = {
   org: string;
   /**
    * Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.
@@ -9499,13 +9497,13 @@ type InteractionsAddOrUpdateRestrictionsForOrgEndpoint = {
   limit: "existing_users" | "contributors_only" | "collaborators_only";
 } & RequiredPreview<"sombra">;
 
-type InteractionsAddOrUpdateRestrictionsForOrgRequestOptions = {
+type InteractionsSetRestrictionsForOrgRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface InteractionsAddOrUpdateRestrictionsForOrgResponseData {
+export interface InteractionsSetRestrictionsForOrgResponseData {
   limit: string;
   origin: string;
   expires_at: string;
@@ -14904,7 +14902,7 @@ type ActionsDownloadArtifactRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ActionsGetWorkflowJobEndpoint = {
+type ActionsGetJobForWorkflowRunEndpoint = {
   owner: string;
 
   repo: string;
@@ -14912,13 +14910,13 @@ type ActionsGetWorkflowJobEndpoint = {
   job_id: number;
 };
 
-type ActionsGetWorkflowJobRequestOptions = {
+type ActionsGetJobForWorkflowRunRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/jobs/:job_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ActionsGetWorkflowJobResponseData {
+export interface ActionsGetJobForWorkflowRunResponseData {
   id: number;
   run_id: number;
   run_url: string;
@@ -14942,7 +14940,7 @@ export interface ActionsGetWorkflowJobResponseData {
   check_run_url: string;
 }
 
-type ActionsDownloadWorkflowJobLogsEndpoint = {
+type ActionsDownloadJobLogsForWorkflowRunEndpoint = {
   owner: string;
 
   repo: string;
@@ -14950,7 +14948,7 @@ type ActionsDownloadWorkflowJobLogsEndpoint = {
   job_id: number;
 };
 
-type ActionsDownloadWorkflowJobLogsRequestOptions = {
+type ActionsDownloadJobLogsForWorkflowRunRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/jobs/:job_id/logs";
   headers: RequestHeaders;
@@ -15076,7 +15074,7 @@ type ActionsDeleteSelfHostedRunnerFromRepoRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ActionsListRepoWorkflowRunsEndpoint = {
+type ActionsListWorkflowRunsForRepoEndpoint = {
   owner: string;
 
   repo: string;
@@ -15106,13 +15104,13 @@ type ActionsListRepoWorkflowRunsEndpoint = {
   page?: number;
 };
 
-type ActionsListRepoWorkflowRunsRequestOptions = {
+type ActionsListWorkflowRunsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/actions/runs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ActionsListRepoWorkflowRunsResponseData {
+export interface ActionsListWorkflowRunsForRepoResponseData {
   total_count: number;
   workflow_runs: {
     id: number;
@@ -22948,7 +22946,7 @@ export interface InteractionsGetRestrictionsForRepoResponseData {
   expires_at: string;
 }
 
-type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
+type InteractionsSetRestrictionsForRepoEndpoint = {
   owner: string;
 
   repo: string;
@@ -22958,13 +22956,13 @@ type InteractionsAddOrUpdateRestrictionsForRepoEndpoint = {
   limit: "existing_users" | "contributors_only" | "collaborators_only";
 } & RequiredPreview<"sombra">;
 
-type InteractionsAddOrUpdateRestrictionsForRepoRequestOptions = {
+type InteractionsSetRestrictionsForRepoRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/interaction-limits";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface InteractionsAddOrUpdateRestrictionsForRepoResponseData {
+export interface InteractionsSetRestrictionsForRepoResponseData {
   limit: string;
   origin: string;
   expires_at: string;
@@ -38990,7 +38988,7 @@ export type ActivityListReposWatchedByUserResponseData = {
   };
 }[];
 
-type AppsCreateInstallationTokenParamsPermissions = {};
+type AppsCreateInstallationAccessTokenParamsPermissions = {};
 type GistsCreateParamsFiles = {
   [key: string]: GistsCreateParamsFilesKeyString;
 };
