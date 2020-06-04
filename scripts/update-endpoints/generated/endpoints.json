@@ -223,6 +223,64 @@
     "renamed": null
   },
   {
+    "name": "Create an installation access token for an app",
+    "scope": "apps",
+    "id": "createInstallationToken",
+    "method": "POST",
+    "url": "/app/installations/{installation_id}/access_tokens",
+    "documentationUrl": "https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "installation_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the \"[List repositories accessible to the app installation](https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation)\" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.",
+        "enum": null,
+        "name": "repository_ids",
+        "type": "integer[]",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permissions granted to the access token. The permissions object includes the permission names and their access type. For a complete list of permissions and allowable values, see \"[GitHub App permissions](https://developer.github.com/apps/building-github-apps/creating-github-apps-using-url-parameters/#github-app-permissions).\"",
+        "enum": null,
+        "name": "permissions",
+        "type": "object",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"token\":{\"type\":\"string\"},\"expires_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"issues\":{\"type\":\"string\"},\"contents\":{\"type\":\"string\"}}},\"repository_selection\":{\"type\":\"string\",\"enum\":[\"all\",\"selected\"]},\"repositories\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"apps/create-installation-token\" operation ID is now \"apps/create-installation-access-token\""
+    }
+  },
+  {
     "name": "Suspend an app installation",
     "scope": "apps",
     "id": "suspendInstallation",
@@ -2510,6 +2568,54 @@
     "renamed": null
   },
   {
+    "name": "List repositories accessible to the app installation",
+    "scope": "apps",
+    "id": "listRepos",
+    "method": "GET",
+    "url": "/installation/repositories",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "machine-man" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.machine-man-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"repositories\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"apps/list-repos\" operation ID is now \"apps/list-repos-accessible-to-installation\""
+    }
+  },
+  {
     "name": "Revoke an installation access token",
     "scope": "apps",
     "id": "revokeInstallationAccessToken",
@@ -2521,6 +2627,21 @@
     "headers": [],
     "responses": [],
     "renamed": null
+  },
+  {
+    "name": "Revoke an installation access token",
+    "scope": "apps",
+    "id": "revokeInstallationToken",
+    "method": "DELETE",
+    "url": "/installation/token",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-access-token",
+    "parameters": [],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"apps/revoke-installation-token\" operation ID is now \"apps/revoke-installation-access-token\""
+    }
   },
   {
     "name": "List issues assigned to the authenticated user",
@@ -5442,6 +5563,54 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "Set interaction restrictions for an organization",
+    "scope": "interactions",
+    "id": "addOrUpdateRestrictionsForOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#set-interaction-restrictions-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Specifies the group of GitHub users who can comment, open issues, or create pull requests in public repositories for the given organization. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.",
+        "enum": ["existing_users", "contributors_only", "collaborators_only"],
+        "name": "limit",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"string\"},\"origin\":{\"type\":\"string\"},\"expires_at\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"interactions/add-or-update-restrictions-for-org\" operation ID is now \"interactions/set-restrictions-for-org\""
+    }
   },
   {
     "name": "Remove interaction restrictions for an organization",
@@ -11489,6 +11658,58 @@
     "renamed": null
   },
   {
+    "name": "Get a job for a workflow run",
+    "scope": "actions",
+    "id": "getWorkflowJob",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#get-a-job-for-a-workflow-run",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "job_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 202,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"run_id\":{\"type\":\"number\"},\"run_url\":{\"type\":\"string\"},\"node_id\":{\"type\":\"string\"},\"head_sha\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"conclusion\":{\"type\":\"string\"},\"started_at\":{\"type\":\"string\"},\"completed_at\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"steps\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"conclusion\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"started_at\":{\"type\":\"string\"},\"completed_at\":{\"type\":\"string\"}},\"required\":[\"name\",\"status\",\"conclusion\",\"number\",\"started_at\",\"completed_at\"]}},\"check_run_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"actions/get-workflow-job\" operation ID is now \"actions/get-job-for-workflow-run\""
+    }
+  },
+  {
     "name": "Download job logs for a workflow run",
     "scope": "actions",
     "id": "downloadJobLogsForWorkflowRun",
@@ -11576,6 +11797,52 @@
     "responses": [],
     "renamed": {
       "note": "\"actions/list-workflow-job-logs\" operation ID is now \"actions/download-workflow-job-logs\""
+    }
+  },
+  {
+    "name": "Download job logs for a workflow run",
+    "scope": "actions",
+    "id": "downloadWorkflowJobLogs",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "job_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"actions/download-workflow-job-logs\" operation ID is now \"actions/download-job-logs-for-workflow-run\""
     }
   },
   {
@@ -22932,6 +23199,64 @@
       }
     ],
     "renamed": null
+  },
+  {
+    "name": "Set interaction restrictions for a repository",
+    "scope": "interactions",
+    "id": "addOrUpdateRestrictionsForRepo",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/interaction-limits",
+    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#set-interaction-restrictions-for-a-repository",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Specifies the group of GitHub users who can comment, open issues, or create pull requests for the given repository. Must be one of: `existing_users`, `contributors_only`, or `collaborators_only`.",
+        "enum": ["existing_users", "contributors_only", "collaborators_only"],
+        "name": "limit",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "sombra" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.sombra-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"limit\":{\"type\":\"string\"},\"origin\":{\"type\":\"string\"},\"expires_at\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"interactions/add-or-update-restrictions-for-repo\" operation ID is now \"interactions/set-restrictions-for-repo\""
+    }
   },
   {
     "name": "Remove interaction restrictions for a repository",
