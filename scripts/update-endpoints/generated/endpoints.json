@@ -1,11 +1,11 @@
 [
   {
-    "name": "Get the authenticated GitHub App",
+    "name": "Get the authenticated app",
     "scope": "apps",
     "id": "getAuthenticated",
     "method": "GET",
     "url": "/app",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-github-app",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-app",
     "parameters": [],
     "previews": [{ "name": "machine-man" }],
     "headers": [
@@ -55,12 +55,12 @@
     "renamed": null
   },
   {
-    "name": "List installations",
+    "name": "List installations for the authenticated app",
     "scope": "apps",
     "id": "listInstallations",
     "method": "GET",
     "url": "/app/installations",
-    "documentationUrl": "https://developer.github.com/v3/apps/#list-installations",
+    "documentationUrl": "https://developer.github.com/v3/apps/#list-installations-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -101,12 +101,12 @@
     "renamed": null
   },
   {
-    "name": "Get an installation",
+    "name": "Get an installation for the authenticated app",
     "scope": "apps",
     "id": "getInstallation",
     "method": "GET",
     "url": "/app/installations/{installation_id}",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -137,12 +137,12 @@
     "renamed": null
   },
   {
-    "name": "Delete an installation",
+    "name": "Delete an installation for the authenticated app",
     "scope": "apps",
     "id": "deleteInstallation",
     "method": "DELETE",
     "url": "/app/installations/{installation_id}",
-    "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#delete-an-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -167,12 +167,12 @@
     "renamed": null
   },
   {
-    "name": "Create a new installation token",
+    "name": "Create an installation access token for an app",
     "scope": "apps",
-    "id": "createInstallationToken",
+    "id": "createInstallationAccessToken",
     "method": "POST",
     "url": "/app/installations/{installation_id}/access_tokens",
-    "documentationUrl": "https://developer.github.com/v3/apps/#create-a-new-installation-token",
+    "documentationUrl": "https://developer.github.com/v3/apps/#create-an-installation-access-token-for-an-app",
     "parameters": [
       {
         "alias": null,
@@ -188,7 +188,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the \"[List repositories](https://developer.github.com/v3/apps/installations/#list-repositories)\" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.",
+        "description": "The `id`s of the repositories that the installation token can access. Providing repository `id`s restricts the access of an installation token to specific repositories. You can use the \"[List repositories accessible to the app installation](https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation)\" endpoint to get the `id` of all repositories that an installation can access. For example, you can select specific repositories when creating an installation token to restrict the number of repositories that can be cloned using the token.",
         "enum": null,
         "name": "repository_ids",
         "type": "integer[]",
@@ -223,12 +223,12 @@
     "renamed": null
   },
   {
-    "name": "Suspend an installation",
+    "name": "Suspend an app installation",
     "scope": "apps",
     "id": "suspendInstallation",
     "method": "PUT",
     "url": "/app/installations/{installation_id}/suspended",
-    "documentationUrl": "https://developer.github.com/v3/apps/#suspend-an-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#suspend-an-app-installation",
     "parameters": [
       {
         "alias": null,
@@ -247,12 +247,12 @@
     "renamed": null
   },
   {
-    "name": "Unsuspend an installation",
+    "name": "Unsuspend an app installation",
     "scope": "apps",
     "id": "unsuspendInstallation",
     "method": "DELETE",
     "url": "/app/installations/{installation_id}/suspended",
-    "documentationUrl": "https://developer.github.com/v3/apps/#unsuspend-an-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#unsuspend-an-app-installation",
     "parameters": [
       {
         "alias": null,
@@ -817,12 +817,12 @@
     }
   },
   {
-    "name": "Get a single GitHub App",
+    "name": "Get an app",
     "scope": "apps",
     "id": "getBySlug",
     "method": "GET",
     "url": "/apps/{app_slug}",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-single-github-app",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-app",
     "parameters": [
       {
         "alias": null,
@@ -2464,12 +2464,12 @@
     "renamed": null
   },
   {
-    "name": "List repositories",
+    "name": "List repositories accessible to the app installation",
     "scope": "apps",
-    "id": "listRepos",
+    "id": "listReposAccessibleToInstallation",
     "method": "GET",
     "url": "/installation/repositories",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-app-installation",
     "parameters": [
       {
         "alias": null,
@@ -2510,12 +2510,12 @@
     "renamed": null
   },
   {
-    "name": "Revoke an installation token",
+    "name": "Revoke an installation access token",
     "scope": "apps",
-    "id": "revokeInstallationToken",
+    "id": "revokeInstallationAccessToken",
     "method": "DELETE",
     "url": "/installation/token",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-token",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#revoke-an-installation-access-token",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -5232,12 +5232,12 @@
     "renamed": null
   },
   {
-    "name": "Get an organization installation",
+    "name": "Get an organization installation for the authenticated app",
     "scope": "apps",
     "id": "getOrgInstallation",
     "method": "GET",
     "url": "/orgs/{org}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -5268,12 +5268,12 @@
     "renamed": null
   },
   {
-    "name": "Get an organization installation",
+    "name": "Get an organization installation for the authenticated app",
     "scope": "apps",
     "id": "findOrgInstallation",
     "method": "GET",
     "url": "/orgs/{org}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -5398,12 +5398,12 @@
     "renamed": null
   },
   {
-    "name": "Add or update interaction restrictions for an organization",
+    "name": "Set interaction restrictions for an organization",
     "scope": "interactions",
-    "id": "addOrUpdateRestrictionsForOrg",
+    "id": "setRestrictionsForOrg",
     "method": "PUT",
     "url": "/orgs/{org}/interaction-limits",
-    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#add-or-update-interaction-restrictions-for-an-organization",
+    "documentationUrl": "https://developer.github.com/v3/interactions/orgs/#set-interaction-restrictions-for-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -11439,12 +11439,12 @@
     "renamed": null
   },
   {
-    "name": "Get a workflow job",
+    "name": "Get a job for a workflow run",
     "scope": "actions",
-    "id": "getWorkflowJob",
+    "id": "getJobForWorkflowRun",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#get-a-workflow-job",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#get-a-job-for-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -11489,12 +11489,12 @@
     "renamed": null
   },
   {
-    "name": "Download workflow job logs",
+    "name": "Download job logs for a workflow run",
     "scope": "actions",
-    "id": "downloadWorkflowJobLogs",
+    "id": "downloadJobLogsForWorkflowRun",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -11533,12 +11533,12 @@
     "renamed": null
   },
   {
-    "name": "Download workflow job logs",
+    "name": "Download job logs for a workflow run",
     "scope": "actions",
     "id": "listWorkflowJobLogs",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-workflow-job-logs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-jobs/#download-job-logs-for-a-workflow-run",
     "parameters": [
       {
         "alias": null,
@@ -12077,12 +12077,12 @@
     }
   },
   {
-    "name": "List repository workflow runs",
+    "name": "List workflow runs for a repository",
     "scope": "actions",
-    "id": "listRepoWorkflowRuns",
+    "id": "listWorkflowRunsForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs",
-    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs",
+    "documentationUrl": "https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -22738,12 +22738,12 @@
     "renamed": null
   },
   {
-    "name": "Get a repository installation",
+    "name": "Get a repository installation for the authenticated app",
     "scope": "apps",
     "id": "getRepoInstallation",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -22784,12 +22784,12 @@
     "renamed": null
   },
   {
-    "name": "Get a repository installation",
+    "name": "Get a repository installation for the authenticated app",
     "scope": "apps",
     "id": "findRepoInstallation",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-repository-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -22878,12 +22878,12 @@
     "renamed": null
   },
   {
-    "name": "Add or update interaction restrictions for a repository",
+    "name": "Set interaction restrictions for a repository",
     "scope": "interactions",
-    "id": "addOrUpdateRestrictionsForRepo",
+    "id": "setRestrictionsForRepo",
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/interaction-limits",
-    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#add-or-update-interaction-restrictions-for-a-repository",
+    "documentationUrl": "https://developer.github.com/v3/interactions/repos/#set-interaction-restrictions-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -24831,6 +24831,78 @@
     ],
     "renamed": {
       "note": "\"issues/replace-labels\" operation ID is now \"issues/replace-all-labels\""
+    }
+  },
+  {
+    "name": "Set labels for an issue",
+    "scope": "issues",
+    "id": "replaceAllLabels",
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "documentationUrl": "https://developer.github.com/v3/issues/labels/#set-labels-for-an-issue",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "issue_number",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The names of the labels to add to the issue. You can pass an empty array to remove all labels. **Note:** Alternatively, you can pass a single label as a `string` or an `array` of labels directly, but GitHub recommends passing an object with the `labels` key.",
+        "enum": null,
+        "name": "labels",
+        "type": "string[]",
+        "required": false
+      },
+      {
+        "alias": "issue_number",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "number",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"color\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"issues/replace-all-labels\" operation ID is now \"issues/set-labels\""
     }
   },
   {
@@ -35922,6 +35994,48 @@
     }
   },
   {
+    "name": "Get team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "getMembership",
+    "method": "GET",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#get-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/get-membership\" operation ID is now \"teams/get-membership-for-user\""
+    }
+  },
+  {
     "name": "Add or update team membership for a user (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateMembershipForUserLegacy",
@@ -36091,6 +36205,63 @@
     }
   },
   {
+    "name": "Add or update team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateMembership",
+    "method": "PUT",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#add-or-update-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The role that this user should have in the team. Can be one of:  \n\\* `member` - a normal member of the team.  \n\\* `maintainer` - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.",
+        "enum": ["member", "maintainer"],
+        "name": "role",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"url\":{\"type\":\"string\"},\"role\":{\"type\":\"string\"},\"state\":{\"type\":\"string\"}}}"
+      },
+      {
+        "code": 422,
+        "description": "Response if you attempt to add an organization to a team",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"errors\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"code\":{\"type\":\"string\"},\"field\":{\"type\":\"string\"},\"resource\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/add-or-update-membership\" operation ID is now \"teams/add-or-update-membership-for-user\""
+    }
+  },
+  {
     "name": "Remove team membership for a user (Legacy)",
     "scope": "teams",
     "id": "removeMembershipForUserLegacy",
@@ -36194,6 +36365,42 @@
     "responses": [],
     "renamed": {
       "note": "\"teams/remove-membership-legacy\" operation ID is now \"teams/remove-membership-for-user-legacy\""
+    }
+  },
+  {
+    "name": "Remove team membership for a user (Legacy)",
+    "scope": "teams",
+    "id": "removeMembership",
+    "method": "DELETE",
+    "url": "/teams/{team_id}/memberships/{username}",
+    "documentationUrl": "https://developer.github.com/v3/teams/members/#remove-team-membership-for-a-user-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "username",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"teams/remove-membership\" operation ID is now \"teams/remove-membership-for-user\""
     }
   },
   {
@@ -36453,6 +36660,54 @@
     }
   },
   {
+    "name": "Check team permissions for a project (Legacy)",
+    "scope": "teams",
+    "id": "reviewProject",
+    "method": "GET",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-project-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"owner_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"columns_url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"number\":{\"type\":\"number\"},\"state\":{\"type\":\"string\"},\"creator\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"organization_permission\":{\"type\":\"string\"},\"private\":{\"type\":\"boolean\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"read\":{\"type\":\"boolean\"},\"write\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/review-project\" operation ID is now \"teams/check-permissions-for-project\""
+    }
+  },
+  {
     "name": "Add or update team project permissions (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateProjectPermissionsLegacy",
@@ -36622,6 +36877,64 @@
     ],
     "renamed": {
       "note": "\"teams/add-or-update-project-legacy\" operation ID is now \"teams/add-or-update-project-permissions-legacy\""
+    }
+  },
+  {
+    "name": "Add or update team project permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateProject",
+    "method": "PUT",
+    "url": "/teams/{team_id}/projects/{project_id}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-project-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "project_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant to the team for this project. Can be one of:  \n\\* `read` - team members can read, but not write to or administer this project.  \n\\* `write` - team members can read and write, but not administer this project.  \n\\* `admin` - team members can read, write and administer this project.  \nDefault: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see \"[HTTP verbs](https://developer.github.com/v3/#http-verbs).\"",
+        "enum": ["read", "write", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [{ "name": "inertia" }],
+    "headers": [
+      {
+        "name": "accept",
+        "value": "application/vnd.github.inertia-preview+json",
+        "required": true
+      }
+    ],
+    "responses": [
+      {
+        "code": 403,
+        "description": "Response if the project is not owned by the organization",
+        "schema": "{\"type\":\"object\",\"properties\":{\"message\":{\"type\":\"string\"},\"documentation_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/add-or-update-project\" operation ID is now \"teams/add-or-update-project-permissions\""
     }
   },
   {
@@ -36951,6 +37264,58 @@
     }
   },
   {
+    "name": "Check team permissions for a repository (Legacy)",
+    "scope": "teams",
+    "id": "checkManagesRepo",
+    "method": "GET",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#check-team-permissions-for-a-repository-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "Alternative response with extra repository information",
+        "schema": "{\"type\":\"object\",\"properties\":{\"organization\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"parent\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"source\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"type\":\"string\"},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}},\"permissions\":{\"type\":\"object\",\"properties\":{\"pull\":{\"type\":\"boolean\"},\"triage\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"maintain\":{\"type\":\"boolean\"},\"admin\":{\"type\":\"boolean\"}}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"teams/check-manages-repo\" operation ID is now \"teams/check-permissions-for-repo\""
+    }
+  },
+  {
     "name": "Add or update team repository permissions (Legacy)",
     "scope": "teams",
     "id": "addOrUpdateRepoPermissionsLegacy",
@@ -37114,6 +37479,62 @@
     "responses": [],
     "renamed": {
       "note": "\"teams/add-or-update-repo-legacy\" operation ID is now \"teams/add-or-update-repo-permissions-legacy\""
+    }
+  },
+  {
+    "name": "Add or update team repository permissions (Legacy)",
+    "scope": "teams",
+    "id": "addOrUpdateRepo",
+    "method": "PUT",
+    "url": "/teams/{team_id}/repos/{owner}/{repo}",
+    "documentationUrl": "https://developer.github.com/v3/teams/#add-or-update-team-repository-permissions-legacy",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "team_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The permission to grant the team on this repository. Can be one of:  \n\\* `pull` - team members can pull, but not push to or administer this repository.  \n\\* `push` - team members can pull and push, but not administer this repository.  \n\\* `admin` - team members can pull, push and administer this repository.  \n  \nIf no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.",
+        "enum": ["pull", "push", "admin"],
+        "name": "permission",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": {
+      "note": "\"teams/add-or-update-repo\" operation ID is now \"teams/add-or-update-repo-permissions\""
     }
   },
   {
@@ -38175,12 +38596,12 @@
     "renamed": null
   },
   {
-    "name": "List installations for a user",
+    "name": "List app installations accessible to the user access token",
     "scope": "apps",
     "id": "listInstallationsForAuthenticatedUser",
     "method": "GET",
     "url": "/user/installations",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-installations-for-a-user",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-app-installations-accessible-to-the-user-access-token",
     "parameters": [
       {
         "alias": null,
@@ -38221,12 +38642,12 @@
     "renamed": null
   },
   {
-    "name": "List repositories accessible to the user for an installation",
+    "name": "List repositories accessible to the user access token",
     "scope": "apps",
     "id": "listInstallationReposForAuthenticatedUser",
     "method": "GET",
     "url": "/user/installations/{installation_id}/repositories",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-for-an-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#list-repositories-accessible-to-the-user-access-token",
     "parameters": [
       {
         "alias": null,
@@ -38277,12 +38698,12 @@
     "renamed": null
   },
   {
-    "name": "Add repository to installation",
+    "name": "Add a repository to an app installation",
     "scope": "apps",
     "id": "addRepoToInstallation",
     "method": "PUT",
     "url": "/user/installations/{installation_id}/repositories/{repository_id}",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#add-repository-to-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#add-a-repository-to-an-app-installation",
     "parameters": [
       {
         "alias": null,
@@ -38317,12 +38738,12 @@
     "renamed": null
   },
   {
-    "name": "Remove repository from installation",
+    "name": "Remove a repository from an app installation",
     "scope": "apps",
     "id": "removeRepoFromInstallation",
     "method": "DELETE",
     "url": "/user/installations/{installation_id}/repositories/{repository_id}",
-    "documentationUrl": "https://developer.github.com/v3/apps/installations/#remove-repository-from-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/installations/#remove-a-repository-from-an-app-installation",
     "parameters": [
       {
         "alias": null,
@@ -40752,12 +41173,12 @@
     "renamed": null
   },
   {
-    "name": "Get a user installation",
+    "name": "Get a user installation for the authenticated app",
     "scope": "apps",
     "id": "getUserInstallation",
     "method": "GET",
     "url": "/users/{username}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
@@ -40788,12 +41209,12 @@
     "renamed": null
   },
   {
-    "name": "Get a user installation",
+    "name": "Get a user installation for the authenticated app",
     "scope": "apps",
     "id": "findUserInstallation",
     "method": "GET",
     "url": "/users/{username}/installation",
-    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation",
+    "documentationUrl": "https://developer.github.com/v3/apps/#get-a-user-installation-for-the-authenticated-app",
     "parameters": [
       {
         "alias": null,
