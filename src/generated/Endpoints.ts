@@ -917,7 +917,7 @@ export interface Endpoints {
     response: OctokitResponse<OauthAuthorizationsGetAuthorizationResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct
+   * @see https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct
    */
   "GET /codes_of_conduct": {
     parameters: CodesOfConductGetAllCodesOfConductEndpoint;
@@ -925,7 +925,7 @@ export interface Endpoints {
     response: OctokitResponse<CodesOfConductGetAllCodesOfConductResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct
+   * @see https://developer.github.com/v3/codes_of_conduct/#get-a-code-of-conduct
    */
   "GET /codes_of_conduct/:key": {
     parameters: CodesOfConductGetConductCodeEndpoint;
@@ -933,7 +933,7 @@ export interface Endpoints {
     response: OctokitResponse<CodesOfConductGetConductCodeResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/emojis/#emojis
+   * @see https://developer.github.com/v3/emojis/#get-emojis
    */
   "GET /emojis": {
     parameters: EmojisGetEndpoint;
@@ -1037,15 +1037,15 @@ export interface Endpoints {
     response: OctokitResponse<GistsListStarredResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gitignore/#listing-available-templates
+   * @see https://developer.github.com/v3/gitignore/#get-all-gitignore-templates
    */
   "GET /gitignore/templates": {
-    parameters: GitignoreListTemplatesEndpoint;
-    request: GitignoreListTemplatesRequestOptions;
-    response: OctokitResponse<GitignoreListTemplatesResponseData>;
+    parameters: GitignoreGetAllTemplatesEndpoint;
+    request: GitignoreGetAllTemplatesRequestOptions;
+    response: OctokitResponse<GitignoreGetAllTemplatesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/gitignore/#get-a-single-template
+   * @see https://developer.github.com/v3/gitignore/#get-a-gitignore-template
    */
   "GET /gitignore/templates/:name": {
     parameters: GitignoreGetTemplateEndpoint;
@@ -1071,15 +1071,15 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/licenses/#list-commonly-used-licenses
+   * @see https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses
    */
   "GET /licenses": {
-    parameters: LicensesListCommonlyUsedEndpoint;
-    request: LicensesListCommonlyUsedRequestOptions;
-    response: OctokitResponse<LicensesListCommonlyUsedResponseData>;
+    parameters: LicensesGetAllCommonlyUsedEndpoint;
+    request: LicensesGetAllCommonlyUsedRequestOptions;
+    response: OctokitResponse<LicensesGetAllCommonlyUsedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/licenses/#get-an-individual-license
+   * @see https://developer.github.com/v3/licenses/#get-a-license
    */
   "GET /licenses/:license": {
     parameters: LicensesGetEndpoint;
@@ -1137,7 +1137,7 @@ export interface Endpoints {
     response: OctokitResponse<AppsListAccountsForPlanStubbedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/meta/#meta
+   * @see https://developer.github.com/v3/meta/#get-github-meta-information
    */
   "GET /meta": {
     parameters: MetaGetEndpoint;
@@ -1647,7 +1647,7 @@ export interface Endpoints {
     response: OctokitResponse<ProjectsGetCardResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status
+   * @see https://developer.github.com/v3/rate_limit/#get-rate-limit-status-for-the-authenticated-user
    */
   "GET /rate_limit": {
     parameters: RateLimitGetEndpoint;
@@ -2137,7 +2137,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListStatusesForRefResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct
+   * @see https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository
    */
   "GET /repos/:owner/:repo/community/code_of_conduct": {
     parameters: CodesOfConductGetForRepoEndpoint;
@@ -2489,7 +2489,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListLanguagesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license
+   * @see https://developer.github.com/v3/licenses/#get-the-license-for-a-repository
    */
   "GET /repos/:owner/:repo/license": {
     parameters: LicensesGetForRepoEndpoint;
@@ -3936,7 +3936,7 @@ export interface Endpoints {
     response: OctokitResponse<GistsForkResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document
+   * @see https://developer.github.com/v3/markdown/#render-a-markdown-document
    */
   "POST /markdown": {
     parameters: MarkdownRenderEndpoint;
@@ -7304,15 +7304,15 @@ export interface GistsGetRevisionResponseData {
   }[];
 }
 
-type GitignoreListTemplatesEndpoint = {};
+type GitignoreGetAllTemplatesEndpoint = {};
 
-type GitignoreListTemplatesRequestOptions = {
+type GitignoreGetAllTemplatesRequestOptions = {
   method: "GET";
   url: "/gitignore/templates";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type GitignoreListTemplatesResponseData = string[];
+export type GitignoreGetAllTemplatesResponseData = string[];
 
 type GitignoreGetTemplateEndpoint = {
   name: string;
@@ -7743,15 +7743,15 @@ export type IssuesListResponseData = {
   };
 }[];
 
-type LicensesListCommonlyUsedEndpoint = {};
+type LicensesGetAllCommonlyUsedEndpoint = {};
 
-type LicensesListCommonlyUsedRequestOptions = {
+type LicensesGetAllCommonlyUsedRequestOptions = {
   method: "GET";
   url: "/licenses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type LicensesListCommonlyUsedResponseData = {
+export type LicensesGetAllCommonlyUsedResponseData = {
   key: string;
   name: string;
   spdx_id: string;

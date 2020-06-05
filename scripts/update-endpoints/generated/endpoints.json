@@ -1432,12 +1432,12 @@
     "renamed": null
   },
   {
-    "name": "List all codes of conduct",
+    "name": "Get all codes of conduct",
     "scope": "codesOfConduct",
     "id": "getAllCodesOfConduct",
     "method": "GET",
     "url": "/codes_of_conduct",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct",
     "parameters": [],
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
@@ -1457,12 +1457,12 @@
     "renamed": null
   },
   {
-    "name": "List all codes of conduct",
+    "name": "Get all codes of conduct",
     "scope": "codesOfConduct",
     "id": "listConductCodes",
     "method": "GET",
     "url": "/codes_of_conduct",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#list-all-codes-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-all-codes-of-conduct",
     "parameters": [],
     "previews": [{ "name": "scarlet-witch" }],
     "headers": [
@@ -1484,12 +1484,12 @@
     }
   },
   {
-    "name": "Get an individual code of conduct",
+    "name": "Get a code of conduct",
     "scope": "codesOfConduct",
     "id": "getConductCode",
     "method": "GET",
     "url": "/codes_of_conduct/{key}",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-an-individual-code-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-a-code-of-conduct",
     "parameters": [
       {
         "alias": null,
@@ -1576,12 +1576,12 @@
     "renamed": null
   },
   {
-    "name": "Get",
+    "name": "Get emojis",
     "scope": "emojis",
     "id": "get",
     "method": "GET",
     "url": "/emojis",
-    "documentationUrl": "https://developer.github.com/v3/emojis/#emojis",
+    "documentationUrl": "https://developer.github.com/v3/emojis/#get-emojis",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -2473,12 +2473,12 @@
     "renamed": null
   },
   {
-    "name": "Listing available templates",
+    "name": "Get all gitignore templates",
     "scope": "gitignore",
-    "id": "listTemplates",
+    "id": "getAllTemplates",
     "method": "GET",
     "url": "/gitignore/templates",
-    "documentationUrl": "https://developer.github.com/v3/gitignore/#listing-available-templates",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-all-gitignore-templates",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -2492,12 +2492,33 @@
     "renamed": null
   },
   {
-    "name": "Get a single template",
+    "name": "Get all gitignore templates",
+    "scope": "gitignore",
+    "id": "listTemplates",
+    "method": "GET",
+    "url": "/gitignore/templates",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-all-gitignore-templates",
+    "parameters": [],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"string\"}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"gitignore/list-templates\" operation ID is now \"gitignore/get-all-templates\""
+    }
+  },
+  {
+    "name": "Get a gitignore template",
     "scope": "gitignore",
     "id": "getTemplate",
     "method": "GET",
     "url": "/gitignore/templates/{name}",
-    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-a-single-template",
+    "documentationUrl": "https://developer.github.com/v3/gitignore/#get-a-gitignore-template",
     "parameters": [
       {
         "alias": null,
@@ -2744,12 +2765,12 @@
     "renamed": null
   },
   {
-    "name": "List commonly used licenses",
+    "name": "Get all commonly used licenses",
     "scope": "licenses",
-    "id": "listCommonlyUsed",
+    "id": "getAllCommonlyUsed",
     "method": "GET",
     "url": "/licenses",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -2763,12 +2784,12 @@
     "renamed": null
   },
   {
-    "name": "List commonly used licenses",
+    "name": "Get all commonly used licenses",
     "scope": "licenses",
     "id": "list",
     "method": "GET",
     "url": "/licenses",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#list-commonly-used-licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -2784,12 +2805,33 @@
     }
   },
   {
-    "name": "Get an individual license",
+    "name": "Get all commonly used licenses",
+    "scope": "licenses",
+    "id": "listCommonlyUsed",
+    "method": "GET",
+    "url": "/licenses",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-all-commonly-used-licenses",
+    "parameters": [],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"key\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"spdx_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"node_id\":{\"type\":\"string\"}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"licenses/list-commonly-used\" operation ID is now \"licenses/get-all-commonly-used\""
+    }
+  },
+  {
+    "name": "Get a license",
     "scope": "licenses",
     "id": "get",
     "method": "GET",
     "url": "/licenses/{license}",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#get-an-individual-license",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-a-license",
     "parameters": [
       {
         "alias": null,
@@ -2814,12 +2856,12 @@
     "renamed": null
   },
   {
-    "name": "Render an arbitrary Markdown document",
+    "name": "Render a Markdown document",
     "scope": "markdown",
     "id": "render",
     "method": "POST",
     "url": "/markdown",
-    "documentationUrl": "https://developer.github.com/v3/markdown/#render-an-arbitrary-markdown-document",
+    "documentationUrl": "https://developer.github.com/v3/markdown/#render-a-markdown-document",
     "parameters": [
       {
         "alias": null,
@@ -3376,12 +3418,12 @@
     }
   },
   {
-    "name": "Get",
+    "name": "Get GitHub meta information",
     "scope": "meta",
     "id": "get",
     "method": "GET",
     "url": "/meta",
-    "documentationUrl": "https://developer.github.com/v3/meta/#meta",
+    "documentationUrl": "https://developer.github.com/v3/meta/#get-github-meta-information",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -11049,12 +11091,12 @@
     "renamed": null
   },
   {
-    "name": "Get your current rate limit status",
+    "name": "Get rate limit status for the authenticated user",
     "scope": "rateLimit",
     "id": "get",
     "method": "GET",
     "url": "/rate_limit",
-    "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-your-current-rate-limit-status",
+    "documentationUrl": "https://developer.github.com/v3/rate_limit/#get-rate-limit-status-for-the-authenticated-user",
     "parameters": [],
     "previews": [],
     "headers": [],
@@ -19316,12 +19358,12 @@
     "renamed": null
   },
   {
-    "name": "Get the contents of a repository's code of conduct",
+    "name": "Get the code of conduct for a repository",
     "scope": "codesOfConduct",
     "id": "getForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/community/code_of_conduct",
-    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-the-contents-of-a-repositorys-code-of-conduct",
+    "documentationUrl": "https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository",
     "parameters": [
       {
         "alias": null,
@@ -26535,12 +26577,12 @@
     "renamed": null
   },
   {
-    "name": "Get the contents of a repository's license",
+    "name": "Get the license for a repository",
     "scope": "licenses",
     "id": "getForRepo",
     "method": "GET",
     "url": "/repos/{owner}/{repo}/license",
-    "documentationUrl": "https://developer.github.com/v3/licenses/#get-the-contents-of-a-repositorys-license",
+    "documentationUrl": "https://developer.github.com/v3/licenses/#get-the-license-for-a-repository",
     "parameters": [
       {
         "alias": null,
