@@ -139,7 +139,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/blocking/#unblock-a-user
+   * @see https://developer.github.com/v3/orgs/blocking/#unblock-a-user-from-an-organization
    */
   "DELETE /orgs/:org/blocks/:username": {
     parameters: OrgsUnblockUserEndpoint;
@@ -147,19 +147,19 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#remove-a-credential-authorization-for-an-organization
+   * @see https://developer.github.com/v3/orgs/#remove-a-saml-sso-authorization-for-an-organization
    */
   "DELETE /orgs/:org/credential-authorizations/:credential_id": {
-    parameters: OrgsRemoveCredentialAuthorizationEndpoint;
-    request: OrgsRemoveCredentialAuthorizationRequestOptions;
+    parameters: OrgsRemoveSamlSsoAuthorizationEndpoint;
+    request: OrgsRemoveSamlSsoAuthorizationRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#delete-a-hook
+   * @see https://developer.github.com/v3/orgs/hooks/#delete-an-organization-webhook
    */
   "DELETE /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsDeleteHookEndpoint;
-    request: OrgsDeleteHookRequestOptions;
+    parameters: OrgsDeleteWebhookEndpoint;
+    request: OrgsDeleteWebhookRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -171,7 +171,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#remove-a-member
+   * @see https://developer.github.com/v3/orgs/members/#remove-an-organization-member
    */
   "DELETE /orgs/:org/members/:username": {
     parameters: OrgsRemoveMemberEndpoint;
@@ -179,11 +179,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#remove-organization-membership
+   * @see https://developer.github.com/v3/orgs/members/#remove-organization-membership-for-a-user
    */
   "DELETE /orgs/:org/memberships/:username": {
-    parameters: OrgsRemoveMembershipEndpoint;
-    request: OrgsRemoveMembershipRequestOptions;
+    parameters: OrgsRemoveMembershipForUserEndpoint;
+    request: OrgsRemoveMembershipForUserRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -203,7 +203,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#remove-outside-collaborator-from-an-organization
    */
   "DELETE /orgs/:org/outside_collaborators/:username": {
     parameters: OrgsRemoveOutsideCollaboratorEndpoint;
@@ -211,11 +211,11 @@ export interface Endpoints {
     response: OctokitResponse<OrgsRemoveOutsideCollaboratorResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#conceal-a-users-membership
+   * @see https://developer.github.com/v3/orgs/members/#remove-public-organization-membership-for-the-authenticated-user
    */
   "DELETE /orgs/:org/public_members/:username": {
-    parameters: OrgsConcealMembershipEndpoint;
-    request: OrgsConcealMembershipRequestOptions;
+    parameters: OrgsRemovePublicMembershipForAuthenticatedUserEndpoint;
+    request: OrgsRemovePublicMembershipForAuthenticatedUserRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -291,7 +291,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/projects/collaborators/#remove-user-as-a-collaborator
+   * @see https://developer.github.com/v3/projects/collaborators/#remove-project-collaborator
    */
   "DELETE /projects/:project_id/collaborators/:username": {
     parameters: ProjectsRemoveCollaboratorEndpoint;
@@ -371,95 +371,87 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-branch-protection
+   * @see https://developer.github.com/v3/repos/branches/#delete-branch-protection
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection": {
-    parameters: ReposRemoveBranchProtectionEndpoint;
-    request: ReposRemoveBranchProtectionRequestOptions;
+    parameters: ReposDeleteBranchProtectionEndpoint;
+    request: ReposDeleteBranchProtectionRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-admin-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#delete-admin-branch-protection
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposRemoveProtectedBranchAdminEnforcementEndpoint;
-    request: ReposRemoveProtectedBranchAdminEnforcementRequestOptions;
+    parameters: ReposDeleteAdminBranchProtectionEndpoint;
+    request: ReposDeleteAdminBranchProtectionRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-pull-request-review-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#delete-pull-request-review-protection
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions;
+    parameters: ReposDeletePullRequestReviewProtectionEndpoint;
+    request: ReposDeletePullRequestReviewProtectionRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-required-signatures-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#delete-commit-signature-protection
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposRemoveProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposRemoveProtectedBranchRequiredSignaturesRequestOptions;
+    parameters: ReposDeleteCommitSignatureProtectionEndpoint;
+    request: ReposDeleteCommitSignatureProtectionRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#remove-status-check-protection
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposRemoveProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions;
+    parameters: ReposRemoveStatusCheckProtectionEndpoint;
+    request: ReposRemoveStatusCheckProtectionRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-required-status-checks-contexts-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#remove-status-check-contexts
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
+    parameters: ReposRemoveStatusCheckContextsEndpoint;
+    request: ReposRemoveStatusCheckContextsRequestOptions;
+    response: OctokitResponse<ReposRemoveStatusCheckContextsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#delete-access-restrictions
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions": {
-    parameters: ReposRemoveProtectedBranchRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchRestrictionsRequestOptions;
+    parameters: ReposDeleteAccessRestrictionsEndpoint;
+    request: ReposDeleteAccessRestrictionsRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-app-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#remove-app-access-restrictions
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposRemoveProtectedBranchAppRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchAppRestrictionsResponseData
-    >;
+    parameters: ReposRemoveAppAccessRestrictionsEndpoint;
+    request: ReposRemoveAppAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposRemoveAppAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-team-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#remove-team-access-restrictions
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposRemoveProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchTeamRestrictionsResponseData
-    >;
+    parameters: ReposRemoveTeamAccessRestrictionsEndpoint;
+    request: ReposRemoveTeamAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposRemoveTeamAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#remove-user-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#remove-user-access-restrictions
    */
   "DELETE /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposRemoveProtectedBranchUserRestrictionsEndpoint;
-    request: ReposRemoveProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposRemoveProtectedBranchUserRestrictionsResponseData
-    >;
+    parameters: ReposRemoveUserAccessRestrictionsEndpoint;
+    request: ReposRemoveUserAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposRemoveUserAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator
+   * @see https://developer.github.com/v3/repos/collaborators/#remove-a-repository-collaborator
    */
   "DELETE /repos/:owner/:repo/collaborators/:username": {
     parameters: ReposRemoveCollaboratorEndpoint;
@@ -515,11 +507,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#delete-a-hook
+   * @see https://developer.github.com/v3/repos/hooks/#delete-a-repository-webhook
    */
   "DELETE /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposDeleteHookEndpoint;
-    request: ReposDeleteHookRequestOptions;
+    parameters: ReposDeleteWebhookEndpoint;
+    request: ReposDeleteWebhookRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -603,11 +595,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/keys/#remove-a-deploy-key
+   * @see https://developer.github.com/v3/repos/keys/#delete-a-deploy-key
    */
   "DELETE /repos/:owner/:repo/keys/:key_id": {
-    parameters: ReposRemoveDeployKeyEndpoint;
-    request: ReposRemoveDeployKeyRequestOptions;
+    parameters: ReposDeleteDeployKeyEndpoint;
+    request: ReposDeleteDeployKeyRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -627,23 +619,23 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#disable-a-pages-site
+   * @see https://developer.github.com/v3/repos/pages/#delete-a-github-pages-site
    */
   "DELETE /repos/:owner/:repo/pages": {
-    parameters: ReposDisablePagesSiteEndpoint;
-    request: ReposDisablePagesSiteRequestOptions;
+    parameters: ReposDeletePagesSiteEndpoint;
+    request: ReposDeletePagesSiteRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/review_requests/#delete-a-review-request
+   * @see https://developer.github.com/v3/pulls/review_requests/#remove-requested-reviewers-from-a-pull-request
    */
   "DELETE /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsDeleteReviewRequestEndpoint;
-    request: PullsDeleteReviewRequestRequestOptions;
+    parameters: PullsRemoveRequestedReviewersEndpoint;
+    request: PullsRemoveRequestedReviewersRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review
+   * @see https://developer.github.com/v3/pulls/reviews/#delete-a-pending-review-for-a-pull-request
    */
   "DELETE /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
     parameters: PullsDeletePendingReviewEndpoint;
@@ -651,11 +643,11 @@ export interface Endpoints {
     response: OctokitResponse<PullsDeletePendingReviewResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#delete-a-comment
+   * @see https://developer.github.com/v3/pulls/comments/#delete-a-review-comment-for-a-pull-request
    */
   "DELETE /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsDeleteCommentEndpoint;
-    request: PullsDeleteCommentRequestOptions;
+    parameters: PullsDeleteReviewCommentEndpoint;
+    request: PullsDeleteReviewCommentRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -699,11 +691,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#remove-a-user-from-the-organization
+   * @see https://developer.github.com/v3/scim/#delete-a-scim-user-from-an-organization
    */
   "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimRemoveUserFromOrgEndpoint;
-    request: ScimRemoveUserFromOrgRequestOptions;
+    parameters: ScimDeleteUserFromOrgEndpoint;
+    request: ScimDeleteUserFromOrgRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -771,11 +763,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/users/emails/#delete-email-addresses
+   * @see https://developer.github.com/v3/users/emails/#delete-an-email-address-for-the-authenticated-user
    */
   "DELETE /user/emails": {
-    parameters: UsersDeleteEmailsEndpoint;
-    request: UsersDeleteEmailsRequestOptions;
+    parameters: UsersDeleteEmailForAuthenticatedEndpoint;
+    request: UsersDeleteEmailForAuthenticatedRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -787,11 +779,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/users/gpg_keys/#delete-a-gpg-key
+   * @see https://developer.github.com/v3/users/gpg_keys/#delete-a-gpg-key-for-the-authenticated-user
    */
   "DELETE /user/gpg_keys/:gpg_key_id": {
-    parameters: UsersDeleteGpgKeyEndpoint;
-    request: UsersDeleteGpgKeyRequestOptions;
+    parameters: UsersDeleteGpgKeyForAuthenticatedEndpoint;
+    request: UsersDeleteGpgKeyForAuthenticatedRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -803,11 +795,11 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/users/keys/#delete-a-public-key
+   * @see https://developer.github.com/v3/users/keys/#delete-a-public-ssh-key-for-the-authenticated-user
    */
   "DELETE /user/keys/:key_id": {
-    parameters: UsersDeletePublicKeyEndpoint;
-    request: UsersDeletePublicKeyRequestOptions;
+    parameters: UsersDeletePublicSshKeyForAuthenticatedEndpoint;
+    request: UsersDeletePublicSshKeyForAuthenticatedRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -1181,7 +1173,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#list-all-organizations
+   * @see https://developer.github.com/v3/orgs/#list-organizations
    */
   "GET /organizations": {
     parameters: OrgsListEndpoint;
@@ -1253,7 +1245,7 @@ export interface Endpoints {
     response: OctokitResponse<ActionsGetOrgPublicKeyResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/blocking/#list-blocked-users
+   * @see https://developer.github.com/v3/orgs/blocking/#list-users-blocked-by-an-organization
    */
   "GET /orgs/:org/blocks": {
     parameters: OrgsListBlockedUsersEndpoint;
@@ -1261,7 +1253,7 @@ export interface Endpoints {
     response: OctokitResponse<OrgsListBlockedUsersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/blocking/#check-whether-a-user-is-blocked-from-an-organization
+   * @see https://developer.github.com/v3/orgs/blocking/#check-if-a-user-is-blocked-by-an-organization
    */
   "GET /orgs/:org/blocks/:username": {
     parameters: OrgsCheckBlockedUserEndpoint;
@@ -1269,12 +1261,12 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#list-credential-authorizations-for-an-organization
+   * @see https://developer.github.com/v3/orgs/#list-saml-sso-authorizations-for-an-organization
    */
   "GET /orgs/:org/credential-authorizations": {
-    parameters: OrgsListCredentialAuthorizationsEndpoint;
-    request: OrgsListCredentialAuthorizationsRequestOptions;
-    response: OctokitResponse<OrgsListCredentialAuthorizationsResponseData>;
+    parameters: OrgsListSamlSsoAuthorizationsEndpoint;
+    request: OrgsListSamlSsoAuthorizationsRequestOptions;
+    response: OctokitResponse<OrgsListSamlSsoAuthorizationsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-organization-events
@@ -1285,20 +1277,20 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#list-hooks
+   * @see https://developer.github.com/v3/orgs/hooks/#list-organization-webhooks
    */
   "GET /orgs/:org/hooks": {
-    parameters: OrgsListHooksEndpoint;
-    request: OrgsListHooksRequestOptions;
-    response: OctokitResponse<OrgsListHooksResponseData>;
+    parameters: OrgsListWebhooksEndpoint;
+    request: OrgsListWebhooksRequestOptions;
+    response: OctokitResponse<OrgsListWebhooksResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#get-single-hook
+   * @see https://developer.github.com/v3/orgs/hooks/#get-an-organization-webhook
    */
   "GET /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsGetHookEndpoint;
-    request: OrgsGetHookRequestOptions;
-    response: OctokitResponse<OrgsGetHookResponseData>;
+    parameters: OrgsGetWebhookEndpoint;
+    request: OrgsGetWebhookRequestOptions;
+    response: OctokitResponse<OrgsGetWebhookResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/apps/#get-an-organization-installation-for-the-authenticated-app
@@ -1309,12 +1301,12 @@ export interface Endpoints {
     response: OctokitResponse<AppsGetOrgInstallationResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#list-installations-for-an-organization
+   * @see https://developer.github.com/v3/orgs/#list-app-installations-for-an-organization
    */
   "GET /orgs/:org/installations": {
-    parameters: OrgsListInstallationsEndpoint;
-    request: OrgsListInstallationsRequestOptions;
-    response: OctokitResponse<OrgsListInstallationsResponseData>;
+    parameters: OrgsListAppInstallationsEndpoint;
+    request: OrgsListAppInstallationsRequestOptions;
+    response: OctokitResponse<OrgsListAppInstallationsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/interactions/orgs/#get-interaction-restrictions-for-an-organization
@@ -1349,7 +1341,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#members-list
+   * @see https://developer.github.com/v3/orgs/members/#list-organization-members
    */
   "GET /orgs/:org/members": {
     parameters: OrgsListMembersEndpoint;
@@ -1357,20 +1349,20 @@ export interface Endpoints {
     response: OctokitResponse<OrgsListMembersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#check-membership
+   * @see https://developer.github.com/v3/orgs/members/#check-organization-membership-for-a-user
    */
   "GET /orgs/:org/members/:username": {
-    parameters: OrgsCheckMembershipEndpoint;
-    request: OrgsCheckMembershipRequestOptions;
+    parameters: OrgsCheckMembershipForUserEndpoint;
+    request: OrgsCheckMembershipForUserRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#get-organization-membership
+   * @see https://developer.github.com/v3/orgs/members/#get-organization-membership-for-a-user
    */
   "GET /orgs/:org/memberships/:username": {
-    parameters: OrgsGetMembershipEndpoint;
-    request: OrgsGetMembershipRequestOptions;
-    response: OctokitResponse<OrgsGetMembershipResponseData>;
+    parameters: OrgsGetMembershipForUserEndpoint;
+    request: OrgsGetMembershipForUserRequestOptions;
+    response: OctokitResponse<OrgsGetMembershipForUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/migrations/orgs/#list-organization-migrations
@@ -1405,7 +1397,7 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsListReposForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/outside_collaborators/#list-outside-collaborators
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#list-outside-collaborators-for-an-organization
    */
   "GET /orgs/:org/outside_collaborators": {
     parameters: OrgsListOutsideCollaboratorsEndpoint;
@@ -1421,7 +1413,7 @@ export interface Endpoints {
     response: OctokitResponse<ProjectsListForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#public-members-list
+   * @see https://developer.github.com/v3/orgs/members/#list-public-organization-members
    */
   "GET /orgs/:org/public_members": {
     parameters: OrgsListPublicMembersEndpoint;
@@ -1429,11 +1421,11 @@ export interface Endpoints {
     response: OctokitResponse<OrgsListPublicMembersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#check-public-membership
+   * @see https://developer.github.com/v3/orgs/members/#check-public-organization-membership-for-a-user
    */
   "GET /orgs/:org/public_members/:username": {
-    parameters: OrgsCheckPublicMembershipEndpoint;
-    request: OrgsCheckPublicMembershipRequestOptions;
+    parameters: OrgsCheckPublicMembershipForUserEndpoint;
+    request: OrgsCheckPublicMembershipForUserRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -1599,7 +1591,7 @@ export interface Endpoints {
     response: OctokitResponse<ProjectsGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/projects/collaborators/#list-collaborators
+   * @see https://developer.github.com/v3/projects/collaborators/#list-project-collaborators
    */
   "GET /projects/:project_id/collaborators": {
     parameters: ProjectsListCollaboratorsEndpoint;
@@ -1607,12 +1599,12 @@ export interface Endpoints {
     response: OctokitResponse<ProjectsListCollaboratorsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/projects/collaborators/#review-a-users-permission-level
+   * @see https://developer.github.com/v3/projects/collaborators/#get-project-permission-for-a-user
    */
   "GET /projects/:project_id/collaborators/:username/permission": {
-    parameters: ProjectsReviewUserPermissionLevelEndpoint;
-    request: ProjectsReviewUserPermissionLevelRequestOptions;
-    response: OctokitResponse<ProjectsReviewUserPermissionLevelResponseData>;
+    parameters: ProjectsGetPermissionForUserEndpoint;
+    request: ProjectsGetPermissionForUserRequestOptions;
+    response: OctokitResponse<ProjectsGetPermissionForUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/projects/columns/#list-project-columns
@@ -1663,11 +1655,11 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/contents/#get-archive-link
+   * @see https://developer.github.com/v3/repos/contents/#download-a-repository-archive
    */
   "GET /repos/:owner/:repo/:archive_format/:ref": {
-    parameters: ReposGetArchiveLinkEndpoint;
-    request: ReposGetArchiveLinkRequestOptions;
+    parameters: ReposDownloadArchiveEndpoint;
+    request: ReposDownloadArchiveRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -1863,7 +1855,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListBranchesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-a-branch
    */
   "GET /repos/:owner/:repo/branches/:branch": {
     parameters: ReposGetBranchEndpoint;
@@ -1879,65 +1871,55 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetBranchProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-admin-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-admin-branch-protection
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposGetProtectedBranchAdminEnforcementEndpoint;
-    request: ReposGetProtectedBranchAdminEnforcementRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchAdminEnforcementResponseData
-    >;
+    parameters: ReposGetAdminBranchProtectionEndpoint;
+    request: ReposGetAdminBranchProtectionRequestOptions;
+    response: OctokitResponse<ReposGetAdminBranchProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-pull-request-review-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-pull-request-review-protection
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchPullRequestReviewEnforcementResponseData
-    >;
+    parameters: ReposGetPullRequestReviewProtectionEndpoint;
+    request: ReposGetPullRequestReviewProtectionRequestOptions;
+    response: OctokitResponse<ReposGetPullRequestReviewProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-required-signatures-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-commit-signature-protection
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposGetProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposGetProtectedBranchRequiredSignaturesRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchRequiredSignaturesResponseData
-    >;
+    parameters: ReposGetCommitSignatureProtectionEndpoint;
+    request: ReposGetCommitSignatureProtectionRequestOptions;
+    response: OctokitResponse<ReposGetCommitSignatureProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-required-status-checks-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-status-checks-protection
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposGetProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposGetProtectedBranchRequiredStatusChecksRequestOptions;
-    response: OctokitResponse<
-      ReposGetProtectedBranchRequiredStatusChecksResponseData
-    >;
+    parameters: ReposGetStatusChecksProtectionEndpoint;
+    request: ReposGetStatusChecksProtectionRequestOptions;
+    response: OctokitResponse<ReposGetStatusChecksProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#list-required-status-checks-contexts-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-all-status-check-contexts
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposListProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
-      ReposListProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
+    parameters: ReposGetAllStatusCheckContextsEndpoint;
+    request: ReposGetAllStatusCheckContextsRequestOptions;
+    response: OctokitResponse<ReposGetAllStatusCheckContextsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#get-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#get-access-restrictions
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions": {
-    parameters: ReposGetProtectedBranchRestrictionsEndpoint;
-    request: ReposGetProtectedBranchRestrictionsRequestOptions;
-    response: OctokitResponse<ReposGetProtectedBranchRestrictionsResponseData>;
+    parameters: ReposGetAccessRestrictionsEndpoint;
+    request: ReposGetAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposGetAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#list-apps-with-access-to-the-protected-branch
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
     parameters: ReposGetAppsWithAccessToProtectedBranchEndpoint;
@@ -1947,7 +1929,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#list-teams-with-access-to-the-protected-branch
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
     parameters: ReposGetTeamsWithAccessToProtectedBranchEndpoint;
@@ -1957,7 +1939,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#list-users-with-access-to-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#list-users-with-access-to-the-protected-branch
    */
   "GET /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
     parameters: ReposGetUsersWithAccessToProtectedBranchEndpoint;
@@ -2015,7 +1997,7 @@ export interface Endpoints {
     response: OctokitResponse<CodeScanningGetAlertResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/collaborators/#list-collaborators
+   * @see https://developer.github.com/v3/repos/collaborators/#list-repository-collaborators
    */
   "GET /repos/:owner/:repo/collaborators": {
     parameters: ReposListCollaboratorsEndpoint;
@@ -2023,7 +2005,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListCollaboratorsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator
+   * @see https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-repository-collaborator
    */
   "GET /repos/:owner/:repo/collaborators/:username": {
     parameters: ReposCheckCollaboratorEndpoint;
@@ -2031,7 +2013,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level
+   * @see https://developer.github.com/v3/repos/collaborators/#get-repository-permissions-for-a-user
    */
   "GET /repos/:owner/:repo/collaborators/:username/permission": {
     parameters: ReposGetCollaboratorPermissionLevelEndpoint;
@@ -2042,12 +2024,12 @@ export interface Endpoints {
    * @see https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository
    */
   "GET /repos/:owner/:repo/comments": {
-    parameters: ReposListCommitCommentsEndpoint;
-    request: ReposListCommitCommentsRequestOptions;
-    response: OctokitResponse<ReposListCommitCommentsResponseData>;
+    parameters: ReposListCommitCommentsForRepoEndpoint;
+    request: ReposListCommitCommentsForRepoRequestOptions;
+    response: OctokitResponse<ReposListCommitCommentsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/comments/#get-a-single-commit-comment
+   * @see https://developer.github.com/v3/repos/comments/#get-a-commit-comment
    */
   "GET /repos/:owner/:repo/comments/:comment_id": {
     parameters: ReposGetCommitCommentEndpoint;
@@ -2063,7 +2045,7 @@ export interface Endpoints {
     response: OctokitResponse<ReactionsListForCommitCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository
+   * @see https://developer.github.com/v3/repos/commits/#list-commits
    */
   "GET /repos/:owner/:repo/commits": {
     parameters: ReposListCommitsEndpoint;
@@ -2079,7 +2061,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListBranchesForHeadCommitResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/comments/#list-comments-for-a-single-commit
+   * @see https://developer.github.com/v3/repos/comments/#list-commit-comments
    */
   "GET /repos/:owner/:repo/commits/:commit_sha/comments": {
     parameters: ReposListCommentsForCommitEndpoint;
@@ -2087,7 +2069,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListCommentsForCommitResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-commit
+   * @see https://developer.github.com/v3/repos/commits/#list-pull-requests-associated-with-a-commit
    */
   "GET /repos/:owner/:repo/commits/:commit_sha/pulls": {
     parameters: ReposListPullRequestsAssociatedWithCommitEndpoint;
@@ -2097,7 +2079,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/commits/#get-a-single-commit
+   * @see https://developer.github.com/v3/repos/commits/#get-a-commit
    */
   "GET /repos/:owner/:repo/commits/:ref": {
     parameters: ReposGetCommitEndpoint;
@@ -2121,7 +2103,7 @@ export interface Endpoints {
     response: OctokitResponse<ChecksListSuitesForRefResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-ref
+   * @see https://developer.github.com/v3/repos/statuses/#get-the-combined-status-for-a-specific-reference
    */
   "GET /repos/:owner/:repo/commits/:ref/status": {
     parameters: ReposGetCombinedStatusForRefEndpoint;
@@ -2129,12 +2111,12 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetCombinedStatusForRefResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statuses/#list-statuses-for-a-specific-ref
+   * @see https://developer.github.com/v3/repos/statuses/#list-commit-statuses-for-a-reference
    */
   "GET /repos/:owner/:repo/commits/:ref/statuses": {
-    parameters: ReposListStatusesForRefEndpoint;
-    request: ReposListStatusesForRefRequestOptions;
-    response: OctokitResponse<ReposListStatusesForRefResponseData>;
+    parameters: ReposListCommitStatusesForRefEndpoint;
+    request: ReposListCommitStatusesForRefRequestOptions;
+    response: OctokitResponse<ReposListCommitStatusesForRefResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/codes_of_conduct/#get-the-code-of-conduct-for-a-repository
@@ -2145,12 +2127,12 @@ export interface Endpoints {
     response: OctokitResponse<CodesOfConductGetForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/community/#retrieve-community-profile-metrics
+   * @see https://developer.github.com/v3/repos/community/#get-community-profile-metrics
    */
   "GET /repos/:owner/:repo/community/profile": {
-    parameters: ReposRetrieveCommunityProfileMetricsEndpoint;
-    request: ReposRetrieveCommunityProfileMetricsRequestOptions;
-    response: OctokitResponse<ReposRetrieveCommunityProfileMetricsResponseData>;
+    parameters: ReposGetCommunityProfileMetricsEndpoint;
+    request: ReposGetCommunityProfileMetricsRequestOptions;
+    response: OctokitResponse<ReposGetCommunityProfileMetricsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/repos/commits/#compare-two-commits
@@ -2161,15 +2143,15 @@ export interface Endpoints {
     response: OctokitResponse<ReposCompareCommitsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/contents/#get-contents
+   * @see https://developer.github.com/v3/repos/contents/#get-repository-content
    */
   "GET /repos/:owner/:repo/contents/:path": {
-    parameters: ReposGetContentsEndpoint;
-    request: ReposGetContentsRequestOptions;
-    response: OctokitResponse<ReposGetContentsResponseData>;
+    parameters: ReposGetContentEndpoint;
+    request: ReposGetContentRequestOptions;
+    response: OctokitResponse<ReposGetContentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/#list-contributors
+   * @see https://developer.github.com/v3/repos/#list-repository-contributors
    */
   "GET /repos/:owner/:repo/contributors": {
     parameters: ReposListContributorsEndpoint;
@@ -2185,7 +2167,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListDeploymentsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment
+   * @see https://developer.github.com/v3/repos/deployments/#get-a-deployment
    */
   "GET /repos/:owner/:repo/deployments/:deployment_id": {
     parameters: ReposGetDeploymentEndpoint;
@@ -2201,7 +2183,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListDeploymentStatusesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/deployments/#get-a-single-deployment-status
+   * @see https://developer.github.com/v3/repos/deployments/#get-a-deployment-status
    */
   "GET /repos/:owner/:repo/deployments/:deployment_id/statuses/:status_id": {
     parameters: ReposGetDeploymentStatusEndpoint;
@@ -2289,20 +2271,20 @@ export interface Endpoints {
     response: OctokitResponse<GitGetTreeResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#list-hooks
+   * @see https://developer.github.com/v3/repos/hooks/#list-repository-webhooks
    */
   "GET /repos/:owner/:repo/hooks": {
-    parameters: ReposListHooksEndpoint;
-    request: ReposListHooksRequestOptions;
-    response: OctokitResponse<ReposListHooksResponseData>;
+    parameters: ReposListWebhooksEndpoint;
+    request: ReposListWebhooksRequestOptions;
+    response: OctokitResponse<ReposListWebhooksResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#get-single-hook
+   * @see https://developer.github.com/v3/repos/hooks/#get-a-repository-webhook
    */
   "GET /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposGetHookEndpoint;
-    request: ReposGetHookRequestOptions;
-    response: OctokitResponse<ReposGetHookResponseData>;
+    parameters: ReposGetWebhookEndpoint;
+    request: ReposGetWebhookRequestOptions;
+    response: OctokitResponse<ReposGetWebhookResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#get-an-import-status
@@ -2345,7 +2327,7 @@ export interface Endpoints {
     response: OctokitResponse<InteractionsGetRestrictionsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/invitations/#list-invitations-for-a-repository
+   * @see https://developer.github.com/v3/repos/invitations/#list-repository-invitations
    */
   "GET /repos/:owner/:repo/invitations": {
     parameters: ReposListInvitationsEndpoint;
@@ -2481,7 +2463,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesGetLabelResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/#list-languages
+   * @see https://developer.github.com/v3/repos/#list-repository-languages
    */
   "GET /repos/:owner/:repo/languages": {
     parameters: ReposListLanguagesEndpoint;
@@ -2531,7 +2513,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site
+   * @see https://developer.github.com/v3/repos/pages/#get-a-github-pages-site
    */
   "GET /repos/:owner/:repo/pages": {
     parameters: ReposGetPagesEndpoint;
@@ -2539,7 +2521,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetPagesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#list-pages-builds
+   * @see https://developer.github.com/v3/repos/pages/#list-github-pages-builds
    */
   "GET /repos/:owner/:repo/pages/builds": {
     parameters: ReposListPagesBuildsEndpoint;
@@ -2547,7 +2529,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListPagesBuildsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#get-a-specific-pages-build
+   * @see https://developer.github.com/v3/repos/pages/#get-github-pages-build
    */
   "GET /repos/:owner/:repo/pages/builds/:build_id": {
     parameters: ReposGetPagesBuildEndpoint;
@@ -2579,7 +2561,7 @@ export interface Endpoints {
     response: OctokitResponse<PullsListResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/#get-a-single-pull-request
+   * @see https://developer.github.com/v3/pulls/#get-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/:pull_number": {
     parameters: PullsGetEndpoint;
@@ -2587,12 +2569,12 @@ export interface Endpoints {
     response: OctokitResponse<PullsGetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#list-comments-on-a-pull-request
+   * @see https://developer.github.com/v3/pulls/comments/#list-review-comments-on-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/comments": {
-    parameters: PullsListCommentsEndpoint;
-    request: PullsListCommentsRequestOptions;
-    response: OctokitResponse<PullsListCommentsResponseData>;
+    parameters: PullsListReviewCommentsEndpoint;
+    request: PullsListReviewCommentsRequestOptions;
+    response: OctokitResponse<PullsListReviewCommentsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/pulls/#list-commits-on-a-pull-request
@@ -2611,7 +2593,7 @@ export interface Endpoints {
     response: OctokitResponse<PullsListFilesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/#get-if-a-pull-request-has-been-merged
+   * @see https://developer.github.com/v3/pulls/#check-if-a-pull-request-has-been-merged
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/merge": {
     parameters: PullsCheckIfMergedEndpoint;
@@ -2619,15 +2601,15 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/review_requests/#list-review-requests
+   * @see https://developer.github.com/v3/pulls/review_requests/#list-requested-reviewers-for-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsListReviewRequestsEndpoint;
-    request: PullsListReviewRequestsRequestOptions;
-    response: OctokitResponse<PullsListReviewRequestsResponseData>;
+    parameters: PullsListRequestedReviewersEndpoint;
+    request: PullsListRequestedReviewersRequestOptions;
+    response: OctokitResponse<PullsListRequestedReviewersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#list-reviews-on-a-pull-request
+   * @see https://developer.github.com/v3/pulls/reviews/#list-reviews-for-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews": {
     parameters: PullsListReviewsEndpoint;
@@ -2635,7 +2617,7 @@ export interface Endpoints {
     response: OctokitResponse<PullsListReviewsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#get-a-single-review
+   * @see https://developer.github.com/v3/pulls/reviews/#get-a-review-for-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
     parameters: PullsGetReviewEndpoint;
@@ -2643,28 +2625,28 @@ export interface Endpoints {
     response: OctokitResponse<PullsGetReviewResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#get-comments-for-a-single-review
+   * @see https://developer.github.com/v3/pulls/reviews/#list-comments-for-a-pull-request-review
    */
   "GET /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments": {
-    parameters: PullsGetCommentsForReviewEndpoint;
-    request: PullsGetCommentsForReviewRequestOptions;
-    response: OctokitResponse<PullsGetCommentsForReviewResponseData>;
+    parameters: PullsListCommentsForReviewEndpoint;
+    request: PullsListCommentsForReviewRequestOptions;
+    response: OctokitResponse<PullsListCommentsForReviewResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#list-comments-in-a-repository
+   * @see https://developer.github.com/v3/pulls/comments/#list-review-comments-in-a-repository
    */
   "GET /repos/:owner/:repo/pulls/comments": {
-    parameters: PullsListCommentsForRepoEndpoint;
-    request: PullsListCommentsForRepoRequestOptions;
-    response: OctokitResponse<PullsListCommentsForRepoResponseData>;
+    parameters: PullsListReviewCommentsForRepoEndpoint;
+    request: PullsListReviewCommentsForRepoRequestOptions;
+    response: OctokitResponse<PullsListReviewCommentsForRepoResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#get-a-single-comment
+   * @see https://developer.github.com/v3/pulls/comments/#get-a-review-comment-for-a-pull-request
    */
   "GET /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsGetCommentEndpoint;
-    request: PullsGetCommentRequestOptions;
-    response: OctokitResponse<PullsGetCommentResponseData>;
+    parameters: PullsGetReviewCommentEndpoint;
+    request: PullsGetReviewCommentRequestOptions;
+    response: OctokitResponse<PullsGetReviewCommentResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment
@@ -2677,7 +2659,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/contents/#get-the-readme
+   * @see https://developer.github.com/v3/repos/contents/#get-a-repository-readme
    */
   "GET /repos/:owner/:repo/readme": {
     parameters: ReposGetReadmeEndpoint;
@@ -2685,7 +2667,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetReadmeResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#list-releases-for-a-repository
+   * @see https://developer.github.com/v3/repos/releases/#list-releases
    */
   "GET /repos/:owner/:repo/releases": {
     parameters: ReposListReleasesEndpoint;
@@ -2693,7 +2675,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListReleasesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#get-a-single-release
+   * @see https://developer.github.com/v3/repos/releases/#get-a-release
    */
   "GET /repos/:owner/:repo/releases/:release_id": {
     parameters: ReposGetReleaseEndpoint;
@@ -2701,15 +2683,15 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetReleaseResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#list-assets-for-a-release
+   * @see https://developer.github.com/v3/repos/releases/#list-release-assets
    */
   "GET /repos/:owner/:repo/releases/:release_id/assets": {
-    parameters: ReposListAssetsForReleaseEndpoint;
-    request: ReposListAssetsForReleaseRequestOptions;
-    response: OctokitResponse<ReposListAssetsForReleaseResponseData>;
+    parameters: ReposListReleaseAssetsEndpoint;
+    request: ReposListReleaseAssetsRequestOptions;
+    response: OctokitResponse<ReposListReleaseAssetsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#get-a-single-release-asset
+   * @see https://developer.github.com/v3/repos/releases/#get-a-release-asset
    */
   "GET /repos/:owner/:repo/releases/assets/:asset_id": {
     parameters: ReposGetReleaseAssetEndpoint;
@@ -2744,7 +2726,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-additions-and-deletions-per-week
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-activity
    */
   "GET /repos/:owner/:repo/stats/code_frequency": {
     parameters: ReposGetCodeFrequencyStatsEndpoint;
@@ -2752,7 +2734,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetCodeFrequencyStatsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statistics/#get-the-last-year-of-commit-activity-data
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-last-year-of-commit-activity
    */
   "GET /repos/:owner/:repo/stats/commit_activity": {
     parameters: ReposGetCommitActivityStatsEndpoint;
@@ -2760,7 +2742,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetCommitActivityStatsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statistics/#get-contributors-list-with-additions-deletions-and-commit-counts
+   * @see https://developer.github.com/v3/repos/statistics/#get-all-contributor-commit-activity
    */
   "GET /repos/:owner/:repo/stats/contributors": {
     parameters: ReposGetContributorsStatsEndpoint;
@@ -2768,7 +2750,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetContributorsStatsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count-for-the-repository-owner-and-everyone-else
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-weekly-commit-count
    */
   "GET /repos/:owner/:repo/stats/participation": {
     parameters: ReposGetParticipationStatsEndpoint;
@@ -2776,7 +2758,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetParticipationStatsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statistics/#get-the-number-of-commits-per-hour-in-each-day
+   * @see https://developer.github.com/v3/repos/statistics/#get-the-hourly-commit-count-for-each-day
    */
   "GET /repos/:owner/:repo/stats/punch_card": {
     parameters: ReposGetPunchCardStatsEndpoint;
@@ -2800,7 +2782,7 @@ export interface Endpoints {
     response: OctokitResponse<ActivityGetRepoSubscriptionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/#list-tags
+   * @see https://developer.github.com/v3/repos/#list-repository-tags
    */
   "GET /repos/:owner/:repo/tags": {
     parameters: ReposListTagsEndpoint;
@@ -2808,7 +2790,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListTagsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/#list-teams
+   * @see https://developer.github.com/v3/repos/#list-repository-teams
    */
   "GET /repos/:owner/:repo/teams": {
     parameters: ReposListTeamsEndpoint;
@@ -2824,7 +2806,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetAllTopicsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/traffic/#clones
+   * @see https://developer.github.com/v3/repos/traffic/#get-repository-clones
    */
   "GET /repos/:owner/:repo/traffic/clones": {
     parameters: ReposGetClonesEndpoint;
@@ -2832,7 +2814,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetClonesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/traffic/#list-paths
+   * @see https://developer.github.com/v3/repos/traffic/#get-top-referral-paths
    */
   "GET /repos/:owner/:repo/traffic/popular/paths": {
     parameters: ReposGetTopPathsEndpoint;
@@ -2840,7 +2822,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetTopPathsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/traffic/#list-referrers
+   * @see https://developer.github.com/v3/repos/traffic/#get-top-referral-sources
    */
   "GET /repos/:owner/:repo/traffic/popular/referrers": {
     parameters: ReposGetTopReferrersEndpoint;
@@ -2848,7 +2830,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposGetTopReferrersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/traffic/#views
+   * @see https://developer.github.com/v3/repos/traffic/#get-page-views
    */
   "GET /repos/:owner/:repo/traffic/views": {
     parameters: ReposGetViewsEndpoint;
@@ -2872,7 +2854,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposListPublicResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#get-a-list-of-provisioned-identities
+   * @see https://developer.github.com/v3/scim/#list-scim-provisioned-identities
    */
   "GET /scim/v2/organizations/:org/Users": {
     parameters: ScimListProvisionedIdentitiesEndpoint;
@@ -2880,12 +2862,14 @@ export interface Endpoints {
     response: OctokitResponse<ScimListProvisionedIdentitiesResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#get-provisioning-details-for-a-single-user
+   * @see https://developer.github.com/v3/scim/#get-scim-provisioning-information-for-a-user
    */
   "GET /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimGetProvisioningDetailsForUserEndpoint;
-    request: ScimGetProvisioningDetailsForUserRequestOptions;
-    response: OctokitResponse<ScimGetProvisioningDetailsForUserResponseData>;
+    parameters: ScimGetProvisioningInformationForUserEndpoint;
+    request: ScimGetProvisioningInformationForUserRequestOptions;
+    response: OctokitResponse<
+      ScimGetProvisioningInformationForUserResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/search/#search-code
@@ -3100,15 +3084,15 @@ export interface Endpoints {
     response: OctokitResponse<MigrationsListReposForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/blocking/#list-blocked-users
+   * @see https://developer.github.com/v3/users/blocking/#list-users-blocked-by-the-authenticated-user
    */
   "GET /user/blocks": {
-    parameters: UsersListBlockedEndpoint;
-    request: UsersListBlockedRequestOptions;
-    response: OctokitResponse<UsersListBlockedResponseData>;
+    parameters: UsersListBlockedByAuthenticatedEndpoint;
+    request: UsersListBlockedByAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersListBlockedByAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/blocking/#check-whether-youve-blocked-a-user
+   * @see https://developer.github.com/v3/users/blocking/#check-if-a-user-is-blocked-by-the-authenticated-user
    */
   "GET /user/blocks/:username": {
     parameters: UsersCheckBlockedEndpoint;
@@ -3116,12 +3100,12 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user
+   * @see https://developer.github.com/v3/users/emails/#list-email-addresses-for-the-authenticated-user
    */
   "GET /user/emails": {
-    parameters: UsersListEmailsEndpoint;
-    request: UsersListEmailsRequestOptions;
-    response: OctokitResponse<UsersListEmailsResponseData>;
+    parameters: UsersListEmailsForAuthenticatedEndpoint;
+    request: UsersListEmailsForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersListEmailsForAuthenticatedResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/users/followers/#list-followers-of-the-authenticated-user
@@ -3134,7 +3118,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-the-authenticated-user
+   * @see https://developer.github.com/v3/users/followers/#list-the-people-the-authenticated-user-follows
    */
   "GET /user/following": {
     parameters: UsersListFollowedByAuthenticatedEndpoint;
@@ -3142,28 +3126,28 @@ export interface Endpoints {
     response: OctokitResponse<UsersListFollowedByAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user
+   * @see https://developer.github.com/v3/users/followers/#check-if-a-person-is-followed-by-the-authenticated-user
    */
   "GET /user/following/:username": {
-    parameters: UsersCheckFollowingEndpoint;
-    request: UsersCheckFollowingRequestOptions;
+    parameters: UsersCheckPersonIsFollowedByAuthenticatedEndpoint;
+    request: UsersCheckPersonIsFollowedByAuthenticatedRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/users/gpg_keys/#list-your-gpg-keys
+   * @see https://developer.github.com/v3/users/gpg_keys/#list-gpg-keys-for-the-authenticated-user
    */
   "GET /user/gpg_keys": {
-    parameters: UsersListGpgKeysEndpoint;
-    request: UsersListGpgKeysRequestOptions;
-    response: OctokitResponse<UsersListGpgKeysResponseData>;
+    parameters: UsersListGpgKeysForAuthenticatedEndpoint;
+    request: UsersListGpgKeysForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersListGpgKeysForAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/gpg_keys/#get-a-single-gpg-key
+   * @see https://developer.github.com/v3/users/gpg_keys/#get-a-gpg-key-for-the-authenticated-user
    */
   "GET /user/gpg_keys/:gpg_key_id": {
-    parameters: UsersGetGpgKeyEndpoint;
-    request: UsersGetGpgKeyRequestOptions;
-    response: OctokitResponse<UsersGetGpgKeyResponseData>;
+    parameters: UsersGetGpgKeyForAuthenticatedEndpoint;
+    request: UsersGetGpgKeyForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersGetGpgKeyForAuthenticatedResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/apps/installations/#list-app-installations-accessible-to-the-user-access-token
@@ -3194,20 +3178,22 @@ export interface Endpoints {
     response: OctokitResponse<IssuesListForAuthenticatedUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/keys/#list-your-public-keys
+   * @see https://developer.github.com/v3/users/keys/#list-public-ssh-keys-for-the-authenticated-user
    */
   "GET /user/keys": {
-    parameters: UsersListPublicKeysEndpoint;
-    request: UsersListPublicKeysRequestOptions;
-    response: OctokitResponse<UsersListPublicKeysResponseData>;
+    parameters: UsersListPublicSshKeysForAuthenticatedEndpoint;
+    request: UsersListPublicSshKeysForAuthenticatedRequestOptions;
+    response: OctokitResponse<
+      UsersListPublicSshKeysForAuthenticatedResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/users/keys/#get-a-single-public-key
+   * @see https://developer.github.com/v3/users/keys/#get-a-public-ssh-key-for-the-authenticated-user
    */
   "GET /user/keys/:key_id": {
-    parameters: UsersGetPublicKeyEndpoint;
-    request: UsersGetPublicKeyRequestOptions;
-    response: OctokitResponse<UsersGetPublicKeyResponseData>;
+    parameters: UsersGetPublicSshKeyForAuthenticatedEndpoint;
+    request: UsersGetPublicSshKeyForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersGetPublicSshKeyForAuthenticatedResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/apps/marketplace/#list-subscriptions-for-the-authenticated-user
@@ -3230,15 +3216,17 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#list-your-organization-memberships
+   * @see https://developer.github.com/v3/orgs/members/#list-organization-memberships-for-the-authenticated-user
    */
   "GET /user/memberships/orgs": {
-    parameters: OrgsListMembershipsEndpoint;
-    request: OrgsListMembershipsRequestOptions;
-    response: OctokitResponse<OrgsListMembershipsResponseData>;
+    parameters: OrgsListMembershipsForAuthenticatedUserEndpoint;
+    request: OrgsListMembershipsForAuthenticatedUserRequestOptions;
+    response: OctokitResponse<
+      OrgsListMembershipsForAuthenticatedUserResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#get-your-organization-membership
+   * @see https://developer.github.com/v3/orgs/members/#get-an-organization-membership-for-the-authenticated-user
    */
   "GET /user/memberships/orgs/:org": {
     parameters: OrgsGetMembershipForAuthenticatedUserEndpoint;
@@ -3274,7 +3262,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#list-your-organizations
+   * @see https://developer.github.com/v3/orgs/#list-organizations-for-the-authenticated-user
    */
   "GET /user/orgs": {
     parameters: OrgsListForAuthenticatedUserEndpoint;
@@ -3282,12 +3270,14 @@ export interface Endpoints {
     response: OctokitResponse<OrgsListForAuthenticatedUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-a-user
+   * @see https://developer.github.com/v3/users/emails/#list-public-email-addresses-for-the-authenticated-user
    */
   "GET /user/public_emails": {
-    parameters: UsersListPublicEmailsEndpoint;
-    request: UsersListPublicEmailsRequestOptions;
-    response: OctokitResponse<UsersListPublicEmailsResponseData>;
+    parameters: UsersListPublicEmailsForAuthenticatedEndpoint;
+    request: UsersListPublicEmailsForAuthenticatedRequestOptions;
+    response: OctokitResponse<
+      UsersListPublicEmailsForAuthenticatedResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/repos/#list-repositories-for-the-authenticated-user
@@ -3298,7 +3288,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/invitations/#list-a-users-repository-invitations
+   * @see https://developer.github.com/v3/repos/invitations/#list-repository-invitations-for-the-authenticated-user
    */
   "GET /user/repository_invitations": {
     parameters: ReposListInvitationsForAuthenticatedUserEndpoint;
@@ -3345,7 +3335,7 @@ export interface Endpoints {
     response: OctokitResponse<TeamsListForAuthenticatedUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/#get-all-users
+   * @see https://developer.github.com/v3/users/#list-users
    */
   "GET /users": {
     parameters: UsersListEndpoint;
@@ -3353,7 +3343,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersListResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/#get-a-single-user
+   * @see https://developer.github.com/v3/users/#get-a-user
    */
   "GET /users/:username": {
     parameters: UsersGetByUsernameEndpoint;
@@ -3393,7 +3383,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersListFollowersForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user
+   * @see https://developer.github.com/v3/users/followers/#list-the-people-a-user-follows
    */
   "GET /users/:username/following": {
     parameters: UsersListFollowingForUserEndpoint;
@@ -3401,7 +3391,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersListFollowingForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/followers/#check-if-one-user-follows-another
+   * @see https://developer.github.com/v3/users/followers/#check-if-a-user-follows-another-user
    */
   "GET /users/:username/following/:target_user": {
     parameters: UsersCheckFollowingForUserEndpoint;
@@ -3425,7 +3415,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersListGpgKeysForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/#get-contextual-information-about-a-user
+   * @see https://developer.github.com/v3/users/#get-contextual-information-for-a-user
    */
   "GET /users/:username/hovercard": {
     parameters: UsersGetContextForUserEndpoint;
@@ -3449,7 +3439,7 @@ export interface Endpoints {
     response: OctokitResponse<UsersListPublicKeysForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#list-user-organizations
+   * @see https://developer.github.com/v3/orgs/#list-organizations-for-a-user
    */
   "GET /users/:username/orgs": {
     parameters: OrgsListForUserEndpoint;
@@ -3550,7 +3540,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/#edit-an-organization
+   * @see https://developer.github.com/v3/orgs/#update-an-organization
    */
   "PATCH /orgs/:org": {
     parameters: OrgsUpdateEndpoint;
@@ -3558,12 +3548,12 @@ export interface Endpoints {
     response: OctokitResponse<OrgsUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#edit-a-hook
+   * @see https://developer.github.com/v3/orgs/hooks/#update-an-organization-webhook
    */
   "PATCH /orgs/:org/hooks/:hook_id": {
-    parameters: OrgsUpdateHookEndpoint;
-    request: OrgsUpdateHookRequestOptions;
-    response: OctokitResponse<OrgsUpdateHookResponseData>;
+    parameters: OrgsUpdateWebhookEndpoint;
+    request: OrgsUpdateWebhookRequestOptions;
+    response: OctokitResponse<OrgsUpdateWebhookResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/#update-a-team
@@ -3632,24 +3622,22 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#update-pull-request-review-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#update-pull-request-review-protection
    */
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews": {
-    parameters: ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint;
-    request: ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions;
+    parameters: ReposUpdatePullRequestReviewProtectionEndpoint;
+    request: ReposUpdatePullRequestReviewProtectionRequestOptions;
     response: OctokitResponse<
-      ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData
+      ReposUpdatePullRequestReviewProtectionResponseData
     >;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#update-required-status-checks-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#update-status-check-potection
    */
   "PATCH /repos/:owner/:repo/branches/:branch/protection/required_status_checks": {
-    parameters: ReposUpdateProtectedBranchRequiredStatusChecksEndpoint;
-    request: ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions;
-    response: OctokitResponse<
-      ReposUpdateProtectedBranchRequiredStatusChecksResponseData
-    >;
+    parameters: ReposUpdateStatusCheckPotectionEndpoint;
+    request: ReposUpdateStatusCheckPotectionRequestOptions;
+    response: OctokitResponse<ReposUpdateStatusCheckPotectionResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/checks/runs/#update-a-check-run
@@ -3684,12 +3672,12 @@ export interface Endpoints {
     response: OctokitResponse<GitUpdateRefResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#edit-a-hook
+   * @see https://developer.github.com/v3/repos/hooks/#update-a-repository-webhook
    */
   "PATCH /repos/:owner/:repo/hooks/:hook_id": {
-    parameters: ReposUpdateHookEndpoint;
-    request: ReposUpdateHookRequestOptions;
-    response: OctokitResponse<ReposUpdateHookResponseData>;
+    parameters: ReposUpdateWebhookEndpoint;
+    request: ReposUpdateWebhookRequestOptions;
+    response: OctokitResponse<ReposUpdateWebhookResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/migrations/source_imports/#update-an-import
@@ -3764,15 +3752,15 @@ export interface Endpoints {
     response: OctokitResponse<PullsUpdateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#edit-a-comment
+   * @see https://developer.github.com/v3/pulls/comments/#update-a-review-comment-for-a-pull-request
    */
   "PATCH /repos/:owner/:repo/pulls/comments/:comment_id": {
-    parameters: PullsUpdateCommentEndpoint;
-    request: PullsUpdateCommentRequestOptions;
-    response: OctokitResponse<PullsUpdateCommentResponseData>;
+    parameters: PullsUpdateReviewCommentEndpoint;
+    request: PullsUpdateReviewCommentRequestOptions;
+    response: OctokitResponse<PullsUpdateReviewCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#edit-a-release
+   * @see https://developer.github.com/v3/repos/releases/#update-a-release
    */
   "PATCH /repos/:owner/:repo/releases/:release_id": {
     parameters: ReposUpdateReleaseEndpoint;
@@ -3780,7 +3768,7 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateReleaseResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/releases/#edit-a-release-asset
+   * @see https://developer.github.com/v3/repos/releases/#update-a-release-asset
    */
   "PATCH /repos/:owner/:repo/releases/assets/:asset_id": {
     parameters: ReposUpdateReleaseAssetEndpoint;
@@ -3788,12 +3776,12 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateReleaseAssetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#update-a-user-attribute
+   * @see https://developer.github.com/v3/scim/#update-an-attribute-for-a-scim-user
    */
   "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimUpdateUserAttributeEndpoint;
-    request: ScimUpdateUserAttributeRequestOptions;
-    response: OctokitResponse<ScimUpdateUserAttributeResponseData>;
+    parameters: ScimUpdateAttributeForUserEndpoint;
+    request: ScimUpdateAttributeForUserRequestOptions;
+    response: OctokitResponse<ScimUpdateAttributeForUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/#update-a-team-legacy
@@ -3838,20 +3826,24 @@ export interface Endpoints {
     response: OctokitResponse<UsersUpdateAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/emails/#toggle-primary-email-visibility
+   * @see https://developer.github.com/v3/users/emails/#set-primary-email-visibility-for-the-authenticated-user
    */
   "PATCH /user/email/visibility": {
-    parameters: UsersTogglePrimaryEmailVisibilityEndpoint;
-    request: UsersTogglePrimaryEmailVisibilityRequestOptions;
-    response: OctokitResponse<UsersTogglePrimaryEmailVisibilityResponseData>;
+    parameters: UsersSetPrimaryEmailVisibilityForAuthenticatedEndpoint;
+    request: UsersSetPrimaryEmailVisibilityForAuthenticatedRequestOptions;
+    response: OctokitResponse<
+      UsersSetPrimaryEmailVisibilityForAuthenticatedResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#edit-your-organization-membership
+   * @see https://developer.github.com/v3/orgs/members/#update-an-organization-membership-for-the-authenticated-user
    */
   "PATCH /user/memberships/orgs/:org": {
-    parameters: OrgsUpdateMembershipEndpoint;
-    request: OrgsUpdateMembershipRequestOptions;
-    response: OctokitResponse<OrgsUpdateMembershipResponseData>;
+    parameters: OrgsUpdateMembershipForAuthenticatedUserEndpoint;
+    request: OrgsUpdateMembershipForAuthenticatedUserRequestOptions;
+    response: OctokitResponse<
+      OrgsUpdateMembershipForAuthenticatedUserResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/repos/invitations/#accept-a-repository-invitation
@@ -3968,23 +3960,23 @@ export interface Endpoints {
     response: OctokitResponse<ActionsCreateRemoveTokenForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#create-a-hook
+   * @see https://developer.github.com/v3/orgs/hooks/#create-an-organization-webhook
    */
   "POST /orgs/:org/hooks": {
-    parameters: OrgsCreateHookEndpoint;
-    request: OrgsCreateHookRequestOptions;
-    response: OctokitResponse<OrgsCreateHookResponseData>;
+    parameters: OrgsCreateWebhookEndpoint;
+    request: OrgsCreateWebhookRequestOptions;
+    response: OctokitResponse<OrgsCreateWebhookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/hooks/#ping-a-hook
+   * @see https://developer.github.com/v3/orgs/hooks/#ping-an-organization-webhook
    */
   "POST /orgs/:org/hooks/:hook_id/pings": {
-    parameters: OrgsPingHookEndpoint;
-    request: OrgsPingHookRequestOptions;
+    parameters: OrgsPingWebhookEndpoint;
+    request: OrgsPingWebhookRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#create-organization-invitation
+   * @see https://developer.github.com/v3/orgs/members/#create-an-organization-invitation
    */
   "POST /orgs/:org/invitations": {
     parameters: OrgsCreateInvitationEndpoint;
@@ -4126,64 +4118,52 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-admin-enforcement-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#set-admin-branch-protection
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/enforce_admins": {
-    parameters: ReposAddProtectedBranchAdminEnforcementEndpoint;
-    request: ReposAddProtectedBranchAdminEnforcementRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchAdminEnforcementResponseData
-    >;
+    parameters: ReposSetAdminBranchProtectionEndpoint;
+    request: ReposSetAdminBranchProtectionRequestOptions;
+    response: OctokitResponse<ReposSetAdminBranchProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-required-signatures-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#create-commit-signature-protection
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/required_signatures": {
-    parameters: ReposAddProtectedBranchRequiredSignaturesEndpoint;
-    request: ReposAddProtectedBranchRequiredSignaturesRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchRequiredSignaturesResponseData
-    >;
+    parameters: ReposCreateCommitSignatureProtectionEndpoint;
+    request: ReposCreateCommitSignatureProtectionRequestOptions;
+    response: OctokitResponse<ReposCreateCommitSignatureProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-required-status-checks-contexts-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#add-status-check-contexts
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
+    parameters: ReposAddStatusCheckContextsEndpoint;
+    request: ReposAddStatusCheckContextsRequestOptions;
+    response: OctokitResponse<ReposAddStatusCheckContextsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-app-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#add-app-access-restrictions
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposAddProtectedBranchAppRestrictionsEndpoint;
-    request: ReposAddProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchAppRestrictionsResponseData
-    >;
+    parameters: ReposAddAppAccessRestrictionsEndpoint;
+    request: ReposAddAppAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposAddAppAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-team-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#add-team-access-restrictions
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposAddProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposAddProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchTeamRestrictionsResponseData
-    >;
+    parameters: ReposAddTeamAccessRestrictionsEndpoint;
+    request: ReposAddTeamAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposAddTeamAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#add-user-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#add-user-access-restrictions
    */
   "POST /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposAddProtectedBranchUserRestrictionsEndpoint;
-    request: ReposAddProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposAddProtectedBranchUserRestrictionsResponseData
-    >;
+    parameters: ReposAddUserAccessRestrictionsEndpoint;
+    request: ReposAddUserAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposAddUserAccessRestrictionsResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/checks/runs/#create-a-check-run
@@ -4302,27 +4282,27 @@ export interface Endpoints {
     response: OctokitResponse<GitCreateTreeResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#create-a-hook
+   * @see https://developer.github.com/v3/repos/hooks/#create-a-repository-webhook
    */
   "POST /repos/:owner/:repo/hooks": {
-    parameters: ReposCreateHookEndpoint;
-    request: ReposCreateHookRequestOptions;
-    response: OctokitResponse<ReposCreateHookResponseData>;
+    parameters: ReposCreateWebhookEndpoint;
+    request: ReposCreateWebhookRequestOptions;
+    response: OctokitResponse<ReposCreateWebhookResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#ping-a-hook
+   * @see https://developer.github.com/v3/repos/hooks/#ping-a-repository-webhook
    */
   "POST /repos/:owner/:repo/hooks/:hook_id/pings": {
-    parameters: ReposPingHookEndpoint;
-    request: ReposPingHookRequestOptions;
+    parameters: ReposPingWebhookEndpoint;
+    request: ReposPingWebhookRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/hooks/#test-a-push-hook
+   * @see https://developer.github.com/v3/repos/hooks/#test-the-push-repository-webhook
    */
   "POST /repos/:owner/:repo/hooks/:hook_id/tests": {
-    parameters: ReposTestPushHookEndpoint;
-    request: ReposTestPushHookRequestOptions;
+    parameters: ReposTestPushWebhookEndpoint;
+    request: ReposTestPushWebhookRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -4374,12 +4354,12 @@ export interface Endpoints {
     response: OctokitResponse<ReactionsCreateForIssueCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key
+   * @see https://developer.github.com/v3/repos/keys/#create-a-deploy-key
    */
   "POST /repos/:owner/:repo/keys": {
-    parameters: ReposAddDeployKeyEndpoint;
-    request: ReposAddDeployKeyRequestOptions;
-    response: OctokitResponse<ReposAddDeployKeyResponseData>;
+    parameters: ReposCreateDeployKeyEndpoint;
+    request: ReposCreateDeployKeyRequestOptions;
+    response: OctokitResponse<ReposCreateDeployKeyResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/issues/labels/#create-a-label
@@ -4390,7 +4370,7 @@ export interface Endpoints {
     response: OctokitResponse<IssuesCreateLabelResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/merging/#perform-a-merge
+   * @see https://developer.github.com/v3/repos/merging/#merge-a-branch
    */
   "POST /repos/:owner/:repo/merges": {
     parameters: ReposMergeEndpoint;
@@ -4410,20 +4390,20 @@ export interface Endpoints {
     response: OctokitResponse<IssuesCreateMilestoneResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#enable-a-pages-site
+   * @see https://developer.github.com/v3/repos/pages/#create-a-github-pages-site
    */
   "POST /repos/:owner/:repo/pages": {
-    parameters: ReposEnablePagesSiteEndpoint;
-    request: ReposEnablePagesSiteRequestOptions;
-    response: OctokitResponse<ReposEnablePagesSiteResponseData>;
+    parameters: ReposCreatePagesSiteEndpoint;
+    request: ReposCreatePagesSiteRequestOptions;
+    response: OctokitResponse<ReposCreatePagesSiteResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#request-a-page-build
+   * @see https://developer.github.com/v3/repos/pages/#request-a-github-pages-build
    */
   "POST /repos/:owner/:repo/pages/builds": {
-    parameters: ReposRequestPageBuildEndpoint;
-    request: ReposRequestPageBuildRequestOptions;
-    response: OctokitResponse<ReposRequestPageBuildResponseData>;
+    parameters: ReposRequestPagesBuildEndpoint;
+    request: ReposRequestPagesBuildRequestOptions;
+    response: OctokitResponse<ReposRequestPagesBuildResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/projects/#create-a-repository-project
@@ -4442,31 +4422,31 @@ export interface Endpoints {
     response: OctokitResponse<PullsCreateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#create-a-comment
+   * @see https://developer.github.com/v3/pulls/comments/#create-a-review-comment-for-a-pull-request
    */
   "POST /repos/:owner/:repo/pulls/:pull_number/comments": {
-    parameters: PullsCreateCommentEndpoint;
-    request: PullsCreateCommentRequestOptions;
-    response: OctokitResponse<PullsCreateCommentResponseData>;
+    parameters: PullsCreateReviewCommentEndpoint;
+    request: PullsCreateReviewCommentRequestOptions;
+    response: OctokitResponse<PullsCreateReviewCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/comments/#create-a-review-comment-reply
+   * @see https://developer.github.com/v3/pulls/comments/#create-a-reply-for-a-review-comment
    */
   "POST /repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies": {
-    parameters: PullsCreateReviewCommentReplyEndpoint;
-    request: PullsCreateReviewCommentReplyRequestOptions;
-    response: OctokitResponse<PullsCreateReviewCommentReplyResponseData>;
+    parameters: PullsCreateReplyForReviewCommentEndpoint;
+    request: PullsCreateReplyForReviewCommentRequestOptions;
+    response: OctokitResponse<PullsCreateReplyForReviewCommentResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/review_requests/#create-a-review-request
+   * @see https://developer.github.com/v3/pulls/review_requests/#request-reviewers-for-a-pull-request
    */
   "POST /repos/:owner/:repo/pulls/:pull_number/requested_reviewers": {
-    parameters: PullsCreateReviewRequestEndpoint;
-    request: PullsCreateReviewRequestRequestOptions;
-    response: OctokitResponse<PullsCreateReviewRequestResponseData>;
+    parameters: PullsRequestReviewersEndpoint;
+    request: PullsRequestReviewersRequestOptions;
+    response: OctokitResponse<PullsRequestReviewersResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#create-a-pull-request-review
+   * @see https://developer.github.com/v3/pulls/reviews/#create-a-review-for-a-pull-request
    */
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews": {
     parameters: PullsCreateReviewEndpoint;
@@ -4474,7 +4454,7 @@ export interface Endpoints {
     response: OctokitResponse<PullsCreateReviewResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review
+   * @see https://developer.github.com/v3/pulls/reviews/#submit-a-review-for-a-pull-request
    */
   "POST /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/events": {
     parameters: PullsSubmitReviewEndpoint;
@@ -4508,12 +4488,12 @@ export interface Endpoints {
     response: OctokitResponse<ReposUploadReleaseAssetResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/statuses/#create-a-status
+   * @see https://developer.github.com/v3/repos/statuses/#create-a-commit-status
    */
   "POST /repos/:owner/:repo/statuses/:sha": {
-    parameters: ReposCreateStatusEndpoint;
-    request: ReposCreateStatusRequestOptions;
-    response: OctokitResponse<ReposCreateStatusResponseData>;
+    parameters: ReposCreateCommitStatusEndpoint;
+    request: ReposCreateCommitStatusRequestOptions;
+    response: OctokitResponse<ReposCreateCommitStatusResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/repos/#transfer-a-repository
@@ -4532,12 +4512,12 @@ export interface Endpoints {
     response: OctokitResponse<ReposCreateUsingTemplateResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#provision-and-invite-users
+   * @see https://developer.github.com/v3/scim/#provision-and-invite-a-scim-user
    */
   "POST /scim/v2/organizations/:org/Users": {
-    parameters: ScimProvisionAndInviteUsersEndpoint;
-    request: ScimProvisionAndInviteUsersRequestOptions;
-    response: OctokitResponse<ScimProvisionAndInviteUsersResponseData>;
+    parameters: ScimProvisionAndInviteUserEndpoint;
+    request: ScimProvisionAndInviteUserRequestOptions;
+    response: OctokitResponse<ScimProvisionAndInviteUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/discussions/#create-a-discussion-legacy
@@ -4576,28 +4556,30 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/users/emails/#add-email-addresses
+   * @see https://developer.github.com/v3/users/emails/#add-an-email-address-for-the-authenticated-user
    */
   "POST /user/emails": {
-    parameters: UsersAddEmailsEndpoint;
-    request: UsersAddEmailsRequestOptions;
-    response: OctokitResponse<UsersAddEmailsResponseData>;
+    parameters: UsersAddEmailForAuthenticatedEndpoint;
+    request: UsersAddEmailForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersAddEmailForAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key
+   * @see https://developer.github.com/v3/users/gpg_keys/#create-a-gpg-key-for-the-authenticated-user
    */
   "POST /user/gpg_keys": {
-    parameters: UsersCreateGpgKeyEndpoint;
-    request: UsersCreateGpgKeyRequestOptions;
-    response: OctokitResponse<UsersCreateGpgKeyResponseData>;
+    parameters: UsersCreateGpgKeyForAuthenticatedEndpoint;
+    request: UsersCreateGpgKeyForAuthenticatedRequestOptions;
+    response: OctokitResponse<UsersCreateGpgKeyForAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/users/keys/#create-a-public-key
+   * @see https://developer.github.com/v3/users/keys/#create-a-public-ssh-key-for-the-authenticated-user
    */
   "POST /user/keys": {
-    parameters: UsersCreatePublicKeyEndpoint;
-    request: UsersCreatePublicKeyRequestOptions;
-    response: OctokitResponse<UsersCreatePublicKeyResponseData>;
+    parameters: UsersCreatePublicSshKeyForAuthenticatedEndpoint;
+    request: UsersCreatePublicSshKeyForAuthenticatedRequestOptions;
+    response: OctokitResponse<
+      UsersCreatePublicSshKeyForAuthenticatedResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/migrations/users/#start-a-user-migration
@@ -4702,7 +4684,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/blocking/#block-a-user
+   * @see https://developer.github.com/v3/orgs/blocking/#block-a-user-from-an-organization
    */
   "PUT /orgs/:org/blocks/:username": {
     parameters: OrgsBlockUserEndpoint;
@@ -4718,15 +4700,15 @@ export interface Endpoints {
     response: OctokitResponse<InteractionsSetRestrictionsForOrgResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#add-or-update-organization-membership
+   * @see https://developer.github.com/v3/orgs/members/#set-organization-membership-for-a-user
    */
   "PUT /orgs/:org/memberships/:username": {
-    parameters: OrgsAddOrUpdateMembershipEndpoint;
-    request: OrgsAddOrUpdateMembershipRequestOptions;
-    response: OctokitResponse<OrgsAddOrUpdateMembershipResponseData>;
+    parameters: OrgsSetMembershipForUserEndpoint;
+    request: OrgsSetMembershipForUserRequestOptions;
+    response: OctokitResponse<OrgsSetMembershipForUserResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/outside_collaborators/#convert-member-to-outside-collaborator
+   * @see https://developer.github.com/v3/orgs/outside_collaborators/#convert-an-organization-member-to-outside-collaborator
    */
   "PUT /orgs/:org/outside_collaborators/:username": {
     parameters: OrgsConvertMemberToOutsideCollaboratorEndpoint;
@@ -4736,11 +4718,11 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/orgs/members/#publicize-a-users-membership
+   * @see https://developer.github.com/v3/orgs/members/#set-public-organization-membership-for-the-authenticated-user
    */
   "PUT /orgs/:org/public_members/:username": {
-    parameters: OrgsPublicizeMembershipEndpoint;
-    request: OrgsPublicizeMembershipRequestOptions;
+    parameters: OrgsSetPublicMembershipForAuthenticatedUserEndpoint;
+    request: OrgsSetPublicMembershipForAuthenticatedUserRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -4773,7 +4755,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator
+   * @see https://developer.github.com/v3/projects/collaborators/#add-project-collaborator
    */
   "PUT /projects/:project_id/collaborators/:username": {
     parameters: ProjectsAddCollaboratorEndpoint;
@@ -4805,47 +4787,39 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateBranchProtectionResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#replace-required-status-checks-contexts-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#set-status-check-contexts
    */
   "PUT /repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts": {
-    parameters: ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint;
-    request: ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData
-    >;
+    parameters: ReposSetStatusCheckContextsEndpoint;
+    request: ReposSetStatusCheckContextsRequestOptions;
+    response: OctokitResponse<ReposSetStatusCheckContextsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#replace-app-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#set-app-access-restrictions
    */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/apps": {
-    parameters: ReposReplaceProtectedBranchAppRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchAppRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchAppRestrictionsResponseData
-    >;
+    parameters: ReposSetAppAccessRestrictionsEndpoint;
+    request: ReposSetAppAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposSetAppAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#replace-team-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#set-team-access-restrictions
    */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/teams": {
-    parameters: ReposReplaceProtectedBranchTeamRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchTeamRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchTeamRestrictionsResponseData
-    >;
+    parameters: ReposSetTeamAccessRestrictionsEndpoint;
+    request: ReposSetTeamAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposSetTeamAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/branches/#replace-user-restrictions-of-protected-branch
+   * @see https://developer.github.com/v3/repos/branches/#set-user-access-restrictions
    */
   "PUT /repos/:owner/:repo/branches/:branch/protection/restrictions/users": {
-    parameters: ReposReplaceProtectedBranchUserRestrictionsEndpoint;
-    request: ReposReplaceProtectedBranchUserRestrictionsRequestOptions;
-    response: OctokitResponse<
-      ReposReplaceProtectedBranchUserRestrictionsResponseData
-    >;
+    parameters: ReposSetUserAccessRestrictionsEndpoint;
+    request: ReposSetUserAccessRestrictionsRequestOptions;
+    response: OctokitResponse<ReposSetUserAccessRestrictionsResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator
+   * @see https://developer.github.com/v3/repos/collaborators/#add-a-repository-collaborator
    */
   "PUT /repos/:owner/:repo/collaborators/:username": {
     parameters: ReposAddCollaboratorEndpoint;
@@ -4853,14 +4827,14 @@ export interface Endpoints {
     response: OctokitResponse<ReposAddCollaboratorResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/contents/#create-or-update-a-file
+   * @see https://developer.github.com/v3/repos/contents/#create-or-update-file-contents
    */
   "PUT /repos/:owner/:repo/contents/:path": {
-    parameters: ReposCreateOrUpdateFileEndpoint;
-    request: ReposCreateOrUpdateFileRequestOptions;
+    parameters: ReposCreateOrUpdateFileContentsEndpoint;
+    request: ReposCreateOrUpdateFileContentsRequestOptions;
     response: OctokitResponse<
-      | ReposCreateOrUpdateFileResponseData
-      | ReposCreateOrUpdateFileResponse201Data
+      | ReposCreateOrUpdateFileContentsResponseData
+      | ReposCreateOrUpdateFileContentsResponse201Data
     >;
   };
   /**
@@ -4904,7 +4878,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/pages/#update-information-about-a-pages-site
+   * @see https://developer.github.com/v3/repos/pages/#update-information-about-a-github-pages-site
    */
   "PUT /repos/:owner/:repo/pages": {
     parameters: ReposUpdateInformationAboutPagesSiteEndpoint;
@@ -4912,7 +4886,7 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/#merge-a-pull-request-merge-button
+   * @see https://developer.github.com/v3/pulls/#merge-a-pull-request
    */
   "PUT /repos/:owner/:repo/pulls/:pull_number/merge": {
     parameters: PullsMergeEndpoint;
@@ -4924,7 +4898,7 @@ export interface Endpoints {
     >;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#update-a-pull-request-review
+   * @see https://developer.github.com/v3/pulls/reviews/#update-a-review-for-a-pull-request
    */
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id": {
     parameters: PullsUpdateReviewEndpoint;
@@ -4932,7 +4906,7 @@ export interface Endpoints {
     response: OctokitResponse<PullsUpdateReviewResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/pulls/reviews/#dismiss-a-pull-request-review
+   * @see https://developer.github.com/v3/pulls/reviews/#dismiss-a-review-for-a-pull-request
    */
   "PUT /repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/dismissals": {
     parameters: PullsDismissReviewEndpoint;
@@ -4972,14 +4946,12 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/scim/#replace-a-provisioned-users-information
+   * @see https://developer.github.com/v3/scim/#set-scim-information-for-a-provisioned-user
    */
   "PUT /scim/v2/organizations/:org/Users/:scim_user_id": {
-    parameters: ScimReplaceProvisionedUserInformationEndpoint;
-    request: ScimReplaceProvisionedUserInformationRequestOptions;
-    response: OctokitResponse<
-      ScimReplaceProvisionedUserInformationResponseData
-    >;
+    parameters: ScimSetInformationForProvisionedUserEndpoint;
+    request: ScimSetInformationForProvisionedUserRequestOptions;
+    response: OctokitResponse<ScimSetInformationForProvisionedUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/teams/members/#add-team-member-legacy
@@ -9144,17 +9116,17 @@ type OrgsUnblockUserRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type OrgsListCredentialAuthorizationsEndpoint = {
+type OrgsListSamlSsoAuthorizationsEndpoint = {
   org: string;
 };
 
-type OrgsListCredentialAuthorizationsRequestOptions = {
+type OrgsListSamlSsoAuthorizationsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/credential-authorizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type OrgsListCredentialAuthorizationsResponseData = {
+export type OrgsListSamlSsoAuthorizationsResponseData = {
   login: string;
   credential_id: string;
   credential_type: string;
@@ -9163,13 +9135,13 @@ export type OrgsListCredentialAuthorizationsResponseData = {
   scopes: string[];
 }[];
 
-type OrgsRemoveCredentialAuthorizationEndpoint = {
+type OrgsRemoveSamlSsoAuthorizationEndpoint = {
   org: string;
 
   credential_id: number;
 };
 
-type OrgsRemoveCredentialAuthorizationRequestOptions = {
+type OrgsRemoveSamlSsoAuthorizationRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/credential-authorizations/:credential_id";
   headers: RequestHeaders;
@@ -9195,7 +9167,7 @@ type ActivityListPublicOrgEventsRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type OrgsListHooksEndpoint = {
+type OrgsListWebhooksEndpoint = {
   org: string;
   /**
    * Results per page (max 100)
@@ -9207,13 +9179,13 @@ type OrgsListHooksEndpoint = {
   page?: number;
 };
 
-type OrgsListHooksRequestOptions = {
+type OrgsListWebhooksRequestOptions = {
   method: "GET";
   url: "/orgs/:org/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type OrgsListHooksResponseData = {
+export type OrgsListWebhooksResponseData = {
   id: number;
   url: string;
   ping_url: string;
@@ -9228,7 +9200,7 @@ export type OrgsListHooksResponseData = {
   created_at: string;
 }[];
 
-type OrgsCreateHookEndpoint = {
+type OrgsCreateWebhookEndpoint = {
   org: string;
   /**
    * Must be passed as "web".
@@ -9237,7 +9209,7 @@ type OrgsCreateHookEndpoint = {
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/orgs/hooks/#create-hook-config-params).
    */
-  config: OrgsCreateHookParamsConfig;
+  config: OrgsCreateWebhookParamsConfig;
   /**
    * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
@@ -9248,13 +9220,13 @@ type OrgsCreateHookEndpoint = {
   active?: boolean;
 };
 
-type OrgsCreateHookRequestOptions = {
+type OrgsCreateWebhookRequestOptions = {
   method: "POST";
   url: "/orgs/:org/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsCreateHookResponseData {
+export interface OrgsCreateWebhookResponseData {
   id: number;
   url: string;
   ping_url: string;
@@ -9269,19 +9241,19 @@ export interface OrgsCreateHookResponseData {
   created_at: string;
 }
 
-type OrgsGetHookEndpoint = {
+type OrgsGetWebhookEndpoint = {
   org: string;
 
   hook_id: number;
 };
 
-type OrgsGetHookRequestOptions = {
+type OrgsGetWebhookRequestOptions = {
   method: "GET";
   url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsGetHookResponseData {
+export interface OrgsGetWebhookResponseData {
   id: number;
   url: string;
   ping_url: string;
@@ -9296,14 +9268,14 @@ export interface OrgsGetHookResponseData {
   created_at: string;
 }
 
-type OrgsUpdateHookEndpoint = {
+type OrgsUpdateWebhookEndpoint = {
   org: string;
 
   hook_id: number;
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/orgs/hooks/#update-hook-config-params).
    */
-  config?: OrgsUpdateHookParamsConfig;
+  config?: OrgsUpdateWebhookParamsConfig;
   /**
    * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
@@ -9314,13 +9286,13 @@ type OrgsUpdateHookEndpoint = {
   active?: boolean;
 };
 
-type OrgsUpdateHookRequestOptions = {
+type OrgsUpdateWebhookRequestOptions = {
   method: "PATCH";
   url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsUpdateHookResponseData {
+export interface OrgsUpdateWebhookResponseData {
   id: number;
   url: string;
   ping_url: string;
@@ -9335,26 +9307,26 @@ export interface OrgsUpdateHookResponseData {
   created_at: string;
 }
 
-type OrgsDeleteHookEndpoint = {
+type OrgsDeleteWebhookEndpoint = {
   org: string;
 
   hook_id: number;
 };
 
-type OrgsDeleteHookRequestOptions = {
+type OrgsDeleteWebhookRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type OrgsPingHookEndpoint = {
+type OrgsPingWebhookEndpoint = {
   org: string;
 
   hook_id: number;
 };
 
-type OrgsPingHookRequestOptions = {
+type OrgsPingWebhookRequestOptions = {
   method: "POST";
   url: "/orgs/:org/hooks/:hook_id/pings";
   headers: RequestHeaders;
@@ -9411,7 +9383,7 @@ export interface AppsGetOrgInstallationResponseData {
   single_file_name: string;
 }
 
-type OrgsListInstallationsEndpoint = {
+type OrgsListAppInstallationsEndpoint = {
   org: string;
   /**
    * Results per page (max 100)
@@ -9423,13 +9395,13 @@ type OrgsListInstallationsEndpoint = {
   page?: number;
 } & RequiredPreview<"machine-man">;
 
-type OrgsListInstallationsRequestOptions = {
+type OrgsListAppInstallationsRequestOptions = {
   method: "GET";
   url: "/orgs/:org/installations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsListInstallationsResponseData {
+export interface OrgsListAppInstallationsResponseData {
   total_count: number;
   installations: {
     id: number;
@@ -9999,13 +9971,13 @@ export type OrgsListMembersResponseData = {
   site_admin: boolean;
 }[];
 
-type OrgsCheckMembershipEndpoint = {
+type OrgsCheckMembershipForUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsCheckMembershipRequestOptions = {
+type OrgsCheckMembershipForUserRequestOptions = {
   method: "GET";
   url: "/orgs/:org/members/:username";
   headers: RequestHeaders;
@@ -10025,19 +9997,19 @@ type OrgsRemoveMemberRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type OrgsGetMembershipEndpoint = {
+type OrgsGetMembershipForUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsGetMembershipRequestOptions = {
+type OrgsGetMembershipForUserRequestOptions = {
   method: "GET";
   url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsGetMembershipResponseData {
+export interface OrgsGetMembershipForUserResponseData {
   url: string;
   state: string;
   role: string;
@@ -10078,7 +10050,7 @@ export interface OrgsGetMembershipResponseData {
   };
 }
 
-type OrgsAddOrUpdateMembershipEndpoint = {
+type OrgsSetMembershipForUserEndpoint = {
   org: string;
 
   username: string;
@@ -10090,13 +10062,13 @@ type OrgsAddOrUpdateMembershipEndpoint = {
   role?: "admin" | "member";
 };
 
-type OrgsAddOrUpdateMembershipRequestOptions = {
+type OrgsSetMembershipForUserRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsAddOrUpdateMembershipResponseData {
+export interface OrgsSetMembershipForUserResponseData {
   url: string;
   state: string;
   role: string;
@@ -10137,13 +10109,13 @@ export interface OrgsAddOrUpdateMembershipResponseData {
   };
 }
 
-type OrgsRemoveMembershipEndpoint = {
+type OrgsRemoveMembershipForUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsRemoveMembershipRequestOptions = {
+type OrgsRemoveMembershipForUserRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/memberships/:username";
   headers: RequestHeaders;
@@ -10991,39 +10963,39 @@ export type OrgsListPublicMembersResponseData = {
   site_admin: boolean;
 }[];
 
-type OrgsCheckPublicMembershipEndpoint = {
+type OrgsCheckPublicMembershipForUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsCheckPublicMembershipRequestOptions = {
+type OrgsCheckPublicMembershipForUserRequestOptions = {
   method: "GET";
   url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type OrgsPublicizeMembershipEndpoint = {
+type OrgsSetPublicMembershipForAuthenticatedUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsPublicizeMembershipRequestOptions = {
+type OrgsSetPublicMembershipForAuthenticatedUserRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type OrgsConcealMembershipEndpoint = {
+type OrgsRemovePublicMembershipForAuthenticatedUserEndpoint = {
   org: string;
 
   username: string;
 };
 
-type OrgsConcealMembershipRequestOptions = {
+type OrgsRemovePublicMembershipForAuthenticatedUserRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/public_members/:username";
   headers: RequestHeaders;
@@ -13733,7 +13705,7 @@ type ProjectsUpdateEndpoint = {
    */
   state?: "open" | "closed";
   /**
-   * The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) or [Add user as a collaborator](https://developer.github.com/v3/projects/collaborators/#add-user-as-a-collaborator).
+   * The permission level that determines whether all members of the project's organization can see and/or make changes to the project. Setting `organization_permission` is only available for organization projects. If an organization member belongs to a team with a higher level of access or is a collaborator with a higher level of access, their permission level is not lowered by `organization_permission`. For information on changing access for a team or collaborator, see [Add or update team project permissions](https://developer.github.com/v3/teams/#add-or-update-team-project-permissions) or [Add project collaborator](https://developer.github.com/v3/projects/collaborators/#add-project-collaborator).
    *
    * **Note:** Updating a project's `organization_permission` requires `admin` access to the project.
    *
@@ -13885,19 +13857,19 @@ type ProjectsRemoveCollaboratorRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ProjectsReviewUserPermissionLevelEndpoint = {
+type ProjectsGetPermissionForUserEndpoint = {
   project_id: number;
 
   username: string;
 } & RequiredPreview<"inertia">;
 
-type ProjectsReviewUserPermissionLevelRequestOptions = {
+type ProjectsGetPermissionForUserRequestOptions = {
   method: "GET";
   url: "/projects/:project_id/collaborators/:username/permission";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ProjectsReviewUserPermissionLevelResponseData {
+export interface ProjectsGetPermissionForUserResponseData {
   permission: string;
   user: {
     login: string;
@@ -16603,7 +16575,7 @@ export interface ReposUpdateBranchProtectionResponseData {
   };
 }
 
-type ReposRemoveBranchProtectionEndpoint = {
+type ReposDeleteBranchProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16611,14 +16583,14 @@ type ReposRemoveBranchProtectionEndpoint = {
   branch: string;
 };
 
-type ReposRemoveBranchProtectionRequestOptions = {
+type ReposDeleteBranchProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposGetProtectedBranchAdminEnforcementEndpoint = {
+type ReposGetAdminBranchProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16626,18 +16598,18 @@ type ReposGetProtectedBranchAdminEnforcementEndpoint = {
   branch: string;
 };
 
-type ReposGetProtectedBranchAdminEnforcementRequestOptions = {
+type ReposGetAdminBranchProtectionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetProtectedBranchAdminEnforcementResponseData {
+export interface ReposGetAdminBranchProtectionResponseData {
   url: string;
   enabled: boolean;
 }
 
-type ReposAddProtectedBranchAdminEnforcementEndpoint = {
+type ReposSetAdminBranchProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16645,18 +16617,18 @@ type ReposAddProtectedBranchAdminEnforcementEndpoint = {
   branch: string;
 };
 
-type ReposAddProtectedBranchAdminEnforcementRequestOptions = {
+type ReposSetAdminBranchProtectionRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposAddProtectedBranchAdminEnforcementResponseData {
+export interface ReposSetAdminBranchProtectionResponseData {
   url: string;
   enabled: boolean;
 }
 
-type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
+type ReposDeleteAdminBranchProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16664,14 +16636,14 @@ type ReposRemoveProtectedBranchAdminEnforcementEndpoint = {
   branch: string;
 };
 
-type ReposRemoveProtectedBranchAdminEnforcementRequestOptions = {
+type ReposDeleteAdminBranchProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/enforce_admins";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
+type ReposGetPullRequestReviewProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16679,13 +16651,13 @@ type ReposGetProtectedBranchPullRequestReviewEnforcementEndpoint = {
   branch: string;
 };
 
-type ReposGetProtectedBranchPullRequestReviewEnforcementRequestOptions = {
+type ReposGetPullRequestReviewProtectionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetProtectedBranchPullRequestReviewEnforcementResponseData {
+export interface ReposGetPullRequestReviewProtectionResponseData {
   url: string;
   dismissal_restrictions: {
     url: string;
@@ -16731,7 +16703,7 @@ export interface ReposGetProtectedBranchPullRequestReviewEnforcementResponseData
   required_approving_review_count: number;
 }
 
-type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
+type ReposUpdatePullRequestReviewProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16740,7 +16712,7 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
   /**
    * Specify which users and teams can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
    */
-  dismissal_restrictions?: ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissalRestrictions;
+  dismissal_restrictions?: ReposUpdatePullRequestReviewProtectionParamsDismissalRestrictions;
   /**
    * Set to `true` if you want to automatically dismiss approving reviews when someone pushes a new commit.
    */
@@ -16755,13 +16727,13 @@ type ReposUpdateProtectedBranchPullRequestReviewEnforcementEndpoint = {
   required_approving_review_count?: number;
 };
 
-type ReposUpdateProtectedBranchPullRequestReviewEnforcementRequestOptions = {
+type ReposUpdatePullRequestReviewProtectionRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseData {
+export interface ReposUpdatePullRequestReviewProtectionResponseData {
   url: string;
   dismissal_restrictions: {
     url: string;
@@ -16807,7 +16779,7 @@ export interface ReposUpdateProtectedBranchPullRequestReviewEnforcementResponseD
   required_approving_review_count: number;
 }
 
-type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
+type ReposDeletePullRequestReviewProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16815,14 +16787,14 @@ type ReposRemoveProtectedBranchPullRequestReviewEnforcementEndpoint = {
   branch: string;
 };
 
-type ReposRemoveProtectedBranchPullRequestReviewEnforcementRequestOptions = {
+type ReposDeletePullRequestReviewProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_pull_request_reviews";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
+type ReposGetCommitSignatureProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16830,18 +16802,18 @@ type ReposGetProtectedBranchRequiredSignaturesEndpoint = {
   branch: string;
 } & RequiredPreview<"zzzax">;
 
-type ReposGetProtectedBranchRequiredSignaturesRequestOptions = {
+type ReposGetCommitSignatureProtectionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetProtectedBranchRequiredSignaturesResponseData {
+export interface ReposGetCommitSignatureProtectionResponseData {
   url: string;
   enabled: boolean;
 }
 
-type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
+type ReposCreateCommitSignatureProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16849,18 +16821,18 @@ type ReposAddProtectedBranchRequiredSignaturesEndpoint = {
   branch: string;
 } & RequiredPreview<"zzzax">;
 
-type ReposAddProtectedBranchRequiredSignaturesRequestOptions = {
+type ReposCreateCommitSignatureProtectionRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposAddProtectedBranchRequiredSignaturesResponseData {
+export interface ReposCreateCommitSignatureProtectionResponseData {
   url: string;
   enabled: boolean;
 }
 
-type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
+type ReposDeleteCommitSignatureProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16868,14 +16840,14 @@ type ReposRemoveProtectedBranchRequiredSignaturesEndpoint = {
   branch: string;
 } & RequiredPreview<"zzzax">;
 
-type ReposRemoveProtectedBranchRequiredSignaturesRequestOptions = {
+type ReposDeleteCommitSignatureProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_signatures";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
+type ReposGetStatusChecksProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16883,20 +16855,20 @@ type ReposGetProtectedBranchRequiredStatusChecksEndpoint = {
   branch: string;
 };
 
-type ReposGetProtectedBranchRequiredStatusChecksRequestOptions = {
+type ReposGetStatusChecksProtectionRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetProtectedBranchRequiredStatusChecksResponseData {
+export interface ReposGetStatusChecksProtectionResponseData {
   url: string;
   strict: boolean;
   contexts: string[];
   contexts_url: string;
 }
 
-type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
+type ReposUpdateStatusCheckPotectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16912,20 +16884,20 @@ type ReposUpdateProtectedBranchRequiredStatusChecksEndpoint = {
   contexts?: string[];
 };
 
-type ReposUpdateProtectedBranchRequiredStatusChecksRequestOptions = {
+type ReposUpdateStatusCheckPotectionRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposUpdateProtectedBranchRequiredStatusChecksResponseData {
+export interface ReposUpdateStatusCheckPotectionResponseData {
   url: string;
   strict: boolean;
   contexts: string[];
   contexts_url: string;
 }
 
-type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
+type ReposRemoveStatusCheckProtectionEndpoint = {
   owner: string;
 
   repo: string;
@@ -16933,14 +16905,14 @@ type ReposRemoveProtectedBranchRequiredStatusChecksEndpoint = {
   branch: string;
 };
 
-type ReposRemoveProtectedBranchRequiredStatusChecksRequestOptions = {
+type ReposRemoveStatusCheckProtectionRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
+type ReposGetAllStatusCheckContextsEndpoint = {
   owner: string;
 
   repo: string;
@@ -16948,15 +16920,15 @@ type ReposListProtectedBranchRequiredStatusChecksContextsEndpoint = {
   branch: string;
 };
 
-type ReposListProtectedBranchRequiredStatusChecksContextsRequestOptions = {
+type ReposGetAllStatusCheckContextsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposListProtectedBranchRequiredStatusChecksContextsResponseData = string[];
+export type ReposGetAllStatusCheckContextsResponseData = string[];
 
-type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
+type ReposSetStatusCheckContextsEndpoint = {
   owner: string;
 
   repo: string;
@@ -16968,15 +16940,15 @@ type ReposReplaceProtectedBranchRequiredStatusChecksContextsEndpoint = {
   contexts: string[];
 };
 
-type ReposReplaceProtectedBranchRequiredStatusChecksContextsRequestOptions = {
+type ReposSetStatusCheckContextsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposReplaceProtectedBranchRequiredStatusChecksContextsResponseData = string[];
+export type ReposSetStatusCheckContextsResponseData = string[];
 
-type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
+type ReposAddStatusCheckContextsEndpoint = {
   owner: string;
 
   repo: string;
@@ -16988,15 +16960,15 @@ type ReposAddProtectedBranchRequiredStatusChecksContextsEndpoint = {
   contexts: string[];
 };
 
-type ReposAddProtectedBranchRequiredStatusChecksContextsRequestOptions = {
+type ReposAddStatusCheckContextsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposAddProtectedBranchRequiredStatusChecksContextsResponseData = string[];
+export type ReposAddStatusCheckContextsResponseData = string[];
 
-type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
+type ReposRemoveStatusCheckContextsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17008,15 +16980,15 @@ type ReposRemoveProtectedBranchRequiredStatusChecksContextsEndpoint = {
   contexts: string[];
 };
 
-type ReposRemoveProtectedBranchRequiredStatusChecksContextsRequestOptions = {
+type ReposRemoveStatusCheckContextsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/required_status_checks/contexts";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposRemoveProtectedBranchRequiredStatusChecksContextsResponseData = string[];
+export type ReposRemoveStatusCheckContextsResponseData = string[];
 
-type ReposGetProtectedBranchRestrictionsEndpoint = {
+type ReposGetAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17024,13 +16996,13 @@ type ReposGetProtectedBranchRestrictionsEndpoint = {
   branch: string;
 };
 
-type ReposGetProtectedBranchRestrictionsRequestOptions = {
+type ReposGetAccessRestrictionsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetProtectedBranchRestrictionsResponseData {
+export interface ReposGetAccessRestrictionsResponseData {
   url: string;
   users_url: string;
   teams_url: string;
@@ -17103,7 +17075,7 @@ export interface ReposGetProtectedBranchRestrictionsResponseData {
   }[];
 }
 
-type ReposRemoveProtectedBranchRestrictionsEndpoint = {
+type ReposDeleteAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17111,7 +17083,7 @@ type ReposRemoveProtectedBranchRestrictionsEndpoint = {
   branch: string;
 };
 
-type ReposRemoveProtectedBranchRestrictionsRequestOptions = {
+type ReposDeleteAccessRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions";
   headers: RequestHeaders;
@@ -17165,7 +17137,7 @@ export type ReposGetAppsWithAccessToProtectedBranchResponseData = {
   events: string[];
 }[];
 
-type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
+type ReposSetAppAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17177,13 +17149,13 @@ type ReposReplaceProtectedBranchAppRestrictionsEndpoint = {
   apps: string[];
 };
 
-type ReposReplaceProtectedBranchAppRestrictionsRequestOptions = {
+type ReposSetAppAccessRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposReplaceProtectedBranchAppRestrictionsResponseData = {
+export type ReposSetAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
   node_id: string;
@@ -17216,7 +17188,7 @@ export type ReposReplaceProtectedBranchAppRestrictionsResponseData = {
   events: string[];
 }[];
 
-type ReposAddProtectedBranchAppRestrictionsEndpoint = {
+type ReposAddAppAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17228,13 +17200,13 @@ type ReposAddProtectedBranchAppRestrictionsEndpoint = {
   apps: string[];
 };
 
-type ReposAddProtectedBranchAppRestrictionsRequestOptions = {
+type ReposAddAppAccessRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposAddProtectedBranchAppRestrictionsResponseData = {
+export type ReposAddAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
   node_id: string;
@@ -17267,7 +17239,7 @@ export type ReposAddProtectedBranchAppRestrictionsResponseData = {
   events: string[];
 }[];
 
-type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
+type ReposRemoveAppAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17279,13 +17251,13 @@ type ReposRemoveProtectedBranchAppRestrictionsEndpoint = {
   apps: string[];
 };
 
-type ReposRemoveProtectedBranchAppRestrictionsRequestOptions = {
+type ReposRemoveAppAccessRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/apps";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposRemoveProtectedBranchAppRestrictionsResponseData = {
+export type ReposRemoveAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
   node_id: string;
@@ -17347,7 +17319,7 @@ export type ReposGetTeamsWithAccessToProtectedBranchResponseData = {
   parent: string;
 }[];
 
-type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
+type ReposSetTeamAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17359,13 +17331,13 @@ type ReposReplaceProtectedBranchTeamRestrictionsEndpoint = {
   teams: string[];
 };
 
-type ReposReplaceProtectedBranchTeamRestrictionsRequestOptions = {
+type ReposSetTeamAccessRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposReplaceProtectedBranchTeamRestrictionsResponseData = {
+export type ReposSetTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
   url: string;
@@ -17380,7 +17352,7 @@ export type ReposReplaceProtectedBranchTeamRestrictionsResponseData = {
   parent: string;
 }[];
 
-type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
+type ReposAddTeamAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17392,13 +17364,13 @@ type ReposAddProtectedBranchTeamRestrictionsEndpoint = {
   teams: string[];
 };
 
-type ReposAddProtectedBranchTeamRestrictionsRequestOptions = {
+type ReposAddTeamAccessRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposAddProtectedBranchTeamRestrictionsResponseData = {
+export type ReposAddTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
   url: string;
@@ -17413,7 +17385,7 @@ export type ReposAddProtectedBranchTeamRestrictionsResponseData = {
   parent: string;
 }[];
 
-type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
+type ReposRemoveTeamAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17425,13 +17397,13 @@ type ReposRemoveProtectedBranchTeamRestrictionsEndpoint = {
   teams: string[];
 };
 
-type ReposRemoveProtectedBranchTeamRestrictionsRequestOptions = {
+type ReposRemoveTeamAccessRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/teams";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposRemoveProtectedBranchTeamRestrictionsResponseData = {
+export type ReposRemoveTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
   url: string;
@@ -17481,7 +17453,7 @@ export type ReposGetUsersWithAccessToProtectedBranchResponseData = {
   site_admin: boolean;
 }[];
 
-type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
+type ReposSetUserAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17493,13 +17465,13 @@ type ReposReplaceProtectedBranchUserRestrictionsEndpoint = {
   users: string[];
 };
 
-type ReposReplaceProtectedBranchUserRestrictionsRequestOptions = {
+type ReposSetUserAccessRestrictionsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposReplaceProtectedBranchUserRestrictionsResponseData = {
+export type ReposSetUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
   node_id: string;
@@ -17520,7 +17492,7 @@ export type ReposReplaceProtectedBranchUserRestrictionsResponseData = {
   site_admin: boolean;
 }[];
 
-type ReposAddProtectedBranchUserRestrictionsEndpoint = {
+type ReposAddUserAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17532,13 +17504,13 @@ type ReposAddProtectedBranchUserRestrictionsEndpoint = {
   users: string[];
 };
 
-type ReposAddProtectedBranchUserRestrictionsRequestOptions = {
+type ReposAddUserAccessRestrictionsRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposAddProtectedBranchUserRestrictionsResponseData = {
+export type ReposAddUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
   node_id: string;
@@ -17559,7 +17531,7 @@ export type ReposAddProtectedBranchUserRestrictionsResponseData = {
   site_admin: boolean;
 }[];
 
-type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
+type ReposRemoveUserAccessRestrictionsEndpoint = {
   owner: string;
 
   repo: string;
@@ -17571,13 +17543,13 @@ type ReposRemoveProtectedBranchUserRestrictionsEndpoint = {
   users: string[];
 };
 
-type ReposRemoveProtectedBranchUserRestrictionsRequestOptions = {
+type ReposRemoveUserAccessRestrictionsRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/branches/:branch/protection/restrictions/users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposRemoveProtectedBranchUserRestrictionsResponseData = {
+export type ReposRemoveUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
   node_id: string;
@@ -18914,7 +18886,7 @@ export interface ReposGetCollaboratorPermissionLevelResponseData {
   };
 }
 
-type ReposListCommitCommentsEndpoint = {
+type ReposListCommitCommentsForRepoEndpoint = {
   owner: string;
 
   repo: string;
@@ -18928,13 +18900,13 @@ type ReposListCommitCommentsEndpoint = {
   page?: number;
 };
 
-type ReposListCommitCommentsRequestOptions = {
+type ReposListCommitCommentsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposListCommitCommentsResponseData = {
+export type ReposListCommitCommentsForRepoResponseData = {
   html_url: string;
   url: string;
   id: number;
@@ -20458,7 +20430,7 @@ export interface ReposGetCombinedStatusForRefResponseData {
   url: string;
 }
 
-type ReposListStatusesForRefEndpoint = {
+type ReposListCommitStatusesForRefEndpoint = {
   owner: string;
 
   repo: string;
@@ -20474,13 +20446,13 @@ type ReposListStatusesForRefEndpoint = {
   page?: number;
 };
 
-type ReposListStatusesForRefRequestOptions = {
+type ReposListCommitStatusesForRefRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/commits/:ref/statuses";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposListStatusesForRefResponseData = {
+export type ReposListCommitStatusesForRefResponseData = {
   url: string;
   avatar_url: string;
   id: number;
@@ -20532,19 +20504,19 @@ export interface CodesOfConductGetForRepoResponseData {
   body: string;
 }
 
-type ReposRetrieveCommunityProfileMetricsEndpoint = {
+type ReposGetCommunityProfileMetricsEndpoint = {
   owner: string;
 
   repo: string;
 };
 
-type ReposRetrieveCommunityProfileMetricsRequestOptions = {
+type ReposGetCommunityProfileMetricsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/community/profile";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposRetrieveCommunityProfileMetricsResponseData {
+export interface ReposGetCommunityProfileMetricsResponseData {
   health_percentage: number;
   description: string;
   documentation: boolean;
@@ -20850,7 +20822,7 @@ export interface ReposCompareCommitsResponseData {
   }[];
 }
 
-type ReposGetContentsEndpoint = {
+type ReposGetContentEndpoint = {
   owner: string;
 
   repo: string;
@@ -20862,13 +20834,13 @@ type ReposGetContentsEndpoint = {
   ref?: string;
 };
 
-type ReposGetContentsRequestOptions = {
+type ReposGetContentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetContentsResponseData {
+export interface ReposGetContentResponseData {
   type: string;
   encoding: string;
   size: number;
@@ -20887,7 +20859,7 @@ export interface ReposGetContentsResponseData {
   };
 }
 
-type ReposCreateOrUpdateFileEndpoint = {
+type ReposCreateOrUpdateFileContentsEndpoint = {
   owner: string;
 
   repo: string;
@@ -20912,20 +20884,20 @@ type ReposCreateOrUpdateFileEndpoint = {
   /**
    * The person that committed the file. Default: the authenticated user.
    */
-  committer?: ReposCreateOrUpdateFileParamsCommitter;
+  committer?: ReposCreateOrUpdateFileContentsParamsCommitter;
   /**
    * The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
    */
-  author?: ReposCreateOrUpdateFileParamsAuthor;
+  author?: ReposCreateOrUpdateFileContentsParamsAuthor;
 };
 
-type ReposCreateOrUpdateFileRequestOptions = {
+type ReposCreateOrUpdateFileContentsRequestOptions = {
   method: "PUT";
   url: "/repos/:owner/:repo/contents/:path";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposCreateOrUpdateFileResponseData {
+export interface ReposCreateOrUpdateFileContentsResponseData {
   content: {
     name: string;
     path: string;
@@ -20976,7 +20948,7 @@ export interface ReposCreateOrUpdateFileResponseData {
   };
 }
 
-export interface ReposCreateOrUpdateFileResponse201Data {
+export interface ReposCreateOrUpdateFileContentsResponse201Data {
   content: {
     name: string;
     path: string;
@@ -22412,7 +22384,7 @@ export interface GitGetTreeResponseData {
   truncated: boolean;
 }
 
-type ReposListHooksEndpoint = {
+type ReposListWebhooksEndpoint = {
   owner: string;
 
   repo: string;
@@ -22426,13 +22398,13 @@ type ReposListHooksEndpoint = {
   page?: number;
 };
 
-type ReposListHooksRequestOptions = {
+type ReposListWebhooksRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposListHooksResponseData = {
+export type ReposListWebhooksResponseData = {
   type: string;
   id: number;
   name: string;
@@ -22455,7 +22427,7 @@ export type ReposListHooksResponseData = {
   };
 }[];
 
-type ReposCreateHookEndpoint = {
+type ReposCreateWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22466,7 +22438,7 @@ type ReposCreateHookEndpoint = {
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/repos/hooks/#create-hook-config-params).
    */
-  config: ReposCreateHookParamsConfig;
+  config: ReposCreateWebhookParamsConfig;
   /**
    * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for.
    */
@@ -22477,13 +22449,13 @@ type ReposCreateHookEndpoint = {
   active?: boolean;
 };
 
-type ReposCreateHookRequestOptions = {
+type ReposCreateWebhookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposCreateHookResponseData {
+export interface ReposCreateWebhookResponseData {
   type: string;
   id: number;
   name: string;
@@ -22506,7 +22478,7 @@ export interface ReposCreateHookResponseData {
   };
 }
 
-type ReposGetHookEndpoint = {
+type ReposGetWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22514,13 +22486,13 @@ type ReposGetHookEndpoint = {
   hook_id: number;
 };
 
-type ReposGetHookRequestOptions = {
+type ReposGetWebhookRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposGetHookResponseData {
+export interface ReposGetWebhookResponseData {
   type: string;
   id: number;
   name: string;
@@ -22543,7 +22515,7 @@ export interface ReposGetHookResponseData {
   };
 }
 
-type ReposUpdateHookEndpoint = {
+type ReposUpdateWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22552,7 +22524,7 @@ type ReposUpdateHookEndpoint = {
   /**
    * Key/value pairs to provide settings for this webhook. [These are defined below](https://developer.github.com/v3/repos/hooks/#create-hook-config-params).
    */
-  config?: ReposUpdateHookParamsConfig;
+  config?: ReposUpdateWebhookParamsConfig;
   /**
    * Determines what [events](https://developer.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
    */
@@ -22571,13 +22543,13 @@ type ReposUpdateHookEndpoint = {
   active?: boolean;
 };
 
-type ReposUpdateHookRequestOptions = {
+type ReposUpdateWebhookRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposUpdateHookResponseData {
+export interface ReposUpdateWebhookResponseData {
   type: string;
   id: number;
   name: string;
@@ -22600,7 +22572,7 @@ export interface ReposUpdateHookResponseData {
   };
 }
 
-type ReposDeleteHookEndpoint = {
+type ReposDeleteWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22608,14 +22580,14 @@ type ReposDeleteHookEndpoint = {
   hook_id: number;
 };
 
-type ReposDeleteHookRequestOptions = {
+type ReposDeleteWebhookRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/hooks/:hook_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposPingHookEndpoint = {
+type ReposPingWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22623,14 +22595,14 @@ type ReposPingHookEndpoint = {
   hook_id: number;
 };
 
-type ReposPingHookRequestOptions = {
+type ReposPingWebhookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks/:hook_id/pings";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
-type ReposTestPushHookEndpoint = {
+type ReposTestPushWebhookEndpoint = {
   owner: string;
 
   repo: string;
@@ -22638,7 +22610,7 @@ type ReposTestPushHookEndpoint = {
   hook_id: number;
 };
 
-type ReposTestPushHookRequestOptions = {
+type ReposTestPushWebhookRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/hooks/:hook_id/tests";
   headers: RequestHeaders;
@@ -25502,7 +25474,7 @@ export type ReposListDeployKeysResponseData = {
   read_only: boolean;
 }[];
 
-type ReposAddDeployKeyEndpoint = {
+type ReposCreateDeployKeyEndpoint = {
   owner: string;
 
   repo: string;
@@ -25522,13 +25494,13 @@ type ReposAddDeployKeyEndpoint = {
   read_only?: boolean;
 };
 
-type ReposAddDeployKeyRequestOptions = {
+type ReposCreateDeployKeyRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposAddDeployKeyResponseData {
+export interface ReposCreateDeployKeyResponseData {
   id: number;
   key: string;
   url: string;
@@ -25562,7 +25534,7 @@ export interface ReposGetDeployKeyResponseData {
   read_only: boolean;
 }
 
-type ReposRemoveDeployKeyEndpoint = {
+type ReposDeleteDeployKeyEndpoint = {
   owner: string;
 
   repo: string;
@@ -25570,7 +25542,7 @@ type ReposRemoveDeployKeyEndpoint = {
   key_id: number;
 };
 
-type ReposRemoveDeployKeyRequestOptions = {
+type ReposDeleteDeployKeyRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/keys/:key_id";
   headers: RequestHeaders;
@@ -26343,21 +26315,21 @@ export interface ReposGetPagesResponseData {
   };
 }
 
-type ReposEnablePagesSiteEndpoint = {
+type ReposCreatePagesSiteEndpoint = {
   owner: string;
 
   repo: string;
 
-  source?: ReposEnablePagesSiteParamsSource;
+  source?: ReposCreatePagesSiteParamsSource;
 } & RequiredPreview<"switcheroo">;
 
-type ReposEnablePagesSiteRequestOptions = {
+type ReposCreatePagesSiteRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposEnablePagesSiteResponseData {
+export interface ReposCreatePagesSiteResponseData {
   url: string;
   status: string;
   cname: string;
@@ -26369,13 +26341,13 @@ export interface ReposEnablePagesSiteResponseData {
   };
 }
 
-type ReposDisablePagesSiteEndpoint = {
+type ReposDeletePagesSiteEndpoint = {
   owner: string;
 
   repo: string;
 } & RequiredPreview<"switcheroo">;
 
-type ReposDisablePagesSiteRequestOptions = {
+type ReposDeletePagesSiteRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pages";
   headers: RequestHeaders;
@@ -26403,19 +26375,19 @@ type ReposUpdateInformationAboutPagesSiteRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ReposRequestPageBuildEndpoint = {
+type ReposRequestPagesBuildEndpoint = {
   owner: string;
 
   repo: string;
 };
 
-type ReposRequestPageBuildRequestOptions = {
+type ReposRequestPagesBuildRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pages/builds";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposRequestPageBuildResponseData {
+export interface ReposRequestPagesBuildResponseData {
   url: string;
   status: string;
 }
@@ -27691,7 +27663,7 @@ export interface PullsCreateResponseData {
   changed_files: number;
 }
 
-type PullsListCommentsForRepoEndpoint = {
+type PullsListReviewCommentsForRepoEndpoint = {
   owner: string;
 
   repo: string;
@@ -27717,17 +27689,17 @@ type PullsListCommentsForRepoEndpoint = {
   page?: number;
 };
 
-type PullsListCommentsForRepoRequestOptions = {
+type PullsListReviewCommentsForRepoRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type PullsListCommentsForRepoResponseData = {
+export type PullsListReviewCommentsForRepoResponseData = {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -27780,7 +27752,7 @@ export type PullsListCommentsForRepoResponseData = {
   side: string;
 }[];
 
-type PullsGetCommentEndpoint = {
+type PullsGetReviewCommentEndpoint = {
   owner: string;
 
   repo: string;
@@ -27788,17 +27760,17 @@ type PullsGetCommentEndpoint = {
   comment_id: number;
 };
 
-type PullsGetCommentRequestOptions = {
+type PullsGetReviewCommentRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsGetCommentResponseData {
+export interface PullsGetReviewCommentResponseData {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -27851,7 +27823,7 @@ export interface PullsGetCommentResponseData {
   side: string;
 }
 
-type PullsUpdateCommentEndpoint = {
+type PullsUpdateReviewCommentEndpoint = {
   owner: string;
 
   repo: string;
@@ -27863,17 +27835,17 @@ type PullsUpdateCommentEndpoint = {
   body: string;
 };
 
-type PullsUpdateCommentRequestOptions = {
+type PullsUpdateReviewCommentRequestOptions = {
   method: "PATCH";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsUpdateCommentResponseData {
+export interface PullsUpdateReviewCommentResponseData {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -27926,7 +27898,7 @@ export interface PullsUpdateCommentResponseData {
   side: string;
 }
 
-type PullsDeleteCommentEndpoint = {
+type PullsDeleteReviewCommentEndpoint = {
   owner: string;
 
   repo: string;
@@ -27934,7 +27906,7 @@ type PullsDeleteCommentEndpoint = {
   comment_id: number;
 };
 
-type PullsDeleteCommentRequestOptions = {
+type PullsDeleteReviewCommentRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/comments/:comment_id";
   headers: RequestHeaders;
@@ -29090,7 +29062,7 @@ export interface PullsUpdateResponseData {
   changed_files: number;
 }
 
-type PullsListCommentsEndpoint = {
+type PullsListReviewCommentsEndpoint = {
   owner: string;
 
   repo: string;
@@ -29118,17 +29090,17 @@ type PullsListCommentsEndpoint = {
   page?: number;
 };
 
-type PullsListCommentsRequestOptions = {
+type PullsListReviewCommentsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type PullsListCommentsResponseData = {
+export type PullsListReviewCommentsResponseData = {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -29181,7 +29153,7 @@ export type PullsListCommentsResponseData = {
   side: string;
 }[];
 
-type PullsCreateCommentEndpoint = {
+type PullsCreateReviewCommentEndpoint = {
   owner: string;
 
   repo: string;
@@ -29221,17 +29193,17 @@ type PullsCreateCommentEndpoint = {
   start_side?: "LEFT" | "RIGHT" | "side";
 };
 
-type PullsCreateCommentRequestOptions = {
+type PullsCreateReviewCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsCreateCommentResponseData {
+export interface PullsCreateReviewCommentResponseData {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -29284,7 +29256,7 @@ export interface PullsCreateCommentResponseData {
   side: string;
 }
 
-type PullsCreateReviewCommentReplyEndpoint = {
+type PullsCreateReplyForReviewCommentEndpoint = {
   owner: string;
 
   repo: string;
@@ -29298,13 +29270,13 @@ type PullsCreateReviewCommentReplyEndpoint = {
   body: string;
 };
 
-type PullsCreateReviewCommentReplyRequestOptions = {
+type PullsCreateReplyForReviewCommentRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/comments/:comment_id/replies";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsCreateReviewCommentReplyResponseData {
+export interface PullsCreateReplyForReviewCommentResponseData {
   url: string;
   pull_request_review_id: number;
   id: number;
@@ -29315,6 +29287,7 @@ export interface PullsCreateReviewCommentReplyResponseData {
   original_position: number;
   commit_id: string;
   original_commit_id: string;
+  in_reply_to_id: number;
   user: {
     login: string;
     id: number;
@@ -29352,6 +29325,12 @@ export interface PullsCreateReviewCommentReplyResponseData {
       href: string;
     };
   };
+  start_line: number;
+  original_start_line: number;
+  start_side: string;
+  line: number;
+  original_line: number;
+  side: string;
 }
 
 type PullsListCommitsEndpoint = {
@@ -29549,7 +29528,7 @@ export interface PullsMergeResponse409Data {
   documentation_url: string;
 }
 
-type PullsListReviewRequestsEndpoint = {
+type PullsListRequestedReviewersEndpoint = {
   owner: string;
 
   repo: string;
@@ -29565,13 +29544,13 @@ type PullsListReviewRequestsEndpoint = {
   page?: number;
 };
 
-type PullsListReviewRequestsRequestOptions = {
+type PullsListRequestedReviewersRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsListReviewRequestsResponseData {
+export interface PullsListRequestedReviewersResponseData {
   users: {
     login: string;
     id: number;
@@ -29608,7 +29587,7 @@ export interface PullsListReviewRequestsResponseData {
   }[];
 }
 
-type PullsCreateReviewRequestEndpoint = {
+type PullsRequestReviewersEndpoint = {
   owner: string;
 
   repo: string;
@@ -29624,13 +29603,13 @@ type PullsCreateReviewRequestEndpoint = {
   team_reviewers?: string[];
 };
 
-type PullsCreateReviewRequestRequestOptions = {
+type PullsRequestReviewersRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface PullsCreateReviewRequestResponseData {
+export interface PullsRequestReviewersResponseData {
   url: string;
   id: number;
   node_id: string;
@@ -30084,7 +30063,7 @@ export interface PullsCreateReviewRequestResponseData {
   draft: boolean;
 }
 
-type PullsDeleteReviewRequestEndpoint = {
+type PullsRemoveRequestedReviewersEndpoint = {
   owner: string;
 
   repo: string;
@@ -30100,7 +30079,7 @@ type PullsDeleteReviewRequestEndpoint = {
   team_reviewers?: string[];
 };
 
-type PullsDeleteReviewRequestRequestOptions = {
+type PullsRemoveRequestedReviewersRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/pulls/:pull_number/requested_reviewers";
   headers: RequestHeaders;
@@ -30183,7 +30162,7 @@ type PullsCreateReviewEndpoint = {
    */
   body?: string;
   /**
-   * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://developer.github.com/v3/pulls/reviews/#submit-a-pull-request-review) when you are ready.
+   * The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://developer.github.com/v3/pulls/reviews/#submit-a-review-for-a-pull-request) when you are ready.
    */
   event?: "APPROVE" | "REQUEST_CHANGES" | "COMMENT";
   /**
@@ -30405,7 +30384,7 @@ export interface PullsUpdateReviewResponseData {
   commit_id: string;
 }
 
-type PullsGetCommentsForReviewEndpoint = {
+type PullsListCommentsForReviewEndpoint = {
   owner: string;
 
   repo: string;
@@ -30423,17 +30402,17 @@ type PullsGetCommentsForReviewEndpoint = {
   page?: number;
 };
 
-type PullsGetCommentsForReviewRequestOptions = {
+type PullsListCommentsForReviewRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/pulls/:pull_number/reviews/:review_id/comments";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type PullsGetCommentsForReviewResponseData = {
+export type PullsListCommentsForReviewResponseData = {
   url: string;
+  pull_request_review_id: number;
   id: number;
   node_id: string;
-  pull_request_review_id: number;
   diff_hunk: string;
   path: string;
   position: number;
@@ -30609,7 +30588,7 @@ type PullsUpdateBranchEndpoint = {
 
   pull_number: number;
   /**
-   * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits on a repository](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
+   * The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a `422 Unprocessable Entity` status. You can use the "[List commits](https://developer.github.com/v3/repos/commits/#list-commits)" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref.
    */
   expected_head_sha?: string;
 } & RequiredPreview<"lydian">;
@@ -31335,7 +31314,7 @@ type ReposDeleteReleaseRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ReposListAssetsForReleaseEndpoint = {
+type ReposListReleaseAssetsEndpoint = {
   owner: string;
 
   repo: string;
@@ -31351,13 +31330,13 @@ type ReposListAssetsForReleaseEndpoint = {
   page?: number;
 };
 
-type ReposListAssetsForReleaseRequestOptions = {
+type ReposListReleaseAssetsRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/releases/:release_id/assets";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type ReposListAssetsForReleaseResponseData = {
+export type ReposListReleaseAssetsResponseData = {
   url: string;
   browser_download_url: string;
   id: number;
@@ -31637,7 +31616,7 @@ type ReposGetPunchCardStatsRequestOptions = {
 };
 export type ReposGetPunchCardStatsResponseData = number[][];
 
-type ReposCreateStatusEndpoint = {
+type ReposCreateCommitStatusEndpoint = {
   owner: string;
 
   repo: string;
@@ -31663,13 +31642,13 @@ type ReposCreateStatusEndpoint = {
   context?: string;
 };
 
-type ReposCreateStatusRequestOptions = {
+type ReposCreateCommitStatusRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/statuses/:sha";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ReposCreateStatusResponseData {
+export interface ReposCreateCommitStatusResponseData {
   url: string;
   avatar_url: string;
   id: number;
@@ -32161,7 +32140,7 @@ type ReposDisableVulnerabilityAlertsRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type ReposGetArchiveLinkEndpoint = {
+type ReposDownloadArchiveEndpoint = {
   owner: string;
 
   repo: string;
@@ -32171,7 +32150,7 @@ type ReposGetArchiveLinkEndpoint = {
   ref: string;
 };
 
-type ReposGetArchiveLinkRequestOptions = {
+type ReposDownloadArchiveRequestOptions = {
   method: "GET";
   url: "/repos/:owner/:repo/:archive_format/:ref";
   headers: RequestHeaders;
@@ -32549,17 +32528,17 @@ export interface ScimListProvisionedIdentitiesResponseData {
   }[];
 }
 
-type ScimProvisionAndInviteUsersEndpoint = {
+type ScimProvisionAndInviteUserEndpoint = {
   org: string;
 };
 
-type ScimProvisionAndInviteUsersRequestOptions = {
+type ScimProvisionAndInviteUserRequestOptions = {
   method: "POST";
   url: "/scim/v2/organizations/:org/Users";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ScimProvisionAndInviteUsersResponseData {
+export interface ScimProvisionAndInviteUserResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -32582,19 +32561,19 @@ export interface ScimProvisionAndInviteUsersResponseData {
   };
 }
 
-type ScimGetProvisioningDetailsForUserEndpoint = {
+type ScimGetProvisioningInformationForUserEndpoint = {
   org: string;
 
   scim_user_id: number;
 };
 
-type ScimGetProvisioningDetailsForUserRequestOptions = {
+type ScimGetProvisioningInformationForUserRequestOptions = {
   method: "GET";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ScimGetProvisioningDetailsForUserResponseData {
+export interface ScimGetProvisioningInformationForUserResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -32617,19 +32596,19 @@ export interface ScimGetProvisioningDetailsForUserResponseData {
   };
 }
 
-type ScimReplaceProvisionedUserInformationEndpoint = {
+type ScimSetInformationForProvisionedUserEndpoint = {
   org: string;
 
   scim_user_id: number;
 };
 
-type ScimReplaceProvisionedUserInformationRequestOptions = {
+type ScimSetInformationForProvisionedUserRequestOptions = {
   method: "PUT";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ScimReplaceProvisionedUserInformationResponseData {
+export interface ScimSetInformationForProvisionedUserResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -32652,19 +32631,19 @@ export interface ScimReplaceProvisionedUserInformationResponseData {
   };
 }
 
-type ScimUpdateUserAttributeEndpoint = {
+type ScimUpdateAttributeForUserEndpoint = {
   org: string;
 
   scim_user_id: number;
 };
 
-type ScimUpdateUserAttributeRequestOptions = {
+type ScimUpdateAttributeForUserRequestOptions = {
   method: "PATCH";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface ScimUpdateUserAttributeResponseData {
+export interface ScimUpdateAttributeForUserResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -32687,13 +32666,13 @@ export interface ScimUpdateUserAttributeResponseData {
   };
 }
 
-type ScimRemoveUserFromOrgEndpoint = {
+type ScimDeleteUserFromOrgEndpoint = {
   org: string;
 
   scim_user_id: number;
 };
 
-type ScimRemoveUserFromOrgRequestOptions = {
+type ScimDeleteUserFromOrgRequestOptions = {
   method: "DELETE";
   url: "/scim/v2/organizations/:org/Users/:scim_user_id";
   headers: RequestHeaders;
@@ -35200,15 +35179,15 @@ export interface UsersUpdateAuthenticatedResponseData {
   };
 }
 
-type UsersListBlockedEndpoint = {};
+type UsersListBlockedByAuthenticatedEndpoint = {};
 
-type UsersListBlockedRequestOptions = {
+type UsersListBlockedByAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/blocks";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersListBlockedResponseData = {
+export type UsersListBlockedByAuthenticatedResponseData = {
   login: string;
   id: number;
   node_id: string;
@@ -35262,7 +35241,7 @@ type UsersUnblockRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type UsersTogglePrimaryEmailVisibilityEndpoint = {
+type UsersSetPrimaryEmailVisibilityForAuthenticatedEndpoint = {
   /**
    * Specify the _primary_ email address that needs a visibility change.
    */
@@ -35273,20 +35252,20 @@ type UsersTogglePrimaryEmailVisibilityEndpoint = {
   visibility: string;
 };
 
-type UsersTogglePrimaryEmailVisibilityRequestOptions = {
+type UsersSetPrimaryEmailVisibilityForAuthenticatedRequestOptions = {
   method: "PATCH";
   url: "/user/email/visibility";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersTogglePrimaryEmailVisibilityResponseData = {
+export type UsersSetPrimaryEmailVisibilityForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
   verified: boolean;
   visibility: string;
 }[];
 
-type UsersListEmailsEndpoint = {
+type UsersListEmailsForAuthenticatedEndpoint = {
   /**
    * Results per page (max 100)
    */
@@ -35297,47 +35276,47 @@ type UsersListEmailsEndpoint = {
   page?: number;
 };
 
-type UsersListEmailsRequestOptions = {
+type UsersListEmailsForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersListEmailsResponseData = {
+export type UsersListEmailsForAuthenticatedResponseData = {
   email: string;
   verified: boolean;
   primary: boolean;
   visibility: string;
 }[];
 
-type UsersAddEmailsEndpoint = {
+type UsersAddEmailForAuthenticatedEndpoint = {
   /**
    * Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
    */
   emails: string[];
 };
 
-type UsersAddEmailsRequestOptions = {
+type UsersAddEmailForAuthenticatedRequestOptions = {
   method: "POST";
   url: "/user/emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersAddEmailsResponseData = {
+export type UsersAddEmailForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
   verified: boolean;
   visibility: string;
 }[];
 
-type UsersDeleteEmailsEndpoint = {
+type UsersDeleteEmailForAuthenticatedEndpoint = {
   /**
    * Deletes one or more email addresses from your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
    */
   emails: string[];
 };
 
-type UsersDeleteEmailsRequestOptions = {
+type UsersDeleteEmailForAuthenticatedRequestOptions = {
   method: "DELETE";
   url: "/user/emails";
   headers: RequestHeaders;
@@ -35420,11 +35399,11 @@ export type UsersListFollowedByAuthenticatedResponseData = {
   site_admin: boolean;
 }[];
 
-type UsersCheckFollowingEndpoint = {
+type UsersCheckPersonIsFollowedByAuthenticatedEndpoint = {
   username: string;
 };
 
-type UsersCheckFollowingRequestOptions = {
+type UsersCheckPersonIsFollowedByAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/following/:username";
   headers: RequestHeaders;
@@ -35453,7 +35432,7 @@ type UsersUnfollowRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type UsersListGpgKeysEndpoint = {
+type UsersListGpgKeysForAuthenticatedEndpoint = {
   /**
    * Results per page (max 100)
    */
@@ -35464,13 +35443,13 @@ type UsersListGpgKeysEndpoint = {
   page?: number;
 };
 
-type UsersListGpgKeysRequestOptions = {
+type UsersListGpgKeysForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/gpg_keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersListGpgKeysResponseData = {
+export type UsersListGpgKeysForAuthenticatedResponseData = {
   id: number;
   primary_key_id: string;
   key_id: string;
@@ -35501,20 +35480,20 @@ export type UsersListGpgKeysResponseData = {
   expires_at: string;
 }[];
 
-type UsersCreateGpgKeyEndpoint = {
+type UsersCreateGpgKeyForAuthenticatedEndpoint = {
   /**
    * Your GPG key, generated in ASCII-armored format. See "[Generating a new GPG key](https://help.github.com/articles/generating-a-new-gpg-key/)" for help creating a GPG key.
    */
   armored_public_key?: string;
 };
 
-type UsersCreateGpgKeyRequestOptions = {
+type UsersCreateGpgKeyForAuthenticatedRequestOptions = {
   method: "POST";
   url: "/user/gpg_keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface UsersCreateGpgKeyResponseData {
+export interface UsersCreateGpgKeyForAuthenticatedResponseData {
   id: number;
   primary_key_id: string;
   key_id: string;
@@ -35545,17 +35524,17 @@ export interface UsersCreateGpgKeyResponseData {
   expires_at: string;
 }
 
-type UsersGetGpgKeyEndpoint = {
+type UsersGetGpgKeyForAuthenticatedEndpoint = {
   gpg_key_id: number;
 };
 
-type UsersGetGpgKeyRequestOptions = {
+type UsersGetGpgKeyForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/gpg_keys/:gpg_key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface UsersGetGpgKeyResponseData {
+export interface UsersGetGpgKeyForAuthenticatedResponseData {
   id: number;
   primary_key_id: string;
   key_id: string;
@@ -35586,11 +35565,11 @@ export interface UsersGetGpgKeyResponseData {
   expires_at: string;
 }
 
-type UsersDeleteGpgKeyEndpoint = {
+type UsersDeleteGpgKeyForAuthenticatedEndpoint = {
   gpg_key_id: number;
 };
 
-type UsersDeleteGpgKeyRequestOptions = {
+type UsersDeleteGpgKeyForAuthenticatedRequestOptions = {
   method: "DELETE";
   url: "/user/gpg_keys/:gpg_key_id";
   headers: RequestHeaders;
@@ -36096,7 +36075,7 @@ export type IssuesListForAuthenticatedUserResponseData = {
   };
 }[];
 
-type UsersListPublicKeysEndpoint = {
+type UsersListPublicSshKeysForAuthenticatedEndpoint = {
   /**
    * Results per page (max 100)
    */
@@ -36107,18 +36086,18 @@ type UsersListPublicKeysEndpoint = {
   page?: number;
 };
 
-type UsersListPublicKeysRequestOptions = {
+type UsersListPublicSshKeysForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersListPublicKeysResponseData = {
+export type UsersListPublicSshKeysForAuthenticatedResponseData = {
   key_id: string;
   key: string;
 }[];
 
-type UsersCreatePublicKeyEndpoint = {
+type UsersCreatePublicSshKeyForAuthenticatedEndpoint = {
   /**
    * A descriptive name for the new key. Use a name that will help you recognize this key in your GitHub account. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
    */
@@ -36129,37 +36108,37 @@ type UsersCreatePublicKeyEndpoint = {
   key?: string;
 };
 
-type UsersCreatePublicKeyRequestOptions = {
+type UsersCreatePublicSshKeyForAuthenticatedRequestOptions = {
   method: "POST";
   url: "/user/keys";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface UsersCreatePublicKeyResponseData {
+export interface UsersCreatePublicSshKeyForAuthenticatedResponseData {
   key_id: string;
   key: string;
 }
 
-type UsersGetPublicKeyEndpoint = {
+type UsersGetPublicSshKeyForAuthenticatedEndpoint = {
   key_id: number;
 };
 
-type UsersGetPublicKeyRequestOptions = {
+type UsersGetPublicSshKeyForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/keys/:key_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface UsersGetPublicKeyResponseData {
+export interface UsersGetPublicSshKeyForAuthenticatedResponseData {
   key_id: string;
   key: string;
 }
 
-type UsersDeletePublicKeyEndpoint = {
+type UsersDeletePublicSshKeyForAuthenticatedEndpoint = {
   key_id: number;
 };
 
-type UsersDeletePublicKeyRequestOptions = {
+type UsersDeletePublicSshKeyForAuthenticatedRequestOptions = {
   method: "DELETE";
   url: "/user/keys/:key_id";
   headers: RequestHeaders;
@@ -36264,7 +36243,7 @@ export type AppsListSubscriptionsForAuthenticatedUserStubbedResponseData = {
   };
 }[];
 
-type OrgsListMembershipsEndpoint = {
+type OrgsListMembershipsForAuthenticatedUserEndpoint = {
   /**
    * Indicates the state of the memberships to return. Can be either `active` or `pending`. If not specified, the API returns both active and pending memberships.
    */
@@ -36279,13 +36258,13 @@ type OrgsListMembershipsEndpoint = {
   page?: number;
 };
 
-type OrgsListMembershipsRequestOptions = {
+type OrgsListMembershipsForAuthenticatedUserRequestOptions = {
   method: "GET";
   url: "/user/memberships/orgs";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type OrgsListMembershipsResponseData = {
+export type OrgsListMembershipsForAuthenticatedUserResponseData = {
   url: string;
   state: string;
   role: string;
@@ -36377,7 +36356,7 @@ export interface OrgsGetMembershipForAuthenticatedUserResponseData {
   };
 }
 
-type OrgsUpdateMembershipEndpoint = {
+type OrgsUpdateMembershipForAuthenticatedUserEndpoint = {
   org: string;
   /**
    * The state that the membership should be in. Only `"active"` will be accepted.
@@ -36385,13 +36364,13 @@ type OrgsUpdateMembershipEndpoint = {
   state: "active";
 };
 
-type OrgsUpdateMembershipRequestOptions = {
+type OrgsUpdateMembershipForAuthenticatedUserRequestOptions = {
   method: "PATCH";
   url: "/user/memberships/orgs/:org";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface OrgsUpdateMembershipResponseData {
+export interface OrgsUpdateMembershipForAuthenticatedUserResponseData {
   url: string;
   state: string;
   role: string;
@@ -37007,7 +36986,7 @@ export interface ProjectsCreateForAuthenticatedUserResponseData {
   updated_at: string;
 }
 
-type UsersListPublicEmailsEndpoint = {
+type UsersListPublicEmailsForAuthenticatedEndpoint = {
   /**
    * Results per page (max 100)
    */
@@ -37018,13 +36997,13 @@ type UsersListPublicEmailsEndpoint = {
   page?: number;
 };
 
-type UsersListPublicEmailsRequestOptions = {
+type UsersListPublicEmailsForAuthenticatedRequestOptions = {
   method: "GET";
   url: "/user/public_emails";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export type UsersListPublicEmailsResponseData = {
+export type UsersListPublicEmailsForAuthenticatedResponseData = {
   email: string;
   verified: boolean;
   primary: boolean;
@@ -39002,13 +38981,13 @@ type GistsUpdateParamsFilesKeyString = {
   content: string;
   filename: string;
 };
-type OrgsCreateHookParamsConfig = {
+type OrgsCreateWebhookParamsConfig = {
   url: string;
   content_type?: string;
   secret?: string;
   insecure_ssl?: string;
 };
-type OrgsUpdateHookParamsConfig = {
+type OrgsUpdateWebhookParamsConfig = {
   url: string;
   content_type?: string;
   secret?: string;
@@ -39038,7 +39017,7 @@ type ReposUpdateBranchProtectionParamsRestrictions = {
   teams: string[];
   apps?: string[];
 };
-type ReposUpdateProtectedBranchPullRequestReviewEnforcementParamsDismissalRestrictions = {
+type ReposUpdatePullRequestReviewProtectionParamsDismissalRestrictions = {
   users?: string[];
   teams?: string[];
 };
@@ -39102,11 +39081,11 @@ type ChecksSetSuitesPreferencesParamsAutoTriggerChecks = {
   app_id: number;
   setting: boolean;
 };
-type ReposCreateOrUpdateFileParamsCommitter = {
+type ReposCreateOrUpdateFileContentsParamsCommitter = {
   name: string;
   email: string;
 };
-type ReposCreateOrUpdateFileParamsAuthor = {
+type ReposCreateOrUpdateFileContentsParamsAuthor = {
   name: string;
   email: string;
 };
@@ -39141,19 +39120,19 @@ type GitCreateTreeParamsTree = {
   sha?: string | null;
   content?: string;
 };
-type ReposCreateHookParamsConfig = {
+type ReposCreateWebhookParamsConfig = {
   url: string;
   content_type?: string;
   secret?: string;
   insecure_ssl?: string;
 };
-type ReposUpdateHookParamsConfig = {
+type ReposUpdateWebhookParamsConfig = {
   url: string;
   content_type?: string;
   secret?: string;
   insecure_ssl?: string;
 };
-type ReposEnablePagesSiteParamsSource = {
+type ReposCreatePagesSiteParamsSource = {
   branch?: "master" | "gh-pages";
   path?: string;
 };
