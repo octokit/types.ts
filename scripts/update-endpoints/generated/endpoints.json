@@ -20636,6 +20636,68 @@
     "renamed": null
   },
   {
+    "name": "List commit comments for a repository",
+    "scope": "repos",
+    "id": "listCommitComments",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/comments",
+    "documentationUrl": "https://developer.github.com/v3/repos/comments/#list-commit-comments-for-a-repository",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"html_url\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"body\":{\"type\":\"string\"},\"path\":{\"type\":\"string\"},\"position\":{\"type\":\"number\"},\"line\":{\"type\":\"number\"},\"commit_id\":{\"type\":\"string\"},\"user\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"}}}}"
+      }
+    ],
+    "renamed": {
+      "note": "\"repos/list-commit-comments\" operation ID is now \"repos/list-commit-comments-for-repo\""
+    }
+  },
+  {
     "name": "Get a commit comment",
     "scope": "repos",
     "id": "getCommitComment",
