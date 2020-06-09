@@ -5340,6 +5340,7 @@ export interface AppsCreateInstallationAccessTokenResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -7416,6 +7417,7 @@ export interface AppsListReposAccessibleToInstallationResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -7709,6 +7711,7 @@ export type IssuesListResponseData = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -9913,6 +9916,7 @@ export type IssuesListForOrgResponseData = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -10265,6 +10269,7 @@ export interface MigrationsStartForOrgResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -10413,6 +10418,7 @@ export type MigrationsListForOrgResponseData = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -10555,6 +10561,7 @@ export interface MigrationsGetStatusForOrgResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -10724,6 +10731,7 @@ export type MigrationsListReposForOrgResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -11138,6 +11146,7 @@ export type ReposListForOrgResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -11329,6 +11338,7 @@ export interface ReposCreateInOrgResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -12936,6 +12946,7 @@ export type TeamsListReposInOrgResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -13085,6 +13096,7 @@ export interface TeamsCheckPermissionsForRepoInOrgResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -13190,6 +13202,7 @@ export interface TeamsCheckPermissionsForRepoInOrgResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -14111,6 +14124,7 @@ export interface ReposGetResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -14242,6 +14256,7 @@ export interface ReposGetResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -14347,6 +14362,7 @@ export interface ReposGetResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -14529,6 +14545,7 @@ export interface ReposUpdateResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -14653,6 +14670,7 @@ export interface ReposUpdateResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -14758,6 +14776,7 @@ export interface ReposUpdateResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -18134,6 +18153,7 @@ export interface ChecksCreateSuiteResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -18264,6 +18284,7 @@ export interface ChecksSetSuitesPreferencesResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -18428,6 +18449,7 @@ export interface ChecksGetSuiteResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -19757,6 +19779,7 @@ export type ReposListPullRequestsAssociatedWithCommitResponseData = {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -19887,6 +19910,7 @@ export type ReposListPullRequestsAssociatedWithCommitResponseData = {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -20321,6 +20345,7 @@ export interface ChecksListSuitesForRefResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -21796,6 +21821,7 @@ export type ReposListForksResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -21924,6 +21950,7 @@ export interface ReposCreateForkResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -26977,6 +27004,7 @@ export type PullsListResponseData = {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -27107,6 +27135,7 @@ export type PullsListResponseData = {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -27467,6 +27496,7 @@ export interface PullsCreateResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -27597,6 +27627,7 @@ export interface PullsCreateResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -28347,6 +28378,7 @@ export interface PullsGetResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -28477,6 +28509,7 @@ export interface PullsGetResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -28866,6 +28899,7 @@ export interface PullsUpdateResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -28996,6 +29030,7 @@ export interface PullsUpdateResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -29898,6 +29933,7 @@ export interface PullsRequestReviewersResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -30028,6 +30064,7 @@ export interface PullsRequestReviewersResponseData {
       template_repository: string;
       temp_clone_token: string;
       allow_squash_merge: boolean;
+      delete_branch_on_merge: boolean;
       allow_merge_commit: boolean;
       subscribers_count: number;
       network_count: number;
@@ -32096,6 +32133,7 @@ export interface ReposTransferResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -32384,12 +32422,14 @@ export interface ReposCreateUsingTemplateResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
   };
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -34648,6 +34688,7 @@ export type TeamsListReposLegacyResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -34795,6 +34836,7 @@ export interface TeamsCheckPermissionsForRepoLegacyResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -34900,6 +34942,7 @@ export interface TeamsCheckPermissionsForRepoLegacyResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -35759,6 +35802,7 @@ export interface AppsListInstallationReposForAuthenticatedUserResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -36069,6 +36113,7 @@ export type IssuesListForAuthenticatedUserResponseData = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -36559,6 +36604,7 @@ export interface MigrationsStartForAuthenticatedUserResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -36712,6 +36758,7 @@ export type MigrationsListForAuthenticatedUserResponseData = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -36858,6 +36905,7 @@ export interface MigrationsGetStatusForAuthenticatedUserResponseData {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -37232,6 +37280,7 @@ export interface ReposCreateForAuthenticatedUserResponseData {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -37518,6 +37567,7 @@ export type ActivityListReposStarredByAuthenticatedUserResponseData = {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -37626,6 +37676,7 @@ export type ActivityListReposStarredByAuthenticatedUserResponse200Data = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -37787,6 +37838,7 @@ export type ActivityListWatchedReposForAuthenticatedUserResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -37981,6 +38033,7 @@ export type MigrationsListReposForUserResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
@@ -38725,6 +38778,7 @@ export type ActivityListReposStarredByUserResponseData = {
   template_repository: string;
   temp_clone_token: string;
   allow_squash_merge: boolean;
+  delete_branch_on_merge: boolean;
   allow_merge_commit: boolean;
   subscribers_count: number;
   network_count: number;
@@ -38833,6 +38887,7 @@ export type ActivityListReposStarredByUserResponse200Data = {
     template_repository: string;
     temp_clone_token: string;
     allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
     allow_merge_commit: boolean;
     subscribers_count: number;
     network_count: number;
@@ -38956,6 +39011,7 @@ export type ActivityListReposWatchedByUserResponseData = {
   };
   template_repository: string;
   temp_clone_token: string;
+  delete_branch_on_merge: boolean;
   subscribers_count: number;
   network_count: number;
   license: {
