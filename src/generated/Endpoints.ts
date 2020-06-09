@@ -491,14 +491,6 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/repos/downloads/#delete-a-download
-   */
-  "DELETE /repos/:owner/:repo/downloads/:download_id": {
-    parameters: ReposDeleteDownloadEndpoint;
-    request: ReposDeleteDownloadRequestOptions;
-    response: OctokitResponse<any>;
-  };
-  /**
    * @see https://developer.github.com/v3/git/refs/#delete-a-reference
    */
   "DELETE /repos/:owner/:repo/git/refs/:ref": {
@@ -2189,22 +2181,6 @@ export interface Endpoints {
     parameters: ReposGetDeploymentStatusEndpoint;
     request: ReposGetDeploymentStatusRequestOptions;
     response: OctokitResponse<ReposGetDeploymentStatusResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/repos/downloads/#list-downloads-for-a-repository
-   */
-  "GET /repos/:owner/:repo/downloads": {
-    parameters: ReposListDownloadsEndpoint;
-    request: ReposListDownloadsRequestOptions;
-    response: OctokitResponse<ReposListDownloadsResponseData>;
-  };
-  /**
-   * @see https://developer.github.com/v3/repos/downloads/#get-a-single-download
-   */
-  "GET /repos/:owner/:repo/downloads/:download_id": {
-    parameters: ReposGetDownloadEndpoint;
-    request: ReposGetDownloadRequestOptions;
-    response: OctokitResponse<ReposGetDownloadResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/activity/events/#list-repository-events
@@ -21602,77 +21578,6 @@ type ReposCreateDispatchEventEndpoint = {
 type ReposCreateDispatchEventRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/dispatches";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-
-type ReposListDownloadsEndpoint = {
-  owner: string;
-
-  repo: string;
-  /**
-   * Results per page (max 100)
-   */
-  per_page?: number;
-  /**
-   * Page number of the results to fetch.
-   */
-  page?: number;
-};
-
-type ReposListDownloadsRequestOptions = {
-  method: "GET";
-  url: "/repos/:owner/:repo/downloads";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-export type ReposListDownloadsResponseData = {
-  url: string;
-  html_url: string;
-  id: number;
-  name: string;
-  description: string;
-  size: number;
-  download_count: number;
-  content_type: string;
-}[];
-
-type ReposGetDownloadEndpoint = {
-  owner: string;
-
-  repo: string;
-
-  download_id: number;
-};
-
-type ReposGetDownloadRequestOptions = {
-  method: "GET";
-  url: "/repos/:owner/:repo/downloads/:download_id";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-export interface ReposGetDownloadResponseData {
-  url: string;
-  html_url: string;
-  id: number;
-  name: string;
-  description: string;
-  size: number;
-  download_count: number;
-  content_type: string;
-}
-
-type ReposDeleteDownloadEndpoint = {
-  owner: string;
-
-  repo: string;
-
-  download_id: number;
-};
-
-type ReposDeleteDownloadRequestOptions = {
-  method: "DELETE";
-  url: "/repos/:owner/:repo/downloads/:download_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
