@@ -26297,7 +26297,7 @@ type ReposUpdateInformationAboutPagesSiteEndpoint = {
   /**
    * Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `"gh-pages"`, `"master"`, and `"master /docs"`.
    */
-  source?: '"gh-pages"' | '"master"' | '"master /docs"';
+  source?: "gh-pages" | "master" | "master /docs";
 };
 
 type ReposUpdateInformationAboutPagesSiteRequestOptions = {

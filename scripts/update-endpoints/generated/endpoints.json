@@ -30900,7 +30900,7 @@
         "allowNull": false,
         "deprecated": null,
         "description": "Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `\"gh-pages\"`, `\"master\"`, and `\"master /docs\"`.",
-        "enum": ["\"gh-pages\"", "\"master\"", "\"master /docs\""],
+        "enum": ["gh-pages", "master", "master /docs"],
         "name": "source",
         "type": "string",
         "required": false
