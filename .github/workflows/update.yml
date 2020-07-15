@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'workflow_dispatch' || github.event.client_payload.action == 'published'
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: "12.x"
@@ -34,7 +34,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.OCTOKITBOT_PAT }}
         with:
-          title: "🚧 GitHub REST Endpoints changed"
+          title: "🚧 GitHub OpenAPI spec changed"
           body: |
             See what changed at https://github.com/octokit/routes/releases/latest.
 
@@ -46,6 +46,6 @@ jobs:
             - If there are no typescript or code changes, use a `docs` prefix
             - If there are typescript changes but no code changes, use `fix(typescript)` prefix
             - If there are code changes, use `fix` if a problem was resolved, `feat` if new endpoints / parameters were added, and `feat(deprecation)` if a method was deprecated.
-          branch: "routes-update"
+          branch: "openapi-update"
           commit-message: "WIP octokit/routes updated"
           author: "Octokit Bot <33075676+octokitbot@users.noreply.github.com>"
