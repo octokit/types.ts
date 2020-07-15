@@ -267,7 +267,7 @@ function patchSchema(schema) {
 
 function parameterize(parameter) {
   let key = parameter.name;
-  const type = typeMap[parameter.type] || parameter.type;
+  const type = typeMap[parameter.type] || parameter.type || "any";
   const enums = parameter.enum
     ? parameter.enum.map(JSON.stringify).join("|")
     : null;
