@@ -8,6 +8,8 @@ if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
 }
 
+const version = process.env.VERSION.replace(/^v/, "");
+
 const QUERY = `
   query ($version: String) {
     endpoints(version: $version) {
@@ -51,7 +53,7 @@ main();
 async function main() {
   const { endpoints } = await graphql(QUERY, {
     url: "https://github-openapi-graphql-server.vercel.app/api/graphql",
-    version: process.env.VERSION,
+    version,
   });
 
   writeFileSync(

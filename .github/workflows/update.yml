@@ -1,11 +1,18 @@
-name: octokit/routes update
+name: Update
 on:
   repository_dispatch:
-    types: [octokit-routes-release]
+    types: [github-openapi-release]
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version of https://www.npmjs.com/package/@github/openapi"
+        required: true
 
 jobs:
   update_routes:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event.client_payload.action == 'published'
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@v1
@@ -15,8 +22,13 @@ jobs:
       - run: git checkout routes-update || true
       - run: npm ci
       - run: npm run update-endpoints
+        if: github.event_name == 'repository_dispatch'
         env:
-          VERSION: ${{ github.event.client_payload.version }}
+          VERSION: ${{ github.event.client_payload.release.tag_name }}
+      - run: npm run update-endpoints
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          VERSION: ${{ github.event.inputs.version }}
       - name: Create Pull Request
         uses: gr2m/create-or-update-pull-request-action@v1.x
         env:
