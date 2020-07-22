@@ -3108,14 +3108,6 @@ export interface Endpoints {
     response: OctokitResponse<UsersGetAuthenticatedResponseData>;
   };
   /**
-   * @see https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration
-   */
-  "GET /user/:migration_id/repositories": {
-    parameters: MigrationsListReposForUserEndpoint;
-    request: MigrationsListReposForUserRequestOptions;
-    response: OctokitResponse<MigrationsListReposForUserResponseData>;
-  };
-  /**
    * @see https://developer.github.com/v3/users/blocking/#list-users-blocked-by-the-authenticated-user
    */
   "GET /user/blocks": {
@@ -3292,6 +3284,14 @@ export interface Endpoints {
     parameters: MigrationsGetArchiveForAuthenticatedUserEndpoint;
     request: MigrationsGetArchiveForAuthenticatedUserRequestOptions;
     response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration
+   */
+  "GET /user/migrations/:migration_id/repositories": {
+    parameters: MigrationsListReposForUserEndpoint;
+    request: MigrationsListReposForUserRequestOptions;
+    response: OctokitResponse<MigrationsListReposForUserResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/orgs/#list-organizations-for-the-authenticated-user
@@ -17743,7 +17743,7 @@ type MigrationsListReposForUserEndpoint = {
 
 type MigrationsListReposForUserRequestOptions = {
   method: "GET";
-  url: "/user/:migration_id/repositories";
+  url: "/user/migrations/:migration_id/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };

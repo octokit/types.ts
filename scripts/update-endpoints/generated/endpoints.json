@@ -15459,7 +15459,7 @@
     "scope": "migrations",
     "id": "listReposForUser",
     "method": "GET",
-    "url": "/user/{migration_id}/repositories",
+    "url": "/user/migrations/{migration_id}/repositories",
     "documentationUrl": "https://developer.github.com/v3/migrations/users/#list-repositories-for-a-user-migration",
     "parameters": [
       {
