@@ -691,6 +691,22 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#delete-a-scim-group-from-an-enterprise
+   */
+  "DELETE /scim/v2/enterprises/:enterprise/Groups/:scim_group_id": {
+    parameters: EnterpriseAdminDeleteScimGroupFromEnterpriseEndpoint;
+    request: EnterpriseAdminDeleteScimGroupFromEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#delete-a-scim-user-from-an-enterprise
+   */
+  "DELETE /scim/v2/enterprises/:enterprise/Users/:scim_user_id": {
+    parameters: EnterpriseAdminDeleteUserFromEnterpriseEndpoint;
+    request: EnterpriseAdminDeleteUserFromEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
    * @see https://developer.github.com/v3/scim/#delete-a-scim-user-from-an-organization
    */
   "DELETE /scim/v2/organizations/:org/Users/:scim_user_id": {
@@ -2886,6 +2902,46 @@ export interface Endpoints {
     response: OctokitResponse<ReposListPublicResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#list-provisioned-scim groups-for-an-enterprise
+   */
+  "GET /scim/v2/enterprises/:enterprise/Groups": {
+    parameters: EnterpriseAdminListProvisionedGroupsEnterpriseEndpoint;
+    request: EnterpriseAdminListProvisionedGroupsEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListProvisionedGroupsEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#get-scim-provisioning-information-for-an-enterprise group
+   */
+  "GET /scim/v2/enterprises/:enterprise/Groups/:scim_group_id": {
+    parameters: EnterpriseAdminGetProvisioningInformationForEnterpriseGroupEndpoint;
+    request: EnterpriseAdminGetProvisioningInformationForEnterpriseGroupRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetProvisioningInformationForEnterpriseGroupResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#list-scim-provisioned-identities-for-an-enterprise
+   */
+  "GET /scim/v2/enterprises/:enterprise/Users": {
+    parameters: EnterpriseAdminListProvisionedIdentitiesEnterpriseEndpoint;
+    request: EnterpriseAdminListProvisionedIdentitiesEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListProvisionedIdentitiesEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#get-scim-provisioning-information-for-an-enterprise-user
+   */
+  "GET /scim/v2/enterprises/:enterprise/Users/:scim_user_id": {
+    parameters: EnterpriseAdminGetProvisioningInformationForEnterpriseUserEndpoint;
+    request: EnterpriseAdminGetProvisioningInformationForEnterpriseUserRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetProvisioningInformationForEnterpriseUserResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/scim/#list-scim-provisioned-identities
    */
   "GET /scim/v2/organizations/:org/Users": {
@@ -3832,6 +3888,26 @@ export interface Endpoints {
     response: OctokitResponse<ReposUpdateReleaseAssetResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#update-an-attribute-for-a-scim-enterprise-group
+   */
+  "PATCH /scim/v2/enterprises/:enterprise/Groups/:scim_group_id": {
+    parameters: EnterpriseAdminUpdateAttributeForEnterpriseGroupEndpoint;
+    request: EnterpriseAdminUpdateAttributeForEnterpriseGroupRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminUpdateAttributeForEnterpriseGroupResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#update-an-attribute-for-a-scim-enterprise-user
+   */
+  "PATCH /scim/v2/enterprises/:enterprise/Users/:scim_user_id": {
+    parameters: EnterpriseAdminUpdateAttributeForEnterpriseUserEndpoint;
+    request: EnterpriseAdminUpdateAttributeForEnterpriseUserRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/scim/#update-an-attribute-for-a-scim-user
    */
   "PATCH /scim/v2/organizations/:org/Users/:scim_user_id": {
@@ -4576,6 +4652,26 @@ export interface Endpoints {
     response: OctokitResponse<ReposCreateUsingTemplateResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#provision-a-scim-enterprise-group-and-invite-users
+   */
+  "POST /scim/v2/enterprises/:enterprise/Groups": {
+    parameters: EnterpriseAdminProvisionAndInviteEnterpriseGroupEndpoint;
+    request: EnterpriseAdminProvisionAndInviteEnterpriseGroupRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminProvisionAndInviteEnterpriseGroupResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#provision-and-invite-a-scim-enterprise-user
+   */
+  "POST /scim/v2/enterprises/:enterprise/Users": {
+    parameters: EnterpriseAdminProvisionAndInviteEnterpriseUserEndpoint;
+    request: EnterpriseAdminProvisionAndInviteEnterpriseUserRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminProvisionAndInviteEnterpriseUserResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/scim/#provision-and-invite-a-scim-user
    */
   "POST /scim/v2/organizations/:org/Users": {
@@ -5008,6 +5104,26 @@ export interface Endpoints {
     parameters: ReposEnableVulnerabilityAlertsEndpoint;
     request: ReposEnableVulnerabilityAlertsRequestOptions;
     response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#set-scim-information-for-a-provisioned-enterprise-group
+   */
+  "PUT /scim/v2/enterprises/:enterprise/Groups/:scim_group_id": {
+    parameters: EnterpriseAdminSetInformationForProvisionedEnterpriseGroupEndpoint;
+    request: EnterpriseAdminSetInformationForProvisionedEnterpriseGroupRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminSetInformationForProvisionedEnterpriseGroupResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/scim/#set-scim-information-for-a-provisioned-enterprise-user
+   */
+  "PUT /scim/v2/enterprises/:enterprise/Users/:scim_user_id": {
+    parameters: EnterpriseAdminSetInformationForProvisionedEnterpriseUserEndpoint;
+    request: EnterpriseAdminSetInformationForProvisionedEnterpriseUserRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminSetInformationForProvisionedEnterpriseUserResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/scim/#set-scim-information-for-a-provisioned-user
@@ -11679,6 +11795,480 @@ type EmojisGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
+type EnterpriseAdminDeleteScimGroupFromEnterpriseEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_group_id: string;
+};
+
+type EnterpriseAdminDeleteScimGroupFromEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/scim/v2/enterprises/:enterprise/Groups/:scim_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminDeleteUserFromEnterpriseEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_user_id: string;
+};
+
+type EnterpriseAdminDeleteUserFromEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminGetProvisioningInformationForEnterpriseGroupEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_group_id: string;
+};
+
+type EnterpriseAdminGetProvisioningInformationForEnterpriseGroupRequestOptions = {
+  method: "GET";
+  url: "/scim/v2/enterprises/:enterprise/Groups/:scim_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetProvisioningInformationForEnterpriseGroupResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  displayName: string;
+  members: {
+    value: string;
+    $ref: string;
+    display: string;
+  }[];
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminGetProvisioningInformationForEnterpriseUserEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_user_id: string;
+};
+
+type EnterpriseAdminGetProvisioningInformationForEnterpriseUserRequestOptions = {
+  method: "GET";
+  url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetProvisioningInformationForEnterpriseUserResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  userName: string;
+  name: {
+    givenName: string;
+    familyName: string;
+  };
+  emails: {
+    value: string;
+    type: string;
+    primary: boolean;
+  }[];
+  groups: {
+    value: string;
+  }[];
+  active: boolean;
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminListProvisionedGroupsEnterpriseEndpoint = {
+  enterprise: string;
+  /**
+   * Used for pagination: the index of the first result to return.
+   */
+  startIndex?: number;
+  /**
+   * Used for pagination: the number of results to return.
+   */
+  count?: number;
+};
+
+type EnterpriseAdminListProvisionedGroupsEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/scim/v2/enterprises/:enterprise/Groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListProvisionedGroupsEnterpriseResponseData {
+  schemas: string[];
+  totalResults: number;
+  itemsPerPage: number;
+  startIndex: number;
+  Resources: {
+    schemas: string[];
+    id: string;
+    externalId: string;
+    displayName: string;
+    members: {
+      value: string;
+      $ref: string;
+      display: string;
+    }[];
+    meta: {
+      resourceType: string;
+      created: string;
+      lastModified: string;
+      location: string;
+    };
+  }[];
+}
+
+type EnterpriseAdminListProvisionedIdentitiesEnterpriseEndpoint = {
+  enterprise: string;
+  /**
+   * Used for pagination: the index of the first result to return.
+   */
+  startIndex?: number;
+  /**
+   * Used for pagination: the number of results to return.
+   */
+  count?: number;
+};
+
+type EnterpriseAdminListProvisionedIdentitiesEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/scim/v2/enterprises/:enterprise/Users";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListProvisionedIdentitiesEnterpriseResponseData {
+  schemas: string[];
+  totalResults: number;
+  itemsPerPage: number;
+  startIndex: number;
+  Resources: {
+    schemas: string[];
+    id: string;
+    externalId: string;
+    userName: string;
+    name: {
+      givenName: string;
+      familyName: string;
+    };
+    emails: {
+      value: string;
+      primary: boolean;
+      type: string;
+    }[];
+    groups: {
+      value: string;
+    }[];
+    active: boolean;
+    meta: {
+      resourceType: string;
+      created: string;
+      lastModified: string;
+      location: string;
+    };
+  }[];
+}
+
+type EnterpriseAdminProvisionAndInviteEnterpriseGroupEndpoint = {
+  enterprise: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * The name of the SCIM group. This must match the GitHub organization that the group maps to.
+   */
+  displayName: string;
+
+  members?: EnterpriseAdminProvisionAndInviteEnterpriseGroupParamsMembers[];
+};
+
+type EnterpriseAdminProvisionAndInviteEnterpriseGroupRequestOptions = {
+  method: "POST";
+  url: "/scim/v2/enterprises/:enterprise/Groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminProvisionAndInviteEnterpriseGroupResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  displayName: string;
+  members: {
+    value: string;
+    $ref: string;
+    display: string;
+  }[];
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminProvisionAndInviteEnterpriseUserEndpoint = {
+  enterprise: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * The username for the user.
+   */
+  userName: string;
+
+  name: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsName;
+  /**
+   * List of user emails.
+   */
+  emails: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsEmails[];
+  /**
+   * List of SCIM group IDs the user is a member of.
+   */
+  groups?: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsGroups[];
+};
+
+type EnterpriseAdminProvisionAndInviteEnterpriseUserRequestOptions = {
+  method: "POST";
+  url: "/scim/v2/enterprises/:enterprise/Users";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminProvisionAndInviteEnterpriseUserResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  userName: string;
+  name: {
+    givenName: string;
+    familyName: string;
+  };
+  emails: {
+    value: string;
+    type: string;
+    primary: boolean;
+  }[];
+  groups: {
+    value: string;
+  }[];
+  active: boolean;
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_group_id: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * The name of the SCIM group. This must match the GitHub organization that the group maps to.
+   */
+  displayName: string;
+
+  members?: EnterpriseAdminSetInformationForProvisionedEnterpriseGroupParamsMembers[];
+};
+
+type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupRequestOptions = {
+  method: "PUT";
+  url: "/scim/v2/enterprises/:enterprise/Groups/:scim_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminSetInformationForProvisionedEnterpriseGroupResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  displayName: string;
+  members: {
+    value: string;
+    $ref: string;
+    display: string;
+  }[];
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminSetInformationForProvisionedEnterpriseUserEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_user_id: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * The username for the user.
+   */
+  userName: string;
+
+  name: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsName;
+  /**
+   * List of user emails.
+   */
+  emails: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsEmails[];
+  /**
+   * List of SCIM group IDs the user is a member of.
+   */
+  groups?: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsGroups[];
+};
+
+type EnterpriseAdminSetInformationForProvisionedEnterpriseUserRequestOptions = {
+  method: "PUT";
+  url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminSetInformationForProvisionedEnterpriseUserResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  userName: string;
+  name: {
+    givenName: string;
+    familyName: string;
+  };
+  emails: {
+    value: string;
+    type: string;
+    primary: boolean;
+  }[];
+  groups: {
+    value: string;
+  }[];
+  active: boolean;
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminUpdateAttributeForEnterpriseGroupEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_group_id: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * Array of [SCIM operations](https://tools.ietf.org/html/rfc7644#section-3.5.2).
+   */
+  Operations: EnterpriseAdminUpdateAttributeForEnterpriseGroupParamsOperations[];
+};
+
+type EnterpriseAdminUpdateAttributeForEnterpriseGroupRequestOptions = {
+  method: "PATCH";
+  url: "/scim/v2/enterprises/:enterprise/Groups/:scim_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminUpdateAttributeForEnterpriseGroupResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  displayName: string;
+  members: {
+    value: string;
+    $ref: string;
+    display: string;
+  }[];
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
+
+type EnterpriseAdminUpdateAttributeForEnterpriseUserEndpoint = {
+  enterprise: string;
+  /**
+   * Identifier generated by the GitHub SCIM endpoint.
+   */
+  scim_user_id: string;
+  /**
+   * The SCIM schema URIs.
+   */
+  schemas: string[];
+  /**
+   * Array of [SCIM operations](https://tools.ietf.org/html/rfc7644#section-3.5.2).
+   */
+  Operations: EnterpriseAdminUpdateAttributeForEnterpriseUserParamsOperations[];
+};
+
+type EnterpriseAdminUpdateAttributeForEnterpriseUserRequestOptions = {
+  method: "PATCH";
+  url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData {
+  schemas: string[];
+  id: string;
+  externalId: string;
+  userName: string;
+  name: {
+    givenName: string;
+    familyName: string;
+  };
+  emails: {
+    value: string;
+    type: string;
+    primary: boolean;
+  }[];
+  groups: {
+    value: string;
+  }[];
+  active: boolean;
+  meta: {
+    resourceType: string;
+    created: string;
+    lastModified: string;
+    location: string;
+  };
+}
 
 type GistsCheckIsStarredEndpoint = {
   gist_id: string;
@@ -34458,7 +35048,7 @@ type ScimDeleteUserFromOrgEndpoint = {
   /**
    * Identifier generated by the GitHub SCIM endpoint.
    */
-  scim_user_id: number;
+  scim_user_id: string;
 };
 
 type ScimDeleteUserFromOrgRequestOptions = {
@@ -34473,7 +35063,7 @@ type ScimGetProvisioningInformationForUserEndpoint = {
   /**
    * Identifier generated by the GitHub SCIM endpoint.
    */
-  scim_user_id: number;
+  scim_user_id: string;
 };
 
 type ScimGetProvisioningInformationForUserRequestOptions = {
@@ -34614,7 +35204,7 @@ type ScimSetInformationForProvisionedUserEndpoint = {
   /**
    * Identifier generated by the GitHub SCIM endpoint.
    */
-  scim_user_id: number;
+  scim_user_id: string;
   /**
    * The SCIM schema URIs.
    */
@@ -34665,7 +35255,7 @@ type ScimUpdateAttributeForUserEndpoint = {
   /**
    * Identifier generated by the GitHub SCIM endpoint.
    */
-  scim_user_id: number;
+  scim_user_id: string;
   /**
    * The SCIM schema URIs.
    */
@@ -39647,6 +40237,38 @@ type ChecksUpdateParamsActions = {
   description: string;
   identifier: string;
 };
+type EnterpriseAdminProvisionAndInviteEnterpriseGroupParamsMembers = {
+  value: string;
+};
+type EnterpriseAdminProvisionAndInviteEnterpriseUserParamsName = {
+  givenName: string;
+  familyName: string;
+};
+type EnterpriseAdminProvisionAndInviteEnterpriseUserParamsEmails = {
+  value: string;
+  type: string;
+  primary: boolean;
+};
+type EnterpriseAdminProvisionAndInviteEnterpriseUserParamsGroups = {
+  value?: string;
+};
+type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupParamsMembers = {
+  value: string;
+};
+type EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsName = {
+  givenName: string;
+  familyName: string;
+};
+type EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsEmails = {
+  value: string;
+  type: string;
+  primary: boolean;
+};
+type EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsGroups = {
+  value?: string;
+};
+type EnterpriseAdminUpdateAttributeForEnterpriseGroupParamsOperations = {};
+type EnterpriseAdminUpdateAttributeForEnterpriseUserParamsOperations = {};
 type GistsCreateParamsFiles = {
   [key: string]: GistsCreateParamsFilesKeyString;
 };
