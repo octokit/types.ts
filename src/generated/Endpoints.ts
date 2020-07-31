@@ -28126,8 +28126,10 @@ type ReposCreatePagesSiteEndpoint = {
   owner: string;
 
   repo: string;
-
-  source?: ReposCreatePagesSiteParamsSource;
+  /**
+   * The source branch and directory used to publish your Pages site.
+   */
+  source: ReposCreatePagesSiteParamsSource;
 } & RequiredPreview<"switcheroo">;
 
 type ReposCreatePagesSiteRequestOptions = {
@@ -34490,9 +34492,9 @@ type ReposUpdateInformationAboutPagesSiteEndpoint = {
    */
   cname?: string;
   /**
-   * Update the source for the repository. Must include the branch name, and may optionally specify the subdirectory `/docs`. Possible values are `"gh-pages"`, `"master"`, and `"master /docs"`.
+   * Update the source for the repository. Must include the branch name and path.
    */
-  source?: "gh-pages" | "master" | "master /docs";
+  source: ReposUpdateInformationAboutPagesSiteParamsSource;
 };
 
 type ReposUpdateInformationAboutPagesSiteRequestOptions = {
@@ -40334,8 +40336,8 @@ type ReposCreateOrUpdateFileContentsParamsAuthor = {
   email: string;
 };
 type ReposCreatePagesSiteParamsSource = {
-  branch?: "master" | "gh-pages";
-  path?: string;
+  branch: string;
+  path?: "/" | "/docs";
 };
 type ReposCreateWebhookParamsConfig = {
   url: string;
@@ -40369,6 +40371,10 @@ type ReposUpdateBranchProtectionParamsRestrictions = {
   users: string[];
   teams: string[];
   apps?: string[];
+};
+type ReposUpdateInformationAboutPagesSiteParamsSource = {
+  branch: string;
+  path: "/" | "/docs";
 };
 type ReposUpdatePullRequestReviewProtectionParamsDismissalRestrictions = {
   users?: string[];
