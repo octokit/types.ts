@@ -34992,7 +34992,7 @@ type ReposUploadReleaseAssetEndpoint = {
   /**
    * The raw file data
    */
-  data: string;
+  data: string | Buffer;
   /**
    * The URL origin (protocol + host name + port) is included in `upload_url` returned in the response of the "Create a release" endpoint
    */

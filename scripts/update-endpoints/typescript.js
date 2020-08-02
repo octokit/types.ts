@@ -149,6 +149,9 @@ async function run() {
           "For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`",
         required: true,
       });
+
+      const data = parameters.find((parameter) => parameter.name === "data");
+      data.type = "string | Buffer";
     }
 
     options.push({
