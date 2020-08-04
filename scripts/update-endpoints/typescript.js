@@ -140,8 +140,10 @@ async function run() {
     }, undefined);
 
     const extraParameters = [];
-    // baseUrl must be set for "Upload a release asset"
+
+    // workarounds for "Upload a release asset"
     if (optionsTypeName === "ReposUploadReleaseAssetEndpoint") {
+      // baseUrl must be set for "Upload a release asset"
       extraParameters.push({
         name: "baseUrl",
         type: "string",
@@ -149,6 +151,10 @@ async function run() {
           "For https://api.github.com, set `baseUrl` to `https://uploads.github.com`. For GitHub Enterprise Server, set it to `<your hostname>/api/uploads`",
         required: true,
       });
+
+      // data can be either a string or Buffer. Currently the OpenAPI types only specify a type of string.
+      const data = parameters.find((parameter) => parameter.name === "data");
+      data.type = "string | Buffer";
     }
 
     options.push({
