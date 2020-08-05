@@ -75,6 +75,38 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#delete-a-self-hosted-runner-group-from-an-enterprise
+   */
+  "DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id": {
+    parameters: EnterpriseAdminDeleteSelfHostedRunnerGroupFromEnterpriseEndpoint;
+    request: EnterpriseAdminDeleteSelfHostedRunnerGroupFromEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   */
+  "DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id": {
+    parameters: EnterpriseAdminRemoveOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint;
+    request: EnterpriseAdminRemoveOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#remove-a-self-hosted-runner-from-a-group-for-an-enterprise
+   */
+  "DELETE /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id": {
+    parameters: EnterpriseAdminRemoveSelfHostedRunnerFromGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminRemoveSelfHostedRunnerFromGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#delete-self-hosted-runner-from-an-enterprise
+   */
+  "DELETE /enterprises/:enterprise/actions/runners/:runner_id": {
+    parameters: EnterpriseAdminDeleteSelfHostedRunnerFromEnterpriseEndpoint;
+    request: EnterpriseAdminDeleteSelfHostedRunnerFromEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
    * @see https://developer.github.com/v3/gists/#delete-a-gist
    */
   "DELETE /gists/:gist_id": {
@@ -112,6 +144,30 @@ export interface Endpoints {
   "DELETE /notifications/threads/:thread_id/subscription": {
     parameters: ActivityDeleteThreadSubscriptionEndpoint;
     request: ActivityDeleteThreadSubscriptionRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#delete-a-self-hosted-runner-group-from-an-organization
+   */
+  "DELETE /orgs/:org/actions/runner-groups/:runner_group_id": {
+    parameters: ActionsDeleteSelfHostedRunnerGroupFromOrgEndpoint;
+    request: ActionsDeleteSelfHostedRunnerGroupFromOrgRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization
+   */
+  "DELETE /orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id": {
+    parameters: ActionsRemoveRepoAccessToSelfHostedRunnerGroupInOrgEndpoint;
+    request: ActionsRemoveRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-a-self-hosted-runner-from-a-group-for-an-organization
+   */
+  "DELETE /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id": {
+    parameters: ActionsRemoveSelfHostedRunnerFromGroupForOrgEndpoint;
+    request: ActionsRemoveSelfHostedRunnerFromGroupForOrgRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -949,28 +1005,104 @@ export interface Endpoints {
     response: OctokitResponse<any>;
   };
   /**
-   * @see https://developer.github.com/v3/billing/#get-github-actions-billing-for-an-enterprise
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runner-groups-for-an-enterprise
    */
-  "GET /enterprises/:enterprise_id/settings/billing/actions": {
-    parameters: BillingGetGithubActionsBillingGheEndpoint;
-    request: BillingGetGithubActionsBillingGheRequestOptions;
-    response: OctokitResponse<BillingGetGithubActionsBillingGheResponseData>;
+  "GET /enterprises/:enterprise/actions/runner-groups": {
+    parameters: EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseEndpoint;
+    request: EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/billing/#get-github-packages-billing-for-an-enterprise
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-group-for-an-enterprise
    */
-  "GET /enterprises/:enterprise_id/settings/billing/packages": {
-    parameters: BillingGetGithubPackagesBillingGheEndpoint;
-    request: BillingGetGithubPackagesBillingGheRequestOptions;
-    response: OctokitResponse<BillingGetGithubPackagesBillingGheResponseData>;
+  "GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id": {
+    parameters: EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseResponseData
+    >;
   };
   /**
-   * @see https://developer.github.com/v3/billing/#get-shared-storage-billing-for-an-enterprise
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise
    */
-  "GET /enterprises/:enterprise_id/settings/billing/shared-storage": {
-    parameters: BillingGetSharedStorageBillingGheEndpoint;
-    request: BillingGetSharedStorageBillingGheRequestOptions;
-    response: OctokitResponse<BillingGetSharedStorageBillingGheResponseData>;
+  "GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations": {
+    parameters: EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint;
+    request: EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-in-a-group-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners": {
+    parameters: EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/actions/runners": {
+    parameters: EnterpriseAdminListSelfHostedRunnersForEnterpriseEndpoint;
+    request: EnterpriseAdminListSelfHostedRunnersForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListSelfHostedRunnersForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/actions/runners/:runner_id": {
+    parameters: EnterpriseAdminGetSelfHostedRunnerForEnterpriseEndpoint;
+    request: EnterpriseAdminGetSelfHostedRunnerForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetSelfHostedRunnerForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#list-runner-applications-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/actions/runners/downloads": {
+    parameters: EnterpriseAdminListRunnerApplicationsForEnterpriseEndpoint;
+    request: EnterpriseAdminListRunnerApplicationsForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminListRunnerApplicationsForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-github-actions-billing-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/settings/billing/actions": {
+    parameters: EnterpriseAdminGetGithubActionsBillingGheEndpoint;
+    request: EnterpriseAdminGetGithubActionsBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetGithubActionsBillingGheResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-github-packages-billing-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/settings/billing/packages": {
+    parameters: EnterpriseAdminGetGithubPackagesBillingGheEndpoint;
+    request: EnterpriseAdminGetGithubPackagesBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetGithubPackagesBillingGheResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-shared-storage-billing-for-an-enterprise
+   */
+  "GET /enterprises/:enterprise/settings/billing/shared-storage": {
+    parameters: EnterpriseAdminGetSharedStorageBillingGheEndpoint;
+    request: EnterpriseAdminGetSharedStorageBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetSharedStorageBillingGheResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events
@@ -1227,6 +1359,46 @@ export interface Endpoints {
     parameters: OrgsGetEndpoint;
     request: OrgsGetRequestOptions;
     response: OctokitResponse<OrgsGetResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runner-groups-for-an-organization
+   */
+  "GET /orgs/:org/actions/runner-groups": {
+    parameters: ActionsListSelfHostedRunnerGroupsForOrgEndpoint;
+    request: ActionsListSelfHostedRunnerGroupsForOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsListSelfHostedRunnerGroupsForOrgResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#get-a-self-hosted-runner-group-for-an-organization
+   */
+  "GET /orgs/:org/actions/runner-groups/:runner_group_id": {
+    parameters: ActionsGetSelfHostedRunnerGroupForOrgEndpoint;
+    request: ActionsGetSelfHostedRunnerGroupForOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsGetSelfHostedRunnerGroupForOrgResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-repository-access-to-a-self-hosted-runner-group-in-an-organization
+   */
+  "GET /orgs/:org/actions/runner-groups/:runner_group_id/repositories": {
+    parameters: ActionsListRepoAccessToSelfHostedRunnerGroupInOrgEndpoint;
+    request: ActionsListRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runners-in-a-group-for-an-organization
+   */
+  "GET /orgs/:org/actions/runner-groups/:runner_group_id/runners": {
+    parameters: ActionsListSelfHostedRunnersInGroupForOrgEndpoint;
+    request: ActionsListSelfHostedRunnersInGroupForOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsListSelfHostedRunnersInGroupForOrgResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/actions/self-hosted-runners/#list-self-hosted-runners-for-an-organization
@@ -3628,6 +3800,16 @@ export interface Endpoints {
     >;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#update-a-self-hosted-runner-group-for-an-enterprise
+   */
+  "PATCH /enterprises/:enterprise/actions/runner-groups/:runner_group_id": {
+    parameters: EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/gists/#update-a-gist
    */
   "PATCH /gists/:gist_id": {
@@ -3658,6 +3840,16 @@ export interface Endpoints {
     parameters: OrgsUpdateEndpoint;
     request: OrgsUpdateRequestOptions;
     response: OctokitResponse<OrgsUpdateResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#update-a-self-hosted-runner-group-for-an-organization
+   */
+  "PATCH /orgs/:org/actions/runner-groups/:runner_group_id": {
+    parameters: ActionsUpdateSelfHostedRunnerGroupForOrgEndpoint;
+    request: ActionsUpdateSelfHostedRunnerGroupForOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsUpdateSelfHostedRunnerGroupForOrgResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/orgs/hooks/#update-an-organization-webhook
@@ -4036,6 +4228,36 @@ export interface Endpoints {
     response: OctokitResponse<AppsCreateContentAttachmentResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#create-self-hosted-runner-group-for-an-enterprise
+   */
+  "POST /enterprises/:enterprise/actions/runner-groups": {
+    parameters: EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#create-a-registration-token-for-an-enterprise
+   */
+  "POST /enterprises/:enterprise/actions/runners/registration-token": {
+    parameters: EnterpriseAdminCreateRegistrationTokenForEnterpriseEndpoint;
+    request: EnterpriseAdminCreateRegistrationTokenForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminCreateRegistrationTokenForEnterpriseResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#create-a-remove-token-for-an-enterprise
+   */
+  "POST /enterprises/:enterprise/actions/runners/remove-token": {
+    parameters: EnterpriseAdminCreateRemoveTokenForEnterpriseEndpoint;
+    request: EnterpriseAdminCreateRemoveTokenForEnterpriseRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminCreateRemoveTokenForEnterpriseResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/gists/#create-a-gist
    */
   "POST /gists": {
@@ -4074,6 +4296,16 @@ export interface Endpoints {
     parameters: MarkdownRenderRawEndpoint;
     request: MarkdownRenderRawRequestOptions;
     response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#create-a-self-hosted-runner-group-for-an-organization
+   */
+  "POST /orgs/:org/actions/runner-groups": {
+    parameters: ActionsCreateSelfHostedRunnerGroupForOrgEndpoint;
+    request: ActionsCreateSelfHostedRunnerGroupForOrgRequestOptions;
+    response: OctokitResponse<
+      ActionsCreateSelfHostedRunnerGroupForOrgResponseData
+    >;
   };
   /**
    * @see https://developer.github.com/v3/actions/self-hosted-runners/#create-a-registration-token-for-an-organization
@@ -4796,6 +5028,38 @@ export interface Endpoints {
     >;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   */
+  "PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations": {
+    parameters: EnterpriseAdminSetOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint;
+    request: EnterpriseAdminSetOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   */
+  "PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id": {
+    parameters: EnterpriseAdminAddOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint;
+    request: EnterpriseAdminAddOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#set-self-hosted-runners-in-a-group-for-an-enterprise
+   */
+  "PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners": {
+    parameters: EnterpriseAdminSetSelfHostedInGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminSetSelfHostedInGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/actions/#add-a-self-hosted-runner-to-a-group-for-an-enterprise
+   */
+  "PUT /enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id": {
+    parameters: EnterpriseAdminAddSelfHostedRunnerToRunnerGroupForEnterpriseEndpoint;
+    request: EnterpriseAdminAddSelfHostedRunnerToRunnerGroupForEnterpriseRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
    * @see https://developer.github.com/v3/gists/#star-a-gist
    */
   "PUT /gists/:gist_id/star": {
@@ -4818,6 +5082,38 @@ export interface Endpoints {
     parameters: ActivitySetThreadSubscriptionEndpoint;
     request: ActivitySetThreadSubscriptionRequestOptions;
     response: OctokitResponse<ActivitySetThreadSubscriptionResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#set-repository-access-to-a-self-hosted-runner-group-in-an-organization
+   */
+  "PUT /orgs/:org/actions/runner-groups/:runner_group_id/repositories": {
+    parameters: ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgEndpoint;
+    request: ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#add-repository-acess-to-a-self-hosted-runner-group-in-an-organization
+   */
+  "PUT /orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id": {
+    parameters: ActionsAddRepoAccessToSelfHostedRunnerGroupInOrgEndpoint;
+    request: ActionsAddRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/sef-hosted-runner-groups/#set-self-hosted-runners-in-a-group-for-an-organization
+   */
+  "PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners": {
+    parameters: ActionsSetSelfHostedRunnersInGroupForOrgEndpoint;
+    request: ActionsSetSelfHostedRunnersInGroupForOrgRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/actions/self-hosted-runner-groups/#add-a-self-hosted-runner-to-a-group-for-an-organization
+   */
+  "PUT /orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id": {
+    parameters: ActionsAddSelfHostedRunnerToGroupForOrgEndpoint;
+    request: ActionsAddSelfHostedRunnerToGroupForOrgRequestOptions;
+    response: OctokitResponse<any>;
   };
   /**
    * @see https://developer.github.com/v3/actions/secrets/#create-or-update-an-organization-secret
@@ -5204,6 +5500,23 @@ export interface Endpoints {
   };
 }
 
+type ActionsAddRepoAccessToSelfHostedRunnerGroupInOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+
+  repository_id: number;
+};
+
+type ActionsAddRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type ActionsAddSelectedRepoToOrgSecretEndpoint = {
   org: string;
 
@@ -5215,6 +5528,25 @@ type ActionsAddSelectedRepoToOrgSecretEndpoint = {
 type ActionsAddSelectedRepoToOrgSecretRequestOptions = {
   method: "PUT";
   url: "/orgs/:org/actions/secrets/:secret_name/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsAddSelfHostedRunnerToGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type ActionsAddSelfHostedRunnerToGroupForOrgRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5353,6 +5685,42 @@ export interface ActionsCreateRemoveTokenForRepoResponseData {
   expires_at: string;
 }
 
+type ActionsCreateSelfHostedRunnerGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Name of the runner group.
+   */
+  name: string;
+  /**
+   * Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories. Can be one of: `all`, `selected`, or `private`.
+   */
+  visibility?: "selected" | "all" | "private";
+  /**
+   * List of repository IDs that can access the runner group.
+   */
+  selected_repository_ids?: number[];
+  /**
+   * List of runner IDs to add to the runner group.
+   */
+  runners?: number[];
+};
+
+type ActionsCreateSelfHostedRunnerGroupForOrgRequestOptions = {
+  method: "POST";
+  url: "/orgs/:org/actions/runner-groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsCreateSelfHostedRunnerGroupForOrgResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_repositories_url: string;
+  runners_url: string;
+  inherited: boolean;
+}
+
 type ActionsCreateWorkflowDispatchEndpoint = {
   owner: string;
 
@@ -5421,7 +5789,9 @@ type ActionsDeleteRepoSecretRequestOptions = {
 
 type ActionsDeleteSelfHostedRunnerFromOrgEndpoint = {
   org: string;
-
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
   runner_id: number;
 };
 
@@ -5436,13 +5806,30 @@ type ActionsDeleteSelfHostedRunnerFromRepoEndpoint = {
   owner: string;
 
   repo: string;
-
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
   runner_id: number;
 };
 
 type ActionsDeleteSelfHostedRunnerFromRepoRequestOptions = {
   method: "DELETE";
   url: "/repos/:owner/:repo/actions/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsDeleteSelfHostedRunnerGroupFromOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type ActionsDeleteSelfHostedRunnerGroupFromOrgRequestOptions = {
+  method: "DELETE";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -5662,7 +6049,9 @@ export interface ActionsGetRepoSecretResponseData {
 
 type ActionsGetSelfHostedRunnerForOrgEndpoint = {
   org: string;
-
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
   runner_id: number;
 };
 
@@ -5684,7 +6073,9 @@ type ActionsGetSelfHostedRunnerForRepoEndpoint = {
   owner: string;
 
   repo: string;
-
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
   runner_id: number;
 };
 
@@ -5700,6 +6091,30 @@ export interface ActionsGetSelfHostedRunnerForRepoResponseData {
   os: string;
   status: string;
   busy: boolean;
+}
+
+type ActionsGetSelfHostedRunnerGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type ActionsGetSelfHostedRunnerGroupForOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetSelfHostedRunnerGroupForOrgResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_repositories_url: string;
+  runners_url: string;
+  inherited: boolean;
 }
 
 type ActionsGetWorkflowEndpoint = {
@@ -6095,6 +6510,132 @@ export interface ActionsListOrgSecretsResponseData {
   }[];
 }
 
+type ActionsListRepoAccessToSelfHostedRunnerGroupInOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type ActionsListRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/repositories";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponseData {
+  total_count: number;
+  repositories: {
+    id: number;
+    node_id: string;
+    name: string;
+    full_name: string;
+    owner: {
+      login: string;
+      id: number;
+      node_id: string;
+      avatar_url: string;
+      gravatar_id: string;
+      url: string;
+      html_url: string;
+      followers_url: string;
+      following_url: string;
+      gists_url: string;
+      starred_url: string;
+      subscriptions_url: string;
+      organizations_url: string;
+      repos_url: string;
+      events_url: string;
+      received_events_url: string;
+      type: string;
+      site_admin: boolean;
+    };
+    private: boolean;
+    html_url: string;
+    description: string;
+    fork: boolean;
+    url: string;
+    archive_url: string;
+    assignees_url: string;
+    blobs_url: string;
+    branches_url: string;
+    collaborators_url: string;
+    comments_url: string;
+    commits_url: string;
+    compare_url: string;
+    contents_url: string;
+    contributors_url: string;
+    deployments_url: string;
+    downloads_url: string;
+    events_url: string;
+    forks_url: string;
+    git_commits_url: string;
+    git_refs_url: string;
+    git_tags_url: string;
+    git_url: string;
+    issue_comment_url: string;
+    issue_events_url: string;
+    issues_url: string;
+    keys_url: string;
+    labels_url: string;
+    languages_url: string;
+    merges_url: string;
+    milestones_url: string;
+    notifications_url: string;
+    pulls_url: string;
+    releases_url: string;
+    ssh_url: string;
+    stargazers_url: string;
+    statuses_url: string;
+    subscribers_url: string;
+    subscription_url: string;
+    tags_url: string;
+    teams_url: string;
+    trees_url: string;
+    clone_url: string;
+    mirror_url: string;
+    hooks_url: string;
+    svn_url: string;
+    homepage: string;
+    language: string;
+    forks_count: number;
+    stargazers_count: number;
+    watchers_count: number;
+    size: number;
+    default_branch: string;
+    open_issues_count: number;
+    is_template: boolean;
+    topics: string[];
+    has_issues: boolean;
+    has_projects: boolean;
+    has_wiki: boolean;
+    has_pages: boolean;
+    has_downloads: boolean;
+    archived: boolean;
+    disabled: boolean;
+    visibility: string;
+    pushed_at: string;
+    created_at: string;
+    updated_at: string;
+    permissions: {
+      admin: boolean;
+      push: boolean;
+      pull: boolean;
+    };
+    allow_rebase_merge: boolean;
+    template_repository: {
+      [k: string]: unknown;
+    };
+    temp_clone_token: string;
+    allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
+    allow_merge_commit: boolean;
+    subscribers_count: number;
+    network_count: number;
+  }[];
+}
+
 type ActionsListRepoSecretsEndpoint = {
   owner: string;
 
@@ -6280,6 +6821,37 @@ export interface ActionsListSelectedReposForOrgSecretResponseData {
   }[];
 }
 
+type ActionsListSelfHostedRunnerGroupsForOrgEndpoint = {
+  org: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type ActionsListSelfHostedRunnerGroupsForOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListSelfHostedRunnerGroupsForOrgResponseData {
+  total_count: number;
+  runner_groups: {
+    id: number;
+    name: string;
+    visibility: string;
+    default: boolean;
+    selected_repositories_url: string;
+    runners_url: string;
+    inherited: boolean;
+  }[];
+}
+
 type ActionsListSelfHostedRunnersForOrgEndpoint = {
   org: string;
   /**
@@ -6330,6 +6902,39 @@ type ActionsListSelfHostedRunnersForRepoRequestOptions = {
   request: RequestRequestOptions;
 };
 export interface ActionsListSelfHostedRunnersForRepoResponseData {
+  total_count: number;
+  runners: {
+    id: number;
+    name: string;
+    os: string;
+    status: string;
+    busy: boolean;
+  }[];
+}
+
+type ActionsListSelfHostedRunnersInGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type ActionsListSelfHostedRunnersInGroupForOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListSelfHostedRunnersInGroupForOrgResponseData {
   total_count: number;
   runners: {
     id: number;
@@ -6818,6 +7423,23 @@ type ActionsReRunWorkflowRequestOptions = {
   request: RequestRequestOptions;
 };
 
+type ActionsRemoveRepoAccessToSelfHostedRunnerGroupInOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+
+  repository_id: number;
+};
+
+type ActionsRemoveRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
+  method: "DELETE";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type ActionsRemoveSelectedRepoFromOrgSecretEndpoint = {
   org: string;
 
@@ -6829,6 +7451,44 @@ type ActionsRemoveSelectedRepoFromOrgSecretEndpoint = {
 type ActionsRemoveSelectedRepoFromOrgSecretRequestOptions = {
   method: "DELETE";
   url: "/orgs/:org/actions/secrets/:secret_name/repositories/:repository_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsRemoveSelfHostedRunnerFromGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type ActionsRemoveSelfHostedRunnerFromGroupForOrgRequestOptions = {
+  method: "DELETE";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * List of repository IDs that can access the runner group.
+   */
+  selected_repository_ids: number[];
+};
+
+type ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/repositories";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
@@ -6849,6 +7509,57 @@ type ActionsSetSelectedReposForOrgSecretRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
+type ActionsSetSelfHostedRunnersInGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * List of runner IDs to add to the runner group.
+   */
+  runners: number[];
+};
+
+type ActionsSetSelfHostedRunnersInGroupForOrgRequestOptions = {
+  method: "PUT";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type ActionsUpdateSelfHostedRunnerGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Name of the runner group.
+   */
+  name?: string;
+  /**
+   * Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories. Can be one of: `all`, `selected`, or `private`.
+   */
+  visibility?: "selected" | "all" | "private";
+};
+
+type ActionsUpdateSelfHostedRunnerGroupForOrgRequestOptions = {
+  method: "PATCH";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsUpdateSelfHostedRunnerGroupForOrgResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_repositories_url: string;
+  runners_url: string;
+  inherited: boolean;
+}
 
 type ActivityCheckRepoIsStarredByAuthenticatedUserEndpoint = {
   owner: string;
@@ -10089,48 +10800,6 @@ type AppsUnsuspendInstallationRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type BillingGetGithubActionsBillingGheEndpoint = {
-  /**
-   * Unique identifier of the GitHub Enterprise Cloud instance.
-   */
-  enterprise_id: number;
-};
-
-type BillingGetGithubActionsBillingGheRequestOptions = {
-  method: "GET";
-  url: "/enterprises/:enterprise_id/settings/billing/actions";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-export interface BillingGetGithubActionsBillingGheResponseData {
-  /**
-   * The sum of the free and paid GitHub Actions minutes used.
-   */
-  total_minutes_used: number;
-  /**
-   * The total paid GitHub Actions minutes used.
-   */
-  total_paid_minutes_used: number;
-  /**
-   * The amount of free GitHub Actions minutes available.
-   */
-  included_minutes: number;
-  minutes_used_breakdown: {
-    /**
-     * Total minutes used on Ubuntu runner machines.
-     */
-    UBUNTU: number;
-    /**
-     * Total minutes used on macOS runner machines.
-     */
-    MACOS: number;
-    /**
-     * Total minutes used on Windows runner machines.
-     */
-    WINDOWS: number;
-  };
-}
-
 type BillingGetGithubActionsBillingOrgEndpoint = {
   org: string;
 };
@@ -10209,34 +10878,6 @@ export interface BillingGetGithubActionsBillingUserResponseData {
   };
 }
 
-type BillingGetGithubPackagesBillingGheEndpoint = {
-  /**
-   * Unique identifier of the GitHub Enterprise Cloud instance.
-   */
-  enterprise_id: number;
-};
-
-type BillingGetGithubPackagesBillingGheRequestOptions = {
-  method: "GET";
-  url: "/enterprises/:enterprise_id/settings/billing/packages";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-export interface BillingGetGithubPackagesBillingGheResponseData {
-  /**
-   * Sum of the free and paid storage space (GB) for GitHuub Packages.
-   */
-  total_gigabytes_bandwidth_used: number;
-  /**
-   * Total paid storage space (GB) for GitHuub Packages.
-   */
-  total_paid_gigabytes_bandwidth_used: number;
-  /**
-   * Free storage space (GB) for GitHub Packages.
-   */
-  included_gigabytes_bandwidth: number;
-}
-
 type BillingGetGithubPackagesBillingOrgEndpoint = {
   org: string;
 };
@@ -10285,34 +10926,6 @@ export interface BillingGetGithubPackagesBillingUserResponseData {
    * Free storage space (GB) for GitHub Packages.
    */
   included_gigabytes_bandwidth: number;
-}
-
-type BillingGetSharedStorageBillingGheEndpoint = {
-  /**
-   * Unique identifier of the GitHub Enterprise Cloud instance.
-   */
-  enterprise_id: number;
-};
-
-type BillingGetSharedStorageBillingGheRequestOptions = {
-  method: "GET";
-  url: "/enterprises/:enterprise_id/settings/billing/shared-storage";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
-export interface BillingGetSharedStorageBillingGheResponseData {
-  /**
-   * Numbers of days left in billing cycle.
-   */
-  days_left_in_billing_cycle: number;
-  /**
-   * Estimated storage space (GB) used in billing cycle.
-   */
-  estimated_paid_storage_for_month: number;
-  /**
-   * Estimated sum of free and paid storage space (GB) used in billing cycle.
-   */
-  estimated_storage_for_month: number;
 }
 
 type BillingGetSharedStorageBillingOrgEndpoint = {
@@ -11796,7 +12409,128 @@ type EmojisGetRequestOptions = {
   request: RequestRequestOptions;
 };
 
+type EnterpriseAdminAddOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of an organization.
+   */
+  org_id: number;
+};
+
+type EnterpriseAdminAddOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminAddSelfHostedRunnerToRunnerGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type EnterpriseAdminAddSelfHostedRunnerToRunnerGroupForEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminCreateRegistrationTokenForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminCreateRegistrationTokenForEnterpriseRequestOptions = {
+  method: "POST";
+  url: "/enterprises/:enterprise/actions/runners/registration-token";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminCreateRegistrationTokenForEnterpriseResponseData {
+  token: string;
+  expires_at: string;
+}
+
+type EnterpriseAdminCreateRemoveTokenForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminCreateRemoveTokenForEnterpriseRequestOptions = {
+  method: "POST";
+  url: "/enterprises/:enterprise/actions/runners/remove-token";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminCreateRemoveTokenForEnterpriseResponseData {
+  token: string;
+  expires_at: string;
+}
+
+type EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Name of the runner group.
+   */
+  name: string;
+  /**
+   * Visibility of a runner group. You can select all organizations or select individual organization. Can be one of: `all` or `selected`
+   */
+  visibility?: "selected" | "all";
+  /**
+   * List of organization IDs that can access the runner group.
+   */
+  selected_organization_ids?: number[];
+  /**
+   * List of runner IDs to add to the runner group.
+   */
+  runners?: number[];
+};
+
+type EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseRequestOptions = {
+  method: "POST";
+  url: "/enterprises/:enterprise/actions/runner-groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_organizations_url: string;
+  runners_url: string;
+}
+
 type EnterpriseAdminDeleteScimGroupFromEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -11811,7 +12545,46 @@ type EnterpriseAdminDeleteScimGroupFromEnterpriseRequestOptions = {
   request: RequestRequestOptions;
 };
 
+type EnterpriseAdminDeleteSelfHostedRunnerFromEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type EnterpriseAdminDeleteSelfHostedRunnerFromEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/enterprises/:enterprise/actions/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminDeleteSelfHostedRunnerGroupFromEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type EnterpriseAdminDeleteSelfHostedRunnerGroupFromEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type EnterpriseAdminDeleteUserFromEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -11826,7 +12599,80 @@ type EnterpriseAdminDeleteUserFromEnterpriseRequestOptions = {
   request: RequestRequestOptions;
 };
 
+type EnterpriseAdminGetGithubActionsBillingGheEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminGetGithubActionsBillingGheRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/settings/billing/actions";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetGithubActionsBillingGheResponseData {
+  /**
+   * The sum of the free and paid GitHub Actions minutes used.
+   */
+  total_minutes_used: number;
+  /**
+   * The total paid GitHub Actions minutes used.
+   */
+  total_paid_minutes_used: number;
+  /**
+   * The amount of free GitHub Actions minutes available.
+   */
+  included_minutes: number;
+  minutes_used_breakdown: {
+    /**
+     * Total minutes used on Ubuntu runner machines.
+     */
+    UBUNTU: number;
+    /**
+     * Total minutes used on macOS runner machines.
+     */
+    MACOS: number;
+    /**
+     * Total minutes used on Windows runner machines.
+     */
+    WINDOWS: number;
+  };
+}
+
+type EnterpriseAdminGetGithubPackagesBillingGheEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminGetGithubPackagesBillingGheRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/settings/billing/packages";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetGithubPackagesBillingGheResponseData {
+  /**
+   * Sum of the free and paid storage space (GB) for GitHuub Packages.
+   */
+  total_gigabytes_bandwidth_used: number;
+  /**
+   * Total paid storage space (GB) for GitHuub Packages.
+   */
+  total_paid_gigabytes_bandwidth_used: number;
+  /**
+   * Free storage space (GB) for GitHub Packages.
+   */
+  included_gigabytes_bandwidth: number;
+}
+
 type EnterpriseAdminGetProvisioningInformationForEnterpriseGroupEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -11859,6 +12705,9 @@ export interface EnterpriseAdminGetProvisioningInformationForEnterpriseGroupResp
 }
 
 type EnterpriseAdminGetProvisioningInformationForEnterpriseUserEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -11898,7 +12747,132 @@ export interface EnterpriseAdminGetProvisioningInformationForEnterpriseUserRespo
   };
 }
 
+type EnterpriseAdminGetSelfHostedRunnerForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type EnterpriseAdminGetSelfHostedRunnerForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetSelfHostedRunnerForEnterpriseResponseData {
+  id: number;
+  name: string;
+  os: string;
+  status: string;
+  busy: boolean;
+}
+
+type EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_organizations_url: string;
+  runners_url: string;
+}
+
+type EnterpriseAdminGetSharedStorageBillingGheEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminGetSharedStorageBillingGheRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/settings/billing/shared-storage";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminGetSharedStorageBillingGheResponseData {
+  /**
+   * Numbers of days left in billing cycle.
+   */
+  days_left_in_billing_cycle: number;
+  /**
+   * Estimated storage space (GB) used in billing cycle.
+   */
+  estimated_paid_storage_for_month: number;
+  /**
+   * Estimated sum of free and paid storage space (GB) used in billing cycle.
+   */
+  estimated_storage_for_month: number;
+}
+
+type EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseResponseData {
+  total_count: number;
+  organizations: {
+    login: string;
+    id: number;
+    node_id: string;
+    url: string;
+    repos_url: string;
+    events_url: string;
+    hooks_url: string;
+    issues_url: string;
+    members_url: string;
+    public_members_url: string;
+    avatar_url: string;
+    description: string;
+  }[];
+}
+
 type EnterpriseAdminListProvisionedGroupsEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Used for pagination: the index of the first result to return.
@@ -11941,6 +12915,9 @@ export interface EnterpriseAdminListProvisionedGroupsEnterpriseResponseData {
 }
 
 type EnterpriseAdminListProvisionedIdentitiesEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Used for pagination: the index of the first result to return.
@@ -11990,7 +12967,131 @@ export interface EnterpriseAdminListProvisionedIdentitiesEnterpriseResponseData 
   }[];
 }
 
+type EnterpriseAdminListRunnerApplicationsForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+};
+
+type EnterpriseAdminListRunnerApplicationsForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runners/downloads";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export type EnterpriseAdminListRunnerApplicationsForEnterpriseResponseData = {
+  os: string;
+  architecture: string;
+  download_url: string;
+  filename: string;
+}[];
+
+type EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runner-groups";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseResponseData {
+  total_count: number;
+  runner_groups: {
+    id: number;
+    name: string;
+    visibility: string;
+    default: boolean;
+    selected_organizations_url: string;
+    runners_url: string;
+  }[];
+}
+
+type EnterpriseAdminListSelfHostedRunnersForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type EnterpriseAdminListSelfHostedRunnersForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListSelfHostedRunnersForEnterpriseResponseData {
+  total_count: number;
+  runners: {
+    id: number;
+    name: string;
+    os: string;
+    status: string;
+    busy: boolean;
+  }[];
+}
+
+type EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseRequestOptions = {
+  method: "GET";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseResponseData {
+  total_count: number;
+  runners: {
+    id: number;
+    name: string;
+    os: string;
+    status: string;
+    busy: boolean;
+  }[];
+}
+
 type EnterpriseAdminProvisionAndInviteEnterpriseGroupEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * The SCIM schema URIs.
@@ -12029,6 +13130,9 @@ export interface EnterpriseAdminProvisionAndInviteEnterpriseGroupResponseData {
 }
 
 type EnterpriseAdminProvisionAndInviteEnterpriseUserEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * The SCIM schema URIs.
@@ -12082,7 +13186,54 @@ export interface EnterpriseAdminProvisionAndInviteEnterpriseUserResponseData {
   };
 }
 
+type EnterpriseAdminRemoveOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of an organization.
+   */
+  org_id: number;
+};
+
+type EnterpriseAdminRemoveOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations/:org_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminRemoveSelfHostedRunnerFromGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Unique identifier of the self-hosted runner.
+   */
+  runner_id: number;
+};
+
+type EnterpriseAdminRemoveSelfHostedRunnerFromGroupForEnterpriseRequestOptions = {
+  method: "DELETE";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners/:runner_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -12125,6 +13276,9 @@ export interface EnterpriseAdminSetInformationForProvisionedEnterpriseGroupRespo
 }
 
 type EnterpriseAdminSetInformationForProvisionedEnterpriseUserEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -12182,7 +13336,54 @@ export interface EnterpriseAdminSetInformationForProvisionedEnterpriseUserRespon
   };
 }
 
+type EnterpriseAdminSetOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * List of organization IDs that can access the runner group.
+   */
+  selected_organization_ids: number[];
+};
+
+type EnterpriseAdminSetOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+type EnterpriseAdminSetSelfHostedInGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * List of runner IDs to add to the runner group.
+   */
+  runners: number[];
+};
+
+type EnterpriseAdminSetSelfHostedInGroupForEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
 type EnterpriseAdminUpdateAttributeForEnterpriseGroupEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -12223,6 +13424,9 @@ export interface EnterpriseAdminUpdateAttributeForEnterpriseGroupResponseData {
 }
 
 type EnterpriseAdminUpdateAttributeForEnterpriseUserEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
   enterprise: string;
   /**
    * Identifier generated by the GitHub SCIM endpoint.
@@ -12268,6 +13472,40 @@ export interface EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData {
     lastModified: string;
     location: string;
   };
+}
+
+type EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   */
+  enterprise: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Name of the runner group.
+   */
+  name?: string;
+  /**
+   * Visibility of a runner group. You can select all organizations or select individual organizations. Can be one of: `all` or `selected`
+   */
+  visibility?: "selected" | "all";
+};
+
+type EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseRequestOptions = {
+  method: "PATCH";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_organizations_url: string;
+  runners_url: string;
 }
 
 type GistsCheckIsStarredEndpoint = {

@@ -1,5 +1,49 @@
 [
   {
+    "name": "Add repository access to a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "addRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#add-repository-acess-to-a-self-hosted-runner-group-in-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repository_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Add selected repository to an organization secret",
     "scope": "actions",
     "id": "addSelectedRepoToOrgSecret",
@@ -34,6 +78,50 @@
         "description": "",
         "enum": null,
         "name": "repository_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add a self-hosted runner to a group for an organization",
+    "scope": "actions",
+    "id": "addSelfHostedRunnerToGroupForOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#add-a-self-hosted-runner-to-a-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
         "type": "integer",
         "required": true
       }
@@ -536,6 +624,76 @@
     "renamed": null
   },
   {
+    "name": "Create a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "createSelfHostedRunnerGroupForOrg",
+    "method": "POST",
+    "url": "/orgs/{org}/actions/runner-groups",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#create-a-self-hosted-runner-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Name of the runner group.",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories. Can be one of: `all`, `selected`, or `private`.",
+        "enum": ["selected", "all", "private"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of repository IDs that can access the runner group.",
+        "enum": null,
+        "name": "selected_repository_ids",
+        "type": "integer[]",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of runner IDs to add to the runner group.",
+        "enum": null,
+        "name": "runners",
+        "type": "integer[]",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_repositories_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"},\"inherited\":{\"type\":\"boolean\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Create a workflow dispatch event",
     "scope": "actions",
     "id": "createWorkflowDispatch",
@@ -819,7 +977,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
         "type": "integer",
@@ -863,9 +1021,43 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner group from an organization",
+    "scope": "actions",
+    "id": "deleteSelfHostedRunnerGroupFromOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#delete-a-self-hosted-runner-group-from-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
         "type": "integer",
         "required": true
       }
@@ -1557,7 +1749,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
         "type": "integer",
@@ -1599,7 +1791,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
         "type": "integer",
@@ -1649,7 +1841,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
         "type": "integer",
@@ -1663,6 +1855,46 @@
         "code": 200,
         "description": "response",
         "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "getSelfHostedRunnerGroupForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#get-a-self-hosted-runner-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_repositories_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"},\"inherited\":{\"type\":\"boolean\"}}}"
       }
     ],
     "renamed": null
@@ -2152,6 +2384,46 @@
     "renamed": null
   },
   {
+    "name": "List repository access to a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "listRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"repositories\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"name\":{\"type\":\"string\"},\"full_name\":{\"type\":\"string\"},\"owner\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},\"private\":{\"type\":\"boolean\"},\"html_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"},\"fork\":{\"type\":\"boolean\"},\"url\":{\"type\":\"string\"},\"archive_url\":{\"type\":\"string\"},\"assignees_url\":{\"type\":\"string\"},\"blobs_url\":{\"type\":\"string\"},\"branches_url\":{\"type\":\"string\"},\"collaborators_url\":{\"type\":\"string\"},\"comments_url\":{\"type\":\"string\"},\"commits_url\":{\"type\":\"string\"},\"compare_url\":{\"type\":\"string\"},\"contents_url\":{\"type\":\"string\"},\"contributors_url\":{\"type\":\"string\"},\"deployments_url\":{\"type\":\"string\"},\"downloads_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"forks_url\":{\"type\":\"string\"},\"git_commits_url\":{\"type\":\"string\"},\"git_refs_url\":{\"type\":\"string\"},\"git_tags_url\":{\"type\":\"string\"},\"git_url\":{\"type\":\"string\"},\"issue_comment_url\":{\"type\":\"string\"},\"issue_events_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"keys_url\":{\"type\":\"string\"},\"labels_url\":{\"type\":\"string\"},\"languages_url\":{\"type\":\"string\"},\"merges_url\":{\"type\":\"string\"},\"milestones_url\":{\"type\":\"string\"},\"notifications_url\":{\"type\":\"string\"},\"pulls_url\":{\"type\":\"string\"},\"releases_url\":{\"type\":\"string\"},\"ssh_url\":{\"type\":\"string\"},\"stargazers_url\":{\"type\":\"string\"},\"statuses_url\":{\"type\":\"string\"},\"subscribers_url\":{\"type\":\"string\"},\"subscription_url\":{\"type\":\"string\"},\"tags_url\":{\"type\":\"string\"},\"teams_url\":{\"type\":\"string\"},\"trees_url\":{\"type\":\"string\"},\"clone_url\":{\"type\":\"string\"},\"mirror_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"svn_url\":{\"type\":\"string\"},\"homepage\":{\"type\":\"string\"},\"language\":{\"nullable\":true,\"type\":\"string\"},\"forks_count\":{\"type\":\"number\"},\"stargazers_count\":{\"type\":\"number\"},\"watchers_count\":{\"type\":\"number\"},\"size\":{\"type\":\"number\"},\"default_branch\":{\"type\":\"string\"},\"open_issues_count\":{\"type\":\"number\"},\"is_template\":{\"type\":\"boolean\"},\"topics\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"has_issues\":{\"type\":\"boolean\"},\"has_projects\":{\"type\":\"boolean\"},\"has_wiki\":{\"type\":\"boolean\"},\"has_pages\":{\"type\":\"boolean\"},\"has_downloads\":{\"type\":\"boolean\"},\"archived\":{\"type\":\"boolean\"},\"disabled\":{\"type\":\"boolean\"},\"visibility\":{\"type\":\"string\"},\"pushed_at\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"updated_at\":{\"type\":\"string\"},\"permissions\":{\"type\":\"object\",\"properties\":{\"admin\":{\"type\":\"boolean\"},\"push\":{\"type\":\"boolean\"},\"pull\":{\"type\":\"boolean\"}}},\"allow_rebase_merge\":{\"type\":\"boolean\"},\"template_repository\":{\"nullable\":true},\"temp_clone_token\":{\"type\":\"string\"},\"allow_squash_merge\":{\"type\":\"boolean\"},\"delete_branch_on_merge\":{\"type\":\"boolean\"},\"allow_merge_commit\":{\"type\":\"boolean\"},\"subscribers_count\":{\"type\":\"number\"},\"network_count\":{\"type\":\"number\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List repository secrets",
     "scope": "actions",
     "id": "listRepoSecrets",
@@ -2546,6 +2818,56 @@
     "renamed": null
   },
   {
+    "name": "List self-hosted runner groups for an organization",
+    "scope": "actions",
+    "id": "listSelfHostedRunnerGroupsForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runner-groups-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runner_groups\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_repositories_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"},\"inherited\":{\"type\":\"boolean\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List self-hosted runners for an organization",
     "scope": "actions",
     "id": "listSelfHostedRunnersForOrg",
@@ -2590,7 +2912,7 @@
       {
         "code": 200,
         "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}},\"required\":[\"id\",\"name\",\"os\",\"status\",\"busy\"]}}}}"
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}}}}"
       }
     ],
     "renamed": null
@@ -2650,7 +2972,67 @@
       {
         "code": 200,
         "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}},\"required\":[\"id\",\"name\",\"os\",\"status\",\"busy\"]}}}}"
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners in a group for an organization",
+    "scope": "actions",
+    "id": "listSelfHostedRunnersInGroupForOrg",
+    "method": "GET",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#list-self-hosted-runners-in-a-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}}}}"
       }
     ],
     "renamed": null
@@ -3072,6 +3454,50 @@
     "renamed": null
   },
   {
+    "name": "Remove repository access to a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "removeRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "repository_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Remove selected repository from an organization secret",
     "scope": "actions",
     "id": "removeSelectedRepoFromOrgSecret",
@@ -3147,7 +3573,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "Unique identifier of the self-hosted runner.",
         "enum": null,
         "name": "runner_id",
         "type": "integer",
@@ -3160,6 +3586,94 @@
     "renamed": {
       "note": "\"actions/remove-self-hosted-runner\" operation ID is now \"actions/delete-self-hosted-runner-from-repo\""
     }
+  },
+  {
+    "name": "Remove a self-hosted runner from a group for an organization",
+    "scope": "actions",
+    "id": "removeSelfHostedRunnerFromGroupForOrg",
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#remove-a-self-hosted-runner-from-a-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set repository access for a self-hosted runner group in an organization",
+    "scope": "actions",
+    "id": "setRepoAccessToSelfHostedRunnerGroupInOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#set-repository-access-to-a-self-hosted-runner-group-in-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of repository IDs that can access the runner group.",
+        "enum": null,
+        "name": "selected_repository_ids",
+        "type": "integer[]",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
   },
   {
     "name": "Set selected repositories for an organization secret",
@@ -3203,6 +3717,110 @@
     "previews": [],
     "headers": [],
     "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set self-hosted runners in a group for an organization",
+    "scope": "actions",
+    "id": "setSelfHostedRunnersInGroupForOrg",
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "documentationUrl": "https://developer.github.com/v3/actions/sef-hosted-runner-groups/#set-self-hosted-runners-in-a-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of runner IDs to add to the runner group.",
+        "enum": null,
+        "name": "runners",
+        "type": "integer[]",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Update a self-hosted runner group for an organization",
+    "scope": "actions",
+    "id": "updateSelfHostedRunnerGroupForOrg",
+    "method": "PATCH",
+    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#update-a-self-hosted-runner-group-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "name": "org",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Name of the runner group.",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories. Can be one of: `all`, `selected`, or `private`.",
+        "enum": ["selected", "all", "private"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_repositories_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"},\"inherited\":{\"type\":\"boolean\"}}}"
+      }
+    ],
     "renamed": null
   },
   {
@@ -7122,36 +7740,6 @@
     "renamed": null
   },
   {
-    "name": "Get GitHub Actions billing for an enterprise",
-    "scope": "billing",
-    "id": "getGithubActionsBillingGhe",
-    "method": "GET",
-    "url": "/enterprises/{enterprise_id}/settings/billing/actions",
-    "documentationUrl": "https://developer.github.com/v3/billing/#get-github-actions-billing-for-an-enterprise",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Unique identifier of the GitHub Enterprise Cloud instance.",
-        "enum": null,
-        "name": "enterprise_id",
-        "type": "integer",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"total_minutes_used\":{\"type\":\"number\",\"description\":\"The sum of the free and paid GitHub Actions minutes used.\"},\"total_paid_minutes_used\":{\"type\":\"number\",\"description\":\"The total paid GitHub Actions minutes used.\"},\"included_minutes\":{\"type\":\"number\",\"description\":\"The amount of free GitHub Actions minutes available.\"},\"minutes_used_breakdown\":{\"type\":\"object\",\"properties\":{\"UBUNTU\":{\"type\":\"number\",\"description\":\"Total minutes used on Ubuntu runner machines.\"},\"MACOS\":{\"type\":\"number\",\"description\":\"Total minutes used on macOS runner machines.\"},\"WINDOWS\":{\"type\":\"number\",\"description\":\"Total minutes used on Windows runner machines.\"}}}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
     "name": "Get GitHub Actions billing for an organization",
     "scope": "billing",
     "id": "getGithubActionsBillingOrg",
@@ -7212,36 +7800,6 @@
     "renamed": null
   },
   {
-    "name": "Get GitHub Packages billing for an enterprise",
-    "scope": "billing",
-    "id": "getGithubPackagesBillingGhe",
-    "method": "GET",
-    "url": "/enterprises/{enterprise_id}/settings/billing/packages",
-    "documentationUrl": "https://developer.github.com/v3/billing/#get-github-packages-billing-for-an-enterprise",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Unique identifier of the GitHub Enterprise Cloud instance.",
-        "enum": null,
-        "name": "enterprise_id",
-        "type": "integer",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"total_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Sum of the free and paid storage space (GB) for GitHuub Packages.\"},\"total_paid_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Total paid storage space (GB) for GitHuub Packages.\"},\"included_gigabytes_bandwidth\":{\"type\":\"number\",\"description\":\"Free storage space (GB) for GitHub Packages.\"}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
     "name": "Get GitHub Packages billing for an organization",
     "scope": "billing",
     "id": "getGithubPackagesBillingOrg",
@@ -7297,36 +7855,6 @@
         "code": 200,
         "description": "response",
         "schema": "{\"type\":\"object\",\"properties\":{\"total_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Sum of the free and paid storage space (GB) for GitHuub Packages.\"},\"total_paid_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Total paid storage space (GB) for GitHuub Packages.\"},\"included_gigabytes_bandwidth\":{\"type\":\"number\",\"description\":\"Free storage space (GB) for GitHub Packages.\"}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
-    "name": "Get shared storage billing for an enterprise",
-    "scope": "billing",
-    "id": "getSharedStorageBillingGhe",
-    "method": "GET",
-    "url": "/enterprises/{enterprise_id}/settings/billing/shared-storage",
-    "documentationUrl": "https://developer.github.com/v3/billing/#get-shared-storage-billing-for-an-enterprise",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Unique identifier of the GitHub Enterprise Cloud instance.",
-        "enum": null,
-        "name": "enterprise_id",
-        "type": "integer",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"days_left_in_billing_cycle\":{\"type\":\"number\",\"description\":\"Numbers of days left in billing cycle.\"},\"estimated_paid_storage_for_month\":{\"type\":\"number\",\"description\":\"Estimated storage space (GB) used in billing cycle.\"},\"estimated_storage_for_month\":{\"type\":\"number\",\"description\":\"Estimated sum of free and paid storage space (GB) used in billing cycle.\"}}}"
       }
     ],
     "renamed": null
@@ -9035,6 +9563,224 @@
     "renamed": null
   },
   {
+    "name": "Add organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "addOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of an organization.",
+        "enum": null,
+        "name": "org_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Add a self-hosted runner to a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "addSelfHostedRunnerToRunnerGroupForEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#add-a-self-hosted-runner-to-a-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Create a registration token for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createRegistrationTokenForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runners/registration-token",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-a-registration-token-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"token\":{\"type\":\"string\"},\"expires_at\":{\"nullable\":true,\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a remove token for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createRemoveTokenForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runners/remove-token",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-a-remove-token-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"token\":{\"type\":\"string\"},\"expires_at\":{\"nullable\":true,\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Create a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "createSelfHostedRunnerGroupForEnterprise",
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/actions/runner-groups",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#create-self-hosted-runner-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Name of the runner group.",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Visibility of a runner group. You can select all organizations or select individual organization. Can be one of: `all` or `selected`",
+        "enum": ["selected", "all"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of organization IDs that can access the runner group.",
+        "enum": null,
+        "name": "selected_organization_ids",
+        "type": "integer[]",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of runner IDs to add to the runner group.",
+        "enum": null,
+        "name": "runners",
+        "type": "integer[]",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 201,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_organizations_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Delete a SCIM group from an enterprise",
     "scope": "enterpriseAdmin",
     "id": "deleteScimGroupFromEnterprise",
@@ -9046,7 +9792,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9069,6 +9815,74 @@
     "renamed": null
   },
   {
+    "name": "Delete a self-hosted runner from an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "deleteSelfHostedRunnerFromEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#delete-self-hosted-runner-from-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Delete a self-hosted runner group from an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "deleteSelfHostedRunnerGroupFromEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#delete-a-self-hosted-runner-group-from-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Delete a SCIM user from an enterprise",
     "scope": "enterpriseAdmin",
     "id": "deleteUserFromEnterprise",
@@ -9080,7 +9894,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9103,6 +9917,86 @@
     "renamed": null
   },
   {
+    "name": "Get GitHub Actions billing for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getGithubActionsBillingGhe",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/settings/billing/actions",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/billing/#get-github-actions-billing-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "enterprise",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "enterprise_id",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_minutes_used\":{\"type\":\"number\",\"description\":\"The sum of the free and paid GitHub Actions minutes used.\"},\"total_paid_minutes_used\":{\"type\":\"number\",\"description\":\"The total paid GitHub Actions minutes used.\"},\"included_minutes\":{\"type\":\"number\",\"description\":\"The amount of free GitHub Actions minutes available.\"},\"minutes_used_breakdown\":{\"type\":\"object\",\"properties\":{\"UBUNTU\":{\"type\":\"number\",\"description\":\"Total minutes used on Ubuntu runner machines.\"},\"MACOS\":{\"type\":\"number\",\"description\":\"Total minutes used on macOS runner machines.\"},\"WINDOWS\":{\"type\":\"number\",\"description\":\"Total minutes used on Windows runner machines.\"}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get GitHub Packages billing for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getGithubPackagesBillingGhe",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/settings/billing/packages",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/billing/#get-github-packages-billing-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "enterprise",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "enterprise_id",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Sum of the free and paid storage space (GB) for GitHuub Packages.\"},\"total_paid_gigabytes_bandwidth_used\":{\"type\":\"number\",\"description\":\"Total paid storage space (GB) for GitHuub Packages.\"},\"included_gigabytes_bandwidth\":{\"type\":\"number\",\"description\":\"Free storage space (GB) for GitHub Packages.\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Get SCIM provisioning information for an enterprise group",
     "scope": "enterpriseAdmin",
     "id": "getProvisioningInformationForEnterpriseGroup",
@@ -9114,7 +10008,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9154,7 +10048,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9183,6 +10077,186 @@
     "renamed": null
   },
   {
+    "name": "Get a self-hosted runner for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getSelfHostedRunnerForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getSelfHostedRunnerGroupForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#get-a-self-hosted-runner-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_organizations_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Get shared storage billing for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "getSharedStorageBillingGhe",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/settings/billing/shared-storage",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/billing/#get-shared-storage-billing-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": "enterprise",
+        "allowNull": null,
+        "deprecated": true,
+        "description": null,
+        "enum": null,
+        "name": "enterprise_id",
+        "type": null,
+        "required": null
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"days_left_in_billing_cycle\":{\"type\":\"number\",\"description\":\"Numbers of days left in billing cycle.\"},\"estimated_paid_storage_for_month\":{\"type\":\"number\",\"description\":\"Estimated storage space (GB) used in billing cycle.\"},\"estimated_storage_for_month\":{\"type\":\"number\",\"description\":\"Estimated sum of free and paid storage space (GB) used in billing cycle.\"}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"organizations\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"hooks_url\":{\"type\":\"string\"},\"issues_url\":{\"type\":\"string\"},\"members_url\":{\"type\":\"string\"},\"public_members_url\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"description\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "List provisioned SCIM groups for an enterprise",
     "scope": "enterpriseAdmin",
     "id": "listProvisionedGroupsEnterprise",
@@ -9194,7 +10268,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9244,7 +10318,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9283,6 +10357,196 @@
     "renamed": null
   },
   {
+    "name": "List runner applications for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listRunnerApplicationsForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners/downloads",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-runner-applications-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"os\":{\"type\":\"string\"},\"architecture\":{\"type\":\"string\"},\"download_url\":{\"type\":\"string\"},\"filename\":{\"type\":\"string\"}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runner groups for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnerGroupsForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runner-groups-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runner_groups\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_organizations_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnersForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runners",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "List self-hosted runners in a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "listSelfHostedRunnersInGroupForEnterprise",
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#list-self-hosted-runners-in-a-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Results per page (max 100)",
+        "enum": null,
+        "name": "per_page",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Page number of the results to fetch.",
+        "enum": null,
+        "name": "page",
+        "type": "integer",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"total_count\":{\"type\":\"number\"},\"runners\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"os\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"busy\":{\"type\":\"boolean\"}}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "name": "Provision a SCIM enterprise group and invite users",
     "scope": "enterpriseAdmin",
     "id": "provisionAndInviteEnterpriseGroup",
@@ -9294,7 +10558,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9364,7 +10628,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9493,6 +10757,94 @@
     "renamed": null
   },
   {
+    "name": "Remove organization access to a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "removeOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of an organization.",
+        "enum": null,
+        "name": "org_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Remove a self-hosted runner from a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "removeSelfHostedRunnerFromGroupForEnterprise",
+    "method": "DELETE",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#remove-a-self-hosted-runner-from-a-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner.",
+        "enum": null,
+        "name": "runner_id",
+        "type": "integer",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Set SCIM information for a provisioned enterprise group",
     "scope": "enterpriseAdmin",
     "id": "setInformationForProvisionedEnterpriseGroup",
@@ -9504,7 +10856,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9584,7 +10936,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9723,6 +11075,94 @@
     "renamed": null
   },
   {
+    "name": "Set organization access for a self-hosted runner group in an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "setOrgAccessToSelfHostedRunnerGroupInEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of organization IDs that can access the runner group.",
+        "enum": null,
+        "name": "selected_organization_ids",
+        "type": "integer[]",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
+    "name": "Set self-hosted runners in a group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "setSelfHostedInGroupForEnterprise",
+    "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#set-self-hosted-runners-in-a-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "List of runner IDs to add to the runner group.",
+        "enum": null,
+        "name": "runners",
+        "type": "integer[]",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
+    "renamed": null
+  },
+  {
     "name": "Update an attribute for a SCIM enterprise group",
     "scope": "enterpriseAdmin",
     "id": "updateAttributeForEnterpriseGroup",
@@ -9734,7 +11174,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9794,7 +11234,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
         "enum": null,
         "name": "enterprise",
         "type": "string",
@@ -9838,6 +11278,66 @@
         "code": 200,
         "description": "response",
         "schema": "{\"type\":\"object\",\"properties\":{\"schemas\":{\"type\":\"array\",\"items\":{\"type\":\"string\"}},\"id\":{\"type\":\"string\"},\"externalId\":{\"type\":\"string\"},\"userName\":{\"type\":\"string\"},\"name\":{\"type\":\"object\",\"properties\":{\"givenName\":{\"type\":\"string\"},\"familyName\":{\"type\":\"string\"}}},\"emails\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"primary\":{\"type\":\"boolean\"}}}},\"groups\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"value\":{\"type\":\"string\"}}}},\"active\":{\"type\":\"boolean\"},\"meta\":{\"type\":\"object\",\"properties\":{\"resourceType\":{\"type\":\"string\"},\"created\":{\"type\":\"string\"},\"lastModified\":{\"type\":\"string\"},\"location\":{\"type\":\"string\"}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Update a self-hosted runner group for an enterprise",
+    "scope": "enterpriseAdmin",
+    "id": "updateSelfHostedRunnerGroupForEnterprise",
+    "method": "PATCH",
+    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "documentationUrl": "https://developer.github.com/v3/enterprise-admin/actions/#update-a-self-hosted-runner-group-for-an-enterprise",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id.",
+        "enum": null,
+        "name": "enterprise",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Unique identifier of the self-hosted runner group.",
+        "enum": null,
+        "name": "runner_group_id",
+        "type": "integer",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Name of the runner group.",
+        "enum": null,
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Visibility of a runner group. You can select all organizations or select individual organizations. Can be one of: `all` or `selected`",
+        "enum": ["selected", "all"],
+        "name": "visibility",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_organizations_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"}}}"
       }
     ],
     "renamed": null
