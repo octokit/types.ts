@@ -6067,6 +6067,20 @@ export interface ActionsGetSelfHostedRunnerForOrgResponseData {
   os: string;
   status: string;
   busy: boolean;
+  labels: {
+    /**
+     * Unique identifier of the label.
+     */
+    id: number;
+    /**
+     * Name of the label.
+     */
+    name: string;
+    /**
+     * The type of label. Read-only labels are applied automatically when the runner is configured.
+     */
+    type: "read-only" | "custom";
+  }[];
 }
 
 type ActionsGetSelfHostedRunnerForRepoEndpoint = {
@@ -6091,6 +6105,44 @@ export interface ActionsGetSelfHostedRunnerForRepoResponseData {
   os: string;
   status: string;
   busy: boolean;
+  labels: {
+    /**
+     * Unique identifier of the label.
+     */
+    id: number;
+    /**
+     * Name of the label.
+     */
+    name: string;
+    /**
+     * The type of label. Read-only labels are applied automatically when the runner is configured.
+     */
+    type: "read-only" | "custom";
+  }[];
+}
+
+type ActionsGetSelfHostedRunnerGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type ActionsGetSelfHostedRunnerGroupForOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsGetSelfHostedRunnerGroupForOrgResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_repositories_url: string;
+  runners_url: string;
+  inherited: boolean;
 }
 
 type ActionsGetSelfHostedRunnerGroupForOrgEndpoint = {
@@ -6670,6 +6722,163 @@ type ActionsListRepoWorkflowsEndpoint = {
 
   repo: string;
   /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+};
+
+type ActionsListRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/repositories";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponseData {
+  total_count: number;
+  repositories: {
+    id: number;
+    node_id: string;
+    name: string;
+    full_name: string;
+    owner: {
+      login: string;
+      id: number;
+      node_id: string;
+      avatar_url: string;
+      gravatar_id: string;
+      url: string;
+      html_url: string;
+      followers_url: string;
+      following_url: string;
+      gists_url: string;
+      starred_url: string;
+      subscriptions_url: string;
+      organizations_url: string;
+      repos_url: string;
+      events_url: string;
+      received_events_url: string;
+      type: string;
+      site_admin: boolean;
+    };
+    private: boolean;
+    html_url: string;
+    description: string;
+    fork: boolean;
+    url: string;
+    archive_url: string;
+    assignees_url: string;
+    blobs_url: string;
+    branches_url: string;
+    collaborators_url: string;
+    comments_url: string;
+    commits_url: string;
+    compare_url: string;
+    contents_url: string;
+    contributors_url: string;
+    deployments_url: string;
+    downloads_url: string;
+    events_url: string;
+    forks_url: string;
+    git_commits_url: string;
+    git_refs_url: string;
+    git_tags_url: string;
+    git_url: string;
+    issue_comment_url: string;
+    issue_events_url: string;
+    issues_url: string;
+    keys_url: string;
+    labels_url: string;
+    languages_url: string;
+    merges_url: string;
+    milestones_url: string;
+    notifications_url: string;
+    pulls_url: string;
+    releases_url: string;
+    ssh_url: string;
+    stargazers_url: string;
+    statuses_url: string;
+    subscribers_url: string;
+    subscription_url: string;
+    tags_url: string;
+    teams_url: string;
+    trees_url: string;
+    clone_url: string;
+    mirror_url: string;
+    hooks_url: string;
+    svn_url: string;
+    homepage: string;
+    language: string;
+    forks_count: number;
+    stargazers_count: number;
+    watchers_count: number;
+    size: number;
+    default_branch: string;
+    open_issues_count: number;
+    is_template: boolean;
+    topics: string[];
+    has_issues: boolean;
+    has_projects: boolean;
+    has_wiki: boolean;
+    has_pages: boolean;
+    has_downloads: boolean;
+    archived: boolean;
+    disabled: boolean;
+    visibility: string;
+    pushed_at: string;
+    created_at: string;
+    updated_at: string;
+    permissions: {
+      admin: boolean;
+      push: boolean;
+      pull: boolean;
+    };
+    allow_rebase_merge: boolean;
+    template_repository: {
+      [k: string]: unknown;
+    };
+    temp_clone_token: string;
+    allow_squash_merge: boolean;
+    delete_branch_on_merge: boolean;
+    allow_merge_commit: boolean;
+    subscribers_count: number;
+    network_count: number;
+  }[];
+}
+
+type ActionsListRepoSecretsEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type ActionsListRepoSecretsRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/actions/secrets";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListRepoSecretsResponseData {
+  total_count: number;
+  secrets: {
+    name: string;
+    created_at: string;
+    updated_at: string;
+  }[];
+}
+
+type ActionsListRepoWorkflowsEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
    * Results per page (max 100)
    */
   per_page?: number;
@@ -6878,6 +7087,20 @@ export interface ActionsListSelfHostedRunnersForOrgResponseData {
     os: string;
     status: string;
     busy: boolean;
+    labels: {
+      /**
+       * Unique identifier of the label.
+       */
+      id: number;
+      /**
+       * Name of the label.
+       */
+      name: string;
+      /**
+       * The type of label. Read-only labels are applied automatically when the runner is configured.
+       */
+      type: "read-only" | "custom";
+    }[];
   }[];
 }
 
@@ -6909,6 +7132,67 @@ export interface ActionsListSelfHostedRunnersForRepoResponseData {
     os: string;
     status: string;
     busy: boolean;
+    labels: {
+      /**
+       * Unique identifier of the label.
+       */
+      id: number;
+      /**
+       * Name of the label.
+       */
+      name: string;
+      /**
+       * The type of label. Read-only labels are applied automatically when the runner is configured.
+       */
+      type: "read-only" | "custom";
+    }[];
+  }[];
+}
+
+type ActionsListSelfHostedRunnersInGroupForOrgEndpoint = {
+  org: string;
+  /**
+   * Unique identifier of the self-hosted runner group.
+   */
+  runner_group_id: number;
+  /**
+   * Results per page (max 100)
+   */
+  per_page?: number;
+  /**
+   * Page number of the results to fetch.
+   */
+  page?: number;
+};
+
+type ActionsListSelfHostedRunnersInGroupForOrgRequestOptions = {
+  method: "GET";
+  url: "/orgs/:org/actions/runner-groups/:runner_group_id/runners";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+export interface ActionsListSelfHostedRunnersInGroupForOrgResponseData {
+  total_count: number;
+  runners: {
+    id: number;
+    name: string;
+    os: string;
+    status: string;
+    busy: boolean;
+    labels: {
+      /**
+       * Unique identifier of the label.
+       */
+      id: number;
+      /**
+       * Name of the label.
+       */
+      name: string;
+      /**
+       * The type of label. Read-only labels are applied automatically when the runner is configured.
+       */
+      type: "read-only" | "custom";
+    }[];
   }[];
 }
 
@@ -12770,6 +13054,20 @@ export interface EnterpriseAdminGetSelfHostedRunnerForEnterpriseResponseData {
   os: string;
   status: string;
   busy: boolean;
+  labels: {
+    /**
+     * Unique identifier of the label.
+     */
+    id: number;
+    /**
+     * Name of the label.
+     */
+    name: string;
+    /**
+     * The type of label. Read-only labels are applied automatically when the runner is configured.
+     */
+    type: "read-only" | "custom";
+  }[];
 }
 
 type EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseEndpoint = {
@@ -12875,7 +13173,7 @@ type EnterpriseAdminListProvisionedGroupsEnterpriseEndpoint = {
    */
   enterprise: string;
   /**
-   * Used for pagination: the index of the first result to return.
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
    */
   startIndex?: number;
   /**
@@ -12920,52 +13218,21 @@ type EnterpriseAdminListProvisionedIdentitiesEnterpriseEndpoint = {
    */
   enterprise: string;
   /**
-   * Used for pagination: the index of the first result to return.
+   * Unique identifier of the self-hosted runner group.
    */
-  startIndex?: number;
+  runner_group_id: number;
   /**
-   * Used for pagination: the number of results to return.
+   * List of organization IDs that can access the runner group.
    */
-  count?: number;
+  selected_organization_ids: number[];
 };
 
-type EnterpriseAdminListProvisionedIdentitiesEnterpriseRequestOptions = {
-  method: "GET";
-  url: "/scim/v2/enterprises/:enterprise/Users";
+type EnterpriseAdminSetOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/organizations";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface EnterpriseAdminListProvisionedIdentitiesEnterpriseResponseData {
-  schemas: string[];
-  totalResults: number;
-  itemsPerPage: number;
-  startIndex: number;
-  Resources: {
-    schemas: string[];
-    id: string;
-    externalId: string;
-    userName: string;
-    name: {
-      givenName: string;
-      familyName: string;
-    };
-    emails: {
-      value: string;
-      primary: boolean;
-      type: string;
-    }[];
-    groups: {
-      value: string;
-    }[];
-    active: boolean;
-    meta: {
-      resourceType: string;
-      created: string;
-      lastModified: string;
-      location: string;
-    };
-  }[];
-}
 
 type EnterpriseAdminListRunnerApplicationsForEnterpriseEndpoint = {
   /**
@@ -13049,6 +13316,20 @@ export interface EnterpriseAdminListSelfHostedRunnersForEnterpriseResponseData {
     os: string;
     status: string;
     busy: boolean;
+    labels: {
+      /**
+       * Unique identifier of the label.
+       */
+      id: number;
+      /**
+       * Name of the label.
+       */
+      name: string;
+      /**
+       * The type of label. Read-only labels are applied automatically when the runner is configured.
+       */
+      type: "read-only" | "custom";
+    }[];
   }[];
 }
 
@@ -13085,6 +13366,20 @@ export interface EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseRespons
     os: string;
     status: string;
     busy: boolean;
+    labels: {
+      /**
+       * Unique identifier of the label.
+       */
+      id: number;
+      /**
+       * Name of the label.
+       */
+      name: string;
+      /**
+       * The type of label. Read-only labels are applied automatically when the runner is configured.
+       */
+      type: "read-only" | "custom";
+    }[];
   }[];
 }
 
@@ -13094,7 +13389,7 @@ type EnterpriseAdminProvisionAndInviteEnterpriseGroupEndpoint = {
    */
   enterprise: string;
   /**
-   * The SCIM schema URIs.
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
    */
   schemas: string[];
   /**
@@ -13135,56 +13430,21 @@ type EnterpriseAdminProvisionAndInviteEnterpriseUserEndpoint = {
    */
   enterprise: string;
   /**
-   * The SCIM schema URIs.
+   * Unique identifier of the self-hosted runner group.
    */
-  schemas: string[];
+  runner_group_id: number;
   /**
-   * The username for the user.
+   * List of runner IDs to add to the runner group.
    */
-  userName: string;
-
-  name: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsName;
-  /**
-   * List of user emails.
-   */
-  emails: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsEmails[];
-  /**
-   * List of SCIM group IDs the user is a member of.
-   */
-  groups?: EnterpriseAdminProvisionAndInviteEnterpriseUserParamsGroups[];
+  runners: number[];
 };
 
-type EnterpriseAdminProvisionAndInviteEnterpriseUserRequestOptions = {
-  method: "POST";
-  url: "/scim/v2/enterprises/:enterprise/Users";
+type EnterpriseAdminSetSelfHostedInGroupForEnterpriseRequestOptions = {
+  method: "PUT";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id/runners";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface EnterpriseAdminProvisionAndInviteEnterpriseUserResponseData {
-  schemas: string[];
-  id: string;
-  externalId: string;
-  userName: string;
-  name: {
-    givenName: string;
-    familyName: string;
-  };
-  emails: {
-    value: string;
-    type: string;
-    primary: boolean;
-  }[];
-  groups: {
-    value: string;
-  }[];
-  active: boolean;
-  meta: {
-    resourceType: string;
-    created: string;
-    lastModified: string;
-    location: string;
-  };
-}
 
 type EnterpriseAdminRemoveOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
   /**
@@ -13244,20 +13504,18 @@ type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupEndpoint = {
    */
   schemas: string[];
   /**
-   * The name of the SCIM group. This must match the GitHub organization that the group maps to.
+   * Array of [SCIM operations](https://tools.ietf.org/html/rfc7644#section-3.5.2).
    */
-  displayName: string;
-
-  members?: EnterpriseAdminSetInformationForProvisionedEnterpriseGroupParamsMembers[];
+  Operations: EnterpriseAdminUpdateAttributeForEnterpriseGroupParamsOperations[];
 };
 
-type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupRequestOptions = {
-  method: "PUT";
+type EnterpriseAdminUpdateAttributeForEnterpriseGroupRequestOptions = {
+  method: "PATCH";
   url: "/scim/v2/enterprises/:enterprise/Groups/:scim_group_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface EnterpriseAdminSetInformationForProvisionedEnterpriseGroupResponseData {
+export interface EnterpriseAdminUpdateAttributeForEnterpriseGroupResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -13289,28 +13547,18 @@ type EnterpriseAdminSetInformationForProvisionedEnterpriseUserEndpoint = {
    */
   schemas: string[];
   /**
-   * The username for the user.
+   * Array of [SCIM operations](https://tools.ietf.org/html/rfc7644#section-3.5.2).
    */
-  userName: string;
-
-  name: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsName;
-  /**
-   * List of user emails.
-   */
-  emails: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsEmails[];
-  /**
-   * List of SCIM group IDs the user is a member of.
-   */
-  groups?: EnterpriseAdminSetInformationForProvisionedEnterpriseUserParamsGroups[];
+  Operations: EnterpriseAdminUpdateAttributeForEnterpriseUserParamsOperations[];
 };
 
-type EnterpriseAdminSetInformationForProvisionedEnterpriseUserRequestOptions = {
-  method: "PUT";
+type EnterpriseAdminUpdateAttributeForEnterpriseUserRequestOptions = {
+  method: "PATCH";
   url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface EnterpriseAdminSetInformationForProvisionedEnterpriseUserResponseData {
+export interface EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData {
   schemas: string[];
   id: string;
   externalId: string;
@@ -13386,7 +13634,7 @@ type EnterpriseAdminUpdateAttributeForEnterpriseGroupEndpoint = {
    */
   enterprise: string;
   /**
-   * Identifier generated by the GitHub SCIM endpoint.
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
    */
   scim_group_id: string;
   /**
@@ -13429,49 +13677,32 @@ type EnterpriseAdminUpdateAttributeForEnterpriseUserEndpoint = {
    */
   enterprise: string;
   /**
-   * Identifier generated by the GitHub SCIM endpoint.
+   * Unique identifier of the self-hosted runner group.
    */
-  scim_user_id: string;
+  runner_group_id: number;
   /**
-   * The SCIM schema URIs.
+   * Name of the runner group.
    */
-  schemas: string[];
+  name?: string;
   /**
-   * Array of [SCIM operations](https://tools.ietf.org/html/rfc7644#section-3.5.2).
+   * Visibility of a runner group. You can select all organizations or select individual organizations. Can be one of: `all` or `selected`
    */
-  Operations: EnterpriseAdminUpdateAttributeForEnterpriseUserParamsOperations[];
+  visibility?: "selected" | "all";
 };
 
-type EnterpriseAdminUpdateAttributeForEnterpriseUserRequestOptions = {
+type EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseRequestOptions = {
   method: "PATCH";
-  url: "/scim/v2/enterprises/:enterprise/Users/:scim_user_id";
+  url: "/enterprises/:enterprise/actions/runner-groups/:runner_group_id";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
-export interface EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData {
-  schemas: string[];
-  id: string;
-  externalId: string;
-  userName: string;
-  name: {
-    givenName: string;
-    familyName: string;
-  };
-  emails: {
-    value: string;
-    type: string;
-    primary: boolean;
-  }[];
-  groups: {
-    value: string;
-  }[];
-  active: boolean;
-  meta: {
-    resourceType: string;
-    created: string;
-    lastModified: string;
-    location: string;
-  };
+export interface EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseResponseData {
+  id: number;
+  name: string;
+  visibility: string;
+  default: boolean;
+  selected_organizations_url: string;
+  runners_url: string;
 }
 
 type EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseEndpoint = {
