@@ -1900,46 +1900,6 @@
     "renamed": null
   },
   {
-    "name": "Get a self-hosted runner group for an organization",
-    "scope": "actions",
-    "id": "getSelfHostedRunnerGroupForOrg",
-    "method": "GET",
-    "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
-    "documentationUrl": "https://developer.github.com/v3/actions/self-hosted-runner-groups/#get-a-self-hosted-runner-group-for-an-organization",
-    "parameters": [
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "",
-        "enum": null,
-        "name": "org",
-        "type": "string",
-        "required": true
-      },
-      {
-        "alias": null,
-        "allowNull": false,
-        "deprecated": null,
-        "description": "Unique identifier of the self-hosted runner group.",
-        "enum": null,
-        "name": "runner_group_id",
-        "type": "integer",
-        "required": true
-      }
-    ],
-    "previews": [],
-    "headers": [],
-    "responses": [
-      {
-        "code": 200,
-        "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"number\"},\"name\":{\"type\":\"string\"},\"visibility\":{\"type\":\"string\"},\"default\":{\"type\":\"boolean\"},\"selected_repositories_url\":{\"type\":\"string\"},\"runners_url\":{\"type\":\"string\"},\"inherited\":{\"type\":\"boolean\"}}}"
-      }
-    ],
-    "renamed": null
-  },
-  {
     "name": "Get a workflow",
     "scope": "actions",
     "id": "getWorkflow",
