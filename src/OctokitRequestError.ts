@@ -1,4 +1,4 @@
-export type OctokitRequestError = {
+export type RequestError = {
   name: string;
   status: number;
   documentation_url: string;
