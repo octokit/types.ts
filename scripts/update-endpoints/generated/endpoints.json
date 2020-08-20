@@ -5833,14 +5833,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -6123,14 +6117,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -6189,14 +6177,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 201,
@@ -6261,14 +6243,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -6325,14 +6301,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6373,14 +6343,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6411,14 +6375,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6438,14 +6396,8 @@
     "url": "/app",
     "documentationUrl": "https://developer.github.com/v3/apps/#get-the-authenticated-app",
     "parameters": [],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6474,14 +6426,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6510,14 +6456,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6546,14 +6486,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6592,14 +6526,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -6688,14 +6616,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7028,14 +6950,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7074,14 +6990,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7120,14 +7030,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7330,14 +7234,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7378,14 +7276,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -7504,14 +7396,8 @@
         "required": true
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [],
     "renamed": null
   },
@@ -20050,14 +19936,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,
@@ -20310,14 +20190,8 @@
         "required": false
       }
     ],
-    "previews": [{ "name": "machine-man" }],
-    "headers": [
-      {
-        "name": "accept",
-        "value": "application/vnd.github.machine-man-preview+json",
-        "required": true
-      }
-    ],
+    "previews": [],
+    "headers": [],
     "responses": [
       {
         "code": 200,

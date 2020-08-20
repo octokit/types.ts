@@ -9249,7 +9249,7 @@ type AppsAddRepoToInstallationEndpoint = {
   installation_id: number;
 
   repository_id: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsAddRepoToInstallationRequestOptions = {
   method: "PUT";
@@ -9441,7 +9441,7 @@ type AppsCreateInstallationAccessTokenEndpoint = {
    * The permissions granted to the access token. The permissions object includes the permission names and their access type. For a complete list of permissions and allowable values, see "[GitHub App permissions](https://developer.github.com/apps/building-github-apps/creating-github-apps-using-url-parameters/#github-app-permissions)."
    */
   permissions?: AppsCreateInstallationAccessTokenParamsPermissions;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsCreateInstallationAccessTokenRequestOptions = {
   method: "POST";
@@ -9584,7 +9584,7 @@ type AppsDeleteAuthorizationRequestOptions = {
 
 type AppsDeleteInstallationEndpoint = {
   installation_id: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsDeleteInstallationRequestOptions = {
   method: "DELETE";
@@ -9608,7 +9608,7 @@ type AppsDeleteTokenRequestOptions = {
   request: RequestRequestOptions;
 };
 
-type AppsGetAuthenticatedEndpoint = {} & RequiredPreview<"machine-man">;
+type AppsGetAuthenticatedEndpoint = {};
 
 type AppsGetAuthenticatedRequestOptions = {
   method: "GET";
@@ -9652,7 +9652,7 @@ export interface AppsGetAuthenticatedResponseData {
 
 type AppsGetBySlugEndpoint = {
   app_slug: string;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsGetBySlugRequestOptions = {
   method: "GET";
@@ -9695,7 +9695,7 @@ export interface AppsGetBySlugResponseData {
 
 type AppsGetInstallationEndpoint = {
   installation_id: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsGetInstallationRequestOptions = {
   method: "GET";
@@ -9737,7 +9737,7 @@ export interface AppsGetInstallationResponseData {
 
 type AppsGetOrgInstallationEndpoint = {
   org: string;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsGetOrgInstallationRequestOptions = {
   method: "GET";
@@ -9789,7 +9789,7 @@ type AppsGetRepoInstallationEndpoint = {
   owner: string;
 
   repo: string;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsGetRepoInstallationRequestOptions = {
   method: "GET";
@@ -9963,7 +9963,7 @@ export interface AppsGetSubscriptionPlanForAccountStubbedResponseData {
 
 type AppsGetUserInstallationEndpoint = {
   username: string;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsGetUserInstallationRequestOptions = {
   method: "GET";
@@ -10177,7 +10177,7 @@ type AppsListInstallationReposForAuthenticatedUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsListInstallationReposForAuthenticatedUserRequestOptions = {
   method: "GET";
@@ -10306,7 +10306,7 @@ type AppsListInstallationsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsListInstallationsRequestOptions = {
   method: "GET";
@@ -10355,7 +10355,7 @@ type AppsListInstallationsForAuthenticatedUserEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsListInstallationsForAuthenticatedUserRequestOptions = {
   method: "GET";
@@ -10483,7 +10483,7 @@ type AppsListReposAccessibleToInstallationEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsListReposAccessibleToInstallationRequestOptions = {
   method: "GET";
@@ -10700,7 +10700,7 @@ type AppsRemoveRepoFromInstallationEndpoint = {
   installation_id: number;
 
   repository_id: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type AppsRemoveRepoFromInstallationRequestOptions = {
   method: "DELETE";
@@ -21088,7 +21088,7 @@ type OrgsListAppInstallationsEndpoint = {
    * Page number of the results to fetch.
    */
   page?: number;
-} & RequiredPreview<"machine-man">;
+};
 
 type OrgsListAppInstallationsRequestOptions = {
   method: "GET";
