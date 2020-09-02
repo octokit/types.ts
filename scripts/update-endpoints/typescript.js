@@ -246,9 +246,6 @@ async function getResponseSchemasString(responsesSchemas) {
 
   const strings = await Promise.all(
     responsesSchemas.map(({ schema, name }) => {
-      if (name === "ReposListInvitationsResponseData") {
-        debugger;
-      }
       patchSchema(schema);
       return compile(schema, name, { bannerComment: false });
     })
