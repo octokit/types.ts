@@ -7739,7 +7739,7 @@
     "scope": "codeScanning",
     "id": "getAlert",
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_id}",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
     "documentationUrl": "https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert",
     "parameters": [
       {
@@ -7768,12 +7768,23 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "",
+        "description": "The code scanning alert number.",
+        "enum": null,
+        "in": "PATH",
+        "name": "alert_number",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": "alert_number",
+        "allowNull": false,
+        "deprecated": true,
+        "description": "The code scanning alert number.",
         "enum": null,
         "in": "PATH",
         "name": "alert_id",
         "type": "integer",
-        "required": true
+        "required": false
       }
     ],
     "previews": [],
@@ -7782,7 +7793,7 @@
       {
         "code": 200,
         "description": "response",
-        "schema": "{\"type\":\"object\",\"properties\":{\"rule_id\":{\"type\":\"string\"},\"rule_severity\":{\"type\":\"string\"},\"rule_description\":{\"type\":\"string\"},\"tool\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"open\":{\"type\":\"boolean\"},\"closed_by\":{\"nullable\":true,\"type\":\"string\"},\"closed_at\":{\"nullable\":true,\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"}}}"
+        "schema": "{\"type\":\"object\",\"properties\":{\"number\":{\"type\":\"integer\",\"description\":\"The code scanning alert number.\",\"readOnly\":true,\"nullable\":false},\"created_at\":{\"type\":\"string\",\"description\":\"The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":false},\"url\":{\"type\":\"string\",\"description\":\"The REST API URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"html_url\":{\"type\":\"string\",\"description\":\"The GitHub URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"instances\":{\"nullable\":true,\"type\":\"array\",\"properties\":{\"ref\":{\"type\":\"string\",\"description\":\"The full Git reference, formatted as `refs/heads/<branch name>`.\"},\"analysis_key\":{\"type\":\"string\",\"description\":\"Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.\"},\"environment\":{\"type\":\"string\",\"description\":\"Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.\"},\"matrix_vars\":{\"nullable\":true,\"type\":\"string\"},\"state\":{\"type\":\"string\",\"description\":\"State of a code scanning alert.\",\"enum\":[\"open\",\"dismissed\",\"fixed\"]}}},\"state\":{\"type\":\"string\",\"description\":\"State of a code scanning alert.\",\"enum\":[\"open\",\"dismissed\",\"fixed\"]},\"dismissed_by\":{\"nullable\":true,\"oneOf\":[{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},{\"enum\":[null]}]},\"dismissed_at\":{\"type\":\"string\",\"description\":\"The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":true},\"dismissed_reason\":{\"type\":\"string\",\"description\":\"**Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.\",\"nullable\":true,\"oneOf\":[{\"enum\":[\"false positive\",\"won't fix\",\"used in tests\"]},{\"enum\":[null]}]},\"rule\":{\"type\":\"object\",\"properties\":{\"id\":{\"nullable\":true,\"type\":\"string\",\"description\":\"A unique identifier for the rule used to detect the alert.\"},\"severity\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The severity of the alert.\",\"enum\":[\"none\",\"note\",\"warning\",\"error\"]},\"description\":{\"type\":\"string\",\"description\":\"A short description of the rule used to detect the alert.\"}}},\"tool\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"The name of the tool used to generate the code scanning analysis alert.\"},\"version\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The version of the tool used to detect the alert.\"}}}}}"
       }
     ],
     "renamed": null
@@ -7821,8 +7832,8 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Set to `closed` to list only closed code scanning alerts.",
-        "enum": null,
+        "description": "Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.",
+        "enum": ["open", "dismissed", "fixed"],
         "in": "QUERY",
         "name": "state",
         "type": "string",
@@ -7832,7 +7843,7 @@
         "alias": null,
         "allowNull": false,
         "deprecated": null,
-        "description": "Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.",
+        "description": "Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.",
         "enum": null,
         "in": "QUERY",
         "name": "ref",
@@ -7846,9 +7857,250 @@
       {
         "code": 200,
         "description": "response",
-        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"rule_id\":{\"type\":\"string\"},\"rule_severity\":{\"type\":\"string\"},\"rule_description\":{\"type\":\"string\"},\"tool\":{\"type\":\"string\"},\"created_at\":{\"type\":\"string\"},\"open\":{\"type\":\"boolean\"},\"closed_by\":{\"nullable\":true,\"type\":\"string\"},\"closed_at\":{\"nullable\":true,\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"}}}}"
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"number\":{\"type\":\"integer\",\"description\":\"The code scanning alert number.\",\"readOnly\":true,\"nullable\":false},\"created_at\":{\"type\":\"string\",\"description\":\"The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":false},\"url\":{\"type\":\"string\",\"description\":\"The REST API URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"html_url\":{\"type\":\"string\",\"description\":\"The GitHub URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"state\":{\"type\":\"string\",\"description\":\"State of a code scanning alert.\",\"enum\":[\"open\",\"dismissed\",\"fixed\"]},\"dismissed_by\":{\"nullable\":true,\"oneOf\":[{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},{\"enum\":[null]}]},\"dismissed_at\":{\"type\":\"string\",\"description\":\"The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":true},\"dismissed_reason\":{\"type\":\"string\",\"description\":\"**Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.\",\"nullable\":true,\"oneOf\":[{\"enum\":[\"false positive\",\"won't fix\",\"used in tests\"]},{\"enum\":[null]}]},\"rule\":{\"type\":\"object\",\"properties\":{\"id\":{\"nullable\":true,\"type\":\"string\",\"description\":\"A unique identifier for the rule used to detect the alert.\"},\"severity\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The severity of the alert.\",\"enum\":[\"none\",\"note\",\"warning\",\"error\"]},\"description\":{\"type\":\"string\",\"description\":\"A short description of the rule used to detect the alert.\"}}},\"tool\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"The name of the tool used to generate the code scanning analysis alert.\"},\"version\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The version of the tool used to detect the alert.\"}}}}}}"
       }
     ],
+    "renamed": null
+  },
+  {
+    "name": "List recent code scanning analyses for a repository",
+    "scope": "codeScanning",
+    "id": "listRecentAnalyses",
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses",
+    "documentationUrl": "https://developer.github.com/v3/code-scanning/#list-recent-analyses",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.",
+        "enum": null,
+        "in": "QUERY",
+        "name": "ref",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Set a single code scanning tool name to filter alerts by tool.",
+        "enum": null,
+        "in": "QUERY",
+        "name": "tool_name",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"commit_sha\":{\"description\":\"The commit SHA of the code scanning analysis file.\",\"type\":\"string\",\"minLength\":40,\"maxLength\":40,\"pattern\":\"^[0-9a-fA-F]+$\"},\"ref\":{\"type\":\"string\",\"description\":\"The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.\"},\"analysis_key\":{\"type\":\"string\",\"description\":\"Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.\"},\"created_at\":{\"type\":\"string\",\"description\":\"The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":false},\"tool_name\":{\"type\":\"string\",\"description\":\"The name of the tool used to generate the code scanning analysis alert.\"},\"error\":{\"type\":\"string\",\"example\":\"error reading field xyz\"},\"environment\":{\"type\":\"string\",\"description\":\"Identifies the variable values associated with the environment in which this analysis was performed.\"}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Update a code scanning alert",
+    "scope": "codeScanning",
+    "id": "updateAlert",
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+    "documentationUrl": "https://developer.github.com/v3/code-scanning/#upload-a-code-scanning-alert",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The code scanning alert number.",
+        "enum": null,
+        "in": "PATH",
+        "name": "alert_number",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "Sets the state of the code scanning alert. Can be one of `open` or `dismissed`. You must provide `dismissed_reason` when you set the state to `dismissed`.",
+        "enum": ["open", "dismissed"],
+        "in": "BODY",
+        "name": "state",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": true,
+        "deprecated": null,
+        "description": "**Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.",
+        "enum": null,
+        "in": "BODY",
+        "name": "dismissed_reason",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [
+      {
+        "code": 200,
+        "description": "response",
+        "schema": "{\"type\":\"object\",\"properties\":{\"number\":{\"type\":\"integer\",\"description\":\"The code scanning alert number.\",\"readOnly\":true,\"nullable\":false},\"created_at\":{\"type\":\"string\",\"description\":\"The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":false},\"url\":{\"type\":\"string\",\"description\":\"The REST API URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"html_url\":{\"type\":\"string\",\"description\":\"The GitHub URL of the alert resource.\",\"format\":\"uri\",\"readOnly\":true,\"nullable\":false},\"instances\":{\"nullable\":true,\"type\":\"array\",\"properties\":{\"ref\":{\"type\":\"string\",\"description\":\"The full Git reference, formatted as `refs/heads/<branch name>`.\"},\"analysis_key\":{\"type\":\"string\",\"description\":\"Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.\"},\"environment\":{\"type\":\"string\",\"description\":\"Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.\"},\"matrix_vars\":{\"nullable\":true,\"type\":\"string\"},\"state\":{\"type\":\"string\",\"description\":\"State of a code scanning alert.\",\"enum\":[\"open\",\"dismissed\",\"fixed\"]}}},\"state\":{\"type\":\"string\",\"description\":\"State of a code scanning alert.\",\"enum\":[\"open\",\"dismissed\",\"fixed\"]},\"dismissed_by\":{\"nullable\":true,\"oneOf\":[{\"type\":\"object\",\"properties\":{\"login\":{\"type\":\"string\"},\"id\":{\"type\":\"number\"},\"node_id\":{\"type\":\"string\"},\"avatar_url\":{\"type\":\"string\"},\"gravatar_id\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"html_url\":{\"type\":\"string\"},\"followers_url\":{\"type\":\"string\"},\"following_url\":{\"type\":\"string\"},\"gists_url\":{\"type\":\"string\"},\"starred_url\":{\"type\":\"string\"},\"subscriptions_url\":{\"type\":\"string\"},\"organizations_url\":{\"type\":\"string\"},\"repos_url\":{\"type\":\"string\"},\"events_url\":{\"type\":\"string\"},\"received_events_url\":{\"type\":\"string\"},\"type\":{\"type\":\"string\"},\"site_admin\":{\"type\":\"boolean\"}}},{\"enum\":[null]}]},\"dismissed_at\":{\"type\":\"string\",\"description\":\"The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.\",\"format\":\"date-time\",\"readOnly\":true,\"nullable\":true},\"dismissed_reason\":{\"type\":\"string\",\"description\":\"**Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.\",\"nullable\":true,\"oneOf\":[{\"enum\":[\"false positive\",\"won't fix\",\"used in tests\"]},{\"enum\":[null]}]},\"rule\":{\"type\":\"object\",\"properties\":{\"id\":{\"nullable\":true,\"type\":\"string\",\"description\":\"A unique identifier for the rule used to detect the alert.\"},\"severity\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The severity of the alert.\",\"enum\":[\"none\",\"note\",\"warning\",\"error\"]},\"description\":{\"type\":\"string\",\"description\":\"A short description of the rule used to detect the alert.\"}}},\"tool\":{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\",\"description\":\"The name of the tool used to generate the code scanning analysis alert.\"},\"version\":{\"nullable\":true,\"type\":\"string\",\"description\":\"The version of the tool used to detect the alert.\"}}}}}"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "name": "Upload a SARIF file",
+    "scope": "codeScanning",
+    "id": "uploadSarif",
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/code-scanning/sarifs",
+    "documentationUrl": "https://developer.github.com/v3/code-scanning/#upload-a-sarif-analysis",
+    "parameters": [
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "owner",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "",
+        "enum": null,
+        "in": "PATH",
+        "name": "repo",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The commit SHA of the code scanning analysis file.",
+        "enum": null,
+        "in": "BODY",
+        "name": "commit_sha",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.",
+        "enum": null,
+        "in": "BODY",
+        "name": "ref",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string.",
+        "enum": null,
+        "in": "BODY",
+        "name": "sarif",
+        "type": "string",
+        "required": true
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The base directory used in the analysis, as it appears in the SARIF file. \nThis property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.",
+        "enum": null,
+        "in": "BODY",
+        "name": "checkout_uri",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.",
+        "enum": null,
+        "in": "BODY",
+        "name": "started_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "alias": null,
+        "allowNull": false,
+        "deprecated": null,
+        "description": "The name of the tool used to generate the code scanning analysis alert.",
+        "enum": null,
+        "in": "BODY",
+        "name": "tool_name",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "previews": [],
+    "headers": [],
+    "responses": [],
     "renamed": null
   },
   {
