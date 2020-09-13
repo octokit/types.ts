@@ -1105,6 +1105,39 @@ export interface Endpoints {
     >;
   };
   /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-github-actions-billing-for-an-enterprise
+   * @deprecated "enterprise_id" is deprecated, use "enterprise" instead
+   */
+  "GET /enterprises/:enterprise_id/settings/billing/actions": {
+    parameters: EnterpriseAdminGetGithubActionsBillingGheDeprecatedEnterpriseIdEndpoint;
+    request: EnterpriseAdminGetGithubActionsBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetGithubActionsBillingGheResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-github-packages-billing-for-an-enterprise
+   * @deprecated "enterprise_id" is deprecated, use "enterprise" instead
+   */
+  "GET /enterprises/:enterprise_id/settings/billing/packages": {
+    parameters: EnterpriseAdminGetGithubPackagesBillingGheDeprecatedEnterpriseIdEndpoint;
+    request: EnterpriseAdminGetGithubPackagesBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetGithubPackagesBillingGheResponseData
+    >;
+  };
+  /**
+   * @see https://developer.github.com/v3/enterprise-admin/billing/#get-shared-storage-billing-for-an-enterprise
+   * @deprecated "enterprise_id" is deprecated, use "enterprise" instead
+   */
+  "GET /enterprises/:enterprise_id/settings/billing/shared-storage": {
+    parameters: EnterpriseAdminGetSharedStorageBillingGheDeprecatedEnterpriseIdEndpoint;
+    request: EnterpriseAdminGetSharedStorageBillingGheRequestOptions;
+    response: OctokitResponse<
+      EnterpriseAdminGetSharedStorageBillingGheResponseData
+    >;
+  };
+  /**
    * @see https://developer.github.com/v3/activity/events/#list-public-events
    */
   "GET /events": {
@@ -2226,11 +2259,28 @@ export interface Endpoints {
   };
   /**
    * @see https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   * @deprecated "alert_id" is deprecated, use "alert_number" instead
    */
   "GET /repos/:owner/:repo/code-scanning/alerts/:alert_id": {
+    parameters: CodeScanningGetAlertDeprecatedAlertIdEndpoint;
+    request: CodeScanningGetAlertRequestOptions;
+    response: OctokitResponse<CodeScanningGetAlertResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   */
+  "GET /repos/:owner/:repo/code-scanning/alerts/:alert_number": {
     parameters: CodeScanningGetAlertEndpoint;
     request: CodeScanningGetAlertRequestOptions;
     response: OctokitResponse<CodeScanningGetAlertResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#list-recent-analyses
+   */
+  "GET /repos/:owner/:repo/code-scanning/analyses": {
+    parameters: CodeScanningListRecentAnalysesEndpoint;
+    request: CodeScanningListRecentAnalysesRequestOptions;
+    response: OctokitResponse<CodeScanningListRecentAnalysesResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#list-repository-collaborators
@@ -3960,6 +4010,14 @@ export interface Endpoints {
     response: OctokitResponse<ChecksSetSuitesPreferencesResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/code-scanning/#upload-a-code-scanning-alert
+   */
+  "PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number": {
+    parameters: CodeScanningUpdateAlertEndpoint;
+    request: CodeScanningUpdateAlertRequestOptions;
+    response: OctokitResponse<CodeScanningUpdateAlertResponseData>;
+  };
+  /**
    * @see https://developer.github.com/v3/repos/comments/#update-a-commit-comment
    */
   "PATCH /repos/:owner/:repo/comments/:comment_id": {
@@ -4559,6 +4617,14 @@ export interface Endpoints {
   "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": {
     parameters: ChecksRerequestSuiteEndpoint;
     request: ChecksRerequestSuiteRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#upload-a-sarif-analysis
+   */
+  "POST /repos/:owner/:repo/code-scanning/sarifs": {
+    parameters: CodeScanningUploadSarifEndpoint;
+    request: CodeScanningUploadSarifRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -5631,6 +5697,7 @@ type ActionsCreateRegistrationTokenForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsCreateRegistrationTokenForOrgResponseData {
   token: string;
   expires_at: string;
@@ -5648,6 +5715,7 @@ type ActionsCreateRegistrationTokenForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsCreateRegistrationTokenForRepoResponseData {
   token: string;
   expires_at: string;
@@ -5663,6 +5731,7 @@ type ActionsCreateRemoveTokenForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsCreateRemoveTokenForOrgResponseData {
   token: string;
   expires_at: string;
@@ -5680,6 +5749,7 @@ type ActionsCreateRemoveTokenForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsCreateRemoveTokenForRepoResponseData {
   token: string;
   expires_at: string;
@@ -5711,6 +5781,7 @@ type ActionsCreateSelfHostedRunnerGroupForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsCreateSelfHostedRunnerGroupForOrgResponseData {
   id: number;
   name: string;
@@ -5925,6 +5996,7 @@ type ActionsGetArtifactRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetArtifactResponseData {
   id: number;
   node_id: string;
@@ -5951,6 +6023,7 @@ type ActionsGetJobForWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetJobForWorkflowRunResponseData {
   id: number;
   run_id: number;
@@ -5985,6 +6058,7 @@ type ActionsGetOrgPublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetOrgPublicKeyResponseData {
   key_id: string;
   key: string;
@@ -6002,6 +6076,7 @@ type ActionsGetOrgSecretRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetOrgSecretResponseData {
   name: string;
   created_at: string;
@@ -6022,6 +6097,7 @@ type ActionsGetRepoPublicKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetRepoPublicKeyResponseData {
   key_id: string;
   key: string;
@@ -6041,6 +6117,7 @@ type ActionsGetRepoSecretRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetRepoSecretResponseData {
   name: string;
   created_at: string;
@@ -6061,6 +6138,7 @@ type ActionsGetSelfHostedRunnerForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetSelfHostedRunnerForOrgResponseData {
   id: number;
   name: string;
@@ -6099,6 +6177,7 @@ type ActionsGetSelfHostedRunnerForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetSelfHostedRunnerForRepoResponseData {
   id: number;
   name: string;
@@ -6135,6 +6214,7 @@ type ActionsGetSelfHostedRunnerGroupForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetSelfHostedRunnerGroupForOrgResponseData {
   id: number;
   name: string;
@@ -6159,6 +6239,7 @@ type ActionsGetWorkflowRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetWorkflowResponseData {
   id: number;
   node_id: string;
@@ -6186,6 +6267,7 @@ type ActionsGetWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetWorkflowRunResponseData {
   id: number;
   node_id: string;
@@ -6373,6 +6455,7 @@ type ActionsGetWorkflowRunUsageRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetWorkflowRunUsageResponseData {
   billable: {
     UBUNTU: {
@@ -6405,6 +6488,7 @@ type ActionsGetWorkflowUsageRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsGetWorkflowUsageResponseData {
   billable: {
     UBUNTU: {
@@ -6439,6 +6523,7 @@ type ActionsListArtifactsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListArtifactsForRepoResponseData {
   total_count: number;
   artifacts: {
@@ -6482,6 +6567,7 @@ type ActionsListJobsForWorkflowRunRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListJobsForWorkflowRunResponseData {
   total_count: number;
   jobs: {
@@ -6527,6 +6613,7 @@ type ActionsListOrgSecretsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListOrgSecretsResponseData {
   total_count: number;
   secrets: {
@@ -6552,6 +6639,7 @@ type ActionsListRepoAccessToSelfHostedRunnerGroupInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponseData {
   total_count: number;
   repositories: {
@@ -6684,6 +6772,7 @@ type ActionsListRepoSecretsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListRepoSecretsResponseData {
   total_count: number;
   secrets: {
@@ -6713,6 +6802,7 @@ type ActionsListRepoWorkflowsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListRepoWorkflowsResponseData {
   total_count: number;
   workflows: {
@@ -6739,6 +6829,7 @@ type ActionsListRunnerApplicationsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActionsListRunnerApplicationsForOrgResponseData = {
   os: string;
   architecture: string;
@@ -6758,6 +6849,7 @@ type ActionsListRunnerApplicationsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActionsListRunnerApplicationsForRepoResponseData = {
   os: string;
   architecture: string;
@@ -6777,6 +6869,7 @@ type ActionsListSelectedReposForOrgSecretRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListSelectedReposForOrgSecretResponseData {
   total_count: number;
   repositories: {
@@ -6867,6 +6960,7 @@ type ActionsListSelfHostedRunnerGroupsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListSelfHostedRunnerGroupsForOrgResponseData {
   total_count: number;
   runner_groups: {
@@ -6898,6 +6992,7 @@ type ActionsListSelfHostedRunnersForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListSelfHostedRunnersForOrgResponseData {
   total_count: number;
   runners: {
@@ -6943,6 +7038,7 @@ type ActionsListSelfHostedRunnersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListSelfHostedRunnersForRepoResponseData {
   total_count: number;
   runners: {
@@ -6990,6 +7086,7 @@ type ActionsListSelfHostedRunnersInGroupForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListSelfHostedRunnersInGroupForOrgResponseData {
   total_count: number;
   runners: {
@@ -7037,6 +7134,7 @@ type ActionsListWorkflowRunArtifactsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListWorkflowRunArtifactsResponseData {
   total_count: number;
   artifacts: {
@@ -7090,6 +7188,7 @@ type ActionsListWorkflowRunsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListWorkflowRunsResponseData {
   total_count: number;
   workflow_runs: {
@@ -7302,6 +7401,7 @@ type ActionsListWorkflowRunsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsListWorkflowRunsForRepoResponseData {
   total_count: number;
   workflow_runs: {
@@ -7621,6 +7721,7 @@ type ActionsUpdateSelfHostedRunnerGroupForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActionsUpdateSelfHostedRunnerGroupForOrgResponseData {
   id: number;
   name: string;
@@ -7676,6 +7777,7 @@ type ActivityGetFeedsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivityGetFeedsResponseData {
   timeline_url: string;
   user_url: string;
@@ -7733,6 +7835,7 @@ type ActivityGetRepoSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivityGetRepoSubscriptionResponseData {
   subscribed: boolean;
   ignored: boolean;
@@ -7752,6 +7855,7 @@ type ActivityGetThreadRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivityGetThreadResponseData {
   id: string;
   repository: {
@@ -7845,6 +7949,7 @@ type ActivityGetThreadSubscriptionForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivityGetThreadSubscriptionForAuthenticatedUserResponseData {
   subscribed: boolean;
   ignored: boolean;
@@ -7906,6 +8011,7 @@ type ActivityListNotificationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListNotificationsForAuthenticatedUserResponseData = {
   id: string;
   repository: {
@@ -8182,6 +8288,7 @@ type ActivityListRepoNotificationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListRepoNotificationsForAuthenticatedUserResponseData = {
   id: string;
   repository: {
@@ -8290,6 +8397,7 @@ type ActivityListReposStarredByAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListReposStarredByAuthenticatedUserResponseData = {
   id: number;
   node_id: string;
@@ -8537,6 +8645,7 @@ type ActivityListReposStarredByUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListReposStarredByUserResponseData = {
   id: number;
   node_id: string;
@@ -8776,6 +8885,7 @@ type ActivityListReposWatchedByUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListReposWatchedByUserResponseData = {
   id: number;
   node_id: string;
@@ -8909,6 +9019,7 @@ type ActivityListStargazersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListStargazersForRepoResponseData = {
   login: string;
   id: number;
@@ -8971,6 +9082,7 @@ type ActivityListWatchedReposForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListWatchedReposForAuthenticatedUserResponseData = {
   id: number;
   node_id: string;
@@ -9104,6 +9216,7 @@ type ActivityListWatchersForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ActivityListWatchersForRepoResponseData = {
   login: string;
   id: number;
@@ -9187,6 +9300,7 @@ type ActivitySetRepoSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivitySetRepoSubscriptionResponseData {
   subscribed: boolean;
   ignored: boolean;
@@ -9210,6 +9324,7 @@ type ActivitySetThreadSubscriptionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ActivitySetThreadSubscriptionResponseData {
   subscribed: boolean;
   ignored: boolean;
@@ -9270,6 +9385,7 @@ type AppsCheckAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsCheckAuthorizationResponseData {
   id: number;
   url: string;
@@ -9323,6 +9439,7 @@ type AppsCheckTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsCheckTokenResponseData {
   id: number;
   url: string;
@@ -9380,6 +9497,7 @@ type AppsCreateContentAttachmentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsCreateContentAttachmentResponseData {
   id: number;
   title: string;
@@ -9396,6 +9514,7 @@ type AppsCreateFromManifestRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsCreateFromManifestResponseData {
   id: number;
   node_id: string;
@@ -9449,6 +9568,7 @@ type AppsCreateInstallationAccessTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsCreateInstallationAccessTokenResponseData {
   token: string;
   expires_at: string;
@@ -9616,6 +9736,7 @@ type AppsGetAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetAuthenticatedResponseData {
   id: number;
   slug: string;
@@ -9660,6 +9781,7 @@ type AppsGetBySlugRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetBySlugResponseData {
   id: number;
   slug: string;
@@ -9703,6 +9825,7 @@ type AppsGetInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetInstallationResponseData {
   id: number;
   account: {
@@ -9745,6 +9868,7 @@ type AppsGetOrgInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetOrgInstallationResponseData {
   id: number;
   account: {
@@ -9797,6 +9921,7 @@ type AppsGetRepoInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetRepoInstallationResponseData {
   id: number;
   account: {
@@ -9847,6 +9972,7 @@ type AppsGetSubscriptionPlanForAccountRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetSubscriptionPlanForAccountResponseData {
   url: string;
   type: string;
@@ -9909,6 +10035,7 @@ type AppsGetSubscriptionPlanForAccountStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetSubscriptionPlanForAccountStubbedResponseData {
   url: string;
   type: string;
@@ -9971,6 +10098,7 @@ type AppsGetUserInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsGetUserInstallationResponseData {
   id: number;
   account: {
@@ -10037,6 +10165,7 @@ type AppsListAccountsForPlanRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListAccountsForPlanResponseData = {
   url: string;
   type: string;
@@ -10115,6 +10244,7 @@ type AppsListAccountsForPlanStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListAccountsForPlanStubbedResponseData = {
   url: string;
   type: string;
@@ -10185,6 +10315,7 @@ type AppsListInstallationReposForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsListInstallationReposForAuthenticatedUserResponseData {
   total_count: number;
   repositories: {
@@ -10314,6 +10445,7 @@ type AppsListInstallationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListInstallationsResponseData = {
   id: number;
   account: {
@@ -10363,6 +10495,7 @@ type AppsListInstallationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsListInstallationsForAuthenticatedUserResponseData {
   total_count: number;
   installations: {
@@ -10425,6 +10558,7 @@ type AppsListPlansRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListPlansResponseData = {
   url: string;
   accounts_url: string;
@@ -10458,6 +10592,7 @@ type AppsListPlansStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListPlansStubbedResponseData = {
   url: string;
   accounts_url: string;
@@ -10491,6 +10626,7 @@ type AppsListReposAccessibleToInstallationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsListReposAccessibleToInstallationResponseData {
   total_count: number;
   repositories: {
@@ -10615,6 +10751,7 @@ type AppsListSubscriptionsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListSubscriptionsForAuthenticatedUserResponseData = {
   billing_cycle: string;
   next_billing_date: string;
@@ -10664,6 +10801,7 @@ type AppsListSubscriptionsForAuthenticatedUserStubbedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type AppsListSubscriptionsForAuthenticatedUserStubbedResponseData = {
   billing_cycle: string;
   next_billing_date: string;
@@ -10721,6 +10859,7 @@ type AppsResetAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsResetAuthorizationResponseData {
   id: number;
   url: string;
@@ -10774,6 +10913,7 @@ type AppsResetTokenRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface AppsResetTokenResponseData {
   id: number;
   url: string;
@@ -10880,6 +11020,7 @@ type BillingGetGithubActionsBillingOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetGithubActionsBillingOrgResponseData {
   /**
    * The sum of the free and paid GitHub Actions minutes used.
@@ -10919,6 +11060,7 @@ type BillingGetGithubActionsBillingUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetGithubActionsBillingUserResponseData {
   /**
    * The sum of the free and paid GitHub Actions minutes used.
@@ -10958,6 +11100,7 @@ type BillingGetGithubPackagesBillingOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetGithubPackagesBillingOrgResponseData {
   /**
    * Sum of the free and paid storage space (GB) for GitHuub Packages.
@@ -10983,6 +11126,7 @@ type BillingGetGithubPackagesBillingUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetGithubPackagesBillingUserResponseData {
   /**
    * Sum of the free and paid storage space (GB) for GitHuub Packages.
@@ -11008,6 +11152,7 @@ type BillingGetSharedStorageBillingOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetSharedStorageBillingOrgResponseData {
   /**
    * Numbers of days left in billing cycle.
@@ -11033,6 +11178,7 @@ type BillingGetSharedStorageBillingUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface BillingGetSharedStorageBillingUserResponseData {
   /**
    * Numbers of days left in billing cycle.
@@ -11108,6 +11254,7 @@ type ChecksCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksCreateResponseData {
   id: number;
   head_sha: string;
@@ -11204,6 +11351,7 @@ type ChecksCreateSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksCreateSuiteResponseData {
   id: number;
   node_id: string;
@@ -11371,6 +11519,7 @@ type ChecksGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksGetResponseData {
   id: number;
   head_sha: string;
@@ -11465,6 +11614,7 @@ type ChecksGetSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksGetSuiteResponseData {
   id: number;
   node_id: string;
@@ -11640,6 +11790,7 @@ type ChecksListAnnotationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ChecksListAnnotationsResponseData = {
   path: string;
   start_line: number;
@@ -11686,6 +11837,7 @@ type ChecksListForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksListForRefResponseData {
   total_count: number;
   check_runs: {
@@ -11803,6 +11955,7 @@ type ChecksListForSuiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksListForSuiteResponseData {
   total_count: number;
   check_runs: {
@@ -11916,6 +12069,7 @@ type ChecksListSuitesForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksListSuitesForRefResponseData {
   total_count: number;
   check_suites: {
@@ -12103,6 +12257,7 @@ type ChecksSetSuitesPreferencesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksSetSuitesPreferencesResponseData {
   preferences: {
     auto_trigger_checks: {
@@ -12278,6 +12433,7 @@ type ChecksUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ChecksUpdateResponseData {
   id: number;
   head_sha: string;
@@ -12362,39 +12518,117 @@ type CodeScanningGetAlertEndpoint = {
   owner: string;
 
   repo: string;
-
-  alert_id: number;
+  /**
+   * The code scanning alert number.
+   */
+  alert_number?: number;
 };
 
 type CodeScanningGetAlertRequestOptions = {
   method: "GET";
-  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_id";
+  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface CodeScanningGetAlertResponseData {
-  rule_id: string;
-  rule_severity: string;
-  rule_description: string;
-  tool: string;
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   created_at: string;
-  open: boolean;
-  closed_by: string;
-  closed_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
   url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
   html_url: string;
+  instances: unknown[];
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
 }
+
+type CodeScanningGetAlertDeprecatedAlertIdEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The code scanning alert number.
+   *  @deprecated "alert_id" is deprecated. Use "alert_number" instead
+   */
+  alert_id?: number;
+};
 
 type CodeScanningListAlertsForRepoEndpoint = {
   owner: string;
 
   repo: string;
   /**
-   * Set to `closed` to list only closed code scanning alerts.
+   * Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
    */
-  state?: string;
+  state?: "open" | "dismissed" | "fixed";
   /**
-   * Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.
+   * Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.
    */
   ref?: string;
 };
@@ -12405,18 +12639,271 @@ type CodeScanningListAlertsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type CodeScanningListAlertsForRepoResponseData = {
-  rule_id: string;
-  rule_severity: string;
-  rule_description: string;
-  tool: string;
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   created_at: string;
-  open: boolean;
-  closed_by: string;
-  closed_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
   url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
   html_url: string;
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
 }[];
+
+type CodeScanningListRecentAnalysesEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.
+   */
+  ref?: string;
+  /**
+   * Set a single code scanning tool name to filter alerts by tool.
+   */
+  tool_name?: string;
+};
+
+type CodeScanningListRecentAnalysesRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/code-scanning/analyses";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+export type CodeScanningListRecentAnalysesResponseData = {
+  /**
+   * The commit SHA of the code scanning analysis file.
+   */
+  commit_sha: string;
+  /**
+   * The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.
+   */
+  ref: string;
+  /**
+   * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
+   */
+  analysis_key: string;
+  /**
+   * The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  created_at: string;
+  /**
+   * The name of the tool used to generate the code scanning analysis alert.
+   */
+  tool_name: string;
+  error: string;
+  /**
+   * Identifies the variable values associated with the environment in which this analysis was performed.
+   */
+  environment: string;
+}[];
+
+type CodeScanningUpdateAlertEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The code scanning alert number.
+   */
+  alert_number?: number;
+  /**
+   * Sets the state of the code scanning alert. Can be one of `open` or `dismissed`. You must provide `dismissed_reason` when you set the state to `dismissed`.
+   */
+  state: "open" | "dismissed";
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason?: string | null;
+};
+
+type CodeScanningUpdateAlertRequestOptions = {
+  method: "PATCH";
+  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_number";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+export interface CodeScanningUpdateAlertResponseData {
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  created_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
+  url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
+  html_url: string;
+  instances: unknown[];
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
+}
+
+type CodeScanningUploadSarifEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The commit SHA of the code scanning analysis file.
+   */
+  commit_sha: string;
+  /**
+   * The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.
+   */
+  ref: string;
+  /**
+   * A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string.
+   */
+  sarif: string;
+  /**
+   * The base directory used in the analysis, as it appears in the SARIF file.
+   * This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
+   */
+  checkout_uri?: string;
+  /**
+   * The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  started_at?: string;
+  /**
+   * The name of the tool used to generate the code scanning analysis alert.
+   */
+  tool_name: string;
+};
+
+type CodeScanningUploadSarifRequestOptions = {
+  method: "POST";
+  url: "/repos/:owner/:repo/code-scanning/sarifs";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 
 type CodesOfConductGetAllCodesOfConductEndpoint = {} & RequiredPreview<
   "scarlet-witch"
@@ -12428,6 +12915,7 @@ type CodesOfConductGetAllCodesOfConductRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type CodesOfConductGetAllCodesOfConductResponseData = {
   key: string;
   name: string;
@@ -12444,6 +12932,7 @@ type CodesOfConductGetConductCodeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface CodesOfConductGetConductCodeResponseData {
   key: string;
   name: string;
@@ -12463,6 +12952,7 @@ type CodesOfConductGetForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface CodesOfConductGetForRepoResponseData {
   key: string;
   name: string;
@@ -12536,6 +13026,7 @@ type EnterpriseAdminCreateRegistrationTokenForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminCreateRegistrationTokenForEnterpriseResponseData {
   token: string;
   expires_at: string;
@@ -12554,6 +13045,7 @@ type EnterpriseAdminCreateRemoveTokenForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminCreateRemoveTokenForEnterpriseResponseData {
   token: string;
   expires_at: string;
@@ -12588,6 +13080,7 @@ type EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminCreateSelfHostedRunnerGroupForEnterpriseResponseData {
   id: number;
   name: string;
@@ -12682,6 +13175,7 @@ type EnterpriseAdminGetGithubActionsBillingGheRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetGithubActionsBillingGheResponseData {
   /**
    * The sum of the free and paid GitHub Actions minutes used.
@@ -12711,6 +13205,14 @@ export interface EnterpriseAdminGetGithubActionsBillingGheResponseData {
   };
 }
 
+type EnterpriseAdminGetGithubActionsBillingGheDeprecatedEnterpriseIdEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   *  @deprecated "enterprise_id" is deprecated. Use "enterprise" instead
+   */
+  enterprise_id?: string;
+};
+
 type EnterpriseAdminGetGithubPackagesBillingGheEndpoint = {
   /**
    * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
@@ -12724,6 +13226,7 @@ type EnterpriseAdminGetGithubPackagesBillingGheRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetGithubPackagesBillingGheResponseData {
   /**
    * Sum of the free and paid storage space (GB) for GitHuub Packages.
@@ -12738,6 +13241,14 @@ export interface EnterpriseAdminGetGithubPackagesBillingGheResponseData {
    */
   included_gigabytes_bandwidth: number;
 }
+
+type EnterpriseAdminGetGithubPackagesBillingGheDeprecatedEnterpriseIdEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   *  @deprecated "enterprise_id" is deprecated. Use "enterprise" instead
+   */
+  enterprise_id?: string;
+};
 
 type EnterpriseAdminGetProvisioningInformationForEnterpriseGroupEndpoint = {
   /**
@@ -12756,6 +13267,7 @@ type EnterpriseAdminGetProvisioningInformationForEnterpriseGroupRequestOptions =
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetProvisioningInformationForEnterpriseGroupResponseData {
   schemas: string[];
   id: string;
@@ -12791,6 +13303,7 @@ type EnterpriseAdminGetProvisioningInformationForEnterpriseUserRequestOptions = 
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetProvisioningInformationForEnterpriseUserResponseData {
   schemas: string[];
   id: string;
@@ -12834,6 +13347,7 @@ type EnterpriseAdminGetSelfHostedRunnerForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetSelfHostedRunnerForEnterpriseResponseData {
   id: number;
   name: string;
@@ -12873,6 +13387,7 @@ type EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetSelfHostedRunnerGroupForEnterpriseResponseData {
   id: number;
   name: string;
@@ -12895,6 +13410,7 @@ type EnterpriseAdminGetSharedStorageBillingGheRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminGetSharedStorageBillingGheResponseData {
   /**
    * Numbers of days left in billing cycle.
@@ -12909,6 +13425,14 @@ export interface EnterpriseAdminGetSharedStorageBillingGheResponseData {
    */
   estimated_storage_for_month: number;
 }
+
+type EnterpriseAdminGetSharedStorageBillingGheDeprecatedEnterpriseIdEndpoint = {
+  /**
+   * The slug version of the enterprise name. You can also substitute this value with the enterprise id.
+   *  @deprecated "enterprise_id" is deprecated. Use "enterprise" instead
+   */
+  enterprise_id?: string;
+};
 
 type EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseEndpoint = {
   /**
@@ -12935,6 +13459,7 @@ type EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseRequestOptio
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListOrgAccessToSelfHostedRunnerGroupInEnterpriseResponseData {
   total_count: number;
   organizations: {
@@ -12974,6 +13499,7 @@ type EnterpriseAdminListProvisionedGroupsEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListProvisionedGroupsEnterpriseResponseData {
   schemas: string[];
   totalResults: number;
@@ -13019,6 +13545,7 @@ type EnterpriseAdminListProvisionedIdentitiesEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListProvisionedIdentitiesEnterpriseResponseData {
   schemas: string[];
   totalResults: number;
@@ -13064,6 +13591,7 @@ type EnterpriseAdminListRunnerApplicationsForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type EnterpriseAdminListRunnerApplicationsForEnterpriseResponseData = {
   os: string;
   architecture: string;
@@ -13092,6 +13620,7 @@ type EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListSelfHostedRunnerGroupsForEnterpriseResponseData {
   total_count: number;
   runner_groups: {
@@ -13125,6 +13654,7 @@ type EnterpriseAdminListSelfHostedRunnersForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListSelfHostedRunnersForEnterpriseResponseData {
   total_count: number;
   runners: {
@@ -13175,6 +13705,7 @@ type EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminListSelfHostedRunnersInGroupForEnterpriseResponseData {
   total_count: number;
   runners: {
@@ -13223,6 +13754,7 @@ type EnterpriseAdminProvisionAndInviteEnterpriseGroupRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminProvisionAndInviteEnterpriseGroupResponseData {
   schemas: string[];
   id: string;
@@ -13272,6 +13804,7 @@ type EnterpriseAdminProvisionAndInviteEnterpriseUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminProvisionAndInviteEnterpriseUserResponseData {
   schemas: string[];
   id: string;
@@ -13369,6 +13902,7 @@ type EnterpriseAdminSetInformationForProvisionedEnterpriseGroupRequestOptions = 
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminSetInformationForProvisionedEnterpriseGroupResponseData {
   schemas: string[];
   id: string;
@@ -13422,6 +13956,7 @@ type EnterpriseAdminSetInformationForProvisionedEnterpriseUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminSetInformationForProvisionedEnterpriseUserResponseData {
   schemas: string[];
   id: string;
@@ -13517,6 +14052,7 @@ type EnterpriseAdminUpdateAttributeForEnterpriseGroupRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminUpdateAttributeForEnterpriseGroupResponseData {
   schemas: string[];
   id: string;
@@ -13560,6 +14096,7 @@ type EnterpriseAdminUpdateAttributeForEnterpriseUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminUpdateAttributeForEnterpriseUserResponseData {
   schemas: string[];
   id: string;
@@ -13611,6 +14148,7 @@ type EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface EnterpriseAdminUpdateSelfHostedRunnerGroupForEnterpriseResponseData {
   id: number;
   name: string;
@@ -13652,6 +14190,7 @@ type GistsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsCreateResponseData {
   url: string;
   forks_url: string;
@@ -13773,6 +14312,7 @@ type GistsCreateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsCreateCommentResponseData {
   id: number;
   node_id: string;
@@ -13836,6 +14376,7 @@ type GistsForkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsForkResponseData {
   url: string;
   forks_url: string;
@@ -13895,6 +14436,7 @@ type GistsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsGetResponseData {
   url: string;
   forks_url: string;
@@ -14014,6 +14556,7 @@ type GistsGetCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsGetCommentResponseData {
   id: number;
   node_id: string;
@@ -14055,6 +14598,7 @@ type GistsGetRevisionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsGetRevisionResponseData {
   url: string;
   forks_url: string;
@@ -14183,6 +14727,7 @@ type GistsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListResponseData = {
   url: string;
   forks_url: string;
@@ -14250,6 +14795,7 @@ type GistsListCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListCommentsResponseData = {
   id: number;
   node_id: string;
@@ -14297,6 +14843,7 @@ type GistsListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListCommitsResponseData = {
   url: string;
   version: string;
@@ -14350,6 +14897,7 @@ type GistsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListForUserResponseData = {
   url: string;
   forks_url: string;
@@ -14417,6 +14965,7 @@ type GistsListForksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListForksResponseData = {
   user: {
     login: string;
@@ -14465,6 +15014,7 @@ type GistsListPublicRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListPublicResponseData = {
   url: string;
   forks_url: string;
@@ -14535,6 +15085,7 @@ type GistsListStarredRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GistsListStarredResponseData = {
   url: string;
   forks_url: string;
@@ -14624,6 +15175,7 @@ type GistsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsUpdateResponseData {
   url: string;
   forks_url: string;
@@ -14747,6 +15299,7 @@ type GistsUpdateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GistsUpdateCommentResponseData {
   id: number;
   node_id: string;
@@ -14796,6 +15349,7 @@ type GitCreateBlobRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitCreateBlobResponseData {
   url: string;
   sha: string;
@@ -14837,6 +15391,7 @@ type GitCreateCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitCreateCommitResponseData {
   sha: string;
   node_id: string;
@@ -14888,6 +15443,7 @@ type GitCreateRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitCreateRefResponseData {
   ref: string;
   node_id: string;
@@ -14931,6 +15487,7 @@ type GitCreateTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitCreateTagResponseData {
   node_id: string;
   tag: string;
@@ -14975,6 +15532,7 @@ type GitCreateTreeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitCreateTreeResponseData {
   sha: string;
   url: string;
@@ -15017,6 +15575,7 @@ type GitGetBlobRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitGetBlobResponseData {
   content: string;
   encoding: string;
@@ -15039,6 +15598,7 @@ type GitGetCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitGetCommitResponseData {
   sha: string;
   node_id: string;
@@ -15084,6 +15644,7 @@ type GitGetRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitGetRefResponseData {
   ref: string;
   node_id: string;
@@ -15109,6 +15670,7 @@ type GitGetTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitGetTagResponseData {
   node_id: string;
   tag: string;
@@ -15151,6 +15713,7 @@ type GitGetTreeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitGetTreeResponseData {
   sha: string;
   url: string;
@@ -15187,6 +15750,7 @@ type GitListMatchingRefsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GitListMatchingRefsResponseData = {
   ref: string;
   node_id: string;
@@ -15220,6 +15784,7 @@ type GitUpdateRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitUpdateRefResponseData {
   ref: string;
   node_id: string;
@@ -15239,6 +15804,7 @@ type GitignoreGetAllTemplatesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type GitignoreGetAllTemplatesResponseData = string[];
 
 type GitignoreGetTemplateEndpoint = {
@@ -15251,6 +15817,7 @@ type GitignoreGetTemplateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface GitignoreGetTemplateResponseData {
   name: string;
   source: string;
@@ -15266,6 +15833,7 @@ type InteractionsGetRestrictionsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface InteractionsGetRestrictionsForOrgResponseData {
   limit: string;
   origin: string;
@@ -15284,6 +15852,7 @@ type InteractionsGetRestrictionsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface InteractionsGetRestrictionsForRepoResponseData {
   limit: string;
   origin: string;
@@ -15328,6 +15897,7 @@ type InteractionsSetRestrictionsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface InteractionsSetRestrictionsForOrgResponseData {
   limit: string;
   origin: string;
@@ -15350,6 +15920,7 @@ type InteractionsSetRestrictionsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface InteractionsSetRestrictionsForRepoResponseData {
   limit: string;
   origin: string;
@@ -15374,6 +15945,7 @@ type IssuesAddAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesAddAssigneesResponseData {
   id: number;
   node_id: string;
@@ -15525,6 +16097,7 @@ type IssuesAddLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesAddLabelsResponseData = {
   id: number;
   node_id: string;
@@ -15586,6 +16159,7 @@ type IssuesCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesCreateResponseData {
   id: number;
   node_id: string;
@@ -15757,6 +16331,7 @@ type IssuesCreateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesCreateCommentResponseData {
   id: number;
   node_id: string;
@@ -15811,6 +16386,7 @@ type IssuesCreateLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesCreateLabelResponseData {
   id: number;
   node_id: string;
@@ -15849,6 +16425,7 @@ type IssuesCreateMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesCreateMilestoneResponseData {
   url: string;
   html_url: string;
@@ -15946,6 +16523,7 @@ type IssuesGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesGetResponseData {
   id: number;
   node_id: string;
@@ -16113,6 +16691,7 @@ type IssuesGetCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesGetCommentResponseData {
   id: number;
   node_id: string;
@@ -16157,6 +16736,7 @@ type IssuesGetEventRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesGetEventResponseData {
   id: number;
   node_id: string;
@@ -16333,6 +16913,7 @@ type IssuesGetLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesGetLabelResponseData {
   id: number;
   node_id: string;
@@ -16357,6 +16938,7 @@ type IssuesGetMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesGetMilestoneResponseData {
   url: string;
   html_url: string;
@@ -16441,6 +17023,7 @@ type IssuesListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListResponseData = {
   id: number;
   node_id: string;
@@ -16702,6 +17285,7 @@ type IssuesListAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListAssigneesResponseData = {
   login: string;
   id: number;
@@ -16749,6 +17333,7 @@ type IssuesListCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListCommentsResponseData = {
   id: number;
   node_id: string;
@@ -16811,6 +17396,7 @@ type IssuesListCommentsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListCommentsForRepoResponseData = {
   id: number;
   node_id: string;
@@ -16863,6 +17449,7 @@ type IssuesListEventsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListEventsResponseData = {
   id: number;
   node_id: string;
@@ -16913,6 +17500,7 @@ type IssuesListEventsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListEventsForRepoResponseData = {
   id: number;
   node_id: string;
@@ -17097,6 +17685,7 @@ type IssuesListEventsForTimelineRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListEventsForTimelineResponseData = {
   id: number;
   node_id: string;
@@ -17173,6 +17762,7 @@ type IssuesListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListForAuthenticatedUserResponseData = {
   id: number;
   node_id: string;
@@ -17461,6 +18051,7 @@ type IssuesListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListForOrgResponseData = {
   id: number;
   node_id: string;
@@ -17758,6 +18349,7 @@ type IssuesListForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListForRepoResponseData = {
   id: number;
   node_id: string;
@@ -17913,6 +18505,7 @@ type IssuesListLabelsForMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListLabelsForMilestoneResponseData = {
   id: number;
   node_id: string;
@@ -17943,6 +18536,7 @@ type IssuesListLabelsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListLabelsForRepoResponseData = {
   id: number;
   node_id: string;
@@ -17975,6 +18569,7 @@ type IssuesListLabelsOnIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListLabelsOnIssueResponseData = {
   id: number;
   node_id: string;
@@ -18017,6 +18612,7 @@ type IssuesListMilestonesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesListMilestonesResponseData = {
   url: string;
   html_url: string;
@@ -18111,6 +18707,7 @@ type IssuesRemoveAssigneesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesRemoveAssigneesResponseData {
   id: number;
   node_id: string;
@@ -18260,6 +18857,7 @@ type IssuesRemoveLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesRemoveLabelResponseData = {
   id: number;
   node_id: string;
@@ -18288,6 +18886,7 @@ type IssuesSetLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type IssuesSetLabelsResponseData = {
   id: number;
   node_id: string;
@@ -18355,6 +18954,7 @@ type IssuesUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesUpdateResponseData {
   id: number;
   node_id: string;
@@ -18526,6 +19126,7 @@ type IssuesUpdateCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesUpdateCommentResponseData {
   id: number;
   node_id: string;
@@ -18582,6 +19183,7 @@ type IssuesUpdateLabelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesUpdateLabelResponseData {
   id: number;
   node_id: string;
@@ -18622,6 +19224,7 @@ type IssuesUpdateMilestoneRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface IssuesUpdateMilestoneResponseData {
   url: string;
   html_url: string;
@@ -18670,6 +19273,7 @@ type LicensesGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface LicensesGetResponseData {
   key: string;
   name: string;
@@ -18694,6 +19298,7 @@ type LicensesGetAllCommonlyUsedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type LicensesGetAllCommonlyUsedResponseData = {
   key: string;
   name: string;
@@ -18714,6 +19319,7 @@ type LicensesGetForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface LicensesGetForRepoResponseData {
   name: string;
   path: string;
@@ -18770,6 +19376,7 @@ type MarkdownRenderRawEndpoint = {
    */
   data: string;
 } & { headers: { "content-type": "text/plain; charset=utf-8" } };
+
 type MarkdownRenderRawRequestOptions = {
   method: "POST";
   url: "/markdown/raw";
@@ -18785,6 +19392,7 @@ type MetaGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MetaGetResponseData {
   verifiable_password_authentication: boolean;
   ssh_key_fingerprints: {
@@ -18878,6 +19486,7 @@ type MigrationsGetCommitAuthorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsGetCommitAuthorsResponseData = {
   id: number;
   remote_id: string;
@@ -18900,6 +19509,7 @@ type MigrationsGetImportStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsGetImportStatusResponseData {
   vcs: string;
   use_lfs: string;
@@ -18928,6 +19538,7 @@ type MigrationsGetLargeFilesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsGetLargeFilesResponseData = {
   ref_name: string;
   path: string;
@@ -18945,6 +19556,7 @@ type MigrationsGetStatusForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsGetStatusForAuthenticatedUserResponseData {
   id: number;
   owner: {
@@ -19096,6 +19708,7 @@ type MigrationsGetStatusForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsGetStatusForOrgResponseData {
   id: number;
   owner: {
@@ -19246,6 +19859,7 @@ type MigrationsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsListForAuthenticatedUserResponseData = {
   id: number;
   owner: {
@@ -19403,6 +20017,7 @@ type MigrationsListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsListForOrgResponseData = {
   id: number;
   owner: {
@@ -19556,6 +20171,7 @@ type MigrationsListReposForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsListReposForOrgResponseData = {
   id: number;
   node_id: string;
@@ -19687,6 +20303,7 @@ type MigrationsListReposForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type MigrationsListReposForUserResponseData = {
   id: number;
   node_id: string;
@@ -19822,6 +20439,7 @@ type MigrationsMapCommitAuthorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsMapCommitAuthorResponseData {
   id: number;
   remote_id: string;
@@ -19848,6 +20466,7 @@ type MigrationsSetLfsPreferenceRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsSetLfsPreferenceResponseData {
   vcs: string;
   use_lfs: string;
@@ -19885,6 +20504,7 @@ type MigrationsStartForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsStartForAuthenticatedUserResponseData {
   id: number;
   owner: {
@@ -20046,6 +20666,7 @@ type MigrationsStartForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsStartForOrgResponseData {
   id: number;
   owner: {
@@ -20211,6 +20832,7 @@ type MigrationsStartImportRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsStartImportResponseData {
   vcs: string;
   use_lfs: string;
@@ -20278,6 +20900,7 @@ type MigrationsUpdateImportRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface MigrationsUpdateImportResponseData {
   vcs: string;
   use_lfs: string;
@@ -20330,6 +20953,7 @@ type OauthAuthorizationsCreateAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsCreateAuthorizationResponseData {
   id: number;
   url: string;
@@ -20381,6 +21005,7 @@ type OauthAuthorizationsGetAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsGetAuthorizationResponseData {
   id: number;
   url: string;
@@ -20410,6 +21035,7 @@ type OauthAuthorizationsGetGrantRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsGetGrantResponseData {
   id: number;
   url: string;
@@ -20453,6 +21079,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsGetOrCreateAuthorizationForAppResponseData {
   id: number;
   url: string;
@@ -20519,6 +21146,7 @@ type OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintRequestOptio
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsGetOrCreateAuthorizationForAppAndFingerprintResponseData {
   id: number;
   url: string;
@@ -20574,6 +21202,7 @@ type OauthAuthorizationsListAuthorizationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OauthAuthorizationsListAuthorizationsResponseData = {
   id: number;
   url: string;
@@ -20610,6 +21239,7 @@ type OauthAuthorizationsListGrantsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OauthAuthorizationsListGrantsResponseData = {
   id: number;
   url: string;
@@ -20657,6 +21287,7 @@ type OauthAuthorizationsUpdateAuthorizationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OauthAuthorizationsUpdateAuthorizationResponseData {
   id: number;
   url: string;
@@ -20740,6 +21371,7 @@ type OrgsConvertMemberToOutsideCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsConvertMemberToOutsideCollaboratorResponseData {
   message: string;
   documentation_url: string;
@@ -20774,6 +21406,7 @@ type OrgsCreateInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsCreateInvitationResponseData {
   id: number;
   login: string;
@@ -20830,6 +21463,7 @@ type OrgsCreateWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsCreateWebhookResponseData {
   id: number;
   url: string;
@@ -20868,6 +21502,7 @@ type OrgsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsGetResponseData {
   login: string;
   id: number;
@@ -20929,6 +21564,7 @@ type OrgsGetMembershipForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsGetMembershipForAuthenticatedUserResponseData {
   url: string;
   state: string;
@@ -20982,6 +21618,7 @@ type OrgsGetMembershipForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsGetMembershipForUserResponseData {
   url: string;
   state: string;
@@ -21035,6 +21672,7 @@ type OrgsGetWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsGetWebhookResponseData {
   id: number;
   url: string;
@@ -21063,6 +21701,7 @@ type OrgsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListResponseData = {
   login: string;
   id: number;
@@ -21096,6 +21735,7 @@ type OrgsListAppInstallationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsListAppInstallationsResponseData {
   total_count: number;
   installations: {
@@ -21150,6 +21790,7 @@ type OrgsListBlockedUsersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListBlockedUsersResponseData = {
   login: string;
   id: number;
@@ -21188,6 +21829,7 @@ type OrgsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListForAuthenticatedUserResponseData = {
   login: string;
   id: number;
@@ -21221,6 +21863,7 @@ type OrgsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListForUserResponseData = {
   login: string;
   id: number;
@@ -21256,6 +21899,7 @@ type OrgsListInvitationTeamsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListInvitationTeamsResponseData = {
   id: number;
   node_id: string;
@@ -21304,6 +21948,7 @@ type OrgsListMembersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListMembersResponseData = {
   login: string;
   id: number;
@@ -21346,6 +21991,7 @@ type OrgsListMembershipsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListMembershipsForAuthenticatedUserResponseData = {
   url: string;
   state: string;
@@ -21411,6 +22057,7 @@ type OrgsListOutsideCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListOutsideCollaboratorsResponseData = {
   login: string;
   id: number;
@@ -21450,6 +22097,7 @@ type OrgsListPendingInvitationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListPendingInvitationsResponseData = {
   id: number;
   login: string;
@@ -21498,6 +22146,7 @@ type OrgsListPublicMembersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListPublicMembersResponseData = {
   login: string;
   id: number;
@@ -21529,6 +22178,7 @@ type OrgsListSamlSsoAuthorizationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListSamlSsoAuthorizationsResponseData = {
   login: string;
   credential_id: string;
@@ -21556,6 +22206,7 @@ type OrgsListWebhooksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type OrgsListWebhooksResponseData = {
   id: number;
   url: string;
@@ -21622,6 +22273,7 @@ type OrgsRemoveOutsideCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsRemoveOutsideCollaboratorResponseData {
   message: string;
   documentation_url: string;
@@ -21671,6 +22323,7 @@ type OrgsSetMembershipForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsSetMembershipForUserResponseData {
   url: string;
   state: string;
@@ -21829,6 +22482,7 @@ type OrgsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsUpdateResponseData {
   login: string;
   id: number;
@@ -21894,6 +22548,7 @@ type OrgsUpdateMembershipForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsUpdateMembershipForAuthenticatedUserResponseData {
   url: string;
   state: string;
@@ -21959,6 +22614,7 @@ type OrgsUpdateWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface OrgsUpdateWebhookResponseData {
   id: number;
   url: string;
@@ -22017,6 +22673,7 @@ type ProjectsCreateCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsCreateCardResponseData {
   url: string;
   id: number;
@@ -22064,6 +22721,7 @@ type ProjectsCreateColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsCreateColumnResponseData {
   url: string;
   project_url: string;
@@ -22092,6 +22750,7 @@ type ProjectsCreateForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsCreateForAuthenticatedUserResponseData {
   owner_url: string;
   url: string;
@@ -22145,6 +22804,7 @@ type ProjectsCreateForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsCreateForOrgResponseData {
   owner_url: string;
   url: string;
@@ -22200,6 +22860,7 @@ type ProjectsCreateForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsCreateForRepoResponseData {
   owner_url: string;
   url: string;
@@ -22278,6 +22939,7 @@ type ProjectsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsGetResponseData {
   owner_url: string;
   url: string;
@@ -22323,6 +22985,7 @@ type ProjectsGetCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsGetCardResponseData {
   url: string;
   id: number;
@@ -22366,6 +23029,7 @@ type ProjectsGetColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsGetColumnResponseData {
   url: string;
   project_url: string;
@@ -22389,6 +23053,7 @@ type ProjectsGetPermissionForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsGetPermissionForUserResponseData {
   permission: string;
   user: {
@@ -22435,6 +23100,7 @@ type ProjectsListCardsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListCardsResponseData = {
   url: string;
   id: number;
@@ -22493,6 +23159,7 @@ type ProjectsListCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListCollaboratorsResponseData = {
   login: string;
   id: number;
@@ -22532,6 +23199,7 @@ type ProjectsListColumnsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListColumnsResponseData = {
   url: string;
   project_url: string;
@@ -22565,6 +23233,7 @@ type ProjectsListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListForOrgResponseData = {
   owner_url: string;
   url: string;
@@ -22624,6 +23293,7 @@ type ProjectsListForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListForRepoResponseData = {
   owner_url: string;
   url: string;
@@ -22681,6 +23351,7 @@ type ProjectsListForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ProjectsListForUserResponseData = {
   owner_url: string;
   url: string;
@@ -22805,6 +23476,7 @@ type ProjectsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsUpdateResponseData {
   owner_url: string;
   url: string;
@@ -22858,6 +23530,7 @@ type ProjectsUpdateCardRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsUpdateCardResponseData {
   url: string;
   id: number;
@@ -22905,6 +23578,7 @@ type ProjectsUpdateColumnRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ProjectsUpdateColumnResponseData {
   url: string;
   project_url: string;
@@ -22967,6 +23641,7 @@ type PullsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsCreateResponseData {
   url: string;
   id: number;
@@ -23480,6 +24155,7 @@ type PullsCreateReplyForReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsCreateReplyForReviewCommentResponseData {
   url: string;
   pull_request_review_id: number;
@@ -23567,6 +24243,7 @@ type PullsCreateReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsCreateReviewResponseData {
   id: number;
   node_id: string;
@@ -23652,6 +24329,7 @@ type PullsCreateReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsCreateReviewCommentResponseData {
   url: string;
   pull_request_review_id: number;
@@ -23725,6 +24403,7 @@ type PullsDeletePendingReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsDeletePendingReviewResponseData {
   id: number;
   node_id: string;
@@ -23798,6 +24477,7 @@ type PullsDismissReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsDismissReviewResponseData {
   id: number;
   node_id: string;
@@ -23851,6 +24531,7 @@ type PullsGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsGetResponseData {
   url: string;
   id: number;
@@ -24360,6 +25041,7 @@ type PullsGetReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsGetReviewResponseData {
   id: number;
   node_id: string;
@@ -24413,6 +25095,7 @@ type PullsGetReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsGetReviewCommentResponseData {
   url: string;
   pull_request_review_id: number;
@@ -24510,6 +25193,7 @@ type PullsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListResponseData = {
   url: string;
   id: number;
@@ -24996,6 +25680,7 @@ type PullsListCommentsForReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListCommentsForReviewResponseData = {
   url: string;
   pull_request_review_id: number;
@@ -25069,6 +25754,7 @@ type PullsListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListCommitsResponseData = {
   url: string;
   sha: string;
@@ -25168,6 +25854,7 @@ type PullsListFilesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListFilesResponseData = {
   sha: string;
   filename: string;
@@ -25203,6 +25890,7 @@ type PullsListRequestedReviewersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsListRequestedReviewersResponseData {
   users: {
     login: string;
@@ -25276,6 +25964,7 @@ type PullsListReviewCommentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListReviewCommentsResponseData = {
   url: string;
   pull_request_review_id: number;
@@ -25365,6 +26054,7 @@ type PullsListReviewCommentsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListReviewCommentsForRepoResponseData = {
   url: string;
   pull_request_review_id: number;
@@ -25444,6 +26134,7 @@ type PullsListReviewsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type PullsListReviewsResponseData = {
   id: number;
   node_id: string;
@@ -25513,6 +26204,7 @@ type PullsMergeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsMergeResponseData {
   sha: string;
   merged: boolean;
@@ -25574,6 +26266,7 @@ type PullsRequestReviewersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsRequestReviewersResponseData {
   url: string;
   id: number;
@@ -26060,6 +26753,7 @@ type PullsSubmitReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsSubmitReviewResponseData {
   id: number;
   node_id: string;
@@ -26133,6 +26827,7 @@ type PullsUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsUpdateResponseData {
   url: string;
   id: number;
@@ -26644,6 +27339,7 @@ type PullsUpdateBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsUpdateBranchResponseData {
   message: string;
   url: string;
@@ -26669,6 +27365,7 @@ type PullsUpdateReviewRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsUpdateReviewResponseData {
   id: number;
   node_id: string;
@@ -26726,6 +27423,7 @@ type PullsUpdateReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface PullsUpdateReviewCommentResponseData {
   url: string;
   pull_request_review_id: number;
@@ -26791,6 +27489,7 @@ type RateLimitGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface RateLimitGetResponseData {
   resources: {
     core: {
@@ -26847,6 +27546,7 @@ type ReactionsCreateForCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForCommitCommentResponseData {
   id: number;
   node_id: string;
@@ -26900,6 +27600,7 @@ type ReactionsCreateForIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForIssueResponseData {
   id: number;
   node_id: string;
@@ -26953,6 +27654,7 @@ type ReactionsCreateForIssueCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForIssueCommentResponseData {
   id: number;
   node_id: string;
@@ -27006,6 +27708,7 @@ type ReactionsCreateForPullRequestReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForPullRequestReviewCommentResponseData {
   id: number;
   node_id: string;
@@ -27061,6 +27764,7 @@ type ReactionsCreateForTeamDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForTeamDiscussionCommentInOrgResponseData {
   id: number;
   node_id: string;
@@ -27114,6 +27818,7 @@ type ReactionsCreateForTeamDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForTeamDiscussionCommentLegacyResponseData {
   id: number;
   node_id: string;
@@ -27167,6 +27872,7 @@ type ReactionsCreateForTeamDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForTeamDiscussionInOrgResponseData {
   id: number;
   node_id: string;
@@ -27218,6 +27924,7 @@ type ReactionsCreateForTeamDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReactionsCreateForTeamDiscussionLegacyResponseData {
   id: number;
   node_id: string;
@@ -27394,6 +28101,7 @@ type ReactionsListForCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForCommitCommentResponseData = {
   id: number;
   node_id: string;
@@ -27455,6 +28163,7 @@ type ReactionsListForIssueRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForIssueResponseData = {
   id: number;
   node_id: string;
@@ -27516,6 +28225,7 @@ type ReactionsListForIssueCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForIssueCommentResponseData = {
   id: number;
   node_id: string;
@@ -27577,6 +28287,7 @@ type ReactionsListForPullRequestReviewCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForPullRequestReviewCommentResponseData = {
   id: number;
   node_id: string;
@@ -27640,6 +28351,7 @@ type ReactionsListForTeamDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForTeamDiscussionCommentInOrgResponseData = {
   id: number;
   node_id: string;
@@ -27701,6 +28413,7 @@ type ReactionsListForTeamDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForTeamDiscussionCommentLegacyResponseData = {
   id: number;
   node_id: string;
@@ -27762,6 +28475,7 @@ type ReactionsListForTeamDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForTeamDiscussionInOrgResponseData = {
   id: number;
   node_id: string;
@@ -27821,6 +28535,7 @@ type ReactionsListForTeamDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReactionsListForTeamDiscussionLegacyResponseData = {
   id: number;
   node_id: string;
@@ -27877,6 +28592,7 @@ type ReposAddAppAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposAddAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
@@ -27933,6 +28649,7 @@ type ReposAddCollaboratorRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposAddCollaboratorResponseData {
   id: number;
   repository: {
@@ -28067,6 +28784,7 @@ type ReposAddStatusCheckContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposAddStatusCheckContextsResponseData = string[];
 
 type ReposAddTeamAccessRestrictionsEndpoint = {
@@ -28087,6 +28805,7 @@ type ReposAddTeamAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposAddTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
@@ -28122,6 +28841,7 @@ type ReposAddUserAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposAddUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
@@ -28187,6 +28907,7 @@ type ReposCompareCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCompareCommitsResponseData {
   url: string;
   html_url: string;
@@ -28469,6 +29190,7 @@ type ReposCreateCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateCommitCommentResponseData {
   html_url: string;
   url: string;
@@ -28517,6 +29239,7 @@ type ReposCreateCommitSignatureProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateCommitSignatureProtectionResponseData {
   url: string;
   enabled: boolean;
@@ -28554,6 +29277,7 @@ type ReposCreateCommitStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateCommitStatusResponseData {
   url: string;
   avatar_url: string;
@@ -28613,6 +29337,7 @@ type ReposCreateDeployKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateDeployKeyResponseData {
   id: number;
   key: string;
@@ -28673,6 +29398,7 @@ type ReposCreateDeploymentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateDeploymentResponseData {
   url: string;
   id: number;
@@ -28775,6 +29501,7 @@ type ReposCreateDeploymentStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateDeploymentStatusResponseData {
   url: string;
   id: number;
@@ -28910,6 +29637,7 @@ type ReposCreateForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateForAuthenticatedUserResponseData {
   id: number;
   node_id: string;
@@ -29035,6 +29763,7 @@ type ReposCreateForkRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateForkResponseData {
   id: number;
   node_id: string;
@@ -29223,6 +29952,7 @@ type ReposCreateInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateInOrgResponseData {
   id: number;
   node_id: string;
@@ -29370,6 +30100,7 @@ type ReposCreateOrUpdateFileContentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateOrUpdateFileContentsResponseData {
   content: {
     name: string;
@@ -29488,6 +30219,7 @@ type ReposCreatePagesSiteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreatePagesSiteResponseData {
   url: string;
   status: string;
@@ -29536,6 +30268,7 @@ type ReposCreateReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateReleaseResponseData {
   url: string;
   html_url: string;
@@ -29604,6 +30337,7 @@ type ReposCreateUsingTemplateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateUsingTemplateResponseData {
   id: number;
   node_id: string;
@@ -29846,6 +30580,7 @@ type ReposCreateWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposCreateWebhookResponseData {
   type: string;
   id: number;
@@ -29892,6 +30627,7 @@ type ReposDeleteRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposDeleteResponseData {
   message: string;
   documentation_url: string;
@@ -30036,6 +30772,7 @@ type ReposDeleteFileRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposDeleteFileResponseData {
   content: {
     [k: string]: unknown;
@@ -30243,6 +30980,7 @@ type ReposGetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetResponseData {
   id: number;
   node_id: string;
@@ -30615,6 +31353,7 @@ type ReposGetAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetAccessRestrictionsResponseData {
   url: string;
   users_url: string;
@@ -30704,6 +31443,7 @@ type ReposGetAdminBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetAdminBranchProtectionResponseData {
   url: string;
   enabled: boolean;
@@ -30723,6 +31463,7 @@ type ReposGetAllStatusCheckContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetAllStatusCheckContextsResponseData = string[];
 
 type ReposGetAllTopicsEndpoint = {
@@ -30737,6 +31478,7 @@ type ReposGetAllTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetAllTopicsResponseData {
   names: string[];
 }
@@ -30755,6 +31497,7 @@ type ReposGetAppsWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetAppsWithAccessToProtectedBranchResponseData = {
   id: number;
   slug: string;
@@ -30802,6 +31545,7 @@ type ReposGetBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetBranchResponseData {
   name: string;
   commit: {
@@ -30880,6 +31624,7 @@ type ReposGetBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetBranchProtectionResponseData {
   url: string;
   required_status_checks: {
@@ -31040,6 +31785,7 @@ type ReposGetClonesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetClonesResponseData {
   count: number;
   uniques: number;
@@ -31062,6 +31808,7 @@ type ReposGetCodeFrequencyStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetCodeFrequencyStatsResponseData = number[][];
 
 type ReposGetCollaboratorPermissionLevelEndpoint = {
@@ -31078,6 +31825,7 @@ type ReposGetCollaboratorPermissionLevelRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCollaboratorPermissionLevelResponseData {
   permission: string;
   user: {
@@ -31116,6 +31864,7 @@ type ReposGetCombinedStatusForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCombinedStatusForRefResponseData {
   state: string;
   statuses: {
@@ -31218,6 +31967,7 @@ type ReposGetCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCommitResponseData {
   url: string;
   sha: string;
@@ -31322,6 +32072,7 @@ type ReposGetCommitActivityStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetCommitActivityStatsResponseData = {
   days: number[];
   total: number;
@@ -31342,6 +32093,7 @@ type ReposGetCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCommitCommentResponseData {
   html_url: string;
   url: string;
@@ -31390,6 +32142,7 @@ type ReposGetCommitSignatureProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCommitSignatureProtectionResponseData {
   url: string;
   enabled: boolean;
@@ -31407,6 +32160,7 @@ type ReposGetCommunityProfileMetricsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetCommunityProfileMetricsResponseData {
   health_percentage: number;
   description: string;
@@ -31463,6 +32217,7 @@ type ReposGetContentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetContentResponseData {
   type: string;
   encoding: string;
@@ -31496,6 +32251,7 @@ type ReposGetContributorsStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetContributorsStatsResponseData = {
   author: {
     login: string;
@@ -31540,6 +32296,7 @@ type ReposGetDeployKeyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetDeployKeyResponseData {
   id: number;
   key: string;
@@ -31564,6 +32321,7 @@ type ReposGetDeploymentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetDeploymentResponseData {
   url: string;
   id: number;
@@ -31621,6 +32379,7 @@ type ReposGetDeploymentStatusRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetDeploymentStatusResponseData {
   url: string;
   id: number;
@@ -31669,6 +32428,7 @@ type ReposGetLatestPagesBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetLatestPagesBuildResponseData {
   url: string;
   status: string;
@@ -31713,6 +32473,7 @@ type ReposGetLatestReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetLatestReleaseResponseData {
   url: string;
   html_url: string;
@@ -31798,6 +32559,7 @@ type ReposGetPagesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetPagesResponseData {
   url: string;
   status: string;
@@ -31824,6 +32586,7 @@ type ReposGetPagesBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetPagesBuildResponseData {
   url: string;
   status: string;
@@ -31868,6 +32631,7 @@ type ReposGetParticipationStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetParticipationStatsResponseData {
   all: number[];
   owner: number[];
@@ -31887,6 +32651,7 @@ type ReposGetPullRequestReviewProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetPullRequestReviewProtectionResponseData {
   url: string;
   dismissal_restrictions: {
@@ -31947,6 +32712,7 @@ type ReposGetPunchCardStatsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetPunchCardStatsResponseData = number[][];
 
 type ReposGetReadmeEndpoint = {
@@ -31965,6 +32731,7 @@ type ReposGetReadmeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetReadmeResponseData {
   type: string;
   encoding: string;
@@ -32000,6 +32767,7 @@ type ReposGetReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetReleaseResponseData {
   url: string;
   html_url: string;
@@ -32087,6 +32855,7 @@ type ReposGetReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetReleaseAssetResponseData {
   url: string;
   browser_download_url: string;
@@ -32136,6 +32905,7 @@ type ReposGetReleaseByTagRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetReleaseByTagResponseData {
   url: string;
   html_url: string;
@@ -32223,6 +32993,7 @@ type ReposGetStatusChecksProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetStatusChecksProtectionResponseData {
   url: string;
   strict: boolean;
@@ -32244,6 +33015,7 @@ type ReposGetTeamsWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetTeamsWithAccessToProtectedBranchResponseData = {
   id: number;
   node_id: string;
@@ -32273,6 +33045,7 @@ type ReposGetTopPathsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetTopPathsResponseData = {
   path: string;
   title: string;
@@ -32292,6 +33065,7 @@ type ReposGetTopReferrersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetTopReferrersResponseData = {
   referrer: string;
   count: number;
@@ -32312,6 +33086,7 @@ type ReposGetUsersWithAccessToProtectedBranchRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposGetUsersWithAccessToProtectedBranchResponseData = {
   login: string;
   id: number;
@@ -32349,6 +33124,7 @@ type ReposGetViewsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetViewsResponseData {
   count: number;
   uniques: number;
@@ -32373,6 +33149,7 @@ type ReposGetWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposGetWebhookResponseData {
   type: string;
   id: number;
@@ -32420,6 +33197,7 @@ type ReposListBranchesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListBranchesResponseData = {
   name: string;
   commit: {
@@ -32451,6 +33229,7 @@ type ReposListBranchesForHeadCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListBranchesForHeadCommitResponseData = {
   name: string;
   commit: {
@@ -32487,6 +33266,7 @@ type ReposListCollaboratorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListCollaboratorsResponseData = {
   login: string;
   id: number;
@@ -32535,6 +33315,7 @@ type ReposListCommentsForCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListCommentsForCommitResponseData = {
   html_url: string;
   url: string;
@@ -32589,6 +33370,7 @@ type ReposListCommitCommentsForRepoRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListCommitCommentsForRepoResponseData = {
   html_url: string;
   url: string;
@@ -32645,6 +33427,7 @@ type ReposListCommitStatusesForRefRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListCommitStatusesForRefResponseData = {
   url: string;
   avatar_url: string;
@@ -32718,6 +33501,7 @@ type ReposListCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListCommitsResponseData = {
   url: string;
   sha: string;
@@ -32819,6 +33603,7 @@ type ReposListContributorsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListContributorsResponseData = {
   login: string;
   id: number;
@@ -32861,6 +33646,7 @@ type ReposListDeployKeysRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListDeployKeysResponseData = {
   id: number;
   key: string;
@@ -32893,6 +33679,7 @@ type ReposListDeploymentStatusesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListDeploymentStatusesResponseData = {
   url: string;
   id: number;
@@ -32965,6 +33752,7 @@ type ReposListDeploymentsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListDeploymentsResponseData = {
   url: string;
   id: number;
@@ -33086,6 +33874,7 @@ type ReposListForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListForOrgResponseData = {
   id: number;
   node_id: string;
@@ -33254,6 +34043,7 @@ type ReposListForksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListForksResponseData = {
   id: number;
   node_id: string;
@@ -33387,6 +34177,7 @@ type ReposListInvitationsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListInvitationsResponseData = {
   id: number;
   repository: {
@@ -33520,6 +34311,7 @@ type ReposListInvitationsForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListInvitationsForAuthenticatedUserResponseData = {
   id: number;
   repository: {
@@ -33648,6 +34440,7 @@ type ReposListLanguagesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposListLanguagesResponseData {
   C: number;
   Python: number;
@@ -33673,6 +34466,7 @@ type ReposListPagesBuildsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListPagesBuildsResponseData = {
   url: string;
   status: string;
@@ -33718,6 +34512,7 @@ type ReposListPublicRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListPublicResponseData = {
   id: number;
   node_id: string;
@@ -33809,6 +34604,7 @@ type ReposListPullRequestsAssociatedWithCommitRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListPullRequestsAssociatedWithCommitResponseData = {
   url: string;
   id: number;
@@ -34293,6 +35089,7 @@ type ReposListReleaseAssetsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListReleaseAssetsResponseData = {
   url: string;
   browser_download_url: string;
@@ -34348,6 +35145,7 @@ type ReposListReleasesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListReleasesResponseData = {
   url: string;
   html_url: string;
@@ -34441,6 +35239,7 @@ type ReposListTagsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListTagsResponseData = {
   name: string;
   commit: {
@@ -34471,6 +35270,7 @@ type ReposListTeamsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListTeamsResponseData = {
   id: number;
   node_id: string;
@@ -34508,6 +35308,7 @@ type ReposListWebhooksRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposListWebhooksResponseData = {
   type: string;
   id: number;
@@ -34555,6 +35356,7 @@ type ReposMergeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposMergeResponseData {
   sha: string;
   node_id: string;
@@ -34673,6 +35475,7 @@ type ReposRemoveAppAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposRemoveAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
@@ -34739,6 +35542,7 @@ type ReposRemoveStatusCheckContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposRemoveStatusCheckContextsResponseData = string[];
 
 type ReposRemoveStatusCheckProtectionEndpoint = {
@@ -34774,6 +35578,7 @@ type ReposRemoveTeamAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposRemoveTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
@@ -34809,6 +35614,7 @@ type ReposRemoveUserAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposRemoveUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
@@ -34846,6 +35652,7 @@ type ReposReplaceAllTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposReplaceAllTopicsResponseData {
   names: string[];
 }
@@ -34862,6 +35669,7 @@ type ReposRequestPagesBuildRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposRequestPagesBuildResponseData {
   url: string;
   status: string;
@@ -34881,6 +35689,7 @@ type ReposSetAdminBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposSetAdminBranchProtectionResponseData {
   url: string;
   enabled: boolean;
@@ -34904,6 +35713,7 @@ type ReposSetAppAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposSetAppAccessRestrictionsResponseData = {
   id: number;
   slug: string;
@@ -34955,6 +35765,7 @@ type ReposSetStatusCheckContextsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposSetStatusCheckContextsResponseData = string[];
 
 type ReposSetTeamAccessRestrictionsEndpoint = {
@@ -34975,6 +35786,7 @@ type ReposSetTeamAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposSetTeamAccessRestrictionsResponseData = {
   id: number;
   node_id: string;
@@ -35010,6 +35822,7 @@ type ReposSetUserAccessRestrictionsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type ReposSetUserAccessRestrictionsResponseData = {
   login: string;
   id: number;
@@ -35066,6 +35879,7 @@ type ReposTransferRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposTransferResponseData {
   id: number;
   node_id: string;
@@ -35248,6 +36062,7 @@ type ReposUpdateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateResponseData {
   id: number;
   node_id: string;
@@ -35637,6 +36452,7 @@ type ReposUpdateBranchProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateBranchProtectionResponseData {
   url: string;
   required_status_checks: {
@@ -35799,6 +36615,7 @@ type ReposUpdateCommitCommentRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateCommitCommentResponseData {
   html_url: string;
   url: string;
@@ -35872,6 +36689,7 @@ type ReposUpdateInvitationRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateInvitationResponseData {
   id: number;
   repository: {
@@ -36018,6 +36836,7 @@ type ReposUpdatePullRequestReviewProtectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdatePullRequestReviewProtectionResponseData {
   url: string;
   dismissal_restrictions: {
@@ -36104,6 +36923,7 @@ type ReposUpdateReleaseRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateReleaseResponseData {
   url: string;
   html_url: string;
@@ -36199,6 +37019,7 @@ type ReposUpdateReleaseAssetRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateReleaseAssetResponseData {
   url: string;
   browser_download_url: string;
@@ -36256,6 +37077,7 @@ type ReposUpdateStatusCheckPotectionRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateStatusCheckPotectionResponseData {
   url: string;
   strict: boolean;
@@ -36297,6 +37119,7 @@ type ReposUpdateWebhookRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUpdateWebhookResponseData {
   type: string;
   id: number;
@@ -36354,12 +37177,14 @@ type ReposUploadReleaseAssetEndpoint = {
    */
   baseUrl: string;
 } & { headers: { "content-type": string } };
+
 type ReposUploadReleaseAssetRequestOptions = {
   method: "POST";
   url: "/repos/:owner/:repo/releases/:release_id/assets{?name,label}";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ReposUploadReleaseAssetResponseData {
   url: string;
   browser_download_url: string;
@@ -36424,6 +37249,7 @@ type ScimGetProvisioningInformationForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ScimGetProvisioningInformationForUserResponseData {
   schemas: string[];
   id: string;
@@ -36475,6 +37301,7 @@ type ScimListProvisionedIdentitiesRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ScimListProvisionedIdentitiesResponseData {
   schemas: string[];
   totalResults: number;
@@ -36528,6 +37355,7 @@ type ScimProvisionAndInviteUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ScimProvisionAndInviteUserResponseData {
   schemas: string[];
   id: string;
@@ -36579,6 +37407,7 @@ type ScimSetInformationForProvisionedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ScimSetInformationForProvisionedUserResponseData {
   schemas: string[];
   id: string;
@@ -36624,6 +37453,7 @@ type ScimUpdateAttributeForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface ScimUpdateAttributeForUserResponseData {
   schemas: string[];
   id: string;
@@ -36676,6 +37506,7 @@ type SearchCodeRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchCodeResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -36784,6 +37615,7 @@ type SearchCommitsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchCommitsResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -36967,6 +37799,7 @@ type SearchIssuesAndPullRequestsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchIssuesAndPullRequestsResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -37049,6 +37882,7 @@ type SearchLabelsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchLabelsResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -37093,6 +37927,7 @@ type SearchReposRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchReposResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -37145,6 +37980,7 @@ type SearchTopicsRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchTopicsResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -37192,6 +38028,7 @@ type SearchUsersRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface SearchUsersResponseData {
   total_count: number;
   incomplete_results: boolean;
@@ -37225,6 +38062,7 @@ type TeamsAddMemberLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsAddMemberLegacyResponseData {
   message: string;
   errors: {
@@ -37254,6 +38092,7 @@ type TeamsAddOrUpdateMembershipForUserInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsAddOrUpdateMembershipForUserInOrgResponseData {
   url: string;
   role: string;
@@ -37287,6 +38126,7 @@ type TeamsAddOrUpdateMembershipForUserLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsAddOrUpdateMembershipForUserLegacyResponseData {
   url: string;
   role: string;
@@ -37324,6 +38164,7 @@ type TeamsAddOrUpdateProjectPermissionsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsAddOrUpdateProjectPermissionsInOrgResponseData {
   message: string;
   documentation_url: string;
@@ -37349,6 +38190,7 @@ type TeamsAddOrUpdateProjectPermissionsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsAddOrUpdateProjectPermissionsLegacyResponseData {
   message: string;
   documentation_url: string;
@@ -37420,6 +38262,7 @@ type TeamsCheckPermissionsForProjectInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCheckPermissionsForProjectInOrgResponseData {
   owner_url: string;
   url: string;
@@ -37474,6 +38317,7 @@ type TeamsCheckPermissionsForProjectLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCheckPermissionsForProjectLegacyResponseData {
   owner_url: string;
   url: string;
@@ -37532,6 +38376,7 @@ type TeamsCheckPermissionsForRepoInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCheckPermissionsForRepoInOrgResponseData {
   organization: {
     login: string;
@@ -37792,6 +38637,7 @@ type TeamsCheckPermissionsForRepoLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCheckPermissionsForRepoLegacyResponseData {
   organization: {
     login: string;
@@ -38086,6 +38932,7 @@ type TeamsCreateRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateResponseData {
   id: number;
   node_id: string;
@@ -38155,6 +39002,7 @@ type TeamsCreateDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateDiscussionCommentInOrgResponseData {
   author: {
     login: string;
@@ -38215,6 +39063,7 @@ type TeamsCreateDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateDiscussionCommentLegacyResponseData {
   author: {
     login: string;
@@ -38283,6 +39132,7 @@ type TeamsCreateDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateDiscussionInOrgResponseData {
   author: {
     login: string;
@@ -38354,6 +39204,7 @@ type TeamsCreateDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateDiscussionLegacyResponseData {
   author: {
     login: string;
@@ -38419,6 +39270,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateOrUpdateIdPGroupConnectionsInOrgResponseData {
   groups: {
     group_id: string;
@@ -38441,6 +39293,7 @@ type TeamsCreateOrUpdateIdPGroupConnectionsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsCreateOrUpdateIdPGroupConnectionsLegacyResponseData {
   groups: {
     group_id: string;
@@ -38545,6 +39398,7 @@ type TeamsGetByNameRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetByNameResponseData {
   id: number;
   node_id: string;
@@ -38612,6 +39466,7 @@ type TeamsGetDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetDiscussionCommentInOrgResponseData {
   author: {
     login: string;
@@ -38670,6 +39525,7 @@ type TeamsGetDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetDiscussionCommentLegacyResponseData {
   author: {
     login: string;
@@ -38728,6 +39584,7 @@ type TeamsGetDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetDiscussionInOrgResponseData {
   author: {
     login: string;
@@ -38789,6 +39646,7 @@ type TeamsGetDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetDiscussionLegacyResponseData {
   author: {
     login: string;
@@ -38848,6 +39706,7 @@ type TeamsGetLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetLegacyResponseData {
   id: number;
   node_id: string;
@@ -38926,6 +39785,7 @@ type TeamsGetMembershipForUserInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetMembershipForUserInOrgResponseData {
   url: string;
   role: string;
@@ -38944,6 +39804,7 @@ type TeamsGetMembershipForUserLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsGetMembershipForUserLegacyResponseData {
   url: string;
   role: string;
@@ -38968,6 +39829,7 @@ type TeamsListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListResponseData = {
   id: number;
   node_id: string;
@@ -39005,6 +39867,7 @@ type TeamsListChildInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListChildInOrgResponseData = {
   id: number;
   node_id: string;
@@ -39049,6 +39912,7 @@ type TeamsListChildLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListChildLegacyResponseData = {
   id: number;
   node_id: string;
@@ -39101,6 +39965,7 @@ type TeamsListDiscussionCommentsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListDiscussionCommentsInOrgResponseData = {
   author: {
     login: string;
@@ -39169,6 +40034,7 @@ type TeamsListDiscussionCommentsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListDiscussionCommentsLegacyResponseData = {
   author: {
     login: string;
@@ -39237,6 +40103,7 @@ type TeamsListDiscussionsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListDiscussionsInOrgResponseData = {
   author: {
     login: string;
@@ -39308,6 +40175,7 @@ type TeamsListDiscussionsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListDiscussionsLegacyResponseData = {
   author: {
     login: string;
@@ -39374,6 +40242,7 @@ type TeamsListForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListForAuthenticatedUserResponseData = {
   id: number;
   node_id: string;
@@ -39435,6 +40304,7 @@ type TeamsListIdPGroupsForLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsListIdPGroupsForLegacyResponseData {
   groups: {
     group_id: string;
@@ -39461,6 +40331,7 @@ type TeamsListIdPGroupsForOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsListIdPGroupsForOrgResponseData {
   groups: {
     group_id: string;
@@ -39481,6 +40352,7 @@ type TeamsListIdPGroupsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsListIdPGroupsInOrgResponseData {
   groups: {
     group_id: string;
@@ -39516,6 +40388,7 @@ type TeamsListMembersInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListMembersInOrgResponseData = {
   login: string;
   id: number;
@@ -39562,6 +40435,7 @@ type TeamsListMembersLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListMembersLegacyResponseData = {
   login: string;
   id: number;
@@ -39603,6 +40477,7 @@ type TeamsListPendingInvitationsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListPendingInvitationsInOrgResponseData = {
   id: number;
   login: string;
@@ -39651,6 +40526,7 @@ type TeamsListPendingInvitationsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListPendingInvitationsLegacyResponseData = {
   id: number;
   login: string;
@@ -39701,6 +40577,7 @@ type TeamsListProjectsInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListProjectsInOrgResponseData = {
   owner_url: string;
   url: string;
@@ -39761,6 +40638,7 @@ type TeamsListProjectsLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListProjectsLegacyResponseData = {
   owner_url: string;
   url: string;
@@ -39823,6 +40701,7 @@ type TeamsListReposInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListReposInOrgResponseData = {
   id: number;
   node_id: string;
@@ -39954,6 +40833,7 @@ type TeamsListReposLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type TeamsListReposLegacyResponseData = {
   id: number;
   node_id: string;
@@ -40188,6 +41068,7 @@ type TeamsUpdateDiscussionCommentInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateDiscussionCommentInOrgResponseData {
   author: {
     login: string;
@@ -40250,6 +41131,7 @@ type TeamsUpdateDiscussionCommentLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateDiscussionCommentLegacyResponseData {
   author: {
     login: string;
@@ -40316,6 +41198,7 @@ type TeamsUpdateDiscussionInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateDiscussionInOrgResponseData {
   author: {
     login: string;
@@ -40385,6 +41268,7 @@ type TeamsUpdateDiscussionLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateDiscussionLegacyResponseData {
   author: {
     login: string;
@@ -40474,6 +41358,7 @@ type TeamsUpdateInOrgRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateInOrgResponseData {
   id: number;
   node_id: string;
@@ -40563,6 +41448,7 @@ type TeamsUpdateLegacyRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface TeamsUpdateLegacyResponseData {
   id: number;
   node_id: string;
@@ -40627,6 +41513,7 @@ type UsersAddEmailForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersAddEmailForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
@@ -40693,6 +41580,7 @@ type UsersCreateGpgKeyForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersCreateGpgKeyForAuthenticatedResponseData {
   id: number;
   primary_key_id: string;
@@ -40741,6 +41629,7 @@ type UsersCreatePublicSshKeyForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersCreatePublicSshKeyForAuthenticatedResponseData {
   key_id: string;
   key: string;
@@ -40801,6 +41690,7 @@ type UsersGetAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersGetAuthenticatedResponseData {
   login: string;
   id: number;
@@ -40858,6 +41748,7 @@ type UsersGetByUsernameRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersGetByUsernameResponseData {
   login: string;
   id: number;
@@ -40917,6 +41808,7 @@ type UsersGetContextForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersGetContextForUserResponseData {
   contexts: {
     message: string;
@@ -40934,6 +41826,7 @@ type UsersGetGpgKeyForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersGetGpgKeyForAuthenticatedResponseData {
   id: number;
   primary_key_id: string;
@@ -40975,6 +41868,7 @@ type UsersGetPublicSshKeyForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersGetPublicSshKeyForAuthenticatedResponseData {
   key_id: string;
   key: string;
@@ -40993,6 +41887,7 @@ type UsersListRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListResponseData = {
   login: string;
   id: number;
@@ -41022,6 +41917,7 @@ type UsersListBlockedByAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListBlockedByAuthenticatedResponseData = {
   login: string;
   id: number;
@@ -41060,6 +41956,7 @@ type UsersListEmailsForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListEmailsForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
@@ -41084,6 +41981,7 @@ type UsersListFollowedByAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListFollowedByAuthenticatedResponseData = {
   login: string;
   id: number;
@@ -41122,6 +42020,7 @@ type UsersListFollowersForAuthenticatedUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListFollowersForAuthenticatedUserResponseData = {
   login: string;
   id: number;
@@ -41161,6 +42060,7 @@ type UsersListFollowersForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListFollowersForUserResponseData = {
   login: string;
   id: number;
@@ -41200,6 +42100,7 @@ type UsersListFollowingForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListFollowingForUserResponseData = {
   login: string;
   id: number;
@@ -41238,6 +42139,7 @@ type UsersListGpgKeysForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListGpgKeysForAuthenticatedResponseData = {
   id: number;
   primary_key_id: string;
@@ -41287,6 +42189,7 @@ type UsersListGpgKeysForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListGpgKeysForUserResponseData = {
   id: number;
   primary_key_id: string;
@@ -41335,6 +42238,7 @@ type UsersListPublicEmailsForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListPublicEmailsForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
@@ -41360,6 +42264,7 @@ type UsersListPublicKeysForUserRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListPublicKeysForUserResponseData = {
   id: number;
   key: string;
@@ -41382,6 +42287,7 @@ type UsersListPublicSshKeysForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersListPublicSshKeysForAuthenticatedResponseData = {
   key_id: string;
   key: string;
@@ -41404,6 +42310,7 @@ type UsersSetPrimaryEmailVisibilityForAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export type UsersSetPrimaryEmailVisibilityForAuthenticatedResponseData = {
   email: string;
   primary: boolean;
@@ -41474,6 +42381,7 @@ type UsersUpdateAuthenticatedRequestOptions = {
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
+
 export interface UsersUpdateAuthenticatedResponseData {
   login: string;
   id: number;

@@ -11,9 +11,7 @@ type RequiredPreview<T> = {
 
 export interface Endpoints {
   {{#each endpointsByRoute}}
-  /**
-   * @see {{documentationUrl}}
-   */
+  {{&jsdoc}}
   "{{@key}}": {
     parameters: {{optionsTypeName}},
     request: {{requestOptionsTypeName}},
@@ -29,14 +27,9 @@ type {{parameters.name}} = {
   {{{name this}}}: {{{type this}}}
 {{/each}}
 }
-  {{#requiredPreview}} & RequiredPreview<"{{this}}"> {{/requiredPreview}}
-  {{#headers}} & {{{headersType this}}} {{/headers}}
-type {{request.name}} = {
-  method: "{{request.method}}",
-  url: "{{request.url}}",
-  headers: RequestHeaders,
-  request: RequestRequestOptions
-}
+{{#requiredPreview}} & RequiredPreview<"{{this}}"> {{/requiredPreview}}
+{{#headers}} & {{{headersType this}}} {{/headers}}
+{{&request}}
 {{&response}}
 {{/each}}
 

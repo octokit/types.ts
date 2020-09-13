@@ -11,8 +11,8 @@ if (!process.env.VERSION) {
 const version = process.env.VERSION.replace(/^v/, "");
 
 const QUERY = `
-  query ($version: String) {
-    endpoints(version: $version) {
+  query ($version: String!, $ignoreChangesBefore: String!) {
+    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore) {
       name
       scope(format: CAMELCASE)
       id(format: CAMELCASE)
@@ -25,6 +25,7 @@ const QUERY = `
         deprecated
         description
         enum
+        in
         name
         type
         required
@@ -54,6 +55,7 @@ async function main() {
   const { endpoints } = await graphql(QUERY, {
     url: "https://github-openapi-graphql-server.vercel.app/api/graphql",
     version,
+    ignoreChangesBefore: "2020-06-10",
   });
 
   writeFileSync(
