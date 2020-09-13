@@ -2259,11 +2259,28 @@ export interface Endpoints {
   };
   /**
    * @see https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   * @deprecated "alert_id" is deprecated, use "alert_number" instead
    */
   "GET /repos/:owner/:repo/code-scanning/alerts/:alert_id": {
+    parameters: CodeScanningGetAlertDeprecatedAlertIdEndpoint;
+    request: CodeScanningGetAlertRequestOptions;
+    response: OctokitResponse<CodeScanningGetAlertResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   */
+  "GET /repos/:owner/:repo/code-scanning/alerts/:alert_number": {
     parameters: CodeScanningGetAlertEndpoint;
     request: CodeScanningGetAlertRequestOptions;
     response: OctokitResponse<CodeScanningGetAlertResponseData>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#list-recent-analyses
+   */
+  "GET /repos/:owner/:repo/code-scanning/analyses": {
+    parameters: CodeScanningListRecentAnalysesEndpoint;
+    request: CodeScanningListRecentAnalysesRequestOptions;
+    response: OctokitResponse<CodeScanningListRecentAnalysesResponseData>;
   };
   /**
    * @see https://developer.github.com/v3/repos/collaborators/#list-repository-collaborators
@@ -3993,6 +4010,14 @@ export interface Endpoints {
     response: OctokitResponse<ChecksSetSuitesPreferencesResponseData>;
   };
   /**
+   * @see https://developer.github.com/v3/code-scanning/#upload-a-code-scanning-alert
+   */
+  "PATCH /repos/:owner/:repo/code-scanning/alerts/:alert_number": {
+    parameters: CodeScanningUpdateAlertEndpoint;
+    request: CodeScanningUpdateAlertRequestOptions;
+    response: OctokitResponse<CodeScanningUpdateAlertResponseData>;
+  };
+  /**
    * @see https://developer.github.com/v3/repos/comments/#update-a-commit-comment
    */
   "PATCH /repos/:owner/:repo/comments/:comment_id": {
@@ -4592,6 +4617,14 @@ export interface Endpoints {
   "POST /repos/:owner/:repo/check-suites/:check_suite_id/rerequest": {
     parameters: ChecksRerequestSuiteEndpoint;
     request: ChecksRerequestSuiteRequestOptions;
+    response: OctokitResponse<any>;
+  };
+  /**
+   * @see https://developer.github.com/v3/code-scanning/#upload-a-sarif-analysis
+   */
+  "POST /repos/:owner/:repo/code-scanning/sarifs": {
+    parameters: CodeScanningUploadSarifEndpoint;
+    request: CodeScanningUploadSarifRequestOptions;
     response: OctokitResponse<any>;
   };
   /**
@@ -12485,40 +12518,117 @@ type CodeScanningGetAlertEndpoint = {
   owner: string;
 
   repo: string;
-
-  alert_id: number;
+  /**
+   * The code scanning alert number.
+   */
+  alert_number?: number;
 };
 
 type CodeScanningGetAlertRequestOptions = {
   method: "GET";
-  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_id";
+  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_number";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
 
 export interface CodeScanningGetAlertResponseData {
-  rule_id: string;
-  rule_severity: string;
-  rule_description: string;
-  tool: string;
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   created_at: string;
-  open: boolean;
-  closed_by: string;
-  closed_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
   url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
   html_url: string;
+  instances: unknown[];
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
 }
+
+type CodeScanningGetAlertDeprecatedAlertIdEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The code scanning alert number.
+   *  @deprecated "alert_id" is deprecated. Use "alert_number" instead
+   */
+  alert_id?: number;
+};
 
 type CodeScanningListAlertsForRepoEndpoint = {
   owner: string;
 
   repo: string;
   /**
-   * Set to `closed` to list only closed code scanning alerts.
+   * Set to `open`, `fixed`, or `dismissed` to list code scanning alerts in a specific state.
    */
-  state?: string;
+  state?: "open" | "dismissed" | "fixed";
   /**
-   * Returns a list of code scanning alerts for a specific brach reference. The `ref` must be formatted as `heads/<branch name>`.
+   * Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.
    */
   ref?: string;
 };
@@ -12531,17 +12641,269 @@ type CodeScanningListAlertsForRepoRequestOptions = {
 };
 
 export type CodeScanningListAlertsForRepoResponseData = {
-  rule_id: string;
-  rule_severity: string;
-  rule_description: string;
-  tool: string;
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
   created_at: string;
-  open: boolean;
-  closed_by: string;
-  closed_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
   url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
   html_url: string;
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
 }[];
+
+type CodeScanningListRecentAnalysesEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * Set a full Git reference to list alerts for a specific branch. The `ref` must be formatted as `refs/heads/<branch name>`.
+   */
+  ref?: string;
+  /**
+   * Set a single code scanning tool name to filter alerts by tool.
+   */
+  tool_name?: string;
+};
+
+type CodeScanningListRecentAnalysesRequestOptions = {
+  method: "GET";
+  url: "/repos/:owner/:repo/code-scanning/analyses";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+export type CodeScanningListRecentAnalysesResponseData = {
+  /**
+   * The commit SHA of the code scanning analysis file.
+   */
+  commit_sha: string;
+  /**
+   * The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.
+   */
+  ref: string;
+  /**
+   * Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
+   */
+  analysis_key: string;
+  /**
+   * The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  created_at: string;
+  /**
+   * The name of the tool used to generate the code scanning analysis alert.
+   */
+  tool_name: string;
+  error: string;
+  /**
+   * Identifies the variable values associated with the environment in which this analysis was performed.
+   */
+  environment: string;
+}[];
+
+type CodeScanningUpdateAlertEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The code scanning alert number.
+   */
+  alert_number?: number;
+  /**
+   * Sets the state of the code scanning alert. Can be one of `open` or `dismissed`. You must provide `dismissed_reason` when you set the state to `dismissed`.
+   */
+  state: "open" | "dismissed";
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason?: string | null;
+};
+
+type CodeScanningUpdateAlertRequestOptions = {
+  method: "PATCH";
+  url: "/repos/:owner/:repo/code-scanning/alerts/:alert_number";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
+
+export interface CodeScanningUpdateAlertResponseData {
+  /**
+   * The code scanning alert number.
+   */
+  number: number;
+  /**
+   * The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  created_at: string;
+  /**
+   * The REST API URL of the alert resource.
+   */
+  url: string;
+  /**
+   * The GitHub URL of the alert resource.
+   */
+  html_url: string;
+  instances: unknown[];
+  /**
+   * State of a code scanning alert.
+   */
+  state: "open" | "dismissed" | "fixed";
+  dismissed_by: {
+    login?: string;
+    id?: number;
+    node_id?: string;
+    avatar_url?: string;
+    gravatar_id?: string;
+    url?: string;
+    html_url?: string;
+    followers_url?: string;
+    following_url?: string;
+    gists_url?: string;
+    starred_url?: string;
+    subscriptions_url?: string;
+    organizations_url?: string;
+    repos_url?: string;
+    events_url?: string;
+    received_events_url?: string;
+    type?: string;
+    site_admin?: boolean;
+    [k: string]: unknown;
+  } | null;
+  /**
+   * The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  dismissed_at: string;
+  /**
+   * **Required when the state is dismissed.** The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+   */
+  dismissed_reason: ("false positive" | "won't fix" | "used in tests") | null;
+  rule: {
+    /**
+     * A unique identifier for the rule used to detect the alert.
+     */
+    id: string;
+    /**
+     * The severity of the alert.
+     */
+    severity: "none" | "note" | "warning" | "error";
+    /**
+     * A short description of the rule used to detect the alert.
+     */
+    description: string;
+  };
+  tool: {
+    /**
+     * The name of the tool used to generate the code scanning analysis alert.
+     */
+    name: string;
+    /**
+     * The version of the tool used to detect the alert.
+     */
+    version: string;
+  };
+}
+
+type CodeScanningUploadSarifEndpoint = {
+  owner: string;
+
+  repo: string;
+  /**
+   * The commit SHA of the code scanning analysis file.
+   */
+  commit_sha: string;
+  /**
+   * The full Git reference of the code scanning analysis file, formatted as `refs/heads/<branch name>`.
+   */
+  ref: string;
+  /**
+   * A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string.
+   */
+  sarif: string;
+  /**
+   * The base directory used in the analysis, as it appears in the SARIF file.
+   * This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.
+   */
+  checkout_uri?: string;
+  /**
+   * The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+   */
+  started_at?: string;
+  /**
+   * The name of the tool used to generate the code scanning analysis alert.
+   */
+  tool_name: string;
+};
+
+type CodeScanningUploadSarifRequestOptions = {
+  method: "POST";
+  url: "/repos/:owner/:repo/code-scanning/sarifs";
+  headers: RequestHeaders;
+  request: RequestRequestOptions;
+};
 
 type CodesOfConductGetAllCodesOfConductEndpoint = {} & RequiredPreview<
   "scarlet-witch"
