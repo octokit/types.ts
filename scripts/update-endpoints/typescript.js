@@ -81,24 +81,59 @@ async function run() {
         `${endpoint.scope} ${endpoint.id} RequestOptions`
       ),
       responseTypeName: endpointToResponseTypeName(endpoint),
+      jsdoc: stringToJsdocComment(`@see ${endpoint.documentationUrl}`),
+      scope: endpoint.scope,
+      id: endpoint.id,
+      method: endpoint.method,
+      url,
+      previews: endpoint.previews,
+      headers: endpoint.headers,
+      responses: endpoint.responses,
+      parameters: endpoint.parameters.filter(isntDeprecatedPathParameter),
     };
+
+    for (const deprecatedPathparameter of endpoint.parameters) {
+      if (!deprecatedPathparameter.alias) continue;
+      if (deprecatedPathparameter.in !== "PATH") continue;
+
+      const deprecatedRoute = route.replace(
+        new RegExp(`:${deprecatedPathparameter.alias}\\b`),
+        `:${deprecatedPathparameter.name}`
+      );
+
+      endpointsByRoute[deprecatedRoute] = Object.assign(
+        {},
+        endpointsByRoute[route],
+        {
+          optionsTypeName: pascalCase(
+            `${endpoint.scope} ${endpoint.id} Deprecated ${deprecatedPathparameter.name} Endpoint`
+          ),
+          parameters: endpoint.parameters.filter((parameter) => {
+            return parameter.name !== deprecatedPathparameter.alias;
+          }),
+          jsdoc: stringToJsdocComment(
+            [
+              `@see ${endpoint.documentationUrl}`,
+              `@deprecated "${deprecatedPathparameter.name}" is deprecated, use "${deprecatedPathparameter.alias}" instead`,
+            ].join("\n")
+          ),
+          hasDeprecatedPath: true,
+        }
+      );
+    }
   }
 
   const options = [];
   const childParams = {};
 
-  for (const endpoint of ENDPOINTS) {
-    if (endpoint.renamed) continue;
-
-    const { method, parameters } = endpoint;
-    const url = endpointToNormalizedUrl(endpoint);
-
-    const optionsTypeName = pascalCase(
-      `${endpoint.scope} ${endpoint.id} Endpoint`
-    );
-    const requestOptionsTypeName = pascalCase(
-      `${endpoint.scope} ${endpoint.id} RequestOptions`
-    );
+  for (const endpoint of Object.values(endpointsByRoute)) {
+    const {
+      method,
+      parameters,
+      url,
+      optionsTypeName,
+      requestOptionsTypeName,
+    } = endpoint;
 
     const responsesSchemas =
       endpoint.responses.length &&
@@ -157,11 +192,7 @@ async function run() {
       data.type = "string | Buffer";
     }
 
-    options.push({
-      requiredPreview: endpoint.previews.length
-        ? endpoint.previews[0].name
-        : null,
-      headers,
+    const option = {
       parameters: {
         name: optionsTypeName,
         parameters: parameters
@@ -169,10 +200,6 @@ async function run() {
           .map(parameterize)
           // handle "object" & "object[]" types
           .map((parameter) => {
-            if (parameter.deprecated) {
-              return;
-            }
-
             const namespacedParamsName = pascalCase(
               `${endpoint.scope}.${endpoint.id}.Params`
             );
@@ -208,13 +235,23 @@ async function run() {
           })
           .filter(Boolean),
       },
-      request: {
-        name: requestOptionsTypeName,
-        method,
-        url,
-      },
-      response: await getResponseSchemasString(responsesSchemas),
-    });
+    };
+    if (!endpoint.hasDeprecatedPath) {
+      option.requiredPreview = endpoint.previews.length
+        ? endpoint.previews[0].name
+        : null;
+      option.headers = headers;
+      option.request = `
+        type ${requestOptionsTypeName} = {
+          method: "${method}",
+          url: "${url}",
+          headers: RequestHeaders,
+          request: RequestRequestOptions
+        }
+      `;
+      option.response = await getResponseSchemasString(responsesSchemas);
+    }
+    options.push(option);
 
     process.stdout.write(".");
   }
@@ -275,6 +312,15 @@ function parameterize(parameter) {
     ? parameter.enum.map(JSON.stringify).join("|")
     : null;
 
+  let description = parameter.description ? parameter.description : "";
+
+  if (parameter.deprecated) {
+    description += `\n @deprecated "${key}" is deprecated.`;
+    if (parameter.alias) {
+      description += ` Use "${parameter.alias}" instead`;
+    }
+  }
+
   if (/\*/.test(key)) {
     return {
       name: pascalCase(key.replace(/\*/, "Object")),
@@ -284,7 +330,7 @@ function parameterize(parameter) {
       alias: parameter.alias,
       deprecated: parameter.deprecated,
       allowNull: parameter.allowNull,
-      jsdoc: stringToJsdocComment(parameter.description),
+      jsdoc: stringToJsdocComment(description),
     };
   }
 
@@ -296,7 +342,7 @@ function parameterize(parameter) {
     alias: parameter.alias,
     deprecated: parameter.deprecated,
     allowNull: parameter.allowNull,
-    jsdoc: stringToJsdocComment(parameter.description),
+    jsdoc: stringToJsdocComment(description),
   };
 }
 
@@ -326,4 +372,11 @@ function endpointToNormalizedUrl(endpoint) {
       // stecial case for "Upload a release asset": remove ":origin" prefix
       .replace(/^:origin/, "")
   );
+}
+
+function isntDeprecatedPathParameter(parameter) {
+  if (!parameter.alias) return true;
+  if (parameter.in !== "PATH") return true;
+
+  return false;
 }
