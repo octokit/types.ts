@@ -7,7 +7,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/v3/issues/#create-an-issue
    */
-  "POST /repos/:owner/:repo/issues": {
+  "POST /repos/{owner}/{repo}/issues": {
     parameters: IssuesCreateEndpoint;
     request: IssuesCreateRequestOptions;
     response: OctokitResponse<
@@ -53,7 +53,7 @@ type IssuesCreateEndpoint = {
 
 type IssuesCreateRequestOptions = {
   method: "POST";
-  url: "/repos/:owner/:repo/issues";
+  url: "/repos/{owner}/{repo}/issues";
   headers: RequestHeaders;
   request: RequestRequestOptions;
 };
