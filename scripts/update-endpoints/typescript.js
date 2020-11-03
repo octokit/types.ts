@@ -74,6 +74,8 @@ async function run() {
     const url = endpointToNormalizedUrl(endpoint);
     const route = `${endpoint.method} ${url}`;
 
+    if (route !== "POST /repos/:owner/:repo/issues") continue;
+
     endpointsByRoute[route] = {
       documentationUrl: endpoint.documentationUrl,
       optionsTypeName: pascalCase(`${endpoint.scope} ${endpoint.id} Endpoint`),
