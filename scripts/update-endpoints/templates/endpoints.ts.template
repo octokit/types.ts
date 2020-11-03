@@ -15,7 +15,7 @@ export interface Endpoints {
   "{{@key}}": {
     parameters: {{optionsTypeName}},
     request: {{requestOptionsTypeName}},
-    response: OctokitResponse<{{responseTypeName}}>,
+    response: OctokitResponse<{{responseTypeNames}}>,
   },
   {{/each}}
 }

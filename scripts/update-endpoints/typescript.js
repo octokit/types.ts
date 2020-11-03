@@ -80,7 +80,7 @@ async function run() {
       requestOptionsTypeName: pascalCase(
         `${endpoint.scope} ${endpoint.id} RequestOptions`
       ),
-      responseTypeName: endpointToResponseTypeName(endpoint),
+      responseTypeNames: endpointToResponseTypeName(endpoint),
       jsdoc: stringToJsdocComment(`@see ${endpoint.documentationUrl}`),
       scope: endpoint.scope,
       id: endpoint.id,
@@ -133,19 +133,16 @@ async function run() {
       url,
       optionsTypeName,
       requestOptionsTypeName,
+      responseTypeNames,
     } = endpoint;
 
+    const responseTypeNamesArray = responseTypeNames.split(" | ");
     const responsesSchemas =
       endpoint.responses.length &&
       endpoint.responses.map((response, i) => {
-        // first response is default response, so we just want *ResponseData. For the other we want e.g. *Response400Data
-        const code = i === 0 ? "" : " " + response.code;
-
         return {
           schema: JSON.parse(response.schema),
-          name: pascalCase(
-            `${endpoint.scope} ${endpoint.id} Response${code} Data`
-          ).replace(/_/, ""),
+          name: responseTypeNamesArray[i],
         };
       });
 
@@ -251,6 +248,7 @@ async function run() {
       `;
       option.response = await getResponseSchemasString(responsesSchemas);
     }
+
     options.push(option);
 
     process.stdout.write(".");
@@ -283,7 +281,9 @@ async function getResponseSchemasString(responsesSchemas) {
 
   const strings = await Promise.all(
     responsesSchemas.map(({ schema, name }) => {
+      if (!schema) return "";
       patchSchema(schema);
+      delete schema.title;
       return compile(schema, name, { bannerComment: false });
     })
   );
@@ -352,6 +352,10 @@ function endpointToResponseTypeName(endpoint) {
   if (hasResponses) {
     return endpoint.responses
       .map((response, i) => {
+        if (!response.schema) {
+          return "never";
+        }
+
         // first response is default response, so we just want *ResponseData. For the other we want e.g. *Response400Data
         const code = i === 0 ? "" : response.code + " ";
         return pascalCase(
