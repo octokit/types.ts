@@ -4,8 +4,8 @@ import { OctokitResponse } from "../OctokitResponse";
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
 
-type Operation = {
-  parameters: {
+type OpenApiParameters = {
+  parameters?: {
     path?: {
       [name: string]: unknown;
     };
@@ -16,9 +16,9 @@ type Operation = {
   requestBody?: {};
 };
 
-type Parameters<O extends Operation> = ("path" extends keyof O["parameters"]
-  ? O["parameters"]["path"]
-  : {}) &
+type Parameters<
+  O extends OpenApiParameters
+> = ("path" extends keyof O["parameters"] ? O["parameters"]["path"] : {}) &
   ("query" extends keyof O["parameters"] ? O["parameters"]["query"] : {}) &
   ("requestBody" extends keyof O
     ? "application/json" extends keyof O["requestBody"]
@@ -41,22 +41,31 @@ type Response<R, S extends keyof R = keyof R> = S extends keyof SuccessStatuses
     : OctokitResponse<DataType<R[S]>, SuccessStatuses[S]>
   : never;
 
-type CreateIssue = paths["/repos/{owner}/{repo}/issues"]["post"];
+type MethodsMap = {
+  delete: "DELETE";
+  get: "GET";
+  patch: "PATCH";
+  post: "POST";
+  put: "PUT";
+};
+
+type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
+  parameters: Parameters<paths[Url][Method]>;
+  request: {
+    method: Method extends keyof MethodsMap ? MethodsMap[Method] : never;
+    url: Url;
+    headers: RequestHeaders;
+    request: RequestRequestOptions;
+  };
+  response: Response<paths[Url][Method]>;
+};
 
 export interface Endpoints {
   /**
    * @see https://docs.github.com/v3/issues/#create-an-issue
    */
-  "POST /repos/{owner}/{repo}/issues": {
-    parameters: Parameters<CreateIssue>;
-    request: IssuesCreateRequestOptions;
-    response: Response<CreateIssue["responses"]>;
-  };
+  "POST /repos/{owner}/{repo}/issues": Operation<
+    "/repos/{owner}/{repo}/issues",
+    "post"
+  >;
 }
-
-type IssuesCreateRequestOptions = {
-  method: "POST";
-  url: "/repos/{owner}/{repo}/issues";
-  headers: RequestHeaders;
-  request: RequestRequestOptions;
-};
