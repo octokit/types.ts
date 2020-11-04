@@ -60,12 +60,2453 @@ type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
   response: Response<paths[Url][Method]>;
 };
 
+// TBD: set required previews
+// type RequiredPreview<T> = {
+//   mediaType: {
+//     previews: [T, ...string[]];
+//   };
+// };
+
 export interface Endpoints {
-  /**
-   * @see https://docs.github.com/v3/issues/#create-an-issue
-   */
+  "DELETE /app/installations/{installation_id}": Operation<
+    "/app/installations/{installation_id}",
+    "delete"
+  >;
+  "DELETE /app/installations/{installation_id}/suspended": Operation<
+    "/app/installations/{installation_id}/suspended",
+    "delete"
+  >;
+  "DELETE /applications/grants/{grant_id}": Operation<
+    "/applications/grants/{grant_id}",
+    "delete"
+  >;
+  "DELETE /applications/{client_id}/grant": Operation<
+    "/applications/{client_id}/grant",
+    "delete"
+  >;
+  "DELETE /applications/{client_id}/grants/{access_token}": Operation<
+    "/applications/{client_id}/grants/{access_token}",
+    "delete"
+  >;
+  "DELETE /applications/{client_id}/token": Operation<
+    "/applications/{client_id}/token",
+    "delete"
+  >;
+  "DELETE /applications/{client_id}/tokens/{access_token}": Operation<
+    "/applications/{client_id}/tokens/{access_token}",
+    "delete"
+  >;
+  "DELETE /authorizations/{authorization_id}": Operation<
+    "/authorizations/{authorization_id}",
+    "delete"
+  >;
+  "DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}": Operation<
+    "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+    "delete"
+  >;
+  "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "delete"
+  >;
+  "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "delete"
+  >;
+  "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "delete"
+  >;
+  "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "delete"
+  >;
+  "DELETE /gists/{gist_id}": Operation<"/gists/{gist_id}", "delete">;
+  "DELETE /gists/{gist_id}/comments/{comment_id}": Operation<
+    "/gists/{gist_id}/comments/{comment_id}",
+    "delete"
+  >;
+  "DELETE /gists/{gist_id}/star": Operation<"/gists/{gist_id}/star", "delete">;
+  "DELETE /installation/token": Operation<"/installation/token", "delete">;
+  "DELETE /notifications/threads/{thread_id}/subscription": Operation<
+    "/notifications/threads/{thread_id}/subscription",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/permissions/repositories/{repository_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/runners/{runner_id}": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/secrets/{secret_name}": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/blocks/{username}": Operation<
+    "/orgs/{org}/blocks/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/credential-authorizations/{credential_id}": Operation<
+    "/orgs/{org}/credential-authorizations/{credential_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/hooks/{hook_id}": Operation<
+    "/orgs/{org}/hooks/{hook_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/interaction-limits": Operation<
+    "/orgs/{org}/interaction-limits",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/members/{username}": Operation<
+    "/orgs/{org}/members/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/memberships/{username}": Operation<
+    "/orgs/{org}/memberships/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/migrations/{migration_id}/archive": Operation<
+    "/orgs/{org}/migrations/{migration_id}/archive",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
+    "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/outside_collaborators/{username}": Operation<
+    "/orgs/{org}/outside_collaborators/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/public_members/{username}": Operation<
+    "/orgs/{org}/public_members/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}": Operation<
+    "/orgs/{org}/teams/{team_slug}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
+    "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
+    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "delete"
+  >;
+  "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
+    "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "delete"
+  >;
+  "DELETE /projects/columns/cards/{card_id}": Operation<
+    "/projects/columns/cards/{card_id}",
+    "delete"
+  >;
+  "DELETE /projects/columns/{column_id}": Operation<
+    "/projects/columns/{column_id}",
+    "delete"
+  >;
+  "DELETE /projects/{project_id}": Operation<
+    "/projects/{project_id}",
+    "delete"
+  >;
+  "DELETE /projects/{project_id}/collaborators/{username}": Operation<
+    "/projects/{project_id}/collaborators/{username}",
+    "delete"
+  >;
+  "DELETE /reactions/{reaction_id}": Operation<
+    "/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "delete">;
+  "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}": Operation<
+    "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/actions/runs/{run_id}/logs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/actions/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/automated-security-fixes": Operation<
+    "/repos/{owner}/{repo}/automated-security-fixes",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/collaborators/{username}": Operation<
+    "/repos/{owner}/{repo}/collaborators/{username}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/contents/{path}": Operation<
+    "/repos/{owner}/{repo}/contents/{path}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/deployments/{deployment_id}": Operation<
+    "/repos/{owner}/{repo}/deployments/{deployment_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/git/refs/{ref}": Operation<
+    "/repos/{owner}/{repo}/git/refs/{ref}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/import": Operation<
+    "/repos/{owner}/{repo}/import",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/interaction-limits": Operation<
+    "/repos/{owner}/{repo}/interaction-limits",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
+    "/repos/{owner}/{repo}/invitations/{invitation_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels/{name}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/keys/{key_id}": Operation<
+    "/repos/{owner}/{repo}/keys/{key_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/labels/{name}": Operation<
+    "/repos/{owner}/{repo}/labels/{name}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}": Operation<
+    "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/pages": Operation<
+    "/repos/{owner}/{repo}/pages",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/releases/assets/{asset_id}": Operation<
+    "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/releases/{release_id}": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/subscription": Operation<
+    "/repos/{owner}/{repo}/subscription",
+    "delete"
+  >;
+  "DELETE /repos/{owner}/{repo}/vulnerability-alerts": Operation<
+    "/repos/{owner}/{repo}/vulnerability-alerts",
+    "delete"
+  >;
+  "DELETE /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+    "delete"
+  >;
+  "DELETE /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+    "delete"
+  >;
+  "DELETE /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
+    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}": Operation<"/teams/{team_id}", "delete">;
+  "DELETE /teams/{team_id}/discussions/{discussion_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}/members/{username}": Operation<
+    "/teams/{team_id}/members/{username}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}/memberships/{username}": Operation<
+    "/teams/{team_id}/memberships/{username}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}/projects/{project_id}": Operation<
+    "/teams/{team_id}/projects/{project_id}",
+    "delete"
+  >;
+  "DELETE /teams/{team_id}/repos/{owner}/{repo}": Operation<
+    "/teams/{team_id}/repos/{owner}/{repo}",
+    "delete"
+  >;
+  "DELETE /user/blocks/{username}": Operation<
+    "/user/blocks/{username}",
+    "delete"
+  >;
+  "DELETE /user/emails": Operation<"/user/emails", "delete">;
+  "DELETE /user/following/{username}": Operation<
+    "/user/following/{username}",
+    "delete"
+  >;
+  "DELETE /user/gpg_keys/{gpg_key_id}": Operation<
+    "/user/gpg_keys/{gpg_key_id}",
+    "delete"
+  >;
+  "DELETE /user/installations/{installation_id}/repositories/{repository_id}": Operation<
+    "/user/installations/{installation_id}/repositories/{repository_id}",
+    "delete"
+  >;
+  "DELETE /user/keys/{key_id}": Operation<"/user/keys/{key_id}", "delete">;
+  "DELETE /user/migrations/{migration_id}/archive": Operation<
+    "/user/migrations/{migration_id}/archive",
+    "delete"
+  >;
+  "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
+    "/user/migrations/{migration_id}/repos/{repo_name}/lock",
+    "delete"
+  >;
+  "DELETE /user/repository_invitations/{invitation_id}": Operation<
+    "/user/repository_invitations/{invitation_id}",
+    "delete"
+  >;
+  "DELETE /user/starred/{owner}/{repo}": Operation<
+    "/user/starred/{owner}/{repo}",
+    "delete"
+  >;
+  "GET /": Operation<"/", "get">;
+  "GET /app": Operation<"/app", "get">;
+  "GET /app/hook/config": Operation<"/app/hook/config", "get">;
+  "GET /app/installations": Operation<"/app/installations", "get">;
+  "GET /app/installations/{installation_id}": Operation<
+    "/app/installations/{installation_id}",
+    "get"
+  >;
+  "GET /applications/grants": Operation<"/applications/grants", "get">;
+  "GET /applications/grants/{grant_id}": Operation<
+    "/applications/grants/{grant_id}",
+    "get"
+  >;
+  "GET /applications/{client_id}/tokens/{access_token}": Operation<
+    "/applications/{client_id}/tokens/{access_token}",
+    "get"
+  >;
+  "GET /apps/{app_slug}": Operation<"/apps/{app_slug}", "get">;
+  "GET /authorizations": Operation<"/authorizations", "get">;
+  "GET /authorizations/{authorization_id}": Operation<
+    "/authorizations/{authorization_id}",
+    "get"
+  >;
+  "GET /codes_of_conduct": Operation<"/codes_of_conduct", "get">;
+  "GET /codes_of_conduct/{key}": Operation<"/codes_of_conduct/{key}", "get">;
+  "GET /emojis": Operation<"/emojis", "get">;
+  "GET /enterprises/{enterprise}/actions/permissions": Operation<
+    "/enterprises/{enterprise}/actions/permissions",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/permissions/organizations": Operation<
+    "/enterprises/{enterprise}/actions/permissions/organizations",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/permissions/selected-actions": Operation<
+    "/enterprises/{enterprise}/actions/permissions/selected-actions",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runner-groups": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runners": Operation<
+    "/enterprises/{enterprise}/actions/runners",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runners/downloads": Operation<
+    "/enterprises/{enterprise}/actions/runners/downloads",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/settings/billing/actions": Operation<
+    "/enterprises/{enterprise}/settings/billing/actions",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/settings/billing/packages": Operation<
+    "/enterprises/{enterprise}/settings/billing/packages",
+    "get"
+  >;
+  "GET /enterprises/{enterprise}/settings/billing/shared-storage": Operation<
+    "/enterprises/{enterprise}/settings/billing/shared-storage",
+    "get"
+  >;
+  "GET /events": Operation<"/events", "get">;
+  "GET /feeds": Operation<"/feeds", "get">;
+  "GET /gists": Operation<"/gists", "get">;
+  "GET /gists/public": Operation<"/gists/public", "get">;
+  "GET /gists/starred": Operation<"/gists/starred", "get">;
+  "GET /gists/{gist_id}": Operation<"/gists/{gist_id}", "get">;
+  "GET /gists/{gist_id}/comments": Operation<
+    "/gists/{gist_id}/comments",
+    "get"
+  >;
+  "GET /gists/{gist_id}/comments/{comment_id}": Operation<
+    "/gists/{gist_id}/comments/{comment_id}",
+    "get"
+  >;
+  "GET /gists/{gist_id}/commits": Operation<"/gists/{gist_id}/commits", "get">;
+  "GET /gists/{gist_id}/forks": Operation<"/gists/{gist_id}/forks", "get">;
+  "GET /gists/{gist_id}/star": Operation<"/gists/{gist_id}/star", "get">;
+  "GET /gists/{gist_id}/{sha}": Operation<"/gists/{gist_id}/{sha}", "get">;
+  "GET /gitignore/templates": Operation<"/gitignore/templates", "get">;
+  "GET /gitignore/templates/{name}": Operation<
+    "/gitignore/templates/{name}",
+    "get"
+  >;
+  "GET /installation/repositories": Operation<
+    "/installation/repositories",
+    "get"
+  >;
+  "GET /issues": Operation<"/issues", "get">;
+  "GET /licenses": Operation<"/licenses", "get">;
+  "GET /licenses/{license}": Operation<"/licenses/{license}", "get">;
+  "GET /marketplace_listing/accounts/{account_id}": Operation<
+    "/marketplace_listing/accounts/{account_id}",
+    "get"
+  >;
+  "GET /marketplace_listing/plans": Operation<
+    "/marketplace_listing/plans",
+    "get"
+  >;
+  "GET /marketplace_listing/plans/{plan_id}/accounts": Operation<
+    "/marketplace_listing/plans/{plan_id}/accounts",
+    "get"
+  >;
+  "GET /marketplace_listing/stubbed/accounts/{account_id}": Operation<
+    "/marketplace_listing/stubbed/accounts/{account_id}",
+    "get"
+  >;
+  "GET /marketplace_listing/stubbed/plans": Operation<
+    "/marketplace_listing/stubbed/plans",
+    "get"
+  >;
+  "GET /marketplace_listing/stubbed/plans/{plan_id}/accounts": Operation<
+    "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+    "get"
+  >;
+  "GET /meta": Operation<"/meta", "get">;
+  "GET /networks/{owner}/{repo}/events": Operation<
+    "/networks/{owner}/{repo}/events",
+    "get"
+  >;
+  "GET /notifications": Operation<"/notifications", "get">;
+  "GET /notifications/threads/{thread_id}": Operation<
+    "/notifications/threads/{thread_id}",
+    "get"
+  >;
+  "GET /notifications/threads/{thread_id}/subscription": Operation<
+    "/notifications/threads/{thread_id}/subscription",
+    "get"
+  >;
+  "GET /octocat": Operation<"/octocat", "get">;
+  "GET /organizations": Operation<"/organizations", "get">;
+  "GET /orgs/{org}": Operation<"/orgs/{org}", "get">;
+  "GET /orgs/{org}/actions/permissions": Operation<
+    "/orgs/{org}/actions/permissions",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/permissions/repositories": Operation<
+    "/orgs/{org}/actions/permissions/repositories",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/permissions/selected-actions": Operation<
+    "/orgs/{org}/actions/permissions/selected-actions",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runner-groups": Operation<
+    "/orgs/{org}/actions/runner-groups",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runners": Operation<
+    "/orgs/{org}/actions/runners",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runners/downloads": Operation<
+    "/orgs/{org}/actions/runners/downloads",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/runners/{runner_id}": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/secrets": Operation<
+    "/orgs/{org}/actions/secrets",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/secrets/public-key": Operation<
+    "/orgs/{org}/actions/secrets/public-key",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/secrets/{secret_name}": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}",
+    "get"
+  >;
+  "GET /orgs/{org}/actions/secrets/{secret_name}/repositories": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  "GET /orgs/{org}/blocks": Operation<"/orgs/{org}/blocks", "get">;
+  "GET /orgs/{org}/blocks/{username}": Operation<
+    "/orgs/{org}/blocks/{username}",
+    "get"
+  >;
+  "GET /orgs/{org}/credential-authorizations": Operation<
+    "/orgs/{org}/credential-authorizations",
+    "get"
+  >;
+  "GET /orgs/{org}/events": Operation<"/orgs/{org}/events", "get">;
+  "GET /orgs/{org}/hooks": Operation<"/orgs/{org}/hooks", "get">;
+  "GET /orgs/{org}/hooks/{hook_id}": Operation<
+    "/orgs/{org}/hooks/{hook_id}",
+    "get"
+  >;
+  "GET /orgs/{org}/hooks/{hook_id}/config": Operation<
+    "/orgs/{org}/hooks/{hook_id}/config",
+    "get"
+  >;
+  "GET /orgs/{org}/installation": Operation<"/orgs/{org}/installation", "get">;
+  "GET /orgs/{org}/installations": Operation<
+    "/orgs/{org}/installations",
+    "get"
+  >;
+  "GET /orgs/{org}/interaction-limits": Operation<
+    "/orgs/{org}/interaction-limits",
+    "get"
+  >;
+  "GET /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "get">;
+  "GET /orgs/{org}/invitations/{invitation_id}/teams": Operation<
+    "/orgs/{org}/invitations/{invitation_id}/teams",
+    "get"
+  >;
+  "GET /orgs/{org}/issues": Operation<"/orgs/{org}/issues", "get">;
+  "GET /orgs/{org}/members": Operation<"/orgs/{org}/members", "get">;
+  "GET /orgs/{org}/members/{username}": Operation<
+    "/orgs/{org}/members/{username}",
+    "get"
+  >;
+  "GET /orgs/{org}/memberships/{username}": Operation<
+    "/orgs/{org}/memberships/{username}",
+    "get"
+  >;
+  "GET /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "get">;
+  "GET /orgs/{org}/migrations/{migration_id}": Operation<
+    "/orgs/{org}/migrations/{migration_id}",
+    "get"
+  >;
+  "GET /orgs/{org}/migrations/{migration_id}/archive": Operation<
+    "/orgs/{org}/migrations/{migration_id}/archive",
+    "get"
+  >;
+  "GET /orgs/{org}/migrations/{migration_id}/repositories": Operation<
+    "/orgs/{org}/migrations/{migration_id}/repositories",
+    "get"
+  >;
+  "GET /orgs/{org}/outside_collaborators": Operation<
+    "/orgs/{org}/outside_collaborators",
+    "get"
+  >;
+  "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
+  "GET /orgs/{org}/public_members": Operation<
+    "/orgs/{org}/public_members",
+    "get"
+  >;
+  "GET /orgs/{org}/public_members/{username}": Operation<
+    "/orgs/{org}/public_members/{username}",
+    "get"
+  >;
+  "GET /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "get">;
+  "GET /orgs/{org}/settings/billing/actions": Operation<
+    "/orgs/{org}/settings/billing/actions",
+    "get"
+  >;
+  "GET /orgs/{org}/settings/billing/packages": Operation<
+    "/orgs/{org}/settings/billing/packages",
+    "get"
+  >;
+  "GET /orgs/{org}/settings/billing/shared-storage": Operation<
+    "/orgs/{org}/settings/billing/shared-storage",
+    "get"
+  >;
+  "GET /orgs/{org}/team-sync/groups": Operation<
+    "/orgs/{org}/team-sync/groups",
+    "get"
+  >;
+  "GET /orgs/{org}/teams": Operation<"/orgs/{org}/teams", "get">;
+  "GET /orgs/{org}/teams/{team_slug}": Operation<
+    "/orgs/{org}/teams/{team_slug}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/invitations": Operation<
+    "/orgs/{org}/teams/{team_slug}/invitations",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/members": Operation<
+    "/orgs/{org}/teams/{team_slug}/members",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
+    "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/projects": Operation<
+    "/orgs/{org}/teams/{team_slug}/projects",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
+    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/repos": Operation<
+    "/orgs/{org}/teams/{team_slug}/repos",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
+    "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/team-sync/group-mappings": Operation<
+    "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+    "get"
+  >;
+  "GET /orgs/{org}/teams/{team_slug}/teams": Operation<
+    "/orgs/{org}/teams/{team_slug}/teams",
+    "get"
+  >;
+  "GET /projects/columns/cards/{card_id}": Operation<
+    "/projects/columns/cards/{card_id}",
+    "get"
+  >;
+  "GET /projects/columns/{column_id}": Operation<
+    "/projects/columns/{column_id}",
+    "get"
+  >;
+  "GET /projects/columns/{column_id}/cards": Operation<
+    "/projects/columns/{column_id}/cards",
+    "get"
+  >;
+  "GET /projects/{project_id}": Operation<"/projects/{project_id}", "get">;
+  "GET /projects/{project_id}/collaborators": Operation<
+    "/projects/{project_id}/collaborators",
+    "get"
+  >;
+  "GET /projects/{project_id}/collaborators/{username}/permission": Operation<
+    "/projects/{project_id}/collaborators/{username}/permission",
+    "get"
+  >;
+  "GET /projects/{project_id}/columns": Operation<
+    "/projects/{project_id}/columns",
+    "get"
+  >;
+  "GET /rate_limit": Operation<"/rate_limit", "get">;
+  "GET /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "get">;
+  "GET /repos/{owner}/{repo}/actions/artifacts": Operation<
+    "/repos/{owner}/{repo}/actions/artifacts",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}": Operation<
+    "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}": Operation<
+    "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/jobs/{job_id}": Operation<
+    "/repos/{owner}/{repo}/actions/jobs/{job_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs": Operation<
+    "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/permissions": Operation<
+    "/repos/{owner}/{repo}/actions/permissions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/permissions/selected-actions": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runners": Operation<
+    "/repos/{owner}/{repo}/actions/runners",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runners/downloads": Operation<
+    "/repos/{owner}/{repo}/actions/runners/downloads",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runners/{runner_id}": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs": Operation<
+    "/repos/{owner}/{repo}/actions/runs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/artifacts": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/logs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/timing": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/timing",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/secrets": Operation<
+    "/repos/{owner}/{repo}/actions/secrets",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/secrets/public-key": Operation<
+    "/repos/{owner}/{repo}/actions/secrets/public-key",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/workflows": Operation<
+    "/repos/{owner}/{repo}/actions/workflows",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/assignees": Operation<
+    "/repos/{owner}/{repo}/assignees",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/assignees/{assignee}": Operation<
+    "/repos/{owner}/{repo}/assignees/{assignee}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches": Operation<
+    "/repos/{owner}/{repo}/branches",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/check-runs/{check_run_id}": Operation<
+    "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/check-runs/{check_run_id}/annotations": Operation<
+    "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}": Operation<
+    "/repos/{owner}/{repo}/check-suites/{check_suite_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs": Operation<
+    "/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/code-scanning/alerts": Operation<
+    "/repos/{owner}/{repo}/code-scanning/alerts",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/code-scanning/analyses": Operation<
+    "/repos/{owner}/{repo}/code-scanning/analyses",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/collaborators": Operation<
+    "/repos/{owner}/{repo}/collaborators",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/collaborators/{username}": Operation<
+    "/repos/{owner}/{repo}/collaborators/{username}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/collaborators/{username}/permission": Operation<
+    "/repos/{owner}/{repo}/collaborators/{username}/permission",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/comments": Operation<
+    "/repos/{owner}/{repo}/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits": Operation<
+    "/repos/{owner}/{repo}/commits",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head": Operation<
+    "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
+    "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls": Operation<
+    "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{ref}": Operation<
+    "/repos/{owner}/{repo}/commits/{ref}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{ref}/check-runs": Operation<
+    "/repos/{owner}/{repo}/commits/{ref}/check-runs",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{ref}/check-suites": Operation<
+    "/repos/{owner}/{repo}/commits/{ref}/check-suites",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{ref}/status": Operation<
+    "/repos/{owner}/{repo}/commits/{ref}/status",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/commits/{ref}/statuses": Operation<
+    "/repos/{owner}/{repo}/commits/{ref}/statuses",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/community/code_of_conduct": Operation<
+    "/repos/{owner}/{repo}/community/code_of_conduct",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/community/profile": Operation<
+    "/repos/{owner}/{repo}/community/profile",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/compare/{base}...{head}": Operation<
+    "/repos/{owner}/{repo}/compare/{base}...{head}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/contents/{path}": Operation<
+    "/repos/{owner}/{repo}/contents/{path}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/contributors": Operation<
+    "/repos/{owner}/{repo}/contributors",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/deployments": Operation<
+    "/repos/{owner}/{repo}/deployments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/deployments/{deployment_id}": Operation<
+    "/repos/{owner}/{repo}/deployments/{deployment_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses": Operation<
+    "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}": Operation<
+    "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/events": Operation<
+    "/repos/{owner}/{repo}/events",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/forks": Operation<
+    "/repos/{owner}/{repo}/forks",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/blobs/{file_sha}": Operation<
+    "/repos/{owner}/{repo}/git/blobs/{file_sha}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/commits/{commit_sha}": Operation<
+    "/repos/{owner}/{repo}/git/commits/{commit_sha}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/matching-refs/{ref}": Operation<
+    "/repos/{owner}/{repo}/git/matching-refs/{ref}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/ref/{ref}": Operation<
+    "/repos/{owner}/{repo}/git/ref/{ref}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/tags/{tag_sha}": Operation<
+    "/repos/{owner}/{repo}/git/tags/{tag_sha}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/git/trees/{tree_sha}": Operation<
+    "/repos/{owner}/{repo}/git/trees/{tree_sha}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/hooks": Operation<
+    "/repos/{owner}/{repo}/hooks",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/import": Operation<
+    "/repos/{owner}/{repo}/import",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/import/authors": Operation<
+    "/repos/{owner}/{repo}/import/authors",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/import/large_files": Operation<
+    "/repos/{owner}/{repo}/import/large_files",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/installation": Operation<
+    "/repos/{owner}/{repo}/installation",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/interaction-limits": Operation<
+    "/repos/{owner}/{repo}/interaction-limits",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/invitations": Operation<
+    "/repos/{owner}/{repo}/invitations",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues": Operation<
+    "/repos/{owner}/{repo}/issues",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/comments": Operation<
+    "/repos/{owner}/{repo}/issues/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/events": Operation<
+    "/repos/{owner}/{repo}/issues/events",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/events/{event_id}": Operation<
+    "/repos/{owner}/{repo}/issues/events/{event_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/comments": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/events": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/events",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/keys": Operation<
+    "/repos/{owner}/{repo}/keys",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/keys/{key_id}": Operation<
+    "/repos/{owner}/{repo}/keys/{key_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/labels": Operation<
+    "/repos/{owner}/{repo}/labels",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/labels/{name}": Operation<
+    "/repos/{owner}/{repo}/labels/{name}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/languages": Operation<
+    "/repos/{owner}/{repo}/languages",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/license": Operation<
+    "/repos/{owner}/{repo}/license",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/milestones": Operation<
+    "/repos/{owner}/{repo}/milestones",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/milestones/{milestone_number}": Operation<
+    "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/milestones/{milestone_number}/labels": Operation<
+    "/repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/notifications": Operation<
+    "/repos/{owner}/{repo}/notifications",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pages": Operation<
+    "/repos/{owner}/{repo}/pages",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pages/builds": Operation<
+    "/repos/{owner}/{repo}/pages/builds",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pages/builds/latest": Operation<
+    "/repos/{owner}/{repo}/pages/builds/latest",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pages/builds/{build_id}": Operation<
+    "/repos/{owner}/{repo}/pages/builds/{build_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/projects": Operation<
+    "/repos/{owner}/{repo}/projects",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls": Operation<
+    "/repos/{owner}/{repo}/pulls",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/comments": Operation<
+    "/repos/{owner}/{repo}/pulls/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/comments": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/commits": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/commits",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/files": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/files",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/merge": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/readme": Operation<
+    "/repos/{owner}/{repo}/readme",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases": Operation<
+    "/repos/{owner}/{repo}/releases",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases/assets/{asset_id}": Operation<
+    "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases/latest": Operation<
+    "/repos/{owner}/{repo}/releases/latest",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases/tags/{tag}": Operation<
+    "/repos/{owner}/{repo}/releases/tags/{tag}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases/{release_id}": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/releases/{release_id}/assets": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}/assets",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stargazers": Operation<
+    "/repos/{owner}/{repo}/stargazers",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stats/code_frequency": Operation<
+    "/repos/{owner}/{repo}/stats/code_frequency",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stats/commit_activity": Operation<
+    "/repos/{owner}/{repo}/stats/commit_activity",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stats/contributors": Operation<
+    "/repos/{owner}/{repo}/stats/contributors",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stats/participation": Operation<
+    "/repos/{owner}/{repo}/stats/participation",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/stats/punch_card": Operation<
+    "/repos/{owner}/{repo}/stats/punch_card",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/subscribers": Operation<
+    "/repos/{owner}/{repo}/subscribers",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/subscription": Operation<
+    "/repos/{owner}/{repo}/subscription",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/tags": Operation<
+    "/repos/{owner}/{repo}/tags",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/tarball/{ref}": Operation<
+    "/repos/{owner}/{repo}/tarball/{ref}",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/teams": Operation<
+    "/repos/{owner}/{repo}/teams",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/topics": Operation<
+    "/repos/{owner}/{repo}/topics",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/traffic/clones": Operation<
+    "/repos/{owner}/{repo}/traffic/clones",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/traffic/popular/paths": Operation<
+    "/repos/{owner}/{repo}/traffic/popular/paths",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/traffic/popular/referrers": Operation<
+    "/repos/{owner}/{repo}/traffic/popular/referrers",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/traffic/views": Operation<
+    "/repos/{owner}/{repo}/traffic/views",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/vulnerability-alerts": Operation<
+    "/repos/{owner}/{repo}/vulnerability-alerts",
+    "get"
+  >;
+  "GET /repos/{owner}/{repo}/zipball/{ref}": Operation<
+    "/repos/{owner}/{repo}/zipball/{ref}",
+    "get"
+  >;
+  "GET /repositories": Operation<"/repositories", "get">;
+  "GET /scim/v2/enterprises/{enterprise}/Groups": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups",
+    "get"
+  >;
+  "GET /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+    "get"
+  >;
+  "GET /scim/v2/enterprises/{enterprise}/Users": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users",
+    "get"
+  >;
+  "GET /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+    "get"
+  >;
+  "GET /scim/v2/organizations/{org}/Users": Operation<
+    "/scim/v2/organizations/{org}/Users",
+    "get"
+  >;
+  "GET /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
+    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "get"
+  >;
+  "GET /search/code": Operation<"/search/code", "get">;
+  "GET /search/commits": Operation<"/search/commits", "get">;
+  "GET /search/issues": Operation<"/search/issues", "get">;
+  "GET /search/labels": Operation<"/search/labels", "get">;
+  "GET /search/repositories": Operation<"/search/repositories", "get">;
+  "GET /search/topics": Operation<"/search/topics", "get">;
+  "GET /search/users": Operation<"/search/users", "get">;
+  "GET /teams/{team_id}": Operation<"/teams/{team_id}", "get">;
+  "GET /teams/{team_id}/discussions": Operation<
+    "/teams/{team_id}/discussions",
+    "get"
+  >;
+  "GET /teams/{team_id}/discussions/{discussion_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}",
+    "get"
+  >;
+  "GET /teams/{team_id}/discussions/{discussion_number}/comments": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "get"
+  >;
+  "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "get"
+  >;
+  "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "get"
+  >;
+  "GET /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "get"
+  >;
+  "GET /teams/{team_id}/invitations": Operation<
+    "/teams/{team_id}/invitations",
+    "get"
+  >;
+  "GET /teams/{team_id}/members": Operation<"/teams/{team_id}/members", "get">;
+  "GET /teams/{team_id}/members/{username}": Operation<
+    "/teams/{team_id}/members/{username}",
+    "get"
+  >;
+  "GET /teams/{team_id}/memberships/{username}": Operation<
+    "/teams/{team_id}/memberships/{username}",
+    "get"
+  >;
+  "GET /teams/{team_id}/projects": Operation<
+    "/teams/{team_id}/projects",
+    "get"
+  >;
+  "GET /teams/{team_id}/projects/{project_id}": Operation<
+    "/teams/{team_id}/projects/{project_id}",
+    "get"
+  >;
+  "GET /teams/{team_id}/repos": Operation<"/teams/{team_id}/repos", "get">;
+  "GET /teams/{team_id}/repos/{owner}/{repo}": Operation<
+    "/teams/{team_id}/repos/{owner}/{repo}",
+    "get"
+  >;
+  "GET /teams/{team_id}/team-sync/group-mappings": Operation<
+    "/teams/{team_id}/team-sync/group-mappings",
+    "get"
+  >;
+  "GET /teams/{team_id}/teams": Operation<"/teams/{team_id}/teams", "get">;
+  "GET /user": Operation<"/user", "get">;
+  "GET /user/blocks": Operation<"/user/blocks", "get">;
+  "GET /user/blocks/{username}": Operation<"/user/blocks/{username}", "get">;
+  "GET /user/emails": Operation<"/user/emails", "get">;
+  "GET /user/followers": Operation<"/user/followers", "get">;
+  "GET /user/following": Operation<"/user/following", "get">;
+  "GET /user/following/{username}": Operation<
+    "/user/following/{username}",
+    "get"
+  >;
+  "GET /user/gpg_keys": Operation<"/user/gpg_keys", "get">;
+  "GET /user/gpg_keys/{gpg_key_id}": Operation<
+    "/user/gpg_keys/{gpg_key_id}",
+    "get"
+  >;
+  "GET /user/installations": Operation<"/user/installations", "get">;
+  "GET /user/installations/{installation_id}/repositories": Operation<
+    "/user/installations/{installation_id}/repositories",
+    "get"
+  >;
+  "GET /user/issues": Operation<"/user/issues", "get">;
+  "GET /user/keys": Operation<"/user/keys", "get">;
+  "GET /user/keys/{key_id}": Operation<"/user/keys/{key_id}", "get">;
+  "GET /user/marketplace_purchases": Operation<
+    "/user/marketplace_purchases",
+    "get"
+  >;
+  "GET /user/marketplace_purchases/stubbed": Operation<
+    "/user/marketplace_purchases/stubbed",
+    "get"
+  >;
+  "GET /user/memberships/orgs": Operation<"/user/memberships/orgs", "get">;
+  "GET /user/memberships/orgs/{org}": Operation<
+    "/user/memberships/orgs/{org}",
+    "get"
+  >;
+  "GET /user/migrations": Operation<"/user/migrations", "get">;
+  "GET /user/migrations/{migration_id}": Operation<
+    "/user/migrations/{migration_id}",
+    "get"
+  >;
+  "GET /user/migrations/{migration_id}/archive": Operation<
+    "/user/migrations/{migration_id}/archive",
+    "get"
+  >;
+  "GET /user/migrations/{migration_id}/repositories": Operation<
+    "/user/migrations/{migration_id}/repositories",
+    "get"
+  >;
+  "GET /user/orgs": Operation<"/user/orgs", "get">;
+  "GET /user/public_emails": Operation<"/user/public_emails", "get">;
+  "GET /user/repos": Operation<"/user/repos", "get">;
+  "GET /user/repository_invitations": Operation<
+    "/user/repository_invitations",
+    "get"
+  >;
+  "GET /user/starred": Operation<"/user/starred", "get">;
+  "GET /user/starred/{owner}/{repo}": Operation<
+    "/user/starred/{owner}/{repo}",
+    "get"
+  >;
+  "GET /user/subscriptions": Operation<"/user/subscriptions", "get">;
+  "GET /user/teams": Operation<"/user/teams", "get">;
+  "GET /users": Operation<"/users", "get">;
+  "GET /users/{username}": Operation<"/users/{username}", "get">;
+  "GET /users/{username}/events": Operation<"/users/{username}/events", "get">;
+  "GET /users/{username}/events/orgs/{org}": Operation<
+    "/users/{username}/events/orgs/{org}",
+    "get"
+  >;
+  "GET /users/{username}/events/public": Operation<
+    "/users/{username}/events/public",
+    "get"
+  >;
+  "GET /users/{username}/followers": Operation<
+    "/users/{username}/followers",
+    "get"
+  >;
+  "GET /users/{username}/following": Operation<
+    "/users/{username}/following",
+    "get"
+  >;
+  "GET /users/{username}/following/{target_user}": Operation<
+    "/users/{username}/following/{target_user}",
+    "get"
+  >;
+  "GET /users/{username}/gists": Operation<"/users/{username}/gists", "get">;
+  "GET /users/{username}/gpg_keys": Operation<
+    "/users/{username}/gpg_keys",
+    "get"
+  >;
+  "GET /users/{username}/hovercard": Operation<
+    "/users/{username}/hovercard",
+    "get"
+  >;
+  "GET /users/{username}/installation": Operation<
+    "/users/{username}/installation",
+    "get"
+  >;
+  "GET /users/{username}/keys": Operation<"/users/{username}/keys", "get">;
+  "GET /users/{username}/orgs": Operation<"/users/{username}/orgs", "get">;
+  "GET /users/{username}/projects": Operation<
+    "/users/{username}/projects",
+    "get"
+  >;
+  "GET /users/{username}/received_events": Operation<
+    "/users/{username}/received_events",
+    "get"
+  >;
+  "GET /users/{username}/received_events/public": Operation<
+    "/users/{username}/received_events/public",
+    "get"
+  >;
+  "GET /users/{username}/repos": Operation<"/users/{username}/repos", "get">;
+  "GET /users/{username}/settings/billing/actions": Operation<
+    "/users/{username}/settings/billing/actions",
+    "get"
+  >;
+  "GET /users/{username}/settings/billing/packages": Operation<
+    "/users/{username}/settings/billing/packages",
+    "get"
+  >;
+  "GET /users/{username}/settings/billing/shared-storage": Operation<
+    "/users/{username}/settings/billing/shared-storage",
+    "get"
+  >;
+  "GET /users/{username}/starred": Operation<
+    "/users/{username}/starred",
+    "get"
+  >;
+  "GET /users/{username}/subscriptions": Operation<
+    "/users/{username}/subscriptions",
+    "get"
+  >;
+  "GET /zen": Operation<"/zen", "get">;
+  "PATCH /app/hook/config": Operation<"/app/hook/config", "patch">;
+  "PATCH /applications/{client_id}/token": Operation<
+    "/applications/{client_id}/token",
+    "patch"
+  >;
+  "PATCH /authorizations/{authorization_id}": Operation<
+    "/authorizations/{authorization_id}",
+    "patch"
+  >;
+  "PATCH /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+    "patch"
+  >;
+  "PATCH /gists/{gist_id}": Operation<"/gists/{gist_id}", "patch">;
+  "PATCH /gists/{gist_id}/comments/{comment_id}": Operation<
+    "/gists/{gist_id}/comments/{comment_id}",
+    "patch"
+  >;
+  "PATCH /notifications/threads/{thread_id}": Operation<
+    "/notifications/threads/{thread_id}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}": Operation<"/orgs/{org}", "patch">;
+  "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/hooks/{hook_id}": Operation<
+    "/orgs/{org}/hooks/{hook_id}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/hooks/{hook_id}/config": Operation<
+    "/orgs/{org}/hooks/{hook_id}/config",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/teams/{team_slug}": Operation<
+    "/orgs/{org}/teams/{team_slug}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+    "patch"
+  >;
+  "PATCH /orgs/{org}/teams/{team_slug}/team-sync/group-mappings": Operation<
+    "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+    "patch"
+  >;
+  "PATCH /projects/columns/cards/{card_id}": Operation<
+    "/projects/columns/cards/{card_id}",
+    "patch"
+  >;
+  "PATCH /projects/columns/{column_id}": Operation<
+    "/projects/columns/{column_id}",
+    "patch"
+  >;
+  "PATCH /projects/{project_id}": Operation<"/projects/{project_id}", "patch">;
+  "PATCH /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "patch">;
+  "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}": Operation<
+    "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/check-suites/preferences": Operation<
+    "/repos/{owner}/{repo}/check-suites/preferences",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/git/refs/{ref}": Operation<
+    "/repos/{owner}/{repo}/git/refs/{ref}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/import": Operation<
+    "/repos/{owner}/{repo}/import",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/import/authors/{author_id}": Operation<
+    "/repos/{owner}/{repo}/import/authors/{author_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/import/lfs": Operation<
+    "/repos/{owner}/{repo}/import/lfs",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
+    "/repos/{owner}/{repo}/invitations/{invitation_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/issues/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/issues/{issue_number}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/labels/{name}": Operation<
+    "/repos/{owner}/{repo}/labels/{name}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}": Operation<
+    "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/pulls/comments/{comment_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/pulls/{pull_number}": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}": Operation<
+    "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+    "patch"
+  >;
+  "PATCH /repos/{owner}/{repo}/releases/{release_id}": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}",
+    "patch"
+  >;
+  "PATCH /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+    "patch"
+  >;
+  "PATCH /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+    "patch"
+  >;
+  "PATCH /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
+    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "patch"
+  >;
+  "PATCH /teams/{team_id}": Operation<"/teams/{team_id}", "patch">;
+  "PATCH /teams/{team_id}/discussions/{discussion_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}",
+    "patch"
+  >;
+  "PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+    "patch"
+  >;
+  "PATCH /teams/{team_id}/team-sync/group-mappings": Operation<
+    "/teams/{team_id}/team-sync/group-mappings",
+    "patch"
+  >;
+  "PATCH /user": Operation<"/user", "patch">;
+  "PATCH /user/email/visibility": Operation<"/user/email/visibility", "patch">;
+  "PATCH /user/memberships/orgs/{org}": Operation<
+    "/user/memberships/orgs/{org}",
+    "patch"
+  >;
+  "PATCH /user/repository_invitations/{invitation_id}": Operation<
+    "/user/repository_invitations/{invitation_id}",
+    "patch"
+  >;
+  "POST /app-manifests/{code}/conversions": Operation<
+    "/app-manifests/{code}/conversions",
+    "post"
+  >;
+  "POST /app/installations/{installation_id}/access_tokens": Operation<
+    "/app/installations/{installation_id}/access_tokens",
+    "post"
+  >;
+  "POST /applications/{client_id}/token": Operation<
+    "/applications/{client_id}/token",
+    "post"
+  >;
+  "POST /applications/{client_id}/tokens/{access_token}": Operation<
+    "/applications/{client_id}/tokens/{access_token}",
+    "post"
+  >;
+  "POST /authorizations": Operation<"/authorizations", "post">;
+  "POST /content_references/{content_reference_id}/attachments": Operation<
+    "/content_references/{content_reference_id}/attachments",
+    "post"
+  >;
+  "POST /enterprises/{enterprise}/actions/runner-groups": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups",
+    "post"
+  >;
+  "POST /enterprises/{enterprise}/actions/runners/registration-token": Operation<
+    "/enterprises/{enterprise}/actions/runners/registration-token",
+    "post"
+  >;
+  "POST /enterprises/{enterprise}/actions/runners/remove-token": Operation<
+    "/enterprises/{enterprise}/actions/runners/remove-token",
+    "post"
+  >;
+  "POST /gists": Operation<"/gists", "post">;
+  "POST /gists/{gist_id}/comments": Operation<
+    "/gists/{gist_id}/comments",
+    "post"
+  >;
+  "POST /gists/{gist_id}/forks": Operation<"/gists/{gist_id}/forks", "post">;
+  "POST /markdown": Operation<"/markdown", "post">;
+  "POST /markdown/raw": Operation<"/markdown/raw", "post">;
+  "POST /orgs/{org}/actions/runner-groups": Operation<
+    "/orgs/{org}/actions/runner-groups",
+    "post"
+  >;
+  "POST /orgs/{org}/actions/runners/registration-token": Operation<
+    "/orgs/{org}/actions/runners/registration-token",
+    "post"
+  >;
+  "POST /orgs/{org}/actions/runners/remove-token": Operation<
+    "/orgs/{org}/actions/runners/remove-token",
+    "post"
+  >;
+  "POST /orgs/{org}/hooks": Operation<"/orgs/{org}/hooks", "post">;
+  "POST /orgs/{org}/hooks/{hook_id}/pings": Operation<
+    "/orgs/{org}/hooks/{hook_id}/pings",
+    "post"
+  >;
+  "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
+  "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
+  "POST /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "post">;
+  "POST /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "post">;
+  "POST /orgs/{org}/teams": Operation<"/orgs/{org}/teams", "post">;
+  "POST /orgs/{org}/teams/{team_slug}/discussions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions",
+    "post"
+  >;
+  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+    "post"
+  >;
+  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "post"
+  >;
+  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
+    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "post"
+  >;
+  "POST /projects/columns/cards/{card_id}/moves": Operation<
+    "/projects/columns/cards/{card_id}/moves",
+    "post"
+  >;
+  "POST /projects/columns/{column_id}/cards": Operation<
+    "/projects/columns/{column_id}/cards",
+    "post"
+  >;
+  "POST /projects/columns/{column_id}/moves": Operation<
+    "/projects/columns/{column_id}/moves",
+    "post"
+  >;
+  "POST /projects/{project_id}/columns": Operation<
+    "/projects/{project_id}/columns",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/actions/runners/registration-token": Operation<
+    "/repos/{owner}/{repo}/actions/runners/registration-token",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/actions/runners/remove-token": Operation<
+    "/repos/{owner}/{repo}/actions/runners/remove-token",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/check-runs": Operation<
+    "/repos/{owner}/{repo}/check-runs",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/check-suites": Operation<
+    "/repos/{owner}/{repo}/check-suites",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest": Operation<
+    "/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/code-scanning/sarifs": Operation<
+    "/repos/{owner}/{repo}/code-scanning/sarifs",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
+    "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/deployments": Operation<
+    "/repos/{owner}/{repo}/deployments",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses": Operation<
+    "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/dispatches": Operation<
+    "/repos/{owner}/{repo}/dispatches",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/forks": Operation<
+    "/repos/{owner}/{repo}/forks",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/git/blobs": Operation<
+    "/repos/{owner}/{repo}/git/blobs",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/git/commits": Operation<
+    "/repos/{owner}/{repo}/git/commits",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/git/refs": Operation<
+    "/repos/{owner}/{repo}/git/refs",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/git/tags": Operation<
+    "/repos/{owner}/{repo}/git/tags",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/git/trees": Operation<
+    "/repos/{owner}/{repo}/git/trees",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/hooks": Operation<
+    "/repos/{owner}/{repo}/hooks",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/hooks/{hook_id}/pings": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/hooks/{hook_id}/tests": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
+    "post"
+  >;
   "POST /repos/{owner}/{repo}/issues": Operation<
     "/repos/{owner}/{repo}/issues",
     "post"
+  >;
+  "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/comments": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/keys": Operation<
+    "/repos/{owner}/{repo}/keys",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/labels": Operation<
+    "/repos/{owner}/{repo}/labels",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/merges": Operation<
+    "/repos/{owner}/{repo}/merges",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/milestones": Operation<
+    "/repos/{owner}/{repo}/milestones",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pages": Operation<
+    "/repos/{owner}/{repo}/pages",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pages/builds": Operation<
+    "/repos/{owner}/{repo}/pages/builds",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/projects": Operation<
+    "/repos/{owner}/{repo}/projects",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls": Operation<
+    "/repos/{owner}/{repo}/pulls",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/releases": Operation<
+    "/repos/{owner}/{repo}/releases",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/statuses/{sha}": Operation<
+    "/repos/{owner}/{repo}/statuses/{sha}",
+    "post"
+  >;
+  "POST /repos/{owner}/{repo}/transfer": Operation<
+    "/repos/{owner}/{repo}/transfer",
+    "post"
+  >;
+  "POST /repos/{template_owner}/{template_repo}/generate": Operation<
+    "/repos/{template_owner}/{template_repo}/generate",
+    "post"
+  >;
+  "POST /scim/v2/enterprises/{enterprise}/Groups": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups",
+    "post"
+  >;
+  "POST /scim/v2/enterprises/{enterprise}/Users": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users",
+    "post"
+  >;
+  "POST /scim/v2/organizations/{org}/Users": Operation<
+    "/scim/v2/organizations/{org}/Users",
+    "post"
+  >;
+  "POST /teams/{team_id}/discussions": Operation<
+    "/teams/{team_id}/discussions",
+    "post"
+  >;
+  "POST /teams/{team_id}/discussions/{discussion_number}/comments": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments",
+    "post"
+  >;
+  "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+    "post"
+  >;
+  "POST /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
+    "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "post"
+  >;
+  "POST /user/emails": Operation<"/user/emails", "post">;
+  "POST /user/gpg_keys": Operation<"/user/gpg_keys", "post">;
+  "POST /user/keys": Operation<"/user/keys", "post">;
+  "POST /user/migrations": Operation<"/user/migrations", "post">;
+  "POST /user/projects": Operation<"/user/projects", "post">;
+  "POST /user/repos": Operation<"/user/repos", "post">;
+  "POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}/assets",
+    "post"
+  >;
+  "PUT /app/installations/{installation_id}/suspended": Operation<
+    "/app/installations/{installation_id}/suspended",
+    "put"
+  >;
+  "PUT /authorizations/clients/{client_id}": Operation<
+    "/authorizations/clients/{client_id}",
+    "put"
+  >;
+  "PUT /authorizations/clients/{client_id}/{fingerprint}": Operation<
+    "/authorizations/clients/{client_id}/{fingerprint}",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/permissions": Operation<
+    "/enterprises/{enterprise}/actions/permissions",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/permissions/organizations": Operation<
+    "/enterprises/{enterprise}/actions/permissions/organizations",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}": Operation<
+    "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/permissions/selected-actions": Operation<
+    "/enterprises/{enterprise}/actions/permissions/selected-actions",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+    "put"
+  >;
+  "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
+    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "put"
+  >;
+  "PUT /gists/{gist_id}/star": Operation<"/gists/{gist_id}/star", "put">;
+  "PUT /notifications": Operation<"/notifications", "put">;
+  "PUT /notifications/threads/{thread_id}/subscription": Operation<
+    "/notifications/threads/{thread_id}/subscription",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/permissions": Operation<
+    "/orgs/{org}/actions/permissions",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/permissions/repositories": Operation<
+    "/orgs/{org}/actions/permissions/repositories",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/permissions/repositories/{repository_id}",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/permissions/selected-actions": Operation<
+    "/orgs/{org}/actions/permissions/selected-actions",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/secrets/{secret_name}": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+    "put"
+  >;
+  "PUT /orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+    "put"
+  >;
+  "PUT /orgs/{org}/blocks/{username}": Operation<
+    "/orgs/{org}/blocks/{username}",
+    "put"
+  >;
+  "PUT /orgs/{org}/interaction-limits": Operation<
+    "/orgs/{org}/interaction-limits",
+    "put"
+  >;
+  "PUT /orgs/{org}/memberships/{username}": Operation<
+    "/orgs/{org}/memberships/{username}",
+    "put"
+  >;
+  "PUT /orgs/{org}/outside_collaborators/{username}": Operation<
+    "/orgs/{org}/outside_collaborators/{username}",
+    "put"
+  >;
+  "PUT /orgs/{org}/public_members/{username}": Operation<
+    "/orgs/{org}/public_members/{username}",
+    "put"
+  >;
+  "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
+    "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+    "put"
+  >;
+  "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
+    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+    "put"
+  >;
+  "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
+    "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+    "put"
+  >;
+  "PUT /projects/{project_id}/collaborators/{username}": Operation<
+    "/projects/{project_id}/collaborators/{username}",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/actions/permissions": Operation<
+    "/repos/{owner}/{repo}/actions/permissions",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/actions/permissions/selected-actions": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/actions/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable": Operation<
+    "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/automated-security-fixes": Operation<
+    "/repos/{owner}/{repo}/automated-security-fixes",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/branches/{branch}/protection": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/collaborators/{username}": Operation<
+    "/repos/{owner}/{repo}/collaborators/{username}",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/contents/{path}": Operation<
+    "/repos/{owner}/{repo}/contents/{path}",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/import": Operation<
+    "/repos/{owner}/{repo}/import",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/interaction-limits": Operation<
+    "/repos/{owner}/{repo}/interaction-limits",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/issues/{issue_number}/lock": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/notifications": Operation<
+    "/repos/{owner}/{repo}/notifications",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/pages": Operation<
+    "/repos/{owner}/{repo}/pages",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/subscription": Operation<
+    "/repos/{owner}/{repo}/subscription",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/topics": Operation<
+    "/repos/{owner}/{repo}/topics",
+    "put"
+  >;
+  "PUT /repos/{owner}/{repo}/vulnerability-alerts": Operation<
+    "/repos/{owner}/{repo}/vulnerability-alerts",
+    "put"
+  >;
+  "PUT /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+    "put"
+  >;
+  "PUT /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
+    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+    "put"
+  >;
+  "PUT /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
+    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+    "put"
+  >;
+  "PUT /teams/{team_id}/members/{username}": Operation<
+    "/teams/{team_id}/members/{username}",
+    "put"
+  >;
+  "PUT /teams/{team_id}/memberships/{username}": Operation<
+    "/teams/{team_id}/memberships/{username}",
+    "put"
+  >;
+  "PUT /teams/{team_id}/projects/{project_id}": Operation<
+    "/teams/{team_id}/projects/{project_id}",
+    "put"
+  >;
+  "PUT /teams/{team_id}/repos/{owner}/{repo}": Operation<
+    "/teams/{team_id}/repos/{owner}/{repo}",
+    "put"
+  >;
+  "PUT /user/blocks/{username}": Operation<"/user/blocks/{username}", "put">;
+  "PUT /user/following/{username}": Operation<
+    "/user/following/{username}",
+    "put"
+  >;
+  "PUT /user/installations/{installation_id}/repositories/{repository_id}": Operation<
+    "/user/installations/{installation_id}/repositories/{repository_id}",
+    "put"
+  >;
+  "PUT /user/starred/{owner}/{repo}": Operation<
+    "/user/starred/{owner}/{repo}",
+    "put"
   >;
 }
