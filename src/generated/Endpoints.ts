@@ -4,53 +4,33 @@ import { OctokitResponse } from "../OctokitResponse";
 import { RequestHeaders } from "../RequestHeaders";
 import { RequestRequestOptions } from "../RequestRequestOptions";
 
-type OpenApiParameters = {
-  parameters?: {
-    path?: {
-      [name: string]: unknown;
-    };
-    query?: {
-      [name: string]: unknown;
-    };
-  };
-  requestBody?: {};
-};
-
-type Parameters<
-  O extends OpenApiParameters
-> = ("path" extends keyof O["parameters"] ? O["parameters"]["path"] : {}) &
-  ("query" extends keyof O["parameters"] ? O["parameters"]["query"] : {}) &
-  ("requestBody" extends keyof O
-    ? "application/json" extends keyof O["requestBody"]
-      ? O["requestBody"]["application/json"]
-      : {}
-    : {});
-
-type SuccessStatuses = {
-  "200": 200;
-  "201": 201;
-  "204": 204;
-};
-
-type DataType<T> = "application/json" extends keyof T
-  ? T["application/json"]
-  : unknown;
-type Response<R, S extends keyof R = keyof R> = S extends keyof SuccessStatuses
-  ? R[S] extends never
-    ? Omit<OctokitResponse<unknown, SuccessStatuses[S]>, "data">
-    : OctokitResponse<DataType<R[S]>, SuccessStatuses[S]>
+// https://stackoverflow.com/a/50375286/206879
+type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
+  k: infer I
+) => void
+  ? I
   : never;
 
-type MethodsMap = {
-  delete: "DELETE";
-  get: "GET";
-  patch: "PATCH";
-  post: "POST";
-  put: "PUT";
-};
+type ExtractParameters<T> = "parameters" extends keyof T
+  ? UnionToIntersection<
+      {
+        [K in keyof T["parameters"]]: T["parameters"][K];
+      }[keyof T["parameters"]]
+    >
+  : {};
+type ExtractRequestBody<T> = "requestBody" extends keyof T
+  ? "application/json" extends keyof T["requestBody"]
+    ? T["requestBody"]["application/json"]
+    : {
+        data: {
+          [K in keyof T["requestBody"]]: T["requestBody"][K];
+        }[keyof T["requestBody"]];
+      }
+  : {};
+type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<T>;
 
 type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
-  parameters: Parameters<paths[Url][Method]>;
+  parameters: ToOctokitParameters<paths[Url][Method]>;
   request: {
     method: Method extends keyof MethodsMap ? MethodsMap[Method] : never;
     url: Url;
@@ -59,6 +39,31 @@ type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
   };
   response: Response<paths[Url][Method]>;
 };
+
+type MethodsMap = {
+  delete: "DELETE";
+  get: "GET";
+  patch: "PATCH";
+  post: "POST";
+  put: "PUT";
+};
+type SuccessStatusesMap = {
+  "200": 200;
+  "201": 201;
+  "204": 204;
+};
+
+type DataType<T> = "application/json" extends keyof T
+  ? T["application/json"]
+  : unknown;
+type Response<
+  R,
+  S extends keyof R = keyof R
+> = S extends keyof SuccessStatusesMap
+  ? R[S] extends never
+    ? Omit<OctokitResponse<unknown, SuccessStatusesMap[S]>, "data">
+    : OctokitResponse<DataType<R[S]>, SuccessStatusesMap[S]>
+  : never;
 
 // TBD: set required previews
 // type RequiredPreview<T> = {
