@@ -37,6 +37,7 @@ async function run() {
     endpointsByRoute[route] = {
       method: endpoint.method.toLowerCase(),
       url: toOpenApiUrl(endpoint),
+      requiredPreview: (endpoint.previews[0] || {}).name,
     };
 
     // TODO: handle depreceated routes and parameters

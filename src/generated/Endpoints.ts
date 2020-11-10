@@ -29,8 +29,21 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
   : {};
 type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<T>;
 
-type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
-  parameters: ToOctokitParameters<paths[Url][Method]>;
+type RequiredPreview<T> = T extends string
+  ? {
+      mediaType: {
+        previews: [T, ...string[]];
+      };
+    }
+  : {};
+
+type Operation<
+  Url extends keyof paths,
+  Method extends keyof paths[Url],
+  preview = unknown
+> = {
+  parameters: ToOctokitParameters<paths[Url][Method]> &
+    RequiredPreview<preview>;
   request: {
     method: Method extends keyof MethodsMap ? MethodsMap[Method] : never;
     url: Url;
@@ -64,13 +77,6 @@ type Response<
     ? Omit<OctokitResponse<unknown, SuccessStatusesMap[S]>, "data">
     : OctokitResponse<DataType<R[S]>, SuccessStatusesMap[S]>
   : never;
-
-// TBD: set required previews
-// type RequiredPreview<T> = {
-//   mediaType: {
-//     previews: [T, ...string[]];
-//   };
-// };
 
 export interface Endpoints {
   "DELETE /app/installations/{installation_id}": Operation<
@@ -178,7 +184,8 @@ export interface Endpoints {
   >;
   "DELETE /orgs/{org}/interaction-limits": Operation<
     "/orgs/{org}/interaction-limits",
-    "delete"
+    "delete",
+    "sombra"
   >;
   "DELETE /orgs/{org}/members/{username}": Operation<
     "/orgs/{org}/members/{username}",
@@ -190,11 +197,13 @@ export interface Endpoints {
   >;
   "DELETE /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
-    "delete"
+    "delete",
+    "wyandotte"
   >;
   "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
-    "delete"
+    "delete",
+    "wyandotte"
   >;
   "DELETE /orgs/{org}/outside_collaborators/{username}": Operation<
     "/orgs/{org}/outside_collaborators/{username}",
@@ -218,11 +227,13 @@ export interface Endpoints {
   >;
   "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
     "/orgs/{org}/teams/{team_slug}/memberships/{username}",
@@ -238,23 +249,28 @@ export interface Endpoints {
   >;
   "DELETE /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "delete"
+    "delete",
+    "inertia"
   >;
   "DELETE /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "delete"
+    "delete",
+    "inertia"
   >;
   "DELETE /projects/{project_id}": Operation<
     "/projects/{project_id}",
-    "delete"
+    "delete",
+    "inertia"
   >;
   "DELETE /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
-    "delete"
+    "delete",
+    "inertia"
   >;
   "DELETE /reactions/{reaction_id}": Operation<
     "/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "delete">;
   "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}": Operation<
@@ -279,7 +295,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
-    "delete"
+    "delete",
+    "london"
   >;
   "DELETE /repos/{owner}/{repo}/branches/{branch}/protection": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection",
@@ -295,7 +312,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "delete"
+    "delete",
+    "zzzax"
   >;
   "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
@@ -331,7 +349,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /repos/{owner}/{repo}/contents/{path}": Operation<
     "/repos/{owner}/{repo}/contents/{path}",
@@ -355,7 +374,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/interaction-limits": Operation<
     "/repos/{owner}/{repo}/interaction-limits",
-    "delete"
+    "delete",
+    "sombra"
   >;
   "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
     "/repos/{owner}/{repo}/invitations/{invitation_id}",
@@ -367,7 +387,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
@@ -387,7 +408,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /repos/{owner}/{repo}/keys/{key_id}": Operation<
     "/repos/{owner}/{repo}/keys/{key_id}",
@@ -403,7 +425,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
-    "delete"
+    "delete",
+    "switcheroo"
   >;
   "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
@@ -411,7 +434,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
-    "delete"
+    "delete",
+    "squirrel-girl"
   >;
   "DELETE /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
@@ -435,7 +459,8 @@ export interface Endpoints {
   >;
   "DELETE /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "delete"
+    "delete",
+    "dorian"
   >;
   "DELETE /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
     "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
@@ -494,11 +519,13 @@ export interface Endpoints {
   "DELETE /user/keys/{key_id}": Operation<"/user/keys/{key_id}", "delete">;
   "DELETE /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
-    "delete"
+    "delete",
+    "wyandotte"
   >;
   "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/user/migrations/{migration_id}/repos/{repo_name}/lock",
-    "delete"
+    "delete",
+    "wyandotte"
   >;
   "DELETE /user/repository_invitations/{invitation_id}": Operation<
     "/user/repository_invitations/{invitation_id}",
@@ -531,8 +558,16 @@ export interface Endpoints {
     "/authorizations/{authorization_id}",
     "get"
   >;
-  "GET /codes_of_conduct": Operation<"/codes_of_conduct", "get">;
-  "GET /codes_of_conduct/{key}": Operation<"/codes_of_conduct/{key}", "get">;
+  "GET /codes_of_conduct": Operation<
+    "/codes_of_conduct",
+    "get",
+    "scarlet-witch"
+  >;
+  "GET /codes_of_conduct/{key}": Operation<
+    "/codes_of_conduct/{key}",
+    "get",
+    "scarlet-witch"
+  >;
   "GET /emojis": Operation<"/emojis", "get">;
   "GET /enterprises/{enterprise}/actions/permissions": Operation<
     "/enterprises/{enterprise}/actions/permissions",
@@ -739,7 +774,8 @@ export interface Endpoints {
   >;
   "GET /orgs/{org}/interaction-limits": Operation<
     "/orgs/{org}/interaction-limits",
-    "get"
+    "get",
+    "sombra"
   >;
   "GET /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "get">;
   "GET /orgs/{org}/invitations/{invitation_id}/teams": Operation<
@@ -756,24 +792,35 @@ export interface Endpoints {
     "/orgs/{org}/memberships/{username}",
     "get"
   >;
-  "GET /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "get">;
+  "GET /orgs/{org}/migrations": Operation<
+    "/orgs/{org}/migrations",
+    "get",
+    "wyandotte"
+  >;
   "GET /orgs/{org}/migrations/{migration_id}": Operation<
     "/orgs/{org}/migrations/{migration_id}",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /orgs/{org}/migrations/{migration_id}/repositories": Operation<
     "/orgs/{org}/migrations/{migration_id}/repositories",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /orgs/{org}/outside_collaborators": Operation<
     "/orgs/{org}/outside_collaborators",
     "get"
   >;
-  "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
+  "GET /orgs/{org}/projects": Operation<
+    "/orgs/{org}/projects",
+    "get",
+    "inertia"
+  >;
   "GET /orgs/{org}/public_members": Operation<
     "/orgs/{org}/public_members",
     "get"
@@ -822,11 +869,13 @@ export interface Endpoints {
   >;
   "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /orgs/{org}/teams/{team_slug}/invitations": Operation<
     "/orgs/{org}/teams/{team_slug}/invitations",
@@ -842,11 +891,13 @@ export interface Endpoints {
   >;
   "GET /orgs/{org}/teams/{team_slug}/projects": Operation<
     "/orgs/{org}/teams/{team_slug}/projects",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /orgs/{org}/teams/{team_slug}/repos": Operation<
     "/orgs/{org}/teams/{team_slug}/repos",
@@ -866,28 +917,38 @@ export interface Endpoints {
   >;
   "GET /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /projects/columns/{column_id}/cards": Operation<
     "/projects/columns/{column_id}/cards",
-    "get"
+    "get",
+    "inertia"
   >;
-  "GET /projects/{project_id}": Operation<"/projects/{project_id}", "get">;
+  "GET /projects/{project_id}": Operation<
+    "/projects/{project_id}",
+    "get",
+    "inertia"
+  >;
   "GET /projects/{project_id}/collaborators": Operation<
     "/projects/{project_id}/collaborators",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /projects/{project_id}/collaborators/{username}/permission": Operation<
     "/projects/{project_id}/collaborators/{username}/permission",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /rate_limit": Operation<"/rate_limit", "get">;
   "GET /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "get">;
@@ -1013,7 +1074,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "get"
+    "get",
+    "zzzax"
   >;
   "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
@@ -1089,7 +1151,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /repos/{owner}/{repo}/commits": Operation<
     "/repos/{owner}/{repo}/commits",
@@ -1097,7 +1160,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
-    "get"
+    "get",
+    "groot"
   >;
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
@@ -1105,7 +1169,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
-    "get"
+    "get",
+    "groot"
   >;
   "GET /repos/{owner}/{repo}/commits/{ref}": Operation<
     "/repos/{owner}/{repo}/commits/{ref}",
@@ -1129,11 +1194,13 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/community/code_of_conduct": Operation<
     "/repos/{owner}/{repo}/community/code_of_conduct",
-    "get"
+    "get",
+    "scarlet-witch"
   >;
   "GET /repos/{owner}/{repo}/community/profile": Operation<
     "/repos/{owner}/{repo}/community/profile",
-    "get"
+    "get",
+    "black-panther"
   >;
   "GET /repos/{owner}/{repo}/compare/{base}...{head}": Operation<
     "/repos/{owner}/{repo}/compare/{base}...{head}",
@@ -1225,7 +1292,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/interaction-limits": Operation<
     "/repos/{owner}/{repo}/interaction-limits",
-    "get"
+    "get",
+    "sombra"
   >;
   "GET /repos/{owner}/{repo}/invitations": Operation<
     "/repos/{owner}/{repo}/invitations",
@@ -1245,7 +1313,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /repos/{owner}/{repo}/issues/events": Operation<
     "/repos/{owner}/{repo}/issues/events",
@@ -1273,11 +1342,13 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
-    "get"
+    "get",
+    "mockingbird"
   >;
   "GET /repos/{owner}/{repo}/keys": Operation<
     "/repos/{owner}/{repo}/keys",
@@ -1337,7 +1408,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /repos/{owner}/{repo}/pulls": Operation<
     "/repos/{owner}/{repo}/pulls",
@@ -1353,7 +1425,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /repos/{owner}/{repo}/pulls/{pull_number}": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}",
@@ -1465,7 +1538,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/topics": Operation<
     "/repos/{owner}/{repo}/topics",
-    "get"
+    "get",
+    "mercy"
   >;
   "GET /repos/{owner}/{repo}/traffic/clones": Operation<
     "/repos/{owner}/{repo}/traffic/clones",
@@ -1485,7 +1559,8 @@ export interface Endpoints {
   >;
   "GET /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "get"
+    "get",
+    "dorian"
   >;
   "GET /repos/{owner}/{repo}/zipball/{ref}": Operation<
     "/repos/{owner}/{repo}/zipball/{ref}",
@@ -1517,11 +1592,11 @@ export interface Endpoints {
     "get"
   >;
   "GET /search/code": Operation<"/search/code", "get">;
-  "GET /search/commits": Operation<"/search/commits", "get">;
+  "GET /search/commits": Operation<"/search/commits", "get", "cloak">;
   "GET /search/issues": Operation<"/search/issues", "get">;
   "GET /search/labels": Operation<"/search/labels", "get">;
   "GET /search/repositories": Operation<"/search/repositories", "get">;
-  "GET /search/topics": Operation<"/search/topics", "get">;
+  "GET /search/topics": Operation<"/search/topics", "get", "mercy">;
   "GET /search/users": Operation<"/search/users", "get">;
   "GET /teams/{team_id}": Operation<"/teams/{team_id}", "get">;
   "GET /teams/{team_id}/discussions": Operation<
@@ -1542,11 +1617,13 @@ export interface Endpoints {
   >;
   "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/reactions",
-    "get"
+    "get",
+    "squirrel-girl"
   >;
   "GET /teams/{team_id}/invitations": Operation<
     "/teams/{team_id}/invitations",
@@ -1563,11 +1640,13 @@ export interface Endpoints {
   >;
   "GET /teams/{team_id}/projects": Operation<
     "/teams/{team_id}/projects",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /teams/{team_id}/projects/{project_id}": Operation<
     "/teams/{team_id}/projects/{project_id}",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /teams/{team_id}/repos": Operation<"/teams/{team_id}/repos", "get">;
   "GET /teams/{team_id}/repos/{owner}/{repo}": Operation<
@@ -1615,18 +1694,21 @@ export interface Endpoints {
     "/user/memberships/orgs/{org}",
     "get"
   >;
-  "GET /user/migrations": Operation<"/user/migrations", "get">;
+  "GET /user/migrations": Operation<"/user/migrations", "get", "wyandotte">;
   "GET /user/migrations/{migration_id}": Operation<
     "/user/migrations/{migration_id}",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /user/migrations/{migration_id}/repositories": Operation<
     "/user/migrations/{migration_id}/repositories",
-    "get"
+    "get",
+    "wyandotte"
   >;
   "GET /user/orgs": Operation<"/user/orgs", "get">;
   "GET /user/public_emails": Operation<"/user/public_emails", "get">;
@@ -1682,7 +1764,8 @@ export interface Endpoints {
   "GET /users/{username}/orgs": Operation<"/users/{username}/orgs", "get">;
   "GET /users/{username}/projects": Operation<
     "/users/{username}/projects",
-    "get"
+    "get",
+    "inertia"
   >;
   "GET /users/{username}/received_events": Operation<
     "/users/{username}/received_events",
@@ -1767,13 +1850,19 @@ export interface Endpoints {
   >;
   "PATCH /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "patch"
+    "patch",
+    "inertia"
   >;
   "PATCH /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "patch"
+    "patch",
+    "inertia"
   >;
-  "PATCH /projects/{project_id}": Operation<"/projects/{project_id}", "patch">;
+  "PATCH /projects/{project_id}": Operation<
+    "/projects/{project_id}",
+    "patch",
+    "inertia"
+  >;
   "PATCH /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "patch">;
   "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
@@ -1913,7 +2002,8 @@ export interface Endpoints {
   "POST /authorizations": Operation<"/authorizations", "post">;
   "POST /content_references/{content_reference_id}/attachments": Operation<
     "/content_references/{content_reference_id}/attachments",
-    "post"
+    "post",
+    "corsair"
   >;
   "POST /enterprises/{enterprise}/actions/runner-groups": Operation<
     "/enterprises/{enterprise}/actions/runner-groups",
@@ -1954,7 +2044,11 @@ export interface Endpoints {
   >;
   "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
   "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
-  "POST /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "post">;
+  "POST /orgs/{org}/projects": Operation<
+    "/orgs/{org}/projects",
+    "post",
+    "inertia"
+  >;
   "POST /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "post">;
   "POST /orgs/{org}/teams": Operation<"/orgs/{org}/teams", "post">;
   "POST /orgs/{org}/teams/{team_slug}/discussions": Operation<
@@ -1967,27 +2061,33 @@ export interface Endpoints {
   >;
   "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /projects/columns/cards/{card_id}/moves": Operation<
     "/projects/columns/cards/{card_id}/moves",
-    "post"
+    "post",
+    "inertia"
   >;
   "POST /projects/columns/{column_id}/cards": Operation<
     "/projects/columns/{column_id}/cards",
-    "post"
+    "post",
+    "inertia"
   >;
   "POST /projects/columns/{column_id}/moves": Operation<
     "/projects/columns/{column_id}/moves",
-    "post"
+    "post",
+    "inertia"
   >;
   "POST /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
-    "post"
+    "post",
+    "inertia"
   >;
   "POST /repos/{owner}/{repo}/actions/runners/registration-token": Operation<
     "/repos/{owner}/{repo}/actions/runners/registration-token",
@@ -2015,7 +2115,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "post"
+    "post",
+    "zzzax"
   >;
   "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
@@ -2051,7 +2152,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
@@ -2111,7 +2213,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /repos/{owner}/{repo}/issues/{issue_number}/assignees": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
@@ -2127,7 +2230,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /repos/{owner}/{repo}/keys": Operation<
     "/repos/{owner}/{repo}/keys",
@@ -2147,7 +2251,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
-    "post"
+    "post",
+    "switcheroo"
   >;
   "POST /repos/{owner}/{repo}/pages/builds": Operation<
     "/repos/{owner}/{repo}/pages/builds",
@@ -2155,7 +2260,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
-    "post"
+    "post",
+    "inertia"
   >;
   "POST /repos/{owner}/{repo}/pulls": Operation<
     "/repos/{owner}/{repo}/pulls",
@@ -2163,7 +2269,8 @@ export interface Endpoints {
   >;
   "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
@@ -2199,7 +2306,8 @@ export interface Endpoints {
   >;
   "POST /repos/{template_owner}/{template_repo}/generate": Operation<
     "/repos/{template_owner}/{template_repo}/generate",
-    "post"
+    "post",
+    "baptiste"
   >;
   "POST /scim/v2/enterprises/{enterprise}/Groups": Operation<
     "/scim/v2/enterprises/{enterprise}/Groups",
@@ -2223,17 +2331,19 @@ export interface Endpoints {
   >;
   "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/reactions",
-    "post"
+    "post",
+    "squirrel-girl"
   >;
   "POST /user/emails": Operation<"/user/emails", "post">;
   "POST /user/gpg_keys": Operation<"/user/gpg_keys", "post">;
   "POST /user/keys": Operation<"/user/keys", "post">;
   "POST /user/migrations": Operation<"/user/migrations", "post">;
-  "POST /user/projects": Operation<"/user/projects", "post">;
+  "POST /user/projects": Operation<"/user/projects", "post", "inertia">;
   "POST /user/repos": Operation<"/user/repos", "post">;
   "POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}": Operation<
     "/repos/{owner}/{repo}/releases/{release_id}/assets",
@@ -2339,7 +2449,8 @@ export interface Endpoints {
   >;
   "PUT /orgs/{org}/interaction-limits": Operation<
     "/orgs/{org}/interaction-limits",
-    "put"
+    "put",
+    "sombra"
   >;
   "PUT /orgs/{org}/memberships/{username}": Operation<
     "/orgs/{org}/memberships/{username}",
@@ -2359,7 +2470,8 @@ export interface Endpoints {
   >;
   "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "put"
+    "put",
+    "inertia"
   >;
   "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
     "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
@@ -2367,7 +2479,8 @@ export interface Endpoints {
   >;
   "PUT /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
-    "put"
+    "put",
+    "inertia"
   >;
   "PUT /repos/{owner}/{repo}/actions/permissions": Operation<
     "/repos/{owner}/{repo}/actions/permissions",
@@ -2391,7 +2504,8 @@ export interface Endpoints {
   >;
   "PUT /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
-    "put"
+    "put",
+    "london"
   >;
   "PUT /repos/{owner}/{repo}/branches/{branch}/protection": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection",
@@ -2427,7 +2541,8 @@ export interface Endpoints {
   >;
   "PUT /repos/{owner}/{repo}/interaction-limits": Operation<
     "/repos/{owner}/{repo}/interaction-limits",
-    "put"
+    "put",
+    "sombra"
   >;
   "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/labels",
@@ -2459,7 +2574,8 @@ export interface Endpoints {
   >;
   "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
-    "put"
+    "put",
+    "lydian"
   >;
   "PUT /repos/{owner}/{repo}/subscription": Operation<
     "/repos/{owner}/{repo}/subscription",
@@ -2467,11 +2583,13 @@ export interface Endpoints {
   >;
   "PUT /repos/{owner}/{repo}/topics": Operation<
     "/repos/{owner}/{repo}/topics",
-    "put"
+    "put",
+    "mercy"
   >;
   "PUT /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "put"
+    "put",
+    "dorian"
   >;
   "PUT /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
     "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
@@ -2495,7 +2613,8 @@ export interface Endpoints {
   >;
   "PUT /teams/{team_id}/projects/{project_id}": Operation<
     "/teams/{team_id}/projects/{project_id}",
-    "put"
+    "put",
+    "inertia"
   >;
   "PUT /teams/{team_id}/repos/{owner}/{repo}": Operation<
     "/teams/{team_id}/repos/{owner}/{repo}",
