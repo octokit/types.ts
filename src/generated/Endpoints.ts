@@ -50,7 +50,7 @@ type Operation<
     headers: RequestHeaders;
     request: RequestRequestOptions;
   };
-  response: Response<paths[Url][Method]>;
+  response: ExtractFirstSuccessResponse<paths[Url][Method]>;
 };
 
 type MethodsMap = {
@@ -69,7 +69,10 @@ type SuccessStatusesMap = {
 type DataType<T> = "application/json" extends keyof T
   ? T["application/json"]
   : unknown;
-type Response<
+type ExtractFirstSuccessResponse<R> = "responses" extends keyof R
+  ? FirstSuccessResponse<R["responses"]>
+  : unknown;
+type FirstSuccessResponse<
   R,
   S extends keyof R = keyof R
 > = S extends keyof SuccessStatusesMap
