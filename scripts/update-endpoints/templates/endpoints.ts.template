@@ -74,6 +74,12 @@ type Response<
 
 export interface Endpoints {
   {{#each endpointsByRoute}}
+  /**
+   * @see {{documentationUrl}}
+   {{#deprecated}}
+   * @deprecated {{{.}}}
+   {{/deprecated}}
+   */
   "{{@key}}": Operation<
     "{{url}}",
     "{{method}}"

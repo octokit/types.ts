@@ -38,9 +38,26 @@ async function run() {
       method: endpoint.method.toLowerCase(),
       url: toOpenApiUrl(endpoint),
       requiredPreview: (endpoint.previews[0] || {}).name,
+      documentationUrl: endpoint.documentationUrl,
     };
 
-    // TODO: handle depreceated routes and parameters
+    // handle deprecated URL parameters
+    for (const parameter of endpoint.parameters) {
+      if (!parameter.deprecated || parameter.in !== "PATH") continue;
+      const { alias, name } = parameter;
+      const deprecatedRoute = route.replace(
+        new RegExp(`\\{${alias}\\}`),
+        `{${name}}`
+      );
+
+      endpointsByRoute[deprecatedRoute] = Object.assign(
+        {},
+        endpointsByRoute[route],
+        {
+          deprecated: `"${name}" is now "${alias}"`,
+        }
+      );
+    }
   }
 
   const result = template({
