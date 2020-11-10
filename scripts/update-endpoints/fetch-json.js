@@ -13,35 +13,17 @@ const version = process.env.VERSION.replace(/^v/, "");
 const QUERY = `
   query ($version: String!, $ignoreChangesBefore: String!) {
     endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore) {
-      name
-      scope(format: CAMELCASE)
-      id(format: CAMELCASE)
       method
       url
       documentationUrl
       parameters {
         alias
-        allowNull
         deprecated
-        description
-        enum
         in
         name
-        type
-        required
       }
       previews(required: true) {
         name
-      }
-      headers {
-        name
-        value
-        required
-      }
-      responses {
-        code
-        description
-        schema
       }
       renamed {
         note
