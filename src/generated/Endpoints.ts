@@ -845,6 +845,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories
+   */
+  "DELETE /user/interaction-limits": Operation<
+    "/user/interaction-limits",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user
    */
   "DELETE /user/keys/{key_id}": Operation<"/user/keys/{key_id}", "delete">;
@@ -2987,6 +2994,10 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories
+   */
+  "GET /user/interaction-limits": Operation<"/user/interaction-limits", "get">;
+  /**
    * @see https://docs.github.com/v3/issues/#list-user-account-issues-assigned-to-the-authenticated-user
    */
   "GET /user/issues": Operation<"/user/issues", "get">;
@@ -4724,6 +4735,10 @@ export interface Endpoints {
     "/user/installations/{installation_id}/repositories/{repository_id}",
     "put"
   >;
+  /**
+   * @see https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-your-public-repositories
+   */
+  "PUT /user/interaction-limits": Operation<"/user/interaction-limits", "put">;
   /**
    * @see https://docs.github.com/rest/reference/activity#star-a-repository-for-the-authenticated-user
    */

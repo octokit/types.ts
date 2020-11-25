@@ -607,6 +607,19 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/permissions",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": {
+      "note": "\"actions/getRepoPermissions\" operation ID is now \"actions/getGithubActionsPermissionsRepository\""
+    }
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/artifacts",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-artifacts-for-a-repository",
     "parameters": [
@@ -4012,6 +4025,14 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
+    "parameters": [],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "DELETE",
     "url": "/orgs/{org}/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-for-an-organization",
@@ -4033,12 +4054,21 @@
     "renamed": null
   },
   {
+    "method": "DELETE",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
+    "parameters": [],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/orgs/{org}/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
     "previews": [],
     "renamed": null
@@ -4050,7 +4080,19 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-your-public-repositories",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
     "previews": [],
     "renamed": null
@@ -8163,7 +8205,7 @@
     ],
     "previews": [],
     "renamed": {
-      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadZipballArchive:\""
+      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadZipballArchive\""
     }
   },
   {
