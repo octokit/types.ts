@@ -1,5 +1,4 @@
 const { writeFileSync } = require("fs");
-const prettier = require("prettier");
 
 if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
@@ -13,7 +12,4 @@ if (!pkg.octokit) {
 
 pkg.octokit["openapi-version"] = process.env.VERSION;
 
-writeFileSync(
-  "package.json",
-  prettier.format(JSON.stringify(pkg), { parser: "json" })
-);
+writeFileSync("package.json", JSON.stringify(pkg, null, 2) + "\n");
