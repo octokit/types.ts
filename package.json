@@ -1,14 +1,9 @@
 {
   "name": "@octokit/types",
   "version": "0.0.0-development",
-  "publishConfig": {
-    "access": "public"
-  },
+  "publishConfig": { "access": "public" },
   "description": "Shared TypeScript definitions for Octokit projects",
-  "dependencies": {
-    "@octokit/openapi-types": "^1.1.0",
-    "@types/node": ">= 8"
-  },
+  "dependencies": { "@octokit/openapi-types": "^1.2.0", "@types/node": ">= 8" },
   "scripts": {
     "build": "pika build",
     "docs": "typedoc --module commonjs --readme none --out docs src/ && touch docs/.nojekyll",
@@ -18,16 +13,11 @@
     "test": "npx tsc --noEmit --declaration --noUnusedLocals src/index.ts test.ts",
     "update-endpoints": "npm-run-all update-endpoints:*",
     "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
-    "update-endpoints:typescript": "node scripts/update-endpoints/typescript"
+    "update-endpoints:typescript": "node scripts/update-endpoints/typescript",
+    "update-endpoints:package": "node scripts/update-endpoints/package"
   },
   "repository": "https://github.com/octokit/types.ts",
-  "keywords": [
-    "github",
-    "api",
-    "sdk",
-    "toolkit",
-    "typescript"
-  ],
+  "keywords": ["github", "api", "sdk", "toolkit", "typescript"],
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "devDependencies": {
@@ -52,15 +42,9 @@
   },
   "@pika/pack": {
     "pipeline": [
-      [
-        "@pika/plugin-ts-standard-pkg"
-      ],
-      [
-        "@pika/plugin-build-node"
-      ],
-      [
-        "@pika/plugin-build-web"
-      ]
+      ["@pika/plugin-ts-standard-pkg"],
+      ["@pika/plugin-build-node"],
+      ["@pika/plugin-build-web"]
     ]
   },
   "release": {
@@ -68,12 +52,7 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/github",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "./pkg"
-        }
-      ],
+      ["@semantic-release/npm", { "pkgRoot": "./pkg" }],
       [
         "semantic-release-plugin-update-version-in-files",
         {
@@ -85,5 +64,6 @@
         }
       ]
     ]
-  }
+  },
+  "octokit": { "openapi-version": "1.0.1" }
 }
