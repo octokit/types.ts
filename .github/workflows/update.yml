@@ -1,18 +1,14 @@
 name: Update
 on:
   repository_dispatch:
-    types: [github-openapi-release]
+    # https://github.com/octokit/openapi-types.ts/blob/main/.github/workflows/release-notification.yml
+    types: [octokit/openapi-types release]
 
   workflow_dispatch:
-    inputs:
-      version:
-        description: "Version of https://www.npmjs.com/package/@github/openapi"
-        required: true
 
 jobs:
   update_routes:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.client_payload.action == 'published'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -21,14 +17,13 @@ jobs:
         # try checking out routes-update branch. Ignore error if it does not exist
       - run: git checkout routes-update || true
       - run: npm ci
-      - run: npm run update-endpoints
+      - run: npm install @octokit/openapi-types@latest
         if: github.event_name == 'repository_dispatch'
-        env:
-          VERSION: ${{ github.event.client_payload.release.tag_name }}
+      - run: node -e "console.log('::set-output name=version::' + require('@octokit/openapi-types/package').octokit['openapi-version'])"
+        id: openapi_types
       - run: npm run update-endpoints
-        if: github.event_name == 'workflow_dispatch'
         env:
-          VERSION: ${{ github.event.inputs.version }}
+          VERSION: ${{ steps.openapi_types.outputs.version }}
       - name: Create Pull Request
         uses: gr2m/create-or-update-pull-request-action@v1.x
         env:

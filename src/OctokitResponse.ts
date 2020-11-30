@@ -1,12 +1,12 @@
 import { ResponseHeaders } from "./ResponseHeaders";
 import { Url } from "./Url";
 
-export type OctokitResponse<T> = {
+export type OctokitResponse<T, S extends number = number> = {
   headers: ResponseHeaders;
   /**
    * http response code
    */
-  status: number;
+  status: S;
   /**
    * URL of response after all redirects
    */
