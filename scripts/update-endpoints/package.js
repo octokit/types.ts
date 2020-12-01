@@ -10,6 +10,6 @@ if (!pkg.octokit) {
   pkg.octokit = {};
 }
 
-pkg.octokit["openapi-version"] = process.env.VERSION;
+pkg.octokit["openapi-version"] = process.env.VERSION.replace(/^v/, "");
 
 writeFileSync("package.json", JSON.stringify(pkg, null, 2) + "\n");
