@@ -68,6 +68,9 @@ type SuccessStatusesMap = {
 
 type DataType<T> = "application/json" extends keyof T
   ? T["application/json"]
+  : // SCIM endpoints
+  "application/scim+json" extends keyof T
+  ? T["application/scim+json"]
   : unknown;
 type ExtractFirstSuccessResponse<R> = "responses" extends keyof R
   ? FirstSuccessResponse<R["responses"]>
