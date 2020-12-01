@@ -2,7 +2,7 @@ name: Update
 on:
   repository_dispatch:
     # https://github.com/octokit/openapi-types.ts/blob/main/.github/workflows/release-notification.yml
-    types: [octokit/openapi-types release]
+    types: [octokit/openapi-types.ts release]
 
   workflow_dispatch:
 
