@@ -65,9 +65,16 @@ type SuccessStatusesMap = {
   "201": 201;
   "204": 204;
 };
+type RedirectStatusesMap = {
+  "301": 301;
+  "302": 302;
+};
 
 type DataType<T> = "application/json" extends keyof T
   ? T["application/json"]
+  : // SCIM endpoints
+  "application/scim+json" extends keyof T
+  ? T["application/scim+json"]
   : unknown;
 type ExtractFirstSuccessResponse<R> = "responses" extends keyof R
   ? FirstSuccessResponse<R["responses"]>
@@ -79,6 +86,8 @@ type FirstSuccessResponse<
   ? R[S] extends never
     ? Omit<OctokitResponse<unknown, SuccessStatusesMap[S]>, "data">
     : OctokitResponse<DataType<R[S]>, SuccessStatusesMap[S]>
+  : S extends keyof RedirectStatusesMap
+  ? OctokitResponse<unknown, RedirectStatusesMap[S]>
   : never;
 
 export interface Endpoints {
