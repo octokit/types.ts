@@ -40,5 +40,5 @@ jobs:
             - If there are typescript changes but no code changes, use `fix(typescript)` prefix
             - If there are code changes, use `fix` if a problem was resolved, `feat` if new endpoints / parameters were added, and `feat(deprecation)` if a method was deprecated.
           branch: "openapi-update"
-          commit-message: "WIP octokit/routes updated"
+          commit-message: "WIP octokit/openapi updated"
           author: "Octokit Bot <33075676+octokitbot@users.noreply.github.com>"
