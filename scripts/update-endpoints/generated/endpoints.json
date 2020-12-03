@@ -497,6 +497,17 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/permissions",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/public-key",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-repository-public-key",
     "parameters": [
@@ -604,19 +615,6 @@
     ],
     "previews": [],
     "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/actions/permissions",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
-    ],
-    "previews": [],
-    "renamed": {
-      "note": "\"actions/getRepoPermissions\" operation ID is now \"actions/getGithubActionsPermissionsRepository\""
-    }
   },
   {
     "method": "GET",
@@ -8166,7 +8164,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
     "previews": [],
-    "renamed": null
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -8178,7 +8176,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
     "previews": [],
-    "renamed": null
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -8190,9 +8188,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
     "previews": [],
-    "renamed": {
-      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadTarballArchive\""
-    }
+    "renamed": null
   },
   {
     "method": "GET",
@@ -8204,9 +8200,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
     "previews": [],
-    "renamed": {
-      "note": "\"repos/downloadArchive\" operation ID is now \"repos/downloadZipballArchive\""
-    }
+    "renamed": null
   },
   {
     "method": "PUT",
@@ -9730,22 +9724,6 @@
     ],
     "previews": [],
     "renamed": null
-  },
-  {
-    "method": "PATCH",
-    "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-status-check-potection",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "strict" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "contexts" }
-    ],
-    "previews": [],
-    "renamed": {
-      "note": "\"repos/updateStatusCheckPotection\" operation ID is now \"repos/updateStatusCheckProtection\""
-    }
   },
   {
     "method": "POST",
