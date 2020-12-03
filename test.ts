@@ -12,9 +12,12 @@ const createIssueOptions = {
     "x-foo": "bar",
   },
 };
-const result = endpoint("POST /repos/:owner/:repo/issues", createIssueOptions);
+const result = endpoint(
+  "POST /repos/{owner}/{repo}/issues",
+  createIssueOptions
+);
 const resultMerge = endpoint.merge(
-  "POST /repos/:owner/:repo/issues",
+  "POST /repos/{owner}/{repo}/issues",
   createIssueOptions
 );
 const resultMerge2 = endpoint.merge(createIssueOptions);

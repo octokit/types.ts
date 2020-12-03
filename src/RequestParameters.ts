@@ -7,9 +7,9 @@ import { Url } from "./Url";
  */
 export type RequestParameters = {
   /**
-   * Base URL to be used when a relative URL is passed, such as `/orgs/:org`.
+   * Base URL to be used when a relative URL is passed, such as `/orgs/{org}`.
    * If `baseUrl` is `https://enterprise.acme-inc.com/api/v3`, then the request
-   * will be sent to `https://enterprise.acme-inc.com/api/v3/orgs/:org`.
+   * will be sent to `https://enterprise.acme-inc.com/api/v3/orgs/{org}`.
    */
   baseUrl?: Url;
   /**

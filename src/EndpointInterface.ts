@@ -20,7 +20,7 @@ export interface EndpointInterface<D extends object = object> {
   /**
    * Transforms a GitHub REST API endpoint into generic request options
    *
-   * @param {string} route Request method + URL. Example: `'GET /orgs/:org'`
+   * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
    * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <
@@ -51,7 +51,7 @@ export interface EndpointInterface<D extends object = object> {
      * Merges current endpoint defaults with passed route and parameters,
      * without transforming them into request options.
      *
-     * @param {string} route Request method + URL. Example: `'GET /orgs/:org'`
+     * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
      * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      *
      */

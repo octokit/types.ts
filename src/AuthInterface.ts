@@ -31,7 +31,7 @@ export interface AuthInterface<
     /**
      * Sends a request using the passed `request` instance
      *
-     * @param {string} route Request method + URL. Example: `'GET /orgs/:org'`
+     * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
      * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      */
     <T = any>(
