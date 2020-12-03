@@ -2771,6 +2771,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/secret-scanning/alerts": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#get-a-secret-scanning-alert
+   */
+  "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#list-stargazers
    */
   "GET /repos/{owner}/{repo}/stargazers": Operation<
@@ -3657,6 +3671,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/releases/{release_id}": Operation<
     "/repos/{owner}/{repo}/releases/{release_id}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#update-a-secret-scanning-alert
+   */
+  "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
     "patch"
   >;
   /**
