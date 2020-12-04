@@ -52,9 +52,9 @@ type Operation<
   };
   response: Url extends keyof EndpointsWithMissingRequiredResponseDataSchema
     ? Method extends EndpointsWithMissingRequiredResponseDataSchema[Url]
-      ? DeepRequired<ExtractFirstSuccessResponse<paths[Url][Method]>>
-      : ExtractFirstSuccessResponse<paths[Url][Method]>
-    : ExtractFirstSuccessResponse<paths[Url][Method]>;
+      ? DeepRequired<ExtractOctokitResponse<paths[Url][Method]>>
+      : ExtractOctokitResponse<paths[Url][Method]>
+    : ExtractOctokitResponse<paths[Url][Method]>;
 };
 
 type MethodsMap = {
@@ -73,26 +73,33 @@ type RedirectStatusesMap = {
   "301": 301;
   "302": 302;
 };
+type SuccessStatuses = keyof SuccessStatusesMap;
+type RedirectStatuses = keyof RedirectStatusesMap;
+type KnownJsonResponseTypes = "application/json" | "application/scim+json";
 
-type DataType<T> = "application/json" extends keyof T
-  ? T["application/json"]
-  : // SCIM endpoints
-  "application/scim+json" extends keyof T
-  ? T["application/scim+json"]
+type SuccessResponseDataType<Responses> = {
+  [K in SuccessStatuses & keyof Responses]: OctokitResponse<
+    DataType<Responses[K]> extends never ? unknown : DataType<Responses[K]>,
+    SuccessStatusesMap[K]
+  >;
+}[SuccessStatuses & keyof Responses];
+type RedirectResponseDataType<Responses> = {
+  [K in RedirectStatuses & keyof Responses]: OctokitResponse<
+    unknown,
+    RedirectStatusesMap[K]
+  >;
+}[RedirectStatuses & keyof Responses];
+
+type DataType<T> = {
+  [K in KnownJsonResponseTypes & keyof T]: T[K];
+}[KnownJsonResponseTypes & keyof T];
+type ExtractOctokitResponse<R> = "responses" extends keyof R
+  ? SuccessResponseDataType<R["responses"]> extends never
+    ? RedirectResponseDataType<R["responses"]> extends never
+      ? never
+      : RedirectResponseDataType<R["responses"]>
+    : SuccessResponseDataType<R["responses"]>
   : unknown;
-type ExtractFirstSuccessResponse<R> = "responses" extends keyof R
-  ? FirstSuccessResponse<R["responses"]>
-  : unknown;
-type FirstSuccessResponse<
-  R,
-  S extends keyof R = keyof R
-> = S extends keyof SuccessStatusesMap
-  ? R[S] extends never
-    ? Omit<OctokitResponse<unknown, SuccessStatusesMap[S]>, "data">
-    : OctokitResponse<DataType<R[S]>, SuccessStatusesMap[S]>
-  : S extends keyof RedirectStatusesMap
-  ? OctokitResponse<unknown, RedirectStatusesMap[S]>
-  : never;
 
 // Workaround incorrect response types
 // https://github.com/octokit/types.ts/issues/214
