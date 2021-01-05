@@ -2058,6 +2058,21 @@
   },
   {
     "method": "GET",
+    "url": "/enterprises/{enterprise}/audit-log",
+    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#get-the-audit-log-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "phrase" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "include" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/enterprises/{enterprise}/settings/billing/actions",
     "documentationUrl": "https://docs.github.com/v3/billing/#get-github-actions-billing-for-an-enterprise",
     "parameters": [
@@ -5386,7 +5401,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -5397,7 +5412,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -5515,6 +5530,21 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/audit-log",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#get-the-audit-log-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "phrase" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "include" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/user/memberships/orgs/{org}",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#get-an-organization-membership-for-the-authenticated-user",
     "parameters": [
@@ -5586,7 +5616,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -5817,7 +5847,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -11136,7 +11166,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -11146,7 +11176,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -11307,7 +11337,7 @@
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
     "parameters": [],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {
@@ -11442,7 +11472,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
+    "previews": [{ "name": "giant-sentry-fist" }],
     "renamed": null
   },
   {

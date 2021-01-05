@@ -403,7 +403,8 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "delete"
+    "delete",
+    "giant-sentry-fist"
   >;
   /**
    * @see https://docs.github.com/v3/orgs/#remove-a-saml-sso-authorization-for-an-organization
@@ -967,7 +968,8 @@ export interface Endpoints {
    */
   "DELETE /user/blocks/{username}": Operation<
     "/user/blocks/{username}",
-    "delete"
+    "delete",
+    "giant-sentry-fist"
   >;
   /**
    * @see https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user
@@ -1179,6 +1181,13 @@ export interface Endpoints {
    */
   "GET /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
     "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/enterprise-admin#get-the-audit-log-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/audit-log": Operation<
+    "/enterprises/{enterprise}/audit-log",
     "get"
   >;
   /**
@@ -1468,15 +1477,24 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#get-the-audit-log-for-an-organization
+   */
+  "GET /orgs/{org}/audit-log": Operation<"/orgs/{org}/audit-log", "get">;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization
    */
-  "GET /orgs/{org}/blocks": Operation<"/orgs/{org}/blocks", "get">;
+  "GET /orgs/{org}/blocks": Operation<
+    "/orgs/{org}/blocks",
+    "get",
+    "giant-sentry-fist"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization
    */
   "GET /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "get"
+    "get",
+    "giant-sentry-fist"
   >;
   /**
    * @see https://docs.github.com/v3/orgs/#list-saml-sso-authorizations-for-an-organization
@@ -3111,11 +3129,15 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user
    */
-  "GET /user/blocks": Operation<"/user/blocks", "get">;
+  "GET /user/blocks": Operation<"/user/blocks", "get", "giant-sentry-fist">;
   /**
    * @see https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user
    */
-  "GET /user/blocks/{username}": Operation<"/user/blocks/{username}", "get">;
+  "GET /user/blocks/{username}": Operation<
+    "/user/blocks/{username}",
+    "get",
+    "giant-sentry-fist"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user
    */
@@ -4592,7 +4614,8 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "put"
+    "put",
+    "giant-sentry-fist"
   >;
   /**
    * @see https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-an-organization
@@ -4891,7 +4914,11 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/users#block-a-user
    */
-  "PUT /user/blocks/{username}": Operation<"/user/blocks/{username}", "put">;
+  "PUT /user/blocks/{username}": Operation<
+    "/user/blocks/{username}",
+    "put",
+    "giant-sentry-fist"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/users#follow-a-user
    */
