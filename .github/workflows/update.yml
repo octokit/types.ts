@@ -42,4 +42,4 @@ jobs:
           branch: "openapi-update"
           commit-message: "WIP octokit/openapi updated"
           author: "Octokit Bot <33075676+octokitbot@users.noreply.github.com>"
-          labels: "typescript"
+          labels: "maintenance, typescript"
