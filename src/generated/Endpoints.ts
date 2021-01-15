@@ -403,8 +403,7 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "delete",
-    "giant-sentry-fist"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/v3/orgs/#remove-a-saml-sso-authorization-for-an-organization
@@ -968,8 +967,7 @@ export interface Endpoints {
    */
   "DELETE /user/blocks/{username}": Operation<
     "/user/blocks/{username}",
-    "delete",
-    "giant-sentry-fist"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user
@@ -1483,18 +1481,13 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization
    */
-  "GET /orgs/{org}/blocks": Operation<
-    "/orgs/{org}/blocks",
-    "get",
-    "giant-sentry-fist"
-  >;
+  "GET /orgs/{org}/blocks": Operation<"/orgs/{org}/blocks", "get">;
   /**
    * @see https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization
    */
   "GET /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "get",
-    "giant-sentry-fist"
+    "get"
   >;
   /**
    * @see https://docs.github.com/v3/orgs/#list-saml-sso-authorizations-for-an-organization
@@ -2942,14 +2935,14 @@ export interface Endpoints {
    */
   "GET /repositories": Operation<"/repositories", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim groups-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim-groups-for-an-enterprise
    */
   "GET /scim/v2/enterprises/{enterprise}/Groups": Operation<
     "/scim/v2/enterprises/{enterprise}/Groups",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise group
+   * @see https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise-group
    */
   "GET /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
     "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
@@ -3129,15 +3122,11 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user
    */
-  "GET /user/blocks": Operation<"/user/blocks", "get", "giant-sentry-fist">;
+  "GET /user/blocks": Operation<"/user/blocks", "get">;
   /**
    * @see https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user
    */
-  "GET /user/blocks/{username}": Operation<
-    "/user/blocks/{username}",
-    "get",
-    "giant-sentry-fist"
-  >;
+  "GET /user/blocks/{username}": Operation<"/user/blocks/{username}", "get">;
   /**
    * @see https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user
    */
@@ -3796,6 +3785,13 @@ export interface Endpoints {
    */
   "POST /applications/{client_id}/token": Operation<
     "/applications/{client_id}/token",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/apps#create-a-scoped-access-token
+   */
+  "POST /applications/{client_id}/token/scoped": Operation<
+    "/applications/{client_id}/token/scoped",
     "post"
   >;
   /**
@@ -4614,8 +4610,7 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "put",
-    "giant-sentry-fist"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-an-organization
@@ -4914,11 +4909,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/users#block-a-user
    */
-  "PUT /user/blocks/{username}": Operation<
-    "/user/blocks/{username}",
-    "put",
-    "giant-sentry-fist"
-  >;
+  "PUT /user/blocks/{username}": Operation<"/user/blocks/{username}", "put">;
   /**
    * @see https://docs.github.com/rest/reference/users#follow-a-user
    */

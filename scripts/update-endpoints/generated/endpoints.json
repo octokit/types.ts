@@ -2004,6 +2004,222 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/applications/{client_id}/token/scoped",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#create-a-scoped-access-token",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "client_id" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "access_token"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "target" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "target_id" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "repository_ids"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.actions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.checks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.content_references"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.contents"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.deployments"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.environments"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.issues"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.metadata"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.packages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.pages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.pull_requests"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_hooks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_projects"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.secret_scanning_alerts"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.secrets"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.security_events"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.single_file"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.statuses"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.vulnerability_alerts"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.workflows"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.members"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_hooks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_plan"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_projects"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_secrets"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_self_hosted_runners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_user_blocking"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.team_discussions"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/app/installations/{installation_id}/suspended",
     "documentationUrl": "https://docs.github.com/v3/apps/#suspend-an-app-installation",
@@ -2968,7 +3184,7 @@
   {
     "method": "GET",
     "url": "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise group",
+    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise-group",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       {
@@ -3045,7 +3261,7 @@
   {
     "method": "GET",
     "url": "/scim/v2/enterprises/{enterprise}/Groups",
-    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim groups-for-an-enterprise",
+    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim-groups-for-an-enterprise",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       {
@@ -5401,7 +5617,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5412,7 +5628,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5616,7 +5832,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5847,7 +6063,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11166,7 +11382,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11176,7 +11392,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11337,7 +11553,7 @@
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
     "parameters": [],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11472,7 +11688,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "giant-sentry-fist" }],
+    "previews": [],
     "renamed": null
   },
   {
