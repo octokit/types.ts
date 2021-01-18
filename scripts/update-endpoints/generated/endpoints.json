@@ -1617,13 +1617,31 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.contents"
+        "name": "permissions.actions"
       },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.issues"
+        "name": "permissions.administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.checks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.content_references"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.contents"
       },
       {
         "alias": null,
@@ -1635,13 +1653,145 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.environments"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.issues"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.metadata"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.packages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.pages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.pull_requests"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_hooks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_projects"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.secret_scanning_alerts"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.secrets"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.security_events"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.single_file"
       },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.def_not_a_repo"
+        "name": "permissions.statuses"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.vulnerability_alerts"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.workflows"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.members"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_hooks"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_plan"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_projects"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_secrets"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_self_hosted_runners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_user_blocking"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.team_discussions"
       }
     ],
     "previews": [],
