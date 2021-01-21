@@ -6326,6 +6326,18 @@
         "in": "BODY",
         "name": "members_can_create_pages"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "members_can_create_public_pages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "members_can_create_private_pages"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "blog" }
     ],
     "previews": [],
