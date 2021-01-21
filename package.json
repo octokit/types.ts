@@ -98,5 +98,10 @@
   },
   "octokit": {
     "openapi-version": "2.4.2"
+  },
+  "renovate": {
+    "extends": [
+      "github>octokit/.github"
+    ]
   }
 }
