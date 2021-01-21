@@ -5771,6 +5771,22 @@
     "renamed": null
   },
   {
+    "method": "DELETE",
+    "url": "/orgs/{org}/invitations/{invitation_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#cancel-an-organization-invitation",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "invitation_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/orgs/{org}/blocks/{username}",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#check-if-a-user-is-blocked-by-an-organization",
@@ -5981,6 +5997,18 @@
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/failed_invitations",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-failed-organization-invitations",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -9919,6 +9947,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "cname" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "public" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source" }
     ],
     "previews": [],
