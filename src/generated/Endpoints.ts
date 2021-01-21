@@ -427,6 +427,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#cancel-an-organization-invitation
+   */
+  "DELETE /orgs/{org}/invitations/{invitation_id}": Operation<
+    "/orgs/{org}/invitations/{invitation_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#remove-an-organization-member
    */
   "DELETE /orgs/{org}/members/{username}": Operation<
@@ -1500,6 +1507,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/activity#list-public-organization-events
    */
   "GET /orgs/{org}/events": Operation<"/orgs/{org}/events", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#list-failed-organization-invitations
+   */
+  "GET /orgs/{org}/failed_invitations": Operation<
+    "/orgs/{org}/failed_invitations",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-organization-webhooks
    */
