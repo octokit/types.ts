@@ -4068,6 +4068,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#rename-a-branch
+   */
+  "POST /repos/{owner}/{repo}/branches/{branch}/rename": Operation<
+    "/repos/{owner}/{repo}/branches/{branch}/rename",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/checks#create-a-check-run
    */
   "POST /repos/{owner}/{repo}/check-runs": Operation<

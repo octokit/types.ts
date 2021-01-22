@@ -9641,6 +9641,19 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/branches/{branch}/rename",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#rename-a-branch",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "new_name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/topics",
     "documentationUrl": "https://docs.github.com/v3/repos/#replace-all-repository-topics",
