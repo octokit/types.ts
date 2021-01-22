@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "pika build",
-    "docs": "typedoc --module commonjs --readme none --out docs src/ && touch docs/.nojekyll",
+    "docs": "typedoc --readme none --out docs src/ && touch docs/.nojekyll",
     "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "pretest": "npm run -s lint",
