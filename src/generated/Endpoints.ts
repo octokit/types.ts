@@ -64,32 +64,31 @@ type MethodsMap = {
   post: "POST";
   put: "PUT";
 };
-type SuccessStatusesMap = {
-  "200": 200;
-  "201": 201;
-  "204": 204;
-};
-type RedirectStatusesMap = {
-  "301": 301;
-  "302": 302;
-};
-type SuccessStatuses = keyof SuccessStatusesMap;
-type RedirectStatuses = keyof RedirectStatusesMap;
+type SuccessStatuses = 200 | 201 | 204;
+type RedirectStatuses = 301 | 302;
 type KnownJsonResponseTypes = "application/json" | "application/scim+json";
 
+// type SuccessResponseDataType<Responses> = {
+//   [K in SuccessStatuses & keyof Responses]: OctokitResponse<
+//     DataTypeWrap<Responses[K]> extends never
+//       ? unknown
+//       : DataTypeWrap<Responses[K]>,
+//     K
+//   >;
 type SuccessResponseDataType<Responses> = {
-  [K in SuccessStatuses & keyof Responses]: OctokitResponse<
-    DataType<Responses[K]> extends never ? unknown : DataType<Responses[K]>,
-    SuccessStatusesMap[K]
-  >;
+  [K in SuccessStatuses & keyof Responses]: DataTypeWrap<
+    Responses[K]
+  > extends never
+    ? never
+    : OctokitResponse<DataTypeWrap<Responses[K]>, K>;
 }[SuccessStatuses & keyof Responses];
 type RedirectResponseDataType<Responses> = {
-  [K in RedirectStatuses & keyof Responses]: OctokitResponse<
-    unknown,
-    RedirectStatusesMap[K]
-  >;
+  [K in RedirectStatuses & keyof Responses]: OctokitResponse<unknown, K>;
 }[RedirectStatuses & keyof Responses];
 
+type DataTypeWrap<T> = "content" extends keyof T
+  ? DataType<T["content"]>
+  : DataType<T>;
 type DataType<T> = {
   [K in KnownJsonResponseTypes & keyof T]: T[K];
 }[KnownJsonResponseTypes & keyof T];
