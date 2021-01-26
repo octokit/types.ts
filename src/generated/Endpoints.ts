@@ -19,7 +19,15 @@ type ExtractParameters<T> = "parameters" extends keyof T
     >
   : {};
 type ExtractRequestBody<T> = "requestBody" extends keyof T
-  ? "application/json" extends keyof T["requestBody"]
+  ? "content" extends keyof T["requestBody"]
+    ? "application/json" extends keyof T["requestBody"]["content"]
+      ? T["requestBody"]["content"]["application/json"]
+      : {
+          data: {
+            [K in keyof T["requestBody"]["content"]]: T["requestBody"]["content"][K];
+          }[keyof T["requestBody"]["content"]];
+        }
+    : "application/json" extends keyof T["requestBody"]
     ? T["requestBody"]["application/json"]
     : {
         data: {
@@ -68,25 +76,18 @@ type SuccessStatuses = 200 | 201 | 204;
 type RedirectStatuses = 301 | 302;
 type KnownJsonResponseTypes = "application/json" | "application/scim+json";
 
-// type SuccessResponseDataType<Responses> = {
-//   [K in SuccessStatuses & keyof Responses]: OctokitResponse<
-//     DataTypeWrap<Responses[K]> extends never
-//       ? unknown
-//       : DataTypeWrap<Responses[K]>,
-//     K
-//   >;
 type SuccessResponseDataType<Responses> = {
-  [K in SuccessStatuses & keyof Responses]: DataTypeWrap<
+  [K in SuccessStatuses & keyof Responses]: GetContentKeyIfPresent<
     Responses[K]
   > extends never
     ? never
-    : OctokitResponse<DataTypeWrap<Responses[K]>, K>;
+    : OctokitResponse<GetContentKeyIfPresent<Responses[K]>, K>;
 }[SuccessStatuses & keyof Responses];
 type RedirectResponseDataType<Responses> = {
   [K in RedirectStatuses & keyof Responses]: OctokitResponse<unknown, K>;
 }[RedirectStatuses & keyof Responses];
 
-type DataTypeWrap<T> = "content" extends keyof T
+type GetContentKeyIfPresent<T> = "content" extends keyof T
   ? DataType<T["content"]>
   : DataType<T>;
 type DataType<T> = {
