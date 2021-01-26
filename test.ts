@@ -33,3 +33,6 @@ assertArray(test.data);
 assertString(test.data[0].assignees[0].avatar_url);
 const test2 = {} as Endpoints["GET /scim/v2/organizations/{org}/Users"]["response"];
 assertString(test2.data.Resources[0].name.givenName);
+
+const test3 = {} as Endpoints["POST /user/repos"]["parameters"];
+assertString(test3.name);
