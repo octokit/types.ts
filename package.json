@@ -6,7 +6,7 @@
   },
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
-    "@octokit/openapi-types": "^3.2.1",
+    "@octokit/openapi-types": "^3.3.0",
     "@types/node": ">= 8"
   },
   "scripts": {
@@ -96,7 +96,7 @@
     ]
   },
   "octokit": {
-    "openapi-version": "2.5.0"
+    "openapi-version": "2.6.0"
   },
   "renovate": {
     "extends": [
