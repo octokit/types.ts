@@ -2432,6 +2432,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "include" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
@@ -5920,6 +5921,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "include" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
