@@ -74,6 +74,7 @@ type MethodsMap = {
 };
 type SuccessStatuses = 200 | 201 | 204;
 type RedirectStatuses = 301 | 302;
+type EmptyResponseStatuses = 201 | 204;
 type KnownJsonResponseTypes = "application/json" | "application/scim+json";
 
 type SuccessResponseDataType<Responses> = {
@@ -86,6 +87,9 @@ type SuccessResponseDataType<Responses> = {
 type RedirectResponseDataType<Responses> = {
   [K in RedirectStatuses & keyof Responses]: OctokitResponse<unknown, K>;
 }[RedirectStatuses & keyof Responses];
+type EmptyResponseDataType<Responses> = {
+  [K in EmptyResponseStatuses & keyof Responses]: OctokitResponse<never, K>;
+}[EmptyResponseStatuses & keyof Responses];
 
 type GetContentKeyIfPresent<T> = "content" extends keyof T
   ? DataType<T["content"]>
@@ -96,7 +100,7 @@ type DataType<T> = {
 type ExtractOctokitResponse<R> = "responses" extends keyof R
   ? SuccessResponseDataType<R["responses"]> extends never
     ? RedirectResponseDataType<R["responses"]> extends never
-      ? never
+      ? EmptyResponseDataType<R["responses"]>
       : RedirectResponseDataType<R["responses"]>
     : SuccessResponseDataType<R["responses"]>
   : unknown;
