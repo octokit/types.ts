@@ -75,7 +75,10 @@ type MethodsMap = {
 type SuccessStatuses = 200 | 201 | 204;
 type RedirectStatuses = 301 | 302;
 type EmptyResponseStatuses = 201 | 204;
-type KnownJsonResponseTypes = "application/json" | "application/scim+json";
+type KnownJsonResponseTypes =
+  | "application/json"
+  | "application/scim+json"
+  | "text/html";
 
 type SuccessResponseDataType<Responses> = {
   [K in SuccessStatuses & keyof Responses]: GetContentKeyIfPresent<
