@@ -4385,6 +4385,14 @@
   },
   {
     "method": "GET",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
+    "parameters": [],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-an-organization",
     "parameters": [
@@ -4408,6 +4416,14 @@
     "method": "GET",
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
+    "parameters": [],
+    "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
     "parameters": [],
     "previews": [],
     "renamed": null
@@ -4438,6 +4454,17 @@
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
     "parameters": [],
+    "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "PUT",
+    "url": "/user/interaction-limits",
+    "documentationUrl": "https://docs.github.com/rest/reference/interactions#set-interaction-restrictions-for-your-public-repositories",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
+    ],
     "previews": [],
     "renamed": null
   },
@@ -4475,7 +4502,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
     "previews": [],
-    "renamed": null
+    "renamed": { "note": null }
   },
   {
     "method": "POST",
