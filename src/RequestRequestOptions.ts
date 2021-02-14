@@ -1,4 +1,3 @@
-import { Agent } from "http";
 import { Fetch } from "./Fetch";
 import { Signal } from "./Signal";
 
@@ -8,8 +7,10 @@ import { Signal } from "./Signal";
 export type RequestRequestOptions = {
   /**
    * Node only. Useful for custom proxy, certificate, or dns lookup.
+   *
+   * @see https://nodejs.org/api/http.html#http_class_http_agent
    */
-  agent?: Agent;
+  agent?: unknown;
   /**
    * Custom replacement for built-in fetch method. Useful for testing or request hooks.
    */
