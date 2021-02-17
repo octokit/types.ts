@@ -701,6 +701,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#remove-a-repository-collaborator
    */
   "DELETE /repos/{owner}/{repo}/collaborators/{username}": Operation<
@@ -2156,14 +2163,14 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository
+   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-a-repository
    */
   "GET /repos/{owner}/{repo}/code-scanning/alerts": Operation<
     "/repos/{owner}/{repo}/code-scanning/alerts",
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   * @see https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert
    * @deprecated "alert_id" is now "alert_number"
    */
   "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_id}": Operation<
@@ -2171,17 +2178,38 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#get-a-code-scanning-alert
+   * @see https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert
    */
   "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}": Operation<
     "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#list-recent-analyses
+   * @see https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances": Operation<
+    "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-analyses-for-a-repository
    */
   "GET /repos/{owner}/{repo}/code-scanning/analyses": Operation<
     "/repos/{owner}/{repo}/code-scanning/analyses",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}",
     "get"
   >;
   /**
@@ -3594,7 +3622,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#upload-a-code-scanning-alert
+   * @see https://docs.github.com/rest/reference/code-scanning#update-a-code-scanning-alert
    */
   "PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}": Operation<
     "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
@@ -4103,7 +4131,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/v3/code-scanning/#upload-a-sarif-analysis
+   * @see https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data
    */
   "POST /repos/{owner}/{repo}/code-scanning/sarifs": Operation<
     "/repos/{owner}/{repo}/code-scanning/sarifs",
