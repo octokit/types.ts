@@ -3027,9 +3027,32 @@
     "renamed": null
   },
   {
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}{?confirm_delete}",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#delete-a-code-scanning-analysis-from-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "analysis_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "confirm_delete"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#get-a-code-scanning-alert",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-alert",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -3051,12 +3074,60 @@
   },
   {
     "method": "GET",
-    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#list-code-scanning-alerts-for-a-repository",
+    "url": "/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-a-code-scanning-analysis-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "analysis_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "sarif_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_name" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_guid" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "alert_number"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
     "previews": [],
@@ -3065,12 +3136,16 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/code-scanning/analyses",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#list-recent-analyses",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-analyses-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_name" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_guid" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_name" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sarif_id" }
     ],
     "previews": [],
     "renamed": null
@@ -3078,7 +3153,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#upload-a-code-scanning-alert",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#update-a-code-scanning-alert",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -3102,7 +3177,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/code-scanning/sarifs",
-    "documentationUrl": "https://docs.github.com/v3/code-scanning/#upload-a-sarif-analysis",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
