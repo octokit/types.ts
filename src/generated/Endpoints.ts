@@ -478,6 +478,20 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-for-an-organization
+   */
+  "DELETE /orgs/{org}/packages/{package_type}/{package_name}": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-version-for-an-organization
+   */
+  "DELETE /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#remove-public-organization-membership-for-the-authenticated-user
    */
   "DELETE /orgs/{org}/public_members/{username}": Operation<
@@ -1041,6 +1055,20 @@ export interface Endpoints {
     "/user/migrations/{migration_id}/repos/{repo_name}/lock",
     "delete",
     "wyandotte"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-for-the-authenticated-user
+   */
+  "DELETE /user/packages/{package_type}/{package_name}": Operation<
+    "/user/packages/{package_type}/{package_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-version-for-the-authenticated-user
+   */
+  "DELETE /user/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#decline-a-repository-invitation
@@ -1634,6 +1662,27 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/outside_collaborators": Operation<
     "/orgs/{org}/outside_collaborators",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization
+   */
+  "GET /orgs/{org}/packages/{package_type}/{package_name}": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
+   */
+  "GET /orgs/{org}/packages/{package_type}/{package_name}/versions": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}/versions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-version-for-an-organization
+   */
+  "GET /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
     "get"
   >;
   /**
@@ -3291,6 +3340,27 @@ export interface Endpoints {
    */
   "GET /user/orgs": Operation<"/user/orgs", "get">;
   /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-for-the-authenticated-user
+   */
+  "GET /user/packages/{package_type}/{package_name}": Operation<
+    "/user/packages/{package_type}/{package_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
+   */
+  "GET /user/packages/{package_type}/{package_name}/versions": Operation<
+    "/user/packages/{package_type}/{package_name}/versions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-version-for-the-authenticated-user
+   */
+  "GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/users#list-public-email-addresses-for-the-authenticated-user
    */
   "GET /user/public_emails": Operation<"/user/public_emails", "get">;
@@ -3404,6 +3474,27 @@ export interface Endpoints {
    * @see https://docs.github.com/v3/orgs/#list-organizations-for-a-user
    */
   "GET /users/{username}/orgs": Operation<"/users/{username}/orgs", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-for-a-user
+   */
+  "GET /users/{username}/packages/{package_type}/{package_name}": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user
+   */
+  "GET /users/{username}/packages/{package_type}/{package_name}/versions": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}/versions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#get-a-package-version-for-a-user
+   */
+  "GET /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/v3/projects/#list-user-projects
    */
@@ -3947,6 +4038,20 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
   /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization
+   */
+  "POST /orgs/{org}/packages/{package_type}/{package_name}/restore": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}/restore",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization
+   */
+  "POST /orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore": Operation<
+    "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/v3/projects/#create-an-organization-project
    */
   "POST /orgs/{org}/projects": Operation<
@@ -4477,6 +4582,20 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/migrations#start-a-user-migration
    */
   "POST /user/migrations": Operation<"/user/migrations", "post">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user
+   */
+  "POST /user/packages/{package_type}/{package_name}/restore": Operation<
+    "/user/packages/{package_type}/{package_name}/restore",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-version-for-the-authenticated-user
+   */
+  "POST /user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore": Operation<
+    "/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/v3/projects/#create-a-user-project
    */

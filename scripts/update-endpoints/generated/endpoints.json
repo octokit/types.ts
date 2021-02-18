@@ -6518,6 +6518,415 @@
     "renamed": null
   },
   {
+    "method": "DELETE",
+    "url": "/user/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-a-package-version-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/user/packages/{package_type}/{package_name}/restore",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/restore",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/projects/{project_id}/collaborators/{username}",
     "documentationUrl": "https://docs.github.com/rest/reference/projects#add-project-collaborator",
