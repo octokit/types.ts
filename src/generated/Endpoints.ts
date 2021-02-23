@@ -72,7 +72,7 @@ type MethodsMap = {
   post: "POST";
   put: "PUT";
 };
-type SuccessStatuses = 200 | 201 | 204;
+type SuccessStatuses = 200 | 201 | 202 | 204;
 type RedirectStatuses = 301 | 302;
 type EmptyResponseStatuses = 201 | 204;
 type KnownJsonResponseTypes =
