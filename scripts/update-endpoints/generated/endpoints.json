@@ -8508,23 +8508,6 @@
   },
   {
     "method": "POST",
-    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-an-environment",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "environment_name"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "POST",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-commit-comment",
     "parameters": [
@@ -8855,6 +8838,55 @@
         "deprecated": null,
         "in": "BODY",
         "name": "delete_branch_on_merge"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-or-update-an-environment",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "environment_name"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "wait_timer" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "reviewers" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "reviewers[].type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "reviewers[].id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "deployment_branch_policy"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "deployment_branch_policy.protected_branches"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "deployment_branch_policy.custom_branch_policies"
       }
     ],
     "previews": [],
@@ -10438,55 +10470,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "apps" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-protection-rules-for-an-environment",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "environment_name"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "wait_timer" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "reviewers" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "reviewers[].type"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "reviewers[].id"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "deployment_branch_policy"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "deployment_branch_policy.protected_branches"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "deployment_branch_policy.custom_branch_policies"
-      }
     ],
     "previews": [],
     "renamed": null
