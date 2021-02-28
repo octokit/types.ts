@@ -4349,13 +4349,6 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-an-environment
-   */
-  "POST /repos/{owner}/{repo}/environments/{environment_name}": Operation<
-    "/repos/{owner}/{repo}/environments/{environment_name}",
-    "post"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/repos#create-a-fork
    */
   "POST /repos/{owner}/{repo}/forks": Operation<
@@ -5015,7 +5008,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#set-protection-rules-for-an-environment
+   * @see https://docs.github.com/rest/reference/repos#create-or-update-an-environment
    */
   "PUT /repos/{owner}/{repo}/environments/{environment_name}": Operation<
     "/repos/{owner}/{repo}/environments/{environment_name}",
