@@ -2701,151 +2701,8 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "head_sha" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "details_url"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "external_id"
-      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "status" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "started_at" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "conclusion" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "completed_at"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "output" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.title"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.summary"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.text"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].path"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].start_line"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].end_line"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].start_column"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].end_column"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].annotation_level"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].message"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].title"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.annotations[].raw_details"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.images"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.images[].alt"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.images[].image_url"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "output.images[].caption"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "actions" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "actions[].label"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "actions[].description"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "actions[].identifier"
-      }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "*" }
     ],
     "previews": [],
     "renamed": null
@@ -4062,7 +3919,25 @@
         "name": "scim_group_id"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "schemas" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "Operations" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "Operations" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "Operations[].op"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "Operations[].path"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "Operations[].value"
+      }
     ],
     "previews": [],
     "renamed": null
