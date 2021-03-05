@@ -20,7 +20,7 @@
     "update-endpoints:typescript": "node scripts/update-endpoints/typescript",
     "update-endpoints:package": "node scripts/update-endpoints/package"
   },
-  "repository": "https://github.com/octokit/types.ts",
+  "repository": "github:octokit/types.ts",
   "keywords": [
     "github",
     "api",
