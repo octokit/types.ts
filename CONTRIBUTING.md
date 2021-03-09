@@ -7,6 +7,12 @@ By participating in this project you agree to abide by its terms.
 
 Before you create a new Issue:
 
+If your problem is with the `Endpoint` types, it's possible that the problem lies with [GitHub's OpenAPI spec for api.github.com](https://github.com/github/rest-api-description/tree/main/descriptions/api.github.com). Please file an issue there if that is the case.
+
+If GitHub's OpenAPI spec looks correct, it's possible that the transpilation from OpenAPI spec to TypeScript has a bug. Please compare the spec to the generated types at https://github.com/octokit/openapi-types.ts/blob/main/src/generated/types.ts, and if you see a problem, file an issue there.
+
+Otherwise:
+
 1. Please make sure there is no [open issue](https://github.com/octokit/types.ts/issues?utf8=%E2%9C%93&q=is%3Aissue) yet.
 2. If it is a bug report, include a code snippet to reproduce the issue
 3. If it is a feature request, please share the motivation for the new feature, what alternatives you tried, and how you would implement it.
