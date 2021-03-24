@@ -2887,6 +2887,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#get-a-repository-directory-readme
+   */
+  "GET /repos/{owner}/{repo}/readme/{dir}": Operation<
+    "/repos/{owner}/{repo}/readme/{dir}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#list-releases
    */
   "GET /repos/{owner}/{repo}/releases": Operation<
@@ -4103,7 +4110,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization
    */
-  "POST /orgs/{org}/packages/{package_type}/{package_name}/restore": Operation<
+  "POST /orgs/{org}/packages/{package_type}/{package_name}/restore{?token}": Operation<
     "/orgs/{org}/packages/{package_type}/{package_name}/restore",
     "post"
   >;
@@ -4351,7 +4358,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-fork
    */
-  "POST /repos/{owner}/{repo}/forks": Operation<
+  "POST /repos/{owner}/{repo}/forks{?org,organization}": Operation<
     "/repos/{owner}/{repo}/forks",
     "post"
   >;
@@ -4655,7 +4662,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user
    */
-  "POST /user/packages/{package_type}/{package_name}/restore": Operation<
+  "POST /user/packages/{package_type}/{package_name}/restore{?token}": Operation<
     "/user/packages/{package_type}/{package_name}/restore",
     "post"
   >;

@@ -813,7 +813,9 @@
         "deprecated": null,
         "in": "PATH",
         "name": "runner_group_id"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
     "renamed": null
@@ -871,7 +873,14 @@
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-selected-repositories-for-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "secret_name"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
     "renamed": null
@@ -2599,6 +2608,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
@@ -2789,7 +2799,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "filter" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "app_id" }
     ],
     "previews": [],
     "renamed": null
@@ -3441,6 +3452,12 @@
         "deprecated": null,
         "in": "PATH",
         "name": "scim_group_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "excludedAttributes"
       }
     ],
     "previews": [],
@@ -3519,7 +3536,14 @@
         "in": "QUERY",
         "name": "startIndex"
       },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "count" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "count" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "filter" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "excludedAttributes"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -3536,7 +3560,8 @@
         "in": "QUERY",
         "name": "startIndex"
       },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "count" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "count" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "filter" }
     ],
     "previews": [],
     "renamed": null
@@ -5293,7 +5318,8 @@
     "documentationUrl": "https://docs.github.com/rest/reference/licenses/#get-all-commonly-used-licenses",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "featured" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -5499,7 +5525,8 @@
         "deprecated": null,
         "in": "PATH",
         "name": "migration_id"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
     "previews": [{ "name": "wyandotte" }],
     "renamed": null
@@ -5522,7 +5549,8 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
     "previews": [{ "name": "wyandotte" }],
     "renamed": null
@@ -5861,7 +5889,8 @@
     "documentationUrl": "https://docs.github.com/rest/reference/oauth-authorizations#list-your-authorizations",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "client_id" }
     ],
     "previews": [],
     "renamed": null
@@ -5872,7 +5901,8 @@
     "documentationUrl": "https://docs.github.com/rest/reference/oauth-authorizations#list-your-grants",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "client_id" }
     ],
     "previews": [],
     "renamed": null
@@ -6065,7 +6095,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -6673,10 +6704,13 @@
         "in": "PATH",
         "name": "package_name"
       },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
     "previews": [],
-    "renamed": null
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -6694,7 +6728,59 @@
         "deprecated": null,
         "in": "PATH",
         "name": "package_name"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/packages/{package_type}/{package_name}/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
     "previews": [],
     "renamed": null
@@ -6871,7 +6957,7 @@
   },
   {
     "method": "POST",
-    "url": "/user/packages/{package_type}/{package_name}/restore",
+    "url": "/user/packages/{package_type}/{package_name}/restore{?token}",
     "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user",
     "parameters": [
       {
@@ -6885,14 +6971,15 @@
         "deprecated": null,
         "in": "PATH",
         "name": "package_name"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
     "previews": [],
     "renamed": null
   },
   {
     "method": "POST",
-    "url": "/orgs/{org}/packages/{package_type}/{package_name}/restore",
+    "url": "/orgs/{org}/packages/{package_type}/{package_name}/restore{?token}",
     "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-an-organization",
     "parameters": [
       {
@@ -6907,7 +6994,8 @@
         "in": "PATH",
         "name": "package_name"
       },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
     "previews": [],
     "renamed": null
@@ -8376,7 +8464,9 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "base" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "head" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "head" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -8631,11 +8721,12 @@
   },
   {
     "method": "POST",
-    "url": "/repos/{owner}/{repo}/forks",
+    "url": "/repos/{owner}/{repo}/forks{?org,organization}",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-fork",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "org" },
       {
         "alias": null,
         "deprecated": null,
@@ -9344,7 +9435,9 @@
     "documentationUrl": "https://docs.github.com/rest/reference/repos/#get-all-repository-topics",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [{ "name": "mercy" }],
     "renamed": null
@@ -9427,7 +9520,9 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -9439,6 +9534,8 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
     "previews": [],
@@ -9664,6 +9761,19 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/readme/{dir}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-repository-directory-readme",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "dir" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
     "previews": [],
@@ -9898,7 +10008,9 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "until" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "top" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "last_sha" }
     ],
     "previews": [],
     "renamed": null
@@ -10038,7 +10150,14 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "organization"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -11836,7 +11955,8 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "pinned" }
     ],
     "previews": [],
     "renamed": null
