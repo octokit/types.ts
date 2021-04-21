@@ -96,7 +96,7 @@
     ]
   },
   "octokit": {
-    "openapi-version": "2.15.0"
+    "openapi-version": "2.16.2"
   },
   "renovate": {
     "extends": [

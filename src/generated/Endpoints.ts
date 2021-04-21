@@ -4358,7 +4358,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-fork
    */
-  "POST /repos/{owner}/{repo}/forks{?org,organization}": Operation<
+  "POST /repos/{owner}/{repo}/forks": Operation<
     "/repos/{owner}/{repo}/forks",
     "post"
   >;

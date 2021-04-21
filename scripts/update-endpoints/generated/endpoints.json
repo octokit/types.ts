@@ -4676,7 +4676,13 @@
         "in": "PATH",
         "name": "issue_number"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "labels[].name"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -5201,8 +5207,7 @@
         "deprecated": null,
         "in": "PATH",
         "name": "issue_number"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
+      }
     ],
     "previews": [],
     "renamed": null
@@ -5599,8 +5604,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "author_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "email" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "remote_id" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
     "previews": [],
     "renamed": null
@@ -8721,12 +8725,11 @@
   },
   {
     "method": "POST",
-    "url": "/repos/{owner}/{repo}/forks{?org,organization}",
+    "url": "/repos/{owner}/{repo}/forks",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-fork",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "org" },
       {
         "alias": null,
         "deprecated": null,
@@ -8943,7 +8946,13 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "draft" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "prerelease" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "prerelease" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "discussion_category_name"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -10008,9 +10017,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "until" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "top" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "last_sha" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -10150,14 +10157,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "org" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "QUERY",
-        "name": "organization"
-      }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -10739,6 +10739,12 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "cname" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "https_enforced"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "public" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source" }
     ],
@@ -10829,7 +10835,13 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "draft" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "prerelease" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "prerelease" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "discussion_category_name"
+      }
     ],
     "previews": [],
     "renamed": null
