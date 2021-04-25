@@ -17,7 +17,7 @@ type ExtractParameters<T> = "parameters" extends keyof T
         [K in keyof T["parameters"]]: T["parameters"][K];
       }[keyof T["parameters"]]
     >
-  : {};
+  : Record<string, never>;
 type ExtractRequestBody<T> = "requestBody" extends keyof T
   ? "content" extends keyof T["requestBody"]
     ? "application/json" extends keyof T["requestBody"]["content"]
@@ -34,7 +34,7 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
           [K in keyof T["requestBody"]]: T["requestBody"][K];
         }[keyof T["requestBody"]];
       }
-  : {};
+  : Record<string, never>;
 type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<T>;
 
 type RequiredPreview<T> = T extends string
@@ -43,7 +43,7 @@ type RequiredPreview<T> = T extends string
         previews: [T, ...string[]];
       };
     }
-  : {};
+  : Record<string, never>;
 
 type Operation<
   Url extends keyof paths,
