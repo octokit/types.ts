@@ -2780,6 +2780,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#get-a-dns-health-check-for-github-pages
+   */
+  "GET /repos/{owner}/{repo}/pages/health": Operation<
+    "/repos/{owner}/{repo}/pages/health",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/projects/#list-repository-projects
    */
   "GET /repos/{owner}/{repo}/projects": Operation<
