@@ -9731,6 +9731,17 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/pages/health",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-dns-health-check-for-github-pages",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/stats/participation",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#get-the-weekly-commit-count",
     "parameters": [
