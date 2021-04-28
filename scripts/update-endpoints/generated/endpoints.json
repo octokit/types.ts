@@ -8578,8 +8578,7 @@
         "deprecated": null,
         "in": "BODY",
         "name": "production_environment"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "created_at" }
+      }
     ],
     "previews": [],
     "renamed": null
