@@ -1763,6 +1763,25 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#create-a-content-attachment",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "content_reference_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
+    ],
+    "previews": [{ "name": "corsair" }],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/app-manifests/{code}/conversions",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#create-a-github-app-from-a-manifest",
     "parameters": [
@@ -8061,6 +8080,19 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "documentationUrl": "https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-release",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
+    ],
+    "previews": [{ "name": "squirrel-girl" }],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
     "documentationUrl": "https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion-comment",
     "parameters": [
@@ -8520,6 +8552,20 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "head" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/compare/{basehead}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#compare-two-commits",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "basehead" }
     ],
     "previews": [],
     "renamed": null

@@ -2415,6 +2415,13 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/repos#compare-two-commits
    */
+  "GET /repos/{owner}/{repo}/compare/{basehead}": Operation<
+    "/repos/{owner}/{repo}/compare/{basehead}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#compare-two-commits
+   */
   "GET /repos/{owner}/{repo}/compare/{base}...{head}": Operation<
     "/repos/{owner}/{repo}/compare/{base}...{head}",
     "get"
@@ -4349,6 +4356,14 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/apps#create-a-content-attachment
+   */
+  "POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments": Operation<
+    "/repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
+    "post",
+    "corsair"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#create-a-deployment
    */
   "POST /repos/{owner}/{repo}/deployments": Operation<
@@ -4583,6 +4598,14 @@ export interface Endpoints {
   "POST /repos/{owner}/{repo}/releases": Operation<
     "/repos/{owner}/{repo}/releases",
     "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-release
+   */
+  "POST /repos/{owner}/{repo}/releases/{release_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "post",
+    "squirrel-girl"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-commit-status
