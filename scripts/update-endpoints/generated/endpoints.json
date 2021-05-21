@@ -62,6 +62,18 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/approve",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#cancel-a-workflow-run",
     "parameters": [
@@ -3166,6 +3178,26 @@
     ],
     "previews": [],
     "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-instances-of-a-code-scanning-alert",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "alert_number"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "GET",

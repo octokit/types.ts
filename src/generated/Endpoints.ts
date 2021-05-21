@@ -4221,6 +4221,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#approve-a-workflow-run-for-a-fork-pull-request
+   */
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/approve": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/approve",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#cancel-a-workflow-run
    */
   "POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel": Operation<
