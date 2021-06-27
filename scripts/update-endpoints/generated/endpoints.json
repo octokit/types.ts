@@ -1979,6 +1979,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_packages"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_secrets"
       },
       {
@@ -2546,6 +2552,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_projects"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_packages"
       },
       {
         "alias": null,
@@ -10654,6 +10666,36 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "homepage" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "security_and_analysis"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "security_and_analysis.advanced_security"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "security_and_analysis.advanced_security.status"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "security_and_analysis.secret_scanning"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "security_and_analysis.secret_scanning.status"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "has_issues" },
       {
         "alias": null,
@@ -10818,6 +10860,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "allow_deletions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "required_conversation_resolution"
       }
     ],
     "previews": [],
@@ -11354,7 +11402,9 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "q" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "order" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -11378,7 +11428,9 @@
     "url": "/search/topics",
     "documentationUrl": "https://docs.github.com/rest/reference/search#search-topics",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "q" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "q" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [{ "name": "mercy" }],
     "renamed": null
@@ -11422,6 +11474,12 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "secret_type"
+      },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
@@ -12764,7 +12822,6 @@
     "url": "/user/email/visibility",
     "documentationUrl": "https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "email" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" }
     ],
     "previews": [],
