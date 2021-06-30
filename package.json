@@ -6,7 +6,7 @@
   },
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
-    "@octokit/openapi-types": "^8.1.0"
+    "@octokit/openapi-types": "^8.1.1"
   },
   "scripts": {
     "build": "pika build",
