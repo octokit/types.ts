@@ -977,6 +977,17 @@ export interface Endpoints {
    */
   "GET /app/hook/config": Operation<"/app/hook/config", "get">;
   /**
+   * @see https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook
+   */
+  "GET /app/hook/deliveries": Operation<"/app/hook/deliveries", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/apps#get-a-delivery-for-an-app-webhook
+   */
+  "GET /app/hook/deliveries/{delivery_id}": Operation<
+    "/app/hook/deliveries/{delivery_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app
    */
   "GET /app/installations": Operation<"/app/installations", "get">;
@@ -1452,6 +1463,20 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/hooks/{hook_id}/config": Operation<
     "/orgs/{org}/hooks/{hook_id}/config",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#list-deliveries-for-an-organization-webhook
+   */
+  "GET /orgs/{org}/hooks/{hook_id}/deliveries": Operation<
+    "/orgs/{org}/hooks/{hook_id}/deliveries",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#get-a-webhook-delivery-for-an-organization-webhook
+   */
+  "GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}": Operation<
+    "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}",
     "get"
   >;
   /**
@@ -2423,6 +2448,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#list-deliveries-for-a-repository-webhook
+   */
+  "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#get-a-delivery-for-a-repository-webhook
+   */
+  "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
     "get"
   >;
   /**
@@ -3864,6 +3903,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/apps#redeliver-a-delivery-for-an-app-webhook
+   */
+  "POST /app/hook/deliveries/{delivery_id}/attempts": Operation<
+    "/app/hook/deliveries/{delivery_id}/attempts",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/apps/#create-an-installation-access-token-for-an-app
    */
   "POST /app/installations/{installation_id}/access_tokens": Operation<
@@ -3972,6 +4018,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/orgs#create-an-organization-webhook
    */
   "POST /orgs/{org}/hooks": Operation<"/orgs/{org}/hooks", "post">;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#redeliver-a-delivery-for-an-organization-webhook
+   */
+  "POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts": Operation<
+    "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#ping-an-organization-webhook
    */
@@ -4297,6 +4350,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/hooks": Operation<
     "/repos/{owner}/{repo}/hooks",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#redeliver-a-delivery-for-a-repository-webhook
+   */
+  "POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts": Operation<
+    "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
     "post"
   >;
   /**
