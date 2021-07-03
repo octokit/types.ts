@@ -2150,6 +2150,16 @@
   },
   {
     "method": "GET",
+    "url": "/app/hook/deliveries/{delivery_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#get-a-delivery-for-an-app-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/marketplace_listing/plans/{plan_id}/accounts",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#list-accounts-for-a-plan",
     "parameters": [
@@ -2268,6 +2278,27 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/app/hook/deliveries",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/app/hook/deliveries/{delivery_id}/attempts",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#redeliver-a-delivery-for-an-app-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
     "previews": [],
     "renamed": null
@@ -6230,6 +6261,18 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#get-a-webhook-delivery-for-an-organization-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/organizations",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-organizations",
     "parameters": [
@@ -6389,6 +6432,19 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/hooks/{hook_id}/deliveries",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-deliveries-for-an-organization-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/hooks",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-organization-webhooks",
     "parameters": [
@@ -6406,6 +6462,18 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#redeliver-a-delivery-for-an-organization-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
     "previews": [],
     "renamed": null
@@ -10037,6 +10105,19 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-delivery-for-a-repository-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/branches",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#list-branches",
     "parameters": [
@@ -10406,6 +10487,20 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-deliveries-for-a-repository-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#list-repository-webhooks",
     "parameters": [
@@ -10444,6 +10539,19 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#redeliver-a-delivery-for-a-repository-webhook",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
     "previews": [],
     "renamed": null
