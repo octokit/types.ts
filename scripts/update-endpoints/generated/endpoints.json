@@ -3329,7 +3329,7 @@
     "url": "/codes_of_conduct",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct",
     "parameters": [],
-    "previews": [{ "name": "scarlet-witch" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -3339,7 +3339,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key" }
     ],
-    "previews": [{ "name": "scarlet-witch" }],
+    "previews": [],
     "renamed": null
   },
   {
