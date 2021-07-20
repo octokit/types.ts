@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>RequestRequestOptions | @octokit/types</title>
+	<meta name="description" content="Documentation for @octokit/types">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@octokit/types</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@octokit/types</a>
+				</li>
+				<li>
+					<a href="RequestRequestOptions.html">RequestRequestOptions</a>
+				</li>
+			</ul>
+			<h1>Module RequestRequestOptions</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="RequestRequestOptions.html#RequestRequestOptions-1" class="tsd-kind-icon">Request<wbr>Request<wbr>Options</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="RequestRequestOptions-1" class="tsd-anchor"></a>
+					<h3>Request<wbr>Request<wbr>Options</h3>
+					<div class="tsd-signature tsd-kind-icon">Request<wbr>Request<wbr>Options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>agent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">; </span>fetch<span class="tsd-signature-symbol">?: </span><a href="Fetch.html#Fetch-1" class="tsd-signature-type" data-tsd-kind="Type alias">Fetch</a><span class="tsd-signature-symbol">; </span>signal<span class="tsd-signature-symbol">?: </span><a href="Signal.html#Signal-1" class="tsd-signature-type" data-tsd-kind="Type alias">Signal</a><span class="tsd-signature-symbol">; </span>timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/octokit/types.ts/blob/48a4a12/src/RequestRequestOptions.ts#L7">RequestRequestOptions.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Octokit-specific request options which are ignored for the actual request, but can be used by Octokit or plugins to manipulate how the request is sent or how a response is handled</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>option: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> agent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">unknown</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Node only. Useful for custom proxy, certificate, or dns lookup.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>see</dt>
+										<dd><p><a href="https://nodejs.org/api/http.html#http_class_http_agent">https://nodejs.org/api/http.html#http_class_http_agent</a></p>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> fetch<span class="tsd-signature-symbol">?: </span><a href="Fetch.html#Fetch-1" class="tsd-signature-type" data-tsd-kind="Type alias">Fetch</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Custom replacement for built-in fetch method. Useful for testing or request hooks.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> signal<span class="tsd-signature-symbol">?: </span><a href="Signal.html#Signal-1" class="tsd-signature-type" data-tsd-kind="Type alias">Signal</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Use an <code>AbortController</code> instance to cancel a request. In node you can only cancel streamed requests.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Node only. Request/response timeout in ms, it resets on redirect. 0 to disable (OS limit applies). <code>options.request.signal</code> is recommended instead.</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="AuthInterface.html">Auth<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="EndpointDefaults.html">Endpoint<wbr>Defaults</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="EndpointInterface.html">Endpoint<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="EndpointOptions.html">Endpoint<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="Fetch.html">Fetch</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="GetResponseTypeFromEndpointMethod.html">Get<wbr>Response<wbr>Type<wbr>From<wbr>Endpoint<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="OctokitResponse.html">Octokit<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestError.html">Request<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestHeaders.html">Request<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestInterface.html">Request<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestMethod.html">Request<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestOptions.html">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="RequestParameters.html">Request<wbr>Parameters</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="RequestRequestOptions.html">Request<wbr>Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="ResponseHeaders.html">Response<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="Route.html">Route</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="Signal.html">Signal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="StrategyInterface.html">Strategy<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="Url.html">Url</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="VERSION.html">VERSION</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="generated_Endpoints.html">generated/<wbr>Endpoints</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="RequestRequestOptions.html#RequestRequestOptions-1" class="tsd-kind-icon">Request<wbr>Request<wbr>Options</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

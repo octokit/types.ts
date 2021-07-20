@@ -1,0 +1,329 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>AuthInterface | @octokit/types</title>
+	<meta name="description" content="Documentation for @octokit/types">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">@octokit/types</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../index.html">@octokit/types</a>
+				</li>
+				<li>
+					<a href="../modules/AuthInterface.html">AuthInterface</a>
+				</li>
+				<li>
+					<a href="AuthInterface.AuthInterface-1.html">AuthInterface</a>
+				</li>
+			</ul>
+			<h1>Interface AuthInterface&lt;AuthOptions, Authentication&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>AuthOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+					<li>
+						<h4>Authentication<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">AuthInterface</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3 class="tsd-before-signature">Callable</h3>
+				<ul class="tsd-signatures tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+					<li class="tsd-signature tsd-kind-icon">Auth<wbr>Interface<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">AuthOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Authentication</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/octokit/types.ts/blob/48a4a12/src/AuthInterface.ts#L19">AuthInterface.ts:19</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Interface to implement complex authentication strategies for Octokit.
+									An object Implementing the AuthInterface can directly be passed as the
+								<code>auth</code> option in the Octokit constructor.</p>
+							</div>
+							<p>For the official implementations of the most common authentication
+							strategies, see <a href="https://github.com/octokit/auth.js">https://github.com/octokit/auth.js</a></p>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">AuthOptions</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Authentication</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="AuthInterface.AuthInterface-1.html#hook" class="tsd-kind-icon">hook</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="hook" class="tsd-anchor"></a>
+					<h3>hook</h3>
+					<div class="tsd-signature tsd-kind-icon">hook<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>&lt;T&gt;<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">: </span><a href="../modules/EndpointOptions.html#EndpointOptions-1" class="tsd-signature-type" data-tsd-kind="Type alias">EndpointOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">; </span>&lt;T&gt;<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span>, route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, parameters<span class="tsd-signature-symbol">?: </span><a href="../modules/RequestParameters.html#RequestParameters-1" class="tsd-signature-type" data-tsd-kind="Type alias">RequestParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/octokit/types.ts/blob/48a4a12/src/AuthInterface.ts#L21">AuthInterface.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-interface tsd-has-type-parameter">
+									<li class="tsd-signature tsd-kind-icon">&lt;T&gt;<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">: </span><a href="../modules/EndpointOptions.html#EndpointOptions-1" class="tsd-signature-type" data-tsd-kind="Type alias">EndpointOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+									<li class="tsd-signature tsd-kind-icon">&lt;T&gt;<span class="tsd-signature-symbol">(</span>request<span class="tsd-signature-symbol">: </span><a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span>, route<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, parameters<span class="tsd-signature-symbol">?: </span><a href="../modules/RequestParameters.html#RequestParameters-1" class="tsd-signature-type" data-tsd-kind="Type alias">RequestParameters</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Sends a request using the passed <code>request</code> instance</p>
+											</div>
+										</div>
+										<h4 class="tsd-type-parameters-title">Type parameters</h4>
+										<ul class="tsd-type-parameters">
+											<li>
+												<h4>T = <span class="tsd-signature-type">any</span></h4>
+											</li>
+										</ul>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>request: <a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h5>
+											</li>
+											<li>
+												<h5>options: <a href="../modules/EndpointOptions.html#EndpointOptions-1" class="tsd-signature-type" data-tsd-kind="Type alias">EndpointOptions</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+									<li class="tsd-description">
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Sends a request using the passed <code>request</code> instance</p>
+											</div>
+										</div>
+										<h4 class="tsd-type-parameters-title">Type parameters</h4>
+										<ul class="tsd-type-parameters">
+											<li>
+												<h4>T = <span class="tsd-signature-type">any</span></h4>
+											</li>
+										</ul>
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>request: <a href="RequestInterface.RequestInterface-1.html" class="tsd-signature-type" data-tsd-kind="Interface">RequestInterface</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span></h5>
+											</li>
+											<li>
+												<h5>route: <span class="tsd-signature-type">string</span></h5>
+												<div class="tsd-comment tsd-typography">
+													<p>Request method + URL. Example: <code>&#39;GET /orgs/{org}&#39;</code></p>
+												</div>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> parameters: <a href="../modules/RequestParameters.html#RequestParameters-1" class="tsd-signature-type" data-tsd-kind="Type alias">RequestParameters</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../modules/OctokitResponse.html#OctokitResponse-1" class="tsd-signature-type" data-tsd-kind="Type alias">OctokitResponse</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../index.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/AuthInterface.html">Auth<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/EndpointDefaults.html">Endpoint<wbr>Defaults</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/EndpointInterface.html">Endpoint<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/EndpointOptions.html">Endpoint<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/Fetch.html">Fetch</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/GetResponseTypeFromEndpointMethod.html">Get<wbr>Response<wbr>Type<wbr>From<wbr>Endpoint<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/OctokitResponse.html">Octokit<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestError.html">Request<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestHeaders.html">Request<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestInterface.html">Request<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestMethod.html">Request<wbr>Method</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestOptions.html">Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestParameters.html">Request<wbr>Parameters</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/RequestRequestOptions.html">Request<wbr>Request<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/ResponseHeaders.html">Response<wbr>Headers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/Route.html">Route</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/Signal.html">Signal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/StrategyInterface.html">Strategy<wbr>Interface</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/Url.html">Url</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/VERSION.html">VERSION</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/generated_Endpoints.html">generated/<wbr>Endpoints</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/index.html">index</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="AuthInterface.AuthInterface-1.html" class="tsd-kind-icon">Auth<wbr>Interface</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="AuthInterface.AuthInterface-1.html#hook" class="tsd-kind-icon">hook</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
