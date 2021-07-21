@@ -996,7 +996,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "event" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" }
     ],
     "previews": [],
     "renamed": null
@@ -1013,7 +1014,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "event" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" }
     ],
     "previews": [],
     "renamed": null
