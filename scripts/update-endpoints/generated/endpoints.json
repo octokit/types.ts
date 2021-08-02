@@ -8654,6 +8654,24 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/autolinks",
+    "documentationUrl": "https://docs.github.com/v3/repos#create-an-autolink",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "key_prefix" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "url_template"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-commit-comment",
     "parameters": [
@@ -9284,6 +9302,18 @@
   },
   {
     "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "documentationUrl": "https://docs.github.com/v3/repos#delete-autolink",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "autolink_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-branch-protection",
     "parameters": [
@@ -9635,6 +9665,18 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "documentationUrl": "https://docs.github.com/v3/repos#get-autolink",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "autolink_id" }
     ],
     "previews": [],
     "renamed": null
@@ -10114,6 +10156,18 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/autolinks",
+    "documentationUrl": "https://docs.github.com/v3/repos#list-autolinks",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null

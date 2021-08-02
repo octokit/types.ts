@@ -502,6 +502,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/v3/repos#delete-autolink
+   */
+  "DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}": Operation<
+    "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#disable-automated-security-fixes
    */
   "DELETE /repos/{owner}/{repo}/automated-security-fixes": Operation<
@@ -2007,6 +2014,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/assignees/{assignee}": Operation<
     "/repos/{owner}/{repo}/assignees/{assignee}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/v3/repos#list-autolinks
+   */
+  "GET /repos/{owner}/{repo}/autolinks": Operation<
+    "/repos/{owner}/{repo}/autolinks",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/v3/repos#get-autolink
+   */
+  "GET /repos/{owner}/{repo}/autolinks/{autolink_id}": Operation<
+    "/repos/{owner}/{repo}/autolinks/{autolink_id}",
     "get"
   >;
   /**
@@ -4171,6 +4192,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches": Operation<
     "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/v3/repos#create-an-autolink
+   */
+  "POST /repos/{owner}/{repo}/autolinks": Operation<
+    "/repos/{owner}/{repo}/autolinks",
     "post"
   >;
   /**
