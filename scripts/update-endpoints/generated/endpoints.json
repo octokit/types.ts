@@ -8904,6 +8904,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "allow_auto_merge"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "delete_branch_on_merge"
       },
       {
@@ -8995,6 +9001,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "allow_rebase_merge"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "allow_auto_merge"
       },
       {
         "alias": null,
@@ -10897,6 +10909,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "allow_rebase_merge"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "allow_auto_merge"
       },
       {
         "alias": null,
