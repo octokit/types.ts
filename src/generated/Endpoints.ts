@@ -134,24 +134,10 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/apps#revoke-a-grant-for-an-application
-   */
-  "DELETE /applications/{client_id}/grants/{access_token}": Operation<
-    "/applications/{client_id}/grants/{access_token}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/apps#delete-an-app-token
    */
   "DELETE /applications/{client_id}/token": Operation<
     "/applications/{client_id}/token",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/apps#revoke-an-authorization-for-an-application
-   */
-  "DELETE /applications/{client_id}/tokens/{access_token}": Operation<
-    "/applications/{client_id}/tokens/{access_token}",
     "delete"
   >;
   /**
@@ -972,6 +958,20 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-for-a-user
+   */
+  "DELETE /users/{username}/packages/{package_type}/{package_name}": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#delete-a-package-version-for-a-user
+   */
+  "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/overview/resources-in-the-rest-api#root-endpoint
    */
   "GET /": Operation<"/", "get">;
@@ -1014,13 +1014,6 @@ export interface Endpoints {
    */
   "GET /applications/grants/{grant_id}": Operation<
     "/applications/grants/{grant_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/apps#check-an-authorization
-   */
-  "GET /applications/{client_id}/tokens/{access_token}": Operation<
-    "/applications/{client_id}/tokens/{access_token}",
     "get"
   >;
   /**
@@ -1569,6 +1562,10 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/packages#list-packages-for-an-organization
+   */
+  "GET /orgs/{org}/packages": Operation<"/orgs/{org}/packages", "get">;
+  /**
    * @see https://docs.github.com/rest/reference/packages#get-a-package-for-an-organization
    */
   "GET /orgs/{org}/packages/{package_type}/{package_name}": Operation<
@@ -1615,6 +1612,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#list-organization-repositories
    */
   "GET /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-by-organization
+   */
+  "GET /orgs/{org}/secret-scanning/alerts": Operation<
+    "/orgs/{org}/secret-scanning/alerts",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-organization
    */
@@ -3342,6 +3346,10 @@ export interface Endpoints {
    */
   "GET /user/orgs": Operation<"/user/orgs", "get">;
   /**
+   * @see https://docs.github.com/rest/reference/packages#list-packages-for-the-authenticated-user
+   */
+  "GET /user/packages": Operation<"/user/packages", "get">;
+  /**
    * @see https://docs.github.com/rest/reference/packages#get-a-package-for-the-authenticated-user
    */
   "GET /user/packages/{package_type}/{package_name}": Operation<
@@ -3396,6 +3404,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/teams#list-teams-for-the-authenticated-user
    */
   "GET /user/teams": Operation<"/user/teams", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#list-packages-for-user
+   */
+  "GET /user/{username}/packages": Operation<
+    "/user/{username}/packages",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/users#list-users
    */
@@ -3941,13 +3956,6 @@ export interface Endpoints {
    */
   "POST /applications/{client_id}/token/scoped": Operation<
     "/applications/{client_id}/token/scoped",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/apps#reset-an-authorization
-   */
-  "POST /applications/{client_id}/tokens/{access_token}": Operation<
-    "/applications/{client_id}/tokens/{access_token}",
     "post"
   >;
   /**
@@ -4664,6 +4672,20 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user
    */
   "POST /user/repos": Operation<"/user/repos", "post">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user
+   */
+  "POST /users/{username}/packages/{package_type}/{package_name}/restore{?token}": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}/restore",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#restore-a-package-version-for-a-user
+   */
+  "POST /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore": Operation<
+    "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/repos#upload-a-release-asset
    */
