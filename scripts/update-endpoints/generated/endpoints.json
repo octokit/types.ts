@@ -1715,22 +1715,6 @@
     "renamed": null
   },
   {
-    "method": "GET",
-    "url": "/applications/{client_id}/tokens/{access_token}",
-    "documentationUrl": "https://docs.github.com/rest/reference/apps#check-an-authorization",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "client_id" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "access_token"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
     "method": "POST",
     "url": "/applications/{client_id}/token",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#check-a-token",
@@ -2327,22 +2311,6 @@
     "renamed": null
   },
   {
-    "method": "POST",
-    "url": "/applications/{client_id}/tokens/{access_token}",
-    "documentationUrl": "https://docs.github.com/rest/reference/apps#reset-an-authorization",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "client_id" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "access_token"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
     "method": "PATCH",
     "url": "/applications/{client_id}/token",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#reset-a-token",
@@ -2352,38 +2320,6 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "access_token"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/applications/{client_id}/tokens/{access_token}",
-    "documentationUrl": "https://docs.github.com/rest/reference/apps#revoke-an-authorization-for-an-application",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "client_id" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "access_token"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/applications/{client_id}/grants/{access_token}",
-    "documentationUrl": "https://docs.github.com/rest/reference/apps#revoke-a-grant-for-an-application",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "client_id" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
         "name": "access_token"
       }
     ],
@@ -5320,6 +5256,13 @@
         "deprecated": null,
         "in": "PATH",
         "name": "issue_number"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "labels[].name"
       }
     ],
     "previews": [],
@@ -6788,6 +6731,28 @@
   },
   {
     "method": "DELETE",
+    "url": "/users/{username}/packages/{package_type}/{package_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-the-authenticated-user",
     "parameters": [
@@ -6831,6 +6796,34 @@
         "name": "package_name"
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#delete-a-package-version-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       {
         "alias": null,
         "deprecated": null,
@@ -7110,6 +7103,61 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/user/packages",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "package_type"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "visibility" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/packages",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-an-organization",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "package_type"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "visibility" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/{username}/packages",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "visibility"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "POST",
     "url": "/user/packages/{package_type}/{package_name}/restore{?token}",
     "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-the-authenticated-user",
@@ -7149,6 +7197,29 @@
         "name": "package_name"
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/restore{?token}",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
     "previews": [],
@@ -7199,6 +7270,34 @@
         "name": "package_name"
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_version_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+    "documentationUrl": "https://docs.github.com/rest/reference/packages#restore-a-package-version-for-a-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "package_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       {
         "alias": null,
         "deprecated": null,
@@ -11644,6 +11743,25 @@
         "in": "PATH",
         "name": "alert_number"
       }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/secret-scanning/alerts",
+    "documentationUrl": "https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-by-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "secret_type"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
     "previews": [],
     "renamed": null
