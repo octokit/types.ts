@@ -4460,6 +4460,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository
+   */
+  "POST /repos/{owner}/{repo}/merge-upstream": Operation<
+    "/repos/{owner}/{repo}/merge-upstream",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#merge-a-branch
    */
   "POST /repos/{owner}/{repo}/merges": Operation<

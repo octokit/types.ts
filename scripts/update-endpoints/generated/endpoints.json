@@ -10700,6 +10700,18 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/merge-upstream",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "branch" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#ping-a-repository-webhook",
     "parameters": [
