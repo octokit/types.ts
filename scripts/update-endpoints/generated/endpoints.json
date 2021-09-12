@@ -5694,6 +5694,18 @@
         "in": "BODY",
         "name": "exclude_attachments"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "exclude_releases"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "exclude_owner_projects"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "exclude" },
       {
         "alias": null,
@@ -5728,6 +5740,18 @@
         "deprecated": null,
         "in": "BODY",
         "name": "exclude_attachments"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "exclude_releases"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "exclude_owner_projects"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "exclude" }
     ],
