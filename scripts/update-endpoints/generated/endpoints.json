@@ -11057,7 +11057,13 @@
         "in": "BODY",
         "name": "delete_branch_on_merge"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "archived" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "archived" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "allow_forking"
+      }
     ],
     "previews": [],
     "renamed": null
