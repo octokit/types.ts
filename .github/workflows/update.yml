@@ -1,9 +1,8 @@
 name: Update
-on:
+"on":
   repository_dispatch:
-    # https://github.com/octokit/openapi-types.ts/blob/main/.github/workflows/release-notification.yml
-    types: [octokit/openapi-types.ts release]
-
+    types:
+      - octokit/openapi-types.ts release
   workflow_dispatch: null
 jobs:
   update:
@@ -12,16 +11,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: "12.x"
+          node-version: 16
           cache: npm
-        # try checking out routes-update branch. Ignore error if it does not exist
       - run: git checkout routes-update || true
-      # Do the npm install before `npm ci` to avoid ENOTEMPTY error, see:
-      # https://github.com/actions/setup-node/issues/303#issuecomment-885723049
       - run: npm install @octokit/openapi-types@latest
         if: github.event_name == 'repository_dispatch'
       - run: npm ci
-      - run: node -e "console.log('::set-output name=version::' + require('@octokit/openapi-types/package').octokit['openapi-version'])"
+      - run: >-
+          node -e "console.log('::set-output name=version::' +
+          require('@octokit/openapi-types/package').octokit['openapi-version'])"
         id: openapi_types
       - run: npm run update-endpoints
         env:
@@ -31,17 +29,27 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.OCTOKITBOT_PAT }}
         with:
-          title: "🚧 GitHub OpenAPI spec changed"
-          body: |
-            Make sure to update the commits so that the merge results in helpful release notes, see [Merging the Pull Request & releasing a new version](https://github.com/octokit/rest.js/blob/master/CONTRIBUTING.md#merging-the-pull-request--releasing-a-new-version).
+          title: 🚧 GitHub OpenAPI spec changed
+          body: >
+            Make sure to update the commits so that the merge results in helpful
+            release notes, see [Merging the Pull Request & releasing a new
+            version](https://github.com/octokit/rest.js/blob/master/CONTRIBUTING.md#merging-the-pull-request--releasing-a-new-version).
+
 
             In general
 
+
             - Avoid breaking changes at all costs
+
             - If there are no typescript or code changes, use a `docs` prefix
-            - If there are typescript changes but no code changes, use `fix(typescript)` prefix
-            - If there are code changes, use `fix` if a problem was resolved, `feat` if new endpoints / parameters were added, and `feat(deprecation)` if a method was deprecated.
-          branch: "openapi-update"
-          commit-message: "WIP octokit/openapi updated"
-          author: "Octokit Bot <33075676+octokitbot@users.noreply.github.com>"
-          labels: "maintenance, typescript"
+
+            - If there are typescript changes but no code changes, use
+            `fix(typescript)` prefix
+
+            - If there are code changes, use `fix` if a problem was resolved,
+            `feat` if new endpoints / parameters were added, and
+            `feat(deprecation)` if a method was deprecated.
+          branch: openapi-update
+          commit-message: WIP octokit/openapi updated
+          author: Octokit Bot <33075676+octokitbot@users.noreply.github.com>
+          labels: maintenance, typescript
