@@ -1095,6 +1095,18 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#retry-a-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run",
     "parameters": [

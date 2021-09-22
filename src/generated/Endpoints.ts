@@ -4196,6 +4196,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#retry-a-workflow
+   */
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-workflow-dispatch-event
    */
   "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches": Operation<
