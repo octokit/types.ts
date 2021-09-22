@@ -724,6 +724,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#disable-git-lfs-for-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/lfs": Operation<
+    "/repos/{owner}/{repo}/lfs",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/issues#delete-a-milestone
    */
   "DELETE /repos/{owner}/{repo}/milestones/{milestone_number}": Operation<
@@ -2252,8 +2259,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
-    "get",
-    "groot"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#list-commit-comments
@@ -2267,8 +2273,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
-    "get",
-    "groot"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#get-a-commit
@@ -2607,8 +2612,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/timeline": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
-    "get",
-    "mockingbird"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#list-deploy-keys
@@ -3405,13 +3409,6 @@ export interface Endpoints {
    */
   "GET /user/teams": Operation<"/user/teams", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/packages#list-packages-for-user
-   */
-  "GET /user/{username}/packages": Operation<
-    "/user/{username}/packages",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/users#list-users
    */
   "GET /users": Operation<"/users", "get">;
@@ -3491,6 +3488,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/orgs#list-organizations-for-a-user
    */
   "GET /users/{username}/orgs": Operation<"/users/{username}/orgs", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#list-packages-for-user
+   */
+  "GET /users/{username}/packages": Operation<
+    "/users/{username}/packages",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/packages#get-a-package-for-a-user
    */
@@ -5066,6 +5070,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/issues/{issue_number}/lock": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#enable-git-lfs-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/lfs": Operation<
+    "/repos/{owner}/{repo}/lfs",
     "put"
   >;
   /**
