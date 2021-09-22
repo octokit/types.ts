@@ -5058,7 +5058,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "mockingbird" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7173,7 +7173,7 @@
   },
   {
     "method": "GET",
-    "url": "/user/{username}/packages",
+    "url": "/users/{username}/packages",
     "documentationUrl": "https://docs.github.com/rest/reference/packages#list-packages-for-user",
     "parameters": [
       {
@@ -9654,6 +9654,17 @@
   },
   {
     "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/lfs",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#disable-git-lfs-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/repos/{owner}/{repo}/vulnerability-alerts",
     "documentationUrl": "https://docs.github.com/rest/reference/repos#disable-vulnerability-alerts",
     "parameters": [
@@ -9720,6 +9731,17 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
     "previews": [{ "name": "london" }],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/lfs",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#enable-git-lfs-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -10342,7 +10364,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "commit_sha" }
     ],
-    "previews": [{ "name": "groot" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -10632,7 +10654,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "groot" }],
+    "previews": [],
     "renamed": null
   },
   {
