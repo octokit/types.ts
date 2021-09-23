@@ -5487,7 +5487,7 @@
         "name": "migration_id"
       }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5503,7 +5503,7 @@
         "name": "migration_id"
       }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5519,7 +5519,7 @@
         "name": "migration_id"
       }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5534,7 +5534,7 @@
         "name": "migration_id"
       }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5584,7 +5584,7 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5601,7 +5601,7 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5612,7 +5612,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5625,7 +5625,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5643,7 +5643,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5660,7 +5660,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5814,7 +5814,7 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo_name" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -5831,7 +5831,7 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo_name" }
     ],
-    "previews": [{ "name": "wyandotte" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8195,7 +8195,7 @@
         "name": "expected_head_sha"
       }
     ],
-    "previews": [{ "name": "lydian" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8755,7 +8755,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "dorian" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9649,7 +9649,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "london" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9671,7 +9671,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "dorian" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9730,7 +9730,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "london" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9752,7 +9752,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "dorian" }],
+    "previews": [],
     "renamed": null
   },
   {
