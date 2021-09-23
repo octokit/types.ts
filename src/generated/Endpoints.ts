@@ -311,16 +311,14 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
-    "delete",
-    "wyandotte"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#unlock-an-organization-repository
    */
   "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
-    "delete",
-    "wyandotte"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#remove-outside-collaborator-from-an-organization
@@ -499,8 +497,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
-    "delete",
-    "london"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#delete-branch-protection
@@ -800,8 +797,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "delete",
-    "dorian"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/actions#delete-an-environment-secret
@@ -925,16 +921,14 @@ export interface Endpoints {
    */
   "DELETE /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
-    "delete",
-    "wyandotte"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#unlock-a-user-repository
    */
   "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/user/migrations/{migration_id}/repos/{repo_name}/lock",
-    "delete",
-    "wyandotte"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/packages#delete-a-package-for-the-authenticated-user
@@ -1532,34 +1526,27 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/migrations#list-organization-migrations
    */
-  "GET /orgs/{org}/migrations": Operation<
-    "/orgs/{org}/migrations",
-    "get",
-    "wyandotte"
-  >;
+  "GET /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "get">;
   /**
    * @see https://docs.github.com/rest/reference/migrations#get-an-organization-migration-status
    */
   "GET /orgs/{org}/migrations/{migration_id}": Operation<
     "/orgs/{org}/migrations/{migration_id}",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#download-an-organization-migration-archive
    */
   "GET /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#list-repositories-in-an-organization-migration
    */
   "GET /orgs/{org}/migrations/{migration_id}/repositories": Operation<
     "/orgs/{org}/migrations/{migration_id}/repositories",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-outside-collaborators-for-an-organization
@@ -3007,8 +2994,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "get",
-    "dorian"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#download-a-repository-archive
@@ -3320,30 +3306,27 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/migrations#list-user-migrations
    */
-  "GET /user/migrations": Operation<"/user/migrations", "get", "wyandotte">;
+  "GET /user/migrations": Operation<"/user/migrations", "get">;
   /**
    * @see https://docs.github.com/rest/reference/migrations#get-a-user-migration-status
    */
   "GET /user/migrations/{migration_id}": Operation<
     "/user/migrations/{migration_id}",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive
    */
   "GET /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration
    */
   "GET /user/migrations/{migration_id}/repositories": Operation<
     "/user/migrations/{migration_id}/repositories",
-    "get",
-    "wyandotte"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-organizations-for-the-authenticated-user
@@ -4985,8 +4968,7 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
-    "put",
-    "london"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#update-branch-protection
@@ -5119,8 +5101,7 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
-    "put",
-    "lydian"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/activity#set-a-repository-subscription
@@ -5142,8 +5123,7 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "put",
-    "dorian"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/actions#create-or-update-an-environment-secret
