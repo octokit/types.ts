@@ -7353,7 +7353,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7371,7 +7371,7 @@
         "name": "content_type"
       }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7382,7 +7382,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7393,7 +7393,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7405,7 +7405,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7418,7 +7418,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7428,7 +7428,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7438,7 +7438,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "card_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7448,7 +7448,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7458,7 +7458,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7468,7 +7468,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "card_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7478,7 +7478,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7489,7 +7489,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7507,7 +7507,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7525,7 +7525,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7537,7 +7537,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7550,7 +7550,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7564,7 +7564,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7577,7 +7577,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7589,7 +7589,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "position" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "column_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7600,7 +7600,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "position" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7611,7 +7611,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7631,7 +7631,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7643,7 +7643,7 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "note" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "archived" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -7654,7 +7654,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11927,7 +11927,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11939,7 +11939,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11978,7 +11978,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11989,7 +11989,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -12631,7 +12631,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -12643,7 +12643,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "inertia" }],
+    "previews": [],
     "renamed": null
   },
   {

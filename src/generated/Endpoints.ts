@@ -411,32 +411,28 @@ export interface Endpoints {
    */
   "DELETE /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "delete",
-    "inertia"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#delete-a-project-column
    */
   "DELETE /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "delete",
-    "inertia"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#delete-a-project
    */
   "DELETE /projects/{project_id}": Operation<
     "/projects/{project_id}",
-    "delete",
-    "inertia"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#remove-project-collaborator
    */
   "DELETE /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
-    "delete",
-    "inertia"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy
@@ -1583,11 +1579,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/projects#list-organization-projects
    */
-  "GET /orgs/{org}/projects": Operation<
-    "/orgs/{org}/projects",
-    "get",
-    "inertia"
-  >;
+  "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-public-organization-members
    */
@@ -1722,16 +1714,14 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}/projects": Operation<
     "/orgs/{org}/teams/{team_slug}/projects",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams#check-team-permissions-for-a-project
    */
   "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams#list-team-repositories
@@ -1766,56 +1756,46 @@ export interface Endpoints {
    */
   "GET /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#get-a-project-column
    */
   "GET /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#list-project-cards
    */
   "GET /projects/columns/{column_id}/cards": Operation<
     "/projects/columns/{column_id}/cards",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#get-a-project
    */
-  "GET /projects/{project_id}": Operation<
-    "/projects/{project_id}",
-    "get",
-    "inertia"
-  >;
+  "GET /projects/{project_id}": Operation<"/projects/{project_id}", "get">;
   /**
    * @see https://docs.github.com/rest/reference/projects#list-project-collaborators
    */
   "GET /projects/{project_id}/collaborators": Operation<
     "/projects/{project_id}/collaborators",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#get-project-permission-for-a-user
    */
   "GET /projects/{project_id}/collaborators/{username}/permission": Operation<
     "/projects/{project_id}/collaborators/{username}/permission",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#list-project-columns
    */
   "GET /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/rate-limit#get-rate-limit-status-for-the-authenticated-user
@@ -2711,8 +2691,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#list-pull-requests
@@ -3176,16 +3155,14 @@ export interface Endpoints {
    */
   "GET /teams/{team_id}/projects": Operation<
     "/teams/{team_id}/projects",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams/#check-team-permissions-for-a-project-legacy
    */
   "GET /teams/{team_id}/projects/{project_id}": Operation<
     "/teams/{team_id}/projects/{project_id}",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams/#list-team-repositories-legacy
@@ -3504,8 +3481,7 @@ export interface Endpoints {
    */
   "GET /users/{username}/projects": Operation<
     "/users/{username}/projects",
-    "get",
-    "inertia"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/activity#list-events-received-by-the-authenticated-user
@@ -3665,25 +3641,19 @@ export interface Endpoints {
    */
   "PATCH /projects/columns/cards/{card_id}": Operation<
     "/projects/columns/cards/{card_id}",
-    "patch",
-    "inertia"
+    "patch"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#update-a-project-column
    */
   "PATCH /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
-    "patch",
-    "inertia"
+    "patch"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#update-a-project
    */
-  "PATCH /projects/{project_id}": Operation<
-    "/projects/{project_id}",
-    "patch",
-    "inertia"
-  >;
+  "PATCH /projects/{project_id}": Operation<"/projects/{project_id}", "patch">;
   /**
    * @see https://docs.github.com/rest/reference/repos/#update-a-repository
    */
@@ -4065,11 +4035,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/projects#create-an-organization-project
    */
-  "POST /orgs/{org}/projects": Operation<
-    "/orgs/{org}/projects",
-    "post",
-    "inertia"
-  >;
+  "POST /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "post">;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-an-organization-repository
    */
@@ -4113,32 +4079,28 @@ export interface Endpoints {
    */
   "POST /projects/columns/cards/{card_id}/moves": Operation<
     "/projects/columns/cards/{card_id}/moves",
-    "post",
-    "inertia"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#create-a-project-card
    */
   "POST /projects/columns/{column_id}/cards": Operation<
     "/projects/columns/{column_id}/cards",
-    "post",
-    "inertia"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#move-a-project-column
    */
   "POST /projects/columns/{column_id}/moves": Operation<
     "/projects/columns/{column_id}/moves",
-    "post",
-    "inertia"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#create-a-project-column
    */
   "POST /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
-    "post",
-    "inertia"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/actions#create-a-registration-token-for-a-repository
@@ -4494,8 +4456,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
-    "post",
-    "inertia"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#create-a-pull-request
@@ -4668,7 +4629,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/projects#create-a-user-project
    */
-  "POST /user/projects": Operation<"/user/projects", "post", "inertia">;
+  "POST /user/projects": Operation<"/user/projects", "post">;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user
    */
@@ -4910,8 +4871,7 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "put",
-    "inertia"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions
@@ -4925,8 +4885,7 @@ export interface Endpoints {
    */
   "PUT /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
-    "put",
-    "inertia"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-a-repository
@@ -5172,8 +5131,7 @@ export interface Endpoints {
    */
   "PUT /teams/{team_id}/projects/{project_id}": Operation<
     "/teams/{team_id}/projects/{project_id}",
-    "put",
-    "inertia"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions-legacy
