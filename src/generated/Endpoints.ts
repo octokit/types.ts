@@ -374,16 +374,14 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions#delete-team-discussion-reaction
    */
   "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams#remove-team-membership-for-a-user
@@ -439,8 +437,7 @@ export interface Endpoints {
    */
   "DELETE /reactions/{reaction_id}": Operation<
     "/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#delete-a-repository
@@ -592,8 +589,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#delete-a-file
@@ -663,8 +659,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/issues#remove-assignees-from-an-issue
@@ -699,8 +694,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#delete-a-deploy-key
@@ -750,8 +744,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
-    "delete",
-    "squirrel-girl"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#remove-requested-reviewers-from-a-pull-request
@@ -1677,16 +1670,14 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions#list-reactions-for-a-team-discussion
    */
   "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams#list-pending-team-invitations
@@ -2211,8 +2202,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#list-commits
@@ -2521,8 +2511,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/issues#list-issue-events-for-a-repository
@@ -2571,8 +2560,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/issues#list-timeline-events-for-an-issue
@@ -2719,8 +2707,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#get-a-pull-request
@@ -3114,16 +3101,14 @@ export interface Endpoints {
    */
   "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-team-discussion-legacy
    */
   "GET /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/reactions",
-    "get",
-    "squirrel-girl"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/teams#list-pending-team-invitations-legacy
@@ -4063,16 +4048,14 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions#create-reaction-for-a-team-discussion
    */
   "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/projects#move-a-project-card
@@ -4248,8 +4231,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-commit-comment
@@ -4369,8 +4351,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/issues#add-assignees-to-an-issue
@@ -4398,8 +4379,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/issues/{issue_number}/reactions": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-deploy-key
@@ -4470,8 +4450,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions": Operation<
     "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#create-a-review-comment-for-a-pull-request
@@ -4520,8 +4499,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/releases/{release_id}/reactions": Operation<
     "/repos/{owner}/{repo}/releases/{release_id}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-commit-status
@@ -4585,16 +4563,14 @@ export interface Endpoints {
    */
   "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-team-discussion-legacy
    */
   "POST /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/reactions",
-    "post",
-    "squirrel-girl"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user
