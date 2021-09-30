@@ -2268,6 +2268,14 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/community/code_of_conduct": Operation<
+    "/repos/{owner}/{repo}/community/code_of_conduct",
+    "get",
+    "scarlet-witch"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#get-community-profile-metrics
    */
   "GET /repos/{owner}/{repo}/community/profile": Operation<
@@ -4231,14 +4239,6 @@ export interface Endpoints {
   "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
     "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository
-   */
-  "POST /repos/{owner}/{repo}/community/code_of_conduct": Operation<
-    "/repos/{owner}/{repo}/community/code_of_conduct",
-    "post",
-    "scarlet-witch"
   >;
   /**
    * @see https://docs.github.com/rest/reference/apps#create-a-content-attachment

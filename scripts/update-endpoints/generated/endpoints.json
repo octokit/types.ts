@@ -3293,7 +3293,7 @@
     "renamed": null
   },
   {
-    "method": "POST",
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/community/code_of_conduct",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository",
     "parameters": [
