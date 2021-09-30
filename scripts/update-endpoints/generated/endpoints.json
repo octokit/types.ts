@@ -3293,7 +3293,7 @@
     "renamed": null
   },
   {
-    "method": "GET",
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/community/code_of_conduct",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository",
     "parameters": [
@@ -8248,7 +8248,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8266,7 +8266,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8279,7 +8279,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8292,7 +8292,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8305,7 +8305,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8329,7 +8329,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8352,7 +8352,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8370,7 +8370,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8387,7 +8387,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8400,7 +8400,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8418,7 +8418,7 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8431,7 +8431,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8444,7 +8444,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8462,7 +8462,7 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8486,7 +8486,7 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8496,7 +8496,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8511,7 +8511,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8531,7 +8531,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8546,7 +8546,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8561,7 +8561,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8587,7 +8587,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8612,7 +8612,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8632,7 +8632,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8651,7 +8651,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "squirrel-girl" }],
+    "previews": [],
     "renamed": null
   },
   {
