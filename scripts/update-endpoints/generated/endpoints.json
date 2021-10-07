@@ -438,6 +438,29 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#download-workflow-run-attempt-logs",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "attempt_num"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "attempt_number"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#download-workflow-run-logs",
     "parameters": [
@@ -723,6 +746,24 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-workflow-run-attempt",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "attempt_number"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -1089,18 +1130,6 @@
         "name": "runner_group_id"
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "POST",
-    "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#retry-a-workflow",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
     "previews": [],
     "renamed": null
@@ -1724,6 +1753,27 @@
       }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "PUT",
+    "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#add-a-repository-to-an-app-installation",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "installation_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -2320,6 +2370,27 @@
       }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/installations/{installation_id}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/apps#remove-a-repository-from-an-app-installation",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "installation_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -2873,6 +2944,23 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest",
+    "documentationUrl": "https://docs.github.com/rest/reference/checks#rerequest-a-check-run",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "check_run_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -5630,6 +5718,23 @@
   },
   {
     "method": "GET",
+    "url": "/user/migrations/{migration_id}/repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "migration_id"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/migrations/{migration_id}/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/migrations#list-repositories-in-an-organization-migration",
     "parameters": [
@@ -5661,7 +5766,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
-    "renamed": null
+    "renamed": { "note": null }
   },
   {
     "method": "PATCH",
@@ -8667,6 +8772,21 @@
       }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "PATCH",
+    "url": "/user/repository_invitations/{invitation_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#accept-a-repository-invitation",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "invitation_id"
+      }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -8830,7 +8950,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9267,7 +9387,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source.path" }
     ],
-    "previews": [{ "name": "switcheroo" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9293,6 +9413,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "discussion_category_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "generate_release_notes"
       }
     ],
     "previews": [],
@@ -9331,7 +9457,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [{ "name": "baptiste" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9379,6 +9505,21 @@
     ],
     "previews": [],
     "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/repository_invitations/{invitation_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#decline-a-repository-invitation",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "invitation_id"
+      }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "DELETE",
@@ -9492,7 +9633,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9590,7 +9731,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [{ "name": "switcheroo" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -9751,6 +9892,36 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/releases/generate-notes",
+    "documentationUrl": "https://docs.github.com/rest/reference/repos#generate-release-notes",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "tag_name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "target_commitish"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "previous_tag_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "configuration_file_path"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -9969,7 +10140,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [{ "name": "zzzax" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11729,7 +11900,7 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [{ "name": "cloak" }],
+    "previews": [],
     "renamed": null
   },
   {
@@ -11836,6 +12007,12 @@
         "in": "QUERY",
         "name": "secret_type"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "resolution"
+      },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
@@ -11855,6 +12032,12 @@
         "deprecated": null,
         "in": "QUERY",
         "name": "secret_type"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "resolution"
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
@@ -12896,6 +13079,16 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "POST",
+    "url": "/user/emails",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#add-an-email-address-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -12952,7 +13145,33 @@
       }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "POST",
+    "url": "/user/gpg_keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-a-gpg-key-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "armored_public_key"
+      }
+    ],
+    "previews": [],
     "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/user/keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-a-public-ssh-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "POST",
@@ -12973,6 +13192,16 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/emails",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -12983,7 +13212,27 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/gpg_keys/{gpg_key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-gpg-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
+    ],
+    "previews": [],
     "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/keys/{key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "DELETE",
@@ -13048,7 +13297,27 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/gpg_keys/{gpg_key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-gpg-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
+    ],
+    "previews": [],
     "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/keys/{key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -13077,6 +13346,14 @@
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
     "parameters": [],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/blocks",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
+    "parameters": [],
+    "previews": [],
     "renamed": null
   },
   {
@@ -13088,7 +13365,29 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/emails",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
     "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/following",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-the-people-the-authenticated-user-follows",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -13145,6 +13444,17 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/gpg_keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-gpg-keys-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
     "renamed": null
   },
   {
@@ -13158,6 +13468,17 @@
     ],
     "previews": [],
     "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/public_emails",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-email-addresses-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "GET",
@@ -13191,7 +13512,28 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
+    "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/user/keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-ssh-keys-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
     "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/user/email/visibility",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" }
+    ],
+    "previews": [],
+    "renamed": { "note": null }
   },
   {
     "method": "PATCH",
