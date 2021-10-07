@@ -518,8 +518,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "delete",
-    "zzzax"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#remove-status-check-protection
@@ -729,8 +728,7 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
-    "delete",
-    "switcheroo"
+    "delete"
   >;
   /**
    * @see https://docs.github.com/rest/reference/pulls#delete-a-review-comment-for-a-pull-request
@@ -1895,6 +1893,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#get-a-workflow-run-attempt
+   */
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#download-workflow-run-attempt-logs
+   */
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run
    */
   "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs": Operation<
@@ -2039,8 +2051,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "get",
-    "zzzax"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#get-status-checks-protection
@@ -3043,7 +3054,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/search#search-commits
    */
-  "GET /search/commits": Operation<"/search/commits", "get", "cloak">;
+  "GET /search/commits": Operation<"/search/commits", "get">;
   /**
    * @see https://docs.github.com/rest/reference/search#search-issues-and-pull-requests
    */
@@ -4128,13 +4139,6 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/actions#retry-a-workflow
-   */
-  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/retry": Operation<
-    "/repos/{owner}/{repo}/actions/runs/{run_id}/retry",
-    "post"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-workflow-dispatch-event
    */
   "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches": Operation<
@@ -4160,8 +4164,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/branches/{branch}/protection/required_signatures": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "post",
-    "zzzax"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#add-status-check-contexts
@@ -4203,6 +4206,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/check-runs": Operation<
     "/repos/{owner}/{repo}/check-runs",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/checks#rerequest-a-check-run
+   */
+  "POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest": Operation<
+    "/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest",
     "post"
   >;
   /**
@@ -4421,8 +4431,7 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
-    "post",
-    "switcheroo"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#request-a-github-pages-build
@@ -4495,6 +4504,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#generate-release-notes
+   */
+  "POST /repos/{owner}/{repo}/releases/generate-notes": Operation<
+    "/repos/{owner}/{repo}/releases/generate-notes",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/reactions/#create-reaction-for-a-release
    */
   "POST /repos/{owner}/{repo}/releases/{release_id}/reactions": Operation<
@@ -4520,8 +4536,7 @@ export interface Endpoints {
    */
   "POST /repos/{template_owner}/{template_repo}/generate": Operation<
     "/repos/{template_owner}/{template_repo}/generate",
-    "post",
-    "baptiste"
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/reference/enterprise-admin#provision-a-scim-enterprise-group-and-invite-users
