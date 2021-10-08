@@ -443,12 +443,7 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "attempt_num"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" },
       {
         "alias": null,
         "deprecated": null,
@@ -745,7 +740,13 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "exclude_pull_requests"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -763,6 +764,12 @@
         "deprecated": null,
         "in": "PATH",
         "name": "attempt_number"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "exclude_pull_requests"
       }
     ],
     "previews": [],
@@ -1038,7 +1045,13 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "exclude_pull_requests"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -1056,7 +1069,13 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "exclude_pull_requests"
+      }
     ],
     "previews": [],
     "renamed": null
