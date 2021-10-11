@@ -1900,6 +1900,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#list-jobs-for-a-workflow-run-attempt
+   */
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#download-workflow-run-attempt-logs
    */
   "GET /repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs": Operation<
