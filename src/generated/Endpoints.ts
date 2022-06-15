@@ -148,38 +148,52 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#disable-a-selected-organization-for-github-actions-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#disable-a-selected-organization-for-github-actions-in-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/actions/permissions/organizations/{org_id}": Operation<
     "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#delete-a-self-hosted-runner-group-from-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-group-from-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#remove-a-self-hosted-runner-from-a-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#delete-self-hosted-runner-from-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#delete-self-hosted-runner-from-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
     "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise
+   */
+  "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise
+   */
+  "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}",
     "delete"
   >;
   /**
@@ -244,6 +258,20 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-an-organization
+   */
+  "DELETE /orgs/{org}/actions/runners/{runner_id}/labels": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}/labels",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#remove-a-custom-label-from-a-self-hosted-runner-for-an-organization
+   */
+  "DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}/labels/{name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#delete-an-organization-secret
    */
   "DELETE /orgs/{org}/actions/secrets/{secret_name}": Operation<
@@ -269,6 +297,20 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/credential-authorizations/{credential_id}": Operation<
     "/orgs/{org}/credential-authorizations/{credential_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#delete-an-organization-secret
+   */
+  "DELETE /orgs/{org}/dependabot/secrets/{secret_name}": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#remove-selected-repository-from-an-organization-secret
+   */
+  "DELETE /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
     "delete"
   >;
   /**
@@ -384,6 +426,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/teams#unlink-external-idp-group-team-connection
+   */
+  "DELETE /orgs/{org}/teams/{team_slug}/external-groups": Operation<
+    "/orgs/{org}/teams/{team_slug}/external-groups",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/teams#remove-team-membership-for-a-user
    */
   "DELETE /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
@@ -433,13 +482,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/reactions/#delete-a-reaction-legacy
-   */
-  "DELETE /reactions/{reaction_id}": Operation<
-    "/reactions/{reaction_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/repos#delete-a-repository
    */
   "DELETE /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "delete">;
@@ -455,6 +497,20 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}": Operation<
     "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#remove-a-custom-label-from-a-self-hosted-runner-for-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}",
     "delete"
   >;
   /**
@@ -570,6 +626,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#delete-a-repository-secret
+   */
+  "DELETE /repos/{owner}/{repo}/codespaces/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#remove-a-repository-collaborator
    */
   "DELETE /repos/{owner}/{repo}/collaborators/{username}": Operation<
@@ -595,6 +658,13 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/contents/{path}": Operation<
     "/repos/{owner}/{repo}/contents/{path}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#delete-a-repository-secret
+   */
+  "DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
     "delete"
   >;
   /**
@@ -773,10 +843,24 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/reactions/#delete-a-release-reaction
+   */
+  "DELETE /repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#delete-a-repository-subscription
    */
   "DELETE /repos/{owner}/{repo}/subscription": Operation<
     "/repos/{owner}/{repo}/subscription",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/repos#delete-tag-protection-state-for-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}": Operation<
+    "/repos/{owner}/{repo}/tags/protection/{tag_protection_id}",
     "delete"
   >;
   /**
@@ -865,6 +949,27 @@ export interface Endpoints {
    */
   "DELETE /user/blocks/{username}": Operation<
     "/user/blocks/{username}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#delete-a-secret-for-the-authenticated-user
+   */
+  "DELETE /user/codespaces/secrets/{secret_name}": Operation<
+    "/user/codespaces/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret
+   */
+  "DELETE /user/codespaces/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#delete-a-codespace-for-the-authenticated-user
+   */
+  "DELETE /user/codespaces/{codespace_name}": Operation<
+    "/user/codespaces/{codespace_name}",
     "delete"
   >;
   /**
@@ -1032,73 +1137,101 @@ export interface Endpoints {
    */
   "GET /emojis": Operation<"/emojis", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-github-actions-permissions-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/enterprise-admin#get-github-enterprise-server-statistics
+   */
+  "GET /enterprise-installation/{enterprise_or_org}/server-statistics": Operation<
+    "/enterprise-installation/{enterprise_or_org}/server-statistics",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/cache/usage": Operation<
+    "/enterprises/{enterprise}/actions/cache/usage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/permissions": Operation<
     "/enterprises/{enterprise}/actions/permissions",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-selected-organizations-enabled-for-github-actions-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/permissions/organizations": Operation<
     "/enterprises/{enterprise}/actions/permissions/organizations",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-allowed-actions-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#get-allowed-actions-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/permissions/selected-actions": Operation<
     "/enterprises/{enterprise}/actions/permissions/selected-actions",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-self-hosted-runner-groups-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#get-default-workflow-permissions-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/permissions/workflow": Operation<
+    "/enterprises/{enterprise}/actions/permissions/workflow",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runner-groups-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runner-groups": Operation<
     "/enterprises/{enterprise}/actions/runner-groups",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-a-self-hosted-runner-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-group-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise
+   * @see https://docs.github.com/rest/reference/actions#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-self-hosted-runners-in-a-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runners-in-a-group-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-self-hosted-runners-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runners-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runners": Operation<
     "/enterprises/{enterprise}/actions/runners",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-runner-applications-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#list-runner-applications-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runners/downloads": Operation<
     "/enterprises/{enterprise}/actions/runners/downloads",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-a-self-hosted-runner-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
     "/enterprises/{enterprise}/actions/runners/{runner_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
     "get"
   >;
   /**
@@ -1109,10 +1242,24 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/secret-scanning/alerts": Operation<
+    "/enterprises/{enterprise}/secret-scanning/alerts",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/settings/billing/actions": Operation<
     "/enterprises/{enterprise}/settings/billing/actions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/billing#export-advanced-security-active-committers-data-for-enterprise
+   */
+  "GET /enterprises/{enterprise}/settings/billing/advanced-security": Operation<
+    "/enterprises/{enterprise}/settings/billing/advanced-security",
     "get"
   >;
   /**
@@ -1293,9 +1440,30 @@ export interface Endpoints {
    */
   "GET /organizations": Operation<"/organizations", "get">;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#list-custom-repository-roles-in-an-organization
+   */
+  "GET /organizations/{organization_id}/custom_roles": Operation<
+    "/organizations/{organization_id}/custom_roles",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#get-an-organization
    */
   "GET /orgs/{org}": Operation<"/orgs/{org}", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-an-organization
+   */
+  "GET /orgs/{org}/actions/cache/usage": Operation<
+    "/orgs/{org}/actions/cache/usage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#list-repositories-with-github-actions-cache-usage-for-an-organization
+   */
+  "GET /orgs/{org}/actions/cache/usage-by-repository": Operation<
+    "/orgs/{org}/actions/cache/usage-by-repository",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-organization
    */
@@ -1315,6 +1483,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/permissions/selected-actions": Operation<
     "/orgs/{org}/actions/permissions/selected-actions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#get-default-workflow-permissions
+   */
+  "GET /orgs/{org}/actions/permissions/workflow": Operation<
+    "/orgs/{org}/actions/permissions/workflow",
     "get"
   >;
   /**
@@ -1367,6 +1542,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-an-organization
+   */
+  "GET /orgs/{org}/actions/runners/{runner_id}/labels": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}/labels",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#list-organization-secrets
    */
   "GET /orgs/{org}/actions/secrets": Operation<
@@ -1410,6 +1592,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-by-organization
+   */
+  "GET /orgs/{org}/code-scanning/alerts": Operation<
+    "/orgs/{org}/code-scanning/alerts",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization
    */
   "GET /orgs/{org}/credential-authorizations": Operation<
@@ -1417,9 +1606,51 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/dependabot#list-organization-secrets
+   */
+  "GET /orgs/{org}/dependabot/secrets": Operation<
+    "/orgs/{org}/dependabot/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#get-an-organization-public-key
+   */
+  "GET /orgs/{org}/dependabot/secrets/public-key": Operation<
+    "/orgs/{org}/dependabot/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#get-an-organization-secret
+   */
+  "GET /orgs/{org}/dependabot/secrets/{secret_name}": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#list-selected-repositories-for-an-organization-secret
+   */
+  "GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#list-public-organization-events
    */
   "GET /orgs/{org}/events": Operation<"/orgs/{org}/events", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/teams#external-idp-group-info-for-an-organization
+   */
+  "GET /orgs/{org}/external-group/{group_id}": Operation<
+    "/orgs/{org}/external-group/{group_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/teams#list-external-idp-groups-for-an-organization
+   */
+  "GET /orgs/{org}/external-groups": Operation<
+    "/orgs/{org}/external-groups",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-failed-organization-invitations
    */
@@ -1590,7 +1821,7 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-by-organization
+   * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-organization
    */
   "GET /orgs/{org}/secret-scanning/alerts": Operation<
     "/orgs/{org}/secret-scanning/alerts",
@@ -1601,6 +1832,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/settings/billing/actions": Operation<
     "/orgs/{org}/settings/billing/actions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/billing#get-github-advanced-security-active-committers-for-an-organization
+   */
+  "GET /orgs/{org}/settings/billing/advanced-security": Operation<
+    "/orgs/{org}/settings/billing/advanced-security",
     "get"
   >;
   /**
@@ -1675,6 +1913,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/teams#list-external-idp-group-team-connection
+   */
+  "GET /orgs/{org}/teams/{team_slug}/external-groups": Operation<
+    "/orgs/{org}/teams/{team_slug}/external-groups",
     "get"
   >;
   /**
@@ -1816,6 +2061,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/cache/usage": Operation<
+    "/repos/{owner}/{repo}/actions/cache/usage",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#get-a-job-for-a-workflow-run
    */
   "GET /repos/{owner}/{repo}/actions/jobs/{job_id}": Operation<
@@ -1837,10 +2089,24 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#get-workflow-access-level-to-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/permissions/access": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/access",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#get-allowed-actions-for-a-repository
    */
   "GET /repos/{owner}/{repo}/actions/permissions/selected-actions": Operation<
     "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#get-default-workflow-permissions-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/permissions/workflow": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/workflow",
     "get"
   >;
   /**
@@ -1862,6 +2128,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/runners/{runner_id}": Operation<
     "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
     "get"
   >;
   /**
@@ -2181,6 +2454,55 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#list-codeowners-errors
+   */
+  "GET /repos/{owner}/{repo}/codeowners/errors": Operation<
+    "/repos/{owner}/{repo}/codeowners/errors",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-codespaces-in-a-repository-for-the-authenticated-user
+   */
+  "GET /repos/{owner}/{repo}/codespaces": Operation<
+    "/repos/{owner}/{repo}/codespaces",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-devcontainers-in-a-repository-for-the-authenticated-user
+   */
+  "GET /repos/{owner}/{repo}/codespaces/devcontainers": Operation<
+    "/repos/{owner}/{repo}/codespaces/devcontainers",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-available-machine-types-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/codespaces/machines": Operation<
+    "/repos/{owner}/{repo}/codespaces/machines",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-repository-secrets
+   */
+  "GET /repos/{owner}/{repo}/codespaces/secrets": Operation<
+    "/repos/{owner}/{repo}/codespaces/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-a-repository-public-key
+   */
+  "GET /repos/{owner}/{repo}/codespaces/secrets/public-key": Operation<
+    "/repos/{owner}/{repo}/codespaces/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-a-repository-secret
+   */
+  "GET /repos/{owner}/{repo}/codespaces/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#list-repository-collaborators
    */
   "GET /repos/{owner}/{repo}/collaborators": Operation<
@@ -2326,6 +2648,34 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/contributors": Operation<
     "/repos/{owner}/{repo}/contributors",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#list-repository-secrets
+   */
+  "GET /repos/{owner}/{repo}/dependabot/secrets": Operation<
+    "/repos/{owner}/{repo}/dependabot/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#get-a-repository-public-key
+   */
+  "GET /repos/{owner}/{repo}/dependabot/secrets/public-key": Operation<
+    "/repos/{owner}/{repo}/dependabot/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#get-a-repository-secret
+   */
+  "GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependency-graph#get-a-diff-of-the-dependencies-between-commits
+   */
+  "GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}": Operation<
+    "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
     "get"
   >;
   /**
@@ -2847,6 +3197,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/reactions/#list-reactions-for-a-release
+   */
+  "GET /repos/{owner}/{repo}/releases/{release_id}/reactions": Operation<
+    "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository
    */
   "GET /repos/{owner}/{repo}/secret-scanning/alerts": Operation<
@@ -2858,6 +3215,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}": Operation<
     "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/secret-scanning#list-locations-for-a-secret-scanning-alert
+   */
+  "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
     "get"
   >;
   /**
@@ -2924,6 +3288,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#list-tag-protection-state-of-a-repository
+   */
+  "GET /repos/{owner}/{repo}/tags/protection": Operation<
+    "/repos/{owner}/{repo}/tags/protection",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#download-a-repository-archive
    */
   "GET /repos/{owner}/{repo}/tarball/{ref}": Operation<
@@ -2942,8 +3313,7 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/topics": Operation<
     "/repos/{owner}/{repo}/topics",
-    "get",
-    "mercy"
+    "get"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#get-repository-clones
@@ -3077,7 +3447,7 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/reference/search#search-topics
    */
-  "GET /search/topics": Operation<"/search/topics", "get", "mercy">;
+  "GET /search/topics": Operation<"/search/topics", "get">;
   /**
    * @see https://docs.github.com/rest/reference/search#search-users
    */
@@ -3201,6 +3571,56 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/users#check-if-a-user-is-blocked-by-the-authenticated-user
    */
   "GET /user/blocks/{username}": Operation<"/user/blocks/{username}", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-codespaces-for-the-authenticated-user
+   */
+  "GET /user/codespaces": Operation<"/user/codespaces", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-secrets-for-the-authenticated-user
+   */
+  "GET /user/codespaces/secrets": Operation<"/user/codespaces/secrets", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-public-key-for-the-authenticated-user
+   */
+  "GET /user/codespaces/secrets/public-key": Operation<
+    "/user/codespaces/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-a-secret-for-the-authenticated-user
+   */
+  "GET /user/codespaces/secrets/{secret_name}": Operation<
+    "/user/codespaces/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-a-user-secret
+   */
+  "GET /user/codespaces/secrets/{secret_name}/repositories": Operation<
+    "/user/codespaces/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-a-codespace-for-the-authenticated-user
+   */
+  "GET /user/codespaces/{codespace_name}": Operation<
+    "/user/codespaces/{codespace_name}",
+    "get"
+  >;
+  /**
+   * @see
+   */
+  "GET /user/codespaces/{codespace_name}/exports/{export_id}": Operation<
+    "/user/codespaces/{codespace_name}/exports/{export_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-machine-types-for-a-codespace
+   */
+  "GET /user/codespaces/{codespace_name}/machines": Operation<
+    "/user/codespaces/{codespace_name}/machines",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user
    */
@@ -3562,7 +3982,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#update-a-self-hosted-runner-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#update-a-self-hosted-runner-group-for-an-enterprise
    */
   "PATCH /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
@@ -3633,6 +4053,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/teams#link-external-idp-group-team-connection
+   */
+  "PATCH /orgs/{org}/teams/{team_slug}/external-groups": Operation<
+    "/orgs/{org}/teams/{team_slug}/external-groups",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/teams#create-or-update-idp-group-connections
    */
   "PATCH /orgs/{org}/teams/{team_slug}/team-sync/group-mappings": Operation<
@@ -3669,7 +4096,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-status-check-potection
+   * @see https://docs.github.com/rest/reference/repos#update-status-check-protection
    */
   "PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks": Operation<
     "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
@@ -3866,6 +4293,13 @@ export interface Endpoints {
    */
   "PATCH /user": Operation<"/user", "patch">;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#update-a-codespace-for-the-authenticated-user
+   */
+  "PATCH /user/codespaces/{codespace_name}": Operation<
+    "/user/codespaces/{codespace_name}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/users#set-primary-email-visibility-for-the-authenticated-user
    */
   "PATCH /user/email/visibility": Operation<"/user/email/visibility", "patch">;
@@ -3923,32 +4357,31 @@ export interface Endpoints {
    */
   "POST /authorizations": Operation<"/authorizations", "post">;
   /**
-   * @see https://docs.github.com/rest/reference/apps#create-a-content-attachment
-   */
-  "POST /content_references/{content_reference_id}/attachments": Operation<
-    "/content_references/{content_reference_id}/attachments",
-    "post",
-    "corsair"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#create-self-hosted-runner-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#create-self-hosted-runner-group-for-an-enterprise
    */
   "POST /enterprises/{enterprise}/actions/runner-groups": Operation<
     "/enterprises/{enterprise}/actions/runner-groups",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#create-a-registration-token-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-enterprise
    */
   "POST /enterprises/{enterprise}/actions/runners/registration-token": Operation<
     "/enterprises/{enterprise}/actions/runners/registration-token",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#create-a-remove-token-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#create-a-remove-token-for-an-enterprise
    */
   "POST /enterprises/{enterprise}/actions/runners/remove-token": Operation<
     "/enterprises/{enterprise}/actions/runners/remove-token",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise
+   */
+  "POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
     "post"
   >;
   /**
@@ -3993,6 +4426,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/actions/runners/remove-token": Operation<
     "/orgs/{org}/actions/runners/remove-token",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#add-custom-labels-to-a-self-hosted-runner-for-an-organization
+   */
+  "POST /orgs/{org}/actions/runners/{runner_id}/labels": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}/labels",
     "post"
   >;
   /**
@@ -4104,6 +4544,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#re-run-job-for-workflow-run
+   */
+  "POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun": Operation<
+    "/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-registration-token-for-a-repository
    */
   "POST /repos/{owner}/{repo}/actions/runners/registration-token": Operation<
@@ -4115,6 +4562,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/runners/remove-token": Operation<
     "/repos/{owner}/{repo}/actions/runners/remove-token",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#add-custom-labels-to-a-self-hosted-runner-for-a-repository
+   */
+  "POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
     "post"
   >;
   /**
@@ -4143,6 +4597,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun": Operation<
     "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#re-run-workflow-failed-jobs
+   */
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs",
     "post"
   >;
   /**
@@ -4244,6 +4705,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#create-a-codespace-in-a-repository
+   */
+  "POST /repos/{owner}/{repo}/codespaces": Operation<
+    "/repos/{owner}/{repo}/codespaces",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/reactions#create-reaction-for-a-commit-comment
    */
   "POST /repos/{owner}/{repo}/comments/{comment_id}/reactions": Operation<
@@ -4256,14 +4724,6 @@ export interface Endpoints {
   "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
     "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/apps#create-a-content-attachment
-   */
-  "POST /repos/{owner}/{repo}/content_references/{content_reference_id}/attachments": Operation<
-    "/repos/{owner}/{repo}/content_references/{content_reference_id}/attachments",
-    "post",
-    "corsair"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#create-a-deployment
@@ -4469,6 +4929,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#create-a-codespace-from-a-pull-request
+   */
+  "POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/codespaces",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/pulls#create-a-review-comment-for-a-pull-request
    */
   "POST /repos/{owner}/{repo}/pulls/{pull_number}/comments": Operation<
@@ -4532,6 +4999,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/repos#create-tag-protection-state-for-a-repository
+   */
+  "POST /repos/{owner}/{repo}/tags/protection": Operation<
+    "/repos/{owner}/{repo}/tags/protection",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#transfer-a-repository
    */
   "POST /repos/{owner}/{repo}/transfer": Operation<
@@ -4592,6 +5066,31 @@ export interface Endpoints {
    */
   "POST /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/reactions",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#create-a-codespace-for-the-authenticated-user
+   */
+  "POST /user/codespaces": Operation<"/user/codespaces", "post">;
+  /**
+   * @see
+   */
+  "POST /user/codespaces/{codespace_name}/exports": Operation<
+    "/user/codespaces/{codespace_name}/exports",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#start-a-codespace-for-the-authenticated-user
+   */
+  "POST /user/codespaces/{codespace_name}/start": Operation<
+    "/user/codespaces/{codespace_name}/start",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#stop-a-codespace-for-the-authenticated-user
+   */
+  "POST /user/codespaces/{codespace_name}/stop": Operation<
+    "/user/codespaces/{codespace_name}/stop",
     "post"
   >;
   /**
@@ -4675,59 +5174,73 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-github-actions-permissions-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions": Operation<
     "/enterprises/{enterprise}/actions/permissions",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-selected-organizations-enabled-for-github-actions-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions/organizations": Operation<
     "/enterprises/{enterprise}/actions/permissions/organizations",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#enable-a-selected-organization-for-github-actions-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}": Operation<
     "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-allowed-actions-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#set-allowed-actions-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions/selected-actions": Operation<
     "/enterprises/{enterprise}/actions/permissions/selected-actions",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#set-default-workflow-permissions-for-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/actions/permissions/workflow": Operation<
+    "/enterprises/{enterprise}/actions/permissions/workflow",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-self-hosted-runners-in-a-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#add-a-self-hosted-runner-to-a-group-for-an-enterprise
+   * @see https://docs.github.com/rest/reference/actions#add-a-self-hosted-runner-to-a-group-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
     "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
+    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
     "put"
   >;
   /**
@@ -4774,6 +5287,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#set-default-workflow-permissions
+   */
+  "PUT /orgs/{org}/actions/permissions/workflow": Operation<
+    "/orgs/{org}/actions/permissions/workflow",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#set-repository-access-to-a-self-hosted-runner-group-in-an-organization
    */
   "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
@@ -4802,6 +5322,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#set-custom-labels-for-a-self-hosted-runner-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/runners/{runner_id}/labels": Operation<
+    "/orgs/{org}/actions/runners/{runner_id}/labels",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-or-update-an-organization-secret
    */
   "PUT /orgs/{org}/actions/secrets/{secret_name}": Operation<
@@ -4827,6 +5354,27 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#create-or-update-an-organization-secret
+   */
+  "PUT /orgs/{org}/dependabot/secrets/{secret_name}": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#set-selected-repositories-for-an-organization-secret
+   */
+  "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#add-selected-repository-to-an-organization-secret
+   */
+  "PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
     "put"
   >;
   /**
@@ -4893,10 +5441,31 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions#set-workflow-access-to-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/permissions/access": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/access",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#set-allowed-actions-for-a-repository
    */
   "PUT /repos/{owner}/{repo}/actions/permissions/selected-actions": Operation<
     "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#set-default-workflow-permissions-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/permissions/workflow": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/workflow",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/actions#set-custom-labels-for-a-self-hosted-runner-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/runners/{runner_id}/labels": Operation<
+    "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
     "put"
   >;
   /**
@@ -4963,6 +5532,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#create-or-update-a-repository-secret
+   */
+  "PUT /repos/{owner}/{repo}/codespaces/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/codespaces/secrets/{secret_name}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#add-a-repository-collaborator
    */
   "PUT /repos/{owner}/{repo}/collaborators/{username}": Operation<
@@ -4974,6 +5550,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/contents/{path}": Operation<
     "/repos/{owner}/{repo}/contents/{path}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#create-or-update-a-repository-secret
+   */
+  "PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
     "put"
   >;
   /**
@@ -5072,8 +5655,7 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/topics": Operation<
     "/repos/{owner}/{repo}/topics",
-    "put",
-    "mercy"
+    "put"
   >;
   /**
    * @see https://docs.github.com/rest/reference/repos#enable-vulnerability-alerts
@@ -5142,6 +5724,27 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/users#block-a-user
    */
   "PUT /user/blocks/{username}": Operation<"/user/blocks/{username}", "put">;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#create-or-update-a-secret-for-the-authenticated-user
+   */
+  "PUT /user/codespaces/secrets/{secret_name}": Operation<
+    "/user/codespaces/secrets/{secret_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret
+   */
+  "PUT /user/codespaces/secrets/{secret_name}/repositories": Operation<
+    "/user/codespaces/secrets/{secret_name}/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#add-a-selected-repository-to-a-user-secret
+   */
+  "PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "put"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/users#follow-a-user
    */
