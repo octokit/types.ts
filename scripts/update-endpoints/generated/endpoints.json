@@ -13765,7 +13765,9 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
     ],
     "previews": [],
     "renamed": null
@@ -13793,7 +13795,9 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
     ],
     "previews": [],
     "renamed": null
