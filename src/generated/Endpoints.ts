@@ -4726,6 +4726,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/dependency-graph#create-a-snapshot-of-dependencies-for-a-repository
+   */
+  "POST /repos/{owner}/{repo}/dependency-graph/snapshots": Operation<
+    "/repos/{owner}/{repo}/dependency-graph/snapshots",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#create-a-deployment
    */
   "POST /repos/{owner}/{repo}/deployments": Operation<

@@ -4614,6 +4614,99 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/dependency-graph/snapshots",
+    "documentationUrl": "https://docs.github.com/rest/reference/dependency-graph#create-a-snapshot-of-dependencies-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "version" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "job" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "job.id" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "job.correlator"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "job.html_url"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "sha" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "ref" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "detector" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "detector.name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "detector.version"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "detector.url"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "metadata" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "metadata.*" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "manifests" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.file"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.file.source_location"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.metadata"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.metadata.*"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "scanned" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/dependency-graph/compare/{basehead}",
     "documentationUrl": "https://docs.github.com/rest/reference/dependency-graph#get-a-diff-of-the-dependencies-between-commits",
