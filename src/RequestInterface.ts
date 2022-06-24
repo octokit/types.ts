@@ -23,14 +23,18 @@ export interface RequestInterface<D extends object = object> {
    * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
    * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
-  <R extends Route>(
-    route: keyof Endpoints | R,
-    options?: R extends keyof Endpoints
-      ? Endpoints[R]["parameters"] & RequestParameters
-      : RequestParameters
-  ): R extends keyof Endpoints
-    ? Promise<Endpoints[R]["response"]>
-    : Promise<OctokitResponse<any>>;
+  <R extends keyof Endpoints>(
+    route: R,
+    options?: Endpoints[R]["parameters"] & RequestParameters
+  ): Promise<Endpoints[R]["response"]>;
+
+  /**
+   * Sends a request based on endpoint options
+   *
+   * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
+   * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
+   */
+  (route: Route, options?: RequestParameters): Promise<OctokitResponse<any>>;
 
   /**
    * Returns a new `request` with updated route and parameters
