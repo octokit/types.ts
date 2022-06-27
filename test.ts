@@ -1,8 +1,9 @@
 // This code is not executed, only statically analyzed using `tsc --noEmit`
 import { EndpointInterface, Endpoints } from "./src";
 
-const endpoint = null as EndpointInterface;
+const endpoint = {} as EndpointInterface;
 function assertString(type: string) {}
+function assertNullableString(type: string | null | undefined) {}
 function assertArray(type: unknown[]) {}
 
 const createIssueOptions = {
@@ -26,13 +27,13 @@ const resultMerge2 = endpoint.merge(createIssueOptions);
 assertString(result.headers["x-foo"]);
 assertString(resultMerge.title);
 assertString(resultMerge.headers["x-foo"]);
-assertString(resultMerge2.url);
+assertNullableString(resultMerge2.url);
 
 const test = {} as Endpoints["GET /repos/{owner}/{repo}/issues"]["response"];
 assertArray(test.data);
-assertString(test.data[0].assignees[0].avatar_url);
+assertString(test.data[0].assignees![0].avatar_url);
 const test2 = {} as Endpoints["GET /scim/v2/organizations/{org}/Users"]["response"];
-assertString(test2.data.Resources[0].name.givenName);
+assertNullableString(test2.data.Resources[0].name.givenName);
 
 const test3 = {} as Endpoints["POST /user/repos"]["parameters"];
 assertString(test3.name);
