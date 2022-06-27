@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "declaration": true,
+    "noUnusedLocals": true
+  },
+  "include": ["test.ts"]
+}
