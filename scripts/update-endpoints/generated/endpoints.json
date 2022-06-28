@@ -298,6 +298,31 @@
   },
   {
     "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/caches/{cache_id}",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "cache_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/caches{?key,ref}",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "key" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#delete-an-artifact",
     "parameters": [
@@ -539,6 +564,23 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/caches",
+    "documentationUrl": "https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "key" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/cache/usage",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-a-repository",
     "parameters": [
@@ -609,6 +651,17 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "artifact_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#get-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
     "previews": [],
     "renamed": null
@@ -1454,6 +1507,22 @@
   },
   {
     "method": "PUT",
+    "url": "/enterprises/{enterprise}/actions/oidc/customization/issuer",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions/oidc#set-actions-oidc-custom-issuer-policy-for-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "include_enterprise_slug"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
     "url": "/orgs/{org}/actions/permissions/selected-actions",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#set-allowed-actions-for-an-organization",
     "parameters": [
@@ -1530,6 +1599,18 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/repos/{owner}/{repo}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#set-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "use_default" }
     ],
     "previews": [],
     "renamed": null
@@ -3904,6 +3985,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "retention_period_minutes"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "pull_request"
       },
       {
@@ -4019,6 +4106,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "display_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "retention_period_minutes"
       }
     ],
     "previews": [],
@@ -4064,6 +4157,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "display_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "retention_period_minutes"
       }
     ],
     "previews": [],
@@ -4074,6 +4173,23 @@
     "url": "/user/codespaces/{codespace_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#delete-a-codespace-for-the-authenticated-user",
     "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "codespace_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/members/{username}/codespaces/{codespace_name}",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       {
         "alias": null,
         "deprecated": null,
@@ -4225,6 +4341,18 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org_id}/codespaces",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-in-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/codespaces",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-codespaces-in-a-repository-for-the-authenticated-user",
     "parameters": [
@@ -4345,6 +4473,23 @@
     "url": "/user/codespaces/{codespace_name}/stop",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#stop-a-codespace-for-the-authenticated-user",
     "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "codespace_name"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       {
         "alias": null,
         "deprecated": null,
@@ -7616,6 +7761,32 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "note" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "note_url" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "fingerprint" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "include_claim_keys"
+      }
     ],
     "previews": [],
     "renamed": null

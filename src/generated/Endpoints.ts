@@ -342,6 +342,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces
+   */
+  "DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}": Operation<
+    "/orgs/{org}/members/{username}/codespaces/{codespace_name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#remove-organization-membership-for-a-user
    */
   "DELETE /orgs/{org}/memberships/{username}": Operation<
@@ -490,6 +497,20 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/actions/artifacts/{artifact_id}": Operation<
     "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id
+   */
+  "DELETE /repos/{owner}/{repo}/actions/caches/{cache_id}": Operation<
+    "/repos/{owner}/{repo}/actions/caches/{cache_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#delete-github-actions-caches-for-a-repository-using-a-cache-key
+   */
+  "DELETE /repos/{owner}/{repo}/actions/caches{?key,ref}": Operation<
+    "/repos/{owner}/{repo}/actions/caches",
     "delete"
   >;
   /**
@@ -1447,6 +1468,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
+   */
+  "GET /orgs/{org_id}/codespaces": Operation<
+    "/orgs/{org_id}/codespaces",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#get-an-organization
    */
   "GET /orgs/{org}": Operation<"/orgs/{org}", "get">;
@@ -1462,6 +1490,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/cache/usage-by-repository": Operation<
     "/orgs/{org}/actions/cache/usage-by-repository",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization
+   */
+  "GET /orgs/{org}/actions/oidc/customization/sub": Operation<
+    "/orgs/{org}/actions/oidc/customization/sub",
     "get"
   >;
   /**
@@ -2068,6 +2103,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/caches": Operation<
+    "/repos/{owner}/{repo}/actions/caches",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#get-a-job-for-a-workflow-run
    */
   "GET /repos/{owner}/{repo}/actions/jobs/{job_id}": Operation<
@@ -2079,6 +2121,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs": Operation<
     "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#get-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/oidc/customization/sub": Operation<
+    "/repos/{owner}/{repo}/actions/oidc/customization/sub",
     "get"
   >;
   /**
@@ -4458,6 +4507,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces
+   */
+  "POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop": Operation<
+    "/orgs/{org}/members/{username}/codespaces/{codespace_name}/stop",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/migrations#start-an-organization-migration
    */
   "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
@@ -5181,6 +5237,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/actions/oidc#set-actions-oidc-custom-issuer-policy-for-enterprise
+   */
+  "PUT /enterprises/{enterprise}/actions/oidc/customization/issuer": Operation<
+    "/enterprises/{enterprise}/actions/oidc/customization/issuer",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions": Operation<
@@ -5263,6 +5326,13 @@ export interface Endpoints {
    */
   "PUT /notifications/threads/{thread_id}/subscription": Operation<
     "/notifications/threads/{thread_id}/subscription",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/oidc/customization/sub": Operation<
+    "/orgs/{org}/actions/oidc/customization/sub",
     "put"
   >;
   /**
@@ -5438,6 +5508,13 @@ export interface Endpoints {
    */
   "PUT /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#set-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/oidc/customization/sub": Operation<
+    "/repos/{owner}/{repo}/actions/oidc/customization/sub",
     "put"
   >;
   /**
