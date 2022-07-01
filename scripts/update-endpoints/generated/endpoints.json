@@ -3890,17 +3890,6 @@
     "renamed": null
   },
   {
-    "method": "GET",
-    "url": "/repos/{owner}/{repo}/community/code_of_conduct",
-    "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
-    ],
-    "previews": [{ "name": "scarlet-witch" }],
-    "renamed": null
-  },
-  {
     "method": "PUT",
     "url": "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#add-a-selected-repository-to-a-user-secret",
