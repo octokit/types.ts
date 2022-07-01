@@ -2657,14 +2657,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/codes-of-conduct#get-the-code-of-conduct-for-a-repository
-   */
-  "GET /repos/{owner}/{repo}/community/code_of_conduct": Operation<
-    "/repos/{owner}/{repo}/community/code_of_conduct",
-    "get",
-    "scarlet-witch"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/repos#get-community-profile-metrics
    */
   "GET /repos/{owner}/{repo}/community/profile": Operation<
