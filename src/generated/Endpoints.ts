@@ -1469,11 +1469,9 @@ export interface Endpoints {
   >;
   /**
    * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
+   * @deprecated "org_id" is now "org"
    */
-  "GET /orgs/{org_id}/codespaces": Operation<
-    "/orgs/{org_id}/codespaces",
-    "get"
-  >;
+  "GET /orgs/{org_id}/codespaces": Operation<"/orgs/{org}/codespaces", "get">;
   /**
    * @see https://docs.github.com/rest/reference/orgs#get-an-organization
    */
@@ -1633,6 +1631,10 @@ export interface Endpoints {
     "/orgs/{org}/code-scanning/alerts",
     "get"
   >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
+   */
+  "GET /orgs/{org}/codespaces": Operation<"/orgs/{org}/codespaces", "get">;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization
    */

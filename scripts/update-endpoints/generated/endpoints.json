@@ -4330,12 +4330,13 @@
   },
   {
     "method": "GET",
-    "url": "/orgs/{org_id}/codespaces",
+    "url": "/orgs/{org}/codespaces",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-in-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": "org", "deprecated": true, "in": "PATH", "name": "org_id" }
     ],
     "previews": [],
     "renamed": null
