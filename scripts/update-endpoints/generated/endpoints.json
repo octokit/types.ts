@@ -10890,7 +10890,8 @@
         "deprecated": null,
         "in": "BODY",
         "name": "organization"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
     "previews": [],
     "renamed": null
