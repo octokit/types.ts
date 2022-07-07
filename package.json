@@ -106,5 +106,8 @@
       "@octokit/openapi-types",
       "sort-keys"
     ]
+  },
+  "engines": {
+    "node": ">= 14"
   }
 }
