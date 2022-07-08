@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "pika build",
-    "docs": "typedoc --readme none --out docs src/ && touch docs/.nojekyll",
+    "docs": "typedoc --readme none --out docs src/index.ts && touch docs/.nojekyll",
     "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "pretest": "npm run -s lint",
@@ -48,7 +48,7 @@
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
     "sort-keys": "^4.2.0",
     "string-to-jsdoc-comment": "^1.0.0",
-    "typedoc": "^0.21.0",
+    "typedoc": "^0.23.0",
     "typescript": "^4.0.2"
   },
   "@pika/pack": {
