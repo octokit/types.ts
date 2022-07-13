@@ -9,7 +9,7 @@
     "@octokit/openapi-types": "^12.9.0"
   },
   "scripts": {
-    "build": "pika build",
+    "build": "pika-pack build",
     "docs": "typedoc --readme none --out docs src/index.ts && touch docs/.nojekyll",
     "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
