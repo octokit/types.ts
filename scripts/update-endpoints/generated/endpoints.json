@@ -4389,6 +4389,19 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/codespaces/new",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces#preview-attributes-for-a-new-codespace",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "client_ip" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "DELETE",
     "url": "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret",

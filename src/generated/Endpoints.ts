@@ -2533,6 +2533,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#preview-attributes-for-a-new-codespace
+   */
+  "GET /repos/{owner}/{repo}/codespaces/new": Operation<
+    "/repos/{owner}/{repo}/codespaces/new",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/codespaces#list-repository-secrets
    */
   "GET /repos/{owner}/{repo}/codespaces/secrets": Operation<
