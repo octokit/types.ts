@@ -1263,6 +1263,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/code-scanning/alerts": Operation<
+    "/enterprises/{enterprise}/code-scanning/alerts",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/secret-scanning/alerts": Operation<

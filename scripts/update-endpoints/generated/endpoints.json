@@ -3746,6 +3746,25 @@
   },
   {
     "method": "GET",
+    "url": "/enterprises/{enterprise}/code-scanning/alerts",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_name" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_guid" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/code-scanning/alerts",
     "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-by-organization",
     "parameters": [
