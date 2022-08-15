@@ -696,6 +696,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/deployments/branch-policies#delete-deployment-branch-policy
+   */
+  "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/git#delete-a-reference
    */
   "DELETE /repos/{owner}/{repo}/git/refs/{ref}": Operation<
@@ -2756,6 +2763,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/deployments/branch-policies#list-deployment-branch-policies
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/deployments/branch-policies#get-deployment-branch-policy
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#list-repository-events
    */
   "GET /repos/{owner}/{repo}/events": Operation<
@@ -4785,6 +4806,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/deployments/branch-policies#create-deployment-branch-policy
+   */
+  "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/repos#create-a-fork
    */
   "POST /repos/{owner}/{repo}/forks": Operation<
@@ -5616,6 +5644,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/environments/{environment_name}": Operation<
     "/repos/{owner}/{repo}/environments/{environment_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/deployments/branch-policies#update-deployment-branch-policy
+   */
+  "PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}",
     "put"
   >;
   /**
