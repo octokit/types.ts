@@ -4974,6 +4974,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/pages#create-a-github-pages-deployment
+   */
+  "POST /repos/{owner}/{repo}/pages/deployment": Operation<
+    "/repos/{owner}/{repo}/pages/deployment",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/projects#create-a-repository-project
    */
   "POST /repos/{owner}/{repo}/projects": Operation<
