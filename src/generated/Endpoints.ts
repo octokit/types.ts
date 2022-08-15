@@ -647,14 +647,14 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#remove-a-repository-collaborator
+   * @see https://docs.github.com/rest/collaborators/collaborators#remove-a-repository-collaborator
    */
   "DELETE /repos/{owner}/{repo}/collaborators/{username}": Operation<
     "/repos/{owner}/{repo}/collaborators/{username}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#delete-a-commit-comment
+   * @see https://docs.github.com/rest/commits/comments#delete-a-commit-comment
    */
   "DELETE /repos/{owner}/{repo}/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}",
@@ -710,7 +710,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#delete-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#delete-a-repository-webhook
    */
   "DELETE /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
@@ -731,7 +731,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#delete-a-repository-invitation
+   * @see https://docs.github.com/rest/collaborators/invitations#delete-a-repository-invitation
    */
   "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
     "/repos/{owner}/{repo}/invitations/{invitation_id}",
@@ -815,7 +815,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#delete-a-github-pages-site
+   * @see https://docs.github.com/rest/pages#delete-a-github-pages-site
    */
   "DELETE /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
@@ -1058,7 +1058,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#decline-a-repository-invitation
+   * @see https://docs.github.com/rest/collaborators/invitations#decline-a-repository-invitation
    */
   "DELETE /user/repository_invitations/{invitation_id}": Operation<
     "/user/repository_invitations/{invitation_id}",
@@ -2553,35 +2553,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-repository-collaborators
+   * @see https://docs.github.com/rest/collaborators/collaborators#list-repository-collaborators
    */
   "GET /repos/{owner}/{repo}/collaborators": Operation<
     "/repos/{owner}/{repo}/collaborators",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#check-if-a-user-is-a-repository-collaborator
+   * @see https://docs.github.com/rest/collaborators/collaborators#check-if-a-user-is-a-repository-collaborator
    */
   "GET /repos/{owner}/{repo}/collaborators/{username}": Operation<
     "/repos/{owner}/{repo}/collaborators/{username}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-repository-permissions-for-a-user
+   * @see https://docs.github.com/rest/collaborators/collaborators#get-repository-permissions-for-a-user
    */
   "GET /repos/{owner}/{repo}/collaborators/{username}/permission": Operation<
     "/repos/{owner}/{repo}/collaborators/{username}/permission",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-commit-comments-for-a-repository
+   * @see https://docs.github.com/rest/commits/comments#list-commit-comments-for-a-repository
    */
   "GET /repos/{owner}/{repo}/comments": Operation<
     "/repos/{owner}/{repo}/comments",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-commit-comment
+   * @see https://docs.github.com/rest/commits/comments#get-a-commit-comment
    */
   "GET /repos/{owner}/{repo}/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}",
@@ -2595,35 +2595,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-commits
+   * @see https://docs.github.com/rest/commits/commits#list-commits
    */
   "GET /repos/{owner}/{repo}/commits": Operation<
     "/repos/{owner}/{repo}/commits",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-branches-for-head-commit
+   * @see https://docs.github.com/rest/commits/commits#list-branches-for-head-commit
    */
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-commit-comments
+   * @see https://docs.github.com/rest/commits/comments#list-commit-comments
    */
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-pull-requests-associated-with-a-commit
+   * @see https://docs.github.com/rest/commits/commits#list-pull-requests-associated-with-a-commit
    */
   "GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-commit
+   * @see https://docs.github.com/rest/commits/commits#get-a-commit
    */
   "GET /repos/{owner}/{repo}/commits/{ref}": Operation<
     "/repos/{owner}/{repo}/commits/{ref}",
@@ -2644,28 +2644,28 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-the-combined-status-for-a-specific-reference
+   * @see https://docs.github.com/rest/commits/statuses#get-the-combined-status-for-a-specific-reference
    */
   "GET /repos/{owner}/{repo}/commits/{ref}/status": Operation<
     "/repos/{owner}/{repo}/commits/{ref}/status",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-commit-statuses-for-a-reference
+   * @see https://docs.github.com/rest/commits/statuses#list-commit-statuses-for-a-reference
    */
   "GET /repos/{owner}/{repo}/commits/{ref}/statuses": Operation<
     "/repos/{owner}/{repo}/commits/{ref}/statuses",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-community-profile-metrics
+   * @see https://docs.github.com/rest/metrics/community#get-community-profile-metrics
    */
   "GET /repos/{owner}/{repo}/community/profile": Operation<
     "/repos/{owner}/{repo}/community/profile",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#compare-two-commits
+   * @see https://docs.github.com/rest/commits/commits#compare-two-commits
    */
   "GET /repos/{owner}/{repo}/compare/{basehead}": Operation<
     "/repos/{owner}/{repo}/compare/{basehead}",
@@ -2749,7 +2749,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-all-environments
+   * @see https://docs.github.com/rest/deployments/environments#list-environments
    */
   "GET /repos/{owner}/{repo}/environments": Operation<
     "/repos/{owner}/{repo}/environments",
@@ -2833,35 +2833,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-repository-webhooks
+   * @see https://docs.github.com/rest/webhooks/repos#list-repository-webhooks
    */
   "GET /repos/{owner}/{repo}/hooks": Operation<
     "/repos/{owner}/{repo}/hooks",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#get-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-webhook-configuration-for-a-repository
+   * @see https://docs.github.com/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/config",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-deliveries-for-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repo-deliveries#list-deliveries-for-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-delivery-for-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repo-deliveries#get-a-delivery-for-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
@@ -2903,7 +2903,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-repository-invitations
+   * @see https://docs.github.com/rest/collaborators/invitations#list-repository-invitations
    */
   "GET /repos/{owner}/{repo}/invitations": Operation<
     "/repos/{owner}/{repo}/invitations",
@@ -3064,35 +3064,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-github-pages-site
+   * @see https://docs.github.com/rest/pages#get-a-github-pages-site
    */
   "GET /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-github-pages-builds
+   * @see https://docs.github.com/rest/pages#list-github-pages-builds
    */
   "GET /repos/{owner}/{repo}/pages/builds": Operation<
     "/repos/{owner}/{repo}/pages/builds",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-latest-pages-build
+   * @see https://docs.github.com/rest/pages#get-latest-pages-build
    */
   "GET /repos/{owner}/{repo}/pages/builds/latest": Operation<
     "/repos/{owner}/{repo}/pages/builds/latest",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-github-pages-build
+   * @see https://docs.github.com/rest/pages#get-github-pages-build
    */
   "GET /repos/{owner}/{repo}/pages/builds/{build_id}": Operation<
     "/repos/{owner}/{repo}/pages/builds/{build_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-a-dns-health-check-for-github-pages
+   * @see https://docs.github.com/rest/pages#get-a-dns-health-check-for-github-pages
    */
   "GET /repos/{owner}/{repo}/pages/health": Operation<
     "/repos/{owner}/{repo}/pages/health",
@@ -3169,7 +3169,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/pulls#list-requested-reviewers-for-a-pull-request
+   * @see https://docs.github.com/rest/reference/pulls#get-all-requested-reviewers-for-a-pull-request
    */
   "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
@@ -3288,35 +3288,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-the-weekly-commit-activity
+   * @see https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity
    */
   "GET /repos/{owner}/{repo}/stats/code_frequency": Operation<
     "/repos/{owner}/{repo}/stats/code_frequency",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-the-last-year-of-commit-activity
+   * @see https://docs.github.com/rest/metrics/statistics#get-the-last-year-of-commit-activity
    */
   "GET /repos/{owner}/{repo}/stats/commit_activity": Operation<
     "/repos/{owner}/{repo}/stats/commit_activity",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-all-contributor-commit-activity
+   * @see https://docs.github.com/rest/metrics/statistics#get-all-contributor-commit-activity
    */
   "GET /repos/{owner}/{repo}/stats/contributors": Operation<
     "/repos/{owner}/{repo}/stats/contributors",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-the-weekly-commit-count
+   * @see https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-count
    */
   "GET /repos/{owner}/{repo}/stats/participation": Operation<
     "/repos/{owner}/{repo}/stats/participation",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-the-hourly-commit-count-for-each-day
+   * @see https://docs.github.com/rest/statistics/repos#get-the-hourly-commit-count-for-each-day
    */
   "GET /repos/{owner}/{repo}/stats/punch_card": Operation<
     "/repos/{owner}/{repo}/stats/punch_card",
@@ -3372,28 +3372,28 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-repository-clones
+   * @see https://docs.github.com/rest/metrics/traffic#get-repository-clones
    */
   "GET /repos/{owner}/{repo}/traffic/clones": Operation<
     "/repos/{owner}/{repo}/traffic/clones",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-top-referral-paths
+   * @see https://docs.github.com/rest/metrics/traffic#get-top-referral-paths
    */
   "GET /repos/{owner}/{repo}/traffic/popular/paths": Operation<
     "/repos/{owner}/{repo}/traffic/popular/paths",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-top-referral-sources
+   * @see https://docs.github.com/rest/metrics/traffic#get-top-referral-sources
    */
   "GET /repos/{owner}/{repo}/traffic/popular/referrers": Operation<
     "/repos/{owner}/{repo}/traffic/popular/referrers",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#get-page-views
+   * @see https://docs.github.com/rest/metrics/traffic#get-page-views
    */
   "GET /repos/{owner}/{repo}/traffic/views": Operation<
     "/repos/{owner}/{repo}/traffic/views",
@@ -3822,7 +3822,7 @@ export interface Endpoints {
    */
   "GET /user/repos": Operation<"/user/repos", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/repos#list-repository-invitations-for-the-authenticated-user
+   * @see https://docs.github.com/rest/collaborators/invitations#list-repository-invitations-for-the-authenticated-user
    */
   "GET /user/repository_invitations": Operation<
     "/user/repository_invitations",
@@ -4173,7 +4173,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-a-commit-comment
+   * @see https://docs.github.com/rest/commits/comments#update-a-commit-comment
    */
   "PATCH /repos/{owner}/{repo}/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}",
@@ -4187,14 +4187,14 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#update-a-repository-webhook
    */
   "PATCH /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-a-webhook-configuration-for-a-repository
+   * @see https://docs.github.com/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository
    */
   "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/config",
@@ -4222,7 +4222,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-a-repository-invitation
+   * @see https://docs.github.com/rest/collaborators/invitations#update-a-repository-invitation
    */
   "PATCH /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
     "/repos/{owner}/{repo}/invitations/{invitation_id}",
@@ -4360,7 +4360,7 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#accept-a-repository-invitation
+   * @see https://docs.github.com/rest/collaborators/invitations#accept-a-repository-invitation
    */
   "PATCH /user/repository_invitations/{invitation_id}": Operation<
     "/user/repository_invitations/{invitation_id}",
@@ -4771,7 +4771,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-a-commit-comment
+   * @see https://docs.github.com/rest/commits/comments#create-a-commit-comment
    */
   "POST /repos/{owner}/{repo}/commits/{commit_sha}/comments": Operation<
     "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
@@ -4855,28 +4855,28 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#create-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks": Operation<
     "/repos/{owner}/{repo}/hooks",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#redeliver-a-delivery-for-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repo-deliveries#redeliver-a-delivery-for-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#ping-a-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#ping-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/pings": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#test-the-push-repository-webhook
+   * @see https://docs.github.com/rest/webhooks/repos#test-the-push-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/tests": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
@@ -4960,14 +4960,14 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-a-github-pages-site
+   * @see https://docs.github.com/rest/pages#create-a-github-pages-site
    */
   "POST /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#request-a-github-pages-build
+   * @see https://docs.github.com/rest/pages#request-a-github-pages-build
    */
   "POST /repos/{owner}/{repo}/pages/builds": Operation<
     "/repos/{owner}/{repo}/pages/builds",
@@ -5065,7 +5065,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-a-commit-status
+   * @see https://docs.github.com/rest/commits/statuses#create-a-commit-status
    */
   "POST /repos/{owner}/{repo}/statuses/{sha}": Operation<
     "/repos/{owner}/{repo}/statuses/{sha}",
@@ -5626,7 +5626,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#add-a-repository-collaborator
+   * @see https://docs.github.com/rest/collaborators/collaborators#add-a-repository-collaborator
    */
   "PUT /repos/{owner}/{repo}/collaborators/{username}": Operation<
     "/repos/{owner}/{repo}/collaborators/{username}",
@@ -5703,7 +5703,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#update-information-about-a-github-pages-site
+   * @see https://docs.github.com/rest/pages#update-information-about-a-github-pages-site
    */
   "PUT /repos/{owner}/{repo}/pages": Operation<
     "/repos/{owner}/{repo}/pages",
