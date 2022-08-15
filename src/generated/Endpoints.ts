@@ -384,6 +384,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#remove-a-security-manager-team
+   */
+  "DELETE /orgs/{org}/security-managers/teams/{team_slug}": Operation<
+    "/orgs/{org}/security-managers/teams/{team_slug}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/teams#delete-a-team
    */
   "DELETE /orgs/{org}/teams/{team_slug}": Operation<
@@ -1833,6 +1840,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/secret-scanning/alerts": Operation<
     "/orgs/{org}/secret-scanning/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#list-security-manager-teams
+   */
+  "GET /orgs/{org}/security-managers": Operation<
+    "/orgs/{org}/security-managers",
     "get"
   >;
   /**
@@ -5427,6 +5441,13 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/public_members/{username}": Operation<
     "/orgs/{org}/public_members/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#add-a-security-manager-team
+   */
+  "PUT /orgs/{org}/security-managers/teams/{team_slug}": Operation<
+    "/orgs/{org}/security-managers/teams/{team_slug}",
     "put"
   >;
   /**
