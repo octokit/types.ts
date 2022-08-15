@@ -120,13 +120,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#delete-a-grant
-   */
-  "DELETE /applications/grants/{grant_id}": Operation<
-    "/applications/grants/{grant_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/apps#delete-an-app-authorization
    */
   "DELETE /applications/{client_id}/grant": Operation<
@@ -138,13 +131,6 @@ export interface Endpoints {
    */
   "DELETE /applications/{client_id}/token": Operation<
     "/applications/{client_id}/token",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#delete-an-authorization
-   */
-  "DELETE /authorizations/{authorization_id}": Operation<
-    "/authorizations/{authorization_id}",
     "delete"
   >;
   /**
@@ -1120,31 +1106,9 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#list-your-grants
-   */
-  "GET /applications/grants": Operation<"/applications/grants", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#get-a-single-grant
-   */
-  "GET /applications/grants/{grant_id}": Operation<
-    "/applications/grants/{grant_id}",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/apps/#get-an-app
    */
   "GET /apps/{app_slug}": Operation<"/apps/{app_slug}", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#list-your-authorizations
-   */
-  "GET /authorizations": Operation<"/authorizations", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#get-a-single-authorization
-   */
-  "GET /authorizations/{authorization_id}": Operation<
-    "/authorizations/{authorization_id}",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct
    */
@@ -4032,13 +3996,6 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#update-an-existing-authorization
-   */
-  "PATCH /authorizations/{authorization_id}": Operation<
-    "/authorizations/{authorization_id}",
-    "patch"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/actions#update-a-self-hosted-runner-group-for-an-enterprise
    */
   "PATCH /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
@@ -4409,10 +4366,6 @@ export interface Endpoints {
     "/applications/{client_id}/token/scoped",
     "post"
   >;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#create-a-new-authorization
-   */
-  "POST /authorizations": Operation<"/authorizations", "post">;
   /**
    * @see https://docs.github.com/rest/reference/actions#create-self-hosted-runner-group-for-an-enterprise
    */
@@ -5228,20 +5181,6 @@ export interface Endpoints {
    */
   "PUT /app/installations/{installation_id}/suspended": Operation<
     "/app/installations/{installation_id}/suspended",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#get-or-create-an-authorization-for-a-specific-app
-   */
-  "PUT /authorizations/clients/{client_id}": Operation<
-    "/authorizations/clients/{client_id}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/oauth-authorizations#get-or-create-an-authorization-for-a-specific-app-and-fingerprint
-   */
-  "PUT /authorizations/clients/{client_id}/{fingerprint}": Operation<
-    "/authorizations/clients/{client_id}/{fingerprint}",
     "put"
   >;
   /**
