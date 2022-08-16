@@ -1248,6 +1248,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/enterprise-admin#list-enterprise-consumed-licenses
+   */
+  "GET /enterprises/{enterprise}/consumed-licenses": Operation<
+    "/enterprises/{enterprise}/consumed-licenses",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/enterprise-admin#get-a-license-sync-status
+   */
+  "GET /enterprises/{enterprise}/license-sync-status": Operation<
+    "/enterprises/{enterprise}/license-sync-status",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/secret-scanning/alerts": Operation<

@@ -5107,8 +5107,30 @@
   },
   {
     "method": "GET",
+    "url": "/enterprises/{enterprise}/consumed-licenses",
+    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#list-enterprise-consumed-licenses",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/enterprises/{enterprise}/actions/permissions",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/license-sync-status",
+    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#get-a-license-sync-status",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
