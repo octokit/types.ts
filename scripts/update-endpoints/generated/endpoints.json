@@ -2365,6 +2365,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_custom_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.deployments"
       },
       {
@@ -2936,6 +2942,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.contents"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_roles"
       },
       {
         "alias": null,
@@ -4867,6 +4879,48 @@
         "deprecated": null,
         "in": "BODY",
         "name": "manifests.*.resolved"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.package_url"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.metadata"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.metadata.*"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.relationship"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.scope"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "manifests.*.resolved.*.dependencies"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "scanned" }
     ],
@@ -8342,6 +8396,12 @@
         "in": "BODY",
         "name": "members_can_fork_private_repositories"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "web_commit_signoff_required"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "blog" }
     ],
     "previews": [],
@@ -10801,6 +10861,30 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "squash_merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "squash_merge_commit_message"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_message"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "has_downloads"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "is_template" }
@@ -10905,6 +10989,30 @@
         "deprecated": null,
         "in": "BODY",
         "name": "use_squash_pr_title_as_default"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "squash_merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "squash_merge_commit_message"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_message"
       }
     ],
     "previews": [],
@@ -13061,12 +13169,42 @@
         "in": "BODY",
         "name": "use_squash_pr_title_as_default"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "squash_merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "squash_merge_commit_message"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_title"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "merge_commit_message"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "archived" },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
         "name": "allow_forking"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "web_commit_signoff_required"
       }
     ],
     "previews": [],
