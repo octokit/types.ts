@@ -2365,12 +2365,6 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.organization_custom_roles"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
         "name": "permissions.deployments"
       },
       {
@@ -2474,6 +2468,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_roles"
       },
       {
         "alias": null,
@@ -2947,12 +2947,6 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.organization_custom_roles"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
         "name": "permissions.deployments"
       },
       {
@@ -3056,6 +3050,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_roles"
       },
       {
         "alias": null,
@@ -3845,7 +3845,9 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sarif_id" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sarif_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
     ],
     "previews": [],
     "renamed": null
@@ -7093,6 +7095,12 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignee" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "state" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "state_reason"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "milestone" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
@@ -10905,7 +10913,13 @@
         "in": "BODY",
         "name": "organization"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "default_branch_only"
+      }
     ],
     "previews": [],
     "renamed": null
