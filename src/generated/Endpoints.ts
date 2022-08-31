@@ -1065,6 +1065,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/users#delete-a-ssh-signing-key-for-the-authenticated-user
+   */
+  "DELETE /user/ssh_signing_keys/{ssh_signing_key_id}": Operation<
+    "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#unstar-a-repository-for-the-authenticated-user
    */
   "DELETE /user/starred/{owner}/{repo}": Operation<
@@ -3843,6 +3850,17 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/users#list-public-ssh-signing-keys-for-the-authenticated-user
+   */
+  "GET /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/users#get-a-ssh-signing-key-for-the-authenticated-user
+   */
+  "GET /user/ssh_signing_keys/{ssh_signing_key_id}": Operation<
+    "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#list-repositories-starred-by-the-authenticated-user
    */
   "GET /user/starred": Operation<"/user/starred", "get">;
@@ -4013,6 +4031,13 @@ export interface Endpoints {
    */
   "GET /users/{username}/settings/billing/shared-storage": Operation<
     "/users/{username}/settings/billing/shared-storage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/users#list-ssh-signing-keys-for-a-user
+   */
+  "GET /users/{username}/ssh_signing_keys": Operation<
+    "/users/{username}/ssh_signing_keys",
     "get"
   >;
   /**
@@ -4579,6 +4604,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos
+   */
+  "POST /orgs/{org}/{security_product}/{enablement}": Operation<
+    "/orgs/{org}/{security_product}/{enablement}",
     "post"
   >;
   /**
@@ -5218,6 +5250,10 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user
    */
   "POST /user/repos": Operation<"/user/repos", "post">;
+  /**
+   * @see https://docs.github.com/rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user
+   */
+  "POST /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "post">;
   /**
    * @see https://docs.github.com/rest/reference/packages#restore-a-package-for-a-user
    */

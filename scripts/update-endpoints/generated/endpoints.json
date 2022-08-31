@@ -2365,12 +2365,6 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.organization_custom_roles"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
         "name": "permissions.deployments"
       },
       {
@@ -2474,6 +2468,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_roles"
       },
       {
         "alias": null,
@@ -2947,12 +2947,6 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "permissions.organization_custom_roles"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
         "name": "permissions.deployments"
       },
       {
@@ -3056,6 +3050,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_administration"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_roles"
       },
       {
         "alias": null,
@@ -3845,7 +3845,9 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sarif_id" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sarif_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
     ],
     "previews": [],
     "renamed": null
@@ -7093,6 +7095,12 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignee" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "state" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "state_reason"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "milestone" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
@@ -7876,6 +7884,23 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/orgs/{org}/{security_product}/{enablement}",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#enable-or-disable-security-product-on-all-org-repos",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "security_product"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enablement" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/orgs/{org}",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#get-an-organization",
@@ -8402,7 +8427,43 @@
         "in": "BODY",
         "name": "web_commit_signoff_required"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "blog" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "blog" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "advanced_security_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "dependabot_alerts_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "dependabot_security_updates_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "dependency_graph_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_push_protection_enabled_for_new_repositories"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -10905,7 +10966,13 @@
         "in": "BODY",
         "name": "organization"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "default_branch_only"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -15377,6 +15444,17 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/user/ssh_signing_keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "DELETE",
     "url": "/user/emails",
     "documentationUrl": "https://docs.github.com/rest/reference/users#delete-an-email-address-for-the-authenticated-user",
@@ -15432,6 +15510,21 @@
     "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-public-ssh-key-for-the-authenticated-user",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#delete-a-ssh-signing-key-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "ssh_signing_key_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -15517,6 +15610,21 @@
     "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-public-ssh-key-for-the-authenticated-user",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/ssh_signing_keys/{ssh_signing_key_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#get-a-ssh-signing-key-for-the-authenticated-user",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "ssh_signing_key_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -15711,6 +15819,29 @@
     "url": "/user/keys",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-ssh-keys-for-the-authenticated-user",
     "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/user/ssh_signing_keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-public-ssh-signing-keys-for-the-authenticated-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/users/{username}/ssh_signing_keys",
+    "documentationUrl": "https://docs.github.com/rest/reference/users#list-ssh-signing-keys-for-a-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
