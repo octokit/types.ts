@@ -10653,6 +10653,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "url_template"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "is_alphanumeric"
       }
     ],
     "previews": [],
