@@ -1287,7 +1287,8 @@
         "deprecated": null,
         "in": "QUERY",
         "name": "check_suite_id"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "head_sha" }
     ],
     "previews": [],
     "renamed": null
@@ -1317,7 +1318,8 @@
         "deprecated": null,
         "in": "QUERY",
         "name": "check_suite_id"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "head_sha" }
     ],
     "previews": [],
     "renamed": null
