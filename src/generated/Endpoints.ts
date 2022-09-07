@@ -286,6 +286,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#delete-a-custom-role
+   */
+  "DELETE /orgs/{org}/custom_roles/{role_id}": Operation<
+    "/orgs/{org}/custom_roles/{role_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/dependabot#delete-an-organization-secret
    */
   "DELETE /orgs/{org}/dependabot/secrets/{secret_name}": Operation<
@@ -1702,6 +1709,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/orgs#list-fine-grained-permissions-for-an-organization
+   */
+  "GET /orgs/{org}/fine_grained_permissions": Operation<
+    "/orgs/{org}/fine_grained_permissions",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/orgs#list-organization-webhooks
    */
   "GET /orgs/{org}/hooks": Operation<"/orgs/{org}/hooks", "get">;
@@ -1828,7 +1842,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization
+   * @see https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization
    */
   "GET /orgs/{org}/packages/{package_type}/{package_name}/versions": Operation<
     "/orgs/{org}/packages/{package_type}/{package_name}/versions",
@@ -3821,7 +3835,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
+   * @see https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user
    */
   "GET /user/packages/{package_type}/{package_name}/versions": Operation<
     "/user/packages/{package_type}/{package_name}/versions",
@@ -3974,7 +3988,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user
+   * @see https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user
    */
   "GET /users/{username}/packages/{package_type}/{package_name}/versions": Operation<
     "/users/{username}/packages/{package_type}/{package_name}/versions",
@@ -4103,6 +4117,13 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
     "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#update-a-custom-role
+   */
+  "PATCH /orgs/{org}/custom_roles/{role_id}": Operation<
+    "/orgs/{org}/custom_roles/{role_id}",
     "patch"
   >;
   /**
@@ -4517,6 +4538,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/actions/runners/{runner_id}/labels": Operation<
     "/orgs/{org}/actions/runners/{runner_id}/labels",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/orgs#create-a-custom-role
+   */
+  "POST /orgs/{org}/custom_roles": Operation<
+    "/orgs/{org}/custom_roles",
     "post"
   >;
   /**

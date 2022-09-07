@@ -7817,6 +7817,25 @@
   },
   {
     "method": "POST",
+    "url": "/orgs/{org}/custom_roles",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#create-a-custom-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "description"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/orgs/{org}/invitations",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#create-an-organization-invitation",
     "parameters": [
@@ -7870,6 +7889,17 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/custom_roles/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#delete-a-custom-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
     ],
     "previews": [],
     "renamed": null
@@ -8039,6 +8069,16 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/fine_grained_permissions",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-fine-grained-permissions-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
     "previews": [],
     "renamed": null
@@ -8472,6 +8512,26 @@
   },
   {
     "method": "PATCH",
+    "url": "/orgs/{org}/custom_roles/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-a-custom-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "description"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
     "url": "/user/memberships/orgs/{org}",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-an-organization-membership-for-the-authenticated-user",
     "parameters": [
@@ -8691,7 +8751,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -8716,7 +8776,7 @@
   {
     "method": "GET",
     "url": "/user/packages/{package_type}/{package_name}/versions",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -8740,7 +8800,7 @@
   {
     "method": "GET",
     "url": "/user/packages/{package_type}/{package_name}/versions",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -8764,7 +8824,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-an-organization",
     "parameters": [
       {
         "alias": null,
@@ -8789,7 +8849,7 @@
   {
     "method": "GET",
     "url": "/users/{username}/packages/{package_type}/{package_name}/versions",
-    "documentationUrl": "https://docs.github.com/rest/reference/packages#get-all-package-versions-for-a-package-owned-by-a-user",
+    "documentationUrl": "https://docs.github.com/rest/packages#get-all-package-versions-for-a-package-owned-by-a-user",
     "parameters": [
       {
         "alias": null,
