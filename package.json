@@ -97,14 +97,5 @@
   },
   "octokit": {
     "openapi-version": "7.10.0"
-  },
-  "renovate": {
-    "extends": [
-      "github>octokit/.github"
-    ],
-    "ignoreDeps": [
-      "@octokit/openapi-types",
-      "sort-keys"
-    ]
   }
 }
