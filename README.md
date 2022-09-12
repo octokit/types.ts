@@ -47,12 +47,11 @@ import {
 } from "@octokit/types";
 import { Octokit } from "@octokit/rest";
 
-const octokit = new Octokit();
 type CreateLabelResponseType = GetResponseTypeFromEndpointMethod<
-  typeof octokit.issues.createLabel
+  Octokit['issues']['createLabel']
 >;
 type CreateLabelResponseDataType = GetResponseDataTypeFromEndpointMethod<
-  typeof octokit.issues.createLabel
+  Octokit['issues']['createLabel']
 >;
 ```
 
