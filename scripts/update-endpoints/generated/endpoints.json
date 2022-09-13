@@ -12539,6 +12539,12 @@
         "in": "QUERY",
         "name": "affiliation"
       },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "permission"
+      },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
