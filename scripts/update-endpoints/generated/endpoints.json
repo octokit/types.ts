@@ -3728,6 +3728,18 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#get-codeql-database",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "language" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository",
     "parameters": [
@@ -3834,6 +3846,17 @@
     ],
     "previews": [],
     "renamed": { "note": null }
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/code-scanning/codeql/databases",
+    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-codeql-databases",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": null
   },
   {
     "method": "GET",

@@ -2525,6 +2525,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/code-scanning#list-codeql-databases
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/codeql/databases": Operation<
+    "/repos/{owner}/{repo}/code-scanning/codeql/databases",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/code-scanning#get-codeql-database
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}": Operation<
+    "/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository
    */
   "GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}": Operation<
