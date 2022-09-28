@@ -33,6 +33,14 @@ const QUERY = `
 
 main();
 
+const removeEnterpriseCloudFromDocumentationUrl = (endpoint) => ({
+  ...endpoint,
+  documentationUrl: endpoint.documentationUrl.replace(
+    "/enterprise-cloud@latest/",
+    ""
+  ),
+});
+
 async function main() {
   const {
     data: { endpoints },
@@ -43,8 +51,11 @@ async function main() {
 
   writeFileSync(
     path.resolve(__dirname, "generated", "endpoints.json"),
-    prettier.format(JSON.stringify(endpoints), {
-      parser: "json",
-    })
+    prettier.format(
+      JSON.stringify(endpoints.map(removeEnterpriseCloudFromDocumentationUrl)),
+      {
+        parser: "json",
+      }
+    )
   );
 }
