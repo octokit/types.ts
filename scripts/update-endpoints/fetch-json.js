@@ -12,7 +12,7 @@ const version = process.env.VERSION.replace(/^v/, "");
 
 const QUERY = `
   query ($version: String!, $ignoreChangesBefore: String!) {
-    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore) {
+    endpoints(version: $version, ignoreChangesBefore: $ignoreChangesBefore, filter: { isGithubCloudOnly: false }) {
       method
       url
       documentationUrl
