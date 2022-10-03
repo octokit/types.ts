@@ -36,11 +36,9 @@ assertNullableString(resultMerge2.url);
 const test = {} as Endpoints["GET /repos/{owner}/{repo}/issues"]["response"];
 assertArray(test.data);
 assertString(test.data[0].assignees![0].avatar_url);
-const test2 = {} as Endpoints["GET /scim/v2/organizations/{org}/Users"]["response"];
-assertNullableString(test2.data.Resources[0].name.givenName);
 
-const test3 = {} as Endpoints["POST /user/repos"]["parameters"];
-assertString(test3.name);
+const test2 = {} as Endpoints["POST /user/repos"]["parameters"];
+assertString(test2.name);
 
 const checkRunsRoute = 'GET /repos/{owner}/{repo}/commits/{ref}/check-runs' as const;
 
