@@ -209,6 +209,20 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#delete-an-organization-secret
+   */
+  "DELETE /organizations/{org}/codespaces/secrets/{secret_name}": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#remove-selected-repository-from-an-organization-secret
+   */
+  "DELETE /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#disable-a-selected-repository-for-github-actions-in-an-organization
    */
   "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
@@ -276,13 +290,6 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/orgs#remove-a-saml-sso-authorization-for-an-organization
-   */
-  "DELETE /orgs/{org}/credential-authorizations/{credential_id}": Operation<
-    "/orgs/{org}/credential-authorizations/{credential_id}",
     "delete"
   >;
   /**
@@ -430,13 +437,6 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}": Operation<
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#unlink-external-idp-group-team-connection
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/external-groups": Operation<
-    "/orgs/{org}/teams/{team_slug}/external-groups",
     "delete"
   >;
   /**
@@ -906,27 +906,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#delete-a-scim-group-from-an-enterprise
-   */
-  "DELETE /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#delete-a-scim-user-from-an-enterprise
-   */
-  "DELETE /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#delete-a-scim-user-from-an-organization
-   */
-  "DELETE /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
-    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/teams/#delete-a-team-legacy
    */
   "DELETE /teams/{team_id}": Operation<"/teams/{team_id}", "delete">;
@@ -1248,31 +1227,10 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-the-audit-log-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/audit-log": Operation<
-    "/enterprises/{enterprise}/audit-log",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/code-scanning/alerts": Operation<
     "/enterprises/{enterprise}/code-scanning/alerts",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-enterprise-consumed-licenses
-   */
-  "GET /enterprises/{enterprise}/consumed-licenses": Operation<
-    "/enterprises/{enterprise}/consumed-licenses",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-a-license-sync-status
-   */
-  "GET /enterprises/{enterprise}/license-sync-status": Operation<
-    "/enterprises/{enterprise}/license-sync-status",
     "get"
   >;
   /**
@@ -1283,31 +1241,10 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/settings/billing/actions": Operation<
-    "/enterprises/{enterprise}/settings/billing/actions",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/billing#export-advanced-security-active-committers-data-for-enterprise
    */
   "GET /enterprises/{enterprise}/settings/billing/advanced-security": Operation<
     "/enterprises/{enterprise}/settings/billing/advanced-security",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/billing#get-github-packages-billing-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/settings/billing/packages": Operation<
-    "/enterprises/{enterprise}/settings/billing/packages",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/billing#get-shared-storage-billing-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/settings/billing/shared-storage": Operation<
-    "/enterprises/{enterprise}/settings/billing/shared-storage",
     "get"
   >;
   /**
@@ -1481,6 +1418,34 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-organization-secrets
+   */
+  "GET /organizations/{org}/codespaces/secrets": Operation<
+    "/organizations/{org}/codespaces/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-an-organization-public-key
+   */
+  "GET /organizations/{org}/codespaces/secrets/public-key": Operation<
+    "/organizations/{org}/codespaces/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#get-an-organization-secret
+   */
+  "GET /organizations/{org}/codespaces/secrets/{secret_name}": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-an-organization-secret
+   */
+  "GET /organizations/{org}/codespaces/secrets/{secret_name}/repositories": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
    * @deprecated "org_id" is now "org"
    */
@@ -1501,13 +1466,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/cache/usage-by-repository": Operation<
     "/orgs/{org}/actions/cache/usage-by-repository",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization
-   */
-  "GET /orgs/{org}/actions/oidc/customization/sub": Operation<
-    "/orgs/{org}/actions/oidc/customization/sub",
     "get"
   >;
   /**
@@ -1623,10 +1581,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/orgs#get-audit-log
-   */
-  "GET /orgs/{org}/audit-log": Operation<"/orgs/{org}/audit-log", "get">;
-  /**
    * @see https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization
    */
   "GET /orgs/{org}/blocks": Operation<"/orgs/{org}/blocks", "get">;
@@ -1648,13 +1602,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
    */
   "GET /orgs/{org}/codespaces": Operation<"/orgs/{org}/codespaces", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/orgs#list-saml-sso-authorizations-for-an-organization
-   */
-  "GET /orgs/{org}/credential-authorizations": Operation<
-    "/orgs/{org}/credential-authorizations",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/reference/dependabot#list-organization-secrets
    */
@@ -1687,20 +1634,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/activity#list-public-organization-events
    */
   "GET /orgs/{org}/events": Operation<"/orgs/{org}/events", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#external-idp-group-info-for-an-organization
-   */
-  "GET /orgs/{org}/external-group/{group_id}": Operation<
-    "/orgs/{org}/external-group/{group_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#list-external-idp-groups-for-an-organization
-   */
-  "GET /orgs/{org}/external-groups": Operation<
-    "/orgs/{org}/external-groups",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/reference/orgs#list-failed-organization-invitations
    */
@@ -1920,13 +1853,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/teams#list-idp-groups-for-an-organization
-   */
-  "GET /orgs/{org}/team-sync/groups": Operation<
-    "/orgs/{org}/team-sync/groups",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/teams#list-teams
    */
   "GET /orgs/{org}/teams": Operation<"/orgs/{org}/teams", "get">;
@@ -1980,13 +1906,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/teams#list-external-idp-group-team-connection
-   */
-  "GET /orgs/{org}/teams/{team_slug}/external-groups": Operation<
-    "/orgs/{org}/teams/{team_slug}/external-groups",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/teams#list-pending-team-invitations
    */
   "GET /orgs/{org}/teams/{team_slug}/invitations": Operation<
@@ -2033,13 +1952,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
     "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#list-idp-groups-for-a-team
-   */
-  "GET /orgs/{org}/teams/{team_slug}/team-sync/group-mappings": Operation<
-    "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
     "get"
   >;
   /**
@@ -2150,13 +2062,6 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs": Operation<
     "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/oidc#get-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository
-   */
-  "GET /repos/{owner}/{repo}/actions/oidc/customization/sub": Operation<
-    "/repos/{owner}/{repo}/actions/oidc/customization/sub",
     "get"
   >;
   /**
@@ -2739,6 +2644,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/contributors": Operation<
     "/repos/{owner}/{repo}/contributors",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#list-dependabot-alerts-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/dependabot/alerts": Operation<
+    "/repos/{owner}/{repo}/dependabot/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#get-a-dependabot-alert
+   */
+  "GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/dependabot/alerts/{alert_number}",
     "get"
   >;
   /**
@@ -3488,48 +3407,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-provisioned-scim-groups-for-an-enterprise
-   */
-  "GET /scim/v2/enterprises/{enterprise}/Groups": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise-group
-   */
-  "GET /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#list-scim-provisioned-identities-for-an-enterprise
-   */
-  "GET /scim/v2/enterprises/{enterprise}/Users": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#get-scim-provisioning-information-for-an-enterprise-user
-   */
-  "GET /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#list-scim-provisioned-identities
-   */
-  "GET /scim/v2/organizations/{org}/Users": Operation<
-    "/scim/v2/organizations/{org}/Users",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#get-scim-provisioning-information-for-a-user
-   */
-  "GET /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
-    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/search#search-code
    */
   "GET /search/code": Operation<"/search/code", "get">;
@@ -3651,13 +3528,6 @@ export interface Endpoints {
    */
   "GET /teams/{team_id}/repos/{owner}/{repo}": Operation<
     "/teams/{team_id}/repos/{owner}/{repo}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#list-idp-groups-for-a-team-legacy
-   */
-  "GET /teams/{team_id}/team-sync/group-mappings": Operation<
-    "/teams/{team_id}/team-sync/group-mappings",
     "get"
   >;
   /**
@@ -4176,20 +4046,6 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/teams#link-external-idp-group-team-connection
-   */
-  "PATCH /orgs/{org}/teams/{team_slug}/external-groups": Operation<
-    "/orgs/{org}/teams/{team_slug}/external-groups",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#create-or-update-idp-group-connections
-   */
-  "PATCH /orgs/{org}/teams/{team_slug}/team-sync/group-mappings": Operation<
-    "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
-    "patch"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/projects#update-a-project-card
    */
   "PATCH /projects/columns/cards/{card_id}": Operation<
@@ -4251,6 +4107,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/comments/{comment_id}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/dependabot#update-a-dependabot-alert
+   */
+  "PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}": Operation<
+    "/repos/{owner}/{repo}/dependabot/alerts/{alert_number}",
     "patch"
   >;
   /**
@@ -4366,27 +4229,6 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#update-an-attribute-for-a-scim-enterprise-group
-   */
-  "PATCH /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#update-an-attribute-for-a-scim-enterprise-user
-   */
-  "PATCH /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#update-an-attribute-for-a-scim-user
-   */
-  "PATCH /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
-    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
-    "patch"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/teams/#update-a-team-legacy
    */
   "PATCH /teams/{team_id}": Operation<"/teams/{team_id}", "patch">;
@@ -4402,13 +4244,6 @@ export interface Endpoints {
    */
   "PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
     "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/teams#create-or-update-idp-group-connections-legacy
-   */
-  "PATCH /teams/{team_id}/team-sync/group-mappings": Operation<
-    "/teams/{team_id}/team-sync/group-mappings",
     "patch"
   >;
   /**
@@ -5181,27 +5016,6 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#provision-a-scim-enterprise-group-and-invite-users
-   */
-  "POST /scim/v2/enterprises/{enterprise}/Groups": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#provision-and-invite-a-scim-enterprise-user
-   */
-  "POST /scim/v2/enterprises/{enterprise}/Users": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#provision-and-invite-a-scim-user
-   */
-  "POST /scim/v2/organizations/{org}/Users": Operation<
-    "/scim/v2/organizations/{org}/Users",
-    "post"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/teams#create-a-discussion-legacy
    */
   "POST /teams/{team_id}/discussions": Operation<
@@ -5325,13 +5139,6 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/actions/oidc#set-actions-oidc-custom-issuer-policy-for-enterprise
-   */
-  "PUT /enterprises/{enterprise}/actions/oidc/customization/issuer": Operation<
-    "/enterprises/{enterprise}/actions/oidc/customization/issuer",
-    "put"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-an-enterprise
    */
   "PUT /enterprises/{enterprise}/actions/permissions": Operation<
@@ -5417,10 +5224,24 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization
+   * @see https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret
    */
-  "PUT /orgs/{org}/actions/oidc/customization/sub": Operation<
-    "/orgs/{org}/actions/oidc/customization/sub",
+  "PUT /organizations/{org}/codespaces/secrets/{secret_name}": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-an-organization-secret
+   */
+  "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#add-selected-repository-to-an-organization-secret
+   */
+  "PUT /organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "put"
   >;
   /**
@@ -5463,13 +5284,6 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
     "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#add-repository-acess-to-a-self-hosted-runner-group-in-an-organization
-   */
-  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
     "put"
   >;
   /**
@@ -5603,13 +5417,6 @@ export interface Endpoints {
    */
   "PUT /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/oidc#set-the-opt-out-flag-of-an-oidc-subject-claim-customization-for-a-repository
-   */
-  "PUT /repos/{owner}/{repo}/actions/oidc/customization/sub": Operation<
-    "/repos/{owner}/{repo}/actions/oidc/customization/sub",
     "put"
   >;
   /**
@@ -5855,27 +5662,6 @@ export interface Endpoints {
    */
   "PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}": Operation<
     "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-scim-information-for-a-provisioned-enterprise-group
-   */
-  "PUT /scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/enterprise-admin#set-scim-information-for-a-provisioned-enterprise-user
-   */
-  "PUT /scim/v2/enterprises/{enterprise}/Users/{scim_user_id}": Operation<
-    "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/scim#set-scim-information-for-a-provisioned-user
-   */
-  "PUT /scim/v2/organizations/{org}/Users/{scim_user_id}": Operation<
-    "/scim/v2/organizations/{org}/Users/{scim_user_id}",
     "put"
   >;
   /**
