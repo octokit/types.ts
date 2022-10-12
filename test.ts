@@ -1,5 +1,11 @@
 // This code is not executed, only statically analyzed using `tsc --noEmit`
-import { EndpointInterface, Endpoints, RequestInterface, RequestParameters, Route } from "./src";
+import {
+  EndpointInterface,
+  Endpoints,
+  RequestInterface,
+  RequestParameters,
+  Route,
+} from "./src";
 
 const endpoint = {} as EndpointInterface;
 function assertString(type: string) {}
@@ -36,21 +42,29 @@ assertNullableString(resultMerge2.url);
 const test = {} as Endpoints["GET /repos/{owner}/{repo}/issues"]["response"];
 assertArray(test.data);
 assertString(test.data[0].assignees![0].avatar_url);
-const test2 = {} as Endpoints["GET /scim/v2/organizations/{org}/Users"]["response"];
+const test2 =
+  {} as Endpoints["GET /scim/v2/organizations/{org}/Users"]["response"];
 assertNullableString(test2.data.Resources[0].name.givenName);
 
 const test3 = {} as Endpoints["POST /user/repos"]["parameters"];
 assertString(test3.name);
 
-const checkRunsRoute = 'GET /repos/{owner}/{repo}/commits/{ref}/check-runs' as const;
+const checkRunsRoute =
+  "GET /repos/{owner}/{repo}/commits/{ref}/check-runs" as const;
 
 assertPaginate(checkRunsRoute);
 
 const listForRef = {} as {
-  (params?: RequestParameters & Omit<Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"]["parameters"], "baseUrl" | "headers" | "mediaType">): Promise<Endpoints[typeof checkRunsRoute]["response"]>;
+  (
+    params?: RequestParameters &
+      Omit<
+        Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"]["parameters"],
+        "baseUrl" | "headers" | "mediaType"
+      >
+  ): Promise<Endpoints[typeof checkRunsRoute]["response"]>;
   defaults: RequestInterface["defaults"];
   endpoint: EndpointInterface<{
-      url: string;
+    url: string;
   }>;
 };
 
