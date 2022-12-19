@@ -11,8 +11,8 @@
   "scripts": {
     "build": "pika-pack build",
     "docs": "typedoc --readme none --out docs src/index.ts && touch docs/.nojekyll",
-    "lint": "prettier --check '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
-    "lint:fix": "prettier --write '{src,test,scripts}/**/*.{js,ts,json}' README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
+    "lint": "prettier --check \"{src,test,scripts}/**/*.{js,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
+    "lint:fix": "prettier --write \"{src,test,scripts}/**/*.{js,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "pretest": "npm run -s lint",
     "test": "npx tsc --project tsconfig.test.json",
     "update-endpoints": "npm-run-all update-endpoints:*",
