@@ -8,7 +8,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -21,7 +20,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -43,7 +41,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -60,7 +57,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -72,7 +68,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -84,7 +79,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -118,7 +112,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -148,7 +141,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -172,7 +164,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -182,7 +173,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -193,7 +183,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -203,7 +192,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -214,7 +202,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -251,7 +238,6 @@
         "name": "selected_workflows"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -271,7 +257,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "inputs" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "inputs.*" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -283,7 +268,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "cache_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -296,7 +280,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "key" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -308,7 +291,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "artifact_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -330,7 +312,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -341,7 +322,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -353,7 +333,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -364,7 +343,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -376,7 +354,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -392,7 +369,6 @@
         "name": "runner_group_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -404,7 +380,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -416,7 +391,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -432,7 +406,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -444,7 +417,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "workflow_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -467,7 +439,6 @@
         "name": "archive_format"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -479,7 +450,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "job_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -497,7 +467,6 @@
         "name": "attempt_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -509,7 +478,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -525,7 +493,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -537,7 +504,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "workflow_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -554,7 +520,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -565,7 +530,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -577,7 +541,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -587,7 +550,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -597,7 +559,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -607,7 +568,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -618,7 +578,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -630,7 +589,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "artifact_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -651,7 +609,6 @@
         "name": "environment_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -673,7 +630,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -683,7 +639,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -693,7 +648,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -704,7 +658,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -714,7 +667,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -725,7 +677,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -737,7 +688,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "job_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -747,7 +697,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -758,7 +707,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -770,7 +718,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -781,7 +728,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -792,7 +738,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -804,7 +749,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -816,7 +760,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -827,7 +770,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -839,7 +781,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -855,7 +796,6 @@
         "name": "runner_group_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -867,7 +807,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "workflow_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -878,7 +817,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -896,7 +834,6 @@
         "name": "exclude_pull_requests"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -920,7 +857,6 @@
         "name": "exclude_pull_requests"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -932,7 +868,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -944,7 +879,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "workflow_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -957,7 +891,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -980,7 +913,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -995,7 +927,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1015,7 +946,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1026,7 +956,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1038,7 +967,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1050,7 +978,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1068,7 +995,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1081,7 +1007,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1094,7 +1019,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1104,7 +1028,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1115,7 +1038,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1133,7 +1055,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1145,7 +1066,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1163,7 +1083,6 @@
         "name": "visible_to_repository"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1175,7 +1094,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1188,7 +1106,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1206,7 +1123,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1220,7 +1136,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1257,7 +1172,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "head_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1288,7 +1202,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "head_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1306,7 +1219,6 @@
         "name": "enable_debug_logging"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1324,7 +1236,6 @@
         "name": "enable_debug_logging"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1342,7 +1253,6 @@
         "name": "enable_debug_logging"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1353,7 +1263,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1365,7 +1274,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1377,7 +1285,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1390,7 +1297,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1412,7 +1318,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1434,7 +1339,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1451,7 +1355,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1471,7 +1374,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "state" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "comment" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1499,7 +1401,6 @@
         "name": "patterns_allowed"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1528,7 +1429,6 @@
         "name": "patterns_allowed"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1540,7 +1440,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1553,7 +1452,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1575,7 +1473,6 @@
         "name": "can_approve_pull_request_reviews"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1597,7 +1494,6 @@
         "name": "can_approve_pull_request_reviews"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1620,7 +1516,6 @@
         "name": "can_approve_pull_request_reviews"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1642,7 +1537,6 @@
         "name": "allowed_actions"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1660,7 +1554,6 @@
         "name": "allowed_actions"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1682,7 +1575,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1704,7 +1596,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1720,7 +1611,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1737,7 +1627,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "runners" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1754,7 +1643,6 @@
         "name": "access_level"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1790,7 +1678,6 @@
         "name": "selected_workflows"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1801,7 +1688,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1812,7 +1698,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1822,7 +1707,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1830,7 +1714,6 @@
     "url": "/feeds",
     "documentationUrl": "https://docs.github.com/rest/reference/activity#get-feeds",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1841,7 +1724,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1851,7 +1733,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1861,7 +1742,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1873,7 +1753,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1893,7 +1772,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1906,7 +1784,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1917,7 +1794,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1930,7 +1806,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1942,7 +1817,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1954,7 +1828,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1966,7 +1839,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1978,7 +1850,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -1991,7 +1862,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2013,7 +1883,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2026,7 +1895,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2040,7 +1908,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2052,7 +1919,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2065,7 +1931,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2076,7 +1941,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2089,7 +1953,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2105,7 +1968,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "read" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2122,7 +1984,6 @@
         "name": "last_read_at"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2132,7 +1993,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2145,7 +2005,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "subscribed" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "ignored" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2156,7 +2015,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "ignored" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2167,7 +2025,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2178,7 +2035,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2199,7 +2055,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -2220,7 +2075,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2236,7 +2090,6 @@
         "name": "access_token"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2246,7 +2099,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "code" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2465,7 +2317,6 @@
         "name": "permissions.team_discussions"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2481,7 +2332,6 @@
         "name": "access_token"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2496,7 +2346,6 @@
         "name": "installation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2512,7 +2361,6 @@
         "name": "access_token"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2520,7 +2368,6 @@
     "url": "/app",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#get-the-authenticated-app",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2530,7 +2377,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "app_slug" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2545,7 +2391,6 @@
         "name": "installation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2555,7 +2400,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2566,7 +2410,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2576,7 +2419,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "account_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2586,7 +2428,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "account_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2596,7 +2437,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2604,7 +2444,6 @@
     "url": "/app/hook/config",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#get-a-webhook-configuration-for-an-app",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2614,7 +2453,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2628,7 +2466,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2642,7 +2479,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2659,7 +2495,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2672,7 +2507,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "outdated" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2683,7 +2517,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2694,7 +2527,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2705,7 +2537,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2716,7 +2547,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2727,7 +2557,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2738,7 +2567,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2749,7 +2577,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2759,7 +2586,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2780,7 +2606,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -2801,7 +2626,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2817,7 +2641,6 @@
         "name": "access_token"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -2825,7 +2648,6 @@
     "url": "/installation/token",
     "documentationUrl": "https://docs.github.com/rest/reference/apps#revoke-an-installation-access-token",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3047,7 +2869,6 @@
         "name": "permissions.team_discussions"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3062,7 +2883,6 @@
         "name": "installation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3077,7 +2897,6 @@
         "name": "installation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3100,7 +2919,6 @@
         "name": "insecure_ssl"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3110,7 +2928,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3120,7 +2937,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3132,7 +2948,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3144,7 +2959,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3154,7 +2968,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3164,7 +2977,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3174,7 +2986,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3184,7 +2995,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3197,7 +3007,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "status" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "*" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3209,7 +3018,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "head_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3226,7 +3034,6 @@
         "name": "check_run_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3243,7 +3050,6 @@
         "name": "check_suite_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3262,7 +3068,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3285,7 +3090,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "app_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3312,7 +3116,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3333,7 +3136,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3350,7 +3152,6 @@
         "name": "check_run_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3367,7 +3168,6 @@
         "name": "check_suite_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3396,7 +3196,6 @@
         "name": "auto_trigger_checks[].setting"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3557,7 +3356,6 @@
         "name": "actions[].identifier"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3580,7 +3378,6 @@
         "name": "confirm_delete"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3603,7 +3400,6 @@
         "name": "alert_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3615,7 +3411,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "analysis_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3627,7 +3422,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "language" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3639,7 +3433,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "sarif_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3659,7 +3452,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3678,7 +3470,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3697,7 +3488,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3716,7 +3506,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3736,7 +3525,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -3747,7 +3535,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3766,7 +3553,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3796,7 +3582,6 @@
         "name": "dismissed_comment"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3818,7 +3603,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "started_at" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "tool_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3826,7 +3610,6 @@
     "url": "/codes_of_conduct",
     "documentationUrl": "https://docs.github.com/rest/reference/codes-of-conduct#get-all-codes-of-conduct",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3836,7 +3619,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3857,7 +3639,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3879,7 +3660,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3894,7 +3674,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3967,7 +3746,6 @@
         "name": "pull_request.repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -3997,7 +3775,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4021,7 +3798,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4049,7 +3825,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4105,7 +3880,6 @@
         "name": "retention_period_minutes"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4156,7 +3930,6 @@
         "name": "retention_period_minutes"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4171,7 +3944,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4188,7 +3960,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4199,7 +3970,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4211,7 +3981,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4221,7 +3990,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4236,7 +4004,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4252,7 +4019,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "export_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4267,7 +4033,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4277,7 +4042,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4288,7 +4052,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4296,7 +4059,6 @@
     "url": "/user/codespaces/secrets/public-key",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#get-public-key-for-the-authenticated-user",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4307,7 +4069,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4319,7 +4080,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4329,7 +4089,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4342,7 +4101,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4359,7 +4117,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4372,7 +4129,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": "org", "deprecated": true, "in": "PATH", "name": "org_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4385,7 +4141,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4397,7 +4152,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4410,7 +4164,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4420,7 +4173,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4431,7 +4183,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4449,7 +4200,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4462,7 +4212,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "client_ip" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4483,7 +4232,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4505,7 +4253,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4518,7 +4265,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "location" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "client_ip" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4539,7 +4285,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4561,7 +4306,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4576,7 +4320,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4591,7 +4334,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4608,7 +4350,6 @@
         "name": "codespace_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4636,7 +4377,6 @@
         "name": "recent_folders"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4658,7 +4398,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4688,7 +4427,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4712,7 +4450,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4723,7 +4460,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4735,7 +4471,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4752,7 +4487,6 @@
         "name": "alert_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4762,7 +4496,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4773,7 +4506,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4784,7 +4516,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4796,7 +4527,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4817,7 +4547,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4829,7 +4558,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4842,7 +4570,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4860,7 +4587,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4882,7 +4608,6 @@
         "name": "repository_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4904,7 +4629,6 @@
         "name": "selected_repository_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -4934,7 +4658,6 @@
         "name": "dismissed_comment"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5069,7 +4792,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "scanned" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5082,7 +4804,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "basehead" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5090,7 +4811,6 @@
     "url": "/emojis",
     "documentationUrl": "https://docs.github.com/rest/reference/emojis#get-emojis",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5102,7 +4822,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5119,7 +4838,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5136,7 +4854,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5146,7 +4863,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5156,7 +4872,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5193,7 +4908,6 @@
         "name": "selected_workflows"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5204,7 +4918,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5220,7 +4933,6 @@
         "name": "runner_group_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5231,7 +4943,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5242,7 +4953,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5252,7 +4962,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5262,7 +4971,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5273,7 +4981,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5289,7 +4996,6 @@
         "name": "runner_group_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5311,7 +5017,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "date_end" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5322,7 +5027,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5340,7 +5044,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5350,7 +5053,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5362,7 +5064,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5380,7 +5081,6 @@
         "name": "visible_to_organization"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5392,7 +5092,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5410,7 +5109,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5421,7 +5119,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5433,7 +5130,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5450,7 +5146,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5467,7 +5162,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5495,7 +5189,6 @@
         "name": "patterns_allowed"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5507,7 +5200,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5529,7 +5221,6 @@
         "name": "allowed_actions"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5551,7 +5242,6 @@
         "name": "selected_organization_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5567,7 +5257,6 @@
         "name": "selected_organization_ids"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5584,7 +5273,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "runners" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5620,7 +5308,6 @@
         "name": "selected_workflows"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5630,7 +5317,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5654,7 +5340,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "public" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5665,7 +5350,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5675,7 +5359,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5686,7 +5369,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5696,7 +5378,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5706,7 +5387,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5717,7 +5397,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5728,7 +5407,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5740,7 +5418,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5752,7 +5429,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5764,7 +5440,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5777,7 +5452,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5789,7 +5463,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5801,7 +5474,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5813,7 +5485,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5823,7 +5494,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5833,7 +5503,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gist_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5863,7 +5532,6 @@
         "name": "files.*.filename"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5875,7 +5543,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5888,7 +5555,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "encoding" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5941,7 +5607,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "signature" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5955,7 +5620,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "sha" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -5984,7 +5648,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "tagger.date" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6022,7 +5685,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "base_tree" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6034,7 +5696,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6046,7 +5707,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "file_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6058,7 +5718,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "commit_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6070,7 +5729,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6082,7 +5740,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "tag_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6095,7 +5752,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "tree_sha" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "recursive" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6107,7 +5763,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6121,7 +5776,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "sha" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "force" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6129,7 +5783,6 @@
     "url": "/gitignore/templates",
     "documentationUrl": "https://docs.github.com/rest/reference/gitignore#get-all-gitignore-templates",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6139,7 +5792,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6147,7 +5799,6 @@
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6157,7 +5808,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6168,7 +5818,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6176,7 +5825,6 @@
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#get-interaction-restrictions-for-your-public-repositories",
     "parameters": [],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -6184,7 +5832,6 @@
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6194,7 +5841,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6205,7 +5851,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6213,7 +5858,6 @@
     "url": "/user/interaction-limits",
     "documentationUrl": "https://docs.github.com/rest/reference/interactions#remove-interaction-restrictions-from-your-public-repositories",
     "parameters": [],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -6224,7 +5868,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6236,7 +5879,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6249,7 +5891,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6260,7 +5901,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "limit" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "expiry" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -6278,7 +5918,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6302,7 +5941,6 @@
         "name": "labels[].name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6314,7 +5952,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "assignee" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6331,7 +5968,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6349,7 +5985,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6363,7 +5998,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "color" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "description" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6383,7 +6017,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "due_on" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6395,7 +6028,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6407,7 +6039,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6424,7 +6055,6 @@
         "name": "milestone_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6441,7 +6071,6 @@
         "name": "issue_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6453,7 +6082,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6465,7 +6093,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "event_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6477,7 +6104,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6494,7 +6120,6 @@
         "name": "milestone_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6515,7 +6140,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6528,7 +6152,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6548,7 +6171,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6564,7 +6186,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6583,7 +6204,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6596,7 +6216,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6615,7 +6234,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6632,7 +6250,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6650,7 +6267,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6672,7 +6288,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6691,7 +6306,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6704,7 +6318,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6723,7 +6336,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6739,7 +6351,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6757,7 +6368,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "lock_reason" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6774,7 +6384,6 @@
         "name": "issue_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6792,7 +6401,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6810,7 +6418,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6834,7 +6441,6 @@
         "name": "labels[].name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6851,7 +6457,6 @@
         "name": "issue_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6881,7 +6486,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "assignees" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6894,7 +6498,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6909,7 +6512,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "color" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "description" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6935,7 +6537,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "due_on" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6945,7 +6546,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "license" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6957,7 +6557,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6968,7 +6567,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6980,7 +6578,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "mode" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "context" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6990,7 +6587,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "data" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -6998,7 +6594,6 @@
     "url": "/meta",
     "documentationUrl": "https://docs.github.com/rest/reference/meta#get-github-meta-information",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7008,7 +6603,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "s" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7016,7 +6610,6 @@
     "url": "/zen",
     "documentationUrl": "",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7024,7 +6617,6 @@
     "url": "/",
     "documentationUrl": "https://docs.github.com/rest/overview/resources-in-the-rest-api#root-endpoint",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7035,7 +6627,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7050,7 +6641,6 @@
         "name": "migration_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7066,7 +6656,6 @@
         "name": "migration_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7082,7 +6671,6 @@
         "name": "migration_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7097,7 +6685,6 @@
         "name": "migration_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7109,7 +6696,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7120,7 +6706,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7131,7 +6716,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7147,7 +6731,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7164,7 +6747,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7175,7 +6757,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7188,7 +6769,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "exclude" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7205,7 +6785,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7223,7 +6802,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7240,7 +6818,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -7254,7 +6831,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "email" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7266,7 +6842,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "use_lfs" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7324,7 +6899,6 @@
         "name": "repositories"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7383,7 +6957,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "exclude" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7414,7 +6987,6 @@
         "name": "tfvc_project"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7430,7 +7002,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7447,7 +7018,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7477,7 +7047,6 @@
         "name": "tfvc_project"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7488,7 +7057,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7499,7 +7067,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7515,7 +7082,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7526,7 +7092,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7537,7 +7102,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7548,7 +7112,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7560,7 +7123,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "async" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7579,7 +7141,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7593,7 +7154,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "role" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "team_ids" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7638,7 +7198,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7649,7 +7208,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7660,7 +7218,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7677,7 +7234,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enablement" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7687,7 +7243,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7697,7 +7252,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7708,7 +7262,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7719,7 +7272,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7730,7 +7282,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7742,7 +7293,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7753,7 +7303,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7765,7 +7314,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7775,7 +7323,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7790,7 +7337,6 @@
         "name": "organization_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7802,7 +7348,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7812,7 +7357,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7823,7 +7367,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7835,7 +7378,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7853,7 +7395,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7867,7 +7408,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7879,7 +7419,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7892,7 +7431,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7904,7 +7442,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7916,7 +7453,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7926,7 +7462,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7939,7 +7474,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7951,7 +7485,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7962,7 +7495,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7974,7 +7506,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7985,7 +7516,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -7996,7 +7526,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8007,7 +7536,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8018,7 +7546,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8029,7 +7556,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8041,7 +7567,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "role" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8052,7 +7577,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8063,7 +7587,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8210,7 +7733,6 @@
         "name": "secret_scanning_push_protection_enabled_for_new_repositories"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8230,7 +7752,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8241,7 +7762,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "state" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8275,7 +7795,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8300,7 +7819,6 @@
         "name": "insecure_ssl"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8321,7 +7839,6 @@
         "name": "package_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8343,7 +7860,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8365,7 +7881,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8392,7 +7907,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8420,7 +7934,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8448,7 +7961,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8473,7 +7985,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -8497,7 +8008,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -8521,7 +8031,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8546,7 +8055,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8568,7 +8076,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8589,7 +8096,6 @@
         "name": "package_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8611,7 +8117,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8633,7 +8138,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8660,7 +8164,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8688,7 +8191,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8716,7 +8218,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8732,7 +8233,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "visibility" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8749,7 +8249,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "visibility" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8771,7 +8270,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8793,7 +8291,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8816,7 +8313,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8839,7 +8335,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "token" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8866,7 +8361,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8894,7 +8388,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8922,7 +8415,6 @@
         "name": "package_version_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8934,7 +8426,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8952,7 +8443,6 @@
         "name": "content_type"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8963,7 +8453,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8974,7 +8463,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8986,7 +8474,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -8999,7 +8486,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9009,7 +8495,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9019,7 +8504,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "card_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9029,7 +8513,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9039,7 +8522,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9049,7 +8531,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "card_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9059,7 +8540,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9070,7 +8550,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9088,7 +8567,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9106,7 +8584,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9118,7 +8595,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9131,7 +8607,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9145,7 +8620,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9158,7 +8632,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9170,7 +8643,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "position" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "column_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9181,7 +8653,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "position" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9192,7 +8663,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9212,7 +8682,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9224,7 +8693,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "note" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "archived" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9235,7 +8703,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "column_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9247,7 +8714,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "pull_number" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9270,7 +8736,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "draft" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "issue" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9289,7 +8754,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9352,7 +8816,6 @@
         "name": "comments[].start_side"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9378,7 +8841,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "start_side" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "in_reply_to" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9396,7 +8858,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "review_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9408,7 +8869,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9428,7 +8888,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "message" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "event" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9440,7 +8899,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "pull_number" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9458,7 +8916,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "review_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9470,7 +8927,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9488,7 +8944,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9508,7 +8963,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9527,7 +8981,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9546,7 +8999,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9558,7 +9010,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "pull_number" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9580,7 +9031,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9596,7 +9046,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9615,7 +9064,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9651,7 +9099,6 @@
         "name": "merge_method"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9675,7 +9122,6 @@
         "name": "team_reviewers"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9699,7 +9145,6 @@
         "name": "team_reviewers"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9719,7 +9164,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "event" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9746,7 +9190,6 @@
         "name": "maintainer_can_modify"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9769,7 +9212,6 @@
         "name": "expected_head_sha"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9788,7 +9230,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "review_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9801,7 +9242,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9809,7 +9249,6 @@
     "url": "/rate_limit",
     "documentationUrl": "https://docs.github.com/rest/reference/rate-limit#get-rate-limit-status-for-the-authenticated-user",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9822,7 +9261,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9840,7 +9278,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9853,7 +9290,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9866,7 +9302,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9879,7 +9314,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9903,7 +9337,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9926,7 +9359,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9944,7 +9376,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9961,7 +9392,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "content" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9974,7 +9404,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -9992,7 +9421,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10005,7 +9433,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10018,7 +9445,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10031,7 +9457,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10049,7 +9474,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10073,7 +9497,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "reaction_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10088,7 +9511,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10108,7 +9530,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10123,7 +9544,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10138,7 +9558,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10153,7 +9572,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10179,7 +9597,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10204,7 +9621,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10224,7 +9640,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10243,7 +9658,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10258,7 +9672,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -10273,7 +9686,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10286,7 +9698,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "apps" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10299,7 +9710,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10312,7 +9722,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "contexts" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10325,7 +9734,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "teams" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10338,7 +9746,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "users" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10350,7 +9757,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10361,7 +9767,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10373,7 +9778,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10388,7 +9792,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10402,7 +9805,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "basehead" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10426,7 +9828,6 @@
         "name": "is_alphanumeric"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10442,7 +9843,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "position" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "line" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10454,7 +9854,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10475,7 +9874,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "context" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10489,7 +9887,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "read_only" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10534,7 +9931,6 @@
         "name": "production_environment"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10552,7 +9948,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10596,7 +9991,6 @@
         "name": "auto_inactive"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10620,7 +10014,6 @@
         "name": "client_payload.*"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10721,7 +10114,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "is_template" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10745,7 +10137,6 @@
         "name": "default_branch_only"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10853,7 +10244,6 @@
         "name": "merge_commit_message"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10902,7 +10292,6 @@
         "name": "deployment_branch_policy.custom_branch_policies"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10951,7 +10340,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "author.date" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -10981,7 +10369,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "oidc_token" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11001,7 +10388,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source.path" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11035,7 +10421,6 @@
         "name": "generate_release_notes"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11047,7 +10432,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "pattern" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11083,7 +10467,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11129,7 +10512,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11144,7 +10526,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -11159,7 +10540,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11170,7 +10550,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11182,7 +10561,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11194,7 +10572,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11211,7 +10588,6 @@
         "name": "environment_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11223,7 +10599,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "autolink_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11235,7 +10610,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11247,7 +10621,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11259,7 +10632,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11271,7 +10643,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11288,7 +10659,6 @@
         "name": "deployment_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11311,7 +10681,6 @@
         "name": "branch_policy_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11352,7 +10721,6 @@
         "name": "author.email"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11369,7 +10737,6 @@
         "name": "invitation_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11380,7 +10747,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11392,7 +10758,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11404,7 +10769,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11416,7 +10780,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "asset_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11433,7 +10796,6 @@
         "name": "tag_protection_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11445,7 +10807,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11456,7 +10817,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11467,7 +10827,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11478,7 +10837,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11490,7 +10848,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -11502,7 +10859,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -11514,7 +10870,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11526,7 +10881,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11537,7 +10891,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11548,7 +10901,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11559,7 +10911,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11589,7 +10940,6 @@
         "name": "configuration_file_path"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11600,7 +10950,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11612,7 +10961,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11624,7 +10972,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11637,7 +10984,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11649,7 +10995,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11662,7 +11007,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11674,7 +11018,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11686,7 +11029,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "autolink_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11698,7 +11040,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11710,7 +11051,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11722,7 +11062,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11733,7 +11072,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11745,7 +11083,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11759,7 +11096,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11773,7 +11109,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11784,7 +11119,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11796,7 +11130,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11808,7 +11141,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11819,7 +11151,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11832,7 +11163,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "path" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11843,7 +11173,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11855,7 +11184,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11872,7 +11200,6 @@
         "name": "deployment_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11895,7 +11222,6 @@
         "name": "branch_policy_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11913,7 +11239,6 @@
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "status_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11930,7 +11255,6 @@
         "name": "environment_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11941,7 +11265,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11952,7 +11275,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11963,7 +11285,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11975,7 +11296,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "build_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11986,7 +11306,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -11997,7 +11316,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12009,7 +11327,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12020,7 +11337,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12032,7 +11348,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12045,7 +11360,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "dir" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12057,7 +11371,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "release_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12069,7 +11382,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "asset_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12081,7 +11393,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "tag" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12093,7 +11404,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12105,7 +11415,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12116,7 +11425,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12127,7 +11435,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12139,7 +11446,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12151,7 +11457,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12163,7 +11468,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12175,7 +11479,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12188,7 +11491,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12200,7 +11502,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12214,7 +11515,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12226,7 +11526,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "commit_sha" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12251,7 +11550,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12265,7 +11563,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12278,7 +11575,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12292,7 +11588,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12310,7 +11605,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12324,7 +11618,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12337,7 +11630,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12356,7 +11648,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12375,7 +11666,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12397,7 +11687,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12425,7 +11714,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12440,7 +11728,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12455,7 +11742,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12469,7 +11755,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12482,7 +11767,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12493,7 +11777,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12504,7 +11787,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12517,7 +11799,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12527,7 +11808,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12541,7 +11821,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12555,7 +11834,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12568,7 +11846,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12579,7 +11856,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12592,7 +11868,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12605,7 +11880,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12619,7 +11893,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12632,7 +11905,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12651,7 +11923,6 @@
         "name": "commit_message"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12663,7 +11934,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12675,7 +11945,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12688,7 +11957,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "delivery_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12701,7 +11969,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "apps" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12713,7 +11980,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12726,7 +11992,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "contexts" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12738,7 +12003,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12751,7 +12015,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "teams" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12764,7 +12027,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "users" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12777,7 +12039,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "new_name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12789,7 +12050,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "names" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12800,7 +12060,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12812,7 +12071,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12825,7 +12083,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "apps" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12838,7 +12095,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "contexts" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12851,7 +12107,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "teams" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12864,7 +12119,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "users" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12876,7 +12130,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -12889,7 +12142,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "new_owner" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "team_ids" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13051,7 +12303,6 @@
         "name": "web_commit_signoff_required"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13231,7 +12482,6 @@
         "name": "required_conversation_resolution"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13244,7 +12494,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "comment_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13268,7 +12517,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13289,7 +12537,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "build_type" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13307,7 +12554,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13385,7 +12631,6 @@
         "name": "bypass_pull_request_allowances.apps"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13414,7 +12659,6 @@
         "name": "discussion_category_name"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13429,7 +12673,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "label" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "state" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13456,7 +12699,6 @@
         "name": "checks[].app_id"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -13483,7 +12725,6 @@
         "name": "checks[].app_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13536,7 +12777,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13562,7 +12802,6 @@
         "name": "insecure_ssl"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13578,7 +12817,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "data" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "origin" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13592,7 +12830,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13606,7 +12843,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13620,7 +12856,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13640,7 +12875,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13654,7 +12888,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13666,7 +12899,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13680,7 +12912,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13697,7 +12928,6 @@
         "name": "alert_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13725,7 +12955,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13754,7 +12983,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13784,7 +13012,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13803,7 +13030,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13828,7 +13054,6 @@
         "name": "resolution_comment"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13839,7 +13064,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13852,7 +13076,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "role" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13864,7 +13087,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "role" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13877,7 +13099,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13889,7 +13110,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13903,7 +13123,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13916,7 +13135,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "permission" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13928,7 +13146,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13939,7 +13156,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13952,7 +13168,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13964,7 +13179,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -13996,7 +13210,6 @@
         "name": "parent_team_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14014,7 +13227,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14031,7 +13243,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14045,7 +13256,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14058,7 +13268,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14081,7 +13290,6 @@
         "name": "comment_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14103,7 +13311,6 @@
         "name": "comment_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14120,7 +13327,6 @@
         "name": "discussion_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14136,7 +13342,6 @@
         "name": "discussion_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14147,7 +13352,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14157,7 +13361,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14168,7 +13371,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14191,7 +13393,6 @@
         "name": "comment_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14213,7 +13414,6 @@
         "name": "comment_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14230,7 +13430,6 @@
         "name": "discussion_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14246,7 +13445,6 @@
         "name": "discussion_number"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14256,7 +13454,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14267,7 +13464,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14279,7 +13475,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14290,7 +13485,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14302,7 +13496,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14315,7 +13508,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14327,7 +13519,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14347,7 +13538,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14366,7 +13556,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14381,7 +13570,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "pinned" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14394,7 +13582,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14405,7 +13592,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14419,7 +13605,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14432,7 +13617,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14445,7 +13629,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14457,7 +13640,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14470,7 +13652,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14482,7 +13663,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14495,7 +13675,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14507,7 +13686,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14518,7 +13696,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14530,7 +13707,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14541,7 +13717,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14553,7 +13728,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14564,7 +13738,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "project_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14577,7 +13750,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14589,7 +13761,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14613,7 +13784,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14636,7 +13806,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14655,7 +13824,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14673,7 +13841,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "body" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14699,7 +13866,6 @@
         "name": "parent_team_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14724,7 +13890,6 @@
         "name": "parent_team_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14734,7 +13899,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14744,7 +13908,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14754,7 +13917,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14764,7 +13926,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14775,7 +13936,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "target_user" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14785,7 +13945,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14801,7 +13960,6 @@
         "name": "armored_public_key"
       }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14817,7 +13975,6 @@
         "name": "armored_public_key"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14828,7 +13985,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14839,7 +13995,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14850,7 +14005,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "title" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14860,7 +14014,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14870,7 +14023,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "emails" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14880,7 +14032,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14890,7 +14041,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14900,7 +14050,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14910,7 +14059,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14925,7 +14073,6 @@
         "name": "ssh_signing_key_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14935,7 +14082,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14943,7 +14089,6 @@
     "url": "/user",
     "documentationUrl": "https://docs.github.com/rest/reference/users#get-the-authenticated-user",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14953,7 +14098,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14970,7 +14114,6 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "subject_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -14980,7 +14123,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -14990,7 +14132,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "gpg_key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15000,7 +14141,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15010,7 +14150,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "key_id" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15025,7 +14164,6 @@
         "name": "ssh_signing_key_id"
       }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15036,7 +14174,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15044,7 +14181,6 @@
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
     "parameters": [],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15052,7 +14188,6 @@
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
     "parameters": [],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15063,7 +14198,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15074,7 +14208,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15085,7 +14218,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15096,7 +14228,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15107,7 +14238,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15119,7 +14249,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15131,7 +14260,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15142,7 +14270,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15153,7 +14280,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15165,7 +14291,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15176,7 +14301,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15187,7 +14311,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15199,7 +14322,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15210,7 +14332,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15221,7 +14342,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15232,7 +14352,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15244,7 +14363,6 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15254,7 +14372,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" }
     ],
-    "previews": [],
     "renamed": { "note": null }
   },
   {
@@ -15264,7 +14381,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15274,7 +14390,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15284,7 +14399,6 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
     ],
-    "previews": [],
     "renamed": null
   },
   {
@@ -15306,7 +14420,6 @@
       { "alias": null, "deprecated": null, "in": "BODY", "name": "hireable" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "bio" }
     ],
-    "previews": [],
     "renamed": null
   }
 ]
