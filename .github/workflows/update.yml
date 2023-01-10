@@ -33,7 +33,7 @@ jobs:
           body: >
             Make sure to update the commits so that the merge results in helpful
             release notes, see [Merging the Pull Request & releasing a new
-            version](https://github.com/octokit/rest.js/blob/master/CONTRIBUTING.md#merging-the-pull-request--releasing-a-new-version).
+            version](https://github.com/octokit/rest.js/blob/main/CONTRIBUTING.md#merging-the-pull-request--releasing-a-new-version).
 
 
             In general
