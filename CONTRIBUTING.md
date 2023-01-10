@@ -39,7 +39,7 @@ npm test
 
 - Create a new branch locally.
 - Make your changes in that branch to your fork repository
-- Submit a pull request from your topic branch to the master branch on the `octokit/types.ts` repository.
+- Submit a pull request from your topic branch to the main branch on the `octokit/types.ts` repository.
 - Be sure to tag any issues your pull request is taking care of / contributing to. Adding "Closes #123" to a pull request description will automatically close the issue once the pull request is merged in.
 
 ## Merging the Pull Request & releasing a new version
