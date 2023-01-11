@@ -22,7 +22,7 @@ export interface AuthInterface<
     /**
      * Sends a request using the passed `request` instance
      *
-     * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
+     * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
      */
     <T = any>(request: RequestInterface, options: EndpointOptions): Promise<
       OctokitResponse<T>
@@ -32,7 +32,7 @@ export interface AuthInterface<
      * Sends a request using the passed `request` instance
      *
      * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
-     * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
+     * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
      */
     <T = any>(
       request: RequestInterface,

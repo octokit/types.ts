@@ -1,6 +1,6 @@
 export type RequestHeaders = {
   /**
-   * Avoid setting `headers.accept`, use `mediaType.{format|previews}` option instead.
+   * Avoid setting `headers.accept`, use `mediaType.format` option instead.
    */
   accept?: string;
   /**

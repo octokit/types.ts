@@ -24,12 +24,6 @@ export type RequestParameters = {
      * `json` by default. Can be `raw`, `text`, `html`, `full`, `diff`, `patch`, `sha`, `base64`. Depending on endpoint
      */
     format?: string;
-    /**
-     * Custom media type names of {@link https://developer.github.com/v3/media/|API Previews} without the `-preview` suffix.
-     * Example for single preview: `['squirrel-girl']`.
-     * Example for multiple previews: `['squirrel-girl', 'mister-fantastic']`.
-     */
-    previews?: string[];
   };
   /**
    * Pass custom meta information for the request. The `request` object will be returned as is.
