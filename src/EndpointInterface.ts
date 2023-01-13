@@ -9,7 +9,7 @@ export interface EndpointInterface<D extends object = object> {
   /**
    * Transforms a GitHub REST API endpoint into generic request options
    *
-   * @param {object} endpoint Must set `url` unless it's set defaults. Plus URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+   * @param {object} endpoint Must set `url` unless it's set defaults. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <O extends RequestParameters = RequestParameters>(
     options: O & { method?: string } & ("url" extends keyof D
@@ -21,7 +21,7 @@ export interface EndpointInterface<D extends object = object> {
    * Transforms a GitHub REST API endpoint into generic request options
    *
    * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
-   * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+   * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <
     R extends Route,
@@ -52,7 +52,7 @@ export interface EndpointInterface<D extends object = object> {
      * without transforming them into request options.
      *
      * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
-     * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+     * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      *
      */
     <
@@ -73,7 +73,7 @@ export interface EndpointInterface<D extends object = object> {
      * Merges current endpoint defaults with passed route and parameters,
      * without transforming them into request options.
      *
-     * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+     * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      */
     <P extends RequestParameters = RequestParameters>(
       options: P
@@ -91,7 +91,7 @@ export interface EndpointInterface<D extends object = object> {
    * Stateless method to turn endpoint options into request options.
    * Calling `endpoint(options)` is the same as calling `endpoint.parse(endpoint.merge(options))`.
    *
-   * @param {object} options `method`, `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+   * @param {object} options `method`, `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   parse: <O extends EndpointDefaults = EndpointDefaults>(
     options: O

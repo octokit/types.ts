@@ -9,7 +9,7 @@ export interface RequestInterface<D extends object = object> {
   /**
    * Sends a request based on endpoint options
    *
-   * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+   * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <T = any, O extends RequestParameters = RequestParameters>(
     options: O & { method?: string } & ("url" extends keyof D
@@ -21,7 +21,7 @@ export interface RequestInterface<D extends object = object> {
    * Sends a request based on endpoint options
    *
    * @param {string} route Request method + URL. Example: `'GET /orgs/{org}'`
-   * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.format`, `request`, or `baseUrl`.
+   * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <R extends Route>(
     route: keyof Endpoints | R,
