@@ -22,6 +22,9 @@ const QUERY = `
         in
         name
       }
+      previews(required: true) {
+        name
+      }
       renamed {
         note
       }

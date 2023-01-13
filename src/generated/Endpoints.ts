@@ -37,8 +37,21 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
   : {};
 type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<T>;
 
-type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
-  parameters: ToOctokitParameters<paths[Url][Method]>;
+type RequiredPreview<T> = T extends string
+  ? {
+      mediaType: {
+        previews: [T, ...string[]];
+      };
+    }
+  : {};
+
+type Operation<
+  Url extends keyof paths,
+  Method extends keyof paths[Url],
+  preview = unknown
+> = {
+  parameters: ToOctokitParameters<paths[Url][Method]> &
+    RequiredPreview<preview>;
   request: {
     method: Method extends keyof MethodsMap ? MethodsMap[Method] : never;
     url: Url;

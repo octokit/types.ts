@@ -17,5 +17,6 @@ export type EndpointDefaults = RequestParameters & {
   };
   mediaType: {
     format: string;
+    previews: string[];
   };
 };
