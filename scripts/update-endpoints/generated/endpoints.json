@@ -48,6 +48,45 @@
   },
   {
     "method": "PUT",
+    "url": "/orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#add-selected-repository-to-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#add-a-repository-to-selected-repositories-list-for-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
     "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#add-a-self-hosted-runner-to-a-group-for-an-organization",
     "parameters": [
@@ -83,6 +122,29 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "run_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#create-an-environment-variable",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "environment_name"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" }
     ],
     "previews": [],
     "renamed": null
@@ -177,6 +239,25 @@
   },
   {
     "method": "POST",
+    "url": "/orgs/{org}/actions/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#create-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/orgs/{org}/actions/runners/registration-token",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-organization",
     "parameters": [
@@ -213,6 +294,48 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#create-a-repository-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/orgs/{org}/actions/required_workflows",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#create-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "workflow_file_path"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "repository_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "scope" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -335,11 +458,38 @@
   },
   {
     "method": "DELETE",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#delete-an-environment-variable",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/orgs/{org}/actions/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#delete-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#delete-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
     "previews": [],
     "renamed": null
@@ -352,6 +502,34 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/repos/{owner}/{repo}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#delete-a-repository-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#delete-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -582,16 +760,6 @@
   },
   {
     "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/cache/usage",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
     "url": "/orgs/{org}/actions/cache/usage",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-cache-usage-for-an-organization",
     "parameters": [
@@ -629,6 +797,17 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "artifact_id" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
     "previews": [],
     "renamed": null
@@ -678,10 +857,22 @@
   },
   {
     "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/permissions/workflow",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-default-workflow-permissions-for-an-enterprise",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#get-an-environment-variable",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "environment_name"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
     ],
     "previews": [],
     "renamed": null
@@ -763,6 +954,17 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#get-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-pending-deployments-for-a-workflow-run",
     "parameters": [
@@ -797,12 +999,74 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-repository-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id_for_repo"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{org}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/timing",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-repository-required-workflow-usage",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id_for_repo"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-repository-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "secret_name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#get-a-repository-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -955,7 +1219,8 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "name" }
     ],
     "previews": [],
     "renamed": null
@@ -964,6 +1229,29 @@
     "method": "GET",
     "url": "/repositories/{repository_id}/environments/{environment_name}/secrets",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-environment-secrets",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "environment_name"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#list-environment-variables",
     "parameters": [
       {
         "alias": null,
@@ -1055,6 +1343,18 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/actions/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#list-organization-variables",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-repository-access-to-a-self-hosted-runner-group-in-an-organization",
     "parameters": [
@@ -1067,6 +1367,19 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{org}/{repo}/actions/required_workflows",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-repository-required-workflows",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -1086,11 +1399,73 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/variables",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#list-repository-variables",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/workflows",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-repository-workflows",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/actions/required_workflows/{required_workflow_id_for_repo}/runs",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-required-workflow-runs",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id_for_repo"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "actor" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "branch" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "event" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "status" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "created" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "exclude_pull_requests"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "check_suite_id"
+      },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "head_sha" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/actions/required_workflows",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-required-workflows",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
@@ -1138,12 +1513,41 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/actions/variables/{name}/repositories",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#list-selected-repositories-for-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/actions/permissions/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-selected-repositories-enabled-for-github-actions-in-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-selected-repositories-required-workflows",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -1439,6 +1843,45 @@
   },
   {
     "method": "DELETE",
+    "url": "/orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#remove-selected-repository-from-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-a-repository-from-selected-repositories-list-for-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-organization",
     "parameters": [
@@ -1558,21 +2001,22 @@
   },
   {
     "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/permissions/workflow",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-default-workflow-permissions-for-an-enterprise",
+    "url": "/repos/{owner}/{repo}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "default_workflow_permissions"
+        "name": "use_default"
       },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "can_approve_pull_request_reviews"
+        "name": "include_claim_keys"
       }
     ],
     "previews": [],
@@ -1709,6 +2153,45 @@
   },
   {
     "method": "PUT",
+    "url": "/orgs/{org}/actions/variables/{name}/repositories",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#set-selected-repositories-for-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-selected-repositories-for-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
     "url": "/orgs/{org}/actions/permissions/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#set-selected-repositories-enabled-for-github-actions-in-an-organization",
     "parameters": [
@@ -1752,6 +2235,90 @@
         "deprecated": null,
         "in": "BODY",
         "name": "access_level"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#update-an-environment-variable",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "repository_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/orgs/{org}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#update-an-organization-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/actions/variables/{name}",
+    "documentationUrl": "https://docs.github.com/rest/actions/variables#update-a-repository-variable",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "value" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/orgs/{org}/actions/required_workflows/{required_workflow_id}",
+    "documentationUrl": "https://docs.github.com/rest/reference/actions#update-a-required-workflow",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "required_workflow_id"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "workflow_file_path"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "repository_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "scope" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_repository_ids"
       }
     ],
     "previews": [],
@@ -2348,6 +2915,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.repository_announcement_banners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.repository_hooks"
       },
       {
@@ -2415,6 +2988,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_custom_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_announcement_banners"
       },
       {
         "alias": null,
@@ -2747,7 +3326,8 @@
     "documentationUrl": "https://docs.github.com/rest/reference/apps#list-deliveries-for-an-app-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "redelivery" }
     ],
     "previews": [],
     "renamed": null
@@ -2930,6 +3510,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.repository_announcement_banners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.repository_hooks"
       },
       {
@@ -2997,6 +3583,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_custom_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_announcement_banners"
       },
       {
         "alias": null,
@@ -3119,30 +3711,6 @@
     "documentationUrl": "https://docs.github.com/rest/reference/billing#get-github-actions-billing-for-a-user",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/settings/billing/advanced-security",
-    "documentationUrl": "https://docs.github.com/rest/reference/billing#export-advanced-security-active-committers-data-for-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/orgs/{org}/settings/billing/advanced-security",
-    "documentationUrl": "https://docs.github.com/rest/reference/billing#get-github-advanced-security-active-committers-for-an-organization",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -3664,25 +4232,6 @@
   },
   {
     "method": "GET",
-    "url": "/enterprises/{enterprise}/code-scanning/alerts",
-    "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_name" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "tool_guid" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
     "url": "/orgs/{org}/code-scanning/alerts",
     "documentationUrl": "https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-by-organization",
     "parameters": [
@@ -3695,7 +4244,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "severity" }
     ],
     "previews": [],
     "renamed": null
@@ -3816,7 +4366,8 @@
         "name": "checkout_uri"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "started_at" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "tool_name" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "tool_name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "validate" }
     ],
     "previews": [],
     "renamed": null
@@ -3862,7 +4413,7 @@
   },
   {
     "method": "PUT",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#add-selected-repository-to-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -3972,7 +4523,7 @@
   },
   {
     "method": "PUT",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#create-or-update-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4193,7 +4744,7 @@
   },
   {
     "method": "DELETE",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#delete-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4227,7 +4778,7 @@
   {
     "method": "POST",
     "url": "/user/codespaces/{codespace_name}/exports",
-    "documentationUrl": "",
+    "documentationUrl": "https://docs.github.com/rest/codespaces/codespaces#export-a-codespace-for-the-authenticated-user",
     "parameters": [
       {
         "alias": null,
@@ -4241,8 +4792,21 @@
   },
   {
     "method": "GET",
+    "url": "/orgs/{org}/members/{username}/codespaces",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces#get-codespaces-for-user-in-org",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/user/codespaces/{codespace_name}/exports/{export_id}",
-    "documentationUrl": "",
+    "documentationUrl": "https://docs.github.com/rest/codespaces/codespaces#get-details-about-a-codespace-export",
     "parameters": [
       {
         "alias": null,
@@ -4272,7 +4836,7 @@
   },
   {
     "method": "GET",
-    "url": "/organizations/{org}/codespaces/secrets/public-key",
+    "url": "/orgs/{org}/codespaces/secrets/public-key",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#get-an-organization-public-key",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
@@ -4282,7 +4846,7 @@
   },
   {
     "method": "GET",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#get-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4390,7 +4954,7 @@
   },
   {
     "method": "GET",
-    "url": "/organizations/{org}/codespaces/secrets",
+    "url": "/orgs/{org}/codespaces/secrets",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-organization-secrets",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4436,7 +5000,7 @@
   },
   {
     "method": "GET",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}/repositories",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#list-selected-repositories-for-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4466,6 +5030,23 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/user/codespaces/{codespace_name}/publish",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces/codespaces#create-a-repository-from-an-unpublished-codespace",
+    "parameters": [
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "codespace_name"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "private" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "DELETE",
     "url": "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#remove-a-selected-repository-from-a-user-secret",
@@ -4488,7 +5069,7 @@
   },
   {
     "method": "DELETE",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#remove-selected-repository-from-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4523,6 +5104,23 @@
   },
   {
     "method": "PUT",
+    "url": "/orgs/{org}/codespaces/billing",
+    "documentationUrl": "https://docs.github.com/rest/reference/codespaces#set-codespaces-billing",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "selected_usernames"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
     "url": "/user/codespaces/secrets/{secret_name}/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-a-user-secret",
     "parameters": [
@@ -4544,7 +5142,7 @@
   },
   {
     "method": "PUT",
-    "url": "/organizations/{org}/codespaces/secrets/{secret_name}/repositories",
+    "url": "/orgs/{org}/codespaces/secrets/{secret_name}/repositories",
     "documentationUrl": "https://docs.github.com/rest/reference/codespaces#set-selected-repositories-for-an-organization-secret",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
@@ -4801,6 +5399,50 @@
   },
   {
     "method": "GET",
+    "url": "/enterprises/{enterprise}/dependabot/alerts",
+    "documentationUrl": "https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "severity" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ecosystem" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "package" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "scope" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "first" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "last" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/dependabot/alerts",
+    "documentationUrl": "https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "severity" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ecosystem" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "package" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "scope" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "first" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "last" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/dependabot/alerts",
     "documentationUrl": "https://docs.github.com/rest/reference/dependabot#list-dependabot-alerts-for-a-repository",
     "parameters": [
@@ -4815,7 +5457,11 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "first" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "last" }
     ],
     "previews": [],
     "renamed": null
@@ -5123,43 +5769,6 @@
     "renamed": null
   },
   {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#add-a-self-hosted-runner-to-a-group-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "POST",
-    "url": "/enterprises/{enterprise}/actions/runners/registration-token",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "POST",
-    "url": "/enterprises/{enterprise}/actions/runners/remove-token",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#create-a-remove-token-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
     "method": "POST",
     "url": "/enterprises/{enterprise}/actions/runner-groups",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#create-self-hosted-runner-group-for-an-enterprise",
@@ -5208,70 +5817,12 @@
     "renamed": null
   },
   {
-    "method": "DELETE",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-group-from-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#disable-a-selected-organization-for-github-actions-in-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
     "method": "PUT",
     "url": "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/permissions/selected-actions",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-allowed-actions-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/permissions",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
     ],
     "previews": [],
     "renamed": null
@@ -5294,73 +5845,11 @@
   },
   {
     "method": "GET",
-    "url": "/enterprise-installation/{enterprise_or_org}/server-statistics",
-    "documentationUrl": "https://docs.github.com/rest/reference/enterprise-admin#get-github-enterprise-server-statistics",
-    "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "enterprise_or_org"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "QUERY",
-        "name": "date_start"
-      },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "date_end" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
     "url": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-an-enterprise",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-organization-access-to-a-self-hosted-runner-group-in-a-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/runners/downloads",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-runner-applications-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/permissions/organizations",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-selected-organizations-enabled-for-github-actions-in-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -5384,76 +5873,6 @@
     "renamed": null
   },
   {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/runners",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-self-hosted-runners-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#list-self-hosted-runners-in-a-group-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-all-custom-labels-from-a-self-hosted-runner-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-a-custom-label-from-a-self-hosted-runner-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "name" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
     "method": "DELETE",
     "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "documentationUrl": "https://docs.github.com/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-enterprise",
@@ -5466,159 +5885,6 @@
         "name": "runner_group_id"
       },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/permissions/selected-actions",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-allowed-actions-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "github_owned_allowed"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "verified_allowed"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "patterns_allowed"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-custom-labels-for-a-self-hosted-runner-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "runner_id" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/permissions",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-github-actions-permissions-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "enabled_organizations"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "allowed_actions"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-organization-access-to-a-self-hosted-runner-group-in-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "selected_organization_ids"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/permissions/organizations",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-selected-organizations-enabled-for-github-actions-in-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "selected_organization_ids"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PUT",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "runners" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PATCH",
-    "url": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/actions#update-a-self-hosted-runner-group-for-an-enterprise",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "runner_group_id"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "visibility" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "allows_public_repositories"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "restricted_to_workflows"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "selected_workflows"
-      }
     ],
     "previews": [],
     "renamed": null
@@ -6318,6 +6584,24 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/issues/{issue_number}/assignees/{assignee}",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues#check-if-a-user-can-be-assigned-to-a-issue",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "issue_number"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "assignee" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/issues",
     "documentationUrl": "https://docs.github.com/rest/reference/issues#create-an-issue",
@@ -6857,7 +7141,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/issues/{issue_number}",
-    "documentationUrl": "https://docs.github.com/rest/reference/issues/#update-an-issue",
+    "documentationUrl": "https://docs.github.com/rest/reference/issues#update-an-issue",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -7003,6 +7287,14 @@
   },
   {
     "method": "GET",
+    "url": "/versions",
+    "documentationUrl": "https://docs.github.com/rest/reference/meta#get-all-api-versions",
+    "parameters": [],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/octocat",
     "documentationUrl": "https://docs.github.com/rest/reference/meta#get-octocat",
     "parameters": [
@@ -7014,7 +7306,7 @@
   {
     "method": "GET",
     "url": "/zen",
-    "documentationUrl": "",
+    "documentationUrl": "https://docs.github.com/rest/meta#get-the-zen-of-github",
     "parameters": [],
     "previews": [],
     "renamed": null
@@ -7481,6 +7773,32 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/orgs/{org}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/orgs/{org}/actions/oidc/customization/sub",
+    "documentationUrl": "https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "include_claim_keys"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/orgs/{org}/security-managers/teams/{team_slug}",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#add-a-security-manager-team",
@@ -7565,25 +7883,6 @@
   },
   {
     "method": "POST",
-    "url": "/orgs/{org}/custom_roles",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs#create-a-custom-role",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "description"
-      },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "POST",
     "url": "/orgs/{org}/invitations",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#create-an-organization-invitation",
     "parameters": [
@@ -7637,17 +7936,6 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "DELETE",
-    "url": "/orgs/{org}/custom_roles/{role_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs#delete-a-custom-role",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
     ],
     "previews": [],
     "renamed": null
@@ -7773,22 +8061,9 @@
     "url": "/orgs/{org}/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-users-blocked-by-an-organization",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/organizations/{organization_id}/custom_roles",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-custom-repository-roles-in-an-organization",
-    "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "organization_id"
-      }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -7801,16 +8076,6 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "GET",
-    "url": "/orgs/{org}/fine_grained_permissions",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs#list-fine-grained-permissions-for-an-organization",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
     "previews": [],
     "renamed": null
@@ -7937,7 +8202,8 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "redelivery" }
     ],
     "previews": [],
     "renamed": null
@@ -8069,7 +8335,7 @@
   {
     "method": "PATCH",
     "url": "/orgs/{org}",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs/#update-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -8208,27 +8474,19 @@
         "deprecated": null,
         "in": "BODY",
         "name": "secret_scanning_push_protection_enabled_for_new_repositories"
-      }
-    ],
-    "previews": [],
-    "renamed": null
-  },
-  {
-    "method": "PATCH",
-    "url": "/orgs/{org}/custom_roles/{role_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/orgs#update-a-custom-role",
-    "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
-        "name": "description"
+        "name": "secret_scanning_push_protection_custom_link_enabled"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "base_role" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_push_protection_custom_link"
+      }
     ],
     "previews": [],
     "renamed": null
@@ -10279,7 +10537,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#add-app-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#add-app-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10305,7 +10563,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#add-status-check-contexts",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#add-status-check-contexts",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10318,7 +10576,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#add-team-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#add-team-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10331,7 +10589,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#add-user-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#add-user-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10448,7 +10706,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-commit-signature-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#create-commit-signature-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10481,7 +10739,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/keys",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-deploy-key",
+    "documentationUrl": "https://docs.github.com/rest/deploy-keys#create-a-deploy-key",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10495,7 +10753,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/deployments",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-deployment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/deployments#create-a-deployment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10558,7 +10816,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-a-deployment-status",
+    "documentationUrl": "https://docs.github.com/rest/deployments/statuses#create-a-deployment-status",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -10645,6 +10903,12 @@
         "name": "has_projects"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "has_wiki" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "has_discussions"
+      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "auto_init" },
       {
@@ -10776,6 +11040,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "has_downloads"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "is_template"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "team_id" },
@@ -10859,7 +11129,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#create-or-update-an-environment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/environments#create-or-update-an-environment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11033,7 +11303,8 @@
         "deprecated": null,
         "in": "BODY",
         "name": "generate_release_notes"
-      }
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "make_latest" }
     ],
     "previews": [],
     "renamed": null
@@ -11176,7 +11447,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#delete-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11188,7 +11459,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-admin-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#delete-admin-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11200,7 +11471,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-an-environment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/environments#delete-an-environment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11229,7 +11500,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#delete-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11253,7 +11524,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-commit-signature-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#delete-commit-signature-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11265,7 +11536,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/keys/{key_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-a-deploy-key",
+    "documentationUrl": "https://docs.github.com/rest/deploy-keys#delete-a-deploy-key",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11277,7 +11548,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-a-deployment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/deployments#delete-a-deployment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11386,7 +11657,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#delete-pull-request-review-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#delete-pull-request-review-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11606,7 +11877,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11618,7 +11889,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-admin-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-admin-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11643,7 +11914,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-all-status-check-contexts",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-all-status-check-contexts",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11668,7 +11939,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-apps-with-access-to-the-protected-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#list-apps-with-access-to-the-protected-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11692,7 +11963,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branches#get-a-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11704,7 +11975,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11802,7 +12073,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-commit-signature-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-commit-signature-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11849,7 +12120,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/keys/{key_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-deploy-key",
+    "documentationUrl": "https://docs.github.com/rest/deploy-keys#get-a-deploy-key",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11861,7 +12132,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-deployment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/deployments#get-a-deployment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11901,7 +12172,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-a-deployment-status",
+    "documentationUrl": "https://docs.github.com/rest/deployments/statuses#get-a-deployment-status",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11919,7 +12190,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/environments/{environment_name}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-an-environment",
+    "documentationUrl": "https://docs.github.com/rest/deployments/environments#get-an-environment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12003,7 +12274,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-pull-request-review-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-pull-request-review-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12087,7 +12358,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#get-status-checks-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#get-status-checks-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12099,7 +12370,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-teams-with-access-to-the-protected-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#list-teams-with-access-to-the-protected-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12133,7 +12404,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-users-with-access-to-the-protected-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#list-users-with-access-to-the-protected-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12206,7 +12477,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/branches",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-branches",
+    "documentationUrl": "https://docs.github.com/rest/branches/branches#list-branches",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12330,7 +12601,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/keys",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-deploy-keys",
+    "documentationUrl": "https://docs.github.com/rest/deploy-keys#list-deploy-keys",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12362,7 +12633,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-deployment-statuses",
+    "documentationUrl": "https://docs.github.com/rest/deployments/statuses#list-deployment-statuses",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12381,7 +12652,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/deployments",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#list-deployments",
+    "documentationUrl": "https://docs.github.com/rest/deployments/deployments#list-deployments",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12617,7 +12888,8 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "hook_id" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "cursor" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "redelivery" }
     ],
     "previews": [],
     "renamed": null
@@ -12638,7 +12910,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/merges",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#merge-a-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branches#merge-a-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12657,7 +12929,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/merge-upstream",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#sync-a-fork-branch-with-the-upstream-repository",
+    "documentationUrl": "https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12694,7 +12966,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#remove-app-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#remove-app-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12719,7 +12991,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#remove-status-check-contexts",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#remove-status-check-contexts",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12732,7 +13004,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#remove-status-check-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#remove-status-check-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12744,7 +13016,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#remove-team-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#remove-team-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12757,7 +13029,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#remove-user-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#remove-user-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12770,7 +13042,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/rename",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#rename-a-branch",
+    "documentationUrl": "https://docs.github.com/rest/branches/branches#rename-a-branch",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12806,7 +13078,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-admin-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#set-admin-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12818,7 +13090,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-app-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#set-app-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12831,7 +13103,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-status-check-contexts",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#set-status-check-contexts",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12844,7 +13116,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-team-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#set-team-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12857,7 +13129,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#set-user-access-restrictions",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#set-user-access-restrictions",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12887,6 +13159,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "new_owner" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "new_name" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "team_ids" }
     ],
     "previews": [],
@@ -12895,7 +13168,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos/#update-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/repos/repos#update-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13057,7 +13330,7 @@
   {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-branch-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#update-branch-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13156,6 +13429,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "required_pull_request_reviews.require_last_push_approval"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "required_pull_request_reviews.bypass_pull_request_allowances"
       },
       {
@@ -13229,6 +13508,18 @@
         "deprecated": null,
         "in": "BODY",
         "name": "required_conversation_resolution"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "lock_branch"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "allow_fork_syncing"
       }
     ],
     "previews": [],
@@ -13285,7 +13576,6 @@
         "in": "BODY",
         "name": "https_enforced"
       },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "public" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "build_type" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "source" }
     ],
@@ -13313,7 +13603,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-pull-request-review-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#update-pull-request-review-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13359,6 +13649,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "required_approving_review_count"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "require_last_push_approval"
       },
       {
         "alias": null,
@@ -13411,6 +13707,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "make_latest"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "discussion_category_name"
       }
     ],
@@ -13435,7 +13737,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-status-check-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#update-status-check-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13462,7 +13764,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
-    "documentationUrl": "https://docs.github.com/rest/reference/repos#update-status-check-protection",
+    "documentationUrl": "https://docs.github.com/rest/branches/branch-protection#update-status-check-protection",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13702,6 +14004,16 @@
   },
   {
     "method": "GET",
+    "url": "/enterprises/{enterprise}/code_security_and_analysis",
+    "documentationUrl": "https://docs.github.com/rest/enterprise-admin#get-code-security-analysis-features-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/enterprises/{enterprise}/secret-scanning/alerts",
     "documentationUrl": "https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-enterprise",
     "parameters": [
@@ -13802,6 +14114,57 @@
       },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "PATCH",
+    "url": "/enterprises/{enterprise}/code_security_and_analysis",
+    "documentationUrl": "https://docs.github.com/rest/enterprise-admin#update-code-security-and-analysis-features-for-an-enterprise",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "advanced_security_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_push_protection_enabled_for_new_repositories"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "secret_scanning_push_protection_custom_link"
+      }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/enterprises/{enterprise}/{security_product}/{enablement}",
+    "documentationUrl": "https://docs.github.com/rest/enterprise-admin#enable-or-disable-a-security-feature",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "security_product"
+      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enablement" }
     ],
     "previews": [],
     "renamed": null
@@ -13909,7 +14272,7 @@
   {
     "method": "PUT",
     "url": "/teams/{team_id}/repos/{owner}/{repo}",
-    "documentationUrl": "https://docs.github.com/rest/reference/teams/#add-or-update-team-repository-permissions-legacy",
+    "documentationUrl": "https://docs.github.com/rest/reference/teams#add-or-update-team-repository-permissions-legacy",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "team_id" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
@@ -15043,7 +15406,10 @@
     "method": "GET",
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
-    "parameters": [],
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
     "previews": [],
     "renamed": { "note": null }
   },
@@ -15051,7 +15417,10 @@
     "method": "GET",
     "url": "/user/blocks",
     "documentationUrl": "https://docs.github.com/rest/reference/users#list-users-blocked-by-the-authenticated-user",
-    "parameters": [],
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
     "previews": [],
     "renamed": null
   },
