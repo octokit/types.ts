@@ -49,7 +49,7 @@
     "sort-keys": "^4.2.0",
     "string-to-jsdoc-comment": "^1.0.0",
     "typedoc": "^0.24.0",
-    "typescript": "^4.0.2"
+    "typescript": "^5.0.0"
   },
   "@pika/pack": {
     "pipeline": [
