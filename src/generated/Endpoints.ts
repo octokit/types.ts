@@ -134,20 +134,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-enterprise
-   */
-  "DELETE /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
-    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#delete-self-hosted-runner-from-an-enterprise
-   */
-  "DELETE /enterprises/{enterprise}/actions/runners/{runner_id}": Operation<
-    "/enterprises/{enterprise}/actions/runners/{runner_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/gists#delete-a-gist
    */
   "DELETE /gists/{gist_id}": Operation<"/gists/{gist_id}", "delete">;
@@ -174,6 +160,10 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/orgs/#delete-an-organization
+   */
+  "DELETE /orgs/{org}": Operation<"/orgs/{org}", "delete">;
+  /**
    * @see https://docs.github.com/rest/reference/actions#disable-a-selected-repository-for-github-actions-in-an-organization
    */
   "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
@@ -192,27 +182,6 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}": Operation<
     "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#delete-a-self-hosted-runner-group-from-an-organization
-   */
-  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization
-   */
-  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#remove-a-self-hosted-runner-from-a-group-for-an-organization
-   */
-  "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "delete"
   >;
   /**
@@ -269,6 +238,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/blocks/{username}": Operation<
     "/orgs/{org}/blocks/{username}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#delete-codespaces-billing-users
+   */
+  "DELETE /orgs/{org}/codespaces/billing/selected_users": Operation<
+    "/orgs/{org}/codespaces/billing/selected_users",
     "delete"
   >;
   /**
@@ -342,14 +318,14 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#delete-an-organization-migration-archive
+   * @see https://docs.github.com/rest/migrations/orgs#delete-an-organization-migration-archive
    */
   "DELETE /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#unlock-an-organization-repository
+   * @see https://docs.github.com/rest/migrations/orgs#unlock-an-organization-repository
    */
   "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
@@ -381,6 +357,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/public_members/{username}": Operation<
     "/orgs/{org}/public_members/{username}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#delete-organization-ruleset
+   */
+  "DELETE /orgs/{org}/rulesets/{ruleset_id}": Operation<
+    "/orgs/{org}/rulesets/{ruleset_id}",
     "delete"
   >;
   /**
@@ -549,7 +532,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/v3/repos#delete-autolink
+   * @see https://docs.github.com/rest/repos/autolinks#delete-an-autolink-reference-from-a-repository
    */
   "DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}": Operation<
     "/repos/{owner}/{repo}/autolinks/{autolink_id}",
@@ -717,7 +700,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#cancel-an-import
+   * @see https://docs.github.com/rest/migrations/source-imports#cancel-an-import
    */
   "DELETE /repos/{owner}/{repo}/import": Operation<
     "/repos/{owner}/{repo}/import",
@@ -871,6 +854,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/repos/rules#delete-repository-ruleset
+   */
+  "DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}": Operation<
+    "/repos/{owner}/{repo}/rulesets/{ruleset_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#delete-a-repository-subscription
    */
   "DELETE /repos/{owner}/{repo}/subscription": Operation<
@@ -1016,14 +1006,14 @@ export interface Endpoints {
    */
   "DELETE /user/keys/{key_id}": Operation<"/user/keys/{key_id}", "delete">;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#delete-a-user-migration-archive
+   * @see https://docs.github.com/rest/migrations/users#delete-a-user-migration-archive
    */
   "DELETE /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#unlock-a-user-repository
+   * @see https://docs.github.com/rest/migrations/users#unlock-a-user-repository
    */
   "DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/user/migrations/{migration_id}/repos/{repo_name}/lock",
@@ -1050,6 +1040,10 @@ export interface Endpoints {
     "/user/repository_invitations/{invitation_id}",
     "delete"
   >;
+  /**
+   * @see https://docs.github.com/rest/users/social-accounts#delete-social-account-for-authenticated-user
+   */
+  "DELETE /user/social_accounts": Operation<"/user/social_accounts", "delete">;
   /**
    * @see https://docs.github.com/rest/reference/users#delete-a-ssh-signing-key-for-the-authenticated-user
    */
@@ -1102,6 +1096,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/reference/apps#list-installation-requests-for-the-authenticated-app
+   */
+  "GET /app/installation-requests": Operation<
+    "/app/installation-requests",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/apps#list-installations-for-the-authenticated-app
    */
   "GET /app/installations": Operation<"/app/installations", "get">;
@@ -1128,34 +1129,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/emojis#get-emojis
    */
   "GET /emojis": Operation<"/emojis", "get">;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runner-groups-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/actions/runner-groups": Operation<
-    "/enterprises/{enterprise}/actions/runner-groups",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-group-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}": Operation<
-    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#list-labels-for-a-self-hosted-runner-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
-    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/enterprise-admin#get-code-security-analysis-features-for-an-enterprise
-   */
-  "GET /enterprises/{enterprise}/code_security_and_analysis": Operation<
-    "/enterprises/{enterprise}/code_security_and_analysis",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-enterprise
    */
@@ -1334,6 +1307,34 @@ export interface Endpoints {
    */
   "GET /organizations": Operation<"/organizations", "get">;
   /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens
+   */
+  "GET /organizations/{org}/personal-access-token-requests": Operation<
+    "/organizations/{org}/personal-access-token-requests",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-repositories-requested-to-be-accessed-by-a-fine-grained-personal-access-token
+   */
+  "GET /organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories": Operation<
+    "/organizations/{org}/personal-access-token-requests/{pat_request_id}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-fine-grained-personal-access-tokens-with-access-to-organization-resources
+   */
+  "GET /organizations/{org}/personal-access-tokens": Operation<
+    "/organizations/{org}/personal-access-tokens",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-repositories-a-fine-grained-personal-access-token-has-access-to
+   */
+  "GET /organizations/{org}/personal-access-tokens/{pat_id}/repositories": Operation<
+    "/organizations/{org}/personal-access-tokens/{pat_id}/repositories",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/codespaces#list-in-organization
    * @deprecated "org_id" is now "org"
    */
@@ -1410,34 +1411,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories": Operation<
     "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runner-groups-for-an-organization
-   */
-  "GET /orgs/{org}/actions/runner-groups": Operation<
-    "/orgs/{org}/actions/runner-groups",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#get-a-self-hosted-runner-group-for-an-organization
-   */
-  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#list-repository-access-to-a-self-hosted-runner-group-in-an-organization
-   */
-  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#list-self-hosted-runners-in-a-group-for-an-organization
-   */
-  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
     "get"
   >;
   /**
@@ -1529,7 +1502,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-by-organization
+   * @see https://docs.github.com/rest/reference/code-scanning#list-code-scanning-alerts-for-an-organization
    */
   "GET /orgs/{org}/code-scanning/alerts": Operation<
     "/orgs/{org}/code-scanning/alerts",
@@ -1600,6 +1573,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/dependabot/secrets/{secret_name}/repositories": Operation<
     "/orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#list-docker-migration-conflicting-packages-for-organization
+   */
+  "GET /orgs/{org}/docker/conflicts": Operation<
+    "/orgs/{org}/docker/conflicts",
     "get"
   >;
   /**
@@ -1704,25 +1684,25 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#list-organization-migrations
+   * @see https://docs.github.com/rest/migrations/orgs#list-organization-migrations
    */
   "GET /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#get-an-organization-migration-status
+   * @see https://docs.github.com/rest/migrations/orgs#get-an-organization-migration-status
    */
   "GET /orgs/{org}/migrations/{migration_id}": Operation<
     "/orgs/{org}/migrations/{migration_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#download-an-organization-migration-archive
+   * @see https://docs.github.com/rest/migrations/orgs#download-an-organization-migration-archive
    */
   "GET /orgs/{org}/migrations/{migration_id}/archive": Operation<
     "/orgs/{org}/migrations/{migration_id}/archive",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#list-repositories-in-an-organization-migration
+   * @see https://docs.github.com/rest/migrations/orgs#list-repositories-in-an-organization-migration
    */
   "GET /orgs/{org}/migrations/{migration_id}/repositories": Operation<
     "/orgs/{org}/migrations/{migration_id}/repositories",
@@ -1782,6 +1762,17 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#list-organization-repositories
    */
   "GET /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "get">;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#get-organization-rulesets
+   */
+  "GET /orgs/{org}/rulesets": Operation<"/orgs/{org}/rulesets", "get">;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#get-organization-ruleset
+   */
+  "GET /orgs/{org}/rulesets/{ruleset_id}": Operation<
+    "/orgs/{org}/rulesets/{ruleset_id}",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-an-organization
    */
@@ -2058,6 +2049,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/secrets#list-repository-organization-secrets
+   */
+  "GET /repos/{owner}/{repo}/actions/organization-secrets": Operation<
+    "/repos/{owner}/{repo}/actions/organization-secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/variables#list-repository-organization-variables
+   */
+  "GET /repos/{owner}/{repo}/actions/organization-variables": Operation<
+    "/repos/{owner}/{repo}/actions/organization-variables",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#get-github-actions-permissions-for-a-repository
    */
   "GET /repos/{owner}/{repo}/actions/permissions": Operation<
@@ -2275,14 +2280,14 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/repos#list-autolinks
+   * @see https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository
    */
   "GET /repos/{owner}/{repo}/autolinks": Operation<
     "/repos/{owner}/{repo}/autolinks",
     "get"
   >;
   /**
-   * @see https://docs.github.com/v3/repos#get-autolink
+   * @see https://docs.github.com/rest/repos/autolinks#get-an-autolink-reference-of-a-repository
    */
   "GET /repos/{owner}/{repo}/autolinks/{autolink_id}": Operation<
     "/repos/{owner}/{repo}/autolinks/{autolink_id}",
@@ -2444,21 +2449,28 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/code-scanning#list-codeql-databases
+   * @see https://docs.github.com/rest/reference/code-scanning#list-codeql-databases-for-a-repository
    */
   "GET /repos/{owner}/{repo}/code-scanning/codeql/databases": Operation<
     "/repos/{owner}/{repo}/code-scanning/codeql/databases",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/code-scanning#get-codeql-database
+   * @see https://docs.github.com/rest/reference/code-scanning#get-a-codeql-database-for-a-repository
    */
   "GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}": Operation<
     "/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/code-scanning#list-recent-code-scanning-analyses-for-a-repository
+   * @see https://docs.github.com/rest/code-scanning#get-a-code-scanning-default-setup-configuration
+   */
+  "GET /repos/{owner}/{repo}/code-scanning/default-setup": Operation<
+    "/repos/{owner}/{repo}/code-scanning/default-setup",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/code-scanning#get-information-about-a-sarif-upload
    */
   "GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}": Operation<
     "/repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}",
@@ -2703,6 +2715,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/dependency-graph/sboms#export-a-software-bill-of-materials-sbom-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/dependency-graph/sbom": Operation<
+    "/repos/{owner}/{repo}/dependency-graph/sbom",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/deployments/deployments#list-deployments
    */
   "GET /repos/{owner}/{repo}/deployments": Operation<
@@ -2850,21 +2869,21 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#get-an-import-status
+   * @see https://docs.github.com/rest/migrations/source-imports#get-an-import-status
    */
   "GET /repos/{owner}/{repo}/import": Operation<
     "/repos/{owner}/{repo}/import",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#get-commit-authors
+   * @see https://docs.github.com/rest/migrations/source-imports#get-commit-authors
    */
   "GET /repos/{owner}/{repo}/import/authors": Operation<
     "/repos/{owner}/{repo}/import/authors",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#get-large-files
+   * @see https://docs.github.com/rest/migrations/source-imports#get-large-files
    */
   "GET /repos/{owner}/{repo}/import/large_files": Operation<
     "/repos/{owner}/{repo}/import/large_files",
@@ -3249,6 +3268,27 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/repos/rules#get-rules-for-a-branch
+   */
+  "GET /repos/{owner}/{repo}/rules/branches/{branch}": Operation<
+    "/repos/{owner}/{repo}/rules/branches/{branch}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#get-repository-rulesets
+   */
+  "GET /repos/{owner}/{repo}/rulesets": Operation<
+    "/repos/{owner}/{repo}/rulesets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#get-repository-ruleset
+   */
+  "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}": Operation<
+    "/repos/{owner}/{repo}/rulesets/{ruleset_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/secret-scanning#list-secret-scanning-alerts-for-a-repository
    */
   "GET /repos/{owner}/{repo}/secret-scanning/alerts": Operation<
@@ -3267,6 +3307,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations": Operation<
     "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#list-repository-security-advisories
+   */
+  "GET /repos/{owner}/{repo}/security-advisories": Operation<
+    "/repos/{owner}/{repo}/security-advisories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#get-a-repository-security-advisory
+   */
+  "GET /repos/{owner}/{repo}/security-advisories/{ghsa_id}": Operation<
+    "/repos/{owner}/{repo}/security-advisories/{ghsa_id}",
     "get"
   >;
   /**
@@ -3305,7 +3359,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/statistics/repos#get-the-hourly-commit-count-for-each-day
+   * @see https://docs.github.com/rest/metrics/statistics#get-the-hourly-commit-count-for-each-day
    */
   "GET /repos/{owner}/{repo}/stats/punch_card": Operation<
     "/repos/{owner}/{repo}/stats/punch_card",
@@ -3632,6 +3686,10 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/packages#list-docker-migration-conflicting-packages-for-authenticated-user
+   */
+  "GET /user/docker/conflicts": Operation<"/user/docker/conflicts", "get">;
+  /**
    * @see https://docs.github.com/rest/reference/users#list-email-addresses-for-the-authenticated-user
    */
   "GET /user/emails": Operation<"/user/emails", "get">;
@@ -3714,25 +3772,25 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#list-user-migrations
+   * @see https://docs.github.com/rest/migrations/users#list-user-migrations
    */
   "GET /user/migrations": Operation<"/user/migrations", "get">;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#get-a-user-migration-status
+   * @see https://docs.github.com/rest/migrations/users#get-a-user-migration-status
    */
   "GET /user/migrations/{migration_id}": Operation<
     "/user/migrations/{migration_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#download-a-user-migration-archive
+   * @see https://docs.github.com/rest/migrations/users#download-a-user-migration-archive
    */
   "GET /user/migrations/{migration_id}/archive": Operation<
     "/user/migrations/{migration_id}/archive",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#list-repositories-for-a-user-migration
+   * @see https://docs.github.com/rest/migrations/users#list-repositories-for-a-user-migration
    */
   "GET /user/migrations/{migration_id}/repositories": Operation<
     "/user/migrations/{migration_id}/repositories",
@@ -3783,6 +3841,10 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/users/social-accounts#list-social-accounts-for-the-authenticated-user
+   */
+  "GET /user/social_accounts": Operation<"/user/social_accounts", "get">;
+  /**
    * @see https://docs.github.com/rest/reference/users#list-public-ssh-signing-keys-for-the-authenticated-user
    */
   "GET /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "get">;
@@ -3820,6 +3882,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/users#get-a-user
    */
   "GET /users/{username}": Operation<"/users/{username}", "get">;
+  /**
+   * @see https://docs.github.com/rest/reference/packages#list-docker-migration-conflicting-packages-for-user
+   */
+  "GET /users/{username}/docker/conflicts": Operation<
+    "/users/{username}/docker/conflicts",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/reference/activity#list-events-for-the-authenticated-user
    */
@@ -3967,6 +4036,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/users/social-accounts#list-social-accounts-for-a-user
+   */
+  "GET /users/{username}/social_accounts": Operation<
+    "/users/{username}/social_accounts",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/users#list-ssh-signing-keys-for-a-user
    */
   "GET /users/{username}/ssh_signing_keys": Operation<
@@ -4007,13 +4083,6 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/enterprise-admin#update-code-security-and-analysis-features-for-an-enterprise
-   */
-  "PATCH /enterprises/{enterprise}/code_security_and_analysis": Operation<
-    "/enterprises/{enterprise}/code_security_and_analysis",
-    "patch"
-  >;
-  /**
    * @see https://docs.github.com/rest/reference/gists/#update-a-gist
    */
   "PATCH /gists/{gist_id}": Operation<"/gists/{gist_id}", "patch">;
@@ -4040,13 +4109,6 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/actions/required_workflows/{required_workflow_id}": Operation<
     "/orgs/{org}/actions/required_workflows/{required_workflow_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#update-a-self-hosted-runner-group-for-an-organization
-   */
-  "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}",
     "patch"
   >;
   /**
@@ -4156,6 +4218,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/code-scanning#update-a-code-scanning-default-setup-configuration
+   */
+  "PATCH /repos/{owner}/{repo}/code-scanning/default-setup": Operation<
+    "/repos/{owner}/{repo}/code-scanning/default-setup",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/commits/comments#update-a-commit-comment
    */
   "PATCH /repos/{owner}/{repo}/comments/{comment_id}": Operation<
@@ -4191,21 +4260,21 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#update-an-import
+   * @see https://docs.github.com/rest/migrations/source-imports#update-an-import
    */
   "PATCH /repos/{owner}/{repo}/import": Operation<
     "/repos/{owner}/{repo}/import",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#map-a-commit-author
+   * @see https://docs.github.com/rest/migrations/source-imports#map-a-commit-author
    */
   "PATCH /repos/{owner}/{repo}/import/authors/{author_id}": Operation<
     "/repos/{owner}/{repo}/import/authors/{author_id}",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#update-git-lfs-preference
+   * @see https://docs.github.com/rest/migrations/source-imports#update-git-lfs-preference
    */
   "PATCH /repos/{owner}/{repo}/import/lfs": Operation<
     "/repos/{owner}/{repo}/import/lfs",
@@ -4279,6 +4348,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}": Operation<
     "/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#update-a-repository-security-advisory
+   */
+  "PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}": Operation<
+    "/repos/{owner}/{repo}/security-advisories/{ghsa_id}",
     "patch"
   >;
   /**
@@ -4364,31 +4440,10 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/apps#create-a-scoped-access-token
+   * @see https://docs.github.com/rest/apps/apps#create-a-scoped-access-token
    */
   "POST /applications/{client_id}/token/scoped": Operation<
     "/applications/{client_id}/token/scoped",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#create-self-hosted-runner-group-for-an-enterprise
-   */
-  "POST /enterprises/{enterprise}/actions/runner-groups": Operation<
-    "/enterprises/{enterprise}/actions/runner-groups",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#add-custom-labels-to-a-self-hosted-runner-for-an-enterprise
-   */
-  "POST /enterprises/{enterprise}/actions/runners/{runner_id}/labels": Operation<
-    "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/enterprise-admin#enable-or-disable-a-security-feature
-   */
-  "POST /enterprises/{enterprise}/{security_product}/{enablement}": Operation<
-    "/enterprises/{enterprise}/{security_product}/{enablement}",
     "post"
   >;
   /**
@@ -4415,17 +4470,38 @@ export interface Endpoints {
    */
   "POST /markdown/raw": Operation<"/markdown/raw", "post">;
   /**
+   * @see https://docs.github.com/rest/orgs/orgs#review-requests-to-access-organization-resources-with-a-fine-grained-personal-access-token
+   */
+  "POST /organizations/{org}/personal-access-token-requests": Operation<
+    "/organizations/{org}/personal-access-token-requests",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token
+   */
+  "POST /organizations/{org}/personal-access-token-requests/{pat_request_id}": Operation<
+    "/organizations/{org}/personal-access-token-requests/{pat_request_id}",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#update-the-access-to-organization-resources-via-fine-grained-personal-access-tokens
+   */
+  "POST /organizations/{org}/personal-access-tokens": Operation<
+    "/organizations/{org}/personal-access-tokens",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#update-the-access-a-fine-grained-personal-access-token-has-to-organization-resources
+   */
+  "POST /organizations/{org}/personal-access-tokens/{pat_id}": Operation<
+    "/organizations/{org}/personal-access-tokens/{pat_id}",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-required-workflow
    */
   "POST /orgs/{org}/actions/required_workflows": Operation<
     "/orgs/{org}/actions/required_workflows",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#create-a-self-hosted-runner-group-for-an-organization
-   */
-  "POST /orgs/{org}/actions/runner-groups": Operation<
-    "/orgs/{org}/actions/runner-groups",
     "post"
   >;
   /**
@@ -4454,6 +4530,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/actions/variables": Operation<
     "/orgs/{org}/actions/variables",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/reference/codespaces#set-codespaces-billing-users
+   */
+  "POST /orgs/{org}/codespaces/billing/selected_users": Operation<
+    "/orgs/{org}/codespaces/billing/selected_users",
     "post"
   >;
   /**
@@ -4486,7 +4569,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#start-an-organization-migration
+   * @see https://docs.github.com/rest/migrations/orgs#start-an-organization-migration
    */
   "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
   /**
@@ -4511,6 +4594,10 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#create-an-organization-repository
    */
   "POST /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "post">;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#create-organization-repository-ruleset
+   */
+  "POST /orgs/{org}/rulesets": Operation<"/orgs/{org}/rulesets", "post">;
   /**
    * @see https://docs.github.com/rest/reference/teams#create-a-team
    */
@@ -4656,7 +4743,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/v3/repos#create-an-autolink
+   * @see https://docs.github.com/rest/repos/autolinks#create-an-autolink-reference-for-a-repository
    */
   "POST /repos/{owner}/{repo}/autolinks": Operation<
     "/repos/{owner}/{repo}/autolinks",
@@ -4740,7 +4827,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/code-scanning#upload-a-sarif-file
+   * @see https://docs.github.com/rest/reference/code-scanning#upload-an-analysis-as-sarif-data
    */
   "POST /repos/{owner}/{repo}/code-scanning/sarifs": Operation<
     "/repos/{owner}/{repo}/code-scanning/sarifs",
@@ -5034,7 +5121,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/repos#create-a-release
+   * @see https://docs.github.com/rest/releases/releases#create-a-release
    */
   "POST /repos/{owner}/{repo}/releases": Operation<
     "/repos/{owner}/{repo}/releases",
@@ -5052,6 +5139,20 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/releases/{release_id}/reactions": Operation<
     "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#create-repository-ruleset
+   */
+  "POST /repos/{owner}/{repo}/rulesets": Operation<
+    "/repos/{owner}/{repo}/rulesets",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#create-a-repository-security-advisory
+   */
+  "POST /repos/{owner}/{repo}/security-advisories": Operation<
+    "/repos/{owner}/{repo}/security-advisories",
     "post"
   >;
   /**
@@ -5162,7 +5263,7 @@ export interface Endpoints {
    */
   "POST /user/keys": Operation<"/user/keys", "post">;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#start-a-user-migration
+   * @see https://docs.github.com/rest/migrations/users#start-a-user-migration
    */
   "POST /user/migrations": Operation<"/user/migrations", "post">;
   /**
@@ -5187,6 +5288,10 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/reference/repos#create-a-repository-for-the-authenticated-user
    */
   "POST /user/repos": Operation<"/user/repos", "post">;
+  /**
+   * @see https://docs.github.com/rest/users/social-accounts#add-social-account-for-authenticated-user
+   */
+  "POST /user/social_accounts": Operation<"/user/social_accounts", "post">;
   /**
    * @see https://docs.github.com/rest/reference/users#create-an-ssh-signing-key-for-the-authenticated-user
    */
@@ -5217,20 +5322,6 @@ export interface Endpoints {
    */
   "PUT /app/installations/{installation_id}/suspended": Operation<
     "/app/installations/{installation_id}/suspended",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#enable-a-selected-organization-for-github-actions-in-an-enterprise
-   */
-  "PUT /enterprises/{enterprise}/actions/permissions/organizations/{org_id}": Operation<
-    "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#add-organization-access-to-a-self-hosted-runner-group-in-an-enterprise
-   */
-  "PUT /enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}": Operation<
-    "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
     "put"
   >;
   /**
@@ -5302,27 +5393,6 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}": Operation<
     "/orgs/{org}/actions/required_workflows/{required_workflow_id}/repositories/{repository_id}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#set-repository-access-to-a-self-hosted-runner-group-in-an-organization
-   */
-  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#set-self-hosted-runners-in-a-group-for-an-organization
-   */
-  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reference/actions#add-a-self-hosted-runner-to-a-group-for-an-organization
-   */
-  "PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}": Operation<
-    "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
     "put"
   >;
   /**
@@ -5449,6 +5519,13 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/public_members/{username}": Operation<
     "/orgs/{org}/public_members/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#update-organization-ruleset
+   */
+  "PUT /orgs/{org}/rulesets/{ruleset_id}": Operation<
+    "/orgs/{org}/rulesets/{ruleset_id}",
     "put"
   >;
   /**
@@ -5634,7 +5711,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/reference/migrations#start-an-import
+   * @see https://docs.github.com/rest/migrations/source-imports#start-an-import
    */
   "PUT /repos/{owner}/{repo}/import": Operation<
     "/repos/{owner}/{repo}/import",
@@ -5708,6 +5785,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#update-repository-ruleset
+   */
+  "PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}": Operation<
+    "/repos/{owner}/{repo}/rulesets/{ruleset_id}",
     "put"
   >;
   /**
