@@ -35,7 +35,8 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
         }[keyof T["requestBody"]];
       }
   : {};
-type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<T>;
+type ToOctokitParameters<T> = ExtractParameters<T> &
+  ExtractRequestBody<Required<T>>;
 
 type RequiredPreview<T> = T extends string
   ? {
