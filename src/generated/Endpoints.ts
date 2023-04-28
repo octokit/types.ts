@@ -687,6 +687,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/deployments/protection-rules#disable-deployment-protection-rule
+   */
+  "DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/git#delete-a-reference
    */
   "DELETE /repos/{owner}/{repo}/git/refs/{ref}": Operation<
@@ -2779,6 +2786,27 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/deployments/protection-rules#get-all-deployment-protection-rules
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/deployments/protection-rules#list-custom-deployment-rule-integrations
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/deployments/protection-rules#get-a-deployment-protection-rule
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/activity#list-repository-events
    */
   "GET /repos/{owner}/{repo}/events": Operation<
@@ -4709,6 +4737,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/workflow-runs#review-custom-deployment-protection-rules-for-a-workflow-run
+   */
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#review-pending-deployments-for-a-workflow-run
    */
   "POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments": Operation<
@@ -4888,6 +4923,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies": Operation<
     "/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/deployments/deployment-protection-rules#create-a-deployment-protection-rule
+   */
+  "POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules",
     "post"
   >;
   /**
@@ -5154,6 +5196,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/security-advisories": Operation<
     "/repos/{owner}/{repo}/security-advisories",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#privately-report-a-security-vulnerability
+   */
+  "POST /repos/{owner}/{repo}/security-advisories/reports": Operation<
+    "/repos/{owner}/{repo}/security-advisories/reports",
     "post"
   >;
   /**
