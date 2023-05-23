@@ -17,6 +17,6 @@ export type EndpointDefaults = RequestParameters & {
   };
   mediaType: {
     format: string;
-    previews: string[];
+    previews?: string[];
   };
-};
+} | RequestParameters & { url: '/graphql'; mediaType: { previews: string[] }; };
