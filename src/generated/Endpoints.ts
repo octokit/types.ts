@@ -4534,6 +4534,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization
+   */
+  "POST /orgs/{org}/actions/runners/generate-jitconfig": Operation<
+    "/orgs/{org}/actions/runners/generate-jitconfig",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-organization
    */
   "POST /orgs/{org}/actions/runners/registration-token": Operation<
@@ -4699,6 +4706,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun": Operation<
     "/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository
+   */
+  "POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig": Operation<
+    "/repos/{owner}/{repo}/actions/runners/generate-jitconfig",
     "post"
   >;
   /**
