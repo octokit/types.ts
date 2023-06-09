@@ -14,7 +14,7 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
 type ExtractParameters<T> = "parameters" extends keyof T
   ? UnionToIntersection<
       {
-        [K in keyof T["parameters"]]: T["parameters"][K];
+        [K in keyof T["parameters"]]-?: T["parameters"][K];
       }[keyof T["parameters"]]
     >
   : {};
