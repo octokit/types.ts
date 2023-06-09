@@ -655,6 +655,45 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/orgs/{org}/actions/runners/generate-jitconfig",
+    "documentationUrl": "https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "runner_group_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "work_folder" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/actions/runners/generate-jitconfig",
+    "documentationUrl": "https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "runner_group_id"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "labels" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "work_folder" }
+    ],
+    "previews": [],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/actions/caches",
     "documentationUrl": "https://docs.github.com/rest/actions/cache#list-github-actions-caches-for-a-repository",
@@ -4304,6 +4343,7 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "ref" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "location" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "geo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "client_ip" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "machine" },
       {
@@ -4460,6 +4500,7 @@
         "name": "pull_number"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "location" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "geo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "client_ip" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "machine" },
       {
@@ -4511,6 +4552,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "ref" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "location" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "geo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "client_ip" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "machine" },
       {
@@ -5954,8 +5996,7 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "ref" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "sha" },
-      { "alias": null, "deprecated": null, "in": "BODY", "name": "key" }
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "sha" }
     ],
     "previews": [],
     "renamed": null
@@ -12360,7 +12401,9 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "branch" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -12646,7 +12689,9 @@
     "url": "/orgs/{org}/rulesets",
     "documentationUrl": "https://docs.github.com/rest/repos/rules#get-organization-rulesets",
     "parameters": [
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
     ],
     "previews": [],
     "renamed": null
@@ -12805,6 +12850,8 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       {
         "alias": null,
         "deprecated": null,
