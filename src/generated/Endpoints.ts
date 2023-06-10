@@ -14,6 +14,8 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
 type ExtractParameters<T> = "parameters" extends keyof T
   ? UnionToIntersection<
       {
+        // query paramter might be optional
+        // https://github.com/octokit/types.ts/pull/555#issuecomment-1585105522
         [K in keyof T["parameters"]]-?: T["parameters"][K];
       }[keyof T["parameters"]]
     >
