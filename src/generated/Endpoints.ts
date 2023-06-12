@@ -14,7 +14,9 @@ type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
 type ExtractParameters<T> = "parameters" extends keyof T
   ? UnionToIntersection<
       {
-        [K in keyof T["parameters"]]: T["parameters"][K];
+        // query paramter might be optional
+        // https://github.com/octokit/types.ts/pull/555#issuecomment-1585105522
+        [K in keyof T["parameters"]]-?: T["parameters"][K];
       }[keyof T["parameters"]]
     >
   : {};
@@ -4521,6 +4523,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-an-organization
+   */
+  "POST /orgs/{org}/actions/runners/generate-jitconfig": Operation<
+    "/orgs/{org}/actions/runners/generate-jitconfig",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/actions#create-a-registration-token-for-an-organization
    */
   "POST /orgs/{org}/actions/runners/registration-token": Operation<
@@ -4686,6 +4695,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/jobs/{job_id}/rerun": Operation<
     "/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository
+   */
+  "POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig": Operation<
+    "/repos/{owner}/{repo}/actions/runners/generate-jitconfig",
     "post"
   >;
   /**
