@@ -1,12 +1,5 @@
 import { copyFile, readFile, writeFile, rm } from "node:fs/promises";
 
-const sharedOptions = {
-	sourcemap: "external",
-	sourcesContent: true,
-	minify: false,
-	allowOverwrite: true,
-	packages: "external",
-};
 
 async function main() {
 	// Start with a clean slate
