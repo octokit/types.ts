@@ -33,9 +33,7 @@
   "devDependencies": {
     "@octokit/tsconfig": "^1.0.2",
     "@types/node": ">= 8",
-    "esbuild": "^0.17.19",
     "github-openapi-graphql-query": "^4.0.0",
-    "glob": "^7.2.3",
     "handlebars": "^4.7.6",
     "json-schema-to-typescript": "^13.0.0",
     "lodash.set": "^4.3.2",
