@@ -22,11 +22,8 @@ async function main() {
 		JSON.stringify(
 			{
 				...pkg,
-				files: ["dist-*/**", "bin/**"],
-				main: "dist-node/index.js",
-				browser: "dist-web/index.js",
+				files: ["dist-types/**"],
 				types: "dist-types/index.d.ts",
-				module: "dist-src/index.js",
 				sideEffects: false,
 			},
 			null,
