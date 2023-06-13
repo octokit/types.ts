@@ -1,4 +1,4 @@
-import { AuthInterface } from "./AuthInterface";
+import type { AuthInterface } from "./AuthInterface";
 
 export interface StrategyInterface<
   StrategyOptions extends any[],

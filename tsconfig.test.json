@@ -4,7 +4,8 @@
     "emitDeclarationOnly": false,
     "noEmit": true,
     "declaration": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "verbatimModuleSyntax": false
   },
   "include": ["test.ts"]
 }

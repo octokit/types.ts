@@ -1,9 +1,9 @@
-import { EndpointDefaults } from "./EndpointDefaults";
-import { RequestOptions } from "./RequestOptions";
-import { RequestParameters } from "./RequestParameters";
-import { Route } from "./Route";
+import type { EndpointDefaults } from "./EndpointDefaults";
+import type { RequestOptions } from "./RequestOptions";
+import type { RequestParameters } from "./RequestParameters";
+import type { Route } from "./Route";
 
-import { Endpoints } from "./generated/Endpoints";
+import type { Endpoints } from "./generated/Endpoints";
 
 export interface EndpointInterface<D extends object = object> {
   /**
