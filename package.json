@@ -31,7 +31,7 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "devDependencies": {
-    "@octokit/tsconfig": "^1.0.2",
+    "@octokit/tsconfig": "^2.0.0",
     "@types/node": ">= 8",
     "github-openapi-graphql-query": "^4.0.0",
     "handlebars": "^4.7.6",

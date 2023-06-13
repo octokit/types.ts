@@ -1,9 +1,9 @@
-import { EndpointInterface } from "./EndpointInterface";
-import { OctokitResponse } from "./OctokitResponse";
-import { RequestParameters } from "./RequestParameters";
-import { Route } from "./Route";
+import type { EndpointInterface } from "./EndpointInterface";
+import type { OctokitResponse } from "./OctokitResponse";
+import type { RequestParameters } from "./RequestParameters";
+import type { Route } from "./Route";
 
-import { Endpoints } from "./generated/Endpoints";
+import type { Endpoints } from "./generated/Endpoints";
 
 export interface RequestInterface<D extends object = object> {
   /**
