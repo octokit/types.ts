@@ -1,9 +1,10 @@
-import { copyFile, readFile, writeFile, rm } from "node:fs/promises";
+import { copyFile, readFile, writeFile, rm, mkdir } from "node:fs/promises";
 
 
 async function main() {
 	// Start with a clean slate
 	await rm("pkg", { recursive: true, force: true });
+	await mkdir("pkg");
 
 	// Copy the README, LICENSE to the pkg folder
 	await copyFile("LICENSE", "pkg/LICENSE");
