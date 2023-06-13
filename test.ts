@@ -8,9 +8,9 @@ import {
 } from "./src";
 
 const endpoint = {} as EndpointInterface;
-function assertString(type: string) {}
-function assertNullableString(type: string | null | undefined) {}
-function assertArray(type: unknown[]) {}
+function assertString(_: string) {}
+function assertNullableString(_: string | null | undefined) {}
+function assertArray(_: unknown[]) {}
 const assertPaginate = {} as {
   <R extends Route>(route: R): Promise<void>;
   <R extends RequestInterface>(request: R): Promise<void>;
