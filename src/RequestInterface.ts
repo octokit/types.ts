@@ -14,7 +14,7 @@ export interface RequestInterface<D extends object = object> {
   <T = any, O extends RequestParameters = RequestParameters>(
     options: O & { method?: string } & ("url" extends keyof D
         ? { url?: string }
-        : { url: string })
+        : { url: string }),
   ): Promise<OctokitResponse<T>>;
 
   /**
@@ -27,7 +27,7 @@ export interface RequestInterface<D extends object = object> {
     route: keyof Endpoints | R,
     options?: R extends keyof Endpoints
       ? Endpoints[R]["parameters"] & RequestParameters
-      : RequestParameters
+      : RequestParameters,
   ): R extends keyof Endpoints
     ? Promise<Endpoints[R]["response"]>
     : Promise<OctokitResponse<any>>;
@@ -36,7 +36,7 @@ export interface RequestInterface<D extends object = object> {
    * Returns a new `request` with updated route and parameters
    */
   defaults: <O extends RequestParameters = RequestParameters>(
-    newDefaults: O
+    newDefaults: O,
   ) => RequestInterface<D & O>;
 
   /**

@@ -42,6 +42,6 @@ async function main() {
     path.resolve(__dirname, "generated", "endpoints.json"),
     prettier.format(JSON.stringify(endpoints), {
       parser: "json",
-    })
+    }),
   );
 }

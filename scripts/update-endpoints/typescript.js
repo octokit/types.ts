@@ -10,18 +10,18 @@ const ENDPOINTS_PATH = resolve(
   process.cwd(),
   "src",
   "generated",
-  "Endpoints.ts"
+  "Endpoints.ts",
 );
 const ENDPOINTS_TEMPLATE_PATH = resolve(
   process.cwd(),
   "scripts",
   "update-endpoints",
   "templates",
-  "endpoints.ts.template"
+  "endpoints.ts.template",
 );
 
 const template = Handlebars.compile(
-  readFileSync(ENDPOINTS_TEMPLATE_PATH, "utf8")
+  readFileSync(ENDPOINTS_TEMPLATE_PATH, "utf8"),
 );
 
 const endpointsByRoute = {};
@@ -46,7 +46,7 @@ async function run() {
       const { alias, name } = parameter;
       const deprecatedRoute = route.replace(
         new RegExp(`\\{${alias}\\}`),
-        `{${name}}`
+        `{${name}}`,
       );
 
       endpointsByRoute[deprecatedRoute] = Object.assign(
@@ -54,7 +54,7 @@ async function run() {
         endpointsByRoute[route],
         {
           deprecated: `"${name}" is now "${alias}"`,
-        }
+        },
       );
     }
   }
@@ -65,7 +65,7 @@ async function run() {
 
   writeFileSync(
     ENDPOINTS_PATH,
-    prettier.format(result, { parser: "typescript" })
+    prettier.format(result, { parser: "typescript" }),
   );
   console.log(`${ENDPOINTS_PATH} updated.`);
 }

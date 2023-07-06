@@ -14,7 +14,7 @@ import type { Route } from "./Route";
  */
 export interface AuthInterface<
   AuthOptions extends any[],
-  Authentication extends any
+  Authentication extends any,
 > {
   (...args: AuthOptions): Promise<Authentication>;
 
@@ -24,9 +24,10 @@ export interface AuthInterface<
      *
      * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      */
-    <T = any>(request: RequestInterface, options: EndpointOptions): Promise<
-      OctokitResponse<T>
-    >;
+    <T = any>(
+      request: RequestInterface,
+      options: EndpointOptions,
+    ): Promise<OctokitResponse<T>>;
 
     /**
      * Sends a request using the passed `request` instance
@@ -37,7 +38,7 @@ export interface AuthInterface<
     <T = any>(
       request: RequestInterface,
       route: Route,
-      parameters?: RequestParameters
+      parameters?: RequestParameters,
     ): Promise<OctokitResponse<T>>;
   };
 }
