@@ -14,7 +14,7 @@ export interface EndpointInterface<D extends object = object> {
   <O extends RequestParameters = RequestParameters>(
     options: O & { method?: string } & ("url" extends keyof D
         ? { url?: string }
-        : { url: string })
+        : { url: string }),
   ): RequestOptions & Pick<D & O, keyof RequestOptions>;
 
   /**
@@ -27,10 +27,10 @@ export interface EndpointInterface<D extends object = object> {
     R extends Route,
     P extends RequestParameters = R extends keyof Endpoints
       ? Endpoints[R]["parameters"] & RequestParameters
-      : RequestParameters
+      : RequestParameters,
   >(
     route: keyof Endpoints | R,
-    parameters?: P
+    parameters?: P,
   ): (R extends keyof Endpoints ? Endpoints[R]["request"] : RequestOptions) &
     Pick<P, keyof RequestOptions>;
 
@@ -43,7 +43,7 @@ export interface EndpointInterface<D extends object = object> {
    * Returns a new `endpoint` interface with new defaults
    */
   defaults: <O extends RequestParameters = RequestParameters>(
-    newDefaults: O
+    newDefaults: O,
   ) => EndpointInterface<D & O>;
 
   merge: {
@@ -59,10 +59,10 @@ export interface EndpointInterface<D extends object = object> {
       R extends Route,
       P extends RequestParameters = R extends keyof Endpoints
         ? Endpoints[R]["parameters"] & RequestParameters
-        : RequestParameters
+        : RequestParameters,
     >(
       route: keyof Endpoints | R,
-      parameters?: P
+      parameters?: P,
     ): D &
       (R extends keyof Endpoints
         ? Endpoints[R]["request"] & Endpoints[R]["parameters"]
@@ -76,7 +76,7 @@ export interface EndpointInterface<D extends object = object> {
      * @param {object} endpoint Must set `method` and `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
      */
     <P extends RequestParameters = RequestParameters>(
-      options: P
+      options: P,
     ): EndpointDefaults & D & P;
 
     /**
@@ -94,6 +94,6 @@ export interface EndpointInterface<D extends object = object> {
    * @param {object} options `method`, `url`. Plus URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   parse: <O extends EndpointDefaults = EndpointDefaults>(
-    options: O
+    options: O,
   ) => RequestOptions & Pick<O, keyof RequestOptions>;
 }
