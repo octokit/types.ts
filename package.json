@@ -44,7 +44,7 @@
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
     "sort-keys": "^5.0.0",
     "string-to-jsdoc-comment": "^1.0.0",
-    "typedoc": "^0.24.0",
+    "typedoc": "^0.25.0",
     "typescript": "^5.0.0"
   },
   "release": {
