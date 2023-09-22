@@ -1,11 +1,13 @@
-import { writeFileSync, readFileSync } from "fs"
+import { writeFileSync, readFileSync } from "fs";
 
 if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
 }
 
 const parentDir = new URL("../..", import.meta.url);
-const pkg = JSON.parse(readFileSync(new URL("package.json", parentDir), "utf8"));
+const pkg = JSON.parse(
+  readFileSync(new URL("package.json", parentDir), "utf8"),
+);
 
 if (!pkg.octokit) {
   pkg.octokit = {};

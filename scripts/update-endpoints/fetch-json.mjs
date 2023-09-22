@@ -1,15 +1,15 @@
-import { writeFileSync } from "fs"
-import { resolve } from "path"
-import { fileURLToPath } from "url"
+import { writeFileSync } from "fs";
+import { resolve } from "path";
+import { fileURLToPath } from "url";
 
-import graphql from "github-openapi-graphql-query"
-import { format } from "prettier"
+import graphql from "github-openapi-graphql-query";
+import { format } from "prettier";
 
 if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
 }
 
-const __dirname = fileURLToPath(new URL('.', import.meta.url));
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 const version = process.env.VERSION.replace(/^v/, "");
 

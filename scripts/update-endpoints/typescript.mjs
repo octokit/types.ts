@@ -1,11 +1,13 @@
-import { readFileSync, writeFileSync } from "fs"
-import { resolve } from "path"
+import { readFileSync, writeFileSync } from "fs";
+import { resolve } from "path";
 
-import handlebars from "handlebars"
-import { format } from "prettier"
-import sortKeys from "sort-keys"
+import handlebars from "handlebars";
+import { format } from "prettier";
+import sortKeys from "sort-keys";
 
-const ENDPOINTS = JSON.parse(readFileSync(new URL("generated/endpoints.json", import.meta.url), "utf8"));
+const ENDPOINTS = JSON.parse(
+  readFileSync(new URL("generated/endpoints.json", import.meta.url), "utf8"),
+);
 const ENDPOINTS_PATH = resolve(
   process.cwd(),
   "src",
@@ -63,10 +65,7 @@ async function run() {
     endpointsByRoute: sortKeys(endpointsByRoute, { deep: true }),
   });
 
-  writeFileSync(
-    ENDPOINTS_PATH,
-    await format(result, { parser: "typescript" }),
-  );
+  writeFileSync(ENDPOINTS_PATH, await format(result, { parser: "typescript" }));
   console.log(`${ENDPOINTS_PATH} updated.`);
 }
 

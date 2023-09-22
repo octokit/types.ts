@@ -1,6 +1,5 @@
 import { copyFile, readFile, writeFile, rm, mkdir } from "node:fs/promises";
 
-
 async function main() {
   // Start with a clean slate
   await rm("pkg", { recursive: true, force: true });
@@ -27,8 +26,8 @@ async function main() {
         sideEffects: false,
       },
       null,
-      2
-    )
+      2,
+    ),
   );
 }
 main();
