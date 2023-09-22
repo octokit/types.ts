@@ -1,11 +1,13 @@
-const { readFileSync, writeFileSync } = require("fs");
-const { resolve } = require("path");
+import { readFileSync, writeFileSync } from "fs";
+import { resolve } from "path";
 
-const Handlebars = require("handlebars");
-const prettier = require("prettier");
-const sortKeys = require("sort-keys");
+import handlebars from "handlebars";
+import { format } from "prettier";
+import sortKeys from "sort-keys";
 
-const ENDPOINTS = require("./generated/endpoints.json");
+const ENDPOINTS = JSON.parse(
+  readFileSync(new URL("generated/endpoints.json", import.meta.url), "utf8"),
+);
 const ENDPOINTS_PATH = resolve(
   process.cwd(),
   "src",
@@ -20,7 +22,7 @@ const ENDPOINTS_TEMPLATE_PATH = resolve(
   "endpoints.ts.template",
 );
 
-const template = Handlebars.compile(
+const template = handlebars.compile(
   readFileSync(ENDPOINTS_TEMPLATE_PATH, "utf8"),
 );
 
@@ -63,10 +65,7 @@ async function run() {
     endpointsByRoute: sortKeys(endpointsByRoute, { deep: true }),
   });
 
-  writeFileSync(
-    ENDPOINTS_PATH,
-    prettier.format(result, { parser: "typescript" }),
-  );
+  writeFileSync(ENDPOINTS_PATH, await format(result, { parser: "typescript" }));
   console.log(`${ENDPOINTS_PATH} updated.`);
 }
 

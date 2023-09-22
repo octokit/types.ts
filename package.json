@@ -11,14 +11,14 @@
   "scripts": {
     "build": "node scripts/build.mjs && tsc -p tsconfig.json",
     "docs": "typedoc --readme none --out docs src/index.ts && touch docs/.nojekyll",
-    "lint": "prettier --check \"{src,test,scripts}/**/*.{js,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
-    "lint:fix": "prettier --write \"{src,test,scripts}/**/*.{js,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
+    "lint": "prettier --check \"{src,test,scripts}/**/*.{js,mjs,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
+    "lint:fix": "prettier --write \"{src,test,scripts}/**/*.{js,mjs,ts,json}\" README.md package.json !src/generated/* !scripts/update-endpoints/generated/*",
     "pretest": "npm run -s lint",
     "test": "npx tsc --project tsconfig.test.json",
     "update-endpoints": "npm-run-all update-endpoints:*",
-    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
-    "update-endpoints:typescript": "node scripts/update-endpoints/typescript",
-    "update-endpoints:package": "node scripts/update-endpoints/package"
+    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json.mjs",
+    "update-endpoints:typescript": "node scripts/update-endpoints/typescript.mjs",
+    "update-endpoints:package": "node scripts/update-endpoints/package.mjs"
   },
   "repository": "github:octokit/types.ts",
   "keywords": [
