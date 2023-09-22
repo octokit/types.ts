@@ -5,8 +5,7 @@ import handlebars from "handlebars"
 import { format } from "prettier"
 import sortKeys from "sort-keys"
 
-const currentDir = new URL('.', import.meta.url);
-const ENDPOINTS = JSON.parse(readFileSync(new URL("generated/endpoints.json", currentDir), "utf8"));
+const ENDPOINTS = JSON.parse(readFileSync(new URL("generated/endpoints.json", import.meta.url), "utf8"));
 const ENDPOINTS_PATH = resolve(
   process.cwd(),
   "src",
