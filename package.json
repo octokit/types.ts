@@ -16,9 +16,9 @@
     "pretest": "npm run -s lint",
     "test": "npx tsc --project tsconfig.test.json",
     "update-endpoints": "npm-run-all update-endpoints:*",
-    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json",
-    "update-endpoints:typescript": "node scripts/update-endpoints/typescript",
-    "update-endpoints:package": "node scripts/update-endpoints/package"
+    "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json.mjs",
+    "update-endpoints:typescript": "node scripts/update-endpoints/typescript.mjs",
+    "update-endpoints:package": "node scripts/update-endpoints/package.mjs"
   },
   "repository": "github:octokit/types.ts",
   "keywords": [
