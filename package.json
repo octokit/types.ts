@@ -6,7 +6,7 @@
   },
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
-    "@octokit/openapi-types": "^18.0.0"
+    "@octokit/openapi-types": "^19.0.0"
   },
   "scripts": {
     "build": "node scripts/build.mjs && tsc -p tsconfig.json",
@@ -80,6 +80,6 @@
     ]
   },
   "octokit": {
-    "openapi-version": "12.0.0"
+    "openapi-version": "13.0.0"
   }
 }
