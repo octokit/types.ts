@@ -343,6 +343,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/properties#remove-a-custom-property-for-an-organization
+   */
+  "DELETE /orgs/{org}/properties/schema/{custom_property_name}": Operation<
+    "/orgs/{org}/properties/schema/{custom_property_name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/members#remove-public-organization-membership-for-the-authenticated-user
    */
   "DELETE /orgs/{org}/public_members/{username}": Operation<
@@ -1789,6 +1796,27 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
   /**
+   * @see https://docs.github.com/rest/orgs/properties#get-all-custom-properties-for-an-organization
+   */
+  "GET /orgs/{org}/properties/schema": Operation<
+    "/orgs/{org}/properties/schema",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/properties#get-a-custom-property-for-an-organization
+   */
+  "GET /orgs/{org}/properties/schema/{custom_property_name}": Operation<
+    "/orgs/{org}/properties/schema/{custom_property_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/properties#list-custom-property-values-for-organization-repositories
+   */
+  "GET /orgs/{org}/properties/values": Operation<
+    "/orgs/{org}/properties/values",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/members#list-public-organization-members
    */
   "GET /orgs/{org}/public_members": Operation<
@@ -1810,6 +1838,20 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/rules#get-all-organization-repository-rulesets
    */
   "GET /orgs/{org}/rulesets": Operation<"/orgs/{org}/rulesets", "get">;
+  /**
+   * @see https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites
+   */
+  "GET /orgs/{org}/rulesets/rule-suites": Operation<
+    "/orgs/{org}/rulesets/rule-suites",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/rule-suites#get-an-organization-rule-suite
+   */
+  "GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}": Operation<
+    "/orgs/{org}/rulesets/rule-suites/{rule_suite_id}",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/orgs/rules#get-an-organization-repository-ruleset
    */
@@ -2549,6 +2591,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/codespaces/codespaces#check-if-permissions-defined-by-a-devcontainer-have-been-accepted-by-the-authenticated-user
+   */
+  "GET /repos/{owner}/{repo}/codespaces/permissions_check": Operation<
+    "/repos/{owner}/{repo}/codespaces/permissions_check",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/codespaces/repository-secrets#list-repository-secrets
    */
   "GET /repos/{owner}/{repo}/codespaces/secrets": Operation<
@@ -3172,6 +3221,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/repos/properties#get-all-custom-property-values-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/properties/values": Operation<
+    "/repos/{owner}/{repo}/properties/values",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/pulls/pulls#list-pull-requests
    */
   "GET /repos/{owner}/{repo}/pulls": Operation<
@@ -3337,6 +3393,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/rulesets": Operation<
     "/repos/{owner}/{repo}/rulesets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites
+   */
+  "GET /repos/{owner}/{repo}/rulesets/rule-suites": Operation<
+    "/repos/{owner}/{repo}/rulesets/rule-suites",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rule-suites#get-a-repository-rule-suite
+   */
+  "GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}": Operation<
+    "/repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}",
     "get"
   >;
   /**
@@ -4184,6 +4254,20 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/properties#create-or-update-custom-properties-for-an-organization
+   */
+  "PATCH /orgs/{org}/properties/schema": Operation<
+    "/orgs/{org}/properties/schema",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/properties#create-or-update-custom-property-values-for-organization-repositories
+   */
+  "PATCH /orgs/{org}/properties/values": Operation<
+    "/orgs/{org}/properties/values",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/teams/teams#update-a-team
    */
   "PATCH /orgs/{org}/teams/{team_slug}": Operation<
@@ -4784,6 +4868,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule": Operation<
     "/repos/{owner}/{repo}/actions/runs/{run_id}/deployment_protection_rule",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/workflow-runs#force-cancel-a-workflow-run
+   */
+  "POST /repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel": Operation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/force-cancel",
     "post"
   >;
   /**
@@ -5598,6 +5689,13 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/outside_collaborators/{username}": Operation<
     "/orgs/{org}/outside_collaborators/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/properties#create-or-update-a-custom-property-for-an-organization
+   */
+  "PUT /orgs/{org}/properties/schema/{custom_property_name}": Operation<
+    "/orgs/{org}/properties/schema/{custom_property_name}",
     "put"
   >;
   /**
