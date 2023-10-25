@@ -697,7 +697,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#delete-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#delete-a-repository-webhook
    */
   "DELETE /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
@@ -2941,35 +2941,35 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#list-repository-webhooks
+   * @see https://docs.github.com/rest/repos/webhooks#list-repository-webhooks
    */
   "GET /repos/{owner}/{repo}/hooks": Operation<
     "/repos/{owner}/{repo}/hooks",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#get-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#get-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository
+   * @see https://docs.github.com/rest/repos/webhooks#get-a-webhook-configuration-for-a-repository
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/config",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repo-deliveries#list-deliveries-for-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#list-deliveries-for-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repo-deliveries#get-a-delivery-for-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#get-a-delivery-for-a-repository-webhook
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
@@ -4381,14 +4381,14 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#update-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#update-a-repository-webhook
    */
   "PATCH /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository
+   * @see https://docs.github.com/rest/repos/webhooks#update-a-webhook-configuration-for-a-repository
    */
   "PATCH /repos/{owner}/{repo}/hooks/{hook_id}/config": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/config",
@@ -5109,28 +5109,28 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#create-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#create-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks": Operation<
     "/repos/{owner}/{repo}/hooks",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repo-deliveries#redeliver-a-delivery-for-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#redeliver-a-delivery-for-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#ping-a-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#ping-a-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/pings": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/webhooks/repos#test-the-push-repository-webhook
+   * @see https://docs.github.com/rest/repos/webhooks#test-the-push-repository-webhook
    */
   "POST /repos/{owner}/{repo}/hooks/{hook_id}/tests": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
