@@ -11414,7 +11414,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#create-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#create-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -11764,7 +11764,7 @@
   {
     "method": "DELETE",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#delete-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#delete-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12661,7 +12661,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#get-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#get-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12672,7 +12672,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#get-a-webhook-configuration-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -12683,7 +12683,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repo-deliveries#get-a-delivery-for-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#get-a-delivery-for-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13131,7 +13131,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repo-deliveries#list-deliveries-for-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#list-deliveries-for-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13145,7 +13145,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/hooks",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#list-repository-webhooks",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#list-repository-webhooks",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13186,7 +13186,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#ping-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#ping-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13197,7 +13197,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repo-deliveries#redeliver-a-delivery-for-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#redeliver-a-delivery-for-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -13371,7 +13371,7 @@
   {
     "method": "POST",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#test-the-push-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#test-the-push-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -14378,7 +14378,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repos#update-a-repository-webhook",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#update-a-repository-webhook",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
@@ -14430,7 +14430,7 @@
   {
     "method": "PATCH",
     "url": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
-    "documentationUrl": "https://docs.github.com/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/repos/webhooks#update-a-webhook-configuration-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
