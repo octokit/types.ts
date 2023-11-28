@@ -353,7 +353,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#remove-a-custom-property-for-an-organization
+   * @see https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization
    */
   "DELETE /orgs/{org}/properties/schema/{custom_property_name}": Operation<
     "/orgs/{org}/properties/schema/{custom_property_name}",
@@ -1806,21 +1806,21 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#get-all-custom-properties-for-an-organization
+   * @see https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
    */
   "GET /orgs/{org}/properties/schema": Operation<
     "/orgs/{org}/properties/schema",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#get-a-custom-property-for-an-organization
+   * @see https://docs.github.com/rest/orgs/custom-properties#get-a-custom-property-for-an-organization
    */
   "GET /orgs/{org}/properties/schema/{custom_property_name}": Operation<
     "/orgs/{org}/properties/schema/{custom_property_name}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#list-custom-property-values-for-organization-repositories
+   * @see https://docs.github.com/rest/orgs/custom-properties#list-custom-property-values-for-organization-repositories
    */
   "GET /orgs/{org}/properties/values": Operation<
     "/orgs/{org}/properties/values",
@@ -3231,7 +3231,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/properties#get-all-custom-property-values-for-a-repository
+   * @see https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository
    */
   "GET /repos/{owner}/{repo}/properties/values": Operation<
     "/repos/{owner}/{repo}/properties/values",
@@ -4264,14 +4264,14 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#create-or-update-custom-properties-for-an-organization
+   * @see https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
    */
   "PATCH /orgs/{org}/properties/schema": Operation<
     "/orgs/{org}/properties/schema",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#create-or-update-custom-property-values-for-organization-repositories
+   * @see https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories
    */
   "PATCH /orgs/{org}/properties/values": Operation<
     "/orgs/{org}/properties/values",
@@ -5702,7 +5702,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/properties#create-or-update-a-custom-property-for-an-organization
+   * @see https://docs.github.com/rest/orgs/custom-properties#create-or-update-a-custom-property-for-an-organization
    */
   "PUT /orgs/{org}/properties/schema/{custom_property_name}": Operation<
     "/orgs/{org}/properties/schema/{custom_property_name}",
