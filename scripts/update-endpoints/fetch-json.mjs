@@ -1,6 +1,6 @@
-import { writeFileSync } from "fs";
-import { resolve } from "path";
-import { fileURLToPath } from "url";
+import { writeFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import graphql from "github-openapi-graphql-query";
 import { format } from "prettier";

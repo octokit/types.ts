@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync } from "fs";
-import { resolve } from "path";
+import { readFileSync, writeFileSync } from "node:fs";
+import { resolve } from "node:path";
 
 import handlebars from "handlebars";
 import { format } from "prettier";

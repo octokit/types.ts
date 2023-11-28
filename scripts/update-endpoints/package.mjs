@@ -1,4 +1,4 @@
-import { writeFileSync, readFileSync } from "fs";
+import { writeFileSync, readFileSync } from "node:fs";
 
 if (!process.env.VERSION) {
   throw new Error(`VERSION environment variable must be set`);
