@@ -2403,6 +2403,12 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_custom_properties"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_announcement_banners"
       },
       {
@@ -2979,6 +2985,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.organization_custom_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_custom_properties"
       },
       {
         "alias": null,
@@ -7327,7 +7339,7 @@
   {
     "method": "PATCH",
     "url": "/orgs/{org}/properties/schema",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#create-or-update-custom-properties-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "properties" },
@@ -7373,7 +7385,7 @@
   {
     "method": "PATCH",
     "url": "/orgs/{org}/properties/values",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#create-or-update-custom-property-values-for-organization-repositories",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -7401,7 +7413,7 @@
   {
     "method": "PUT",
     "url": "/orgs/{org}/properties/schema/{custom_property_name}",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#create-or-update-a-custom-property-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#create-or-update-a-custom-property-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -7525,7 +7537,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/properties/schema",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#get-all-custom-properties-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
@@ -7534,7 +7546,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/properties/schema/{custom_property_name}",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#get-a-custom-property-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#get-a-custom-property-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -7631,11 +7643,17 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/properties/values",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#list-custom-property-values-for-organization-repositories",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#list-custom-property-values-for-organization-repositories",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "QUERY",
+        "name": "repository_query"
+      }
     ],
     "renamed": null
   },
@@ -7915,7 +7933,7 @@
   {
     "method": "DELETE",
     "url": "/orgs/{org}/properties/schema/{custom_property_name}",
-    "documentationUrl": "https://docs.github.com/rest/orgs/properties#remove-a-custom-property-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -10808,6 +10826,18 @@
         "deprecated": null,
         "in": "BODY",
         "name": "merge_commit_message"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "custom_properties"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "custom_properties.*"
       }
     ],
     "renamed": null
@@ -12214,7 +12244,7 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/properties/values",
-    "documentationUrl": "https://docs.github.com/rest/repos/properties#get-all-custom-property-values-for-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
@@ -14601,7 +14631,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "validity" }
     ],
     "renamed": null
   },
@@ -14629,7 +14660,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "validity" }
     ],
     "renamed": null
   },
@@ -14658,7 +14690,8 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "before" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" }
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "after" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "validity" }
     ],
     "renamed": null
   },
