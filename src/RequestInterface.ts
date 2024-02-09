@@ -47,7 +47,13 @@ export interface RequestInterface<D extends object = object> {
       ? Endpoints[R]["parameters"] & O
       : StreamBodyOption,
   ): R extends keyof Endpoints
-    ? Promise<Endpoints[R]["response"]>
+    ? Promise<
+        OctokitResponse<
+          ReadableStream<
+            Exclude<Endpoints[R]["response"], keyof OctokitResponse<any>>
+          >
+        >
+      >
     : Promise<OctokitResponse<ReadableStream<any>>>;
 
   /**
