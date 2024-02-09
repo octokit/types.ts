@@ -9,7 +9,9 @@ import type { Endpoints, Simplify } from "./generated/Endpoints";
  * Parameters that can be passed into `request(route, parameters)` or `endpoint(route, parameters)` methods.
  * This type represents the options when `request.parseSuccessResponseBody` is set to `false`.
  */
-type StreamBodyOption = Simplify<RequestParameters & { request: { parseSuccessResponseBody: false }}>
+type StreamBodyOption = Simplify<
+  RequestParameters & { request: { parseSuccessResponseBody: false } }
+>;
 export interface RequestInterface<D extends object = object> {
   /**
    * Sends a request based on endpoint options
@@ -21,7 +23,6 @@ export interface RequestInterface<D extends object = object> {
         ? { url?: string }
         : { url: string }),
   ): Promise<OctokitResponse<T>>;
-  
 
   /**
    * Sends a request based on endpoint options
@@ -48,7 +49,7 @@ export interface RequestInterface<D extends object = object> {
   ): R extends keyof Endpoints
     ? Promise<Endpoints[R]["response"]>
     : Promise<OctokitResponse<ReadableStream<any>>>;
-    
+
   /**
    * Sends a request based on endpoint options
    *
