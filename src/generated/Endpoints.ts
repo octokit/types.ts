@@ -36,12 +36,12 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
           }[keyof T["requestBody"]["content"]];
         }
     : "application/json" extends keyof T["requestBody"]
-    ? T["requestBody"]["application/json"]
-    : {
-        data: {
-          [K in keyof T["requestBody"]]: T["requestBody"][K];
-        }[keyof T["requestBody"]];
-      }
+      ? T["requestBody"]["application/json"]
+      : {
+          data: {
+            [K in keyof T["requestBody"]]: T["requestBody"][K];
+          }[keyof T["requestBody"]];
+        }
   : {};
 type ToOctokitParameters<T> = ExtractParameters<T> &
   ExtractRequestBody<Required<T>>;
@@ -153,6 +153,13 @@ export interface Endpoints {
    */
   "DELETE /installation/token": Operation<"/installation/token", "delete">;
   /**
+   * @see https://docs.github.com/rest/activity/notifications#mark-a-thread-as-done
+   */
+  "DELETE /notifications/threads/{thread_id}": Operation<
+    "/notifications/threads/{thread_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/notifications#delete-a-thread-subscription
    */
   "DELETE /notifications/threads/{thread_id}/subscription": Operation<
@@ -248,14 +255,14 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#remove-teams-from-the-copilot-for-business-subscription-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#remove-teams-from-the-copilot-subscription-for-an-organization
    */
   "DELETE /orgs/{org}/copilot/billing/selected_teams": Operation<
     "/orgs/{org}/copilot/billing/selected_teams",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#remove-users-from-the-copilot-for-business-subscription-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#remove-users-from-the-copilot-subscription-for-an-organization
    */
   "DELETE /orgs/{org}/copilot/billing/selected_users": Operation<
     "/orgs/{org}/copilot/billing/selected_users",
@@ -329,6 +336,41 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock": Operation<
     "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-team
+   */
+  "DELETE /orgs/{org}/organization-roles/teams/{team_slug}": Operation<
+    "/orgs/{org}/organization-roles/teams/{team_slug}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-team
+   */
+  "DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-user
+   */
+  "DELETE /orgs/{org}/organization-roles/users/{username}": Operation<
+    "/orgs/{org}/organization-roles/users/{username}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-user
+   */
+  "DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/users/{username}/{role_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#delete-a-custom-organization-role
+   */
+  "DELETE /orgs/{org}/organization-roles/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/{role_id}",
     "delete"
   >;
   /**
@@ -1553,14 +1595,14 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-information-and-settings-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-information-and-settings-for-an-organization
    */
   "GET /orgs/{org}/copilot/billing": Operation<
     "/orgs/{org}/copilot/billing",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization
    */
   "GET /orgs/{org}/copilot/billing/seats": Operation<
     "/orgs/{org}/copilot/billing/seats",
@@ -1703,7 +1745,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-assignment-details-for-a-user
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-assignment-details-for-a-user
    */
   "GET /orgs/{org}/members/{username}/copilot": Operation<
     "/orgs/{org}/members/{username}/copilot",
@@ -1739,6 +1781,41 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/migrations/{migration_id}/repositories": Operation<
     "/orgs/{org}/migrations/{migration_id}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#list-organization-fine-grained-permissions-for-an-organization
+   */
+  "GET /orgs/{org}/organization-fine-grained-permissions": Operation<
+    "/orgs/{org}/organization-fine-grained-permissions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#get-all-organization-roles-for-an-organization
+   */
+  "GET /orgs/{org}/organization-roles": Operation<
+    "/orgs/{org}/organization-roles",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#get-an-organization-role
+   */
+  "GET /orgs/{org}/organization-roles/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/{role_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#list-teams-that-are-assigned-to-an-organization-role
+   */
+  "GET /orgs/{org}/organization-roles/{role_id}/teams": Operation<
+    "/orgs/{org}/organization-roles/{role_id}/teams",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#list-users-that-are-assigned-to-an-organization-role
+   */
+  "GET /orgs/{org}/organization-roles/{role_id}/users": Operation<
+    "/orgs/{org}/organization-roles/{role_id}/users",
     "get"
   >;
   /**
@@ -2362,7 +2439,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository
+   * @see https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository
    */
   "GET /repos/{owner}/{repo}/autolinks": Operation<
     "/repos/{owner}/{repo}/autolinks",
@@ -3214,6 +3291,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/pages/builds/{build_id}": Operation<
     "/repos/{owner}/{repo}/pages/builds/{build_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment
+   */
+  "GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}": Operation<
+    "/repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}",
     "get"
   >;
   /**
@@ -4264,6 +4348,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#update-a-custom-organization-role
+   */
+  "PATCH /orgs/{org}/organization-roles/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/{role_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
    */
   "PATCH /orgs/{org}/properties/schema": Operation<
@@ -4458,6 +4549,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/milestones/{milestone_number}": Operation<
     "/repos/{owner}/{repo}/milestones/{milestone_number}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/custom-properties#create-or-update-custom-property-values-for-a-repository
+   */
+  "PATCH /repos/{owner}/{repo}/properties/values": Operation<
+    "/repos/{owner}/{repo}/properties/values",
     "patch"
   >;
   /**
@@ -4657,14 +4755,14 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#add-teams-to-the-copilot-for-business-subscription-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#add-teams-to-the-copilot-subscription-for-an-organization
    */
   "POST /orgs/{org}/copilot/billing/selected_teams": Operation<
     "/orgs/{org}/copilot/billing/selected_teams",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-for-business#add-users-to-the-copilot-for-business-subscription-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-user-management#add-users-to-the-copilot-subscription-for-an-organization
    */
   "POST /orgs/{org}/copilot/billing/selected_users": Operation<
     "/orgs/{org}/copilot/billing/selected_users",
@@ -4703,6 +4801,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/migrations/orgs#start-an-organization-migration
    */
   "POST /orgs/{org}/migrations": Operation<"/orgs/{org}/migrations", "post">;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#create-a-custom-organization-role
+   */
+  "POST /orgs/{org}/organization-roles": Operation<
+    "/orgs/{org}/organization-roles",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/packages/packages#restore-a-package-for-an-organization
    */
@@ -5240,8 +5345,15 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment
    */
-  "POST /repos/{owner}/{repo}/pages/deployment": Operation<
-    "/repos/{owner}/{repo}/pages/deployment",
+  "POST /repos/{owner}/{repo}/pages/deployments": Operation<
+    "/repos/{owner}/{repo}/pages/deployments",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment
+   */
+  "POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel": Operation<
+    "/repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel",
     "post"
   >;
   /**
@@ -5354,6 +5466,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve": Operation<
     "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/security-advisories/repository-advisories#create-a-temporary-private-fork
+   */
+  "POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks": Operation<
+    "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks",
     "post"
   >;
   /**
@@ -5692,6 +5811,20 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/memberships/{username}": Operation<
     "/orgs/{org}/memberships/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-team
+   */
+  "PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-user
+   */
+  "PUT /orgs/{org}/organization-roles/users/{username}/{role_id}": Operation<
+    "/orgs/{org}/organization-roles/users/{username}/{role_id}",
     "put"
   >;
   /**

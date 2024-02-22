@@ -2118,6 +2118,15 @@
     "renamed": null
   },
   {
+    "method": "DELETE",
+    "url": "/notifications/threads/{thread_id}",
+    "documentationUrl": "https://docs.github.com/rest/activity/notifications#mark-a-thread-as-done",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "thread_id" }
+    ],
+    "renamed": null
+  },
+  {
     "method": "PATCH",
     "url": "/notifications/threads/{thread_id}",
     "documentationUrl": "https://docs.github.com/rest/activity/notifications#mark-a-thread-as-read",
@@ -2283,7 +2292,19 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.codespaces"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.contents"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.dependabot_secrets"
       },
       {
         "alias": null,
@@ -2326,6 +2347,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.pull_requests"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_custom_properties"
       },
       {
         "alias": null,
@@ -2403,13 +2430,31 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_custom_org_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_custom_properties"
       },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_copilot_seat_management"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_announcement_banners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_events"
       },
       {
         "alias": null,
@@ -2470,6 +2515,48 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.team_discussions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.email_addresses"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.followers"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.git_ssh_keys"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.gpg_keys"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.interaction_limits"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.profile"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.starring"
       }
     ],
     "renamed": null
@@ -2870,7 +2957,19 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.codespaces"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.contents"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.dependabot_secrets"
       },
       {
         "alias": null,
@@ -2913,6 +3012,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.pull_requests"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.repository_custom_properties"
       },
       {
         "alias": null,
@@ -2990,13 +3095,31 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_custom_org_roles"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_custom_properties"
       },
       {
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "permissions.organization_copilot_seat_management"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "permissions.organization_announcement_banners"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.organization_events"
       },
       {
         "alias": null,
@@ -3057,6 +3180,48 @@
         "deprecated": null,
         "in": "BODY",
         "name": "permissions.team_discussions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.email_addresses"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.followers"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.git_ssh_keys"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.gpg_keys"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.interaction_limits"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.profile"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "permissions.starring"
       }
     ],
     "renamed": null
@@ -4884,7 +5049,7 @@
   {
     "method": "POST",
     "url": "/orgs/{org}/copilot/billing/selected_teams",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#add-teams-to-the-copilot-for-business-subscription-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#add-teams-to-the-copilot-subscription-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -4899,7 +5064,7 @@
   {
     "method": "POST",
     "url": "/orgs/{org}/copilot/billing/selected_users",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#add-users-to-the-copilot-for-business-subscription-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#add-users-to-the-copilot-subscription-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -4914,7 +5079,7 @@
   {
     "method": "DELETE",
     "url": "/orgs/{org}/copilot/billing/selected_teams",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#remove-teams-from-the-copilot-for-business-subscription-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#remove-teams-from-the-copilot-subscription-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -4929,7 +5094,7 @@
   {
     "method": "DELETE",
     "url": "/orgs/{org}/copilot/billing/selected_users",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#remove-users-from-the-copilot-for-business-subscription-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#remove-users-from-the-copilot-subscription-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       {
@@ -4944,7 +5109,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/copilot/billing",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-information-and-settings-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-information-and-settings-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
@@ -4953,7 +5118,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/members/{username}/copilot",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-assignment-details-for-a-user",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-assignment-details-for-a-user",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
@@ -4963,7 +5128,7 @@
   {
     "method": "GET",
     "url": "/orgs/{org}/copilot/billing/seats",
-    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-organization",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
@@ -7259,6 +7424,28 @@
   },
   {
     "method": "PUT",
+    "url": "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-team",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
+    "url": "/orgs/{org}/organization-roles/users/{username}/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "PUT",
     "url": "/orgs/{org}/blocks/{username}",
     "documentationUrl": "https://docs.github.com/rest/orgs/blocking#block-a-user-from-an-organization",
     "parameters": [
@@ -7325,6 +7512,23 @@
   },
   {
     "method": "POST",
+    "url": "/orgs/{org}/organization-roles",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#create-a-custom-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "description"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/orgs/{org}/invitations",
     "documentationUrl": "https://docs.github.com/rest/orgs/members#create-an-organization-invitation",
     "parameters": [
@@ -7378,6 +7582,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "properties[].allowed_values"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "properties[].values_editable_by"
       }
     ],
     "renamed": null
@@ -7500,6 +7710,16 @@
   },
   {
     "method": "DELETE",
+    "url": "/orgs/{org}/organization-roles/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#delete-a-custom-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
     "url": "/orgs/{org}/hooks/{hook_id}",
     "documentationUrl": "https://docs.github.com/rest/orgs/webhooks#delete-an-organization-webhook",
     "parameters": [
@@ -7574,6 +7794,16 @@
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/organization-roles/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#get-an-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
     ],
     "renamed": null
   },
@@ -7727,6 +7957,48 @@
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "state" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/organization-roles/{role_id}/teams",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#list-teams-that-are-assigned-to-an-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/organization-roles/{role_id}/users",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#list-users-that-are-assigned-to-an-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/organization-roles",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#get-all-organization-roles-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/organization-fine-grained-permissions",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#list-organization-fine-grained-permissions-for-an-organization",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" }
     ],
     "renamed": null
   },
@@ -7910,6 +8182,24 @@
     "renamed": null
   },
   {
+    "method": "PATCH",
+    "url": "/orgs/{org}/organization-roles/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#update-a-custom-organization-role",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "description"
+      },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "permissions" }
+    ],
+    "renamed": null
+  },
+  {
     "method": "POST",
     "url": "/orgs/{org}/hooks/{hook_id}/pings",
     "documentationUrl": "https://docs.github.com/rest/orgs/webhooks#ping-an-organization-webhook",
@@ -8026,6 +8316,48 @@
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "action" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "reason" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/organization-roles/teams/{team_slug}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-team",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/organization-roles/users/{username}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/organization-roles/teams/{team_slug}/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-team",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "DELETE",
+    "url": "/orgs/{org}/organization-roles/users/{username}/{role_id}",
+    "documentationUrl": "https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "role_id" }
     ],
     "renamed": null
   },
@@ -10288,6 +10620,22 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel",
+    "documentationUrl": "https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "pages_deployment_id"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/automated-security-fixes",
     "documentationUrl": "https://docs.github.com/rest/repos/repos#check-if-automated-security-fixes-are-enabled-for-a-repository",
@@ -10843,6 +11191,29 @@
     "renamed": null
   },
   {
+    "method": "PATCH",
+    "url": "/repos/{owner}/{repo}/properties/values",
+    "documentationUrl": "https://docs.github.com/rest/repos/custom-properties#create-or-update-custom-property-values-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "properties" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "properties[].property_name"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "properties[].value"
+      }
+    ],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/repos/{owner}/{repo}/environments/{environment_name}",
     "documentationUrl": "https://docs.github.com/rest/deployments/environments#create-or-update-an-environment",
@@ -11121,11 +11492,17 @@
   },
   {
     "method": "POST",
-    "url": "/repos/{owner}/{repo}/pages/deployment",
+    "url": "/repos/{owner}/{repo}/pages/deployments",
     "documentationUrl": "https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "artifact_id"
+      },
       {
         "alias": null,
         "deprecated": null,
@@ -11468,18 +11845,6 @@
         "deprecated": null,
         "in": "BODY",
         "name": "config.insecure_ssl"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "config.token"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "config.digest"
       },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "active" }
@@ -12447,6 +12812,22 @@
   },
   {
     "method": "GET",
+    "url": "/repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}",
+    "documentationUrl": "https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "PATH",
+        "name": "pages_deployment_id"
+      }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/repos/{owner}/{repo}/pages/health",
     "documentationUrl": "https://docs.github.com/rest/pages/pages#get-a-dns-health-check-for-github-pages",
     "parameters": [
@@ -12753,11 +13134,10 @@
   {
     "method": "GET",
     "url": "/repos/{owner}/{repo}/autolinks",
-    "documentationUrl": "https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository",
+    "documentationUrl": "https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
-      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
     "renamed": null
   },
@@ -14433,18 +14813,6 @@
         "in": "BODY",
         "name": "config.insecure_ssl"
       },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "config.address"
-      },
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "BODY",
-        "name": "config.room"
-      },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "events" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "add_events" },
       {
@@ -14739,6 +15107,17 @@
   },
   {
     "method": "POST",
+    "url": "/repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks",
+    "documentationUrl": "https://docs.github.com/rest/security-advisories/repository-advisories#create-a-temporary-private-fork",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "ghsa_id" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "POST",
     "url": "/repos/{owner}/{repo}/security-advisories/reports",
     "documentationUrl": "https://docs.github.com/rest/security-advisories/repository-advisories#privately-report-a-security-vulnerability",
     "parameters": [
@@ -14800,6 +15179,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "cvss_vector_string"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "start_private_fork"
       }
     ],
     "renamed": null
@@ -14881,6 +15266,12 @@
         "deprecated": null,
         "in": "BODY",
         "name": "cvss_vector_string"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "start_private_fork"
       }
     ],
     "renamed": null
