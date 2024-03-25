@@ -22,8 +22,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.OCTOKITBOT_PAT }}
           NPM_TOKEN: ${{ secrets.OCTOKITBOT_NPM_TOKEN }}
+        if: ${{ env.GITHUB_TOKEN && env.NPM_TOKEN != '' }}
       - run: npm run docs
       - uses: maxheld83/ghpages@master
         env:
           BUILD_DIR: docs/
           GH_PAT: ${{ secrets.OCTOKIT_PAT }}
+        if: ${{ env.GH_PAT != '' }}
