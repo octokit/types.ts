@@ -742,6 +742,20 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/secrets#delete-an-environment-secret
+   */
+  "DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/variables#delete-an-environment-variable
+   */
+  "DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/git/refs#delete-a-reference
    */
   "DELETE /repos/{owner}/{repo}/git/refs/{ref}": Operation<
@@ -935,20 +949,6 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/secrets#delete-an-environment-secret
-   */
-  "DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/variables#delete-an-environment-variable
-   */
-  "DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
     "delete"
   >;
   /**
@@ -2972,6 +2972,41 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/secrets#list-environment-secrets
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/secrets#get-an-environment-public-key
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/secrets#get-an-environment-secret
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/variables#list-environment-variables
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/variables": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/variables",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/variables#get-an-environment-variable
+   */
+  "GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/events#list-repository-events
    */
   "GET /repos/{owner}/{repo}/events": Operation<
@@ -3305,6 +3340,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/pages/health": Operation<
     "/repos/{owner}/{repo}/pages/health",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/repos#check-if-private-vulnerability-reporting-is-enabled-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/private-vulnerability-reporting": Operation<
+    "/repos/{owner}/{repo}/private-vulnerability-reporting",
     "get"
   >;
   /**
@@ -3682,41 +3724,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/repos/repos#list-public-repositories
    */
   "GET /repositories": Operation<"/repositories", "get">;
-  /**
-   * @see https://docs.github.com/rest/actions/secrets#list-environment-secrets
-   */
-  "GET /repositories/{repository_id}/environments/{environment_name}/secrets": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/secrets",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/secrets#get-an-environment-public-key
-   */
-  "GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/secrets#get-an-environment-secret
-   */
-  "GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/variables#list-environment-variables
-   */
-  "GET /repositories/{repository_id}/environments/{environment_name}/variables": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/variables",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/variables#get-an-environment-variable
-   */
-  "GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/search/search#search-code
    */
@@ -4475,6 +4482,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/variables#update-an-environment-variable
+   */
+  "PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/git/refs#update-a-reference
    */
   "PATCH /repos/{owner}/{repo}/git/refs/{ref}": Operation<
@@ -4598,13 +4612,6 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}": Operation<
     "/repos/{owner}/{repo}/security-advisories/{ghsa_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/variables#update-an-environment-variable
-   */
-  "PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
     "patch"
   >;
   /**
@@ -5182,6 +5189,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/variables#create-an-environment-variable
+   */
+  "POST /repos/{owner}/{repo}/environments/{environment_name}/variables": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/variables",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/repos/forks#create-a-fork
    */
   "POST /repos/{owner}/{repo}/forks": Operation<
@@ -5501,13 +5515,6 @@ export interface Endpoints {
    */
   "POST /repos/{template_owner}/{template_repo}/generate": Operation<
     "/repos/{template_owner}/{template_repo}/generate",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/variables#create-an-environment-variable
-   */
-  "POST /repositories/{repository_id}/environments/{environment_name}/variables": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/variables",
     "post"
   >;
   /**
@@ -6038,6 +6045,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/secrets#create-or-update-an-environment-secret
+   */
+  "PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/migrations/source-imports#start-an-import
    */
   "PUT /repos/{owner}/{repo}/import": Operation<
@@ -6140,13 +6154,6 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/vulnerability-alerts": Operation<
     "/repos/{owner}/{repo}/vulnerability-alerts",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/actions/secrets#create-or-update-an-environment-secret
-   */
-  "PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}": Operation<
-    "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
     "put"
   >;
   /**
