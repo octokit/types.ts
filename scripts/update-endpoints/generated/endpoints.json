@@ -83,15 +83,11 @@
   },
   {
     "method": "POST",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/variables",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/variables",
     "documentationUrl": "https://docs.github.com/rest/actions/variables#create-an-environment-variable",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -105,15 +101,11 @@
   },
   {
     "method": "PUT",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/actions/secrets#create-or-update-an-environment-secret",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -311,15 +303,11 @@
   },
   {
     "method": "DELETE",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/actions/secrets#delete-an-environment-secret",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -332,15 +320,11 @@
   },
   {
     "method": "DELETE",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
     "documentationUrl": "https://docs.github.com/rest/actions/variables#delete-an-environment-variable",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "name" },
       {
         "alias": null,
@@ -685,15 +669,11 @@
   },
   {
     "method": "GET",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key",
     "documentationUrl": "https://docs.github.com/rest/actions/secrets#get-an-environment-public-key",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -705,15 +685,11 @@
   },
   {
     "method": "GET",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
     "documentationUrl": "https://docs.github.com/rest/actions/secrets#get-an-environment-secret",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -726,15 +702,11 @@
   },
   {
     "method": "GET",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
     "documentationUrl": "https://docs.github.com/rest/actions/variables#get-an-environment-variable",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -1006,15 +978,11 @@
   },
   {
     "method": "GET",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/secrets",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/secrets",
     "documentationUrl": "https://docs.github.com/rest/actions/secrets#list-environment-secrets",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -1028,15 +996,11 @@
   },
   {
     "method": "GET",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/variables",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/variables",
     "documentationUrl": "https://docs.github.com/rest/actions/variables#list-environment-variables",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       {
         "alias": null,
         "deprecated": null,
@@ -1761,15 +1725,11 @@
   },
   {
     "method": "PATCH",
-    "url": "/repositories/{repository_id}/environments/{environment_name}/variables/{name}",
+    "url": "/repos/{owner}/{repo}/environments/{environment_name}/variables/{name}",
     "documentationUrl": "https://docs.github.com/rest/actions/variables#update-an-environment-variable",
     "parameters": [
-      {
-        "alias": null,
-        "deprecated": null,
-        "in": "PATH",
-        "name": "repository_id"
-      },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "BODY", "name": "name" },
       {
         "alias": null,
@@ -6897,7 +6857,8 @@
     "documentationUrl": "https://docs.github.com/rest/licenses/licenses#get-the-license-for-a-repository",
     "parameters": [
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
-      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "ref" }
     ],
     "renamed": null
   },
@@ -10653,6 +10614,16 @@
       { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" },
       { "alias": null, "deprecated": null, "in": "PATH", "name": "username" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/repos/{owner}/{repo}/private-vulnerability-reporting",
+    "documentationUrl": "https://docs.github.com/rest/repos/repos#check-if-private-vulnerability-reporting-is-enabled-for-a-repository",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "owner" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "repo" }
     ],
     "renamed": null
   },
