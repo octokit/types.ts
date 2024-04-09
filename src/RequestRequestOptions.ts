@@ -18,5 +18,6 @@ export type RequestRequestOptions = {
    */
   parseSuccessResponseBody?: boolean;
 
+  redirect?: "follow" | "error" | "manual";
   [option: string]: any;
 };
