@@ -5097,6 +5097,46 @@
     "renamed": null
   },
   {
+    "method": "GET",
+    "url": "/enterprises/{enterprise}/copilot/usage",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-enterprise-members",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "enterprise" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "until" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/copilot/usage",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "until" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
+    "url": "/orgs/{org}/team/{team_slug}/copilot/usage",
+    "documentationUrl": "https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "org" },
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "team_slug" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "since" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "until" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "page" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "per_page" }
+    ],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/dependabot/secrets#add-selected-repository-to-an-organization-secret",
@@ -11432,6 +11472,30 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "rules[].parameters.restricted_file_paths"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_path_length"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_extensions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_size"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "rules[].parameters.workflows"
       },
       {
@@ -11709,6 +11773,30 @@
         "deprecated": null,
         "in": "BODY",
         "name": "rules[].parameters.pattern"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_paths"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_path_length"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_extensions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_size"
       },
       {
         "alias": null,
@@ -14349,6 +14437,30 @@
         "alias": null,
         "deprecated": null,
         "in": "BODY",
+        "name": "rules[].parameters.restricted_file_paths"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_path_length"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_extensions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_size"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
         "name": "rules[].parameters.workflows"
       },
       {
@@ -14670,6 +14782,30 @@
         "deprecated": null,
         "in": "BODY",
         "name": "rules[].parameters.pattern"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_paths"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_path_length"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.restricted_file_extensions"
+      },
+      {
+        "alias": null,
+        "deprecated": null,
+        "in": "BODY",
+        "name": "rules[].parameters.max_file_size"
       },
       {
         "alias": null,
