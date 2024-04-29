@@ -1233,6 +1233,13 @@ export interface Endpoints {
    */
   "GET /emojis": Operation<"/emojis", "get">;
   /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-enterprise-members
+   */
+  "GET /enterprises/{enterprise}/copilot/usage": Operation<
+    "/enterprises/{enterprise}/copilot/usage",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/dependabot/alerts": Operation<
@@ -1606,6 +1613,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/copilot/billing/seats": Operation<
     "/orgs/{org}/copilot/billing/seats",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members
+   */
+  "GET /orgs/{org}/copilot/usage": Operation<
+    "/orgs/{org}/copilot/usage",
     "get"
   >;
   /**
@@ -1986,6 +2000,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/settings/billing/shared-storage": Operation<
     "/orgs/{org}/settings/billing/shared-storage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team
+   */
+  "GET /orgs/{org}/team/{team_slug}/copilot/usage": Operation<
+    "/orgs/{org}/team/{team_slug}/copilot/usage",
     "get"
   >;
   /**
