@@ -13,7 +13,6 @@ export * from "./RequestParameters";
 export * from "./RequestRequestOptions";
 export * from "./ResponseHeaders";
 export * from "./Route";
-export * from "./Signal";
 export * from "./StrategyInterface";
 export * from "./Url";
 export * from "./VERSION";
