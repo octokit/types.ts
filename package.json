@@ -5,6 +5,7 @@
     "access": "public",
     "provenance": true
   },
+  "type": "module",
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0"
@@ -32,7 +33,7 @@
   "author": "Gregor Martynus (https://twitter.com/gr2m)",
   "license": "MIT",
   "devDependencies": {
-    "@octokit/tsconfig": "^2.0.0",
+    "@octokit/tsconfig": "^4.0.0",
     "@types/node": ">= 8",
     "github-openapi-graphql-query": "^4.0.0",
     "handlebars": "^4.7.6",

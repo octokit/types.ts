@@ -5,7 +5,7 @@ import {
   RequestInterface,
   RequestParameters,
   Route,
-} from "./src";
+} from "./src/index.js";
 
 const endpoint = {} as EndpointInterface;
 function assertString(_: string) {}

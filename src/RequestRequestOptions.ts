@@ -1,4 +1,4 @@
-import type { Fetch } from "./Fetch";
+import type { Fetch } from "./Fetch.js";
 
 /**
  * Octokit-specific request options which are ignored for the actual request, but can be used by Octokit or plugins to manipulate how the request is sent or how a response is handled
