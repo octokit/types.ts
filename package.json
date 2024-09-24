@@ -5,6 +5,7 @@
     "access": "public",
     "provenance": true
   },
+  "type": "module",
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
     "@octokit/openapi-types": "^22.2.0"
