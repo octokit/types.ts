@@ -1,5 +1,5 @@
-import type { Fetch } from "./Fetch";
-import type { Signal } from "./Signal";
+import type { Fetch } from "./Fetch.js";
+import type { Signal } from "./Signal.js";
 
 /**
  * Octokit-specific request options which are ignored for the actual request, but can be used by Octokit or plugins to manipulate how the request is sent or how a response is handled
