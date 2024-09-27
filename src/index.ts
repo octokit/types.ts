@@ -13,7 +13,6 @@ export * from "./RequestParameters.js";
 export * from "./RequestRequestOptions.js";
 export * from "./ResponseHeaders.js";
 export * from "./Route.js";
-export * from "./Signal.js";
 export * from "./StrategyInterface.js";
 export * from "./Url.js";
 export * from "./VERSION.js";
