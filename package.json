@@ -36,7 +36,7 @@
     "@types/node": ">= 8",
     "github-openapi-graphql-query": "^4.0.0",
     "handlebars": "^4.7.6",
-    "npm-run-all2": "^6.0.0",
+    "npm-run-all2": "^7.0.0",
     "prettier": "^3.0.0",
     "semantic-release": "^24.0.0",
     "semantic-release-plugin-update-version-in-files": "^1.0.0",
