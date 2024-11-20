@@ -33,7 +33,6 @@
   "license": "MIT",
   "devDependencies": {
     "@octokit/tsconfig": "^4.0.0",
-    "@types/node": ">= 8",
     "github-openapi-graphql-query": "^4.0.0",
     "handlebars": "^4.7.6",
     "npm-run-all2": "^7.0.0",
