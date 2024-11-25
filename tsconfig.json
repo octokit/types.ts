@@ -6,7 +6,8 @@
     "outDir": "pkg/dist-types",
     "emitDeclarationOnly": true,
     "sourceMap": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "lib": ["es2022", "dom"]
   },
   "include": [
     "src/**/*"
