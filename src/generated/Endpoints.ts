@@ -353,6 +353,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/issue-types#delete-issue-type-for-an-organization
+   */
+  "DELETE /orgs/{org}/issue-types/{issue_type_id}": Operation<
+    "/orgs/{org}/issue-types/{issue_type_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/members#remove-an-organization-member
    */
   "DELETE /orgs/{org}/members/{username}": Operation<
@@ -2023,6 +2030,10 @@ export interface Endpoints {
     "/orgs/{org}/invitations/{invitation_id}/teams",
     "get"
   >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-types#list-issue-types-for-an-organization
+   */
+  "GET /orgs/{org}/issue-types": Operation<"/orgs/{org}/issue-types", "get">;
   /**
    * @see https://docs.github.com/rest/issues/issues#list-organization-issues-assigned-to-the-authenticated-user
    */
@@ -5327,6 +5338,10 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
   /**
+   * @see https://docs.github.com/rest/orgs/issue-types#create-issue-type-for-an-organization
+   */
+  "POST /orgs/{org}/issue-types": Operation<"/orgs/{org}/issue-types", "post">;
+  /**
    * @see https://docs.github.com/rest/codespaces/organizations#stop-a-codespace-for-an-organization-user
    */
   "POST /orgs/{org}/members/{username}/codespaces/{codespace_name}/stop": Operation<
@@ -6431,6 +6446,13 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/interaction-limits": Operation<
     "/orgs/{org}/interaction-limits",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-types#update-issue-type-for-an-organization
+   */
+  "PUT /orgs/{org}/issue-types/{issue_type_id}": Operation<
+    "/orgs/{org}/issue-types/{issue_type_id}",
     "put"
   >;
   /**
