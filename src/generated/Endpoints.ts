@@ -6877,3 +6877,5 @@ export interface Endpoints {
     "put"
   >;
 }
+
+export type EndpointKeys = keyof Endpoints;

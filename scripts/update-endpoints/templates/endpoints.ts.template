@@ -117,3 +117,5 @@ export interface Endpoints {
   >,
   {{/each}}
 }
+
+export type EndpointKeys = keyof Endpoints;

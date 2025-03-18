@@ -3,7 +3,7 @@ import type { OctokitResponse } from "./OctokitResponse.js";
 import type { RequestParameters } from "./RequestParameters.js";
 import type { Route } from "./Route.js";
 
-import type { Endpoints } from "./generated/Endpoints.js";
+import type { EndpointKeys, Endpoints } from "./generated/Endpoints.js";
 
 export interface RequestInterface<D extends object = object> {
   /**
@@ -24,11 +24,11 @@ export interface RequestInterface<D extends object = object> {
    * @param {object} [parameters] URL, query or body parameters, as well as `headers`, `mediaType.{format|previews}`, `request`, or `baseUrl`.
    */
   <R extends Route>(
-    route: keyof Endpoints | R,
-    options?: R extends keyof Endpoints
+    route: EndpointKeys | R,
+    options?: R extends EndpointKeys
       ? Endpoints[R]["parameters"] & RequestParameters
       : RequestParameters,
-  ): R extends keyof Endpoints
+  ): R extends EndpointKeys
     ? Promise<Endpoints[R]["response"]>
     : Promise<OctokitResponse<any>>;
 

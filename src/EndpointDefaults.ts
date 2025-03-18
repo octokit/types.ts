@@ -7,7 +7,7 @@ import type { Url } from "./Url.js";
  * The `.endpoint()` method is guaranteed to set all keys defined by RequestParameters
  * as well as the method property.
  */
-export type EndpointDefaults = RequestParameters & {
+export interface EndpointDefaults extends RequestParameters {
   baseUrl: Url;
   method: RequestMethod;
   url?: Url;
@@ -19,4 +19,4 @@ export type EndpointDefaults = RequestParameters & {
     format: string;
     previews?: string[];
   };
-};
+}
