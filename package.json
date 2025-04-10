@@ -76,6 +76,6 @@
     ]
   },
   "octokit": {
-    "openapi-version": "18.2.0"
+    "openapi-version": "19.0.0"
   }
 }

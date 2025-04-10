@@ -269,6 +269,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#delete-a-campaign-for-an-organization
+   */
+  "DELETE /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#detach-configurations-from-repositories
    */
   "DELETE /orgs/{org}/code-security/configurations/detach": Operation<
@@ -1759,6 +1766,17 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#list-campaigns-for-an-organization
+   */
+  "GET /orgs/{org}/campaigns": Operation<"/orgs/{org}/campaigns", "get">;
+  /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#get-a-campaign-for-an-organization
+   */
+  "GET /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-an-organization
    */
   "GET /orgs/{org}/code-scanning/alerts": Operation<
@@ -1844,13 +1862,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/copilot/metrics": Operation<
     "/orgs/{org}/copilot/metrics",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members
-   */
-  "GET /orgs/{org}/copilot/usage": Operation<
-    "/orgs/{org}/copilot/usage",
     "get"
   >;
   /**
@@ -2361,13 +2372,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/team/{team_slug}/copilot/metrics": Operation<
     "/orgs/{org}/team/{team_slug}/copilot/metrics",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team
-   */
-  "GET /orgs/{org}/team/{team_slug}/copilot/usage": Operation<
-    "/orgs/{org}/team/{team_slug}/copilot/usage",
     "get"
   >;
   /**
@@ -4818,6 +4822,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#update-a-campaign
+   */
+  "PATCH /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#update-a-code-security-configuration
    */
   "PATCH /orgs/{org}/code-security/configurations/{configuration_id}": Operation<
@@ -5280,6 +5291,10 @@ export interface Endpoints {
     "/orgs/{org}/actions/variables",
     "post"
   >;
+  /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#create-a-campaign-for-an-organization
+   */
+  "POST /orgs/{org}/campaigns": Operation<"/orgs/{org}/campaigns", "post">;
   /**
    * @see https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration
    */
