@@ -8,7 +8,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.OCTOKIT_APP_ID }}
+          private-key: ${{ secrets.OCTOKIT_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
@@ -27,7 +32,7 @@ jobs:
       - name: Create Pull Request
         uses: gr2m/create-or-update-pull-request-action@v1.x
         env:
-          GITHUB_TOKEN: ${{ secrets.OCTOKITBOT_PAT }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
         with:
           title: 🚧 GitHub OpenAPI spec changed
           body: >
