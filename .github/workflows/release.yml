@@ -6,12 +6,25 @@ name: Release
       - next
       - beta
       - "*.x"
+# These are recommended by the semantic-release docs: https://github.com/semantic-release/npm#npm-provenance
+permissions:
+    contents: write # to be able to publish a GitHub release
+    issues: write # to be able to comment on released issues
+    pull-requests: write # to be able to comment on released pull requests
+    id-token: write # to enable use of OIDC for npm provenance
+
 jobs:
   release:
+    if: github.repository_owner == 'octokit'
     name: release
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.OCTOKIT_APP_ID }}
+          private-key: ${{ secrets.OCTOKIT_APP_PRIVATE_KEY }}
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
@@ -20,10 +33,10 @@ jobs:
       - run: npm run build
       - run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.OCTOKITBOT_PAT }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.OCTOKITBOT_NPM_TOKEN }}
       - run: npm run docs
       - uses: maxheld83/ghpages@master
         env:
           BUILD_DIR: docs/
-          GH_PAT: ${{ secrets.OCTOKIT_PAT }}
+          GH_PAT: ${{ steps.app-token.outputs.token }}

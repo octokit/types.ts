@@ -72,7 +72,7 @@ async function run() {
 function toOpenApiUrl(endpoint) {
   return (
     endpoint.url
-      // stecial case for "Upload a release asset": remove ":origin" prefix
+      // special case for "Upload a release asset": remove ":origin" prefix
       .replace(/^\{origin\}/, "")
       // remove query parameters
       .replace(/\{?\?.*$/, "")

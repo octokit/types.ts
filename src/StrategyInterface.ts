@@ -1,4 +1,4 @@
-import type { AuthInterface } from "./AuthInterface";
+import type { AuthInterface } from "./AuthInterface.js";
 
 export interface StrategyInterface<
   StrategyOptions extends any[],

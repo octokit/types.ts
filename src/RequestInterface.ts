@@ -1,9 +1,9 @@
-import type { EndpointInterface } from "./EndpointInterface";
-import type { OctokitResponse } from "./OctokitResponse";
-import type { RequestParameters } from "./RequestParameters";
-import type { Route } from "./Route";
+import type { EndpointInterface } from "./EndpointInterface.js";
+import type { OctokitResponse } from "./OctokitResponse.js";
+import type { RequestParameters } from "./RequestParameters.js";
+import type { Route } from "./Route.js";
 
-import type { Endpoints, Simplify } from "./generated/Endpoints";
+import type { Endpoints, Simplify } from "./generated/Endpoints.js";
 
 /**
  * Parameters that can be passed into `request(route, parameters)` or `endpoint(route, parameters)` methods.
