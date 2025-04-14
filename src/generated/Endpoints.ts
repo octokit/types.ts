@@ -178,6 +178,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}": Operation<"/orgs/{org}", "delete">;
   /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#delete-a-github-hosted-runner-for-an-organization
+   */
+  "DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}": Operation<
+    "/orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization
    */
   "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
@@ -262,6 +269,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#delete-a-campaign-for-an-organization
+   */
+  "DELETE /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#detach-configurations-from-repositories
    */
   "DELETE /orgs/{org}/code-security/configurations/detach": Operation<
@@ -343,6 +357,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/invitations/{invitation_id}": Operation<
     "/orgs/{org}/invitations/{invitation_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-types#delete-issue-type-for-an-organization
+   */
+  "DELETE /orgs/{org}/issue-types/{issue_type_id}": Operation<
+    "/orgs/{org}/issue-types/{issue_type_id}",
     "delete"
   >;
   /**
@@ -462,6 +483,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/security-managers/teams/{team_slug}": Operation<
     "/orgs/{org}/security-managers/teams/{team_slug}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#delete-a-hosted-compute-network-configuration-from-an-organization
+   */
+  "DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}": Operation<
+    "/orgs/{org}/settings/network-configurations/{network_configuration_id}",
     "delete"
   >;
   /**
@@ -630,7 +658,7 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/repos#disable-automated-security-fixes
+   * @see https://docs.github.com/rest/repos/repos#disable-dependabot-security-updates
    */
   "DELETE /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
@@ -1524,6 +1552,55 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#list-github-hosted-runners-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners": Operation<
+    "/orgs/{org}/actions/hosted-runners",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-github-owned-images-for-github-hosted-runners-in-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/github-owned": Operation<
+    "/orgs/{org}/actions/hosted-runners/images/github-owned",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-partner-images-for-github-hosted-runners-in-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/partner": Operation<
+    "/orgs/{org}/actions/hosted-runners/images/partner",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-limits-on-github-hosted-runners-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/limits": Operation<
+    "/orgs/{org}/actions/hosted-runners/limits",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-github-hosted-runners-machine-specs-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/machine-sizes": Operation<
+    "/orgs/{org}/actions/hosted-runners/machine-sizes",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-platforms-for-github-hosted-runners-in-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/platforms": Operation<
+    "/orgs/{org}/actions/hosted-runners/platforms",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-a-github-hosted-runner-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}": Operation<
+    "/orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-an-organization
    */
   "GET /orgs/{org}/actions/oidc/customization/sub": Operation<
@@ -1570,6 +1647,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
     "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/self-hosted-runner-groups#list-github-hosted-runners-in-a-group-for-an-organization
+   */
+  "GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners": Operation<
+    "/orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners",
     "get"
   >;
   /**
@@ -1682,6 +1766,17 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#list-campaigns-for-an-organization
+   */
+  "GET /orgs/{org}/campaigns": Operation<"/orgs/{org}/campaigns", "get">;
+  /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#get-a-campaign-for-an-organization
+   */
+  "GET /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-an-organization
    */
   "GET /orgs/{org}/code-scanning/alerts": Operation<
@@ -1767,13 +1862,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/copilot/metrics": Operation<
     "/orgs/{org}/copilot/metrics",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members
-   */
-  "GET /orgs/{org}/copilot/usage": Operation<
-    "/orgs/{org}/copilot/usage",
     "get"
   >;
   /**
@@ -1953,6 +2041,10 @@ export interface Endpoints {
     "/orgs/{org}/invitations/{invitation_id}/teams",
     "get"
   >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-types#list-issue-types-for-an-organization
+   */
+  "GET /orgs/{org}/issue-types": Operation<"/orgs/{org}/issue-types", "get">;
   /**
    * @see https://docs.github.com/rest/issues/issues#list-organization-issues-assigned-to-the-authenticated-user
    */
@@ -2199,6 +2291,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/rules#get-organization-ruleset-history
+   */
+  "GET /orgs/{org}/rulesets/{ruleset_id}/history": Operation<
+    "/orgs/{org}/rulesets/{ruleset_id}/history",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/rules#get-organization-ruleset-version
+   */
+  "GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}": Operation<
+    "/orgs/{org}/rulesets/{ruleset_id}/history/{version_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-organization
    */
   "GET /orgs/{org}/secret-scanning/alerts": Operation<
@@ -2241,17 +2347,31 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#list-hosted-compute-network-configurations-for-an-organization
+   */
+  "GET /orgs/{org}/settings/network-configurations": Operation<
+    "/orgs/{org}/settings/network-configurations",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-configuration-for-an-organization
+   */
+  "GET /orgs/{org}/settings/network-configurations/{network_configuration_id}": Operation<
+    "/orgs/{org}/settings/network-configurations/{network_configuration_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization
+   */
+  "GET /orgs/{org}/settings/network-settings/{network_settings_id}": Operation<
+    "/orgs/{org}/settings/network-settings/{network_settings_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-a-team
    */
   "GET /orgs/{org}/team/{team_slug}/copilot/metrics": Operation<
     "/orgs/{org}/team/{team_slug}/copilot/metrics",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team
-   */
-  "GET /orgs/{org}/team/{team_slug}/copilot/usage": Operation<
-    "/orgs/{org}/team/{team_slug}/copilot/usage",
     "get"
   >;
   /**
@@ -2726,7 +2846,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/repos#check-if-automated-security-fixes-are-enabled-for-a-repository
+   * @see https://docs.github.com/rest/repos/repos#check-if-dependabot-security-updates-are-enabled-for-a-repository
    */
   "GET /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
@@ -3861,6 +3981,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/repos/rules#get-repository-ruleset-history
+   */
+  "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history": Operation<
+    "/repos/{owner}/{repo}/rulesets/{ruleset_id}/history",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/rules#get-repository-ruleset-version
+   */
+  "GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}": Operation<
+    "/repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-a-repository
    */
   "GET /repos/{owner}/{repo}/secret-scanning/alerts": Operation<
@@ -4667,6 +4801,13 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}": Operation<"/orgs/{org}", "patch">;
   /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#update-a-github-hosted-runner-for-an-organization
+   */
+  "PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}": Operation<
+    "/orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization
    */
   "PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
@@ -4678,6 +4819,13 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/actions/variables/{name}": Operation<
     "/orgs/{org}/actions/variables/{name}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#update-a-campaign
+   */
+  "PATCH /orgs/{org}/campaigns/{campaign_number}": Operation<
+    "/orgs/{org}/campaigns/{campaign_number}",
     "patch"
   >;
   /**
@@ -4720,6 +4868,13 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/properties/values": Operation<
     "/orgs/{org}/properties/values",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#update-a-hosted-compute-network-configuration-for-an-organization
+   */
+  "PATCH /orgs/{org}/settings/network-configurations/{network_configuration_id}": Operation<
+    "/orgs/{org}/settings/network-configurations/{network_configuration_id}",
     "patch"
   >;
   /**
@@ -5088,6 +5243,13 @@ export interface Endpoints {
    */
   "POST /markdown/raw": Operation<"/markdown/raw", "post">;
   /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#create-a-github-hosted-runner-for-an-organization
+   */
+  "POST /orgs/{org}/actions/hosted-runners": Operation<
+    "/orgs/{org}/actions/hosted-runners",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization
    */
   "POST /orgs/{org}/actions/runner-groups": Operation<
@@ -5129,6 +5291,10 @@ export interface Endpoints {
     "/orgs/{org}/actions/variables",
     "post"
   >;
+  /**
+   * @see https://docs.github.com/rest/campaigns/campaigns#create-a-campaign-for-an-organization
+   */
+  "POST /orgs/{org}/campaigns": Operation<"/orgs/{org}/campaigns", "post">;
   /**
    * @see https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration
    */
@@ -5186,6 +5352,10 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/members#create-an-organization-invitation
    */
   "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-types#create-issue-type-for-an-organization
+   */
+  "POST /orgs/{org}/issue-types": Operation<"/orgs/{org}/issue-types", "post">;
   /**
    * @see https://docs.github.com/rest/codespaces/organizations#stop-a-codespace-for-an-organization-user
    */
@@ -5258,6 +5428,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/rules#create-an-organization-repository-ruleset
    */
   "POST /orgs/{org}/rulesets": Operation<"/orgs/{org}/rulesets", "post">;
+  /**
+   * @see https://docs.github.com/rest/orgs/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization
+   */
+  "POST /orgs/{org}/settings/network-configurations": Operation<
+    "/orgs/{org}/settings/network-configurations",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/teams/teams#create-a-team
    */
@@ -6287,6 +6464,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/issue-types#update-issue-type-for-an-organization
+   */
+  "PUT /orgs/{org}/issue-types/{issue_type_id}": Operation<
+    "/orgs/{org}/issue-types/{issue_type_id}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/members#set-organization-membership-for-a-user
    */
   "PUT /orgs/{org}/memberships/{username}": Operation<
@@ -6434,7 +6618,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/repos#enable-automated-security-fixes
+   * @see https://docs.github.com/rest/repos/repos#enable-dependabot-security-updates
    */
   "PUT /repos/{owner}/{repo}/automated-security-fixes": Operation<
     "/repos/{owner}/{repo}/automated-security-fixes",
