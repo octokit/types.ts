@@ -4725,6 +4725,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-a-user
+   */
+  "GET /users/{username}/settings/billing/usage": Operation<
+    "/users/{username}/settings/billing/usage",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/users/social-accounts#list-social-accounts-for-a-user
    */
   "GET /users/{username}/social_accounts": Operation<
@@ -5205,6 +5212,10 @@ export interface Endpoints {
     "/applications/{client_id}/token/scoped",
     "post"
   >;
+  /**
+   * @see https://docs.github.com/rest/credentials/revoke#revoke-a-list-of-credentials
+   */
+  "POST /credentials/revoke": Operation<"/credentials/revoke", "post">;
   /**
    * @see https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration-for-an-enterprise
    */
