@@ -3963,6 +3963,19 @@
   },
   {
     "method": "GET",
+    "url": "/users/{username}/settings/billing/usage",
+    "documentationUrl": "https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-a-user",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "PATH", "name": "username" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "year" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "month" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "day" },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "hour" }
+    ],
+    "renamed": null
+  },
+  {
+    "method": "GET",
     "url": "/orgs/{org}/settings/billing/packages",
     "documentationUrl": "https://docs.github.com/rest/billing/billing#get-github-packages-billing-for-an-organization",
     "parameters": [
@@ -6939,6 +6952,15 @@
     "renamed": null
   },
   {
+    "method": "POST",
+    "url": "/credentials/revoke",
+    "documentationUrl": "https://docs.github.com/rest/credentials/revoke#revoke-a-list-of-credentials",
+    "parameters": [
+      { "alias": null, "deprecated": null, "in": "BODY", "name": "credentials" }
+    ],
+    "renamed": null
+  },
+  {
     "method": "PUT",
     "url": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
     "documentationUrl": "https://docs.github.com/rest/dependabot/secrets#add-selected-repository-to-an-organization-secret",
@@ -7104,6 +7126,7 @@
         "in": "QUERY",
         "name": "epss_percentage"
       },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "has" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "scope" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
@@ -7131,6 +7154,7 @@
         "in": "QUERY",
         "name": "epss_percentage"
       },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "has" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "scope" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
@@ -7160,6 +7184,7 @@
         "in": "QUERY",
         "name": "epss_percentage"
       },
+      { "alias": null, "deprecated": null, "in": "QUERY", "name": "has" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "scope" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "sort" },
       { "alias": null, "deprecated": null, "in": "QUERY", "name": "direction" },
