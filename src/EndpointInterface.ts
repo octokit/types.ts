@@ -3,7 +3,7 @@ import type { RequestOptions } from "./RequestOptions.js";
 import type { RequestParameters } from "./RequestParameters.js";
 import type { Route } from "./Route.js";
 
-import type { Endpoints } from "./generated/Endpoints.js";
+import type { EndpointKeys, Endpoints } from "./generated/Endpoints.js";
 
 export interface EndpointInterface<D extends object = object> {
   /**
@@ -25,13 +25,13 @@ export interface EndpointInterface<D extends object = object> {
    */
   <
     R extends Route,
-    P extends RequestParameters = R extends keyof Endpoints
+    P extends RequestParameters = R extends EndpointKeys
       ? Endpoints[R]["parameters"] & RequestParameters
       : RequestParameters,
   >(
-    route: keyof Endpoints | R,
+    route: EndpointKeys | R,
     parameters?: P,
-  ): (R extends keyof Endpoints ? Endpoints[R]["request"] : RequestOptions) &
+  ): (R extends EndpointKeys ? Endpoints[R]["request"] : RequestOptions) &
     Pick<P, keyof RequestOptions>;
 
   /**
@@ -57,14 +57,14 @@ export interface EndpointInterface<D extends object = object> {
      */
     <
       R extends Route,
-      P extends RequestParameters = R extends keyof Endpoints
+      P extends RequestParameters = R extends EndpointKeys
         ? Endpoints[R]["parameters"] & RequestParameters
         : RequestParameters,
     >(
-      route: keyof Endpoints | R,
+      route: EndpointKeys | R,
       parameters?: P,
     ): D &
-      (R extends keyof Endpoints
+      (R extends EndpointKeys
         ? Endpoints[R]["request"] & Endpoints[R]["parameters"]
         : EndpointDefaults) &
       P;

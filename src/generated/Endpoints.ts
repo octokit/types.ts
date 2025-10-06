@@ -192,6 +192,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/permissions#remove-a-repository-from-the-list-of-repositories-allowed-to-use-self-hosted-runners-in-an-organization
+   */
+  "DELETE /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization
    */
   "DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}": Operation<
@@ -259,6 +266,20 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/actions/variables/{name}/repositories/{repository_id}": Operation<
     "/orgs/{org}/actions/variables/{name}/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/attestations#delete-attestations-by-subject-digest
+   */
+  "DELETE /orgs/{org}/attestations/digest/{subject_digest}": Operation<
+    "/orgs/{org}/attestations/digest/{subject_digest}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/attestations#delete-attestations-by-id
+   */
+  "DELETE /orgs/{org}/attestations/{attestation_id}": Operation<
+    "/orgs/{org}/attestations/{attestation_id}",
     "delete"
   >;
   /**
@@ -458,6 +479,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#delete-project-item-for-organization
+   */
+  "DELETE /orgs/{org}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization
    */
   "DELETE /orgs/{org}/properties/schema/{custom_property_name}": Operation<
@@ -549,28 +577,21 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/cards#delete-a-project-card
-   */
-  "DELETE /projects/columns/cards/{card_id}": Operation<
-    "/projects/columns/cards/{card_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/columns#delete-a-project-column
+   * @see https://docs.github.com/rest/projects-classic/columns#delete-a-project-column
    */
   "DELETE /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#delete-a-project
+   * @see https://docs.github.com/rest/projects-classic/projects#delete-a-project
    */
   "DELETE /projects/{project_id}": Operation<
     "/projects/{project_id}",
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator
+   * @see https://docs.github.com/rest/projects-classic/collaborators#remove-user-as-a-collaborator
    */
   "DELETE /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
@@ -889,6 +910,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/issues/issue-dependencies#remove-dependency-an-issue-is-blocked-by
+   */
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/labels#remove-all-labels-from-an-issue
    */
   "DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
@@ -1196,6 +1224,27 @@ export interface Endpoints {
    */
   "DELETE /user/starred/{owner}/{repo}": Operation<
     "/user/starred/{owner}/{repo}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#delete-project-item-for-user
+   */
+  "DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/users/attestations#delete-attestations-by-subject-digest
+   */
+  "DELETE /users/{username}/attestations/digest/{subject_digest}": Operation<
+    "/users/{username}/attestations/digest/{subject_digest}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/users/attestations#delete-attestations-by-id
+   */
+  "DELETE /users/{username}/attestations/{attestation_id}": Operation<
+    "/users/{username}/attestations/{attestation_id}",
     "delete"
   >;
   /**
@@ -1522,6 +1571,13 @@ export interface Endpoints {
    */
   "GET /organizations": Operation<"/organizations", "get">;
   /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-organization
+   */
+  "GET /organizations/{org}/dependabot/repository-access": Operation<
+    "/organizations/{org}/dependabot/repository-access",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-an-organization
    */
   "GET /organizations/{org}/settings/billing/usage": Operation<
@@ -1615,6 +1671,27 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/permissions#get-artifact-and-log-retention-settings-for-an-organization
+   */
+  "GET /orgs/{org}/actions/permissions/artifact-and-log-retention": Operation<
+    "/orgs/{org}/actions/permissions/artifact-and-log-retention",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-fork-pr-contributor-approval-permissions-for-an-organization
+   */
+  "GET /orgs/{org}/actions/permissions/fork-pr-contributor-approval": Operation<
+    "/orgs/{org}/actions/permissions/fork-pr-contributor-approval",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-private-repo-fork-pr-workflow-settings-for-an-organization
+   */
+  "GET /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos": Operation<
+    "/orgs/{org}/actions/permissions/fork-pr-workflows-private-repos",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/permissions#list-selected-repositories-enabled-for-github-actions-in-an-organization
    */
   "GET /orgs/{org}/actions/permissions/repositories": Operation<
@@ -1626,6 +1703,20 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/permissions/selected-actions": Operation<
     "/orgs/{org}/actions/permissions/selected-actions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-self-hosted-runners-settings-for-an-organization
+   */
+  "GET /orgs/{org}/actions/permissions/self-hosted-runners": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#list-repositories-allowed-to-use-self-hosted-runners-in-an-organization
+   */
+  "GET /orgs/{org}/actions/permissions/self-hosted-runners/repositories": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners/repositories",
     "get"
   >;
   /**
@@ -1745,6 +1836,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/variables/{name}/repositories": Operation<
     "/orgs/{org}/actions/variables/{name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#list-artifact-storage-records
+   */
+  "GET /orgs/{org}/artifacts/{subject_digest}/metadata/storage-records": Operation<
+    "/orgs/{org}/artifacts/{subject_digest}/metadata/storage-records",
     "get"
   >;
   /**
@@ -2223,9 +2321,48 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#list-organization-projects
+   * @see https://docs.github.com/rest/projects-classic/projects#list-organization-projects
    */
   "GET /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "get">;
+  /**
+   * @see https://docs.github.com/rest/projects/projects#list-projects-for-organization
+   */
+  "GET /orgs/{org}/projectsV2": Operation<"/orgs/{org}/projectsV2", "get">;
+  /**
+   * @see https://docs.github.com/rest/projects/projects#get-project-for-organization
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}": Operation<
+    "/orgs/{org}/projectsV2/{project_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#list-project-fields-for-organization
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}/fields": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/fields",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#get-project-field-for-organization
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}/fields/{field_id}": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/fields/{field_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#list-items-for-an-organization-owned-project
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}/items": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/items",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#get-an-item-for-an-organization-owned-project
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "get"
+  >;
   /**
    * @see https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
    */
@@ -2309,6 +2446,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/secret-scanning/alerts": Operation<
     "/orgs/{org}/secret-scanning/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/secret-scanning/push-protection#list-organization-pattern-configurations
+   */
+  "GET /orgs/{org}/secret-scanning/pattern-configurations": Operation<
+    "/orgs/{org}/secret-scanning/pattern-configurations",
     "get"
   >;
   /**
@@ -2484,46 +2628,32 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/cards#get-a-project-card
-   */
-  "GET /projects/columns/cards/{card_id}": Operation<
-    "/projects/columns/cards/{card_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/columns#get-a-project-column
+   * @see https://docs.github.com/rest/projects-classic/columns#get-a-project-column
    */
   "GET /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/cards#list-project-cards
-   */
-  "GET /projects/columns/{column_id}/cards": Operation<
-    "/projects/columns/{column_id}/cards",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/projects#get-a-project
+   * @see https://docs.github.com/rest/projects-classic/projects#get-a-project
    */
   "GET /projects/{project_id}": Operation<"/projects/{project_id}", "get">;
   /**
-   * @see https://docs.github.com/rest/projects/collaborators#list-project-collaborators
+   * @see https://docs.github.com/rest/projects-classic/collaborators#list-project-collaborators
    */
   "GET /projects/{project_id}/collaborators": Operation<
     "/projects/{project_id}/collaborators",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/collaborators#get-project-permission-for-a-user
+   * @see https://docs.github.com/rest/projects-classic/collaborators#get-project-permission-for-a-user
    */
   "GET /projects/{project_id}/collaborators/{username}/permission": Operation<
     "/projects/{project_id}/collaborators/{username}/permission",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/columns#list-project-columns
+   * @see https://docs.github.com/rest/projects-classic/columns#list-project-columns
    */
   "GET /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
@@ -2619,6 +2749,27 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/permissions/access": Operation<
     "/repos/{owner}/{repo}/actions/permissions/access",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-artifact-and-log-retention-settings-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-fork-pr-contributor-approval-permissions-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#get-private-repo-fork-pr-workflow-settings-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos",
     "get"
   >;
   /**
@@ -3624,6 +3775,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/issues/issue-dependencies#list-dependencies-an-issue-is-blocked-by
+   */
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issue-dependencies#list-dependencies-an-issue-is-blocking
+   */
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocking",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/events#list-issue-events
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/events": Operation<
@@ -3635,6 +3800,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/sub-issues#get-parent-issue
+   */
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/parent": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/parent",
     "get"
   >;
   /**
@@ -3778,7 +3950,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#list-repository-projects
+   * @see https://docs.github.com/rest/projects-classic/projects#list-repository-projects
    */
   "GET /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
@@ -4561,6 +4733,41 @@ export interface Endpoints {
    */
   "GET /users": Operation<"/users", "get">;
   /**
+   * @see https://docs.github.com/rest/projects/projects#get-project-for-user
+   */
+  "GET /users/{user_id}/projectsV2/{project_number}": Operation<
+    "/users/{user_id}/projectsV2/{project_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#list-project-fields-for-user
+   */
+  "GET /users/{user_id}/projectsV2/{project_number}/fields": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/fields",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#get-project-field-for-user
+   */
+  "GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/fields/{field_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#list-items-for-a-user-owned-project
+   */
+  "GET /users/{user_id}/projectsV2/{project_number}/items": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/items",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#get-an-item-for-a-user-owned-project
+   */
+  "GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/users/users#get-a-user
    */
   "GET /users/{username}": Operation<"/users/{username}", "get">;
@@ -4679,10 +4886,17 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#list-user-projects
+   * @see https://docs.github.com/rest/projects-classic/projects#list-user-projects
    */
   "GET /users/{username}/projects": Operation<
     "/users/{username}/projects",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/projects#list-projects-for-user
+   */
+  "GET /users/{username}/projectsV2": Operation<
+    "/users/{username}/projectsV2",
     "get"
   >;
   /**
@@ -4722,6 +4936,13 @@ export interface Endpoints {
    */
   "GET /users/{username}/settings/billing/shared-storage": Operation<
     "/users/{username}/settings/billing/shared-storage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-a-user
+   */
+  "GET /users/{username}/settings/billing/usage": Operation<
+    "/users/{username}/settings/billing/usage",
     "get"
   >;
   /**
@@ -4797,6 +5018,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-organization
+   */
+  "PATCH /organizations/{org}/dependabot/repository-access": Operation<
+    "/organizations/{org}/dependabot/repository-access",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/orgs#update-an-organization
    */
   "PATCH /orgs/{org}": Operation<"/orgs/{org}", "patch">;
@@ -4857,6 +5085,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#update-project-item-for-organization
+   */
+  "PATCH /orgs/{org}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/items/{item_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization
    */
   "PATCH /orgs/{org}/properties/schema": Operation<
@@ -4868,6 +5103,13 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/properties/values": Operation<
     "/orgs/{org}/properties/values",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/secret-scanning/push-protection#update-organization-pattern-configurations
+   */
+  "PATCH /orgs/{org}/secret-scanning/pattern-configurations": Operation<
+    "/orgs/{org}/secret-scanning/pattern-configurations",
     "patch"
   >;
   /**
@@ -4899,21 +5141,14 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/cards#update-an-existing-project-card
-   */
-  "PATCH /projects/columns/cards/{card_id}": Operation<
-    "/projects/columns/cards/{card_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/columns#update-an-existing-project-column
+   * @see https://docs.github.com/rest/projects-classic/columns#update-an-existing-project-column
    */
   "PATCH /projects/columns/{column_id}": Operation<
     "/projects/columns/{column_id}",
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#update-a-project
+   * @see https://docs.github.com/rest/projects-classic/projects#update-a-project
    */
   "PATCH /projects/{project_id}": Operation<"/projects/{project_id}", "patch">;
   /**
@@ -5171,6 +5406,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#update-project-item-for-user
+   */
+  "PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/apps/apps#create-a-github-app-from-a-manifest
    */
   "POST /app-manifests/{code}/conversions": Operation<
@@ -5205,6 +5447,10 @@ export interface Endpoints {
     "/applications/{client_id}/token/scoped",
     "post"
   >;
+  /**
+   * @see https://docs.github.com/rest/credentials/revoke#revoke-a-list-of-credentials
+   */
+  "POST /credentials/revoke": Operation<"/credentials/revoke", "post">;
   /**
    * @see https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration-for-an-enterprise
    */
@@ -5289,6 +5535,27 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/actions/variables": Operation<
     "/orgs/{org}/actions/variables",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#create-artifact-metadata-storage-record
+   */
+  "POST /orgs/{org}/artifacts/metadata/storage-record": Operation<
+    "/orgs/{org}/artifacts/metadata/storage-record",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-attestations-by-bulk-subject-digests
+   */
+  "POST /orgs/{org}/attestations/bulk-list{?per_page,before,after}": Operation<
+    "/orgs/{org}/attestations/bulk-list",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/attestations#delete-attestations-in-bulk
+   */
+  "POST /orgs/{org}/attestations/delete-request": Operation<
+    "/orgs/{org}/attestations/delete-request",
     "post"
   >;
   /**
@@ -5417,9 +5684,16 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#create-an-organization-project
+   * @see https://docs.github.com/rest/projects-classic/projects#create-an-organization-project
    */
   "POST /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "post">;
+  /**
+   * @see https://docs.github.com/rest/projects/items#add-item-to-organization-owned-project
+   */
+  "POST /orgs/{org}/projectsV2/{project_number}/items": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/items",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/repos/repos#create-an-organization-repository
    */
@@ -5475,28 +5749,14 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/cards#move-a-project-card
-   */
-  "POST /projects/columns/cards/{card_id}/moves": Operation<
-    "/projects/columns/cards/{card_id}/moves",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/cards#create-a-project-card
-   */
-  "POST /projects/columns/{column_id}/cards": Operation<
-    "/projects/columns/{column_id}/cards",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/columns#move-a-project-column
+   * @see https://docs.github.com/rest/projects-classic/columns#move-a-project-column
    */
   "POST /projects/columns/{column_id}/moves": Operation<
     "/projects/columns/{column_id}/moves",
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/columns#create-a-project-column
+   * @see https://docs.github.com/rest/projects-classic/columns#create-a-project-column
    */
   "POST /projects/{project_id}/columns": Operation<
     "/projects/{project_id}/columns",
@@ -5888,6 +6148,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/issues/issue-dependencies#add-a-dependency-an-issue-is-blocked-by
+   */
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/labels#add-labels-to-an-issue
    */
   "POST /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
@@ -5972,7 +6239,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#create-a-repository-project
+   * @see https://docs.github.com/rest/projects-classic/projects#create-a-repository-project
    */
   "POST /repos/{owner}/{repo}/projects": Operation<
     "/repos/{owner}/{repo}/projects",
@@ -6216,7 +6483,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/projects#create-a-user-project
+   * @see https://docs.github.com/rest/projects-classic/projects#create-a-user-project
    */
   "POST /user/projects": Operation<"/user/projects", "post">;
   /**
@@ -6231,6 +6498,27 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/users/ssh-signing-keys#create-a-ssh-signing-key-for-the-authenticated-user
    */
   "POST /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "post">;
+  /**
+   * @see https://docs.github.com/rest/projects/items#add-item-to-user-owned-project
+   */
+  "POST /users/{user_id}/projectsV2/{project_number}/items": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/items",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/users/attestations#list-attestations-by-bulk-subject-digests
+   */
+  "POST /users/{username}/attestations/bulk-list{?per_page,before,after}": Operation<
+    "/users/{username}/attestations/bulk-list",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/users/attestations#delete-attestations-in-bulk
+   */
+  "POST /users/{username}/attestations/delete-request": Operation<
+    "/users/{username}/attestations/delete-request",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/packages/packages#restore-a-package-for-a-user
    */
@@ -6282,6 +6570,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot
+   */
+  "PUT /organizations/{org}/dependabot/repository-access/default-level": Operation<
+    "/organizations/{org}/dependabot/repository-access/default-level",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-an-organization
    */
   "PUT /orgs/{org}/actions/oidc/customization/sub": Operation<
@@ -6293,6 +6588,27 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/actions/permissions": Operation<
     "/orgs/{org}/actions/permissions",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-artifact-and-log-retention-settings-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/artifact-and-log-retention": Operation<
+    "/orgs/{org}/actions/permissions/artifact-and-log-retention",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-fork-pr-contributor-approval-permissions-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/fork-pr-contributor-approval": Operation<
+    "/orgs/{org}/actions/permissions/fork-pr-contributor-approval",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-private-repo-fork-pr-workflow-settings-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/fork-pr-workflows-private-repos": Operation<
+    "/orgs/{org}/actions/permissions/fork-pr-workflows-private-repos",
     "put"
   >;
   /**
@@ -6314,6 +6630,27 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/actions/permissions/selected-actions": Operation<
     "/orgs/{org}/actions/permissions/selected-actions",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-self-hosted-runners-settings-for-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/self-hosted-runners": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-repositories-allowed-to-use-self-hosted-runners-in-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#add-a-repository-to-the-list-of-repositories-allowed-to-use-self-hosted-runners-in-an-organization
+   */
+  "PUT /orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}": Operation<
+    "/orgs/{org}/actions/permissions/self-hosted-runners/repositories/{repository_id}",
     "put"
   >;
   /**
@@ -6548,7 +6885,7 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/collaborators#add-project-collaborator
+   * @see https://docs.github.com/rest/projects-classic/collaborators#add-project-collaborator
    */
   "PUT /projects/{project_id}/collaborators/{username}": Operation<
     "/projects/{project_id}/collaborators/{username}",
@@ -6573,6 +6910,27 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/actions/permissions/access": Operation<
     "/repos/{owner}/{repo}/actions/permissions/access",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-artifact-and-log-retention-settings-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/artifact-and-log-retention",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-fork-pr-contributor-approval-permissions-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/fork-pr-contributor-approval",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/permissions#set-private-repo-fork-pr-workflow-settings-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos": Operation<
+    "/repos/{owner}/{repo}/actions/permissions/fork-pr-workflows-private-repos",
     "put"
   >;
   /**
@@ -6892,3 +7250,5 @@ export interface Endpoints {
     "put"
   >;
 }
+
+export type EndpointKeys = keyof Endpoints;

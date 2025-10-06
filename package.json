@@ -7,7 +7,7 @@
   },
   "description": "Shared TypeScript definitions for Octokit projects",
   "dependencies": {
-    "@octokit/openapi-types": "^25.0.0"
+    "@octokit/openapi-types": "^26.0.0"
   },
   "scripts": {
     "build": "node scripts/build.mjs && tsc -p tsconfig.json",
@@ -33,14 +33,14 @@
   "license": "MIT",
   "devDependencies": {
     "@octokit/tsconfig": "^4.0.0",
-    "github-openapi-graphql-query": "^4.5.0",
+    "github-openapi-graphql-query": "^5.0.0",
     "handlebars": "^4.7.6",
-    "npm-run-all2": "^7.0.0",
+    "npm-run-all2": "^8.0.0",
     "prettier": "^3.0.0",
     "semantic-release": "^24.0.0",
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
-    "sort-keys": "^5.0.0",
-    "typedoc": "^0.26.0",
+    "sort-keys": "^6.0.0",
+    "typedoc": "^0.28.0",
     "typescript": "^5.0.0"
   },
   "release": {
@@ -76,6 +76,6 @@
     ]
   },
   "octokit": {
-    "openapi-version": "19.0.0"
+    "openapi-version": "20.0.0"
   }
 }
