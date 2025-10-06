@@ -832,11 +832,11 @@ function processResponsesObject(responses) {
     if (successStatuses.includes(numericStatus)) {
       const response = responses[statusCode];
       if (isReferenceObject(response)) {
-          return `{
+        return `{
             headers: ResponseHeaders\n
             url: Url\n
             status: ${numericStatus}\n
-            data: ${emptyResponseStatuses.includes(numericStatus) ? 'never' : processReferenceObject("Response", response)}\n
+            data: ${emptyResponseStatuses.includes(numericStatus) ? "never" : processReferenceObject("Response", response)}\n
           }`;
       } else if (typeof response === "object" && response.content) {
         const contentTypes = Object.keys(response.content).filter((ct) =>
@@ -847,14 +847,14 @@ function processResponsesObject(responses) {
             headers: ResponseHeaders\n
             url: Url\n
             status: ${numericStatus}\n
-            data: ${emptyResponseStatuses.includes(numericStatus) ? 'never' : 'any'}\n\n
+            data: ${emptyResponseStatuses.includes(numericStatus) ? "never" : "any"}\n\n
           }`;
         } else if (contentTypes.length === 1) {
           return `{
             headers: ResponseHeaders\n
             url: Url\n
             status: ${numericStatus}\n
-            data: ${emptyResponseStatuses.includes(numericStatus) ? 'never' : processResponseObject("responses", response, true)}\n\n
+            data: ${emptyResponseStatuses.includes(numericStatus) ? "never" : processResponseObject("responses", response, true)}\n\n
           }`;
         }
       }
