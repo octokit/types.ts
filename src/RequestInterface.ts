@@ -3,7 +3,11 @@ import type { OctokitResponse } from "./OctokitResponse.js";
 import type { RequestParameters } from "./RequestParameters.js";
 import type { Route } from "./Route.js";
 
-import type { EndpointKeys, Endpoints, Simplify } from "./generated/Endpoints.js";
+import type {
+  EndpointKeys,
+  Endpoints,
+  Simplify,
+} from "./generated/Endpoints.js";
 
 /**
  * Parameters that can be passed into `request(route, parameters)` or `endpoint(route, parameters)` methods.
