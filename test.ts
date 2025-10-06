@@ -9,6 +9,7 @@ import {
 
 const endpoint = {} as EndpointInterface;
 function assertString(_: string) {}
+function assertType<T>(_: T) {}
 function assertNullableString(_: string | null | undefined) {}
 function assertArray(_: unknown[]) {}
 const assertPaginate = {} as {
@@ -67,3 +68,37 @@ const listForRef = {} as {
 
 // octokit.paginate can take `request` method. ref: https://github.com/octokit/plugin-paginate-rest.js/blob/b3fb11e301f9658554e110aeebbd7cbb89b8aad4/README.md?plain=1#L117-L126
 assertPaginate(listForRef);
+
+// Test: ExtractParameters should merge all parameter types (path, query, header, etc.)
+const testParameterMerge = {} as Endpoints["GET /advisories"]["parameters"];
+
+// Should have query parameters accessible directly (not as union)
+if ("per_page" in testParameterMerge) {
+  assertType<number | undefined>(testParameterMerge.per_page);
+}
+if ("ghsa_id" in testParameterMerge) {
+  assertType<string | undefined>(testParameterMerge.ghsa_id);
+}
+
+// Test with path and query parameters combined
+const testPathAndQuery = {} as Endpoints["GET /repos/{owner}/{repo}/issues"]["parameters"];
+
+// Both path and query parameters should be accessible in the same object
+assertString(testPathAndQuery.owner); // from path
+assertString(testPathAndQuery.repo); // from path
+// query parameters should also be present (though optional)
+assertType<string | number | undefined>(testPathAndQuery.milestone);
+assertType<"open" | "closed" | "all" | undefined>(testPathAndQuery.state);
+
+// Test that we don't have a union type (this would fail with union)
+function requiresAllParams(
+  params: { owner: string; repo: string; milestone?: string }
+): void {
+  assertString(params.owner);
+  assertString(params.repo);
+  if (params.milestone) {
+    assertString(params.milestone);
+  }
+}
+
+requiresAllParams(testPathAndQuery); // Should work if it's an intersection, not a union

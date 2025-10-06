@@ -1,0 +1,10 @@
+{
+    "rules": {
+        "remove-unused-variables": "on",
+        "typescript/convert-generic-to-shorthand": "on",
+        "typescript/remove-duplicates-from-union": "on",
+        "typescript/remove-useless-types": "on",
+        "typescript/remove-unused-types": "on",
+        "typescript/remove-useless-parens": "on"
+    }
+}

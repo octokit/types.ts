@@ -7,7 +7,7 @@
     "emitDeclarationOnly": true,
     "sourceMap": true,
     "verbatimModuleSyntax": false,
-    "lib": ["es2022", "dom"]
+    "lib": ["es2022"]
   },
   "include": [
     "src/**/*"
