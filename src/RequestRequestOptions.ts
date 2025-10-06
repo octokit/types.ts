@@ -11,7 +11,7 @@ export type RequestRequestOptions = {
   /**
    * Use an `AbortController` instance to cancel a request. In node you can only cancel streamed requests.
    */
-  signal?: AbortSignal;
+  signal?: any;
   /**
    * If set to `false`, the response body will not be parsed and will be returned as a stream.
    */
