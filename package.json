@@ -14,7 +14,7 @@
     "pretest": "npm run -s lint",
     "test": "tsc --generateTrace ./traces --project tsconfig.test.json",
     "update-endpoints": "npm-run-all update-endpoints:*",
-    "generate-endpoints": "node ./scripts/generate-endpoints.mjs && npx putout --fix ./src/generated/",
+    "generate-endpoints": "node ./scripts/generate-endpoints.ts.mjs && npx putout --fix ./src/generated/ && npm run lint:fix",
     "update-endpoints:fetch-json": "node scripts/update-endpoints/fetch-json.mjs",
     "update-endpoints:typescript": "node scripts/update-endpoints/typescript.mjs",
     "update-endpoints:package": "node scripts/update-endpoints/package.mjs"
@@ -40,7 +40,6 @@
     "semantic-release": "^24.0.0",
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
     "sort-keys": "^6.0.0",
-    "tsr": "^1.3.4",
     "typedoc": "^0.28.3",
     "typescript": "^5.9.3"
   },

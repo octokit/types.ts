@@ -2,7 +2,6 @@
 import type { RequestHeaders } from "../RequestHeaders.js";
 import type { RequestRequestOptions } from "../RequestRequestOptions.js";
 import type { ResponseHeaders } from "../ResponseHeaders.js";
-import type { Url } from "../Url.js";
 
 type RootSchema = {
   current_user_url: string;
@@ -1735,31 +1734,6 @@ type RepositorySchema = {
 /**
  * @description Authentication token for a GitHub App installed on a user or org.
  */
-type InstallationTokenSchema = {
-  token: string;
-  expires_at: string;
-  permissions?: AppPermissionsSchema;
-  repository_selection?: "all" | "selected";
-  repositories?: RepositorySchema[];
-
-  /**
-   * @example README.md
-   */
-  single_file?: string;
-
-  /**
-   * @example true
-   */
-  has_multiple_single_files?: boolean;
-
-  /**
- * @example [
-  "config.yml",
-  ".github/issue_TEMPLATE.md"
-]
-  */
-  single_file_paths?: string[];
-};
 type NullableScopedInstallationSchema = {
   permissions: AppPermissionsSchema;
 
@@ -6341,45 +6315,6 @@ type RunnerApplicationSchema = {
 /**
  * @description Authentication Token
  */
-type AuthenticationTokenSchema = {
-  /**
-   * @description The token used for authentication
-   * @example v1.1f699f1069f60xxx
-   */
-  token: string;
-
-  /**
-   * @description The time this token expires
-   * @example 2016-07-11T22:14:10Z
-   */
-  expires_at: string;
-
-  /**
- * @example {
-  "issues": "read",
-  "deployments": "write"
-}
-  */
-  permissions?: {};
-
-  /**
-   * @description The repositories this token has access to
-   */
-  repositories?: RepositorySchema[];
-
-  /**
-   * @example config.yaml
-   */
-  single_file?: string | null;
-
-  /**
-   * @description Describe whether all repositories have been selected or there's a selection involved
-   */
-  repository_selection?: "all" | "selected";
-};
-/**
- * @description Secrets for GitHub Actions for an organization.
- */
 type OrganizationActionsSecretSchema = {
   /**
    * @description The name of the secret.
@@ -8846,54 +8781,6 @@ type OrgPrivateRegistryConfigurationSchema = {
 /**
  * @description Private registry configuration for an organization
  */
-type OrgPrivateRegistryConfigurationWithSelectedRepositoriesSchema = {
-  /**
-   * @description The name of the private registry configuration.
-   * @example MAVEN_REPOSITORY_SECRET
-   */
-  name: string;
-
-  /**
-   * @description The registry type.
-   */
-  registry_type:
-    | "maven_repository"
-    | "nuget_feed"
-    | "goproxy_server"
-    | "npm_registry"
-    | "rubygems_server"
-    | "cargo_registry"
-    | "composer_repository"
-    | "docker_registry"
-    | "git_source"
-    | "helm_registry"
-    | "hex_organization"
-    | "hex_repository"
-    | "pub_repository"
-    | "python_index"
-    | "terraform_registry";
-
-  /**
-   * @description The username to use when authenticating with the private registry.
-   * @example monalisa
-   */
-  username?: string;
-
-  /**
-   * @description Which type of organization repositories have access to the private registry. `selected` means only the repositories specified by `selected_repository_ids` can access the private registry.
-   */
-  visibility: "all" | "private" | "selected";
-
-  /**
-   * @description An array of repository IDs that can access the organization private registry when `visibility` is set to `selected`.
-   */
-  selected_repository_ids?: number[];
-  created_at: string;
-  updated_at: string;
-};
-/**
- * @description Projects are a way to organize columns and cards of work.
- */
 type ProjectSchema = {
   /**
    * @example https://api.github.com/repos/api-playground/projects-test
@@ -9505,90 +9392,6 @@ type PullRequestSimpleSchema = {
 };
 /**
  * @description A draft issue in a project
- */
-type ProjectsV2DraftIssueSchema = {
-  /**
-   * @description The ID of the draft issue
-   */
-  id: number;
-
-  /**
-   * @description The node ID of the draft issue
-   */
-  node_id: string;
-
-  /**
-   * @description The title of the draft issue
-   */
-  title: string;
-
-  /**
-   * @description The body content of the draft issue
-   */
-  body?: string | null;
-  user: NullableSimpleUserSchema;
-
-  /**
-   * @description The time the draft issue was created
-   */
-  created_at: string;
-
-  /**
-   * @description The time the draft issue was last updated
-   */
-  updated_at: string;
-};
-/**
- * @description An item belonging to a project
- */
-type ProjectsV2ItemSimpleSchema = {
-  /**
-   * @description The unique identifier of the project item.
-   */
-  id: number;
-
-  /**
-   * @description The node ID of the project item.
-   */
-  node_id?: string;
-
-  /**
-   * @description The content represented by the item.
-   */
-  content?: IssueSchema | PullRequestSimpleSchema | ProjectsV2DraftIssueSchema;
-  content_type: ProjectsV2ItemContentTypeSchema;
-  creator?: SimpleUserSchema;
-
-  /**
-   * @description The time when the item was created.
-   * @example 2022-04-28T12:00:00Z
-   */
-  created_at: string;
-
-  /**
-   * @description The time when the item was last updated.
-   * @example 2022-04-28T12:00:00Z
-   */
-  updated_at: string;
-
-  /**
-   * @description The time when the item was archived.
-   * @example 2022-04-28T12:00:00Z
-   */
-  archived_at: string | null;
-
-  /**
-   * @description The URL of the project this item belongs to.
-   */
-  project_url?: string;
-
-  /**
-   * @description The URL of the item in the project.
-   */
-  item_url?: string;
-};
-/**
- * @description Custom property defined on an organization
  */
 type CustomPropertySchema = {
   /**
@@ -15266,21 +15069,6 @@ type CodeScanningAutofixSchema = {
 /**
  * @description Commit an autofix for a code scanning alert
  */
-type CodeScanningAutofixCommitsResponseSchema = {
-  /**
-   * @description The Git reference of target branch for the commit. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
-   */
-  target_ref?: string;
-
-  /**
-   * @description SHA of commit with autofix.
-   */
-  sha?: string;
-};
-/**
- * @description An identifier for the upload.
- * @example 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
- */
 type CodeScanningAnalysisSarifIdSchema = string;
 /**
  * @description The SHA of the commit to which the analysis you are uploading relates.
@@ -17069,13 +16857,6 @@ type DeploymentProtectionRuleSchema = {
 /**
  * @description Short Blob
  */
-type ShortBlobSchema = {
-  url: string;
-  sha: string;
-};
-/**
- * @description Blob
- */
 type BlobSchema = {
   content: string;
   encoding: string;
@@ -18690,20 +18471,6 @@ type PageBuildSchema = {
 };
 /**
  * @description Page Build Status
- */
-type PageBuildStatusSchema = {
-  /**
-   * @example https://api.github.com/repos/github/hello-world/pages/builds/latest
-   */
-  url: string;
-
-  /**
-   * @example queued
-   */
-  status: string;
-};
-/**
- * @description The GitHub Pages deployment status.
  */
 type PageDeploymentSchema = {
   /**
@@ -20433,199 +20200,6 @@ type CodespaceExportDetailsSchema = {
 /**
  * @description A codespace.
  */
-type CodespaceWithFullRepositorySchema = {
-  /**
-   * @example 1
-   */
-  id: number;
-
-  /**
-   * @description Automatically generated name of this codespace.
-   * @example monalisa-octocat-hello-world-g4wpq6h95q
-   */
-  name: string;
-
-  /**
-   * @description Display name for this codespace.
-   * @example bookish space pancake
-   */
-  display_name?: string | null;
-
-  /**
-   * @description UUID identifying this codespace's environment.
-   * @example 26a7c758-7299-4a73-b978-5a92a7ae98a0
-   */
-  environment_id: string | null;
-  owner: SimpleUserSchema;
-  billable_owner: SimpleUserSchema;
-  repository: FullRepositorySchema;
-  machine: NullableCodespaceMachineSchema;
-
-  /**
-   * @description Path to devcontainer.json from repo root used to create Codespace.
-   * @example .devcontainer/example/devcontainer.json
-   */
-  devcontainer_path?: string | null;
-
-  /**
-   * @description Whether the codespace was created from a prebuild.
-   */
-  prebuild: boolean | null;
-
-  /**
-   * @example 2011-01-26T19:01:12Z
-   */
-  created_at: string;
-
-  /**
-   * @example 2011-01-26T19:01:12Z
-   */
-  updated_at: string;
-
-  /**
-   * @description Last known time this codespace was started.
-   * @example 2011-01-26T19:01:12Z
-   */
-  last_used_at: string;
-
-  /**
-   * @description State of this codespace.
-   * @example Available
-   */
-  state:
-    | "Unknown"
-    | "Created"
-    | "Queued"
-    | "Provisioning"
-    | "Available"
-    | "Awaiting"
-    | "Unavailable"
-    | "Deleted"
-    | "Moved"
-    | "Shutdown"
-    | "Archived"
-    | "Starting"
-    | "ShuttingDown"
-    | "Failed"
-    | "Exporting"
-    | "Updating"
-    | "Rebuilding";
-
-  /**
-   * @description API URL for this codespace.
-   */
-  url: string;
-
-  /**
-   * @description Details about the codespace's git repository.
-   */
-  git_status: {
-    /**
-     * @description The number of commits the local repository is ahead of the remote.
-     */
-    ahead?: number;
-
-    /**
-     * @description The number of commits the local repository is behind the remote.
-     */
-    behind?: number;
-
-    /**
-     * @description Whether the local repository has unpushed changes.
-     */
-    has_unpushed_changes?: boolean;
-
-    /**
-     * @description Whether the local repository has uncommitted changes.
-     */
-    has_uncommitted_changes?: boolean;
-
-    /**
-     * @description The current branch (or SHA if in detached HEAD state) of the local repository.
-     * @example main
-     */
-    ref?: string;
-  };
-
-  /**
-   * @description The initally assigned location of a new codespace.
-   * @example WestUs2
-   */
-  location: "EastUs" | "SouthEastAsia" | "WestEurope" | "WestUs2";
-
-  /**
-   * @description The number of minutes of inactivity after which this codespace will be automatically stopped.
-   * @example 60
-   */
-  idle_timeout_minutes: number | null;
-
-  /**
-   * @description URL to access this codespace on the web.
-   */
-  web_url: string;
-
-  /**
-   * @description API URL to access available alternate machine types for this codespace.
-   */
-  machines_url: string;
-
-  /**
-   * @description API URL to start this codespace.
-   */
-  start_url: string;
-
-  /**
-   * @description API URL to stop this codespace.
-   */
-  stop_url: string;
-
-  /**
-   * @description API URL to publish this codespace to a new repository.
-   */
-  publish_url?: string | null;
-
-  /**
-   * @description API URL for the Pull Request associated with this codespace, if any.
-   */
-  pulls_url: string | null;
-  recent_folders: string[];
-  runtime_constraints?: {
-    /**
-     * @description The privacy settings a user can select from when forwarding a port.
-     */
-    allowed_port_privacy_settings?: string[] | null;
-  };
-
-  /**
-   * @description Whether or not a codespace has a pending async operation. This would mean that the codespace is temporarily unavailable. The only thing that you can do with a codespace in this state is delete it.
-   */
-  pending_operation?: boolean | null;
-
-  /**
-   * @description Text to show user when codespace is disabled by a pending operation
-   */
-  pending_operation_disabled_reason?: string | null;
-
-  /**
-   * @description Text to show user when codespace idle timeout minutes has been overriden by an organization policy
-   */
-  idle_timeout_notice?: string | null;
-
-  /**
-   * @description Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
-   * @example 60
-   */
-  retention_period_minutes?: number | null;
-
-  /**
-   * @description When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
-   * @example 2011-01-26T20:01:12Z
-   */
-  retention_expires_at?: string | null;
-};
-/**
- * @description Email
- */
 type EmailSchema = {
   /**
    * @example octocat@github.com
@@ -21050,7 +20624,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RootSchema;
     };
@@ -21165,7 +20739,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GlobalAdvisorySchema[];
     };
@@ -21189,7 +20763,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GlobalAdvisorySchema;
     };
@@ -21213,7 +20787,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema;
     };
@@ -21237,15 +20811,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IntegrationSchema & {
-        client_id: string;
-        client_secret: string;
-        webhook_secret: string | null;
-        pem: string;
-        [key: string]: any;
-      };
+      data: never;
     };
   };
 
@@ -21267,7 +20835,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -21297,7 +20865,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -21324,7 +20892,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliveryItemSchema[];
     };
@@ -21350,7 +20918,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliverySchema;
     };
@@ -21376,7 +20944,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -21401,7 +20969,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationInstallationRequestSchema[];
     };
@@ -21430,7 +20998,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -21955,7 +21523,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InstallationSchema;
     };
@@ -22021,9 +21589,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: InstallationTokenSchema;
+      data: never;
     };
   };
 
@@ -22119,7 +21687,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: AuthorizationSchema;
     };
@@ -22149,7 +21717,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: AuthorizationSchema;
     };
@@ -22235,7 +21803,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: AuthorizationSchema;
     };
@@ -22260,7 +21828,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema;
     };
@@ -22284,7 +21852,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ClassroomAssignmentSchema;
     };
@@ -22310,7 +21878,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ClassroomAcceptedAssignmentSchema[];
     };
@@ -22334,7 +21902,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ClassroomAssignmentGradeSchema[];
     };
@@ -22359,7 +21927,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleClassroomSchema[];
     };
@@ -22383,7 +21951,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ClassroomSchema;
     };
@@ -22409,7 +21977,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleClassroomAssignmentSchema[];
     };
@@ -22431,7 +21999,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeOfConductSchema[];
     };
@@ -22455,7 +22023,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeOfConductSchema;
     };
@@ -22495,7 +22063,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -22517,7 +22085,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         [key: string]: string;
@@ -22554,7 +22122,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema[];
     };
@@ -22723,9 +22291,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodeSecurityConfigurationSchema;
+      data: never;
     };
   };
 
@@ -22751,7 +22319,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityDefaultConfigurationsSchema;
     };
@@ -22780,7 +22348,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema;
     };
@@ -22936,7 +22504,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema;
     };
@@ -22967,7 +22535,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -23004,7 +22572,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -23045,7 +22613,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -23098,7 +22666,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationRepositoriesSchema[];
     };
@@ -23142,7 +22710,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotAlertWithRepositorySchema[];
     };
@@ -23184,7 +22752,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationSecretScanningAlertSchema[];
     };
@@ -23210,7 +22778,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -23245,7 +22813,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: FeedSchema;
     };
@@ -23271,7 +22839,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BaseGistSchema[];
     };
@@ -23321,9 +22889,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GistSimpleSchema;
+      data: never;
     };
   };
 
@@ -23349,7 +22917,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BaseGistSchema[];
     };
@@ -23375,7 +22943,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BaseGistSchema[];
     };
@@ -23404,7 +22972,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistSimpleSchema;
     };
@@ -23461,7 +23029,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistSimpleSchema;
     };
@@ -23510,7 +23078,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistCommentSchema[];
     };
@@ -23546,9 +23114,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GistCommentSchema;
+      data: never;
     };
   };
 
@@ -23576,7 +23144,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistCommentSchema;
     };
@@ -23613,7 +23181,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistCommentSchema;
     };
@@ -23657,7 +23225,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistCommitSchema[];
     };
@@ -23682,7 +23250,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistSimpleSchema[];
     };
@@ -23705,9 +23273,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: BaseGistSchema;
+      data: never;
     };
   };
 
@@ -23790,7 +23358,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GistSimpleSchema;
     };
@@ -23812,7 +23380,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -23840,7 +23408,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitignoreTemplateSchema;
     };
@@ -23865,7 +23433,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -23956,7 +23524,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -23982,7 +23550,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LicenseSimpleSchema[];
     };
@@ -24006,7 +23574,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LicenseSchema;
     };
@@ -24046,7 +23614,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string;
     };
@@ -24069,7 +23637,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string;
     };
@@ -24095,7 +23663,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplacePurchaseSchema;
     };
@@ -24122,7 +23690,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplaceListingPlanSchema[];
     };
@@ -24156,7 +23724,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplacePurchaseSchema[];
     };
@@ -24182,7 +23750,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplacePurchaseSchema;
     };
@@ -24209,7 +23777,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplaceListingPlanSchema[];
     };
@@ -24243,7 +23811,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MarketplacePurchaseSchema[];
     };
@@ -24272,7 +23840,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiOverviewSchema;
     };
@@ -24300,7 +23868,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -24333,7 +23901,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ThreadSchema[];
     };
@@ -24366,7 +23934,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: {
         message?: string;
@@ -24392,7 +23960,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ThreadSchema;
     };
@@ -24456,7 +24024,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ThreadSubscriptionSchema;
     };
@@ -24491,7 +24059,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ThreadSubscriptionSchema;
     };
@@ -24537,7 +24105,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string;
     };
@@ -24565,7 +24133,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationSimpleSchema[];
     };
@@ -24602,7 +24170,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotRepositoryAccessDetailsSchema;
     };
@@ -24706,7 +24274,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BillingUsageReportSchema;
     };
@@ -24738,7 +24306,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationFullSchema;
     };
@@ -24973,7 +24541,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationFullSchema;
     };
@@ -25003,7 +24571,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -25030,7 +24598,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsCacheUsageOrgEnterpriseSchema;
     };
@@ -25059,7 +24627,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25090,7 +24658,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25159,9 +24727,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ActionsHostedRunnerSchema;
+      data: never;
     };
   };
 
@@ -25183,7 +24751,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25210,7 +24778,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25237,7 +24805,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsHostedRunnerLimitsSchema;
     };
@@ -25261,7 +24829,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25288,7 +24856,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25318,7 +24886,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsHostedRunnerSchema;
     };
@@ -25365,7 +24933,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsHostedRunnerSchema;
     };
@@ -25390,7 +24958,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: ActionsHostedRunnerSchema;
     };
@@ -25416,7 +24984,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OidcCustomSubSchema;
     };
@@ -25443,9 +25011,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -25469,7 +25037,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsOrganizationPermissionsSchema;
     };
@@ -25521,7 +25089,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsArtifactAndLogRetentionResponseSchema;
     };
@@ -25569,7 +25137,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsForkPrContributorApprovalSchema;
     };
@@ -25615,7 +25183,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsForkPrWorkflowsPrivateReposSchema;
     };
@@ -25663,7 +25231,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -25764,7 +25332,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SelectedActionsSchema;
     };
@@ -25812,7 +25380,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SelfHostedRunnersSettingsSchema;
     };
@@ -25867,7 +25435,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count?: number;
@@ -25969,7 +25537,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsGetDefaultWorkflowPermissionsSchema;
     };
@@ -26022,7 +25590,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26095,9 +25663,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RunnerGroupsOrgSchema;
+      data: never;
     };
   };
 
@@ -26122,7 +25690,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerGroupsOrgSchema;
     };
@@ -26182,7 +25750,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerGroupsOrgSchema;
     };
@@ -26233,7 +25801,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26265,7 +25833,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26371,7 +25939,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26482,7 +26050,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26513,7 +26081,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerApplicationSchema[];
     };
@@ -26563,7 +26131,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
       data: never;
     };
@@ -26597,9 +26165,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: AuthenticationTokenSchema;
+      data: never;
     };
   };
 
@@ -26631,9 +26199,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: AuthenticationTokenSchema;
+      data: never;
     };
   };
 
@@ -26660,7 +26228,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerSchema;
     };
@@ -26713,7 +26281,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -26748,7 +26316,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -26784,7 +26352,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -26814,7 +26382,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsReadonlyResponse;
     };
@@ -26848,7 +26416,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -26879,7 +26447,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -26911,7 +26479,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsPublicKeySchema;
     };
@@ -26940,7 +26508,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationActionsSecretSchema;
     };
@@ -27060,9 +26628,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -27116,7 +26684,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -27235,7 +26803,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -27287,9 +26855,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -27316,7 +26884,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationActionsVariableSchema;
     };
@@ -27417,7 +26985,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -27575,7 +27143,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -27623,7 +27191,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -27683,7 +27251,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -27854,7 +27422,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         attestations?: {
@@ -27898,7 +27466,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -27999,7 +27567,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CampaignSummarySchema[];
     };
@@ -28082,7 +27650,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CampaignSummarySchema;
     };
@@ -28115,7 +27683,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CampaignSummarySchema;
     };
@@ -28180,7 +27748,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CampaignSummarySchema;
     };
@@ -28258,7 +27826,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningOrganizationAlertItemsSchema[];
     };
@@ -28298,7 +27866,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema[];
     };
@@ -28492,9 +28060,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodeSecurityConfigurationSchema;
+      data: never;
     };
   };
 
@@ -28520,7 +28088,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityDefaultConfigurationsSchema;
     };
@@ -28555,7 +28123,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -28584,7 +28152,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema;
     };
@@ -28763,7 +28331,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationSchema;
     };
@@ -28794,7 +28362,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -28841,7 +28409,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -28882,7 +28450,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -28935,7 +28503,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationRepositoriesSchema[];
     };
@@ -28963,7 +28531,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -29093,7 +28661,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -29121,7 +28689,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesPublicKeySchema;
     };
@@ -29148,7 +28716,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesOrgSecretSchema;
     };
@@ -29197,9 +28765,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -29249,7 +28817,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -29362,7 +28930,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CopilotOrganizationDetailsSchema;
     };
@@ -29401,7 +28969,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -29449,11 +29017,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: {
-        seats_created: number;
-      };
+      data: never;
     };
   };
 
@@ -29492,7 +29058,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         seats_cancelled: number;
@@ -29536,11 +29102,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: {
-        seats_created: number;
-      };
+      data: never;
     };
   };
 
@@ -29579,7 +29143,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         seats_cancelled: number;
@@ -29633,7 +29197,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CopilotUsageMetricsDaySchema[];
     };
@@ -29677,7 +29241,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotAlertWithRepositorySchema[];
     };
@@ -29706,7 +29270,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -29736,7 +29300,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotPublicKeySchema;
     };
@@ -29763,7 +29327,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationDependabotSecretSchema;
     };
@@ -29883,9 +29447,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -29935,7 +29499,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -30044,7 +29608,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -30071,7 +29635,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -30097,7 +29661,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationInvitationSchema[];
     };
@@ -30128,7 +29692,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgHookSchema[];
     };
@@ -30195,9 +29759,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: OrgHookSchema;
+      data: never;
     };
   };
 
@@ -30226,7 +29790,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgHookSchema;
     };
@@ -30288,7 +29852,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgHookSchema;
     };
@@ -30343,7 +29907,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -30379,7 +29943,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -30411,7 +29975,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliveryItemSchema[];
     };
@@ -30442,7 +30006,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliverySchema;
     };
@@ -30473,7 +30037,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -30544,7 +30108,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsRouteStatsSchema;
     };
@@ -30581,7 +30145,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsSubjectStatsSchema;
     };
@@ -30607,7 +30171,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsSummaryStatsSchema;
     };
@@ -30634,7 +30198,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsSummaryStatsSchema;
     };
@@ -30667,7 +30231,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsSummaryStatsSchema;
     };
@@ -30694,7 +30258,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsTimeStatsSchema;
     };
@@ -30722,7 +30286,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsTimeStatsSchema;
     };
@@ -30756,7 +30320,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsTimeStatsSchema;
     };
@@ -30794,7 +30358,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ApiInsightsUserStatsSchema;
     };
@@ -30820,7 +30384,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InstallationSchema;
     };
@@ -30851,7 +30415,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -30878,7 +30442,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema | {};
     };
@@ -30903,7 +30467,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema;
     };
@@ -30966,7 +30530,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationInvitationSchema[];
     };
@@ -31019,9 +30583,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: OrganizationInvitationSchema;
+      data: never;
     };
   };
 
@@ -31068,7 +30632,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -31092,7 +30656,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueTypeSchema[];
     };
@@ -31122,7 +30686,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueTypeSchema;
     };
@@ -31153,7 +30717,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueTypeSchema;
     };
@@ -31243,7 +30807,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -31279,7 +30843,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -31351,7 +30915,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -31382,7 +30946,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -31410,7 +30974,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceSchema;
     };
@@ -31445,7 +31009,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CopilotSeatDetailsSchema;
     };
@@ -31470,7 +31034,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgMembershipSchema;
     };
@@ -31512,7 +31076,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgMembershipSchema;
     };
@@ -31570,7 +31134,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MigrationSchema[];
     };
@@ -31652,9 +31216,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: MigrationSchema;
+      data: never;
     };
   };
 
@@ -31689,7 +31253,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MigrationSchema;
     };
@@ -31777,7 +31341,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -31808,7 +31372,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -31998,7 +31562,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationRoleSchema;
     };
@@ -32029,7 +31593,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamRoleAssignmentSchema[];
     };
@@ -32060,7 +31624,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: UserRoleAssignmentSchema[];
     };
@@ -32091,7 +31655,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -32123,7 +31687,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: {};
     };
@@ -32190,7 +31754,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -32224,7 +31788,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema;
     };
@@ -32336,7 +31900,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema[];
     };
@@ -32371,7 +31935,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema;
     };
@@ -32475,7 +32039,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationProgrammaticAccessGrantRequestSchema[];
     };
@@ -32517,7 +32081,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -32559,7 +32123,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -32592,7 +32156,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -32628,7 +32192,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationProgrammaticAccessGrantSchema[];
     };
@@ -32665,7 +32229,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -32698,7 +32262,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -32731,7 +32295,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -32761,7 +32325,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -32842,9 +32406,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: OrgPrivateRegistryConfigurationWithSelectedRepositoriesSchema;
+      data: never;
     };
   };
 
@@ -32869,7 +32433,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -32909,7 +32473,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgPrivateRegistryConfigurationSchema;
     };
@@ -33040,7 +32604,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectSchema[];
     };
@@ -33078,9 +32642,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectSchema;
+      data: never;
     };
   };
 
@@ -33110,7 +32674,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2Schema[];
     };
@@ -33135,7 +32699,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2Schema;
     };
@@ -33163,7 +32727,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2FieldSchema[];
     };
@@ -33189,7 +32753,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2FieldSchema;
     };
@@ -33227,7 +32791,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema[];
     };
@@ -33263,9 +32827,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectsV2ItemSimpleSchema;
+      data: never;
     };
   };
 
@@ -33294,7 +32858,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema;
     };
@@ -33339,7 +32903,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema;
     };
@@ -33385,7 +32949,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CustomPropertySchema[];
     };
@@ -33423,7 +32987,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CustomPropertySchema[];
     };
@@ -33449,7 +33013,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CustomPropertySchema;
     };
@@ -33479,7 +33043,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CustomPropertySchema;
     };
@@ -33508,7 +33072,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -33540,7 +33104,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgRepoCustomPropertyValuesSchema[];
     };
@@ -33605,7 +33169,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -33711,7 +33275,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -33898,9 +33462,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: FullRepositorySchema;
+      data: never;
     };
   };
 
@@ -33925,7 +33489,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema[];
     };
@@ -33973,9 +33537,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RepositoryRulesetSchema;
+      data: never;
     };
   };
 
@@ -34005,7 +33569,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RuleSuitesSchema;
     };
@@ -34031,7 +33595,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RuleSuiteSchema;
     };
@@ -34063,7 +33627,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema;
     };
@@ -34115,7 +33679,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema;
     };
@@ -34170,7 +33734,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RulesetVersionSchema[];
     };
@@ -34204,7 +33768,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RulesetVersionWithStateSchema;
     };
@@ -34245,7 +33809,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationSecretScanningAlertSchema[];
     };
@@ -34271,7 +33835,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningPatternConfigurationSchema;
     };
@@ -34331,7 +33895,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -34382,7 +33946,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryAdvisorySchema[];
     };
@@ -34408,7 +33972,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSimpleSchema[];
     };
@@ -34480,7 +34044,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsBillingUsageSchema;
     };
@@ -34508,7 +34072,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackagesBillingUsageSchema;
     };
@@ -34536,7 +34100,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CombinedBillingUsageSchema;
     };
@@ -34564,7 +34128,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -34609,9 +34173,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: NetworkConfigurationSchema;
+      data: never;
     };
   };
 
@@ -34636,7 +34200,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: NetworkConfigurationSchema;
     };
@@ -34679,7 +34243,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: NetworkConfigurationSchema;
     };
@@ -34728,7 +34292,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: NetworkSettingsSchema;
     };
@@ -34781,7 +34345,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CopilotUsageMetricsDaySchema[];
     };
@@ -34807,7 +34371,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -34887,9 +34451,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TeamFullSchema;
+      data: never;
     };
   };
 
@@ -34915,7 +34479,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamFullSchema;
     };
@@ -34984,7 +34548,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamFullSchema;
     };
@@ -35047,7 +34611,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema[];
     };
@@ -35096,9 +34660,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TeamDiscussionSchema;
+      data: never;
     };
   };
 
@@ -35127,7 +34691,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema;
     };
@@ -35169,7 +34733,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema;
     };
@@ -35229,7 +34793,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema[];
     };
@@ -35268,9 +34832,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TeamDiscussionCommentSchema;
+      data: never;
     };
   };
 
@@ -35300,7 +34864,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema;
     };
@@ -35338,7 +34902,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema;
     };
@@ -35412,7 +34976,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -35460,7 +35024,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -35534,7 +35098,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -35581,7 +35145,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -35638,7 +35202,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationInvitationSchema[];
     };
@@ -35672,7 +35236,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -35708,7 +35272,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamMembershipSchema;
     };
@@ -35753,7 +35317,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamMembershipSchema;
     };
@@ -35812,7 +35376,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamProjectSchema[];
     };
@@ -35841,7 +35405,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamProjectSchema;
     };
@@ -35925,7 +35489,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -35961,7 +35525,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamRepositorySchema;
     };
@@ -36049,7 +35613,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -36119,7 +35683,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectColumnSchema;
     };
@@ -36153,7 +35717,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectColumnSchema;
     };
@@ -36209,9 +35773,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: {};
+      data: never;
     };
   };
 
@@ -36236,7 +35800,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectSchema;
     };
@@ -36292,7 +35856,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectSchema;
     };
@@ -36348,7 +35912,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -36430,7 +35994,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectCollaboratorPermissionSchema;
     };
@@ -36459,7 +36023,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectColumnSchema[];
     };
@@ -36493,9 +36057,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectColumnSchema;
+      data: never;
     };
   };
 
@@ -36531,7 +36095,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RateLimitOverviewSchema;
     };
@@ -36560,7 +36124,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: FullRepositorySchema;
     };
@@ -36817,7 +36381,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: FullRepositorySchema;
     };
@@ -36874,7 +36438,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -36907,7 +36471,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ArtifactSchema;
     };
@@ -36984,7 +36548,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsCacheUsageByRepositorySchema;
     };
@@ -37017,7 +36581,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsCacheListSchema;
     };
@@ -37046,7 +36610,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsCacheListSchema;
     };
@@ -37099,7 +36663,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: JobSchema;
     };
@@ -37160,9 +36724,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -37187,7 +36751,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OidcCustomSubRepoSchema;
     };
@@ -37225,9 +36789,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -37257,7 +36821,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -37291,7 +36855,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -37321,7 +36885,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRepositoryPermissionsSchema;
     };
@@ -37377,7 +36941,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsWorkflowAccessToRepositorySchema;
     };
@@ -37429,7 +36993,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsArtifactAndLogRetentionResponseSchema;
     };
@@ -37479,7 +37043,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsForkPrContributorApprovalSchema;
     };
@@ -37529,7 +37093,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsForkPrWorkflowsPrivateReposSchema;
     };
@@ -37579,7 +37143,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SelectedActionsSchema;
     };
@@ -37631,7 +37195,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsGetDefaultWorkflowPermissionsSchema;
     };
@@ -37691,7 +37255,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -37723,7 +37287,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerApplicationSchema[];
     };
@@ -37774,7 +37338,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
       data: never;
     };
@@ -37809,9 +37373,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: AuthenticationTokenSchema;
+      data: never;
     };
   };
 
@@ -37844,9 +37408,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: AuthenticationTokenSchema;
+      data: never;
     };
   };
 
@@ -37874,7 +37438,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RunnerSchema;
     };
@@ -37929,7 +37493,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -37965,7 +37529,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -38002,7 +37566,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -38033,7 +37597,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsReadonlyResponse;
     };
@@ -38068,7 +37632,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsRunnerLabelsResponse;
     };
@@ -38123,7 +37687,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38157,7 +37721,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WorkflowRunSchema;
     };
@@ -38210,7 +37774,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EnvironmentApprovalsSchema[];
     };
@@ -38238,9 +37802,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -38271,7 +37835,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38306,7 +37870,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WorkflowRunSchema;
     };
@@ -38340,7 +37904,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38398,7 +37962,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: EmptyObjectSchema;
     };
@@ -38456,7 +38020,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: EmptyObjectSchema;
     };
@@ -38494,7 +38058,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38576,7 +38140,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PendingDeploymentSchema[];
     };
@@ -38628,7 +38192,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentSchema[];
     };
@@ -38663,9 +38227,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -38698,9 +38262,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -38731,7 +38295,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WorkflowRunUsageSchema;
     };
@@ -38763,7 +38327,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38796,7 +38360,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsPublicKeySchema;
     };
@@ -38826,7 +38390,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsSecretSchema;
     };
@@ -38868,9 +38432,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -38924,7 +38488,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -38967,9 +38531,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -38997,7 +38561,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsVariableSchema;
     };
@@ -39089,7 +38653,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -39123,7 +38687,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WorkflowSchema;
     };
@@ -39263,7 +38827,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -39301,7 +38865,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WorkflowUsageSchema;
     };
@@ -39365,7 +38929,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActivitySchema[];
     };
@@ -39392,7 +38956,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -39461,14 +39025,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: {
-        /**
-         * @description The ID of the attestation.
-         */
-        id?: number;
-      };
+      data: never;
     };
   };
 
@@ -39509,7 +39068,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         attestations?: {
@@ -39554,7 +39113,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: AutolinkSchema[];
     };
@@ -39596,9 +39155,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: AutolinkSchema;
+      data: never;
     };
   };
 
@@ -39624,7 +39183,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: AutolinkSchema;
     };
@@ -39672,7 +39231,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckAutomatedSecurityFixesSchema;
     };
@@ -39743,7 +39302,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ShortBranchSchema[];
     };
@@ -39768,7 +39327,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BranchWithProtectionSchema;
     };
@@ -39794,7 +39353,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BranchProtectionSchema;
     };
@@ -39988,7 +39547,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchSchema;
     };
@@ -40035,7 +39594,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchAdminEnforcedSchema;
     };
@@ -40063,7 +39622,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchAdminEnforcedSchema;
     };
@@ -40112,7 +39671,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchPullRequestReviewSchema;
     };
@@ -40205,7 +39764,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchPullRequestReviewSchema;
     };
@@ -40257,7 +39816,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchAdminEnforcedSchema;
     };
@@ -40285,7 +39844,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProtectedBranchAdminEnforcedSchema;
     };
@@ -40334,7 +39893,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: StatusCheckPolicySchema;
     };
@@ -40389,7 +39948,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: StatusCheckPolicySchema;
     };
@@ -40436,7 +39995,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -40468,7 +40027,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -40500,7 +40059,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -40532,7 +40091,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -40563,7 +40122,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BranchRestrictionPolicySchema;
     };
@@ -40614,7 +40173,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema[];
     };
@@ -40648,7 +40207,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema[];
     };
@@ -40682,7 +40241,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema[];
     };
@@ -40716,7 +40275,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IntegrationSchema[];
     };
@@ -40744,7 +40303,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -40778,7 +40337,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -40812,7 +40371,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -40846,7 +40405,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -40874,7 +40433,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -40912,7 +40471,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -40950,7 +40509,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -40988,7 +40547,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -41027,9 +40586,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: BranchWithProtectionSchema;
+      data: never;
     };
   };
 
@@ -41217,9 +40776,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CheckRunSchema;
+      data: never;
     };
   };
 
@@ -41248,7 +40807,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckRunSchema;
     };
@@ -41283,7 +40842,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckRunSchema;
     };
@@ -41313,7 +40872,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckAnnotationSchema[];
     };
@@ -41341,9 +40900,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -41377,7 +40936,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckSuiteSchema;
     };
@@ -41420,7 +40979,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckSuitePreferenceSchema;
     };
@@ -41451,7 +41010,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CheckSuiteSchema;
     };
@@ -41491,7 +41050,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -41520,9 +41079,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -41570,7 +41129,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAlertItemsSchema[];
     };
@@ -41598,7 +41157,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAlertSchema;
     };
@@ -41631,7 +41190,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAlertSchema;
     };
@@ -41659,7 +41218,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAutofixSchema;
     };
@@ -41691,7 +41250,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAutofixSchema;
     };
@@ -41722,9 +41281,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodeScanningAutofixCommitsResponseSchema;
+      data: never;
     };
   };
 
@@ -41754,7 +41313,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAlertInstanceSchema[];
     };
@@ -41814,7 +41373,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAnalysisSchema[];
     };
@@ -41860,7 +41419,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAnalysisSchema;
     };
@@ -41958,7 +41517,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningAnalysisDeletionSchema;
     };
@@ -41985,7 +41544,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningCodeqlDatabaseSchema[];
     };
@@ -42023,7 +41582,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningCodeqlDatabaseSchema;
     };
@@ -42083,9 +41642,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodeScanningVariantAnalysisSchema;
+      data: never;
     };
   };
 
@@ -42115,7 +41674,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningVariantAnalysisSchema;
     };
@@ -42161,7 +41720,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningVariantAnalysisRepoTaskSchema;
     };
@@ -42188,7 +41747,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningDefaultSetupSchema;
     };
@@ -42216,7 +41775,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EmptyObjectSchema;
     };
@@ -42302,7 +41861,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: CodeScanningSarifsReceiptSchema;
     };
@@ -42333,7 +41892,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeScanningSarifsStatusSchema;
     };
@@ -42362,7 +41921,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeSecurityConfigurationForRepositorySchema;
     };
@@ -42396,7 +41955,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeownersErrorsSchema;
     };
@@ -42425,7 +41984,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -42511,9 +42070,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodespaceSchema;
+      data: never;
     };
   };
 
@@ -42541,7 +42100,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -42590,7 +42149,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -42630,7 +42189,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         billable_owner?: SimpleUserSchema;
@@ -42673,7 +42232,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesPermissionsCheckForDevcontainerSchema;
     };
@@ -42703,7 +42262,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -42734,7 +42293,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesPublicKeySchema;
     };
@@ -42762,7 +42321,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepoCodespacesSecretSchema;
     };
@@ -42802,9 +42361,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -42869,7 +42428,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CollaboratorSchema[];
     };
@@ -42953,9 +42512,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RepositoryInvitationSchema;
+      data: never;
     };
   };
 
@@ -43029,7 +42588,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryCollaboratorPermissionSchema;
     };
@@ -43063,7 +42622,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitCommentSchema[];
     };
@@ -43096,7 +42655,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitCommentSchema;
     };
@@ -43135,7 +42694,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitCommentSchema;
     };
@@ -43196,7 +42755,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -43236,7 +42795,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -43346,7 +42905,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitSchema[];
     };
@@ -43374,7 +42933,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BranchShortSchema[];
     };
@@ -43409,7 +42968,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitCommentSchema[];
     };
@@ -43465,9 +43024,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CommitCommentSchema;
+      data: never;
     };
   };
 
@@ -43495,7 +43054,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestSimpleSchema[];
     };
@@ -43562,7 +43121,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitSchema;
     };
@@ -43605,7 +43164,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -43648,7 +43207,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -43686,7 +43245,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CombinedCommitStatusSchema;
     };
@@ -43716,7 +43275,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: StatusSchema[];
     };
@@ -43751,7 +43310,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommunityProfileSchema;
     };
@@ -43833,7 +43392,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitComparisonSchema;
     };
@@ -43892,7 +43451,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data:
         | ContentDirectorySchema
@@ -43992,7 +43551,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: FileCommitSchema;
     };
@@ -44077,7 +43636,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: FileCommitSchema;
     };
@@ -44111,7 +43670,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ContributorSchema[];
     };
@@ -44164,7 +43723,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotAlertSchema[];
     };
@@ -44190,7 +43749,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotAlertSchema;
     };
@@ -44240,7 +43799,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotAlertSchema;
     };
@@ -44270,7 +43829,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -44302,7 +43861,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotPublicKeySchema;
     };
@@ -44330,7 +43889,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependabotSecretSchema;
     };
@@ -44370,9 +43929,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -44424,7 +43983,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependencyGraphDiffSchema;
     };
@@ -44449,7 +44008,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DependencyGraphSpdxSbomSchema;
     };
@@ -44479,29 +44038,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: {
-        /**
-         * @description ID of the created snapshot.
-         */
-        id: number;
-
-        /**
-         * @description The time at which the snapshot was created.
-         */
-        created_at: string;
-
-        /**
-         * @description Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
-         */
-        result: string;
-
-        /**
-         * @description A message providing further details about the result, such as why the dependencies were not updated.
-         */
-        message: string;
-      };
+      data: never;
     };
   };
 
@@ -44546,7 +44085,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentSchema[];
     };
@@ -44669,9 +44208,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: DeploymentSchema;
+      data: never;
     };
   };
 
@@ -44694,7 +44233,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentSchema;
     };
@@ -44752,7 +44291,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentStatusSchema[];
     };
@@ -44830,9 +44369,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: DeploymentStatusSchema;
+      data: never;
     };
   };
 
@@ -44857,7 +44396,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentStatusSchema;
     };
@@ -44927,7 +44466,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -44965,7 +44504,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EnvironmentSchema;
     };
@@ -45019,7 +44558,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EnvironmentSchema;
     };
@@ -45072,7 +44611,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -45108,7 +44647,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentBranchPolicySchema;
     };
@@ -45139,7 +44678,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentBranchPolicySchema;
     };
@@ -45169,7 +44708,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentBranchPolicySchema;
     };
@@ -45223,7 +44762,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -45268,9 +44807,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: DeploymentProtectionRuleSchema;
+      data: never;
     };
   };
 
@@ -45304,7 +44843,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -45342,7 +44881,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeploymentProtectionRuleSchema;
     };
@@ -45401,7 +44940,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -45435,7 +44974,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsPublicKeySchema;
     };
@@ -45466,7 +45005,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsSecretSchema;
     };
@@ -45509,9 +45048,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -45567,7 +45106,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -45611,9 +45150,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -45642,7 +45181,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsVariableSchema;
     };
@@ -45733,7 +45272,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -45764,7 +45303,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -45811,7 +45350,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: FullRepositorySchema;
     };
@@ -45847,9 +45386,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ShortBlobSchema;
+      data: never;
     };
   };
 
@@ -45880,7 +45419,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BlobSchema;
     };
@@ -45996,9 +45535,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GitCommitSchema;
+      data: never;
     };
   };
 
@@ -46054,7 +45593,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitCommitSchema;
     };
@@ -46087,7 +45626,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitRefSchema[];
     };
@@ -46116,7 +45655,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitRefSchema;
     };
@@ -46152,9 +45691,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GitRefSchema;
+      data: never;
     };
   };
 
@@ -46190,7 +45729,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitRefSchema;
     };
@@ -46307,9 +45846,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GitTagSchema;
+      data: never;
     };
   };
 
@@ -46361,7 +45900,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitTagSchema;
     };
@@ -46431,9 +45970,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GitTreeSchema;
+      data: never;
     };
   };
 
@@ -46471,7 +46010,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GitTreeSchema;
     };
@@ -46498,7 +46037,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookSchema[];
     };
@@ -46552,9 +46091,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: HookSchema;
+      data: never;
     };
   };
 
@@ -46578,7 +46117,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookSchema;
     };
@@ -46629,7 +46168,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookSchema;
     };
@@ -46680,7 +46219,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -46714,7 +46253,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: WebhookConfigSchema;
     };
@@ -46742,7 +46281,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliveryItemSchema[];
     };
@@ -46769,7 +46308,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HookDeliverySchema;
     };
@@ -46796,7 +46335,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -46903,7 +46442,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ImportSchema;
     };
@@ -46960,9 +46499,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ImportSchema;
+      data: never;
     };
   };
 
@@ -47017,7 +46556,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ImportSchema;
     };
@@ -47073,7 +46612,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PorterAuthorSchema[];
     };
@@ -47115,7 +46654,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PorterAuthorSchema;
     };
@@ -47144,7 +46683,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PorterLargeFileSchema[];
     };
@@ -47183,7 +46722,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ImportSchema;
     };
@@ -47210,7 +46749,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InstallationSchema;
     };
@@ -47235,7 +46774,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema | {};
     };
@@ -47261,7 +46800,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema;
     };
@@ -47308,7 +46847,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryInvitationSchema[];
     };
@@ -47339,7 +46878,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryInvitationSchema;
     };
@@ -47434,7 +46973,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -47510,9 +47049,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IssueSchema;
+      data: never;
     };
   };
 
@@ -47553,7 +47092,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueCommentSchema[];
     };
@@ -47586,7 +47125,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueCommentSchema;
     };
@@ -47625,7 +47164,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueCommentSchema;
     };
@@ -47687,7 +47226,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -47727,7 +47266,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -47779,7 +47318,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueEventSchema[];
     };
@@ -47805,7 +47344,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueEventSchema;
     };
@@ -47846,7 +47385,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -47936,7 +47475,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -47968,9 +47507,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IssueSchema;
+      data: never;
     };
   };
 
@@ -48000,7 +47539,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -48064,7 +47603,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueCommentSchema[];
     };
@@ -48108,9 +47647,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IssueCommentSchema;
+      data: never;
     };
   };
 
@@ -48143,7 +47682,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -48186,9 +47725,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IssueSchema;
+      data: never;
     };
   };
 
@@ -48227,7 +47766,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -48262,7 +47801,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -48290,7 +47829,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueEventForIssueSchema[];
     };
@@ -48318,7 +47857,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -48356,7 +47895,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -48394,7 +47933,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -48442,7 +47981,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -48529,7 +48068,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -48570,7 +48109,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -48610,7 +48149,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -48675,7 +48214,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -48710,7 +48249,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -48758,9 +48297,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: IssueSchema;
+      data: never;
     };
   };
 
@@ -48800,7 +48339,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema;
     };
@@ -48828,7 +48367,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TimelineIssueEventsSchema[];
     };
@@ -48854,7 +48393,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeployKeySchema[];
     };
@@ -48897,9 +48436,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: DeployKeySchema;
+      data: never;
     };
   };
 
@@ -48922,7 +48461,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DeployKeySchema;
     };
@@ -48970,7 +48509,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -49011,9 +48550,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: LabelSchema;
+      data: never;
     };
   };
 
@@ -49037,7 +48576,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema;
     };
@@ -49079,7 +48618,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema;
     };
@@ -49125,7 +48664,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LanguageSchema;
     };
@@ -49156,7 +48695,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LicenseContentSchema;
     };
@@ -49187,7 +48726,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MergedUpstreamSchema;
     };
@@ -49227,9 +48766,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CommitSchema;
+      data: never;
     };
   };
 
@@ -49269,7 +48808,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MilestoneSchema[];
     };
@@ -49316,9 +48855,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: MilestoneSchema;
+      data: never;
     };
   };
 
@@ -49342,7 +48881,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MilestoneSchema;
     };
@@ -49389,7 +48928,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MilestoneSchema;
     };
@@ -49438,7 +48977,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: LabelSchema[];
     };
@@ -49469,7 +49008,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ThreadSchema[];
     };
@@ -49500,7 +49039,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: {
         message?: string;
@@ -49530,7 +49069,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PageSchema;
     };
@@ -49560,9 +49099,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PageSchema;
+      data: never;
     };
   };
 
@@ -49638,7 +49177,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PageBuildSchema[];
     };
@@ -49665,9 +49204,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PageBuildStatusSchema;
+      data: never;
     };
   };
 
@@ -49692,7 +49231,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PageBuildSchema;
     };
@@ -49720,7 +49259,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PageBuildSchema;
     };
@@ -49775,7 +49314,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PageDeploymentSchema;
     };
@@ -49803,7 +49342,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PagesDeploymentStatusSchema;
     };
@@ -49831,7 +49370,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -49862,7 +49401,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PagesHealthCheckSchema;
     };
@@ -49887,7 +49426,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -49917,7 +49456,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -49942,7 +49481,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 204;
       data: never;
     };
@@ -49977,7 +49516,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectSchema[];
     };
@@ -50016,9 +49555,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectSchema;
+      data: never;
     };
   };
 
@@ -50042,7 +49581,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CustomPropertyValueSchema[];
     };
@@ -50136,7 +49675,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestSimpleSchema[];
     };
@@ -50215,9 +49754,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PullRequestSchema;
+      data: never;
     };
   };
 
@@ -50257,7 +49796,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewCommentSchema[];
     };
@@ -50290,7 +49829,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewCommentSchema;
     };
@@ -50329,7 +49868,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewCommentSchema;
     };
@@ -50391,7 +49930,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -50431,7 +49970,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -50504,7 +50043,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestSchema;
     };
@@ -50565,7 +50104,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestSchema;
     };
@@ -50644,9 +50183,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodespaceSchema;
+      data: never;
     };
   };
 
@@ -50687,7 +50226,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewCommentSchema[];
     };
@@ -50780,9 +50319,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PullRequestReviewCommentSchema;
+      data: never;
     };
   };
 
@@ -50823,9 +50362,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PullRequestReviewCommentSchema;
+      data: never;
     };
   };
 
@@ -50860,7 +50399,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitSchema[];
     };
@@ -50898,7 +50437,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: DiffEntrySchema[];
     };
@@ -50967,7 +50506,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestMergeResultSchema;
     };
@@ -50993,7 +50532,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewRequestSchema;
     };
@@ -51030,9 +50569,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: PullRequestSimpleSchema;
+      data: never;
     };
   };
 
@@ -51067,7 +50606,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestSimpleSchema;
     };
@@ -51102,7 +50641,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema[];
     };
@@ -51200,7 +50739,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51234,7 +50773,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51274,7 +50813,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51308,7 +50847,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51344,7 +50883,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReviewCommentSchema[];
     };
@@ -51392,7 +50931,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51437,7 +50976,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PullRequestReviewSchema;
     };
@@ -51470,7 +51009,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: {
         message?: string;
@@ -51508,7 +51047,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ContentFileSchema;
     };
@@ -51548,7 +51087,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ContentFileSchema;
     };
@@ -51577,7 +51116,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseSchema[];
     };
@@ -51654,9 +51193,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ReleaseSchema;
+      data: never;
     };
   };
 
@@ -51686,7 +51225,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseAssetSchema;
     };
@@ -51728,7 +51267,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseAssetSchema;
     };
@@ -51794,7 +51333,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseNotesContentSchema;
     };
@@ -51821,7 +51360,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseSchema;
     };
@@ -51851,7 +51390,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseSchema;
     };
@@ -51880,7 +51419,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseSchema;
     };
@@ -51948,7 +51487,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseSchema;
     };
@@ -51996,7 +51535,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReleaseAssetSchema[];
     };
@@ -52042,9 +51581,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ReleaseAssetSchema;
+      data: never;
     };
   };
 
@@ -52075,7 +51614,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -52107,7 +51646,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema;
     };
@@ -52163,7 +51702,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRuleDetailedSchema[];
     };
@@ -52196,7 +51735,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema[];
     };
@@ -52245,9 +51784,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RepositoryRulesetSchema;
+      data: never;
     };
   };
 
@@ -52277,7 +51816,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RuleSuitesSchema;
     };
@@ -52304,7 +51843,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RuleSuiteSchema;
     };
@@ -52342,7 +51881,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema;
     };
@@ -52395,7 +51934,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryRulesetSchema;
     };
@@ -52452,7 +51991,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RulesetVersionSchema[];
     };
@@ -52487,7 +52026,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RulesetVersionWithStateSchema;
     };
@@ -52529,7 +52068,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningAlertSchema[];
     };
@@ -52560,7 +52099,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningAlertSchema;
     };
@@ -52595,7 +52134,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningAlertSchema;
     };
@@ -52627,7 +52166,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningLocationSchema[];
     };
@@ -52660,7 +52199,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningPushProtectionBypassSchema;
     };
@@ -52687,7 +52226,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SecretScanningScanHistorySchema;
     };
@@ -52734,7 +52273,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryAdvisorySchema[];
     };
@@ -52764,9 +52303,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RepositoryAdvisorySchema;
+      data: never;
     };
   };
 
@@ -52791,9 +52330,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: RepositoryAdvisorySchema;
+      data: never;
     };
   };
 
@@ -52824,7 +52363,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryAdvisorySchema;
     };
@@ -52856,7 +52395,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryAdvisorySchema;
     };
@@ -52888,7 +52427,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -52917,7 +52456,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: FullRepositorySchema;
     };
@@ -52948,7 +52487,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[] | StargazerSchema[];
     };
@@ -52976,7 +52515,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeFrequencyStatSchema[];
     };
@@ -53001,7 +52540,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitActivitySchema[];
     };
@@ -53035,7 +52574,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ContributorActivitySchema[];
     };
@@ -53064,7 +52603,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ParticipationStatsSchema;
     };
@@ -53095,7 +52634,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodeFrequencyStatSchema[];
     };
@@ -53147,9 +52686,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: StatusSchema;
+      data: never;
     };
   };
 
@@ -53174,7 +52713,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -53199,7 +52738,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositorySubscriptionSchema;
     };
@@ -53235,7 +52774,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositorySubscriptionSchema;
     };
@@ -53281,7 +52820,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TagSchema[];
     };
@@ -53312,7 +52851,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TagProtectionSchema[];
     };
@@ -53348,9 +52887,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TagProtectionSchema;
+      data: never;
     };
   };
 
@@ -53431,7 +52970,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -53457,7 +52996,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TopicSchema;
     };
@@ -53487,7 +53026,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TopicSchema;
     };
@@ -53513,7 +53052,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CloneTrafficSchema;
     };
@@ -53538,7 +53077,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ContentTrafficSchema[];
     };
@@ -53563,7 +53102,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReferrerTrafficSchema[];
     };
@@ -53589,7 +53128,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ViewTrafficSchema;
     };
@@ -53630,7 +53169,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: MinimalRepositorySchema;
     };
@@ -53780,9 +53319,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: FullRepositorySchema;
+      data: never;
     };
   };
 
@@ -53808,7 +53347,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -53870,7 +53409,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -53916,7 +53455,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -53970,7 +53509,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -54022,7 +53561,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -54069,7 +53608,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -54110,7 +53649,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -54159,7 +53698,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -54189,7 +53728,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamFullSchema;
     };
@@ -54261,7 +53800,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamFullSchema;
     };
@@ -54319,7 +53858,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema[];
     };
@@ -54368,9 +53907,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TeamDiscussionSchema;
+      data: never;
     };
   };
 
@@ -54399,7 +53938,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema;
     };
@@ -54441,7 +53980,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionSchema;
     };
@@ -54501,7 +54040,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema[];
     };
@@ -54540,9 +54079,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: TeamDiscussionCommentSchema;
+      data: never;
     };
   };
 
@@ -54572,7 +54111,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema;
     };
@@ -54610,7 +54149,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamDiscussionCommentSchema;
     };
@@ -54684,7 +54223,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -54732,9 +54271,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ReactionSchema;
+      data: never;
     };
   };
 
@@ -54778,7 +54317,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ReactionSchema[];
     };
@@ -54825,9 +54364,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ReactionSchema;
+      data: never;
     };
   };
 
@@ -54855,7 +54394,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationInvitationSchema[];
     };
@@ -54890,7 +54429,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -55013,7 +54552,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamMembershipSchema;
     };
@@ -55058,7 +54597,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamMembershipSchema;
     };
@@ -55116,7 +54655,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamProjectSchema[];
     };
@@ -55144,7 +54683,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamProjectSchema;
     };
@@ -55224,7 +54763,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -55257,7 +54796,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamRepositorySchema;
     };
@@ -55343,7 +54882,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamSchema[];
     };
@@ -55365,7 +54904,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PrivateUserSchema | PublicUserSchema;
     };
@@ -55434,7 +54973,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PrivateUserSchema;
     };
@@ -55459,7 +54998,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -55544,7 +55083,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -55681,9 +55220,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodespaceSchema;
+      data: never;
     };
   };
 
@@ -55711,7 +55250,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -55740,7 +55279,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesUserPublicKeySchema;
     };
@@ -55768,7 +55307,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespacesSecretSchema;
     };
@@ -55813,9 +55352,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmptyObjectSchema;
+      data: never;
     };
   };
 
@@ -55864,7 +55403,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -55970,7 +55509,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceSchema;
     };
@@ -56014,7 +55553,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceSchema;
     };
@@ -56040,7 +55579,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: AcceptedResponse;
     };
@@ -56068,7 +55607,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 202;
       data: CodespaceExportDetailsSchema;
     };
@@ -56095,7 +55634,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceExportDetailsSchema;
     };
@@ -56121,7 +55660,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -56166,9 +55705,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: CodespaceWithFullRepositorySchema;
+      data: never;
     };
   };
 
@@ -56192,7 +55731,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceSchema;
     };
@@ -56218,7 +55757,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CodespaceSchema;
     };
@@ -56242,7 +55781,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -56270,7 +55809,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EmailSchema[];
     };
@@ -56298,7 +55837,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EmailSchema[];
     };
@@ -56327,9 +55866,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: EmailSchema[];
+      data: never;
     };
   };
 
@@ -56375,7 +55914,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -56400,7 +55939,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -56485,7 +56024,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GpgKeySchema[];
     };
@@ -56520,9 +56059,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: GpgKeySchema;
+      data: never;
     };
   };
 
@@ -56546,7 +56085,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GpgKeySchema;
     };
@@ -56596,7 +56135,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -56629,7 +56168,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         total_count: number;
@@ -56699,7 +56238,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema | {};
     };
@@ -56722,7 +56261,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InteractionLimitResponseSchema;
     };
@@ -56797,7 +56336,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: IssueSchema[];
     };
@@ -56824,7 +56363,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: KeySchema[];
     };
@@ -56860,9 +56399,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: KeySchema;
+      data: never;
     };
   };
 
@@ -56886,7 +56425,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: KeySchema;
     };
@@ -56932,7 +56471,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: UserMarketplacePurchaseSchema[];
     };
@@ -56957,7 +56496,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: UserMarketplacePurchaseSchema[];
     };
@@ -56986,7 +56525,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgMembershipSchema[];
     };
@@ -57010,7 +56549,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgMembershipSchema;
     };
@@ -57040,7 +56579,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrgMembershipSchema;
     };
@@ -57065,7 +56604,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MigrationSchema[];
     };
@@ -57140,9 +56679,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: MigrationSchema;
+      data: never;
     };
   };
 
@@ -57172,7 +56711,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MigrationSchema;
     };
@@ -57276,7 +56815,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -57306,7 +56845,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationSimpleSchema[];
     };
@@ -57344,7 +56883,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -57377,7 +56916,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema;
     };
@@ -57482,7 +57021,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema[];
     };
@@ -57516,7 +57055,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema;
     };
@@ -57618,9 +57157,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectSchema;
+      data: never;
     };
   };
 
@@ -57647,7 +57186,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EmailSchema[];
     };
@@ -57703,7 +57242,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositorySchema[];
     };
@@ -57886,9 +57425,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: FullRepositorySchema;
+      data: never;
     };
   };
 
@@ -57911,7 +57450,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositoryInvitationSchema[];
     };
@@ -57972,7 +57511,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SocialAccountSchema[];
     };
@@ -58003,9 +57542,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: SocialAccountSchema[];
+      data: never;
     };
   };
 
@@ -58056,7 +57595,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SshSigningKeySchema[];
     };
@@ -58092,9 +57631,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: SshSigningKeySchema;
+      data: never;
     };
   };
 
@@ -58118,7 +57657,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SshSigningKeySchema;
     };
@@ -58170,7 +57709,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: RepositorySchema[];
     };
@@ -58255,7 +57794,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -58285,7 +57824,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: TeamFullSchema[];
     };
@@ -58315,7 +57854,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PrivateUserSchema | PublicUserSchema;
     };
@@ -58342,7 +57881,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -58367,7 +57906,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2Schema;
     };
@@ -58395,7 +57934,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2FieldSchema[];
     };
@@ -58421,7 +57960,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2FieldSchema;
     };
@@ -58459,7 +57998,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema[];
     };
@@ -58495,9 +58034,9 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 201;
-      data: ProjectsV2ItemSimpleSchema;
+      data: never;
     };
   };
 
@@ -58526,7 +58065,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema;
     };
@@ -58571,7 +58110,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2ItemWithContentSchema;
     };
@@ -58622,7 +58161,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PrivateUserSchema | PublicUserSchema;
     };
@@ -58665,7 +58204,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         /**
@@ -58836,7 +58375,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         attestations?: {
@@ -58880,7 +58419,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -58909,7 +58448,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -58939,7 +58478,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -58966,7 +58505,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -58992,7 +58531,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -59018,7 +58557,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SimpleUserSchema[];
     };
@@ -59064,7 +58603,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BaseGistSchema[];
     };
@@ -59090,7 +58629,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: GpgKeySchema[];
     };
@@ -59128,7 +58667,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: HovercardSchema;
     };
@@ -59154,7 +58693,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: InstallationSchema;
     };
@@ -59180,7 +58719,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: KeySimpleSchema[];
     };
@@ -59208,7 +58747,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: OrganizationSimpleSchema[];
     };
@@ -59247,7 +58786,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema[];
     };
@@ -59281,7 +58820,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageSchema;
     };
@@ -59386,7 +58925,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema[];
     };
@@ -59421,7 +58960,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackageVersionSchema;
     };
@@ -59523,7 +59062,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectSchema[];
     };
@@ -59555,7 +59094,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ProjectsV2Schema[];
     };
@@ -59585,7 +59124,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -59612,7 +59151,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: EventSchema[];
     };
@@ -59653,7 +59192,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -59681,7 +59220,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: ActionsBillingUsageSchema;
     };
@@ -59709,7 +59248,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: PackagesBillingUsageSchema;
     };
@@ -59737,7 +59276,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CombinedBillingUsageSchema;
     };
@@ -59767,7 +59306,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: BillingUsageReportUserSchema;
     };
@@ -59793,7 +59332,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SocialAccountSchema[];
     };
@@ -59819,7 +59358,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: SshSigningKeySchema[];
     };
@@ -59851,7 +59390,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: StarredRepositorySchema[] | RepositorySchema[];
     };
@@ -59877,7 +59416,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: MinimalRepositorySchema[];
     };
@@ -59899,7 +59438,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string[];
     };
@@ -59921,7 +59460,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: string;
     };
@@ -59989,7 +59528,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: CommitComparisonSchema;
     };
@@ -60022,7 +59561,7 @@ export interface Endpoints {
     };
     response: {
       headers: ResponseHeaders;
-      url: Url;
+      url: string;
       status: 200;
       data: {
         name: string;
