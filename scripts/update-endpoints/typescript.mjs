@@ -5,6 +5,8 @@ import handlebars from "handlebars";
 import { format } from "prettier";
 import sortKeys from "sort-keys";
 
+const readonlyMethods = ["get", "head"];
+
 const ENDPOINTS = JSON.parse(
   readFileSync(new URL("generated/endpoints.json", import.meta.url), "utf8"),
 );
@@ -40,6 +42,7 @@ async function run() {
       method: endpoint.method.toLowerCase(),
       url: toOpenApiUrl(endpoint),
       documentationUrl: endpoint.documentationUrl,
+      readonly: readonlyMethods.includes(endpoint.method.toLowerCase()),
     };
 
     // handle deprecated URL parameters

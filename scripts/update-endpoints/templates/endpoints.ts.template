@@ -10,22 +10,12 @@ import type { RequestRequestOptions } from "../RequestRequestOptions.js";
  */
 export type Simplify<T> = {[KeyType in keyof T]: T[KeyType]} & {};
 
-// https://stackoverflow.com/a/50375286/206879
-type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
-  k: infer I
-) => void
-  ? I
-  : never;
-
 type ExtractParameters<T> = "parameters" extends keyof T
-  ? UnionToIntersection<
-      {
-        // query parameter might be optional
-        // https://github.com/octokit/types.ts/pull/555#issuecomment-1585105522
-        [K in keyof T["parameters"]]-?: T["parameters"][K];
-      }[keyof T["parameters"]]
-    >
+  ? (T["parameters"] extends { query?: infer Q } ? Q : {}) &
+      (T["parameters"] extends { path?: infer P } ? P : {}) &
+      (T["parameters"] extends { header?: infer H } ? H : {})
   : {};
+
 type ExtractRequestBody<T> = "requestBody" extends keyof T
   ? "content" extends keyof T["requestBody"]
     ? "application/json" extends keyof T["requestBody"]["content"]
@@ -45,30 +35,48 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
   : {};
 type ToOctokitParameters<T> = ExtractParameters<T> & ExtractRequestBody<Required<T>>;
 
-type Operation<Url extends keyof paths, Method extends keyof paths[Url]> = {
-  parameters: Simplify<ToOctokitParameters<paths[Url][Method]>>;
-  request: Method extends ReadOnlyMethods
-    ? {
-        method: Method extends string ? Uppercase<Method> : never;
-        url: Url;
-        headers: RequestHeaders;
-        request: RequestRequestOptions;
-      }
-    : {
-        method: Method extends string ? Uppercase<Method> : never;
-        url: Url;
-        headers: RequestHeaders;
-        request: RequestRequestOptions;
-        data: ExtractRequestBody<paths[Url][Method]>;
-      };
-  response: ExtractOctokitResponse<paths[Url][Method]>;
-};
+interface OctokitReadonlyRequestType<Url extends keyof paths, Method extends keyof paths[Url]> {
+  request: {
+    method: Method;
+    url: Url;
+    headers: RequestHeaders;
+    request: RequestRequestOptions;
+  }
+}
 
-type ReadOnlyMethods = "get" | "head";
+interface OctokitWriteableRequestType<Url extends keyof paths, Method extends keyof paths[Url]> {
+  request: {
+    method: Method extends string ? Uppercase<Method> : never;
+    url: Url;
+    headers: RequestHeaders;
+    request: RequestRequestOptions;
+    data: ExtractRequestBody<paths[Url][Method]>;
+  }
+}
+
+interface OctokitParametersType<Url extends keyof paths, Method extends keyof paths[Url]> {
+  parameters: Simplify<ToOctokitParameters<paths[Url][Method]>>;
+}
+
+interface OctokitResponseType<Url extends keyof paths, Method extends keyof paths[Url]> {
+  response: ExtractOctokitResponse<paths[Url][Method]>;
+}
+
+interface ReadonlyOperation<Url extends keyof paths, Method extends keyof paths[Url]> extends
+  OctokitParametersType<Url, Method>,
+  OctokitResponseType<Url, Method>,
+  OctokitReadonlyRequestType<Url, Method>{
+}
+
+interface Operation<Url extends keyof paths, Method extends keyof paths[Url]> extends
+  OctokitParametersType<Url, Method>,
+  OctokitResponseType<Url, Method>,
+  OctokitWriteableRequestType<Url, Method>{
+}
 type SuccessStatuses = 200 | 201 | 202 | 204 | 205;
 type RedirectStatuses = 301 | 302;
 type EmptyResponseStatuses = 201 | 204 | 205;
-type KnownJsonResponseTypes =
+type KnownResponseTypes =
   | "application/json"
   | "application/octocat-stream" // GET /octocat
   | "application/scim+json"
@@ -93,8 +101,8 @@ type GetContentKeyIfPresent<T> = "content" extends keyof T
   ? DataType<T["content"]>
   : DataType<T>;
 type DataType<T> = {
-  [K in KnownJsonResponseTypes & keyof T]: T[K];
-}[KnownJsonResponseTypes & keyof T];
+  [K in KnownResponseTypes & keyof T]: T[K];
+}[KnownResponseTypes & keyof T];
 type ExtractOctokitResponse<R> = "responses" extends keyof R
   ? SuccessResponseDataType<R["responses"]> extends never
     ? RedirectResponseDataType<R["responses"]> extends never
@@ -111,7 +119,7 @@ export interface Endpoints {
    * @deprecated {{{.}}}
    {{/deprecated}}
    */
-  "{{@key}}": Operation<
+  "{{@key}}": {{#if readonly}}ReadonlyOperation{{else}}Operation{{/if}}<
     "{{url}}",
     "{{method}}"
   >,
