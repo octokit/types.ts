@@ -5,7 +5,8 @@
     "noEmit": true,
     "declaration": true,
     "noUnusedLocals": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "extendedDiagnostics": true
   },
   "include": ["test.ts"]
 }

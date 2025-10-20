@@ -5,7 +5,7 @@ import type { Url } from "./Url.js";
 /**
  * Parameters that can be passed into `request(route, parameters)` or `endpoint(route, parameters)` methods
  */
-export type RequestParameters = {
+export interface RequestParameters {
   /**
    * Base URL to be used when a relative URL is passed, such as `/orgs/{org}`.
    * If `baseUrl` is `https://enterprise.acme-inc.com/api/v3`, then the request
@@ -53,4 +53,4 @@ export type RequestParameters = {
    * 4. JSON in the request body in the form of `body[parameter]` unless `parameter` key is `'data'`
    */
   [parameter: string]: unknown;
-};
+}

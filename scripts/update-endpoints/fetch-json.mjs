@@ -25,6 +25,9 @@ const QUERY = `
         in
         name
       }
+      responses {
+        code
+      }
       renamed {
         note
       }

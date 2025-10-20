@@ -1,4 +1,4 @@
-export type ResponseHeaders = {
+export interface ResponseHeaders {
   "cache-control"?: string;
   "content-length"?: number;
   "content-type"?: string;
@@ -19,4 +19,4 @@ export type ResponseHeaders = {
   "x-ratelimit-reset"?: string;
 
   [header: string]: string | number | undefined;
-};
+}
