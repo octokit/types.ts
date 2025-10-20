@@ -8,4 +8,4 @@ export interface RequestError {
     field: string;
     message?: string;
   }>;
-};
+}

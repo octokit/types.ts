@@ -12,4 +12,4 @@ export interface RequestOptions {
   headers: RequestHeaders;
   body?: any;
   request?: RequestRequestOptions;
-};
+}

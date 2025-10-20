@@ -12,4 +12,4 @@ export interface RequestHeaders {
    */
   "user-agent"?: string;
   [header: string]: string | number | undefined;
-};
+}

@@ -19,4 +19,4 @@ export interface ResponseHeaders {
   "x-ratelimit-reset"?: string;
 
   [header: string]: string | number | undefined;
-};
+}

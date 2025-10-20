@@ -53,4 +53,4 @@ export interface RequestParameters {
    * 4. JSON in the request body in the form of `body[parameter]` unless `parameter` key is `'data'`
    */
   [parameter: string]: unknown;
-};
+}

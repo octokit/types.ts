@@ -19,4 +19,4 @@ export interface RequestRequestOptions {
 
   redirect?: "follow" | "error" | "manual";
   [option: string]: any;
-};
+}
