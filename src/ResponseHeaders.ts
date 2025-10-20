@@ -1,4 +1,4 @@
-export type ResponseHeaders = {
+export interface ResponseHeaders {
   "cache-control"?: string;
   "content-length"?: number;
   "content-type"?: string;

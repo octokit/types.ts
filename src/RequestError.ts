@@ -1,4 +1,4 @@
-export type RequestError = {
+export interface RequestError {
   name: string;
   status: number;
   documentation_url: string;

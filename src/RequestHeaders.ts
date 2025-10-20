@@ -1,4 +1,4 @@
-export type RequestHeaders = {
+export interface RequestHeaders {
   /**
    * Avoid setting `headers.accept`, use `mediaType.{format|previews}` option instead.
    */
