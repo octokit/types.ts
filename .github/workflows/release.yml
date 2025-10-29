@@ -37,6 +37,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.OCTOKITBOT_NPM_TOKEN }}
 
   docs:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - run: npm run docs
