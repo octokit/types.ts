@@ -6,18 +6,18 @@ name: Release
       - next
       - beta
       - "*.x"
-# These are recommended by the semantic-release docs: https://github.com/semantic-release/npm#npm-provenance
-permissions:
-    contents: write # to be able to publish a GitHub release
-    issues: write # to be able to comment on released issues
-    pull-requests: write # to be able to comment on released pull requests
-    id-token: write # to enable use of OIDC for npm provenance
 
 jobs:
   release:
     if: github.repository_owner == 'octokit'
     name: release
     runs-on: ubuntu-latest
+    # These are recommended by the semantic-release docs: https://github.com/semantic-release/npm#npm-provenance
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - uses: actions/create-github-app-token@v2
         id: app-token
@@ -35,8 +35,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.OCTOKITBOT_NPM_TOKEN }}
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
       - run: npm run docs
-      - uses: maxheld83/ghpages@master
-        env:
-          BUILD_DIR: docs/
-          GH_PAT: ${{ steps.app-token.outputs.token }}
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/
+  deploy:
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: docs
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
