@@ -41,7 +41,7 @@ interface OctokitReadonlyRequestType<
   Method extends keyof paths[Url],
 > {
   request: {
-    method: Method;
+    method: Method extends string ? Uppercase<Method> : never;
     url: Url;
     headers: RequestHeaders;
     request: RequestRequestOptions;
