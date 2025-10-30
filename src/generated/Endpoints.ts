@@ -161,6 +161,27 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#remove-team-membership
+   */
+  "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#delete-an-organization-assignment
+   */
+  "DELETE /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#delete-an-enterprise-team
+   */
+  "DELETE /enterprises/{enterprise}/teams/{team_slug}": Operation<
+    "/enterprises/{enterprise}/teams/{team_slug}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/gists/gists#delete-a-gist
    */
   "DELETE /gists/{gist_id}": Operation<"/gists/{gist_id}", "delete">;
@@ -197,6 +218,20 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/orgs#delete-an-organization
    */
   "DELETE /orgs/{org}": Operation<"/orgs/{org}", "delete">;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#delete-a-custom-image-from-the-organization
+   */
+  "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}": Operation<
+    "/orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#delete-an-image-version-of-custom-image-from-the-organization
+   */
+  "DELETE /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}": Operation<
+    "/orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}",
+    "delete"
+  >;
   /**
    * @see https://docs.github.com/rest/actions/hosted-runners#delete-a-github-hosted-runner-for-an-organization
    */
@@ -531,6 +566,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/security-managers/teams/{team_slug}": Operation<
     "/orgs/{org}/security-managers/teams/{team_slug}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#disable-a-selected-repository-for-immutable-releases-in-an-organization
+   */
+  "DELETE /orgs/{org}/settings/immutable-releases/repositories/{repository_id}": Operation<
+    "/orgs/{org}/settings/immutable-releases/repositories/{repository_id}",
     "delete"
   >;
   /**
@@ -885,6 +927,13 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/hooks/{hook_id}": Operation<
     "/repos/{owner}/{repo}/hooks/{hook_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/repos#disable-immutable-releases
+   */
+  "DELETE /repos/{owner}/{repo}/immutable-releases": Operation<
+    "/repos/{owner}/{repo}/immutable-releases",
     "delete"
   >;
   /**
@@ -1247,13 +1296,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/projects/items#delete-project-item-for-user
-   */
-  "DELETE /users/{user_id}/projectsV2/{project_number}/items/{item_id}": Operation<
-    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/users/attestations#delete-attestations-by-subject-digest
    */
   "DELETE /users/{username}/attestations/digest/{subject_digest}": Operation<
@@ -1279,6 +1321,13 @@ export interface Endpoints {
    */
   "DELETE /users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}": Operation<
     "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#delete-project-item-for-user
+   */
+  "DELETE /users/{username}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/users/{username}/projectsV2/{project_number}/items/{item_id}",
     "delete"
   >;
   /**
@@ -1427,10 +1476,45 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-enterprise
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#list-enterprise-teams
    */
-  "GET /enterprises/{enterprise}/secret-scanning/alerts": ReadonlyOperation<
-    "/enterprises/{enterprise}/secret-scanning/alerts",
+  "GET /enterprises/{enterprise}/teams": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#list-members-in-an-enterprise-team
+   */
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#get-enterprise-team-membership
+   */
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#get-organization-assignments
+   */
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#get-organization-assignment
+   */
+  "GET /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#get-an-enterprise-team
+   */
+  "GET /enterprises/{enterprise}/teams/{team_slug}": ReadonlyOperation<
+    "/enterprises/{enterprise}/teams/{team_slug}",
     "get"
   >;
   /**
@@ -1616,6 +1700,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/custom-properties-for-orgs#get-all-custom-property-values-for-an-organization
+   */
+  "GET /organizations/{org}/org-properties/values": ReadonlyOperation<
+    "/organizations/{org}/org-properties/values",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-premium-request-usage-report-for-an-organization
+   */
+  "GET /organizations/{org}/settings/billing/premium_request/usage": ReadonlyOperation<
+    "/organizations/{org}/settings/billing/premium_request/usage",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-an-organization
    */
   "GET /organizations/{org}/settings/billing/usage": ReadonlyOperation<
@@ -1653,6 +1751,34 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/hosted-runners": ReadonlyOperation<
     "/orgs/{org}/actions/hosted-runners",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#list-custom-images-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/custom": ReadonlyOperation<
+    "/orgs/{org}/actions/hosted-runners/images/custom",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-a-custom-image-definition-for-github-actions-hosted-runners
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}": ReadonlyOperation<
+    "/orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#list-image-versions-of-a-custom-image-for-an-organization
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions": ReadonlyOperation<
+    "/orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/hosted-runners#get-an-image-version-of-a-custom-image-for-github-actions-hosted-runners
+   */
+  "GET /orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}": ReadonlyOperation<
+    "/orgs/{org}/actions/hosted-runners/images/custom/{image_definition_id}/versions/{version}",
     "get"
   >;
   /**
@@ -1887,7 +2013,14 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/orgs#list-attestations
+   * @see https://docs.github.com/rest/orgs/attestations#list-attestation-repositories
+   */
+  "GET /orgs/{org}/attestations/repositories": ReadonlyOperation<
+    "/orgs/{org}/attestations/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/attestations#list-attestations
    */
   "GET /orgs/{org}/attestations/{subject_digest}": ReadonlyOperation<
     "/orgs/{org}/attestations/{subject_digest}",
@@ -2553,6 +2686,20 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/orgs#get-immutable-releases-settings-for-an-organization
+   */
+  "GET /orgs/{org}/settings/immutable-releases": ReadonlyOperation<
+    "/orgs/{org}/settings/immutable-releases",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#list-selected-repositories-for-immutable-releases-enforcement
+   */
+  "GET /orgs/{org}/settings/immutable-releases/repositories": ReadonlyOperation<
+    "/orgs/{org}/settings/immutable-releases/repositories",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/network-configurations#list-hosted-compute-network-configurations-for-an-organization
    */
   "GET /orgs/{org}/settings/network-configurations": ReadonlyOperation<
@@ -2715,13 +2862,6 @@ export interface Endpoints {
    */
   "GET /projects/{project_id}/collaborators/{username}/permission": ReadonlyOperation<
     "/projects/{project_id}/collaborators/{username}/permission",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#list-project-columns
-   */
-  "GET /projects/{project_id}/columns": ReadonlyOperation<
-    "/projects/{project_id}/columns",
     "get"
   >;
   /**
@@ -3735,6 +3875,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}": ReadonlyOperation<
     "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/repos#check-if-immutable-releases-are-enabled-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/immutable-releases": ReadonlyOperation<
+    "/repos/{owner}/{repo}/immutable-releases",
     "get"
   >;
   /**
@@ -4831,41 +4978,6 @@ export interface Endpoints {
    */
   "GET /users": ReadonlyOperation<"/users", "get">;
   /**
-   * @see https://docs.github.com/rest/projects/projects#get-project-for-user
-   */
-  "GET /users/{user_id}/projectsV2/{project_number}": ReadonlyOperation<
-    "/users/{user_id}/projectsV2/{project_number}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/fields#list-project-fields-for-user
-   */
-  "GET /users/{user_id}/projectsV2/{project_number}/fields": ReadonlyOperation<
-    "/users/{user_id}/projectsV2/{project_number}/fields",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/fields#get-project-field-for-user
-   */
-  "GET /users/{user_id}/projectsV2/{project_number}/fields/{field_id}": ReadonlyOperation<
-    "/users/{user_id}/projectsV2/{project_number}/fields/{field_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/items#list-items-for-a-user-owned-project
-   */
-  "GET /users/{user_id}/projectsV2/{project_number}/items": ReadonlyOperation<
-    "/users/{user_id}/projectsV2/{project_number}/items",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects/items#get-an-item-for-a-user-owned-project
-   */
-  "GET /users/{user_id}/projectsV2/{project_number}/items/{item_id}": ReadonlyOperation<
-    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/users/users#get-a-user
    */
   "GET /users/{username}": ReadonlyOperation<"/users/{username}", "get">;
@@ -5010,6 +5122,41 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/projects#get-project-for-user
+   */
+  "GET /users/{username}/projectsV2/{project_number}": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#list-project-fields-for-user
+   */
+  "GET /users/{username}/projectsV2/{project_number}/fields": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}/fields",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#get-project-field-for-user
+   */
+  "GET /users/{username}/projectsV2/{project_number}/fields/{field_id}": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}/fields/{field_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#list-items-for-a-user-owned-project
+   */
+  "GET /users/{username}/projectsV2/{project_number}/items": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}/items",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/items#get-an-item-for-a-user-owned-project
+   */
+  "GET /users/{username}/projectsV2/{project_number}/items/{item_id}": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}/items/{item_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/events#list-events-received-by-the-authenticated-user
    */
   "GET /users/{username}/received_events": ReadonlyOperation<
@@ -5042,6 +5189,13 @@ export interface Endpoints {
    */
   "GET /users/{username}/settings/billing/packages": ReadonlyOperation<
     "/users/{username}/settings/billing/packages",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-premium-request-usage-report-for-a-user
+   */
+  "GET /users/{username}/settings/billing/premium_request/usage": ReadonlyOperation<
+    "/users/{username}/settings/billing/premium_request/usage",
     "get"
   >;
   /**
@@ -5113,6 +5267,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#update-an-enterprise-team
+   */
+  "PATCH /enterprises/{enterprise}/teams/{team_slug}": Operation<
+    "/enterprises/{enterprise}/teams/{team_slug}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/reference/gists/#update-a-gist
    */
   "PATCH /gists/{gist_id}": Operation<"/gists/{gist_id}", "patch">;
@@ -5135,6 +5296,13 @@ export interface Endpoints {
    */
   "PATCH /organizations/{org}/dependabot/repository-access": Operation<
     "/organizations/{org}/dependabot/repository-access",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/custom-properties-for-orgs#create-or-update-custom-property-values-for-an-organization
+   */
+  "PATCH /organizations/{org}/org-properties/values": Operation<
+    "/organizations/{org}/org-properties/values",
     "patch"
   >;
   /**
@@ -5521,8 +5689,8 @@ export interface Endpoints {
   /**
    * @see https://docs.github.com/rest/projects/items#update-project-item-for-user
    */
-  "PATCH /users/{user_id}/projectsV2/{project_number}/items/{item_id}": Operation<
-    "/users/{user_id}/projectsV2/{project_number}/items/{item_id}",
+  "PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}": Operation<
+    "/users/{username}/projectsV2/{project_number}/items/{item_id}",
     "patch"
   >;
   /**
@@ -5576,6 +5744,41 @@ export interface Endpoints {
    */
   "POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach": Operation<
     "/enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#create-an-enterprise-team
+   */
+  "POST /enterprises/{enterprise}/teams": Operation<
+    "/enterprises/{enterprise}/teams",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#bulk-add-team-members
+   */
+  "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/add": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships/add",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#bulk-remove-team-members
+   */
+  "POST /enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships/remove",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#add-organization-assignments
+   */
+  "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/add": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations/add",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#remove-organization-assignments
+   */
+  "POST /enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations/remove",
     "post"
   >;
   /**
@@ -5658,7 +5861,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/orgs/orgs#list-attestations-by-bulk-subject-digests
+   * @see https://docs.github.com/rest/orgs/attestations#list-attestations-by-bulk-subject-digests
    */
   "POST /orgs/{org}/attestations/bulk-list{?per_page,before,after}": Operation<
     "/orgs/{org}/attestations/bulk-list",
@@ -5866,13 +6069,6 @@ export interface Endpoints {
    */
   "POST /projects/columns/{column_id}/moves": Operation<
     "/projects/columns/{column_id}/moves",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#create-a-project-column
-   */
-  "POST /projects/{project_id}/columns": Operation<
-    "/projects/{project_id}/columns",
     "post"
   >;
   /**
@@ -6612,13 +6808,6 @@ export interface Endpoints {
    */
   "POST /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "post">;
   /**
-   * @see https://docs.github.com/rest/projects/items#add-item-to-user-owned-project
-   */
-  "POST /users/{user_id}/projectsV2/{project_number}/items": Operation<
-    "/users/{user_id}/projectsV2/{project_number}/items",
-    "post"
-  >;
-  /**
    * @see https://docs.github.com/rest/users/attestations#list-attestations-by-bulk-subject-digests
    */
   "POST /users/{username}/attestations/bulk-list{?per_page,before,after}": Operation<
@@ -6647,6 +6836,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#add-item-to-user-owned-project
+   */
+  "POST /users/{username}/projectsV2/{project_number}/items": Operation<
+    "/users/{username}/projectsV2/{project_number}/items",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/releases/assets#upload-a-release-asset
    */
   "POST {origin}/repos/{owner}/{repo}/releases/{release_id}/assets{?name,label}": Operation<
@@ -6665,6 +6861,20 @@ export interface Endpoints {
    */
   "PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults": Operation<
     "/enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#add-team-member
+   */
+  "PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-organizations#add-an-organization-assignment
+   */
+  "PUT /enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}": Operation<
+    "/enterprises/{enterprise}/teams/{enterprise-team}/organizations/{org}",
     "put"
   >;
   /**
@@ -6977,6 +7187,27 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/orgs#set-immutable-releases-settings-for-an-organization
+   */
+  "PUT /orgs/{org}/settings/immutable-releases": Operation<
+    "/orgs/{org}/settings/immutable-releases",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#set-selected-repositories-for-immutable-releases-enforcement
+   */
+  "PUT /orgs/{org}/settings/immutable-releases/repositories": Operation<
+    "/orgs/{org}/settings/immutable-releases/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/orgs#enable-a-selected-repository-for-immutable-releases-in-an-organization
+   */
+  "PUT /orgs/{org}/settings/immutable-releases/repositories/{repository_id}": Operation<
+    "/orgs/{org}/settings/immutable-releases/repositories/{repository_id}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user
    */
   "PUT /orgs/{org}/teams/{team_slug}/memberships/{username}": Operation<
@@ -7177,6 +7408,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}": Operation<
     "/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/repos#enable-immutable-releases
+   */
+  "PUT /repos/{owner}/{repo}/immutable-releases": Operation<
+    "/repos/{owner}/{repo}/immutable-releases",
     "put"
   >;
   /**
