@@ -215,6 +215,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/billing/budgets#delete-a-budget-for-an-organization
+   */
+  "DELETE /organizations/{org}/settings/billing/budgets/{budget_id}": Operation<
+    "/organizations/{org}/settings/billing/budgets/{budget_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/orgs#delete-an-organization
    */
   "DELETE /orgs/{org}": Operation<"/orgs/{org}", "delete">;
@@ -625,38 +632,10 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
-    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team
    */
   "DELETE /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
     "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#delete-a-project-column
-   */
-  "DELETE /projects/columns/{column_id}": Operation<
-    "/projects/columns/{column_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/projects#delete-a-project
-   */
-  "DELETE /projects/{project_id}": Operation<
-    "/projects/{project_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/collaborators#remove-user-as-a-collaborator
-   */
-  "DELETE /projects/{project_id}/collaborators/{username}": Operation<
-    "/projects/{project_id}/collaborators/{username}",
     "delete"
   >;
   /**
@@ -1165,13 +1144,6 @@ export interface Endpoints {
     "delete"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/teams#remove-a-project-from-a-team-legacy
-   */
-  "DELETE /teams/{team_id}/projects/{project_id}": Operation<
-    "/teams/{team_id}/projects/{project_id}",
-    "delete"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#remove-a-repository-from-a-team-legacy
    */
   "DELETE /teams/{team_id}/repos/{owner}/{repo}": Operation<
@@ -1441,6 +1413,20 @@ export interface Endpoints {
    */
   "GET /emojis": ReadonlyOperation<"/emojis", "get">;
   /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-retention-limit-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/cache/retention-limit": ReadonlyOperation<
+    "/enterprises/{enterprise}/actions/cache/retention-limit",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-storage-limit-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/cache/storage-limit": ReadonlyOperation<
+    "/enterprises/{enterprise}/actions/cache/storage-limit",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#get-code-security-configurations-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/code-security/configurations": ReadonlyOperation<
@@ -1693,6 +1679,20 @@ export interface Endpoints {
    */
   "GET /organizations": ReadonlyOperation<"/organizations", "get">;
   /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-retention-limit-for-an-organization
+   */
+  "GET /organizations/{org}/actions/cache/retention-limit": ReadonlyOperation<
+    "/organizations/{org}/actions/cache/retention-limit",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-storage-limit-for-an-organization
+   */
+  "GET /organizations/{org}/actions/cache/storage-limit": ReadonlyOperation<
+    "/organizations/{org}/actions/cache/storage-limit",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-organization
    */
   "GET /organizations/{org}/dependabot/repository-access": ReadonlyOperation<
@@ -1707,17 +1707,38 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-premium-request-usage-report-for-an-organization
+   * @see https://docs.github.com/rest/billing/budgets#get-all-budgets-for-an-organization
+   */
+  "GET /organizations/{org}/settings/billing/budgets": ReadonlyOperation<
+    "/organizations/{org}/settings/billing/budgets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/budgets#get-a-budget-by-id-for-an-organization
+   */
+  "GET /organizations/{org}/settings/billing/budgets/{budget_id}": ReadonlyOperation<
+    "/organizations/{org}/settings/billing/budgets/{budget_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/usage#get-billing-premium-request-usage-report-for-an-organization
    */
   "GET /organizations/{org}/settings/billing/premium_request/usage": ReadonlyOperation<
     "/organizations/{org}/settings/billing/premium_request/usage",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-an-organization
+   * @see https://docs.github.com/rest/billing/usage#get-billing-usage-report-for-an-organization
    */
   "GET /organizations/{org}/settings/billing/usage": ReadonlyOperation<
     "/organizations/{org}/settings/billing/usage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/usage#get-billing-usage-summary-for-an-organization
+   */
+  "GET /organizations/{org}/settings/billing/usage/summary": ReadonlyOperation<
+    "/organizations/{org}/settings/billing/usage/summary",
     "get"
   >;
   /**
@@ -2003,6 +2024,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/variables/{name}/repositories": ReadonlyOperation<
     "/orgs/{org}/actions/variables/{name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#list-artifact-deployment-records
+   */
+  "GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records": ReadonlyOperation<
+    "/orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records",
     "get"
   >;
   /**
@@ -2513,10 +2541,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#list-organization-projects
-   */
-  "GET /orgs/{org}/projects": ReadonlyOperation<"/orgs/{org}/projects", "get">;
-  /**
    * @see https://docs.github.com/rest/projects/projects#list-projects-for-organization
    */
   "GET /orgs/{org}/projectsV2": ReadonlyOperation<
@@ -2665,27 +2689,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/billing/billing#get-github-actions-billing-for-an-organization
-   */
-  "GET /orgs/{org}/settings/billing/actions": ReadonlyOperation<
-    "/orgs/{org}/settings/billing/actions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/billing/billing#get-github-packages-billing-for-an-organization
-   */
-  "GET /orgs/{org}/settings/billing/packages": ReadonlyOperation<
-    "/orgs/{org}/settings/billing/packages",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/billing/billing#get-shared-storage-billing-for-an-organization
-   */
-  "GET /orgs/{org}/settings/billing/shared-storage": ReadonlyOperation<
-    "/orgs/{org}/settings/billing/shared-storage",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/orgs/orgs#get-immutable-releases-settings-for-an-organization
    */
   "GET /orgs/{org}/settings/immutable-releases": ReadonlyOperation<
@@ -2802,20 +2805,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/teams#list-team-projects
-   */
-  "GET /orgs/{org}/teams/{team_slug}/projects": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/projects",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project
-   */
-  "GET /orgs/{org}/teams/{team_slug}/projects/{project_id}": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#list-team-repositories
    */
   "GET /orgs/{org}/teams/{team_slug}/repos": ReadonlyOperation<
@@ -2834,34 +2823,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}/teams": ReadonlyOperation<
     "/orgs/{org}/teams/{team_slug}/teams",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#get-a-project-column
-   */
-  "GET /projects/columns/{column_id}": ReadonlyOperation<
-    "/projects/columns/{column_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/projects#get-a-project
-   */
-  "GET /projects/{project_id}": ReadonlyOperation<
-    "/projects/{project_id}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/collaborators#list-project-collaborators
-   */
-  "GET /projects/{project_id}/collaborators": ReadonlyOperation<
-    "/projects/{project_id}/collaborators",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/collaborators#get-project-permission-for-a-user
-   */
-  "GET /projects/{project_id}/collaborators/{username}/permission": ReadonlyOperation<
-    "/projects/{project_id}/collaborators/{username}/permission",
     "get"
   >;
   /**
@@ -2894,6 +2855,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}": ReadonlyOperation<
     "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-retention-limit-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/cache/retention-limit": ReadonlyOperation<
+    "/repos/{owner}/{repo}/actions/cache/retention-limit",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#get-github-actions-cache-storage-limit-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/cache/storage-limit": ReadonlyOperation<
+    "/repos/{owner}/{repo}/actions/cache/storage-limit",
     "get"
   >;
   /**
@@ -3184,7 +3159,7 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/repos#list-attestations
+   * @see https://docs.github.com/rest/repos/attestations#list-attestations
    */
   "GET /repos/{owner}/{repo}/attestations/{subject_digest}": ReadonlyOperation<
     "/repos/{owner}/{repo}/attestations/{subject_digest}",
@@ -4165,13 +4140,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#list-repository-projects
-   */
-  "GET /repos/{owner}/{repo}/projects": ReadonlyOperation<
-    "/repos/{owner}/{repo}/projects",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository
    */
   "GET /repos/{owner}/{repo}/properties/values": ReadonlyOperation<
@@ -4663,20 +4631,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/teams#list-team-projects-legacy
-   */
-  "GET /teams/{team_id}/projects": ReadonlyOperation<
-    "/teams/{team_id}/projects",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/teams#check-team-permissions-for-a-project-legacy
-   */
-  "GET /teams/{team_id}/projects/{project_id}": ReadonlyOperation<
-    "/teams/{team_id}/projects/{project_id}",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#list-team-repositories-legacy
    */
   "GET /teams/{team_id}/repos": ReadonlyOperation<
@@ -5108,13 +5062,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#list-user-projects
-   */
-  "GET /users/{username}/projects": ReadonlyOperation<
-    "/users/{username}/projects",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/projects/projects#list-projects-for-user
    */
   "GET /users/{username}/projectsV2": ReadonlyOperation<
@@ -5178,38 +5125,24 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/billing/billing#get-github-actions-billing-for-a-user
-   */
-  "GET /users/{username}/settings/billing/actions": ReadonlyOperation<
-    "/users/{username}/settings/billing/actions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/billing/billing#get-github-packages-billing-for-a-user
-   */
-  "GET /users/{username}/settings/billing/packages": ReadonlyOperation<
-    "/users/{username}/settings/billing/packages",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-premium-request-usage-report-for-a-user
+   * @see https://docs.github.com/rest/billing/usage#get-billing-premium-request-usage-report-for-a-user
    */
   "GET /users/{username}/settings/billing/premium_request/usage": ReadonlyOperation<
     "/users/{username}/settings/billing/premium_request/usage",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/billing/billing#get-shared-storage-billing-for-a-user
-   */
-  "GET /users/{username}/settings/billing/shared-storage": ReadonlyOperation<
-    "/users/{username}/settings/billing/shared-storage",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-a-user
+   * @see https://docs.github.com/rest/billing/usage#get-billing-usage-report-for-a-user
    */
   "GET /users/{username}/settings/billing/usage": ReadonlyOperation<
     "/users/{username}/settings/billing/usage",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/usage#get-billing-usage-summary-for-a-user
+   */
+  "GET /users/{username}/settings/billing/usage/summary": ReadonlyOperation<
+    "/users/{username}/settings/billing/usage/summary",
     "get"
   >;
   /**
@@ -5303,6 +5236,13 @@ export interface Endpoints {
    */
   "PATCH /organizations/{org}/org-properties/values": Operation<
     "/organizations/{org}/org-properties/values",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/budgets#update-a-budget-for-an-organization
+   */
+  "PATCH /organizations/{org}/settings/billing/budgets/{budget_id}": Operation<
+    "/organizations/{org}/settings/billing/budgets/{budget_id}",
     "patch"
   >;
   /**
@@ -5421,17 +5361,6 @@ export interface Endpoints {
     "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
     "patch"
   >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#update-an-existing-project-column
-   */
-  "PATCH /projects/columns/{column_id}": Operation<
-    "/projects/columns/{column_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/projects#update-a-project
-   */
-  "PATCH /projects/{project_id}": Operation<"/projects/{project_id}", "patch">;
   /**
    * @see https://docs.github.com/rest/repos/repos#update-a-repository
    */
@@ -5854,6 +5783,20 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#create-an-artifact-deployment-record
+   */
+  "POST /orgs/{org}/artifacts/metadata/deployment-record": Operation<
+    "/orgs/{org}/artifacts/metadata/deployment-record",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#set-cluster-deployment-records
+   */
+  "POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}": Operation<
+    "/orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/artifact-metadata#create-artifact-metadata-storage-record
    */
   "POST /orgs/{org}/artifacts/metadata/storage-record": Operation<
@@ -6000,9 +5943,19 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#create-an-organization-project
+   * @see https://docs.github.com/rest/projects/drafts#create-draft-item-for-organization-owned-project
    */
-  "POST /orgs/{org}/projects": Operation<"/orgs/{org}/projects", "post">;
+  "POST /orgs/{org}/projectsV2/{project_number}/drafts": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/drafts",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/projects/fields#add-a-field-to-an-organization-owned-project
+   */
+  "POST /orgs/{org}/projectsV2/{project_number}/fields": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/fields",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/projects/items#add-item-to-organization-owned-project
    */
@@ -6062,13 +6015,6 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/{security_product}/{enablement}": Operation<
     "/orgs/{org}/{security_product}/{enablement}",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/projects-classic/columns#move-a-project-column
-   */
-  "POST /projects/columns/{column_id}/moves": Operation<
-    "/projects/columns/{column_id}/moves",
     "post"
   >;
   /**
@@ -6170,7 +6116,7 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/repos/repos#create-an-attestation
+   * @see https://docs.github.com/rest/repos/attestations#create-an-attestation
    */
   "POST /repos/{owner}/{repo}/attestations": Operation<
     "/repos/{owner}/{repo}/attestations",
@@ -6548,13 +6494,6 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#create-a-repository-project
-   */
-  "POST /repos/{owner}/{repo}/projects": Operation<
-    "/repos/{owner}/{repo}/projects",
-    "post"
-  >;
-  /**
    * @see https://docs.github.com/rest/pulls/pulls#create-a-pull-request
    */
   "POST /repos/{owner}/{repo}/pulls": Operation<
@@ -6792,10 +6731,6 @@ export interface Endpoints {
     "post"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/projects#create-a-user-project
-   */
-  "POST /user/projects": Operation<"/user/projects", "post">;
-  /**
    * @see https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user
    */
   "POST /user/repos": Operation<"/user/repos", "post">;
@@ -6807,6 +6742,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/users/ssh-signing-keys#create-a-ssh-signing-key-for-the-authenticated-user
    */
   "POST /user/ssh_signing_keys": Operation<"/user/ssh_signing_keys", "post">;
+  /**
+   * @see https://docs.github.com/rest/projects/drafts#create-draft-item-for-user-owned-project
+   */
+  "POST /user/{user_id}/projectsV2/{project_number}/drafts": Operation<
+    "/user/{user_id}/projectsV2/{project_number}/drafts",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/users/attestations#list-attestations-by-bulk-subject-digests
    */
@@ -6836,6 +6778,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/fields#add-field-to-user-owned-project
+   */
+  "POST /users/{username}/projectsV2/{project_number}/fields": Operation<
+    "/users/{username}/projectsV2/{project_number}/fields",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/projects/items#add-item-to-user-owned-project
    */
   "POST /users/{username}/projectsV2/{project_number}/items": Operation<
@@ -6854,6 +6803,20 @@ export interface Endpoints {
    */
   "PUT /app/installations/{installation_id}/suspended": Operation<
     "/app/installations/{installation_id}/suspended",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-retention-limit-for-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/actions/cache/retention-limit": Operation<
+    "/enterprises/{enterprise}/actions/cache/retention-limit",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-storage-limit-for-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/actions/cache/storage-limit": Operation<
+    "/enterprises/{enterprise}/actions/cache/storage-limit",
     "put"
   >;
   /**
@@ -6890,6 +6853,20 @@ export interface Endpoints {
    */
   "PUT /notifications/threads/{thread_id}/subscription": Operation<
     "/notifications/threads/{thread_id}/subscription",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-retention-limit-for-an-organization
+   */
+  "PUT /organizations/{org}/actions/cache/retention-limit": Operation<
+    "/organizations/{org}/actions/cache/retention-limit",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-storage-limit-for-an-organization
+   */
+  "PUT /organizations/{org}/actions/cache/storage-limit": Operation<
+    "/organizations/{org}/actions/cache/storage-limit",
     "put"
   >;
   /**
@@ -7215,13 +7192,6 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions
-   */
-  "PUT /orgs/{org}/teams/{team_slug}/projects/{project_id}": Operation<
-    "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
-    "put"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#add-or-update-team-repository-permissions
    */
   "PUT /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}": Operation<
@@ -7229,10 +7199,17 @@ export interface Endpoints {
     "put"
   >;
   /**
-   * @see https://docs.github.com/rest/projects-classic/collaborators#add-project-collaborator
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-retention-limit-for-a-repository
    */
-  "PUT /projects/{project_id}/collaborators/{username}": Operation<
-    "/projects/{project_id}/collaborators/{username}",
+  "PUT /repos/{owner}/{repo}/actions/cache/retention-limit": Operation<
+    "/repos/{owner}/{repo}/actions/cache/retention-limit",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/cache#set-github-actions-cache-storage-limit-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/actions/cache/storage-limit": Operation<
+    "/repos/{owner}/{repo}/actions/cache/storage-limit",
     "put"
   >;
   /**
@@ -7534,13 +7511,6 @@ export interface Endpoints {
    */
   "PUT /teams/{team_id}/memberships/{username}": Operation<
     "/teams/{team_id}/memberships/{username}",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/teams#add-or-update-team-project-permissions-legacy
-   */
-  "PUT /teams/{team_id}/projects/{project_id}": Operation<
-    "/teams/{team_id}/projects/{project_id}",
     "put"
   >;
   /**
