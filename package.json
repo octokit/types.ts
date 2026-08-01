@@ -41,7 +41,7 @@
     "semantic-release-plugin-update-version-in-files": "^2.0.0",
     "sort-keys": "^6.0.0",
     "typedoc": "^0.28.0",
-    "typescript": "^7.0.0"
+    "typescript": "^5.0.0"
   },
   "release": {
     "branches": [
