@@ -35,8 +35,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NPM_TOKEN: ${{ secrets.OCTOKITBOT_NPM_TOKEN }}
-      - run: npm run docs
-      - uses: maxheld83/ghpages@master
-        env:
-          BUILD_DIR: docs/
-          GH_PAT: ${{ steps.app-token.outputs.token }}
+      # TODO: Re-enable docs publishing once the docs workflow is fixed.
+      # - run: npm run docs
+      # - uses: maxheld83/ghpages@master
+      #   env:
+      #     BUILD_DIR: docs/
+      #     GH_PAT: ${{ steps.app-token.outputs.token }}
