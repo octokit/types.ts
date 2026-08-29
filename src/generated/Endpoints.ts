@@ -22,7 +22,9 @@ type ExtractRequestBody<T> = "requestBody" extends keyof T
       ? T["requestBody"]["content"]["application/json"]
       : {
           data: {
-            [K in keyof T["requestBody"]["content"]]: T["requestBody"]["content"][K];
+            [
+              K in keyof T["requestBody"]["content"]
+            ]: T["requestBody"]["content"][K];
           }[keyof T["requestBody"]["content"]];
         }
     : "application/json" extends keyof T["requestBody"]
@@ -78,12 +80,15 @@ interface OctokitResponseType<
 interface ReadonlyOperation<
   Url extends keyof paths,
   Method extends keyof paths[Url],
-> extends OctokitParametersType<Url, Method>,
+>
+  extends
+    OctokitParametersType<Url, Method>,
     OctokitResponseType<Url, Method>,
     OctokitReadonlyRequestType<Url, Method> {}
 
 interface Operation<Url extends keyof paths, Method extends keyof paths[Url]>
-  extends OctokitParametersType<Url, Method>,
+  extends
+    OctokitParametersType<Url, Method>,
     OctokitResponseType<Url, Method>,
     OctokitWriteableRequestType<Url, Method> {}
 type SuccessStatuses = 200 | 201 | 202 | 204 | 205;
@@ -154,10 +159,24 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/oidc#delete-an-oidc-custom-property-inclusion-for-an-enterprise
+   */
+  "DELETE /enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}": Operation<
+    "/enterprises/{enterprise}/actions/oidc/customization/properties/repo/{custom_property_name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#delete-a-code-security-configuration-for-an-enterprise
    */
   "DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}": Operation<
     "/enterprises/{enterprise}/code-security/configurations/{configuration_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#remove-organizations-from-the-enterprise-coding-agent-policy
+   */
+  "DELETE /enterprises/{enterprise}/copilot/policies/coding_agent/organizations": Operation<
+    "/enterprises/{enterprise}/copilot/policies/coding_agent/organizations",
     "delete"
   >;
   /**
@@ -247,6 +266,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/oidc#delete-an-oidc-custom-property-inclusion-for-an-organization
+   */
+  "DELETE /orgs/{org}/actions/oidc/customization/properties/repo/{custom_property_name}": Operation<
+    "/orgs/{org}/actions/oidc/customization/properties/repo/{custom_property_name}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/permissions#disable-a-selected-repository-for-github-actions-in-an-organization
    */
   "DELETE /orgs/{org}/actions/permissions/repositories/{repository_id}": Operation<
@@ -331,6 +357,34 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/secrets#delete-an-organization-secret
+   */
+  "DELETE /orgs/{org}/agents/secrets/{secret_name}": Operation<
+    "/orgs/{org}/agents/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#remove-selected-repository-from-an-organization-secret
+   */
+  "DELETE /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#delete-an-organization-variable
+   */
+  "DELETE /orgs/{org}/agents/variables/{name}": Operation<
+    "/orgs/{org}/agents/variables/{name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#remove-selected-repository-from-an-organization-variable
+   */
+  "DELETE /orgs/{org}/agents/variables/{name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/attestations#delete-attestations-by-subject-digest
    */
   "DELETE /orgs/{org}/attestations/digest/{subject_digest}": Operation<
@@ -394,6 +448,27 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#delete-an-organization-copilot-space
+   */
+  "DELETE /orgs/{org}/copilot-spaces/{space_number}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#remove-a-collaborator-from-an-organization-copilot-space
+   */
+  "DELETE /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#delete-a-resource-from-an-organization-copilot-space
+   */
+  "DELETE /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/copilot/copilot-user-management#remove-teams-from-the-copilot-subscription-for-an-organization
    */
   "DELETE /orgs/{org}/copilot/billing/selected_teams": Operation<
@@ -405,6 +480,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/copilot/billing/selected_users": Operation<
     "/orgs/{org}/copilot/billing/selected_users",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#disable-a-repository-for-copilot-cloud-agent-in-an-organization
+   */
+  "DELETE /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}": Operation<
+    "/orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}",
     "delete"
   >;
   /**
@@ -440,6 +522,13 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/invitations/{invitation_id}": Operation<
     "/orgs/{org}/invitations/{invitation_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-fields#delete-issue-field-for-an-organization
+   */
+  "DELETE /orgs/{org}/issue-fields/{issue_field_id}": Operation<
+    "/orgs/{org}/issue-fields/{issue_field_id}",
     "delete"
   >;
   /**
@@ -569,6 +658,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-delete-organization-custom-patterns
+   */
+  "DELETE /orgs/{org}/secret-scanning/custom-patterns": Operation<
+    "/orgs/{org}/secret-scanning/custom-patterns",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team
    */
   "DELETE /orgs/{org}/security-managers/teams/{team_slug}": Operation<
@@ -594,34 +690,6 @@ export interface Endpoints {
    */
   "DELETE /orgs/{org}/teams/{team_slug}": Operation<
     "/orgs/{org}/teams/{team_slug}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#delete-a-discussion
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#delete-team-discussion-comment-reaction
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#delete-team-discussion-reaction
-   */
-  "DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
     "delete"
   >;
   /**
@@ -710,6 +778,20 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/actions/variables/{name}": Operation<
     "/repos/{owner}/{repo}/actions/variables/{name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#delete-a-repository-secret
+   */
+  "DELETE /repos/{owner}/{repo}/agents/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#delete-a-repository-variable
+   */
+  "DELETE /repos/{owner}/{repo}/agents/variables/{name}": Operation<
+    "/repos/{owner}/{repo}/agents/variables/{name}",
     "delete"
   >;
   /**
@@ -930,6 +1012,13 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/interactions/repos#remove-users-from-the-pull-request-creation-cap-bypass-list-for-a-repository
+   */
+  "DELETE /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list": Operation<
+    "/repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/collaborators/invitations#delete-a-repository-invitation
    */
   "DELETE /repos/{owner}/{repo}/invitations/{invitation_id}": Operation<
@@ -941,6 +1030,13 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}": Operation<
     "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/comments#unpin-an-issue-comment
+   */
+  "DELETE /repos/{owner}/{repo}/issues/comments/{comment_id}/pin": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}/pin",
     "delete"
   >;
   /**
@@ -962,6 +1058,13 @@ export interface Endpoints {
    */
   "DELETE /repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/dependencies/blocked_by/{issue_id}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issue-field-values#delete-an-issue-field-value-from-an-issue
+   */
+  "DELETE /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values/{issue_field_id}": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/issue-field-values/{issue_field_id}",
     "delete"
   >;
   /**
@@ -1091,17 +1194,17 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-delete-repository-custom-patterns
+   */
+  "DELETE /repos/{owner}/{repo}/secret-scanning/custom-patterns": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/custom-patterns",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/watching#delete-a-repository-subscription
    */
   "DELETE /repos/{owner}/{repo}/subscription": Operation<
     "/repos/{owner}/{repo}/subscription",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/repos/tags#closing-down---delete-a-tag-protection-state-for-a-repository
-   */
-  "DELETE /repos/{owner}/{repo}/tags/protection/{tag_protection_id}": Operation<
-    "/repos/{owner}/{repo}/tags/protection/{tag_protection_id}",
     "delete"
   >;
   /**
@@ -1115,20 +1218,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/teams/teams#delete-a-team-legacy
    */
   "DELETE /teams/{team_id}": Operation<"/teams/{team_id}", "delete">;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#delete-a-discussion-legacy
-   */
-  "DELETE /teams/{team_id}/discussions/{discussion_number}": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}",
-    "delete"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment-legacy
-   */
-  "DELETE /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "delete"
-  >;
   /**
    * @see https://docs.github.com/rest/teams/members#remove-team-member-legacy
    */
@@ -1282,6 +1371,27 @@ export interface Endpoints {
     "delete"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#delete-a-copilot-space-for-a-user
+   */
+  "DELETE /users/{username}/copilot-spaces/{space_number}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#remove-a-collaborator-from-a-copilot-space-for-a-user
+   */
+  "DELETE /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "delete"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#delete-a-resource-from-a-copilot-space-for-a-user
+   */
+  "DELETE /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "delete"
+  >;
+  /**
    * @see https://docs.github.com/rest/packages/packages#delete-a-package-for-a-user
    */
   "DELETE /users/{username}/packages/{package_type}/{package_name}": Operation<
@@ -1315,6 +1425,31 @@ export interface Endpoints {
    */
   "GET /advisories/{ghsa_id}": ReadonlyOperation<
     "/advisories/{ghsa_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agent-tasks/agent-tasks#list-tasks-for-repository
+   */
+  "GET /agents/repos/{owner}/{repo}/tasks": ReadonlyOperation<
+    "/agents/repos/{owner}/{repo}/tasks",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agent-tasks/agent-tasks#get-a-task-by-repo
+   */
+  "GET /agents/repos/{owner}/{repo}/tasks/{task_id}": ReadonlyOperation<
+    "/agents/repos/{owner}/{repo}/tasks/{task_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agent-tasks/agent-tasks#list-tasks
+   */
+  "GET /agents/tasks": ReadonlyOperation<"/agents/tasks", "get">;
+  /**
+   * @see https://docs.github.com/rest/agent-tasks/agent-tasks#get-a-task-by-id
+   */
+  "GET /agents/tasks/{task_id}": ReadonlyOperation<
+    "/agents/tasks/{task_id}",
     "get"
   >;
   /**
@@ -1359,39 +1494,39 @@ export interface Endpoints {
    */
   "GET /apps/{app_slug}": ReadonlyOperation<"/apps/{app_slug}", "get">;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#get-an-assignment
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---get-an-assignment
    */
   "GET /assignments/{assignment_id}": ReadonlyOperation<
     "/assignments/{assignment_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#list-accepted-assignments-for-an-assignment
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---list-accepted-assignments-for-an-assignment
    */
   "GET /assignments/{assignment_id}/accepted_assignments": ReadonlyOperation<
     "/assignments/{assignment_id}/accepted_assignments",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#get-assignment-grades
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---get-assignment-grades
    */
   "GET /assignments/{assignment_id}/grades": ReadonlyOperation<
     "/assignments/{assignment_id}/grades",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#list-classrooms
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---list-classrooms
    */
   "GET /classrooms": ReadonlyOperation<"/classrooms", "get">;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#get-a-classroom
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---get-a-classroom
    */
   "GET /classrooms/{classroom_id}": ReadonlyOperation<
     "/classrooms/{classroom_id}",
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/classroom/classroom#list-assignments-for-a-classroom
+   * @see https://docs.github.com/rest/classroom/classroom#closing-down---list-assignments-for-a-classroom
    */
   "GET /classrooms/{classroom_id}/assignments": ReadonlyOperation<
     "/classrooms/{classroom_id}/assignments",
@@ -1427,6 +1562,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/oidc#list-oidc-custom-property-inclusions-for-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/actions/oidc/customization/properties/repo": ReadonlyOperation<
+    "/enterprises/{enterprise}/actions/oidc/customization/properties/repo",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#get-code-security-configurations-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/code-security/configurations": ReadonlyOperation<
@@ -1455,10 +1597,59 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-enterprise-usage-metrics-for-a-specific-day
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/enterprise-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-enterprise-usage-metrics
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/enterprise-28-day/latest",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-enterprise-repository-report-for-a-specific-day
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/repos-1-day": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/repos-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-enterprise-user-teams-report-for-a-specific-day
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/user-teams-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-users-usage-metrics-for-a-specific-day
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/users-1-day": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/users-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-users-usage-metrics
+   */
+  "GET /enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest": ReadonlyOperation<
+    "/enterprises/{enterprise}/copilot/metrics/reports/users-28-day/latest",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-an-enterprise
    */
   "GET /enterprises/{enterprise}/dependabot/alerts": ReadonlyOperation<
     "/enterprises/{enterprise}/dependabot/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-enterprise
+   */
+  "GET /enterprises/{enterprise}/dependabot/repository-access": ReadonlyOperation<
+    "/enterprises/{enterprise}/dependabot/repository-access",
     "get"
   >;
   /**
@@ -1693,17 +1884,10 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-organization
+   * @see https://docs.github.com/rest/billing/usage#get-billing-ai-credit-usage-report-for-an-organization
    */
-  "GET /organizations/{org}/dependabot/repository-access": ReadonlyOperation<
-    "/organizations/{org}/dependabot/repository-access",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/orgs/custom-properties-for-orgs#get-all-custom-property-values-for-an-organization
-   */
-  "GET /organizations/{org}/org-properties/values": ReadonlyOperation<
-    "/organizations/{org}/org-properties/values",
+  "GET /organizations/{org}/settings/billing/ai_credit/usage": ReadonlyOperation<
+    "/organizations/{org}/settings/billing/ai_credit/usage",
     "get"
   >;
   /**
@@ -1842,6 +2026,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}": ReadonlyOperation<
     "/orgs/{org}/actions/hosted-runners/{hosted_runner_id}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#list-oidc-custom-property-inclusions-for-an-organization
+   */
+  "GET /orgs/{org}/actions/oidc/customization/properties/repo": ReadonlyOperation<
+    "/orgs/{org}/actions/oidc/customization/properties/repo",
     "get"
   >;
   /**
@@ -2027,6 +2218,62 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/secrets#list-organization-secrets
+   */
+  "GET /orgs/{org}/agents/secrets": ReadonlyOperation<
+    "/orgs/{org}/agents/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#get-an-organization-public-key
+   */
+  "GET /orgs/{org}/agents/secrets/public-key": ReadonlyOperation<
+    "/orgs/{org}/agents/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#get-an-organization-secret
+   */
+  "GET /orgs/{org}/agents/secrets/{secret_name}": ReadonlyOperation<
+    "/orgs/{org}/agents/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#list-selected-repositories-for-an-organization-secret
+   */
+  "GET /orgs/{org}/agents/secrets/{secret_name}/repositories": ReadonlyOperation<
+    "/orgs/{org}/agents/secrets/{secret_name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#list-organization-variables
+   */
+  "GET /orgs/{org}/agents/variables": ReadonlyOperation<
+    "/orgs/{org}/agents/variables",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#get-an-organization-variable
+   */
+  "GET /orgs/{org}/agents/variables/{name}": ReadonlyOperation<
+    "/orgs/{org}/agents/variables/{name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#list-selected-repositories-for-an-organization-variable
+   */
+  "GET /orgs/{org}/agents/variables/{name}/repositories": ReadonlyOperation<
+    "/orgs/{org}/agents/variables/{name}/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#get-cluster-deployment-records-job-status
+   */
+  "GET /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs/{job_id}": ReadonlyOperation<
+    "/orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs/{job_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/artifact-metadata#list-artifact-deployment-records
    */
   "GET /orgs/{org}/artifacts/{subject_digest}/metadata/deployment-records": ReadonlyOperation<
@@ -2150,6 +2397,41 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#list-organization-copilot-spaces
+   */
+  "GET /orgs/{org}/copilot-spaces": ReadonlyOperation<
+    "/orgs/{org}/copilot-spaces",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#get-an-organization-copilot-space
+   */
+  "GET /orgs/{org}/copilot-spaces/{space_number}": ReadonlyOperation<
+    "/orgs/{org}/copilot-spaces/{space_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#list-collaborators-for-an-organization-copilot-space
+   */
+  "GET /orgs/{org}/copilot-spaces/{space_number}/collaborators": ReadonlyOperation<
+    "/orgs/{org}/copilot-spaces/{space_number}/collaborators",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#list-resources-for-an-organization-copilot-space
+   */
+  "GET /orgs/{org}/copilot-spaces/{space_number}/resources": ReadonlyOperation<
+    "/orgs/{org}/copilot-spaces/{space_number}/resources",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#get-a-resource-for-an-organization-copilot-space
+   */
+  "GET /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}": ReadonlyOperation<
+    "/orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-information-and-settings-for-an-organization
    */
   "GET /orgs/{org}/copilot/billing": ReadonlyOperation<
@@ -2164,10 +2446,66 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-organization
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#get-copilot-cloud-agent-permissions-for-an-organization
    */
-  "GET /orgs/{org}/copilot/metrics": ReadonlyOperation<
-    "/orgs/{org}/copilot/metrics",
+  "GET /orgs/{org}/copilot/coding-agent/permissions": ReadonlyOperation<
+    "/orgs/{org}/copilot/coding-agent/permissions",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#list-repositories-enabled-for-copilot-cloud-agent-in-an-organization
+   */
+  "GET /orgs/{org}/copilot/coding-agent/permissions/repositories": ReadonlyOperation<
+    "/orgs/{org}/copilot/coding-agent/permissions/repositories",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-content-exclusion-management#get-copilot-content-exclusion-rules-for-an-organization
+   */
+  "GET /orgs/{org}/copilot/content_exclusion": ReadonlyOperation<
+    "/orgs/{org}/copilot/content_exclusion",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-usage-metrics-for-a-specific-day
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/organization-1-day": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/organization-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-usage-metrics
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/organization-28-day/latest": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/organization-28-day/latest",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-repository-report-for-a-specific-day
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/repos-1-day": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/repos-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-user-teams-report-for-a-specific-day
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/user-teams-1-day": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/user-teams-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-users-usage-metrics-for-a-specific-day
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/users-1-day": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/users-1-day",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-usage-metrics#get-copilot-organization-users-usage-metrics
+   */
+  "GET /orgs/{org}/copilot/metrics/reports/users-28-day/latest": ReadonlyOperation<
+    "/orgs/{org}/copilot/metrics/reports/users-28-day/latest",
     "get"
   >;
   /**
@@ -2175,6 +2513,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/dependabot/alerts": ReadonlyOperation<
     "/orgs/{org}/dependabot/alerts",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#lists-the-repositories-dependabot-can-access-in-an-organization
+   */
+  "GET /orgs/{org}/dependabot/repository-access": ReadonlyOperation<
+    "/orgs/{org}/dependabot/repository-access",
     "get"
   >;
   /**
@@ -2340,6 +2685,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/interactions/orgs#get-pull-request-creation-cap-for-an-org
+   */
+  "GET /orgs/{org}/interaction-limits/pulls/creation-cap": ReadonlyOperation<
+    "/orgs/{org}/interaction-limits/pulls/creation-cap",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/members#list-pending-organization-invitations
    */
   "GET /orgs/{org}/invitations": ReadonlyOperation<
@@ -2351,6 +2703,13 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/invitations/{invitation_id}/teams": ReadonlyOperation<
     "/orgs/{org}/invitations/{invitation_id}/teams",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-fields#list-issue-fields-for-an-organization
+   */
+  "GET /orgs/{org}/issue-fields": ReadonlyOperation<
+    "/orgs/{org}/issue-fields",
     "get"
   >;
   /**
@@ -2583,6 +2942,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#list-items-for-an-organization-project-view
+   */
+  "GET /orgs/{org}/projectsV2/{project_number}/views/{view_number}/items": ReadonlyOperation<
+    "/orgs/{org}/projectsV2/{project_number}/views/{view_number}/items",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization
    */
   "GET /orgs/{org}/properties/schema": ReadonlyOperation<
@@ -2668,6 +3034,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#list-organization-custom-patterns
+   */
+  "GET /orgs/{org}/secret-scanning/custom-patterns": ReadonlyOperation<
+    "/orgs/{org}/secret-scanning/custom-patterns",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/push-protection#list-organization-pattern-configurations
    */
   "GET /orgs/{org}/secret-scanning/pattern-configurations": ReadonlyOperation<
@@ -2724,13 +3097,6 @@ export interface Endpoints {
     "get"
   >;
   /**
-   * @see https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-a-team
-   */
-  "GET /orgs/{org}/team/{team_slug}/copilot/metrics": ReadonlyOperation<
-    "/orgs/{org}/team/{team_slug}/copilot/metrics",
-    "get"
-  >;
-  /**
    * @see https://docs.github.com/rest/teams/teams#list-teams
    */
   "GET /orgs/{org}/teams": ReadonlyOperation<"/orgs/{org}/teams", "get">;
@@ -2739,48 +3105,6 @@ export interface Endpoints {
    */
   "GET /orgs/{org}/teams/{team_slug}": ReadonlyOperation<
     "/orgs/{org}/teams/{team_slug}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#list-discussions
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#get-a-discussion
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion-comment
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion
-   */
-  "GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": ReadonlyOperation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
     "get"
   >;
   /**
@@ -2883,6 +3207,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/actions/caches": ReadonlyOperation<
     "/repos/{owner}/{repo}/actions/caches",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/concurrency-groups#list-concurrency-groups-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/concurrency_groups": ReadonlyOperation<
+    "/repos/{owner}/{repo}/actions/concurrency_groups",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/concurrency-groups#get-a-concurrency-group-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/actions/concurrency_groups/{concurrency_group_name}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/actions/concurrency_groups/{concurrency_group_name}",
     "get"
   >;
   /**
@@ -3047,6 +3385,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/actions/concurrency-groups#list-concurrency-groups-for-a-workflow-run
+   */
+  "GET /repos/{owner}/{repo}/actions/runs/{run_id}/concurrency_groups": ReadonlyOperation<
+    "/repos/{owner}/{repo}/actions/runs/{run_id}/concurrency_groups",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/workflow-jobs#list-jobs-for-a-workflow-run
    */
   "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs": ReadonlyOperation<
@@ -3142,6 +3487,55 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/activity": ReadonlyOperation<
     "/repos/{owner}/{repo}/activity",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#list-repository-organization-secrets
+   */
+  "GET /repos/{owner}/{repo}/agents/organization-secrets": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/organization-secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#list-repository-organization-variables
+   */
+  "GET /repos/{owner}/{repo}/agents/organization-variables": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/organization-variables",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#list-repository-secrets
+   */
+  "GET /repos/{owner}/{repo}/agents/secrets": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/secrets",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#get-a-repository-public-key
+   */
+  "GET /repos/{owner}/{repo}/agents/secrets/public-key": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/secrets/public-key",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#get-a-repository-secret
+   */
+  "GET /repos/{owner}/{repo}/agents/secrets/{secret_name}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#list-repository-variables
+   */
+  "GET /repos/{owner}/{repo}/agents/variables": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/variables",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#get-a-repository-variable
+   */
+  "GET /repos/{owner}/{repo}/agents/variables/{name}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/agents/variables/{name}",
     "get"
   >;
   /**
@@ -3296,6 +3690,27 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs": ReadonlyOperation<
     "/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/code-quality/code-quality#list-code-quality-findings-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/code-quality/findings": ReadonlyOperation<
+    "/repos/{owner}/{repo}/code-quality/findings",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/code-quality/code-quality#get-a-code-quality-finding
+   */
+  "GET /repos/{owner}/{repo}/code-quality/findings/{finding_number}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/code-quality/findings/{finding_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/code-quality/code-quality#get-a-code-quality-setup-configuration
+   */
+  "GET /repos/{owner}/{repo}/code-quality/setup": ReadonlyOperation<
+    "/repos/{owner}/{repo}/code-quality/setup",
     "get"
   >;
   /**
@@ -3601,6 +4016,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot/copilot-cloud-agent-management#get-copilot-cloud-agent-configuration-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/copilot/cloud-agent/configuration": ReadonlyOperation<
+    "/repos/{owner}/{repo}/copilot/cloud-agent/configuration",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/dependabot/alerts#list-dependabot-alerts-for-a-repository
    */
   "GET /repos/{owner}/{repo}/dependabot/alerts": ReadonlyOperation<
@@ -3647,6 +4069,20 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/dependency-graph/sbom": ReadonlyOperation<
     "/repos/{owner}/{repo}/dependency-graph/sbom",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependency-graph/sboms#fetch-a-software-bill-of-materials-sbom-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/dependency-graph/sbom/fetch-report/{sbom_uuid}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependency-graph/sboms#request-generation-of-a-software-bill-of-materials-sbom-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/dependency-graph/sbom/generate-report": ReadonlyOperation<
+    "/repos/{owner}/{repo}/dependency-graph/sbom/generate-report",
     "get"
   >;
   /**
@@ -3818,6 +4254,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/repos/repos#get-the-hash-algorithm-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/hash-algorithm": ReadonlyOperation<
+    "/repos/{owner}/{repo}/hash-algorithm",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/repos/webhooks#list-repository-webhooks
    */
   "GET /repos/{owner}/{repo}/hooks": ReadonlyOperation<
@@ -3895,10 +4338,31 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/interactions/repos#get-pull-request-creation-cap-bypass-list-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list": ReadonlyOperation<
+    "/repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/interactions/repos#get-pull-request-creation-cap-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap": ReadonlyOperation<
+    "/repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/collaborators/invitations#list-repository-invitations
    */
   "GET /repos/{owner}/{repo}/invitations": ReadonlyOperation<
     "/repos/{owner}/{repo}/invitations",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/repos/issue-types#list-issue-types-for-a-repository
+   */
+  "GET /repos/{owner}/{repo}/issue-types": ReadonlyOperation<
+    "/repos/{owner}/{repo}/issue-types",
     "get"
   >;
   /**
@@ -3986,6 +4450,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/issues/issue-field-values#list-issue-field-values-for-an-issue
+   */
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values": ReadonlyOperation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/labels#list-labels-for-an-issue
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/labels": ReadonlyOperation<
@@ -4011,6 +4482,13 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues": ReadonlyOperation<
     "/repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issues#list-issue-suggestions
+   */
+  "GET /repos/{owner}/{repo}/issues/{issue_number}/suggestions": ReadonlyOperation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/suggestions",
     "get"
   >;
   /**
@@ -4210,6 +4688,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/pulls/pulls#get-the-result-of-an-asynchronous-merge
+   */
+  "GET /repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/merge-async/{uuid}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/pulls/review-requests#get-all-requested-reviewers-for-a-pull-request
    */
   "GET /repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers": ReadonlyOperation<
@@ -4371,6 +4856,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#list-repository-custom-patterns
+   */
+  "GET /repos/{owner}/{repo}/secret-scanning/custom-patterns": ReadonlyOperation<
+    "/repos/{owner}/{repo}/secret-scanning/custom-patterns",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/secret-scanning#get-secret-scanning-scan-history-for-a-repository
    */
   "GET /repos/{owner}/{repo}/secret-scanning/scan-history": ReadonlyOperation<
@@ -4392,10 +4884,31 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/pulls/stacks#list-pull-request-stacks
+   */
+  "GET /repos/{owner}/{repo}/stacks": ReadonlyOperation<
+    "/repos/{owner}/{repo}/stacks",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pulls/stacks#get-a-pull-request-stack
+   */
+  "GET /repos/{owner}/{repo}/stacks/{stack_number}": ReadonlyOperation<
+    "/repos/{owner}/{repo}/stacks/{stack_number}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/starring#list-stargazers
    */
   "GET /repos/{owner}/{repo}/stargazers": ReadonlyOperation<
     "/repos/{owner}/{repo}/stargazers",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/activity/starring#get-stargazer-count
+   */
+  "GET /repos/{owner}/{repo}/stargazers/count": ReadonlyOperation<
+    "/repos/{owner}/{repo}/stargazers/count",
     "get"
   >;
   /**
@@ -4452,13 +4965,6 @@ export interface Endpoints {
    */
   "GET /repos/{owner}/{repo}/tags": ReadonlyOperation<
     "/repos/{owner}/{repo}/tags",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/repos/tags#closing-down---list-tag-protection-states-for-a-repository
-   */
-  "GET /repos/{owner}/{repo}/tags/protection": ReadonlyOperation<
-    "/repos/{owner}/{repo}/tags/protection",
     "get"
   >;
   /**
@@ -4560,48 +5066,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/teams/teams#get-a-team-legacy
    */
   "GET /teams/{team_id}": ReadonlyOperation<"/teams/{team_id}", "get">;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#list-discussions-legacy
-   */
-  "GET /teams/{team_id}/discussions": ReadonlyOperation<
-    "/teams/{team_id}/discussions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#get-a-discussion-legacy
-   */
-  "GET /teams/{team_id}/discussions/{discussion_number}": ReadonlyOperation<
-    "/teams/{team_id}/discussions/{discussion_number}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments-legacy
-   */
-  "GET /teams/{team_id}/discussions/{discussion_number}/comments": ReadonlyOperation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment-legacy
-   */
-  "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": ReadonlyOperation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion-comment-legacy
-   */
-  "GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": ReadonlyOperation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "get"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion-legacy
-   */
-  "GET /teams/{team_id}/discussions/{discussion_number}/reactions": ReadonlyOperation<
-    "/teams/{team_id}/discussions/{discussion_number}/reactions",
-    "get"
-  >;
   /**
    * @see https://docs.github.com/rest/teams/members#list-pending-team-invitations-legacy
    */
@@ -4943,6 +5407,41 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#list-copilot-spaces-for-a-user
+   */
+  "GET /users/{username}/copilot-spaces": ReadonlyOperation<
+    "/users/{username}/copilot-spaces",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#get-a-copilot-space-for-a-user
+   */
+  "GET /users/{username}/copilot-spaces/{space_number}": ReadonlyOperation<
+    "/users/{username}/copilot-spaces/{space_number}",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#list-collaborators-for-a-copilot-space-for-a-user
+   */
+  "GET /users/{username}/copilot-spaces/{space_number}/collaborators": ReadonlyOperation<
+    "/users/{username}/copilot-spaces/{space_number}/collaborators",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#list-resources-for-a-copilot-space-for-a-user
+   */
+  "GET /users/{username}/copilot-spaces/{space_number}/resources": ReadonlyOperation<
+    "/users/{username}/copilot-spaces/{space_number}/resources",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#get-a-resource-for-a-copilot-space-for-a-user
+   */
+  "GET /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}": ReadonlyOperation<
+    "/users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-user
    */
   "GET /users/{username}/docker/conflicts": ReadonlyOperation<
@@ -5104,6 +5603,13 @@ export interface Endpoints {
     "get"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/items#list-items-for-a-user-project-view
+   */
+  "GET /users/{username}/projectsV2/{project_number}/views/{view_number}/items": ReadonlyOperation<
+    "/users/{username}/projectsV2/{project_number}/views/{view_number}/items",
+    "get"
+  >;
+  /**
    * @see https://docs.github.com/rest/activity/events#list-events-received-by-the-authenticated-user
    */
   "GET /users/{username}/received_events": ReadonlyOperation<
@@ -5122,6 +5628,13 @@ export interface Endpoints {
    */
   "GET /users/{username}/repos": ReadonlyOperation<
     "/users/{username}/repos",
+    "get"
+  >;
+  /**
+   * @see https://docs.github.com/rest/billing/usage#get-billing-ai-credit-usage-report-for-a-user
+   */
+  "GET /users/{username}/settings/billing/ai_credit/usage": ReadonlyOperation<
+    "/users/{username}/settings/billing/ai_credit/usage",
     "get"
   >;
   /**
@@ -5200,6 +5713,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-enterprise
+   */
+  "PATCH /enterprises/{enterprise}/dependabot/repository-access": Operation<
+    "/enterprises/{enterprise}/dependabot/repository-access",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/enterprise-teams/enterprise-teams#update-an-enterprise-team
    */
   "PATCH /enterprises/{enterprise}/teams/{team_slug}": Operation<
@@ -5222,20 +5742,6 @@ export interface Endpoints {
    */
   "PATCH /notifications/threads/{thread_id}": Operation<
     "/notifications/threads/{thread_id}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-organization
-   */
-  "PATCH /organizations/{org}/dependabot/repository-access": Operation<
-    "/organizations/{org}/dependabot/repository-access",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/orgs/custom-properties-for-orgs#create-or-update-custom-property-values-for-an-organization
-   */
-  "PATCH /organizations/{org}/org-properties/values": Operation<
-    "/organizations/{org}/org-properties/values",
     "patch"
   >;
   /**
@@ -5271,6 +5777,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/variables#update-an-organization-variable
+   */
+  "PATCH /orgs/{org}/agents/variables/{name}": Operation<
+    "/orgs/{org}/agents/variables/{name}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/campaigns/campaigns#update-a-campaign
    */
   "PATCH /orgs/{org}/campaigns/{campaign_number}": Operation<
@@ -5285,6 +5798,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#updates-dependabots-repository-access-list-for-an-organization
+   */
+  "PATCH /orgs/{org}/dependabot/repository-access": Operation<
+    "/orgs/{org}/dependabot/repository-access",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/webhooks#update-an-organization-webhook
    */
   "PATCH /orgs/{org}/hooks/{hook_id}": Operation<
@@ -5296,6 +5816,20 @@ export interface Endpoints {
    */
   "PATCH /orgs/{org}/hooks/{hook_id}/config": Operation<
     "/orgs/{org}/hooks/{hook_id}/config",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/interactions/orgs#update-pull-request-creation-cap-for-an-org
+   */
+  "PATCH /orgs/{org}/interaction-limits/pulls/creation-cap": Operation<
+    "/orgs/{org}/interaction-limits/pulls/creation-cap",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-fields#update-issue-field-for-an-organization
+   */
+  "PATCH /orgs/{org}/issue-fields/{issue_field_id}": Operation<
+    "/orgs/{org}/issue-fields/{issue_field_id}",
     "patch"
   >;
   /**
@@ -5327,6 +5861,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#update-an-organization-custom-pattern
+   */
+  "PATCH /orgs/{org}/secret-scanning/custom-patterns/{pattern_id}": Operation<
+    "/orgs/{org}/secret-scanning/custom-patterns/{pattern_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/push-protection#update-organization-pattern-configurations
    */
   "PATCH /orgs/{org}/secret-scanning/pattern-configurations": Operation<
@@ -5348,20 +5889,6 @@ export interface Endpoints {
     "patch"
   >;
   /**
-   * @see https://docs.github.com/rest/teams/discussions#update-a-discussion
-   */
-  "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment
-   */
-  "PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
-    "patch"
-  >;
-  /**
    * @see https://docs.github.com/rest/repos/repos#update-a-repository
    */
   "PATCH /repos/{owner}/{repo}": Operation<"/repos/{owner}/{repo}", "patch">;
@@ -5370,6 +5897,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/actions/variables/{name}": Operation<
     "/repos/{owner}/{repo}/actions/variables/{name}",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#update-a-repository-variable
+   */
+  "PATCH /repos/{owner}/{repo}/agents/variables/{name}": Operation<
+    "/repos/{owner}/{repo}/agents/variables/{name}",
     "patch"
   >;
   /**
@@ -5398,6 +5932,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/check-suites/preferences": Operation<
     "/repos/{owner}/{repo}/check-suites/preferences",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/code-quality/code-quality#update-a-code-quality-setup-configuration
+   */
+  "PATCH /repos/{owner}/{repo}/code-quality/setup": Operation<
+    "/repos/{owner}/{repo}/code-quality/setup",
     "patch"
   >;
   /**
@@ -5475,6 +6016,13 @@ export interface Endpoints {
    */
   "PATCH /repos/{owner}/{repo}/import/lfs": Operation<
     "/repos/{owner}/{repo}/import/lfs",
+    "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/interactions/repos#update-pull-request-creation-cap-for-a-repository
+   */
+  "PATCH /repos/{owner}/{repo}/interaction-limits/pulls/creation-cap": Operation<
+    "/repos/{owner}/{repo}/interaction-limits/pulls/creation-cap",
     "patch"
   >;
   /**
@@ -5562,6 +6110,13 @@ export interface Endpoints {
     "patch"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#update-a-repository-custom-pattern
+   */
+  "PATCH /repos/{owner}/{repo}/secret-scanning/custom-patterns/{pattern_id}": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/custom-patterns/{pattern_id}",
+    "patch"
+  >;
+  /**
    * @see https://docs.github.com/rest/security-advisories/repository-advisories#update-a-repository-security-advisory
    */
   "PATCH /repos/{owner}/{repo}/security-advisories/{ghsa_id}": Operation<
@@ -5572,20 +6127,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/teams/teams#update-a-team-legacy
    */
   "PATCH /teams/{team_id}": Operation<"/teams/{team_id}", "patch">;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#update-a-discussion-legacy
-   */
-  "PATCH /teams/{team_id}/discussions/{discussion_number}": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}",
-    "patch"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment-legacy
-   */
-  "PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
-    "patch"
-  >;
   /**
    * @see https://docs.github.com/rest/users/users#update-the-authenticated-user
    */
@@ -5621,6 +6162,13 @@ export interface Endpoints {
   "PATCH /users/{username}/projectsV2/{project_number}/items/{item_id}": Operation<
     "/users/{username}/projectsV2/{project_number}/items/{item_id}",
     "patch"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agent-tasks/agent-tasks#start-a-task
+   */
+  "POST /agents/repos/{owner}/{repo}/tasks": Operation<
+    "/agents/repos/{owner}/{repo}/tasks",
+    "post"
   >;
   /**
    * @see https://docs.github.com/rest/apps/apps#create-a-github-app-from-a-manifest
@@ -5662,6 +6210,13 @@ export interface Endpoints {
    */
   "POST /credentials/revoke": Operation<"/credentials/revoke", "post">;
   /**
+   * @see https://docs.github.com/rest/actions/oidc#create-an-oidc-custom-property-inclusion-for-an-enterprise
+   */
+  "POST /enterprises/{enterprise}/actions/oidc/customization/properties/repo": Operation<
+    "/enterprises/{enterprise}/actions/oidc/customization/properties/repo",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration-for-an-enterprise
    */
   "POST /enterprises/{enterprise}/code-security/configurations": Operation<
@@ -5673,6 +6228,13 @@ export interface Endpoints {
    */
   "POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach": Operation<
     "/enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#add-organizations-to-the-enterprise-coding-agent-policy
+   */
+  "POST /enterprises/{enterprise}/copilot/policies/coding_agent/organizations": Operation<
+    "/enterprises/{enterprise}/copilot/policies/coding_agent/organizations",
     "post"
   >;
   /**
@@ -5734,10 +6296,24 @@ export interface Endpoints {
    */
   "POST /markdown/raw": Operation<"/markdown/raw", "post">;
   /**
+   * @see https://docs.github.com/rest/billing/budgets#create-a-budget-for-an-organization
+   */
+  "POST /organizations/{org}/settings/billing/budgets": Operation<
+    "/organizations/{org}/settings/billing/budgets",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/actions/hosted-runners#create-a-github-hosted-runner-for-an-organization
    */
   "POST /orgs/{org}/actions/hosted-runners": Operation<
     "/orgs/{org}/actions/hosted-runners",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/actions/oidc#create-an-oidc-custom-property-inclusion-for-an-organization
+   */
+  "POST /orgs/{org}/actions/oidc/customization/properties/repo": Operation<
+    "/orgs/{org}/actions/oidc/customization/properties/repo",
     "post"
   >;
   /**
@@ -5783,6 +6359,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/variables#create-an-organization-variable
+   */
+  "POST /orgs/{org}/agents/variables": Operation<
+    "/orgs/{org}/agents/variables",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/artifact-metadata#create-an-artifact-deployment-record
    */
   "POST /orgs/{org}/artifacts/metadata/deployment-record": Operation<
@@ -5794,6 +6377,13 @@ export interface Endpoints {
    */
   "POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}": Operation<
     "/orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/orgs/artifact-metadata#create-a-cluster-deployment-records-job
+   */
+  "POST /orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs": Operation<
+    "/orgs/{org}/artifacts/metadata/deployment-record/cluster/{cluster}/jobs",
     "post"
   >;
   /**
@@ -5843,6 +6433,27 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#create-an-organization-copilot-space
+   */
+  "POST /orgs/{org}/copilot-spaces": Operation<
+    "/orgs/{org}/copilot-spaces",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#add-a-collaborator-to-an-organization-copilot-space
+   */
+  "POST /orgs/{org}/copilot-spaces/{space_number}/collaborators": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/collaborators",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#create-a-resource-for-an-organization-copilot-space
+   */
+  "POST /orgs/{org}/copilot-spaces/{space_number}/resources": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/resources",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/copilot/copilot-user-management#add-teams-to-the-copilot-subscription-for-an-organization
    */
   "POST /orgs/{org}/copilot/billing/selected_teams": Operation<
@@ -5878,6 +6489,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/members#create-an-organization-invitation
    */
   "POST /orgs/{org}/invitations": Operation<"/orgs/{org}/invitations", "post">;
+  /**
+   * @see https://docs.github.com/rest/orgs/issue-fields#create-issue-field-for-an-organization
+   */
+  "POST /orgs/{org}/issue-fields": Operation<
+    "/orgs/{org}/issue-fields",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/orgs/issue-types#create-issue-type-for-an-organization
    */
@@ -5964,6 +6582,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/views#create-a-view-for-an-organization-owned-project
+   */
+  "POST /orgs/{org}/projectsV2/{project_number}/views": Operation<
+    "/orgs/{org}/projectsV2/{project_number}/views",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/repos/repos#create-an-organization-repository
    */
   "POST /orgs/{org}/repos": Operation<"/orgs/{org}/repos", "post">;
@@ -5971,6 +6596,13 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/orgs/rules#create-an-organization-repository-ruleset
    */
   "POST /orgs/{org}/rulesets": Operation<"/orgs/{org}/rulesets", "post">;
+  /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-create-organization-custom-patterns
+   */
+  "POST /orgs/{org}/secret-scanning/custom-patterns": Operation<
+    "/orgs/{org}/secret-scanning/custom-patterns",
+    "post"
+  >;
   /**
    * @see https://docs.github.com/rest/orgs/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization
    */
@@ -5982,34 +6614,6 @@ export interface Endpoints {
    * @see https://docs.github.com/rest/teams/teams#create-a-team
    */
   "POST /orgs/{org}/teams": Operation<"/orgs/{org}/teams", "post">;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#create-a-discussion
-   */
-  "POST /orgs/{org}/teams/{team_slug}/discussions": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment
-   */
-  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion-comment
-   */
-  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion
-   */
-  "POST /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions": Operation<
-    "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
-    "post"
-  >;
   /**
    * @see https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization
    */
@@ -6113,6 +6717,13 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches": Operation<
     "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#create-a-repository-variable
+   */
+  "POST /repos/{owner}/{repo}/agents/variables": Operation<
+    "/repos/{owner}/{repo}/agents/variables",
     "post"
   >;
   /**
@@ -6410,6 +7021,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/issues/issue-field-values#add-issue-field-values-to-an-issue
+   */
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/labels#add-labels-to-an-issue
    */
   "POST /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
@@ -6428,6 +7046,20 @@ export interface Endpoints {
    */
   "POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues": Operation<
     "/repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issues#approve-an-issue-suggestion
+   */
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/approve",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issues#dismiss-an-issue-suggestion
+   */
+  "POST /repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/suggestions/{suggestion_id}/dismiss",
     "post"
   >;
   /**
@@ -6578,6 +7210,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/secret-scanning/custom-patterns#bulk-create-repository-custom-patterns
+   */
+  "POST /repos/{owner}/{repo}/secret-scanning/custom-patterns": Operation<
+    "/repos/{owner}/{repo}/secret-scanning/custom-patterns",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/secret-scanning/secret-scanning#create-a-push-protection-bypass
    */
   "POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses": Operation<
@@ -6613,17 +7252,31 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/pulls/stacks#create-a-pull-request-stack
+   */
+  "POST /repos/{owner}/{repo}/stacks": Operation<
+    "/repos/{owner}/{repo}/stacks",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pulls/stacks#add-pull-requests-to-a-pull-request-stack
+   */
+  "POST /repos/{owner}/{repo}/stacks/{stack_number}/add": Operation<
+    "/repos/{owner}/{repo}/stacks/{stack_number}/add",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pulls/stacks#remove-pull-requests-from-a-pull-request-stack
+   */
+  "POST /repos/{owner}/{repo}/stacks/{stack_number}/unstack": Operation<
+    "/repos/{owner}/{repo}/stacks/{stack_number}/unstack",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/commits/statuses#create-a-commit-status
    */
   "POST /repos/{owner}/{repo}/statuses/{sha}": Operation<
     "/repos/{owner}/{repo}/statuses/{sha}",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/repos/tags#closing-down---create-a-tag-protection-state-for-a-repository
-   */
-  "POST /repos/{owner}/{repo}/tags/protection": Operation<
-    "/repos/{owner}/{repo}/tags/protection",
     "post"
   >;
   /**
@@ -6638,34 +7291,6 @@ export interface Endpoints {
    */
   "POST /repos/{template_owner}/{template_repo}/generate": Operation<
     "/repos/{template_owner}/{template_repo}/generate",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussions#create-a-discussion-legacy
-   */
-  "POST /teams/{team_id}/discussions": Operation<
-    "/teams/{team_id}/discussions",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment-legacy
-   */
-  "POST /teams/{team_id}/discussions/{discussion_number}/comments": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion-comment-legacy
-   */
-  "POST /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
-    "post"
-  >;
-  /**
-   * @see https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion-legacy
-   */
-  "POST /teams/{team_id}/discussions/{discussion_number}/reactions": Operation<
-    "/teams/{team_id}/discussions/{discussion_number}/reactions",
     "post"
   >;
   /**
@@ -6750,6 +7375,13 @@ export interface Endpoints {
     "post"
   >;
   /**
+   * @see https://docs.github.com/rest/projects/views#create-a-view-for-a-user-owned-project
+   */
+  "POST /users/{user_id}/projectsV2/{project_number}/views": Operation<
+    "/users/{user_id}/projectsV2/{project_number}/views",
+    "post"
+  >;
+  /**
    * @see https://docs.github.com/rest/users/attestations#list-attestations-by-bulk-subject-digests
    */
   "POST /users/{username}/attestations/bulk-list{?per_page,before,after}": Operation<
@@ -6761,6 +7393,27 @@ export interface Endpoints {
    */
   "POST /users/{username}/attestations/delete-request": Operation<
     "/users/{username}/attestations/delete-request",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#create-a-copilot-space-for-a-user
+   */
+  "POST /users/{username}/copilot-spaces": Operation<
+    "/users/{username}/copilot-spaces",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#add-a-collaborator-to-a-copilot-space-for-a-user
+   */
+  "POST /users/{username}/copilot-spaces/{space_number}/collaborators": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/collaborators",
+    "post"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#create-a-resource-for-a-copilot-space-for-a-user
+   */
+  "POST /users/{username}/copilot-spaces/{space_number}/resources": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/resources",
     "post"
   >;
   /**
@@ -6827,6 +7480,20 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#set-the-coding-agent-policy-for-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/copilot/policies/coding_agent": Operation<
+    "/enterprises/{enterprise}/copilot/policies/coding_agent",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot-in-an-enterprise
+   */
+  "PUT /enterprises/{enterprise}/dependabot/repository-access/default-level": Operation<
+    "/enterprises/{enterprise}/dependabot/repository-access/default-level",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/enterprise-teams/enterprise-team-members#add-team-member
    */
   "PUT /enterprises/{enterprise}/teams/{enterprise-team}/memberships/{username}": Operation<
@@ -6867,13 +7534,6 @@ export interface Endpoints {
    */
   "PUT /organizations/{org}/actions/cache/storage-limit": Operation<
     "/organizations/{org}/actions/cache/storage-limit",
-    "put"
-  >;
-  /**
-   * @see https://docs.github.com/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot
-   */
-  "PUT /organizations/{org}/dependabot/repository-access/default-level": Operation<
-    "/organizations/{org}/dependabot/repository-access/default-level",
     "put"
   >;
   /**
@@ -7031,6 +7691,41 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/secrets#create-or-update-an-organization-secret
+   */
+  "PUT /orgs/{org}/agents/secrets/{secret_name}": Operation<
+    "/orgs/{org}/agents/secrets/{secret_name}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#set-selected-repositories-for-an-organization-secret
+   */
+  "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories": Operation<
+    "/orgs/{org}/agents/secrets/{secret_name}/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/secrets#add-selected-repository-to-an-organization-secret
+   */
+  "PUT /orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/agents/secrets/{secret_name}/repositories/{repository_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#set-selected-repositories-for-an-organization-variable
+   */
+  "PUT /orgs/{org}/agents/variables/{name}/repositories": Operation<
+    "/orgs/{org}/agents/variables/{name}/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/agents/variables#add-selected-repository-to-an-organization-variable
+   */
+  "PUT /orgs/{org}/agents/variables/{name}/repositories/{repository_id}": Operation<
+    "/orgs/{org}/agents/variables/{name}/repositories/{repository_id}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/orgs/blocking#block-a-user-from-an-organization
    */
   "PUT /orgs/{org}/blocks/{username}": Operation<
@@ -7070,6 +7765,62 @@ export interface Endpoints {
    */
   "PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}": Operation<
     "/orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#set-an-organization-copilot-space
+   */
+  "PUT /orgs/{org}/copilot-spaces/{space_number}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#set-a-collaborator-role-for-an-organization-copilot-space
+   */
+  "PUT /orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#set-a-resource-for-an-organization-copilot-space
+   */
+  "PUT /orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}": Operation<
+    "/orgs/{org}/copilot-spaces/{space_number}/resources/{space_resource_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#set-copilot-cloud-agent-permissions-for-an-organization
+   */
+  "PUT /orgs/{org}/copilot/coding-agent/permissions": Operation<
+    "/orgs/{org}/copilot/coding-agent/permissions",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#set-selected-repositories-for-copilot-cloud-agent-in-an-organization
+   */
+  "PUT /orgs/{org}/copilot/coding-agent/permissions/repositories": Operation<
+    "/orgs/{org}/copilot/coding-agent/permissions/repositories",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-coding-agent-management#enable-a-repository-for-copilot-cloud-agent-in-an-organization
+   */
+  "PUT /orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}": Operation<
+    "/orgs/{org}/copilot/coding-agent/permissions/repositories/{repository_id}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot/copilot-content-exclusion-management#set-copilot-content-exclusion-rules-for-an-organization
+   */
+  "PUT /orgs/{org}/copilot/content_exclusion": Operation<
+    "/orgs/{org}/copilot/content_exclusion",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/dependabot/repository-access#set-the-default-repository-access-level-for-dependabot
+   */
+  "PUT /orgs/{org}/dependabot/repository-access/default-level": Operation<
+    "/orgs/{org}/dependabot/repository-access/default-level",
     "put"
   >;
   /**
@@ -7297,6 +8048,13 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/agents/secrets#create-or-update-a-repository-secret
+   */
+  "PUT /repos/{owner}/{repo}/agents/secrets/{secret_name}": Operation<
+    "/repos/{owner}/{repo}/agents/secrets/{secret_name}",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/repos/repos#enable-dependabot-security-updates
    */
   "PUT /repos/{owner}/{repo}/automated-security-fixes": Operation<
@@ -7409,6 +8167,27 @@ export interface Endpoints {
     "put"
   >;
   /**
+   * @see https://docs.github.com/rest/interactions/repos#add-users-to-the-pull-request-creation-cap-bypass-list-for-a-repository
+   */
+  "PUT /repos/{owner}/{repo}/interaction-limits/pulls/bypass-list": Operation<
+    "/repos/{owner}/{repo}/interaction-limits/pulls/bypass-list",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/comments#pin-an-issue-comment
+   */
+  "PUT /repos/{owner}/{repo}/issues/comments/{comment_id}/pin": Operation<
+    "/repos/{owner}/{repo}/issues/comments/{comment_id}/pin",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/issues/issue-field-values#set-issue-field-values-for-an-issue
+   */
+  "PUT /repos/{owner}/{repo}/issues/{issue_number}/issue-field-values": Operation<
+    "/repos/{owner}/{repo}/issues/{issue_number}/issue-field-values",
+    "put"
+  >;
+  /**
    * @see https://docs.github.com/rest/issues/labels#set-labels-for-an-issue
    */
   "PUT /repos/{owner}/{repo}/issues/{issue_number}/labels": Operation<
@@ -7448,6 +8227,13 @@ export interface Endpoints {
    */
   "PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge": Operation<
     "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/pulls/pulls#merge-a-pull-request-asynchronously
+   */
+  "PUT /repos/{owner}/{repo}/pulls/{pull_number}/merge-async": Operation<
+    "/repos/{owner}/{repo}/pulls/{pull_number}/merge-async",
     "put"
   >;
   /**
@@ -7568,6 +8354,27 @@ export interface Endpoints {
    */
   "PUT /user/starred/{owner}/{repo}": Operation<
     "/user/starred/{owner}/{repo}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/copilot-spaces#set-a-copilot-space-for-a-user
+   */
+  "PUT /users/{username}/copilot-spaces/{space_number}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/collaborators#set-a-collaborator-role-for-a-copilot-space-for-a-user
+   */
+  "PUT /users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/collaborators/{actor_type}/{actor_identifier}",
+    "put"
+  >;
+  /**
+   * @see https://docs.github.com/rest/copilot-spaces/resources#set-a-resource-for-a-copilot-space-for-a-user
+   */
+  "PUT /users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}": Operation<
+    "/users/{username}/copilot-spaces/{space_number}/resources/{space_resource_id}",
     "put"
   >;
 }
