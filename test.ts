@@ -54,10 +54,7 @@ assertPaginate(checkRunsRoute);
 const listForRef = {} as {
   (
     params?: RequestParameters &
-      Omit<
         Endpoints["GET /repos/{owner}/{repo}/commits/{ref}/check-runs"]["parameters"],
-        "baseUrl" | "headers" | "mediaType"
-      >
   ): Promise<Endpoints[typeof checkRunsRoute]["response"]>;
   defaults: RequestInterface["defaults"];
   endpoint: EndpointInterface<{
